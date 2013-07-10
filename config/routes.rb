@@ -1,4 +1,20 @@
 IdeoSf72::Application.routes.draw do
+  get "home_controller/index"
+
+  get "home_controller/home"
+
+  get "home_controller/connect"
+
+  get "home_controller/prepare_landing"
+
+  get "home_controller/about"
+
+  get "home_controller/prepare_people"
+
+  get "home_controller/prepare_things"
+
+  get "home_controller/prepare_people_detail"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
