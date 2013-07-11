@@ -4,6 +4,8 @@ IdeoSf72::Application.routes.draw do
 
   delete "map_marker/delete"
 
+  get "map_marker/:lon/:lat/:max_distance" => "map_marker#markers_within_distance", :constraints => { :lon => /.*/, :lat => /.*/, :max_distance => /.*/ }
+
   get "map_marker" => "map_marker#index"
 
   root to: 'home#home'

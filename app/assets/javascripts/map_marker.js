@@ -10,11 +10,6 @@ function initialize() {
 
 	placeMarker(myCenter)
 
-	for (var i = serverMarkers.length - 1; i >= 0; i--) {
-		placeMarker(serverMarkers[i])
-	};
-
-
 	function placeMarker(location) {
 		var marker = new google.maps.Marker({
 			position: location,
@@ -46,6 +41,12 @@ function initialize() {
 		var marker = placeMarker(event.latLng);
 		saveMarker(marker);
 	});
+
+	$.get('map_marker/-0.120850/51.508742/3000000', function(data){
+		for (var i = data.length - 1; i >= 0; i--) {
+			placeMarker(new google.maps.LatLng(data[i].lon_lat.lat, data[i].lon_lat.lon));
+		};
+	})
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
