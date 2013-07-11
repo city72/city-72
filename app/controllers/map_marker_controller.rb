@@ -8,4 +8,9 @@ class MapMarkerController < ApplicationController
   	m = MapMarker.create!(lon_lat: "POINT(#{params[:lon]} #{params[:lat]})")
   	render json: m
   end
+
+  def delete
+  	MapMarker.where(lon_lat: "POINT(#{params[:lon]} #{params[:lat]})").first.destroy
+  	render json: {}
+  end
 end

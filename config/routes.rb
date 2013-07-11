@@ -2,6 +2,8 @@ IdeoSf72::Application.routes.draw do
 
   post "map_marker/create"
 
+  delete "map_marker/delete"
+
   get "map_marker" => "map_marker#index"
 
   root to: 'home#home'
