@@ -9,8 +9,65 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+@import "bourbon";
+@import "neat";
+
+/* CSS Mini Reset */
+
+html, body, div, form, fieldset, legend, label {
+	margin: 0;
+	padding: 0; 
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th, td
+{
+	text-align: left;
+	vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6, th, td, caption { font-weight:normal; }
+
+img { border: 0; }
+
+ul { padding: 0; }
+ul li { list-style-type: none; }
+
+/* Main colors */
+$body-color : #999;
+
+/* LAYOUT */
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.main-container {
+	margin: 0 auto;
+	width: 1080px;
+}
+
+/* HEADER */
+
+.main-nav li {
+	display: block;
+	width: 200px;
+	float: left;
+}
+
+.main-nav a {
+	color: $body-color;
+	text-decoration: none;
+}
+
+.main-nav strong {
+	font-size: 18px;
+	display: block;
+}
 
 /* MOCKUP */
 .link-mockup {
@@ -43,4 +100,11 @@
 
 .prepare-link-things {
 	left: 550px;
+}
+
+.story-to-detail {
+	top: 174px;
+	left: 46px;
+	width: 1001px;
+	height: 460px;
 }
