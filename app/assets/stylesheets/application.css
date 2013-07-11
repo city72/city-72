@@ -11,3 +11,36 @@
  *= require_self
  *= require_tree .
  */
+
+/* MOCKUP */
+.link-mockup {
+	display: block;
+	position: absolute;
+	text-indent: -9999px;
+}
+
+.menu-home,
+.menu-connect,
+.menu-prepare,
+.menu-about {
+	width: 160px;
+	height: 60px;
+	top: 52px;
+}
+
+.menu-home { left: 40px;}
+.menu-connect { left: 218px; }
+.menu-prepare { left: 398px; }
+.menu-about { left: 578px; }
+
+.prepare-link-stories,
+.prepare-link-things {
+	width: 487px;
+	height: 379px;
+	top: 941px;
+	left: 43px;
+}
+
+.prepare-link-things {
+	left: 550px;
+}
