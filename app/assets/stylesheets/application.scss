@@ -40,6 +40,8 @@ ul li { list-style-type: none; }
 
 /* Main colors */
 $body-color : #999;
+$light-grey: #e6e6e6;
+$highlight: #fbb03b;
 
 /* LAYOUT */
 body {
@@ -52,6 +54,19 @@ body {
 }
 
 /* HEADER */
+.header {
+	@include outer-container;
+}
+
+.logo {
+	float: left;
+}
+
+.logo a {
+	color: $highlight;
+	text-decoration: none;
+	@include span-columns(3);
+}
 
 .main-nav li {
 	display: block;
@@ -65,7 +80,8 @@ body {
 }
 
 .main-nav strong {
-	font-size: 18px;
+	font-size: 21px;
+	font-weight: normal;
 	display: block;
 }
 

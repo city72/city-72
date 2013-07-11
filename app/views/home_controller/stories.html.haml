@@ -1,5 +1,6 @@
-%img{src: "assets/05-stories.png"}
-%a{href:"home", class:"link-mockup menu-home"} home
-%a{href:"connect", class:"link-mockup menu-connect"} connect
-%a{href:"prepare", class:"link-mockup menu-prepare"} prepare
-%a{href:"about", class:"link-mockup menu-about"} about
+%div.main-container
+	= render :partial => "partials/header"
+	%img{src: "assets/05-stories.png"}
+	%a.link-mockup.menu-prepare{href:"prepare"} prepare
+	%a{href:"about", class:"link-mockup menu-about"} about
+	%a{href:"story_detail", class:"link-mockup story-to-detail"} story detail
