@@ -12,6 +12,10 @@ function initialize() {
 
 	marker.setMap(map);
 
+	for (var i = serverMarkers.length - 1; i >= 0; i--) {
+		var marker=new google.maps.Marker({ position: serverMarkers[i] })
+		marker.setMap(map);
+	};
 
 	google.maps.event.addListener(map, 'click', function(event) {
 		placeMarker(event.latLng);

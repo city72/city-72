@@ -2,6 +2,11 @@
 %html
 	%head
 		%script{src: "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"}
+		:javascript
+			var serverMarkers = []
+		%script
+			- @markers.each do |marker|
+				serverMarkers.push(new google.maps.LatLng("#{marker.lon_lat.y}","#{marker.lon_lat.x}"))
 		= javascript_include_tag "map_marker"
 	%body
 		#googleMap{style: "width:500px;height:380px;"}
