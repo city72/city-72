@@ -6,14 +6,14 @@ IdeoSf72::Application.routes.draw do
 
   get "connect" => "home_controller#connect"
 
-  get "prepare_landing" => "home_controller#prepare_landing"
+  get "prepare" => "home_controller#prepare"
 
   get "about" => "home_controller#about"
 
-  get "prepare_people" => "home_controller#prepare_people"
+  get "stories" => "home_controller#stories"
 
-  get "prepare_things" => "home_controller#prepare_things"
+  get "things" => "home_controller#things"
 
-  get "prepare_people_detail" => "home_controller#prepare_people_detail"
+  get "story_detail" => "home_controller#story_detail"
   
 end
