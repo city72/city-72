@@ -1,6 +1,17 @@
-Instalar Postgis:
+Install Postgis:
 
   sudo apt-get install python-software-properties
   sudo apt-add-repository ppa:ubuntugis/ppa
   sudo apt-get update
   sudo apt-get install postgresql-9.1-postgis
+
+After db creation for the first time, run the following commands:
+
+	sudo su postgres
+		psql ideo_sf72_development
+			CREATE EXTENSION postgis;
+			alter table geography_columns owner to ideo;
+			alter table geometry_columns owner to ideo;
+			alter table raster_columns owner to ideo;
+			alter table raster_overviews owner to ideo;
+			alter table spatial_ref_sys owner to ideo;
