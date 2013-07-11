@@ -1,7 +1,7 @@
 class MapMarkerController < ApplicationController
 
 	def index
-
+		@markers = MapMarker.all
 	end
 
   def create
