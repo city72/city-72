@@ -1,19 +1,23 @@
 IdeoSf72::Application.routes.draw do
 
-  root to: 'home_controller#home'
+  post "map_marker/create"
 
-  get "home" => "home_controller#home"
+  get "map_marker" => "map_marker#index"
 
-  get "connect" => "home_controller#connect"
+  root to: 'home#home'
 
   get "prepare" => "home_controller#prepare"
+  
+  get "home" => "home#home"
 
-  get "about" => "home_controller#about"
+  get "connect" => "home#connect"
 
   get "stories" => "home_controller#stories"
 
   get "things" => "home_controller#things"
 
   get "story_detail" => "home_controller#story_detail"
+
+  get "about" => "home#about"
   
 end

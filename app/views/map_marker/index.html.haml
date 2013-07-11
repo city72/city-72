@@ -1,0 +1,30 @@
+!!!
+%html
+	%head
+		%script{src: "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"}
+		:javascript
+			var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+			function initialize()
+			{
+			var mapProp = {
+				center: myCenter,
+				zoom:5,
+				mapTypeId:google.maps.MapTypeId.ROADMAP
+				};
+			var map=new google.maps.Map(document.getElementById("googleMap")
+				,mapProp);
+			var marker=new google.maps.Marker({
+			  position: myCenter,
+			  });
+
+			marker.setMap(map);
+
+			$.post('create', { lon: myCenter.lng(), lat: myCenter.lat() },function(data) {
+			  alert(data)
+			});
+
+			}
+			
+			google.maps.event.addDomListener(window, 'load', initialize);
+	%body
+		#googleMap{style: "width:500px;height:380px;"}
