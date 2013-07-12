@@ -25,27 +25,30 @@ initialize = ->
 				console.log "successfully  deleted marker"
 
 	getMarkers = ->
-		$.get "map_marker/#{myCenter.lng()}/#{myCenter.lat()}/300000", (serverMarkers) ->
+		$.get "map_marker/#{map.getBounds().getNorthEast().lng()}
+						 /#{map.getBounds().getNorthEast().lat()}
+						 /#{map.getBounds().getSouthWest().lng()}
+						 /#{map.getBounds().getSouthWest().lat()}", (serverMarkers) ->
 			markersToRemove = _(markers).filter (m) -> _(serverMarkers).every (sm) -> m.position.lng() != sm.lon_lat.lon or m.position.lat() != sm.lon_lat.lat
+			_(markersToRemove).each (m) -> removeMarker m
 			_(serverMarkers).each (sm) -> placeMarker(new google.maps.LatLng(sm.lon_lat.lat, sm.lon_lat.lon))
 
 	markers = []
 	myCenter = new google.maps.LatLng(51.508742, -0.120850)
 	mapProp =
 		center: myCenter
-		zoom: 5
+		zoom: 14
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 
 	map = new google.maps.Map(document.getElementById("googleMap"), mapProp)
-	placeMarker myCenter
+
 	google.maps.event.addListener map, "click", (event) ->
 		marker = placeMarker(event.latLng)
 		saveMarker marker
 
-	getMarkers()
-	google.maps.event.addListener map, "mouseup", ->
-		if myCenter isnt map.getCenter()
-			myCenter = map.getCenter()
-			getMarkers()
+	google.maps.event.addListener map, 'idle', () -> 
+		myCenter = map.getCenter()
+		getMarkers()
 
 google.maps.event.addDomListener window, "load", initialize
+	
