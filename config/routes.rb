@@ -1,19 +1,27 @@
 IdeoSf72::Application.routes.draw do
 
-  root to: 'home_controller#home'
+  post "map_marker/create"
 
-  get "home" => "home_controller#home"
+  delete "map_marker/delete"
 
-  get "connect" => "home_controller#connect"
+  get "map_marker/:lon/:lat/:max_distance" => "map_marker#markers_within_distance", :constraints => { :lon => /.*/, :lat => /.*/, :max_distance => /.*/ }
 
-  get "prepare" => "home_controller#prepare"
+  get "map_marker" => "map_marker#index"
 
-  get "about" => "home_controller#about"
+  root to: 'home#home'
 
-  get "stories" => "home_controller#stories"
+  get "prepare" => "home#prepare"
+  
+  get "home" => "home#home"
 
-  get "things" => "home_controller#things"
+  get "connect" => "home#connect"
 
-  get "story_detail" => "home_controller#story_detail"
+  get "stories" => "home#stories"
+
+  get "things" => "home#things"
+
+  get "story_detail" => "home#story_detail"
+
+  get "about" => "home#about"
   
 end
