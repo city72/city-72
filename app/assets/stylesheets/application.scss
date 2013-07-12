@@ -19,11 +19,17 @@ $light-grey: #e6e6e6;
 $dark-grey: #383838;
 $highlight: #fbb03b;
 
+/* Fonts options */
+$font-light:'HelveticaNeueW01-45Ligh';
+$font-regular:'HelveticaNeueW01-55Roma';
+$font-medium:'HelveticaNeueW01-65Medi';
+$font-bold:'HelveticaNeueW01-75Bold';
+
 /* CSS Mini Reset */
 
 html, body, div, form, fieldset, legend, label {
 	margin: 0;
-	padding: 0; 
+	padding: 0;
 }
 
 table {
@@ -47,13 +53,13 @@ a {
 }
 
 /* GRID */
-$max-width: 1024px;
+$max-width: 1010px;
 $gutter: 30px;
 $border-box-sizing: false;
 
 /* LAYOUT */
 body {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: $font-regular;
 	font-size: 18px;
 	line-height: 1.375;
 	color: $body-color;
@@ -80,8 +86,8 @@ body {
 
 .main-nav li {
 	display: block;
-	@include span-columns(2);
-	padding: 40px 0 50px;
+	@include span-columns(2.5);
+	padding: 40px 0 53px;
 }
 
 .main-nav a {
@@ -91,6 +97,7 @@ body {
 }
 
 .main-nav strong {
+	font-family: $font-medium;
 	font-size: 1.3em;
 	line-height: 1;
 	display: block;
@@ -143,6 +150,7 @@ body {
 .main-intro h2,
 .col-3 h3 {
 	color: $dark-grey;
+	font-family: $font-medium;
 }
 
 .main-intro p {
@@ -158,7 +166,8 @@ body {
 	@include omega(3n);
 }
 
-.intro-video {
+.intro-video,
+.prepare-intro {
 	position: relative;
 }
 
@@ -192,6 +201,59 @@ body {
 
 
 /* PREPARE */
-.main-container {
-	background: image-url(04-prepare) no-repeat top left;
+.main-container.prepare {
+	background: url(/assets/04-prepare.png) no-repeat  -30px 140px;
+}
+
+.prepare-intro .tooltip {
+	top: 34px;
+	right: 3px;
+	width: 313px;
+	padding: 20px 20px 20px 100px;
+}
+
+.prepare-intro h1 {
+	margin: 0 0 0 2.1rem;
+	color: $dark-grey;
+	font-family: $font-medium;
+}
+
+.prepare-intro p {
+	margin: 0.5rem 2.1rem 2.5rem;
+	line-height: 1.25;
+	width: 41rem;
+	font-size: 22px;
+}
+
+.col-2 {
+	@include outer-container;
+}
+
+.col-2 li {
+	@include span-columns(6);
+	@include omega(2n);
+}
+
+.col-2 li a {
+	color: #FFF;
+	display: block;
+}
+
+.col-2 .prepare-people {
+	display: block;
+	color: #FFF;
+	padding: 0.8rem 1rem 1rem;
+	height: 23.6rem;
+}
+
+.col-2 .prepare-people p {
+	margin: 0 11rem 0 0;
+	line-height: 1.4;
+}
+
+.col-2 .prepare-people strong {
+	margin-top: 197px;
+	font-family: $font-medium;
+	font-size: 44px;
+	display: block;
 }

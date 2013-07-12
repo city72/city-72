@@ -1,7 +1,37 @@
-%img{src: "assets/04-prepare.png"}
-%a{href:"home", class:"link-mockup menu-home"} home
-%a{href:"connect", class:"link-mockup menu-connect"} connect
-%a{href:"prepare", class:"link-mockup menu-prepare"} prepare
-%a{href:"about", class:"link-mockup menu-about"} about
-%a{href:"stories", class:"link-mockup prepare-link-stories"} people
-%a{href:"prepare", class:"link-mockup prepare-link-things"} things
+%div.main-container.prepare
+	= render :partial => "partials/header"
+	.prepare-intro
+		%img{src: "http://placekitten.com/1000/500"}
+		.tooltip 1/4 full? or half empty, depending on your day.
+		%h1 Protect your happy place.
+		%p Don't just prepare to help yourself. Prepare so that your family, your loved ones, or your neighbors will have a shoulder to lean on in the event of a disaster. A thousand tiny acts of preparation can have just as much impact as the bunkers, the hardhats, and the cellars fulls of food. <a href="#">So let's take action.</a>
+	%ul.col-2
+		%li
+			%a.prepare-people{href:"stories"}
+				%p Stories from people who have survived disasters – and advice on how to help your loved ones. Watch and Learn.
+				%strong People
+			%a Checklist for your people
+		%li
+			%a.prepare-things{href:"things"}
+				%p It's easy to get your earthquake kit together, no matter your preparedness level. Get started.
+				%strong Things
+			%a Checklist for your kit
+	.basics-intro
+		%h2 Quake Basics
+		%p What every San Franciscan should know about earthquakes.
+	.basics-block
+		%a{href: "#popup"}
+			%h2 Read the quick guide
+			%p A few easy steps to keep you cool when the earth shakes.
+		.basics-video
+			%strong Quake Quick Guide
+			%span (3.50s)
+	.alert-sf-block
+		%h2 AlertSF.
+		%p Get text updates and emergency information for San Francisco.
+		%input{type: "text", placeholder: "Your number here."}
+		%input{type: "submit", value: "alerts only"}
+		%input{type: "submit", value: "tips & alerts"}
+	/%a{href:"stories", class:"link-mockup prepare-link-stories"} people
+	/%a{href:"prepare", class:"link-mockup prepare-link-things"} things
+= render :partial => "partials/footer"
