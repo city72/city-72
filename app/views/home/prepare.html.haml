@@ -10,28 +10,29 @@
 			%a.prepare-people{href:"stories"}
 				%p Stories from people who have survived disasters – and advice on how to help your loved ones. Watch and Learn.
 				%strong People
-			%a Checklist for your people
+			%a.checklist Checklist for your people
 		%li
 			%a.prepare-things{href:"things"}
 				%p It's easy to get your earthquake kit together, no matter your preparedness level. Get started.
 				%strong Things
-			%a Checklist for your kit
+			%a.checklist Checklist for your kit
 	.basics-intro
 		%h2 Quake Basics
 		%p What every San Franciscan should know about earthquakes.
 	.basics-block
-		%a{href: "#popup"}
+		%a.quick-guide-trigger{href: "#popup"}
 			%h2 Read the quick guide
 			%p A few easy steps to keep you cool when the earth shakes.
 		.basics-video
+			.video-future
 			%strong Quake Quick Guide
 			%span (3.50s)
 	.alert-sf-block
 		%h2 AlertSF.
 		%p Get text updates and emergency information for San Francisco.
-		%input{type: "text", placeholder: "Your number here."}
-		%input{type: "submit", value: "alerts only"}
-		%input{type: "submit", value: "tips & alerts"}
+		%input.input-text{type: "text", placeholder: "Your number here."}
+		%input.btn{type: "submit", value: "alerts only"}
+		%input.btn.tips{type: "submit", value: "tips & alerts"}
 	/%a{href:"stories", class:"link-mockup prepare-link-stories"} people
 	/%a{href:"prepare", class:"link-mockup prepare-link-things"} things
 = render :partial => "partials/footer"

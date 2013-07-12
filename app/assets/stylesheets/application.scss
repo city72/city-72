@@ -113,6 +113,7 @@ body {
 .footer {
 	background-color: $light-grey;
 	padding: 1.5em;
+	margin-top: 2rem;
 }
 
 /* MOCKUP */
@@ -201,9 +202,6 @@ body {
 
 
 /* PREPARE */
-.main-container.prepare {
-	background: url(/assets/04-prepare.png) no-repeat  -30px 140px;
-}
 
 .prepare-intro .tooltip {
 	top: 34px;
@@ -234,26 +232,139 @@ body {
 	@include omega(2n);
 }
 
-.col-2 li a {
-	color: #FFF;
-	display: block;
-}
-
-.col-2 .prepare-people {
+a.prepare-people,
+a.prepare-things
+ {
+	background: url(http://placekitten.com/493/378/);
 	display: block;
 	color: #FFF;
 	padding: 0.8rem 1rem 1rem;
 	height: 23.6rem;
+	position: relative;
 }
 
-.col-2 .prepare-people p {
+a.prepare-people p,
+a.prepare-things p {
 	margin: 0 11rem 0 0;
 	line-height: 1.4;
 }
 
-.col-2 .prepare-people strong {
-	margin-top: 197px;
+a.prepare-people strong,
+a.prepare-things strong {
+	position: absolute;
+	bottom: 0.6rem;
 	font-family: $font-medium;
 	font-size: 44px;
 	display: block;
+}
+
+a.checklist {
+	text-decoration: underline;
+	padding-left: 3rem;
+	margin-top: 1rem;
+	display: block;
+}
+
+.basics-intro {
+	margin-top: 4rem;
+}
+
+.basics-intro h2 {
+	margin: 0 1.9rem;
+	font-size: 2.1em;
+	line-height: 1.27;
+	color: $dark-grey;
+}
+
+.basics-intro p {
+	margin: 0.2rem 1.9rem;
+	font-size: 1.3em;
+}
+
+.basics-block {
+	background-color: $light-grey;
+	padding: 2rem 2rem 0.6rem;
+	margin: 1.2rem auto 1.8rem;
+	@include outer-container;
+}
+
+.quick-guide-trigger,
+.basics-video {
+	@include span-columns(6);
+}
+
+.basics-video {
+	@include omega;
+}
+
+.quick-guide-trigger {
+	padding: 1.2rem 0 0 5.5rem;
+
+	h2 {
+		margin-bottom: 0;
+		font-family: $font-medium;
+	}
+
+	p {
+		padding-right: 7rem;
+		margin-top: 0;
+		font-size: 1.3em;
+		line-height: 1.12em;
+		color: $body-color;
+	}
+}
+
+.video-future {
+	background-color: $highlight;
+	width: 455px;
+	height: 228px;
+}
+
+.alert-sf-block {
+	background-color: $highlight;
+	padding: 1.2rem;
+	color: #FFF;
+	position: relative;
+	
+	h2 {
+		padding-left: 4.2rem;
+		font-size: 2em;
+		margin: 0.9rem 0;
+	}
+
+	p {
+		position: absolute;
+		font-size: 1.1em;
+		right: 2rem;
+		top: 0.5rem;
+		width: 24.5rem;
+		line-height: 1.2;
+	}
+	
+	.input-text {
+		background-color: transparent;
+		margin: 0 1.3rem 0 4rem;
+		padding: 1rem 1.2rem 0.8rem;
+		border: 2px solid rgb(255, 255, 255);
+		width: 29.4rem;
+		font-size: 22px;
+		@include placeholder {
+		    color: #FFF;
+		 }
+	}
+
+	.btn {
+		line-height: 1;
+		background-color: #FFF;
+		border: 0;
+		padding: 0.8rem 1.3rem;
+		font-family: $font-medium;
+		font-size: 1.6em;
+		color: $highlight;
+		margin-right: 0.7rem;
+	}
+
+	.btn.tips {
+		@include omega;
+	}
 }
