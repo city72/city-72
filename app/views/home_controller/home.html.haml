@@ -1,4 +1,33 @@
-%img{src: "assets/00-home.png"}
-%a{href:"connect", class:"link-mockup menu-connect"} connect
-%a{href:"prepare", class:"link-mockup menu-prepare"} prepare
-%a{href:"about", class:"link-mockup menu-about"} about
+%div.main-container.home
+	= render :partial => "partials/header"
+	.intro-video
+		.tooltip Check out what this page will look like in the event of an emergency
+		%iframe.video-opening{src: "http://player.vimeo.com/video/57727292"}
+		%ul.social-media
+			%li.twitter
+				%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
+			%li.facebook
+				%a{href: "http://facebook.com"} Facebook
+	.main-intro
+		%h2 We believe in connection, not catastrophe.
+		%p Here’s the thing: actual emergencies look more like people coming together than cities falling apart.
+		%p If we can be prepared for the first 72 hours after a disaster, we will be ready for an emergency, no matter what form it takes. 72 hours might seem like a lot, but that's really only nine meals. It's just a long weekend.
+	%ul.col-3
+		%li
+			%h3 Connect
+			%p People are more resiliant in emergencies when they are connected to others.
+			.my-people
+				%a.home-to-people My people
+		%li
+			%h3 Prepare
+			%p People are more resiliant in emergencies when they are connected to others.
+			.my-stuff
+				%a My stuff
+				%a People's Stories
+		%li
+			%h3 A resource now, a tool later.
+			%p People are more resiliant in emergencies when they are connected to others.
+			.near-me
+				%a Happening near me
+				%a Alerts
+= render :partial => "partials/footer"
