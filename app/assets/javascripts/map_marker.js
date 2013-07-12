@@ -1,5 +1,5 @@
-var myCenter = new google.maps.LatLng(51.508742,-0.120850);
 function initialize() {
+	var myCenter = new google.maps.LatLng(51.508742,-0.120850);
 	var mapProp = {
 		center: myCenter,
 		zoom:5,
@@ -52,9 +52,11 @@ function initialize() {
 
 	getMarkers()
 
-	google.maps.event.addListener(map,'center_changed',function() {
-		myCenter = map.getCenter();
-		getMarkers()
+	google.maps.event.addListener(map,'mouseup',function() {
+		if(myCenter != map.getCenter()) {
+			myCenter = map.getCenter();
+			getMarkers();
+		}
 	});
 }
 
