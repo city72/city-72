@@ -2,6 +2,7 @@
 %html
 	%head
 		%script{src: "http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"}
+		= javascript_include_tag "marker_clusterer"
 		= javascript_include_tag "map_marker"
 	%body
 		#googleMap{style: "width:500px;height:380px;"}

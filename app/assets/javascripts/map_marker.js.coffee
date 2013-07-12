@@ -34,10 +34,10 @@ initialize = ->
 			_(serverMarkers).each (sm) -> placeMarker(new google.maps.LatLng(sm.lon_lat.lat, sm.lon_lat.lon))
 
 	markers = []
-	myCenter = new google.maps.LatLng(51.508742, -0.120850)
+	myCenter = new google.maps.LatLng(37.757416, -122.431351)
 	mapProp =
 		center: myCenter
-		zoom: 14
+		zoom: 10
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 
 	map = new google.maps.Map(document.getElementById("googleMap"), mapProp)
@@ -47,8 +47,10 @@ initialize = ->
 		saveMarker marker
 
 	google.maps.event.addListener map, 'idle', () -> 
-		myCenter = map.getCenter()
 		getMarkers()
+		mc.redraw()
+
+	mc = new MarkerClusterer(map, markers)
 
 google.maps.event.addDomListener window, "load", initialize
 	
