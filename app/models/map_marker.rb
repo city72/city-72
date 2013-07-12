@@ -1,5 +1,5 @@
 class MapMarker < ActiveRecord::Base
-  attr_accessible :lon_lat
+  attr_accessible :lon_lat, :message
 
   # By default, use the GEOS implementation for spatial columns.
   self.rgeo_factory_generator = RGeo::Geos.factory_generator

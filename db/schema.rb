@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20130711175732) do
 
   create_table "map_markers", :force => true do |t|
     t.spatial  "lon_lat",    :limit => {:srid=>4326, :type=>"point", :geographic=>true}
+    t.string   "message"
     t.datetime "created_at",                                                             :null => false
     t.datetime "updated_at",                                                             :null => false
   end
