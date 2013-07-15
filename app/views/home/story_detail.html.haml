@@ -1,4 +1,4 @@
-%div.main-container.story_detail
+%div.main-container.story-detail
 	= render :partial => "partials/header"
 	.intro-video
 		%iframe.video-opening{src: "http://player.vimeo.com/video/57727292"}
@@ -7,13 +7,15 @@
 				%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
 			%li.facebook
 				%a{href: "http://facebook.com"} Facebook
-	%h2 Kirstin, <span class="story-disaster">Hurricane Sandy</span>
-	%strong.story-location New York City, Nov 2012
-	.story-row
-		.story-description
-			%h3 27, Single, New York, apartment
-			%p Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin’s apartment quickly became the tech hub of her neighborhood. Hear her story.
-		.quote “After Hurricane Sandy we set up a generator and started charging people’s phones”
+	.intro-row
+		.main-intro
+			%h2 Kirstin, <span class="story-disaster">Hurricane Sandy</span>
+			%strong.story-location New York City, Nov 2012
+			.story-row
+				.story-description
+					%h3 27, Single, New York, apartment
+					%p Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin’s apartment quickly became the tech hub of her neighborhood. Hear her story.
+		.main-quote “After Hurricane Sandy we set up a generator and started charging people’s phones”
 	.needed
 		%h3 What I needed.
 		%ul.needed-list

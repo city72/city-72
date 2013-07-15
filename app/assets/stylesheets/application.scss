@@ -131,7 +131,7 @@ body {
 .connect { background: url(/assets/03-connect.png) -30px 0; }
 .prepare { background: url(/assets/04a-prepare.png) -30px 0; }
 .stories { background: url(/assets/05-stories.png) -30px 0; }
-.story-detail { background: url(/assets/06-story-detail.png) -30px 0; }
+/*.story-detail { background: url(/assets/06-story-detail.png) -30px 0; }*/
 .things { background: url(/assets/07-things.png) -30px 0; }
 .about { background: url(/assets/08-about.png) -30px 0; }
 
@@ -147,7 +147,7 @@ body {
 
 .main-intro {
 	@include span-columns(7);
-	padding-left: 1.25rem;
+	padding-left: 1.8rem;
 	margin-bottom: 2.9rem;
 }
 
@@ -419,4 +419,18 @@ a.checklist {
 	.btn.tips {
 		@include omega;
 	}
+}
+
+/* Story detail */
+.needed-list,
+.learned-list,
+.similar-list {
+	@include outer-container;
+}
+
+.needed-list li,
+.learned-list li,
+.similar-list li {
+	@include span-columns(4);
+	@include omega(3n);
 }
