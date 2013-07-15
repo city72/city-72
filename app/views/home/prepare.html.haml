@@ -1,11 +1,13 @@
 %div.main-container.prepare
 	= render :partial => "partials/header"
-	.prepare-intro
-		%img{src: "http://placekitten.com/1000/500"}
-		.tooltip 1/4 full? or half empty, depending on your day.
-		%h1 Protect your happy place.
-		%p Don't just prepare to help yourself. Prepare so that your family, your loved ones, or your neighbors will have a shoulder to lean on in the event of a disaster. A thousand tiny acts of preparation can have just as much impact as the bunkers, the hardhats, and the cellars fulls of food. <a href="#">So let's take action.</a>
-	%ul.col-2
+	.page-intro
+		.big-title
+			%h1 Prepare
+			%span Know what to do
+		.tooltip <strong>1/2 full?</strong> or half empty, depending on how your day is going.
+		%h2 Protect your happy place.
+		%p Don’t just prepare to help yourself. Prepare so that your family, your loved ones, or your neighbors will have a shoulder to lean on in the event of a disaster. A thousand tiny acts of preparation can have just as much impact as the bunkers, the hardhats, and the cellars full of food. So let’s take action. Let’s be the city that starts the ripple.
+	%ul.col-2.prepare-sections
 		%li
 			%a.prepare-people{href:"stories"}
 				%p Stories from people who have survived disasters – and advice on how to help your loved ones. Watch and Learn.
@@ -21,8 +23,8 @@
 		%p What every San Franciscan should know about earthquakes.
 	.basics-block
 		%a.quick-guide-trigger{href: "#popup"}
-			%h2 Read the quick guide
-			%p A few easy steps to keep you cool when the earth shakes.
+			%h3 Read the quick guide
+			%p A few easy steps to keep your cool when the earth shakes.
 		.basics-video
 			.video-future
 			%strong Quake Quick Guide

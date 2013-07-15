@@ -14,9 +14,11 @@
 @import "neat";
 
 /* Main colors */
-$body-color : #898989;
-$light-grey: #e6e6e6;
 $dark-grey: #4D4D4D;
+$body-color : #898989;
+$body-light: #a2a2a2;
+$light-grey: #e6e6e6;
+
 $highlight: #FBB03B;
 $highlight-dark: #F15A24;
 
@@ -129,12 +131,12 @@ body {
 /* MOCKUP */
 /* .home { background: url(/assets/00-home.png) -30px 0; } */
 .home-em { background: url(/assets/01-home-em.png) -30px 0; }
-.connect { background: url(/assets/03-connect.png) -30px 0; }
-.prepare { background: url(/assets/04a-prepare.png) -30px 0; }
-.stories { background: url(/assets/05-stories.png) -30px 0; }
+/* .connect { background: url(/assets/03-connect.png) -30px 0; } */
+/* .prepare { background: url(/assets/04a-prepare.png) -30px 0; } */
+/* .stories { background: url(/assets/05-stories.png) -30px 0; } */
 /* .story-detail { background: url(/assets/06-story-detail.png) -30px 0; } */
 .things { background: url(/assets/07-things.png) -30px 0; }
-.about { background: url(/assets/08-about.png) -30px 0; }
+/* .about { background: url(/assets/08-about.png) -30px 0; } */
 
 /* HOME */
 .video-opening {
@@ -206,7 +208,7 @@ body {
 }
 
 .intro-video,
-.prepare-intro {
+.page-intro {
 	position: relative;
 }
 
@@ -253,26 +255,97 @@ body {
 }
 
 
-/* PREPARE */
+.page-intro .big-title {
+	background: url(http://placekitten.com/960/492/) no-repeat left top;
+	width: 960px;
+	height: 492px;
+	text-align: center;
+	padding-top: 12.3rem;
 
-.prepare-intro .tooltip {
-	top: 34px;
-	right: 3px;
-	width: 313px;
-	padding: 20px 20px 20px 100px;
+	h1 { 
+		font-size: 6.25rem;
+		margin: 0;
+		line-height: 1;
+		color: #FFF;
+	}
+
+	span { 
+		display: block;
+		margin: 0.6rem 0 0;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		color: #FFF;
+	}
 }
 
-.prepare-intro h1 {
-	margin: 0 0 0 2.1rem;
+.page-intro strong {
+	display: block;
+	font-family: $font-regular;
+}
+
+.page-intro h2 {
+	margin: 1.6rem 0 0 2.1rem;
 	color: $dark-grey;
 	font-family: $font-medium;
+	font-size: 2.2rem;
 }
 
-.prepare-intro p {
-	margin: 0.5rem 2.1rem 2.5rem;
+.page-intro p {
+	margin: 0.1rem 0 2.5rem 1.8rem;
+	line-height: 1.35;
+	width: 43rem;
+	font-size: 1.3rem;
+}
+
+/* CONNECT */
+.app-signup {
+	@include outer-container;
+}
+
+.app-details {
+	@include span-columns(4.5);
+	padding-left: 1.8rem;
+}
+
+.app-details .btn {
+	margin-top: 0.9rem;
+	font-size: 1.5rem;
+	color: #FFF;
+	padding: 0.5rem 3.3rem;
+	display: inline-block;
+	background-color: $highlight;
+	border-radius: 2rem;
+}
+
+.app-video {
+	@include span-columns(7.5);
+	width: 60.4%;
+	height: 324px;
+	margin-top: 1.5rem;
+	background: $light-grey url(http://placekitten.com/580/325/) no-repeat top left;
+}
+
+.in-context {
+	@include outer-container;
+	margin-top: 7.7rem;
+}
+
+.in-context li {
+	@include span-columns(6)
+}
+
+.in-context p{
+	margin-left: 1.8rem;
+	margin-top: 0.4rem;
+}
+
+/* PREPARE */
+
+.prepare .tooltip {
+	padding-right: 3rem;
+	padding-bottom: 1.1rem;
 	line-height: 1.25;
-	width: 41rem;
-	font-size: 22px;
+	font-size: 0.95rem;	
 }
 
 .col-2 {
@@ -284,6 +357,10 @@ body {
 	@include omega(2n);
 }
 
+.prepare-sections {
+	margin-top: 3.8rem;
+}
+
 a.prepare-people,
 a.prepare-things
  {
@@ -291,40 +368,43 @@ a.prepare-things
 	display: block;
 	color: #FFF;
 	padding: 0.8rem 1rem 1rem;
-	height: 23.6rem;
+	height: 22.6rem;
 	position: relative;
 }
 
 a.prepare-people p,
 a.prepare-things p {
-	margin: 0 11rem 0 0;
+	margin: 1rem 10rem 0 1rem;
 	line-height: 1.4;
+	font-size: 1.1rem;
 }
 
 a.prepare-people strong,
 a.prepare-things strong {
 	position: absolute;
 	bottom: 0.6rem;
+	left: 1.8rem;
 	font-family: $font-medium;
-	font-size: 44px;
+	font-size: 2.7rem;
 	display: block;
 }
 
 a.checklist {
+	font-size: 1.1rem;
 	text-decoration: underline;
-	padding-left: 3rem;
+	padding-left: 1.8rem;
 	margin-top: 1rem;
 	display: block;
 }
 
 .basics-intro {
-	margin-top: 4rem;
+	margin-top: 3.6rem;
 }
 
 .basics-intro h2 {
-	margin: 0 1.9rem;
-	font-size: 2.1em;
-	line-height: 1.27;
+	margin: 0 1.8rem;
+	font-size: 2.25em;
+	line-height: 1.25;
 	color: $dark-grey;
 }
 
@@ -350,25 +430,34 @@ a.checklist {
 }
 
 .quick-guide-trigger {
-	padding: 1.2rem 0 0 5.5rem;
+	padding-top: 4.9rem;
 
-	h2 {
-		margin-bottom: 0;
+	h3 {
+		margin: 0;
+		color: $highlight-dark;
 	}
 
 	p {
-		padding-right: 7rem;
+		padding-right: 10rem;
 		margin-top: 0;
+		font-family: $font-medium;
 		font-size: 1.3em;
-		line-height: 1.12em;
-		color: $body-color;
+		line-height: 1.25em;
+		color: $body-light;
 	}
 }
 
 .video-future {
-	background-color: $highlight;
-	width: 455px;
-	height: 248px;
+	margin: 0 0 0.2rem 0.8rem;
+	background-color: #FBB03B;
+	width: 427px;
+	height: 213px;
+}
+
+.basics-video strong {
+	padding-left: 0.8rem;
+	font-family: $font-medium;
+	color: $dark-grey;
 }
 
 .alert-sf-block {
@@ -378,46 +467,104 @@ a.checklist {
 	position: relative;
 	
 	h2 {
-		padding-left: 4.2rem;
-		font-size: 2em;
-		margin: 0.9rem 0;
+		padding-left: 4.4rem;
+		font-size: 2.2em;
+		margin: 1.5rem 0 0.8rem;
 	}
 
 	p {
 		position: absolute;
-		font-size: 1.1em;
-		right: 2rem;
-		top: 0.5rem;
+		font-size: 1.3em;
+		right: 4rem;
+		top: 0.8rem;
 		width: 24.5rem;
 		line-height: 1.2;
 	}
 	
 	.input-text {
-		background-color: transparent;
-		margin: 0 1.3rem 0 4rem;
-		padding: 1rem 1.2rem 0.8rem;
-		border: 2px solid rgb(255, 255, 255);
-		width: 29.4rem;
-		font-size: 22px;
+		background-color: rgba(0, 0, 0, 0);
+		margin: 0 0.9rem 0 4.2rem;
+		padding: 0.7rem 1.2rem 0.7rem;
+		border: 2px solid #FFF;
+		width: 24.7rem;
+		font-size: 1.5rem;
+
 		@include placeholder {
 		    color: #FFF;
-		 }
+		}
 	}
 
 	.btn {
 		line-height: 1;
 		background-color: #FFF;
 		border: 0;
-		padding: 0.8rem 1.3rem;
+		padding: 0.8rem 1.8rem;
 		font-family: $font-medium;
 		font-size: 1.6em;
 		color: $highlight;
-		margin-right: 0.7rem;
+		margin-right: 0.8rem;
 	}
 
 	.btn.tips {
 		@include omega;
 	}
+}
+
+/* Stories */
+
+.stories .intro {
+	width: 960px;
+	margin-top: 1.9rem;
+	padding: 17.9rem 1.8rem 1.8rem;
+	background: url(http://placekitten.com/960/460/);
+	color: #FFF;
+
+	h2 {
+		line-height: 1;
+		margin: 0;
+	}
+
+	p {
+		margin: 0.5rem 14rem 0 0;
+		line-height: 1.25;
+		font-size: 1.35rem;
+	}
+}
+
+.stories h3 {
+	margin: 1.9rem 0.7rem 0;
+	color: $dark-grey;
+	letter-spacing: -1px;
+}
+
+.story-list {
+	margin-top: 0.5rem;
+}
+
+.story-list li {
+	margin-bottom: 2rem;
+}
+
+.story-data {
+	margin-top: 0.5rem;
+}
+
+.story-data h5 {
+	color: $dark-grey;
+	font-family: $font-bold;
+}
+
+.story-data p {
+	margin: 0;
+	color: $body-color;
+	font-size: 0.83rem;
+	line-height: 1;
+}
+
+.story-type {
+	width: 2rem;
+	height: 2rem;
+	float: left;
 }
 
 /* Story detail */
@@ -509,29 +656,4 @@ h2 .story-disaster {
 	left: 2.4rem;
 	color: $highlight-dark;
 	font-size: 1.5rem;
-}
-
-.story-list {
-	margin-top: 0.5rem;
-}
-
-.story-data {
-	margin-top: 0.5rem;
-}
-
-.story-data h5 {
-	color: $dark-grey;
-}
-
-.story-data p {
-	margin: 0;
-	color: $body-color;
-	font-size: 0.83rem;
-	line-height: 1;
-}
-
-.story-type {
-	width: 2rem;
-	height: 2rem;
-	float: left;
 }
