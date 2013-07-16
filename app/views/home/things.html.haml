@@ -1,4 +1,63 @@
-%div.main-container
+%div.main-container.things
 	= render :partial => "partials/header"
-	%img{src: "assets/07-things.png"}
+	.intro
+		.photo-overlay
+			%h2 Get your kit together.
+			%p Whether you’re just starting out or you’re a preparedness pro, it’s easy to build – or add to – your disaster kit. You’ll be surprised at how much you already have. It’s just a matter of getting organized.
+	.action-bar
+		%ul.tabs
+			%li
+				%a{href:"#tab-essentials-content"} Essentials
+			%li
+				%a{href:"#tab-useful-content"} Useful
+			%li
+				%a{href:"#tab-personal-content"} Personal
+		.list-download
+			%a Download full list
+	%ul.tabs-content 
+		%li.tab-essentials-content
+			%p.tab-tip A good rule of thumb is to have supplies for about 3 days, or 72 hours.
+			%ul.things-list
+				%li
+					%img{src: "http://placekitten.com/300/170"}
+					%h4 Warm Clothes
+					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
+				%li
+					%img{src: "http://placekitten.com/300/170"}
+					%h4 Bottled Water
+					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
+				%li
+					%img{src: "http://placekitten.com/300/170"}
+					%h4 First Aid Kit
+					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
+				%li
+					%img{src: "http://placekitten.com/300/170"}
+					%h4 Another Thing
+					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
+				%li
+					%img{src: "http://placekitten.com/300/170"}
+					%h4 Sleeping Bag or Blankets
+					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
+				%li
+					%img{src: "http://placekitten.com/300/170"}
+					%h4 Toilet Paper
+					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
+		%li.tab-useful-content
+		%li.tab-personal-content
+	.kits
+		%h3 Things to share
+		%p No worries, we’ve got your backpack. Below you’ll find some pre-assembled kits you can buy directly from amazon.com
+		%ul.kits-list
+			%li
+				%a{href: "#"}
+					%img{src: "http://placekitten.com/300/170"}
+					%span Small
+			%li
+				%a{href: "#"}
+					%img{src: "http://placekitten.com/300/170"}
+					%span Medium
+			%li
+				%a{href: "#"}
+					%img{src: "http://placekitten.com/300/170"}
+					%span Large
 = render :partial => "partials/footer"

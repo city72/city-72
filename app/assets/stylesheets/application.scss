@@ -512,12 +512,22 @@ a.checklist {
 
 /* Stories */
 
-.stories .intro {
+.stories .intro,
+.things .intro {
+	position: relative;
 	width: 960px;
+	height: 30.8rem;
 	margin-top: 1.9rem;
-	padding: 17.9rem 1.8rem 1.8rem;
+	
 	background: url(http://placekitten.com/960/460/);
 	color: #FFF;
+
+	.photo-overlay {
+		position: absolute;
+		left: 1.8rem;
+		bottom: 3.1rem;
+		width: 57rem;
+	}
 
 	h2 {
 		line-height: 1;
@@ -525,7 +535,7 @@ a.checklist {
 	}
 
 	p {
-		margin: 0.5rem 14rem 0 0;
+		margin: 0.7rem 14rem 0 0;
 		line-height: 1.25;
 		font-size: 1.35rem;
 	}
@@ -656,4 +666,64 @@ h2 .story-disaster {
 	left: 2.4rem;
 	color: $highlight-dark;
 	font-size: 1.5rem;
+}
+
+/* THINGS */
+
+.action-bar {
+	@include outer-container;
+}
+
+.action-bar .tabs {
+	@include span-columns(8.8);
+	padding-left: 1.8rem;
+
+	li {
+		text-align: center;
+		display: inline-block;
+		margin: 1.4rem 0.9rem 0 0;
+		font-size: 1.6rem;
+
+		a {
+			color: $body-light
+			display: block;
+			padding: 0.6rem 0.2rem;
+			border: 2px solid $body-light;
+			width: 12.6rem;
+		}
+	}
+}
+
+.action-bar .list-download {
+	@include span-columns(3.2);
+	margin-top: 2rem;
+
+	a {
+		text-decoration: underline;
+		width: 12.6rem;
+		padding: 1.6rem 0.2rem 1.1rem 3rem;
+		display: block;
+		font-size: 1.1rem;
+	}
+}
+
+.tab-tip{
+	font-size: 1.3rem;
+	margin-top: 0.2em;
+	padding-left: 1.8rem;
+}
+
+.things-list,
+.kits-list {
+	@include outer-container;
+}
+
+.things-list li,
+.kits-list li {
+	@include span-columns(4);
+	@include omega(3n);
+}
+
+.overlay-text {
+	display: none;
 }
