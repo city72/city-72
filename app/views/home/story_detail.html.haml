@@ -4,7 +4,7 @@
 		= render :partial => "partials/header"
 		.intro-video
 			%input{type: "text", "ng-show" => "editMode", "ng-model" => "video_src", style: "width:50%"}
-			/ %iframe.video-opening{"ng-src" => "{{ video_src }}", "ng-show" => "!editMode"}
+			%iframe.video-opening{"ng-src" => "{{ video_src }}", "ng-show" => "!editMode"}
 			%ul.social-media
 				%li.twitter
 					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
@@ -20,39 +20,45 @@
 					%span#date {{ date }}
 				.story-description
 					%h3
-						%span#age {{ age }},
-						%span#civil_state {{ civil_state }},
-						%span#location {{ location }},
-						%span#home_type {{ home_type }}
+						%span <span id="age">{{ age }}</span>,
+						%span <span id="civil_state">{{ civil_state }}</span>,
+						%span <span id="location">{{ location }}</span>,
+						%span <span id="home_type">{{ home_type }}</span>
 					%p#main_story {{ main_story }}
-			.main-quote#main_quote &ldquo;{{ main_quote }}&rdquo;
+			.main-quote &ldquo;<span id="main_quote">{{ main_quote }}</span>&rdquo;
 		.needed
 			%h3 What I needed.
 			%ul.needed-list
 				%li
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "needed_list_1_image_url"}
 					%img{"ng-src" => "{{ needed_list_1_image_url }}", "ng-show" => "!editMode"}
-					%p#needed_list_1_quote &ldquo;{{ needed_list_1_quote }}&rdquo;
+					%p &ldquo;<span id="needed_list_1_quote">{{ needed_list_1_quote }}</span>&rdquo;
 				%li
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "needed_list_2_image_url"}
 					%img{"ng-src" => "{{ needed_list_2_image_url }}", "ng-show" => "!editMode"}
-					%p#needed_list_1_quote &ldquo;{{ needed_list_1_quote }}&rdquo;
+					%p &ldquo;<span id="needed_list_2_quote">{{ needed_list_2_quote }}</span>&rdquo;
 				%li
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "needed_list_3_image_url"}
 					%img{"ng-src" => "{{ needed_list_3_image_url }}", "ng-show" => "!editMode"}
-					%p#needed_list_1_quote &ldquo;{{ needed_list_1_quote }}&rdquo;
+					%p &ldquo;<span id="needed_list_3_quote">{{ needed_list_2_quote }}</span>&rdquo;
 		.learned
 			%h3 What I learned.
 			%ul.learned-list
 				%li
-					%p &ldquo;I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.&rdquo;
-					%a{href: "#"} See the app
+					%p &ldquo;<span id="learned_list_1_quote">{{ learned_list_1_quote }}</span>&rdquo;
+					%input{type:"text", "ng-show" => "editMode", "ng-model" => "learned_list_1_anchor"}
+					%input{type:"text", "ng-show" => "editMode", "ng-model" => "learned_list_1_href"}
+					%a{"ng-href" => "{{ learned_list_1_href }}", "ng-show" => "!editMode"} {{ learned_list_1_anchor }}
 				%li
-					%p &ldquo;Everyone has something to share. Even a bike can be an invaluable tool.&rdquo;
-					%a{href: "#"} Get your stuff
+					%p &ldquo;<span id="learned_list_2_quote">{{ learned_list_2_quote }}</span>&rdquo;
+					%input{type:"text", "ng-show" => "editMode", "ng-model" => "learned_list_2_anchor"}
+					%input{type:"text", "ng-show" => "editMode", "ng-model" => "learned_list_2_href"}
+					%a{"ng-href" => "{{ learned_list_2_href }}", "ng-show" => "!editMode"} {{ learned_list_2_anchor }}
 				%li
-					%p &ldquo;The situation changes so quickly, that we were all hungry for details and information.&rdquo;
-					%a{href: "#"} Sign up for AlertSF
+					%p &ldquo;<span id="learned_list_3_quote">{{ learned_list_3_quote }}</span>&rdquo;
+					%input{type:"text", "ng-show" => "editMode", "ng-model" => "learned_list_3_anchor"}
+					%input{type:"text", "ng-show" => "editMode", "ng-model" => "learned_list_3_href"}
+					%a{"ng-href" => "{{ learned_list_3_href }}", "ng-show" => "!editMode"} {{ learned_list_3_anchor }}
 		.similar
 			%h3 Similar to Kirstin
 			%ul.story-list
