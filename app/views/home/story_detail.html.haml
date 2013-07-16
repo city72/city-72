@@ -27,14 +27,20 @@
 			%h3 What I needed.
 			%ul.needed-list
 				%li
-					%img{src: "http://placekitten.com/300/170"}
-					%p &ldquo;It means you can leave the house at night.&rdquo;
+					%input{type:"text", "ng-show" => "editMode", "ng-model" => "needed_list_1_image_url"}
+					%img{"ng-src" => "{{ needed_list_1_image_url }}", "ng-show" => "!editMode"}
+					%textarea{"ng-show" => "editMode", style:"width:100%", "ng-model" => "needed_list_1_quote"}
+					%p(ng-show="!editMode") &ldquo;{{ needed_list_1_quote }}&rdquo;
 				%li
-					%img{src: "http://placekitten.com/300/170"}
-					%p &ldquo;We didn’t use it but it helped us feel safe.&rdquo;
+					%input{type:"text", "ng-show" => "editMode", "ng-model" => "needed_list_2_image_url"}
+					%img{"ng-src" => "{{ needed_list_2_image_url }}", "ng-show" => "!editMode"}
+					%textarea{"ng-show" => "editMode", style:"width:100%", "ng-model" => "needed_list_1_quote"}
+					%p(ng-show="!editMode") &ldquo;{{ needed_list_1_quote }}&rdquo;
 				%li
-					%img{src: "http://placekitten.com/300/170"}
-					%p &ldquo;Our friends came around because we had wine.&rdquo;
+					%input{type:"text", "ng-show" => "editMode", "ng-model" => "needed_list_3_image_url"}
+					%img{"ng-src" => "{{ needed_list_3_image_url }}", "ng-show" => "!editMode"}
+					%textarea{"ng-show" => "editMode", style:"width:100%", "ng-model" => "needed_list_1_quote"}
+					%p(ng-show="!editMode") &ldquo;{{ needed_list_1_quote }}&rdquo;
 		.learned
 			%h3 What I learned.
 			%ul.learned-list
