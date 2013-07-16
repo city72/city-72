@@ -1,5 +1,7 @@
 {
     "dependencies": {      
-    	"underscore": "latest"
+    	"underscore": "latest",
+    	"angular": "latest",
+    	"angular-resource": "latest"
     }    
 }

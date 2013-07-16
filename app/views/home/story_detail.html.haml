@@ -1,67 +1,69 @@
-.main-container.story-detail
-	= render :partial => "partials/header"
-	.intro-video
-		%iframe.video-opening{src: "http://player.vimeo.com/video/57727292"}
-		%ul.social-media
-			%li.twitter
-				%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
-			%li.facebook
-				%a{href: "http://facebook.com"} Facebook
-	.intro-row
-		.main-intro
-			%h2 Kirstin, <span class="story-disaster">Hurricane Sandy</span>
-			%strong.story-location New York City, Nov 2012
-			.story-description
-				%h3 27, Single, New York, apartment
-				%p Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin’s apartment quickly became the tech hub of her neighborhood. Hear her story.
-		.main-quote &ldquo;After Hurricane Sandy we set up a generator and started charging people’s phones&rdquo;
-	.needed
-		%h3 What I needed.
-		%ul.needed-list
-			%li
-				%img{src: "http://placekitten.com/300/170"}
-				%p &ldquo;It means you can leave the house at night.&rdquo;
-			%li
-				%img{src: "http://placekitten.com/300/170"}
-				%p &ldquo;We didn’t use it but it helped us feel safe.&rdquo;
-			%li
-				%img{src: "http://placekitten.com/300/170"}
-				%p &ldquo;Our friends came around because we had wine.&rdquo;
-	.learned
-		%h3 What I learned.
-		%ul.learned-list
-			%li
-				%p &ldquo;I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.&rdquo;
-				%a{href: "#"} See the app
-			%li
-				%p &ldquo;Everyone has something to share. Even a bike can be an invaluable tool.&rdquo;
-				%a{href: "#"} Get your stuff
-			%li
-				%p &ldquo;The situation changes so quickly, that we were all hungry for details and information.&rdquo;
-				%a{href: "#"} Sign up for AlertSF
-	.similar
-		%h3 Similar to Kirstin
-		%ul.story-list
-			%li
-				%a
+= javascript_include_tag "story_detail_controller"
+%div(ng-app="project")
+	%div.main-container.story-detail(ng-controller="storyDetailController")
+		= render :partial => "partials/header"
+		.intro-video
+			%iframe.video-opening{src: "http://player.vimeo.com/video/57727292"}
+			%ul.social-media
+				%li.twitter
+					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
+				%li.facebook
+					%a{href: "http://facebook.com"} Facebook
+		.intro-row
+			.main-intro
+				%h2 Kirstin, <span class="story-disaster">Hurricane Sandy</span>
+				%strong.story-location New York City, Nov 2012
+				.story-description
+					%h3 27, Single, New York, apartment
+					%p Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin’s apartment quickly became the tech hub of her neighborhood. Hear her story.
+			.main-quote &ldquo;After Hurricane Sandy we set up a generator and started charging people’s phones&rdquo;
+		.needed
+			%h3 What I needed.
+			%ul.needed-list
+				%li
 					%img{src: "http://placekitten.com/300/170"}
-					.story-data
-						.story-type.hurricane
-						%h5 Jack & Lauren
-						%p New Orleans, LA
-			%li
-				%a
+					%p &ldquo;It means you can leave the house at night.&rdquo;
+				%li
 					%img{src: "http://placekitten.com/300/170"}
-					.story-data
-						.story-type.hurricane
-						%h5 Marvin
-						%p New Orleans, LA
-			%li
-				%a
+					%p &ldquo;We didn’t use it but it helped us feel safe.&rdquo;
+				%li
 					%img{src: "http://placekitten.com/300/170"}
-					.story-data
-						.story-type.hurricane
-						%h5 Keiko
-						%p Tokyo, Japan.
+					%p &ldquo;Our friends came around because we had wine.&rdquo;
+		.learned
+			%h3 What I learned.
+			%ul.learned-list
+				%li
+					%p &ldquo;I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.&rdquo;
+					%a{href: "#"} See the app
+				%li
+					%p &ldquo;Everyone has something to share. Even a bike can be an invaluable tool.&rdquo;
+					%a{href: "#"} Get your stuff
+				%li
+					%p &ldquo;The situation changes so quickly, that we were all hungry for details and information.&rdquo;
+					%a{href: "#"} Sign up for AlertSF
+		.similar
+			%h3 Similar to Kirstin
+			%ul.story-list
+				%li
+					%a
+						%img{src: "http://placekitten.com/300/170"}
+						.story-data
+							.story-type.hurricane
+							%h5 Jack & Lauren
+							%p New Orleans, LA
+				%li
+					%a
+						%img{src: "http://placekitten.com/300/170"}
+						.story-data
+							.story-type.hurricane
+							%h5 Marvin
+							%p New Orleans, LA
+				%li
+					%a
+						%img{src: "http://placekitten.com/300/170"}
+						.story-data
+							.story-type.hurricane
+							%h5 Keiko
+							%p Tokyo, Japan.
 
 = render :partial => "partials/footer"
