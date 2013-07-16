@@ -5,6 +5,12 @@ class HomeController < ApplicationController
   def home
   end
 
+  def em_home
+  end
+
+  def em_home_tour
+  end
+
   def connect
   end
 

@@ -13,6 +13,8 @@ IdeoSf72::Application.routes.draw do
   get "prepare" => "home#prepare"
   
   get "home" => "home#home"
+  get "em/home" => "home#em_home"
+  get "em/home_tour" => "home#em_home_tour"
 
   get "connect" => "home#connect"
 
