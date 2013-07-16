@@ -1,10 +1,10 @@
 = javascript_include_tag "story_detail_controller"
 %div(ng-app="project")
-	%div.main-container.story-detail(ng-controller="storyDetailController")
+	%div.main-container.story-detail{"ng-controller" => "storyDetailController", contenteditable:"true"}
 		= render :partial => "partials/header"
 		.intro-video
 			%input{type: "text", "ng-show" => "editMode", "ng-model" => "video_src", style: "width:50%"}
-			%iframe.video-opening{"ng-src" => "{{ video_src }}", "ng-show" => "!editMode"}
+			/ %iframe.video-opening{"ng-src" => "{{ video_src }}", "ng-show" => "!editMode"}
 			%ul.social-media
 				%li.twitter
 					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
@@ -12,35 +12,35 @@
 					%a{href: "http://facebook.com"} Facebook
 		.intro-row
 			.main-intro
-				%h2(ng-show="editMode") <input ng-model="name"/>, <input ng-model="disaster"/>
-				%h2(ng-show="!editMode") {{ name }}, <span class="story-disaster">{{ disaster }}</span>
-				%strong.story-location(ng-show="editMode") <input ng-model="location"/>, <input ng-model="date"/>
-				%strong.story-location(ng-show="!editMode") {{ location }}, {{ date }}
+				%h2
+					%span#name {{ name }}
+					%span.story-disaster#disaster {{ disaster }}
+				%strong.story-location
+					%span#location {{ location }}
+					%span#date {{ date }}
 				.story-description
-					%h3(ng-show="editMode") <input ng-model="age"/>, <input ng-model="civil_state"/>, <input ng-model="location"/>, <input ng-model="home_type"/>
-					%h3(ng-show="!editMode") {{ age }}, {{ civil_state }}, {{ location }}, {{ home_type }}
-					%textarea{rows: '4', style: "width:100%", "ng-show" => "editMode", "ng-model" => 'main_story'}
-					%p(ng-show="!editMode") {{ main_story }}
-			.main-quote(ng-show="editMode") &ldquo;<textarea rows="4" style="width:100%" ng-model="main_quote"></textarea>&rdquo;
-			.main-quote(ng-show="!editMode") &ldquo;{{ main_quote }}&rdquo;
+					%h3
+						%span#age {{ age }},
+						%span#civil_state {{ civil_state }},
+						%span#location {{ location }},
+						%span#home_type {{ home_type }}
+					%p#main_story {{ main_story }}
+			.main-quote#main_quote &ldquo;{{ main_quote }}&rdquo;
 		.needed
 			%h3 What I needed.
 			%ul.needed-list
 				%li
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "needed_list_1_image_url"}
 					%img{"ng-src" => "{{ needed_list_1_image_url }}", "ng-show" => "!editMode"}
-					%textarea{"ng-show" => "editMode", style:"width:100%", "ng-model" => "needed_list_1_quote"}
-					%p(ng-show="!editMode") &ldquo;{{ needed_list_1_quote }}&rdquo;
+					%p#needed_list_1_quote &ldquo;{{ needed_list_1_quote }}&rdquo;
 				%li
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "needed_list_2_image_url"}
 					%img{"ng-src" => "{{ needed_list_2_image_url }}", "ng-show" => "!editMode"}
-					%textarea{"ng-show" => "editMode", style:"width:100%", "ng-model" => "needed_list_1_quote"}
-					%p(ng-show="!editMode") &ldquo;{{ needed_list_1_quote }}&rdquo;
+					%p#needed_list_1_quote &ldquo;{{ needed_list_1_quote }}&rdquo;
 				%li
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "needed_list_3_image_url"}
 					%img{"ng-src" => "{{ needed_list_3_image_url }}", "ng-show" => "!editMode"}
-					%textarea{"ng-show" => "editMode", style:"width:100%", "ng-model" => "needed_list_1_quote"}
-					%p(ng-show="!editMode") &ldquo;{{ needed_list_1_quote }}&rdquo;
+					%p#needed_list_1_quote &ldquo;{{ needed_list_1_quote }}&rdquo;
 		.learned
 			%h3 What I learned.
 			%ul.learned-list

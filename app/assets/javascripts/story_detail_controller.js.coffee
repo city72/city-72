@@ -23,4 +23,8 @@ project.controller "storyDetailController", ["$scope", (scope) ->
 	populateFakeData()
 
 	$(document).bind('keydown', 'alt+q', -> scope.edit(); scope.$apply();)
+
+	$('[id]').each (index, editableObj) -> 
+		$(editableObj).bind 'click', -> 
+			scope[$(editableObj).attr('ng-model')] = editableObj.textContent
 ]
