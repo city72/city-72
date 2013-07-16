@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore/underscore-min.js
 //= require angular/angular.min.js
-// = require angular-resource/angular-resource.min.js
+//= require angular-resource/angular-resource.min.js
+//= require hotkeys/jquery.hotkeys.js
 
 var project = project || angular.module('project', ['ngResource']);

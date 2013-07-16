@@ -3,7 +3,8 @@
 	%div.main-container.story-detail(ng-controller="storyDetailController")
 		= render :partial => "partials/header"
 		.intro-video
-			%iframe.video-opening{src: "http://player.vimeo.com/video/57727292"}
+			%input{type: "text", "ng-show" => "editMode", "ng-model" => "video_src", style: "width:50%"}
+			%iframe.video-opening{"ng-src" => "{{ video_src }}", "ng-show" => "!editMode"}
 			%ul.social-media
 				%li.twitter
 					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
@@ -11,12 +12,17 @@
 					%a{href: "http://facebook.com"} Facebook
 		.intro-row
 			.main-intro
-				%h2 Kirstin, <span class="story-disaster">Hurricane Sandy</span>
-				%strong.story-location New York City, Nov 2012
+				%h2(ng-show="editMode") <input ng-model="name"/>, <input ng-model="disaster"/>
+				%h2(ng-show="!editMode") {{ name }}, <span class="story-disaster">{{ disaster }}</span>
+				%strong.story-location(ng-show="editMode") <input ng-model="location"/>, <input ng-model="date"/>
+				%strong.story-location(ng-show="!editMode") {{ location }}, {{ date }}
 				.story-description
-					%h3 27, Single, New York, apartment
-					%p Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin’s apartment quickly became the tech hub of her neighborhood. Hear her story.
-			.main-quote &ldquo;After Hurricane Sandy we set up a generator and started charging people’s phones&rdquo;
+					%h3(ng-show="editMode") <input ng-model="age"/>, <input ng-model="civil_state"/>, <input ng-model="location"/>, <input ng-model="home_type"/>
+					%h3(ng-show="!editMode") {{ age }}, {{ civil_state }}, {{ location }}, {{ home_type }}
+					%textarea{rows: '4', style: "width:100%", "ng-show" => "editMode", "ng-model" => 'main_story'}
+					%p(ng-show="!editMode") {{ main_story }}
+			.main-quote(ng-show="editMode") &ldquo;<textarea rows="4" style="width:100%" ng-model="main_quote"></textarea>&rdquo;
+			.main-quote(ng-show="!editMode") &ldquo;{{ main_quote }}&rdquo;
 		.needed
 			%h3 What I needed.
 			%ul.needed-list
