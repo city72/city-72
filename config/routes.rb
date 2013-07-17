@@ -1,5 +1,8 @@
 IdeoSf72::Application.routes.draw do
 
+  resources :kits
+
+
   resources :items
 
 
