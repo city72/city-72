@@ -5,6 +5,7 @@ IdeoSf72::Application.routes.draw do
 
   resources :items
 
+  root to: 'home#home'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -17,7 +18,6 @@ IdeoSf72::Application.routes.draw do
 
   get "map_marker" => "map_marker#index"
 
-  root to: 'home#home'
 
   get "prepare" => "home#prepare"
   
