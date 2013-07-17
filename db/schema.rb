@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(:version => 20130717143151) do
 
   create_table "map_markers", :force => true do |t|
-    t.spatial  "lon_lat",    :limit => {:srid=>4326, :type=>"point", :geographic=>true}
+    t.string   "lon_lat"
     t.string   "message"
-    t.datetime "created_at",                                                             :null => false
-    t.datetime "updated_at",                                                             :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "stories", :force => true do |t|
