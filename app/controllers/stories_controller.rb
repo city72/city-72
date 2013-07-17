@@ -1,10 +1,10 @@
 class StoriesController < ApplicationController
   
   def index
-    stories = Story.all
+    @stories = Story.all
     respond_to do |format|
       format.html { render template: "home/stories" }
-      format.json { render json: stories }
+      format.json { render json: @stories }
     end
   end
 

@@ -6,67 +6,13 @@
 			%p No matter your living situation &mdash; young, old, single, married, or living with a disability &mdash; people just like you have dealt with disaster. Hear stories from real disaster survivors, and learn what they wished they&apos;d known.
 	%h3 Stories of resilience, from around the world.
 	%ul.story-list
-		%li
-			%a
-				%img{src: "http://placekitten.com/300/170"}
-				.story-data
-					.story-type.hurricane
-					%h5 Jack & Lauren
-					%p New Orleans, LA
-		%li
-			%a
-				%img{src: "http://placekitten.com/300/170"}
-				.story-data
-					.story-type.hurricane
-					%h5 Marvin
-					%p New Orleans, LA
-		%li
-			%a
-				%img{src: "http://placekitten.com/300/170"}
-				.story-data
-					.story-type.hurricane
-					%h5 Keiko
-					%p Tokyo, Japan.
-		%li
-			%a
-				%img{src: "http://placekitten.com/300/170"}
-				.story-data
-					.story-type.hurricane
-					%h5 Jack & Lauren
-					%p New Orleans, LA
-		%li
-			%a
-				%img{src: "http://placekitten.com/300/170"}
-				.story-data
-					.story-type.hurricane
-					%h5 Marvin
-					%p New Orleans, LA
-		%li
-			%a
-				%img{src: "http://placekitten.com/300/170"}
-				.story-data
-					.story-type.hurricane
-					%h5 Keiko
-					%p Tokyo, Japan.
-		%li
-			%a
-				%img{src: "http://placekitten.com/300/170"}
-				.story-data
-					.story-type.hurricane
-					%h5 Jack & Lauren
-					%p New Orleans, LA
-		%li
-			%a
-				%img{src: "http://placekitten.com/300/170"}
-				.story-data
-					.story-type.hurricane
-					%h5 Marvin
-					%p New Orleans, LA
-		%li
-			%a
-				%img{src: "http://placekitten.com/300/170"}
-				.story-data
-					.story-type.hurricane
-					%h5 Keiko
-					%p Tokyo, Japan.
+		- @stories.each do |story|
+			%li
+				%a
+					%img{src: "#{story.main_image_url}"}
+					.story-data
+						.story-type.hurricane
+						%h5 "#{story.victim}"
+						%p "#{story.location}"
+
 = render :partial => "partials/footer"

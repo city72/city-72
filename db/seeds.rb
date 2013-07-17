@@ -15,3 +15,16 @@
 		lon = lon + rand(-0.001..0.001)
 		lat = lat + rand(-0.001..0.001)
 	end
+
+	Story.create!(main_image_url: 'blah', victim: 'bleh', location: 'bluh')
+	Story.create!(main_image_url: 'ptah', victim: 'pteh', location: 'ptuh')
+	Story.create!(main_image_url: 'awah', victim: 'aweh', location: 'awuh')
+	Story.create!(main_image_url: 'trah', victim: 'treh', location: 'truh')
+
+	Kit.create!(title: 'algo', url: 'algi', use_case: 'aewr')
+	Kit.create!(title: 'ewrsfdadf', url: 'algi', use_case: 'aewr')
+	Kit.create!(title: 'qwer', url: 'algi', use_case: 'aewr')
+
+	Item.create!(category: "Personal", title: 'sgfd', use_case: 'awer')
+	Item.create!(category: "Useful", title: 'sgsdffd', use_case: 'awer')
+	Item.create!(category: "Useful", title: 'rtyt', use_case: 'awer')
