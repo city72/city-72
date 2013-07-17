@@ -16,5 +16,6 @@
 //= require angular/angular.min.js
 //= require angular-resource/angular-resource.min.js
 //= require hotkeys/jquery.hotkeys.js
-
-var project = project || angular.module('project', ['ngResource']);
+//= require app.js
+//= require rest_service.js
+//= require story_detail_controller.js
