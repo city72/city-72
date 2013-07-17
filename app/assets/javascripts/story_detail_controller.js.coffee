@@ -1,11 +1,11 @@
-project.controller "storyDetailController", ["$scope", "restService",  (scope, restService) ->
+project.controller "storyDetailController", ["$scope", "restService", "$routeParams",  (scope, restService, routeParams) ->
 	scope.editMode = false
 	scope.edit = -> scope.editMode = !scope.editMode
 
 	scope.story = {}
 
 	populateFakeData = ->
-		scope.story.main_image_url = 'http://player.vimeo.com/video/57727292'
+		scope.story.main_image_url = 'http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg'
 		scope.story.victim = 'Kristin'
 		scope.story.disaster = 'Hurricane Sandy'
 		scope.story.location = 'New York City'
@@ -31,7 +31,15 @@ project.controller "storyDetailController", ["$scope", "restService",  (scope, r
 		scope.story.learned_list_3_href = '#'
 		scope.story.learned_list_3_anchor = 'Sign up for AlertSF'
 
-	populateFakeData()
+	if id
+		restService.stories.get
+			id: id
+		,
+			(story) -> scope.story = story
+		,
+			(error) -> console.log(error)
+	else
+		populateFakeData()
 
 	$(document).bind('keydown', 'alt+q', -> scope.edit(); scope.$apply();)
 
@@ -46,6 +54,10 @@ project.controller "storyDetailController", ["$scope", "restService",  (scope, r
 	successCallback = -> console.log('successfully saved')
 	errorCallback =-> console.log('error while saving')
 
-	scope.save = -> 
-		restService.stories.save scope.story, successCallback, errorCallback
+	if id
+		scope.save = -> 
+			restService.stories.update scope.story, successCallback, errorCallback
+	else
+		scope.save = -> 
+			restService.stories.save scope.story, successCallback, errorCallback
 ]
