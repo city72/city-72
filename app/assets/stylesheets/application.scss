@@ -709,18 +709,21 @@ a.checklist {
 	}
 }
 
+.modal-bg,
+.modal {
+	display: none;
+}
+
 .modal-bg {
 	height: 120rem;
 	position: absolute;
-	/*
-	HEIGHT AND POSITION CHANGED FOR MOCKING UP
 	height: 100%;
 	position: fixed;
-	*/
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 1;
+	background: rgba(0,0,0,0.6);
 }
 
 .modal {
@@ -789,6 +792,14 @@ a.checklist {
 
 .modal .event-after { color: $highlight; }
 .quick-guide.second li:before{ background-color: $highlight }
+
+.modal-share p {
+	padding: 0.2rem 0 0 7.9rem;
+	font-family: $font-medium;
+	font-size: 1.3rem;
+	line-height: 1.3;
+	color: $highlight;
+}
 
 /* STORIES */
 
