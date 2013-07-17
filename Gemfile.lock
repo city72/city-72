@@ -50,6 +50,10 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.0.4)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -180,6 +184,7 @@ DEPENDENCIES
   active_model_serializers
   activeadmin
   bourbon (~> 3.1.8)
+  carrierwave
   coffee-rails (~> 3.2.1)
   haml-rails
   jquery-rails
