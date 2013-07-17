@@ -26,6 +26,7 @@ class HomeController < ApplicationController
   def prepare_things
   end
 
-  def prepare_people_detail
+  def story_detail
+    @id = params[:id]
   end
 end

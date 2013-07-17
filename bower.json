@@ -1,5 +1,8 @@
 {
     "dependencies": {      
-    	"underscore": "latest"
+    	"underscore": "latest",
+    	"angular": "latest",
+    	"angular-resource": "latest",
+    	"hotkeys": "https://github.com/jeresig/jquery.hotkeys.git"
     }    
 }
