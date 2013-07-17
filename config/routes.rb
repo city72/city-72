@@ -1,5 +1,8 @@
 IdeoSf72::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   post "map_marker/create"
 
   delete "map_marker/delete"
