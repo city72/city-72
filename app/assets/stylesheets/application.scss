@@ -106,6 +106,10 @@ body {
 	text-decoration: none;
 }
 
+.em-header .main-nav a {
+	color: #FFF;
+}
+
 .main-nav strong {
 	display: block;
 	margin-bottom: -0.28rem;
@@ -130,12 +134,13 @@ body {
 
 /* MOCKUP */
 /* .home { background: url(/assets/00-home.png) -30px 0; } */
-.home-em { background: url(/assets/01-home-em.png) -30px 0; }
+/* .home-em { background: url(/assets/01-home-em.png) center top no-repeat; } */
 /* .connect { background: url(/assets/03-connect.png) -30px 0; } */
 /* .prepare { background: url(/assets/04a-prepare.png) -30px 0; } */
+.prepare-popup { background: url(/assets/04b-prepare-popup.png) center 0 no-repeat; }
 /* .stories { background: url(/assets/05-stories.png) -30px 0; } */
 /* .story-detail { background: url(/assets/06-story-detail.png) -30px 0; } */
-.things { background: url(/assets/07-things.png) -30px 0; }
+/* .things { background: url(/assets/07-things.png) -30px 0; } */
 /* .about { background: url(/assets/08-about.png) -30px 0; } */
 
 /* HOME */
@@ -155,7 +160,7 @@ body {
 }
 
 .intro-app {
-	@include span-columns(3);
+	@include span-columns(3.5);
 	@include shift(1);
 	margin-top: 3.5rem;
 	font-family: $font-medium;
@@ -167,6 +172,9 @@ body {
 
 .intro-app span {
 	color: $body-color;
+}
+
+.intro-app strong {
 	display: block;
 	margin-top: 0.6rem;
 }
@@ -175,7 +183,7 @@ body {
 	position: absolute;
 	left: 0.35rem;
 	top: 3.85rem;
-	height: 6.1rem;
+	height: 14.6rem;
 	border-left: 2px solid #FBB03B;
 	content: '';
 }
@@ -295,6 +303,197 @@ body {
 	line-height: 1.35;
 	width: 43rem;
 	font-size: 1.3rem;
+}
+
+/* HOME - EMERGENCY MODE */
+
+.wrapper {
+	@include outer-container;
+}
+
+.em-header {
+	position: relative;
+	z-index: 1;
+}
+
+.alert-wide {
+	color: #FFF;
+	padding-top: 5.5rem;
+	margin-top: -8.7rem;
+	background: $highlight-dark;
+	width: 100%;
+	z-index: 0;
+
+	.wrapper {
+		padding: 0 5rem 0.9rem 11.9rem;
+	}
+
+	h3 {
+		margin-bottom: 0;
+	}
+
+	p {
+		margin-top: 0;
+		font-size: 0.9rem;
+		line-height: 1.25;
+	}
+
+}
+
+.input-address {
+	margin: 0.6rem 0;
+	padding: 0.4rem;
+	font-size: 0.8rem;
+	border: 1px solid #DDD;
+	width: 17.6rem;
+}
+
+.map-area {
+	border-top: 4px solid $body-light;
+	width: 100%;
+	height: 30.3rem;
+	background-color: rgba(250, 250, 250, 0.9);
+	border-bottom: 4px solid $highlight-dark;
+}
+
+.updates {
+	@include span-columns(8)
+}
+
+.status {
+	@include span-columns(4)
+}
+
+.tw-tabs {
+	@include outer-container;
+	padding-left: 8.2rem;
+	margin-top: 0;
+}
+
+.tw-tabs li { display: inline-block; }
+
+.tw-tabs a {
+	display: inline-block;
+	margin-right: 0.4rem;
+	padding: 0.6rem 1.4rem;
+	width: 12.1rem;
+	font-family: $font-medium;
+	line-height: 1.3;
+	color: $dark-grey;
+	border: 2px solid $light-grey;
+	border-top: 0;
+	border-radius: 0 0 4px 4px;
+}
+
+.active-hashtags {
+	margin-left: 8.2rem;
+
+	strong {
+		font-size: 0.8rem;
+		font-family: $font-medium;
+		color: $highlight-dark;
+		padding-right: 1rem;
+	}
+}
+
+.active-hashtags h4 {
+	line-height: 1;
+	font-size: 18px;
+	margin: 0;
+}
+
+.stream {
+	@include outer-container;
+	margin-top: 3.4rem;
+
+	.tweet-meta {
+		@include span-columns(2.4);
+		text-align: right;
+		font-size: 1.1rem;
+		padding-right: 0.2rem;
+	}
+
+	.tweet {
+		@include span-columns(9.6);	
+	}
+
+}
+
+.tweet-meta span {
+	display: block;
+	margin-bottom: 0.15rem;
+}
+
+.tweet {
+
+	padding-right: 6rem;
+
+	h4 {
+		line-height: 1.2;
+		font-size: 1.1rem;
+		margin: 0.2rem 0 0.2rem;
+		color: $dark-grey;
+
+		span {
+			color: $body-color;
+		}
+	}
+
+	p {
+		margin-top: 0.2rem;
+		font-size: 1.2rem;
+		line-height: 1.4;
+		color: $dark-grey;
+	}
+}
+
+.status {
+	margin-top: 4.1rem;
+	padding-left: 1rem;
+
+	li {
+		margin-bottom: 2.2rem;
+	}
+
+	h3 {
+		color: $dark-grey;
+		margin-bottom: 0;
+	}
+
+	h4 {
+		border-bottom: 3px solid;
+		font-family: $font-medium;
+		font-size: 1rem;
+		margin: 0.1rem 0 0;
+		letter-spacing: -1px;
+	}
+}
+
+.alerts-list {
+
+	h2 {
+		line-height: 1.37rem;
+		font-size: 1.2rem;
+		margin: 1.5rem 0 0.5rem;
+		color: $highlight-dark;
+	}
+
+	p {
+		line-height: 1.35;
+		margin: 0 0 0.5rem;
+		font-family: $font-medium;
+		font-size: 0.8rem;
+		color: $dark-grey;
+	}
+
+	a {
+		line-height: 1.35;
+		margin: 0 0 0.5rem;
+		font-size: 0.8rem;
+		color: $body-color;
+		text-decoration: underline;
+	}
+
 }
 
 /* CONNECT */
@@ -510,7 +709,88 @@ a.checklist {
 	}
 }
 
-/* Stories */
+.modal-bg {
+	height: 120rem;
+	position: absolute;
+	/*
+	HEIGHT AND POSITION CHANGED FOR MOCKING UP
+	height: 100%;
+	position: fixed;
+	*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.modal {
+	position: absolute;
+	max-width: 940px;
+	left: 50%;
+	margin-left: -470px;
+	top: 50.6rem;
+	padding: 0 4.3%;
+	background-color: #FFF;
+	z-index: 2;
+
+	h4 {
+		margin: 4.3rem 0 0 7.9rem;
+		font-family: $font-medium;
+		font-size: 1em;
+		font-weight: normal;
+	}
+
+	.event-during,
+	.event-after {
+		margin: 0.1rem 7.9rem 0;
+		font-size: 2.2rem;
+		color: $highlight-dark;
+	}
+}
+
+.quick-guide {
+	margin: 0;
+	padding: 0;
+	counter-reset: list-counter;
+	
+	h2 {
+		margin: -0.3rem 0 0;
+		font-size: 2.2rem;
+		line-height: 1;
+		color: $dark-grey;
+	}
+
+	li {
+		list-style:none;
+		padding-left: 7.9rem;
+		margin-bottom: 4.5rem;
+	}
+
+	li:before {
+		content: counter(list-counter);
+		counter-increment: list-counter;
+		float: left;
+		margin-left:-7.9rem;
+		padding: 0.7rem 1.8rem;
+		padding: 0.5rem 1.8rem;
+		font-family: $font-medium;
+		font-size: 2.2rem;
+		color: #FFF;
+		background-color: $highlight-dark;
+		border-radius: 50%;
+	}
+
+	p {
+		margin: 0.4rem 0 0;
+		font-size: 1.3rem;
+		line-height: 1.7rem;
+	}
+}
+
+.modal .event-after { color: $highlight; }
+.quick-guide.second li:before{ background-color: $highlight }
+
+/* STORIES */
 
 .stories .intro,
 .things .intro {
@@ -699,12 +979,16 @@ h2 .story-disaster {
 	margin-top: 2rem;
 
 	a {
+		display: block;
 		text-decoration: underline;
 		width: 12.6rem;
 		padding: 1.6rem 0.2rem 1.1rem 3rem;
-		display: block;
 		font-size: 1.1rem;
 	}
+}
+
+.tabs-content {
+	margin-top: 0;
 }
 
 .tab-tip{
@@ -724,6 +1008,51 @@ h2 .story-disaster {
 	@include omega(3n);
 }
 
+.things-list {
+	margin-top: 3.1rem;
+}
+
+.things-list li {
+	margin-bottom: 4.5rem;
+}
+
+.things-list h4 {
+	margin: 0.3rem 0 0;
+	font-family: $font-medium;
+	color: $dark-grey;
+	font-size: 1rem;
+	text-align: center;
+}
+
 .overlay-text {
 	display: none;
+}
+
+.kits h2, .kits p {
+	margin-left: 1.8rem;
+}
+
+.kits h2 {
+	margin: 1.4rem 1.8rem 0;
+	line-height: 1;
+	font-size: 2.2rem;
+	color: $dark-grey;
+}
+
+.kits p {
+	font-size: 1.3rem;
+	line-height: 1.2;
+	margin: 0.8rem 15rem 2.5rem 1.8rem;
+}
+
+.kits-list a {
+	display: block;
+}
+
+.kits-list span {
+	display: block;
+	text-align: center;
+	line-height: 1;
+	font-family: $font-medium;
+	color: $dark-grey;
 }
