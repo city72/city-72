@@ -2,9 +2,8 @@ project.controller "storyDetailController", ["$scope", "restService", "$routePar
 	scope.editMode = false
 	scope.edit = -> scope.editMode = !scope.editMode
 
-	scope.story = {}
-
 	populateFakeData = ->
+		scope.story = {}
 		scope.story.main_image_url = 'http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg'
 		scope.story.victim = 'Kristin'
 		scope.story.disaster = 'Hurricane Sandy'
@@ -43,7 +42,7 @@ project.controller "storyDetailController", ["$scope", "restService", "$routePar
 
 	$(document).bind('keydown', 'alt+q', -> scope.edit(); scope.$apply();)
 
-	$('[id]').each (index, editableObj) -> 
+	$('[contenteditable]').each (index, editableObj) -> 
 		$(editableObj).bind 'click', -> 
 			scope.story[$(editableObj).attr('id')] = editableObj.textContent
 			scope.editMode = false; scope.$apply()

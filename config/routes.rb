@@ -25,9 +25,6 @@ IdeoSf72::Application.routes.draw do
 
   get "about" => "home#about"
 
-  get "admin/story_detail/new" => "admin#story_new"
-  get "admin/story_detail/:id" => "admin#story_show"
-
   resources :stories
   
 end

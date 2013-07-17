@@ -3,7 +3,7 @@
 %script(type="text/javascript")
 	var id = "#{@id}" 
 %div(ng-app="project")
-	%div.main-container.story-detail{"ng-controller" => "storyDetailController", contenteditable:"true"}
+	%div.main-container.story-detail{"ng-controller" => "storyDetailController"}
 		= render :partial => "partials/header"
 		.intro-video
 			%input{type: "text", "ng-show" => "editMode", "ng-model" => "story.main_image_url", style: "width:50%"}
@@ -16,49 +16,49 @@
 		.intro-row
 			.main-intro
 				%h2
-					%span#name {{ story.victim }}
-					%span.story-disaster#disaster {{ story.disaster }}
+					%span#name(contenteditable) {{ story.victim }}
+					%span.story-disaster#disaster(contenteditable) {{ story.disaster }}
 				%strong.story-location
-					%span#location {{ story.location }}
-					%span#date {{ story.date }}
+					%span#location(contenteditable) {{ story.location }}
+					%span#date(contenteditable) {{ story.date }}
 				.story-description
 					%h3
-						%span <span id="age">{{ story.age }}</span>,
-						%span <span id="civil_state">{{ story.civil_state }}</span>,
-						%span <span id="location">{{ story.location }}</span>,
-						%span <span id="home_type">{{ story.home_type }}</span>
-					%p#main_story {{ story.main_story }}
-			.main-quote &ldquo;<span id="main_quote">{{ story.main_quote }}</span>&rdquo;
+						%span <span id="age" contenteditable>{{ story.age }}</span>,
+						%span <span id="civil_state" contenteditable>{{ story.civil_state }}</span>,
+						%span <span id="location" contenteditable>{{ story.location }}</span>,
+						%span <span id="home_type" contenteditable>{{ story.home_type }}</span>
+					%p#main_story(contenteditable) {{ story.main_story }}
+			.main-quote &ldquo;<span id="main_quote" contenteditable>{{ story.main_quote }}</span>&rdquo;
 		.needed
 			%h3 What I needed.
 			%ul.needed-list
 				%li
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "story.needed_list_1_image_url"}
 					%img{"ng-src" => "{{ story.needed_list_1_image_url }}", "ng-show" => "!editMode"}
-					%p &ldquo;<span id="needed_list_1_quote">{{ story.needed_list_1_quote }}</span>&rdquo;
+					%p &ldquo;<span id="needed_list_1_quote" contenteditable>{{ story.needed_list_1_quote }}</span>&rdquo;
 				%li
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "story.needed_list_2_image_url"}
 					%img{"ng-src" => "{{ story.needed_list_2_image_url }}", "ng-show" => "!editMode"}
-					%p &ldquo;<span id="story.needed_list_2_quote">{{ needed_list_2_quote }}</span>&rdquo;
+					%p &ldquo;<span id="story.needed_list_2_quote" contenteditable>{{ needed_list_2_quote }}</span>&rdquo;
 				%li
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "story.needed_list_3_image_url"}
 					%img{"ng-src" => "{{ story.needed_list_3_image_url }}", "ng-show" => "!editMode"}
-					%p &ldquo;<span id="needed_list_3_quote">{{ story.needed_list_2_quote }}</span>&rdquo;
+					%p &ldquo;<span id="needed_list_3_quote" contenteditable>{{ story.needed_list_2_quote }}</span>&rdquo;
 		.learned
 			%h3 What I learned.
 			%ul.learned-list
 				%li
-					%p &ldquo;<span id="learned_list_1_quote">{{ story.learned_list_1_quote }}</span>&rdquo;
+					%p &ldquo;<span id="learned_list_1_quote" contenteditable>{{ story.learned_list_1_quote }}</span>&rdquo;
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "story.learned_list_1_anchor"}
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "story.learned_list_1_href"}
 					%a{"ng-href" => "{{ learned_list_1_href }}", "ng-show" => "!editMode"} {{ story.learned_list_1_anchor }}
 				%li
-					%p &ldquo;<span id="learned_list_2_quote">{{ story.learned_list_2_quote }}</span>&rdquo;
+					%p &ldquo;<span id="learned_list_2_quote" contenteditable>{{ story.learned_list_2_quote }}</span>&rdquo;
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "story.learned_list_2_anchor"}
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "story.learned_list_2_href"}
 					%a{"ng-href" => "{{ learned_list_2_href }}", "ng-show" => "!editMode"} {{ story.learned_list_2_anchor }}
 				%li
-					%p &ldquo;<span id="learned_list_3_quote">{{ story.learned_list_3_quote }}</span>&rdquo;
+					%p &ldquo;<span id="learned_list_3_quote" contenteditable>{{ story.learned_list_3_quote }}</span>&rdquo;
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "story.learned_list_3_anchor"}
 					%input{type:"text", "ng-show" => "editMode", "ng-model" => "story.learned_list_3_href"}
 					%a{"ng-href" => "{{ learned_list_3_href }}", "ng-show" => "!editMode"} {{ story.learned_list_3_anchor }}
