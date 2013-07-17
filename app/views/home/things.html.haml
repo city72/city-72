@@ -18,46 +18,20 @@
 		%li.tab-essentials-content
 			%p.tab-tip A good rule of thumb is to have supplies for about 3 days, or 72 hours.
 			%ul.things-list
-				%li
-					%img{src: "http://placekitten.com/300/170"}
-					%h4 Warm Clothes
-					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
-				%li
-					%img{src: "http://placekitten.com/300/170"}
-					%h4 Bottled Water
-					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
-				%li
-					%img{src: "http://placekitten.com/300/170"}
-					%h4 First Aid Kit
-					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
-				%li
-					%img{src: "http://placekitten.com/300/170"}
-					%h4 Another Thing
-					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
-				%li
-					%img{src: "http://placekitten.com/300/170"}
-					%h4 Sleeping Bag or Blankets
-					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
-				%li
-					%img{src: "http://placekitten.com/300/170"}
-					%h4 Toilet Paper
-					%p.overlay-text Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around
+				- @items.each do |item|
+					%li
+						%img{src: "#{item.image}"}
+						%h4 "#{item.title}"
+						%p.overlay-text "#{item.use_case}"
 		%li.tab-useful-content
 		%li.tab-personal-content
 	.kits
 		%h2 Things to share
 		%p No worries, we’ve got your backpack. Below you’ll find some pre-assembled kits you can buy directly from amazon.com
 		%ul.kits-list
-			%li
-				%a{href: "#"}
-					%img{src: "http://placekitten.com/300/170"}
-					%span Small
-			%li
-				%a{href: "#"}
-					%img{src: "http://placekitten.com/300/170"}
-					%span Medium
-			%li
-				%a{href: "#"}
-					%img{src: "http://placekitten.com/300/170"}
-					%span Large
+			- @kits.each do |kit|
+				%li
+					%a{href: "#{kit.url}"}
+						%img{src: "#{kit.image}"}
+						%span "#{kit.title}"
 = render :partial => "partials/footer"

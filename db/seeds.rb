@@ -16,15 +16,15 @@
 		lat = lat + rand(-0.001..0.001)
 	end
 
-	Story.create!(main_image_url: 'blah', victim: 'bleh', location: 'bluh')
-	Story.create!(main_image_url: 'ptah', victim: 'pteh', location: 'ptuh')
-	Story.create!(main_image_url: 'awah', victim: 'aweh', location: 'awuh')
-	Story.create!(main_image_url: 'trah', victim: 'treh', location: 'truh')
+	Story.create!(main_image_url: "http://placekitten.com/300/170", victim: 'bleh', location: 'bluh')
+	Story.create!(main_image_url: "http://placekitten.com/300/170", victim: 'pteh', location: 'ptuh')
+	Story.create!(main_image_url: "http://placekitten.com/300/170", victim: 'aweh', location: 'awuh')
+	Story.create!(main_image_url: "http://placekitten.com/300/170", victim: 'treh', location: 'truh')
 
-	Kit.create!(title: 'algo', url: 'algi', use_case: 'aewr')
-	Kit.create!(title: 'ewrsfdadf', url: 'algi', use_case: 'aewr')
-	Kit.create!(title: 'qwer', url: 'algi', use_case: 'aewr')
+	Kit.create!(title: 'algo', url: 'algi', use_case: 'aewr', image: "http://placekitten.com/300/170")
+	Kit.create!(title: 'ewrsfdadf', url: 'algi', use_case: 'aewr', image: "http://placekitten.com/300/170")
+	Kit.create!(title: 'qwer', url: 'algi', use_case: 'aewr', image: "http://placekitten.com/300/170")
 
-	Item.create!(category: "Personal", title: 'sgfd', use_case: 'awer')
-	Item.create!(category: "Useful", title: 'sgsdffd', use_case: 'awer')
-	Item.create!(category: "Useful", title: 'rtyt', use_case: 'awer')
+	Item.create!(category: "Personal", title: 'sgfd', use_case: 'awer', image: "http://placekitten.com/300/170")
+	Item.create!(category: "Useful", title: 'sgsdffd', use_case: 'awer', image: "http://placekitten.com/300/170")
+	Item.create!(category: "Useful", title: 'rtyt', use_case: 'awer', image: "http://placekitten.com/300/170")
