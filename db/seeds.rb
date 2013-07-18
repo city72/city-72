@@ -20,7 +20,7 @@
 	Kit.delete_all
 	Item.delete_all
 
-	story_data = {disaster: 'Hurricane Sandy', age: 27, victim: 'Kristin', location: 'New York City', date: 'Nov 2012', civil_state: 'Single', home_type: 'apartment',
+	story_data = {event: 'Hurricane Sandy', age: 27, person: 'Kristin', location: 'New York City', date: 'Nov 2012', civil_state: 'Single', home_type: 'apartment',
 						main_story: 'Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin\'s apartment quickly became the tech hub of her neighborhood. Hear her story.',
 						main_quote: 'After Hurricane Sandy we set up a generator and started charging people\'s phones',
 						remote_needed_list_1_image_url_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
@@ -41,11 +41,11 @@
 						remote_main_image_url_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180775/crmev0rblqeaefgbw2ws.jpg"}
 
 	Story.create!(story_data)
-	story_data[:disaster] = 'Hurricane Katrina'
+	story_data[:event] = 'Hurricane Katrina'
 	Story.create!(story_data)
-	story_data[:disaster] = 'Great San Francisco Fire and Earthquake'
+	story_data[:event] = 'Great San Francisco Fire and Earthquake'
 	Story.create!(story_data)
-	story_data[:disaster] = 'Heat Wave of 1980'
+	story_data[:event] = 'Heat Wave of 1980'
 	Story.create!(story_data)
 
 	Kit.create!(title: 'small', url: 'Adventurer Kit', use_case: 'aewr',
