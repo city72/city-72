@@ -13,9 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore/underscore-min.js
-//= require angular/angular.min.js
-//= require angular-resource/angular-resource.min.js
-//= require hotkeys/jquery.hotkeys.js
-//= require app.js
-//= require rest_service.js
-//= require story_detail_controller.js

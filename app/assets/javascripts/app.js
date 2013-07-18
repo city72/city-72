@@ -1,1 +1,0 @@
-var project = project || angular.module('project', ['ngResource']);

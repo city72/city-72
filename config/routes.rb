@@ -29,9 +29,6 @@ IdeoSf72::Application.routes.draw do
 
   get "things" => "home#things"
 
-  get "story_detail/:id" => "home#story_detail"
-  get "story_detail" => "home#story_detail"
-
   get "about" => "home#about"
 
   resources :stories

@@ -31,7 +31,4 @@ class HomeController < ApplicationController
     @kits = Kit.all
   end
 
-  def story_detail
-    @id = params[:id]
-  end
 end
