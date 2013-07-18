@@ -17,6 +17,8 @@ gem "active_model_serializers"
 
 gem "carrierwave"
 
+gem 'cloudinary'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

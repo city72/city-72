@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: zauber-labs
+  api_key: '744898553964277'
+  api_secret: b2HqkfCnFFh8eF_QSj4zypbjNrU
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: zauber-labs
+  api_key: '744898553964277'
+  api_secret: b2HqkfCnFFh8eF_QSj4zypbjNrU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: zauber-labs
+  api_key: '744898553964277'
+  api_secret: b2HqkfCnFFh8eF_QSj4zypbjNrU
+  enhance_image_tag: true
+  static_image_support: false

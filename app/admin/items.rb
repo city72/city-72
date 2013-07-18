@@ -14,7 +14,7 @@ ActiveAdmin.register Item do
     column :title
     column :image do |item|
       if item.image.to_s != ""
-        image_tag(item.image, size: "100x100")
+        image_tag(item.image_url, size: "100x100")
       end
     end
     column :category
