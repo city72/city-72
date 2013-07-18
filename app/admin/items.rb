@@ -21,5 +21,14 @@ ActiveAdmin.register Item do
     default_actions
   end
 
+  form do |f|
+    f.inputs "Member Details" do
+      f.input :title
+      f.input :image
+      f.input :use_case
+      f.input :category, as: :select, collection: Categories::all
+      f.actions
+    end
+  end
 
 end
