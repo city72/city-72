@@ -15,7 +15,9 @@ You first need the *npm* package manager installed. Which can be installed by:
 
 Ubuntu:
 
-    Complete HERE
+    sudo add-apt-repository ppa:chris-lea/node.js
+    sudo apt-get update
+    sudo apt-get install nodejs
     
 Os X, using Homebrew
 
