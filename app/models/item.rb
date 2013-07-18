@@ -3,6 +3,5 @@ class Item < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  validates :category, inclusion: { in: %w(Essential Useful Personal),
-    message: "%{value} is not a valid category" }
+  validates :category, inclusion: { in: Categories::all_to_s, message: "%{value} is not a valid category" }
 end

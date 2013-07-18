@@ -2,7 +2,7 @@ ActiveAdmin.register Item do
   config.paginate = false
 
   scope :all
-  [:Essential, :Useful, :Personal].each do |tag|
+  Categories::all.each do |tag|
     scope tag do |items|
       items.where("category = '#{tag}'")
     end
