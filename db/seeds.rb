@@ -16,15 +16,51 @@
 		lat = lat + rand(-0.001..0.001)
 	end
 
-	Story.create!(main_image_url: "http://placekitten.com/300/170", victim: 'bleh', location: 'bluh')
-	Story.create!(main_image_url: "http://placekitten.com/300/170", victim: 'pteh', location: 'ptuh')
-	Story.create!(main_image_url: "http://placekitten.com/300/170", victim: 'aweh', location: 'awuh')
-	Story.create!(main_image_url: "http://placekitten.com/300/170", victim: 'treh', location: 'truh')
+	Story.delete_all
+	Kit.delete_all
+	Item.delete_all
 
-	Kit.create!(title: 'algo', url: 'algi', use_case: 'aewr', image: "http://placekitten.com/300/170")
-	Kit.create!(title: 'ewrsfdadf', url: 'algi', use_case: 'aewr', image: "http://placekitten.com/300/170")
-	Kit.create!(title: 'qwer', url: 'algi', use_case: 'aewr', image: "http://placekitten.com/300/170")
+	story_data = {disaster: 'Hurricane Sandy', age: 27, victim: 'Kristin', location: 'New York City', date: 'Nov 2012', civil_state: 'Single', home_type: 'apartment',
+						main_story: 'Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin\'s apartment quickly became the tech hub of her neighborhood. Hear her story.',
+						main_quote: 'After Hurricane Sandy we set up a generator and started charging people\'s phones',
+						remote_needed_list_1_image_url_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
+						needed_list_1_quote: 'It means you can leave the house at night.',
+						remote_needed_list_2_image_url_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
+						needed_list_2_quote: 'We didn\'t use it but it helped us feel safe.',
+						remote_needed_list_3_image_url_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
+						needed_list_3_quote: 'Our friends came around because we had wine.',
+						learned_list_1_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
+						learned_list_1_anchor: 'See the app',
+						learned_list_1_href: 'http://www.zauberlabs.com/',
+						learned_list_2_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
+						learned_list_2_anchor: 'Get your stuff',
+						learned_list_2_href: 'http://www.zauberlabs.com/',
+						learned_list_3_quote: 'Everyone has something to share. Even a bike can be an invaluable tool.',
+						learned_list_3_anchor: 'Sign up for AlertSF',
+						learned_list_3_href: 'http://www.zauberlabs.com/',
+						remote_main_image_url_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180775/crmev0rblqeaefgbw2ws.jpg"}
 
-	Item.create!(category: "Personal", title: 'sgfd', use_case: 'awer', image: "http://placekitten.com/300/170")
-	Item.create!(category: "Useful", title: 'sgsdffd', use_case: 'awer', image: "http://placekitten.com/300/170")
-	Item.create!(category: "Useful", title: 'rtyt', use_case: 'awer', image: "http://placekitten.com/300/170")
+	Story.create!(story_data)
+	story_data[:disaster] = 'Hurricane Katrina'
+	Story.create!(story_data)
+	story_data[:disaster] = 'Great San Francisco Fire and Earthquake'
+	Story.create!(story_data)
+	story_data[:disaster] = 'Heat Wave of 1980'
+	Story.create!(story_data)
+
+	Kit.create!(title: 'small', url: 'Adventurer Kit', use_case: 'aewr',
+						remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374178129/toqwywzl35cqgnomdovk.jpg")
+	Kit.create!(title: 'medium', url: 'Lifeline Kit', use_case: 'aewr',
+						remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374178048/vlqldaitjstjmydbcmhl.jpg")
+	Kit.create!(title: 'large', url: 'Emergency Kit', use_case: 'aewr',
+						remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374177884/vx1z5jrofcamkk1cbsjx.jpg")
+
+	Item.create!(category: "Personal", title: 'Warm Clothes',
+					use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
+					remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180582/n0hyrxga9mkwg35id0ns.jpg")
+	Item.create!(category: "Useful", title: 'Bottled Water',
+					use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
+					remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg")
+	Item.create!(category: "Useful", title: 'First Aid Kit',
+					use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
+					remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180484/pzkmvtm5f7r8pamzsvjf.jpg")

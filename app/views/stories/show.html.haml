@@ -2,7 +2,7 @@
 	%div.main-container.story-detail{"ng-controller" => "storyDetailController"}
 		= render :partial => "partials/header"
 		.intro-video
-			%img{src: '#{@story.main_image_url.url}'}
+			%img{src: "#{@story.main_image_url.url}"}
 			%ul.social-media
 				%li.twitter
 					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
@@ -28,26 +28,26 @@
 			%h3 What I needed.
 			%ul.needed-list
 				%li
-					%img{src: '#{@story.needed_list_1_image_url}'}
-					%p &ldquo;<span id="needed_list_1_quote">#{@story.needed_list_1_quote}</span>&rdquo;
+					%img{src: "#{@story.needed_list_1_image_url}"}
+					%p &ldquo;#{@story.needed_list_1_quote}&rdquo;
 				%li
-					%img{src: '#{@story.needed_list_2_image_url}'}
-					%p &ldquo;<span id="story.needed_list_2_quote">#{@needed_list_2_quote}</span>&rdquo;
+					%img{src: "#{@story.needed_list_2_image_url}"}
+					%p &ldquo;#{@story.needed_list_2_quote}&rdquo;
 				%li
-					%img{src: '#{@story.needed_list_3_image_url}'}
-					%p &ldquo;<span id="needed_list_3_quote">#{@story.needed_list_2_quote}</span>&rdquo;
+					%img{src: "#{@story.needed_list_3_image_url}"}
+					%p &ldquo;#{@story.needed_list_3_quote}&rdquo;
 		.learned
 			%h3 What I learned.
 			%ul.learned-list
 				%li
 					%p &ldquo;#{@story.learned_list_1_quote}&rdquo;
-					%a{href: '#{@story.learned_list_1_href}'} #{@story.learned_list_1_anchor}
+					%a{href: "#{@story.learned_list_1_href}"} #{@story.learned_list_1_anchor}
 				%li
-					%p &ldquo;{{ story.learned_list_2_quote}&rdquo;
-					%a{href: '#{@story.learned_list_2_href}'} #{@story.learned_list_2_anchor}
+					%p &ldquo;#{@story.learned_list_2_quote}&rdquo;
+					%a{href: "#{@story.learned_list_2_href}"} #{@story.learned_list_2_anchor}
 				%li
-					%p &ldquo;{{ story.learned_list_3_quote}&rdquo;
-					%a{href: '#{@story.learned_list_3_href}'} #{@story.learned_list_3_anchor}
+					%p &ldquo;#{@story.learned_list_3_quote}&rdquo;
+					%a{href: "#{@story.learned_list_3_href}"} #{@story.learned_list_3_anchor}
 		.similar
 			%h3 Similar to Kirstin
 			%ul.story-list

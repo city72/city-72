@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :category, :image, :title, :use_case
+  attr_accessible :category, :image, :title, :use_case, :remote_image_url
 
   mount_uploader :image, ImageUploader
 
