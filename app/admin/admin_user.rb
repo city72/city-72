@@ -7,8 +7,6 @@ ActiveAdmin.register AdminUser do
     default_actions                   
   end                                 
 
-  filter :email                       
-
   form do |f|                         
     f.inputs "Admin Details" do       
       f.input :email                  
