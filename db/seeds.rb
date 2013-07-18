@@ -41,10 +41,16 @@
 						remote_main_image_url_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180775/crmev0rblqeaefgbw2ws.jpg"}
 
 	Story.create!(story_data)
+	story_data[:person] = 'Jim'
+	story_data[:location] = 'New Orleans'
 	story_data[:event] = 'Hurricane Katrina'
 	Story.create!(story_data)
+	story_data[:person] = 'Jennifer and Peter'
+	story_data[:location] = 'San Francisco'
 	story_data[:event] = 'Great San Francisco Fire and Earthquake'
 	Story.create!(story_data)
+	story_data[:person] = 'Bruce'
+	story_data[:location] = 'Los Angeles'
 	story_data[:event] = 'Heat Wave of 1980'
 	Story.create!(story_data)
 

@@ -8,8 +8,8 @@
 	%ul.story-list
 		- @stories.each do |story|
 			%li
-				%a
-					%img{src: "#{story.main_image_url}"}
+				%a{href: "#{ story_path(story.id) }"}
+					%img{src: "#{story.main_image_url}", height:"162", width:"288"}
 					.story-data
 						.story-type.hurricane
 						%h5 "#{story.person}"
