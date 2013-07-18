@@ -6,7 +6,7 @@ ActiveAdmin.register Kit do
     column :title
     column :image do |kit|
 	    if kit.image.to_s != ""
-	      image_tag(kit.image, size: "100x100")
+	      image_tag(kit.image_url, size: "100x100")
 	  	end
     end
     default_actions
