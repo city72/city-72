@@ -13,7 +13,9 @@ ActiveAdmin.register Item do
     selectable_column
     column :title
     column :image do |item|
-      image_tag(item.image, size: "100x100")
+      if item.image.to_s != ""
+        image_tag(item.image, size: "100x100")
+      end
     end
     column :category
     default_actions

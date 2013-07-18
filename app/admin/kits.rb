@@ -5,7 +5,9 @@ ActiveAdmin.register Kit do
     selectable_column
     column :title
     column :image do |kit|
-      image_tag(kit.image, size: "100x100")
+	    if kit.image.to_s != ""
+	      image_tag(kit.image, size: "100x100")
+	  	end
     end
     default_actions
   end
