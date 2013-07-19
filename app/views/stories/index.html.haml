@@ -9,10 +9,10 @@
 		- @stories.each do |story|
 			%li
 				%a{href: "#{ story_path(story.id) }"}
-					%img{src: "#{story.main_image_url}", height:"162", width:"288"}
+					%img{src: "#{story.main_image.thumb}"}
 					.story-data
 						.story-type.hurricane
 						%h5 "#{story.person}"
-						%p "#{story.location}"
+						%p "#{story.place_and_date}"
 
 = render :partial => "partials/footer"

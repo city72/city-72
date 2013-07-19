@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130718214133) do
+ActiveRecord::Schema.define(:version => 20130719013557) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -80,33 +80,24 @@ ActiveRecord::Schema.define(:version => 20130718214133) do
   end
 
   create_table "stories", :force => true do |t|
-    t.string   "main_image_url"
+    t.string   "main_image"
     t.string   "person"
     t.string   "event"
-    t.string   "location"
-    t.string   "date"
-    t.integer  "age"
-    t.string   "civil_state"
-    t.string   "home_type"
-    t.text     "main_story"
-    t.text     "main_quote"
-    t.string   "needed_list_1_image_url"
-    t.string   "needed_list_1_quote"
-    t.string   "needed_list_2_image_url"
-    t.string   "needed_list_2_quote"
-    t.string   "needed_list_3_image_url"
-    t.string   "needed_list_3_quote"
-    t.string   "learned_list_1_quote"
-    t.string   "learned_list_1_href"
-    t.string   "learned_list_1_anchor"
-    t.string   "learned_list_2_quote"
-    t.string   "learned_list_2_href"
-    t.string   "learned_list_2_anchor"
-    t.string   "learned_list_3_quote"
-    t.string   "learned_list_3_href"
-    t.string   "learned_list_3_anchor"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.text     "story"
+    t.text     "quote"
+    t.string   "item1_image"
+    t.string   "item1_quote"
+    t.string   "item2_image"
+    t.string   "item2_quote"
+    t.string   "item3_image"
+    t.string   "item3_quote"
+    t.string   "lesson1_quote"
+    t.string   "lesson2_quote"
+    t.string   "lesson3_quote"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "place_and_date"
+    t.string   "story_header"
   end
 
 end

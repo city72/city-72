@@ -2,7 +2,7 @@
 	%div.main-container.story-detail{"ng-controller" => "storyDetailController"}
 		= render :partial => "partials/header"
 		.intro-video
-			%img{src: "#{@story.main_image_url.url}"}
+			%img{src: "#{@story.main_image.url}"}
 			%ul.social-media
 				%li.twitter
 					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
@@ -11,45 +11,39 @@
 		.intro-row
 			.main-intro
 				%h2
-					%span#name #{@story.person}
+					%span#name #{@story.person},
 					%span.story-disaster#disaster #{@story.event}
-				%strong.story-location
-					%span#location #{@story.location}
-					%span#date #{@story.date}
+				%strong.story-location #{@story.place_and_date}
 				.story-description
-					%h3
-						%span #{@story.age},
-						%span #{@story.civil_state},
-						%span #{@story.location},
-						%span #{@story.home_type}
-					%p#main_story #{@story.main_story}
-			.main-quote &ldquo;<span id="main_quote">#{@story.main_quote}</span>&rdquo;
+					%h3 #{@story.story_header},
+					%p#main_story #{@story.story}
+			.main-quote &ldquo;<span id="main_quote">#{@story.quote}</span>&rdquo;
 		.needed
 			%h3 What I needed.
 			%ul.needed-list
 				%li
-					%img{src: "#{@story.needed_list_1_image_url}"}
-					%p &ldquo;#{@story.needed_list_1_quote}&rdquo;
+					%img{src: "#{@story.item1_image}"}
+					%p &ldquo;#{@story.item1_quote}&rdquo;
 				%li
-					%img{src: "#{@story.needed_list_2_image_url}"}
-					%p &ldquo;#{@story.needed_list_2_quote}&rdquo;
+					%img{src: "#{@story.item2_image}"}
+					%p &ldquo;#{@story.item2_quote}&rdquo;
 				%li
-					%img{src: "#{@story.needed_list_3_image_url}"}
-					%p &ldquo;#{@story.needed_list_3_quote}&rdquo;
+					%img{src: "#{@story.item3_image}"}
+					%p &ldquo;#{@story.item3_quote}&rdquo;
 		.learned
 			%h3 What I learned.
 			%ul.learned-list
 				%li
-					%p &ldquo;#{@story.learned_list_1_quote}&rdquo;
-					%a{href: "#{@story.learned_list_1_href}"} #{@story.learned_list_1_anchor}
+					%p &ldquo;#{@story.lesson1_quote}&rdquo;
+					%a{href: "/connect"} See the app
 				%li
-					%p &ldquo;#{@story.learned_list_2_quote}&rdquo;
-					%a{href: "#{@story.learned_list_2_href}"} #{@story.learned_list_2_anchor}
+					%p &ldquo;#{@story.lesson2_quote}&rdquo;
+					%a{href: "/prepare/things"} Get your stuff
 				%li
-					%p &ldquo;#{@story.learned_list_3_quote}&rdquo;
-					%a{href: "#{@story.learned_list_3_href}"} #{@story.learned_list_3_anchor}
+					%p &ldquo;#{@story.lesson3_quote}&rdquo;
+					%a{href: "/prepare/stories"} Link to another page
 		.similar
-			%h3 Similar to Kirstin
+			%h3 Similar to #{@story.person}
 			%ul.story-list
 				%li
 					%a

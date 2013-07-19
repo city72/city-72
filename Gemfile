@@ -16,7 +16,7 @@ gem 'pg'
 gem "active_model_serializers"
 
 gem "carrierwave"
-
+gem "rmagick"
 gem 'cloudinary'
 
 # Gems used only for assets and not required

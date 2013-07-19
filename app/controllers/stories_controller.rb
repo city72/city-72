@@ -1,15 +1,7 @@
 class StoriesController < ApplicationController
-  
+
   def index
     @stories = Story.all
-  end
-
-  def new
-  end
-
-  def create
-  	story = Story.create!(params[:story])
-  	render json: story
   end
 
   def show
