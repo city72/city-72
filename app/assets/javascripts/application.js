@@ -13,3 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore/underscore-min.js
+//= require things

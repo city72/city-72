@@ -17,8 +17,20 @@
 	%ul.tabs-content 
 		%li.tab-essentials-content
 			%p.tab-tip A good rule of thumb is to have supplies for about 3 days, or 72 hours.
-			%ul.things-list
-				- @items.each do |item|
+			%ul.things-list.essential
+				- @items.select {|item| item.category == "#{Categories::ESSENTIAL.to_s}" }.each do |item|
+					%li
+						%img{src: "#{item.image}"}
+						%h4 "#{item.title}"
+						%p.overlay-text "#{item.use_case}"
+			%ul.things-list.useful
+				- @items.select {|item| item.category == "#{Categories::USEFUL.to_s}" }.each do |item|
+					%li
+						%img{src: "#{item.image}"}
+						%h4 "#{item.title}"
+						%p.overlay-text "#{item.use_case}"
+			%ul.things-list.personal
+				- @items.select {|item| item.category == "#{Categories::PERSONAL.to_s}" }.each do |item|
 					%li
 						%img{src: "#{item.image}"}
 						%h4 "#{item.title}"

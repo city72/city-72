@@ -20,7 +20,9 @@ Story.delete_all
 Kit.delete_all
 Item.delete_all
 
-AdminUser.where(email: 'admin@sf72.org').first.delete
+admin_user = AdminUser.where(email: 'admin@sf72.org').first
+
+admin_user.delete unless !admin_user
 
 AdminUser.create!(email: 'admin@sf72.org', password: '123456')
 
@@ -77,21 +79,28 @@ Kit.create!(
   )
 
 Item.create!(
-  category: "Personal",
+  category: Categories::PERSONAL.to_s,
   title: 'Warm Clothes',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180582/n0hyrxga9mkwg35id0ns.jpg"
   )
 
 Item.create!(
-  category: "Useful",
+  category: Categories::USEFUL.to_s,
   title: 'Bottled Water',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg"
   )
 
 Item.create!(
-  category: "Useful",
+  category: Categories::USEFUL.to_s,
+  title: 'First Aid Kit',
+  use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180484/pzkmvtm5f7r8pamzsvjf.jpg"
+  )
+
+Item.create!(
+  category: Categories::ESSENTIAL.to_s,
   title: 'First Aid Kit',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180484/pzkmvtm5f7r8pamzsvjf.jpg"
