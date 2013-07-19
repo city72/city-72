@@ -11,24 +11,24 @@ ActiveAdmin.register Item do
   # hide the links entirely
   index :download_links => false do
     selectable_column
-    column :title
     column :image do |item|
       if item.image.to_s != ""
         image_tag(item.image_url, size: "100x100")
       end
     end
+    column :title
     column :category
     default_actions
   end
 
   form do |f|
-    f.inputs "Member Details" do
+    f.inputs "Item Details" do
       f.input :title
-      f.input :image
+      f.input :category, as: :radio, collection: Categories::all
+      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url, size: "100x100")
       f.input :use_case
-      f.input :category, as: :select, collection: Categories::all
-      f.actions
     end
+    f.actions
   end
 
 end
