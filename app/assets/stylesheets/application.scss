@@ -100,6 +100,16 @@ body {
 	padding: 53px 0 44px;
 }
 
+// TODO: para caldera que lo mira por TV
+.main-nav {
+  li.active, li:hover {
+    a {
+      color: $highlight;
+    }
+  }
+}
+// END
+
 .main-nav a {
 	display: block;
 	color: $body-color;
@@ -969,6 +979,12 @@ h2 .story-disaster {
 	@include span-columns(8.8);
 	padding-left: 1.8rem;
 
+  // TODO: para caldera que lo mira por TV
+  li:hover, li.active {
+    background-color: $highlight;
+  }
+  // END
+
 	li {
 		text-align: center;
 		display: inline-block;
@@ -984,6 +1000,7 @@ h2 .story-disaster {
 		}
 	}
 }
+
 
 .action-bar .list-download {
 	@include span-columns(3.2);
