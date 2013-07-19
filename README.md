@@ -45,6 +45,18 @@ On OS X, using Homebrew:
     brew upgrade postgres   # update postgres version (if outdated)
     brew install postgis
 
+## Imagick Instalation
+
+### Package
+
+On Ubuntu:
+
+    sudo apt-get install libdjvulibre-dev libjpeg-dev libtiff-dev libwmf-dev libmagickcore-dev libmagickwand-dev libmagick++-dev
+
+On OS X, using Homebrew:
+
+    brew install imagemagick
+
 ### DB Setup
 
 **TODO**: Change this to make it part of a migration!

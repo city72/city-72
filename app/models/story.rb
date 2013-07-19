@@ -11,9 +11,9 @@ class Story < ActiveRecord::Base
 		:lesson3_quote,
 
 		:remote_main_image_url,
-		:remote_needed_list_1_image_url,
-		:remote_needed_list_2_image_url,
-		:remote_needed_list_3_image_url
+		:remote_item1_image_url,
+		:remote_item2_image_url,
+		:remote_item3_image_url
 
 	mount_uploader :main_image, StoryMainUploader
 	mount_uploader :item1_image, StoryItemUploader

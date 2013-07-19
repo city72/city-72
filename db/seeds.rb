@@ -20,50 +20,43 @@ Story.delete_all
 Kit.delete_all
 Item.delete_all
 
+AdminUser.where(email: 'admin@sf72.org').first.delete
+
 AdminUser.create!(email: 'admin@sf72.org', password: '123456')
 
 story_data = {
   event: 'Hurricane Sandy',
-  age: 27,
   person: 'Kristin',
-  location: 'New York City',
-  date: 'Nov 2012',
-  civil_state: 'Single',
-  home_type: 'apartment',
-  main_story: 'Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin\'s apartment quickly became the tech hub of her neighborhood. Hear her story.',
-  main_quote: 'After Hurricane Sandy we set up a generator and started charging people\'s phones',
-  remote_needed_list_1_image_url_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
-  needed_list_1_quote: 'It means you can leave the house at night.',
-  remote_needed_list_2_image_url_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
-  needed_list_2_quote: 'We didn\'t use it but it helped us feel safe.',
-  remote_needed_list_3_image_url_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
-  needed_list_3_quote: 'Our friends came around because we had wine.',
-  learned_list_1_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
-  learned_list_1_anchor: 'See the app',
-  learned_list_1_href: 'http://www.zauberlabs.com/',
-  learned_list_2_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
-  learned_list_2_anchor: 'Get your stuff',
-  learned_list_2_href: 'http://www.zauberlabs.com/',
-  learned_list_3_quote: 'Everyone has something to share. Even a bike can be an invaluable tool.',
-  learned_list_3_anchor: 'Sign up for AlertSF',
-  learned_list_3_href: 'http://www.zauberlabs.com/',
-  remote_main_image_url_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180775/crmev0rblqeaefgbw2ws.jpg"
+  place_and_date: 'New York City, Nov 2012',
+  story: 'Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin\'s apartment quickly became the tech hub of her neighborhood. Hear her story.',
+  story_header: 'Hurricane',
+  quote: 'After Hurricane Sandy we set up a generator and started charging people\'s phones',
+  remote_item1_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
+  item1_quote: 'It means you can leave the house at night.',
+  remote_item2_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
+  item2_quote: 'We didn\'t use it but it helped us feel safe.',
+  remote_item3_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
+  item3_quote: 'Our friends came around because we had wine.',
+  lesson1_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
+  lesson2_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
+  lesson3_quote: 'Everyone has something to share. Even a bike can be an invaluable tool.',
+  remote_main_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180775/crmev0rblqeaefgbw2ws.jpg"
 }
 
 Story.create!(story_data)
 
 story_data[:person] = 'Jim'
-story_data[:location] = 'New Orleans'
+story_data[:place_and_date] = 'New Orleans, Jan 2005'
 story_data[:event] = 'Hurricane Katrina'
 Story.create!(story_data)
 
 story_data[:person] = 'Jennifer and Peter'
-story_data[:location] = 'San Francisco'
+story_data[:place_and_date] = 'San Francisco Jun 1926'
 story_data[:event] = 'Great San Francisco Fire and Earthquake'
 Story.create!(story_data)
 
 story_data[:person] = 'Bruce'
-story_data[:location] = 'Los Angeles'
+story_data[:place_and_date] = 'Los Angeles, Jul 1980'
 story_data[:event] = 'Heat Wave of 1980'
 Story.create!(story_data)
 
