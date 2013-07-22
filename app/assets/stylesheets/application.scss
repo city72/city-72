@@ -12,11 +12,13 @@
  */
 @import "bourbon";
 @import "neat";
+@import "icons.css";
 
 /* Main colors */
 $dark-grey: #4D4D4D;
 $body-color : #898989;
 $body-light: #a2a2a2;
+$mid-grey: #b4b4b4;
 $light-grey: #e6e6e6;
 
 $highlight: #FBB03B;
@@ -94,17 +96,37 @@ body {
 	text-decoration: none;
 }
 
-.main-nav li {
-	display: block;
+.main-nav > li {
 	@include span-columns(2.2);
 	padding: 53px 0 44px;
+	position: relative;
 }
 
 .main-nav {
 
+	a {
+		display: block;
+		color: $body-color;
+		text-decoration: none;
+	}
+
+	strong {
+		display: block;
+		margin-bottom: -0.28rem;
+		font-family: $font-medium;
+		font-size: 1.25rem;
+		font-weight: normal;
+		line-height: 1;
+	}
+
+	span {
+		text-transform: uppercase;
+		font-size: 0.6rem;
+		font-family: $font-medium;
+	}
+
 	li.active {
 		border-top: 3px solid orange;
-		padding: 50px;
 	}
 
 	li.active, li:hover {
@@ -112,31 +134,32 @@ body {
       		color: $highlight;
 		}
 	}
-}
 
-.main-nav a {
-	display: block;
-	color: $body-color;
-	text-decoration: none;
+	.submenu {
+		line-height: 1.4;
+		margin: 0 0 -0.8rem;
+		top: 5.8rem;
+		font-family: $font-medium;
+		display: none;
+		@include transition(all 0.5s ease-in);
+	}
+
+	li:hover .submenu {
+		display: block;
+
+		a {
+			color: $body-color;
+		}
+
+		a:hover {
+			color: $highlight;
+		}
+	}
+
 }
 
 .em-header .main-nav a {
 	color: #FFF;
-}
-
-.main-nav strong {
-	display: block;
-	margin-bottom: -0.28rem;
-	font-family: $font-medium;
-	font-size: 1.25rem;
-	font-weight: normal;
-	line-height: 1;
-}
-
-.main-nav span {
-	text-transform: uppercase;
-	font-size: 0.6rem;
-	font-family: $font-medium;
 }
 
 /* FOOTER */
@@ -238,12 +261,64 @@ body {
 	position: absolute;
 	top: 2rem;
 	right: -0.5rem;
-	width: 19.8rem;
-	padding: 1.1rem 1rem 1rem 5rem;
+	width: 0;
+	padding: 1.1rem 1rem 1rem;
 	font-family: $font-medium;
 	font-size: 1rem;
-	background-color: $highlight-dark;
+	background-color: $highlight;
 	color: #FFF;
+	@include transition(all 0.3s ease-in);
+	overflow: hidden;
+
+	.tooltip-content {
+		margin-left: 4rem;
+		width: 13.8rem;
+		opacity: 0;
+		@include transition(all 0.3s ease-in);
+		text-align: left;
+		font-family: $font-regular;
+	}
+}
+
+.tooltip:before,
+.tooltip:after {
+	font-family: "sf72-icons";
+	content:'y';
+	color: #FFF;
+	position: absolute;
+	top: 0.4rem;
+	left: 0.5rem;
+	font-size: 1.05rem;
+	opacity: 1;
+	@include transition(all 0.3s ease-in);
+}
+
+.prepare .tooltip:after {
+	font-family: "sf72-icons";
+	content:'c';
+	opacity: 0;
+	font-size: 3rem;
+	left: 1.2rem;
+	top: 0.9rem;
+}
+
+.big-title:hover .tooltip,
+.intro-video:hover .tooltip {
+	width: 19.8rem;
+
+	.tooltip-content {
+		opacity: 1;
+		@include transition(all 0.3s 0.3s ease-in);
+	}
+
+}
+
+.big-title:hover .tooltip:before {
+	opacity: 0;
+}
+
+.prepare .big-title:hover .tooltip:after {
+	opacity: 1;
 }
 
 .col-3 h4,
@@ -268,14 +343,27 @@ body {
 }
 
 .social-media {
-	margin: 0 0 -1.2rem;
+	margin: 0.4rem 0 -2.6rem;
 	@include shift(10);
-}
+	padding-left: 3.2rem;
 
-.social-media li {
-	display: inline-block;
-}
+	li {
+		display: inline-block;
+		margin-right: 0.4rem;
+	}
 
+	a {
+		font-size: 1.6rem;
+		color: $mid-grey;
+		font-size: 1.6rem;
+	}
+
+	a:hover {
+		font-size: 1.6rem;
+		color: $dark-grey;
+		font-size: 1.6rem;
+	}
+}
 
 .page-intro .big-title {
 	background: url(http://placekitten.com/960/492/) no-repeat left top;
@@ -306,7 +394,7 @@ body {
 }
 
 .page-intro h2 {
-	margin: 1.6rem 0 0 2.1rem;
+	margin: 1.6rem 0 0 1.9rem;
 	color: $dark-grey;
 	font-family: $font-medium;
 	font-size: 2.2rem;
@@ -560,8 +648,6 @@ body {
 /* PREPARE */
 
 .prepare .tooltip {
-	padding-right: 3rem;
-	padding-bottom: 1.1rem;
 	line-height: 1.25;
 	font-size: 0.95rem;	
 }
@@ -607,12 +693,35 @@ a.prepare-things strong {
 	display: block;
 }
 
+a.prepare-people:after,
+a.prepare-things:after {
+	font-family: 'sf72-icons';
+	speak: none;
+	content: 's';
+	font-size: 1.8rem;
+	position: absolute;
+	bottom: 1rem;
+	right: 1.8rem;
+}
+
 a.checklist {
 	font-size: 1.1rem;
 	text-decoration: underline;
 	padding-left: 1.8rem;
 	margin-top: 1rem;
 	display: block;
+	position: relative;
+}
+
+a.checklist:before {
+	font-family: 'sf72-icons';
+	speak: none;
+	content: 'q';
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 1.4em;
+	top: -0.3em;
 }
 
 .basics-intro {
@@ -649,6 +758,7 @@ a.checklist {
 
 .quick-guide-trigger {
 	padding-top: 4.9rem;
+	position: relative;
 
 	h3 {
 		margin: 0;
@@ -663,6 +773,15 @@ a.checklist {
 		line-height: 1.25em;
 		color: $body-light;
 	}
+}
+
+.quick-guide-trigger:before {
+	font-family: "sf72-icons";
+	content: "a";
+	position: absolute;
+	top: 0;
+	font-size: 3.47rem;
+	color: $highlight-dark;
 }
 
 .video-future {
@@ -732,6 +851,15 @@ a.checklist {
 	.btn.tips {
 		@include omega;
 	}
+}
+
+.alert-sf-block:after {
+	font-family: "sf72-icons";
+	position: absolute;
+	content: 'b';
+	top: 0.8rem;
+	left: 2.5rem;
+	font-size: 4rem;
 }
 
 .basics .modal-bg,
@@ -833,8 +961,7 @@ a.checklist {
 .things .intro {
 	position: relative;
 	width: 960px;
-	height: 30.8rem;
-	margin-top: 1.9rem;
+	height: 28.8rem;
 	
 	background: url(http://placekitten.com/960/460/);
 	color: #FFF;
@@ -892,6 +1019,12 @@ a.checklist {
 	width: 2rem;
 	height: 2rem;
 	float: left;
+}
+
+.story-type span {
+	font-size: 1.7rem;
+	display: block;
+	margin-top: 0.4rem;
 }
 
 /* STORY DETAIL */

@@ -11,8 +11,9 @@
 				%a{href: "#{ story_path(story.id) }"}
 					%img{src: "#{story.video_image}"}
 					.story-data
-						.story-type.hurricane
-						%h5 "#{story.person}"
-						%p "#{story.location}"
+						.story-type
+							%span.icon-disaster-hurricane
+						%h5 #{story.person}
+						%p #{story.location}
 
 = render :partial => "partials/footer"

@@ -1,13 +1,14 @@
 .main-container.home
 	= render :partial => "partials/header"
 	.intro-video
-		.tooltip Check out what this page will look like in the event of an emergency
 		%iframe.video-opening{src: "http://player.vimeo.com/video/57727292"}
 		%ul.social-media
 			%li.twitter
-				%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
+				%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"}
+					%span.icon-share-twitter
 			%li.facebook
-				%a{href: "http://facebook.com"} Facebook
+				%a{href: "http://facebook.com"}
+					%span.icon-share-fb
 	.intro-row
 		.main-intro
 			%h2 We believe in connection,<br /> not catastrophe.
