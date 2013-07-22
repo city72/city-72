@@ -3,9 +3,9 @@ ActiveAdmin.register Story do
 
 	index do
 		selectable_column
-		column :main_image_url do |story|
-			if story.main_image_url.to_s != ""
-				image_tag(story.main_image.url(:thumb))
+		column :video_image do |story|
+			if story.video_image.to_s != ""
+				image_tag(story.video_image.url)
 			end
 		end
 		column :person
@@ -17,8 +17,10 @@ ActiveAdmin.register Story do
     f.inputs "Event Details" do
       f.input :person, label: "Person Name"
       f.input :event
-      f.input :place_and_date
-      f.input :main_image, hint: f.template.image_tag(f.object.main_image.url(:thumb))
+      f.input :location
+      f.input :date
+      f.input :video_url
+      f.input :video_image, hint: f.template.image_tag(f.object.video_image.url, size: "100x100")
     end
 
     f.inputs "Story Details" do

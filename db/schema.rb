@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130719013557) do
+ActiveRecord::Schema.define(:version => 20130719223722) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -71,16 +71,8 @@ ActiveRecord::Schema.define(:version => 20130719013557) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "spatial_ref_sys", :id => false, :force => true do |t|
-    t.integer "srid",                      :null => false
-    t.string  "auth_name", :limit => 256
-    t.integer "auth_srid"
-    t.string  "srtext",    :limit => 2048
-    t.string  "proj4text", :limit => 2048
-  end
-
   create_table "stories", :force => true do |t|
-    t.string   "main_image"
+    t.string   "video_url"
     t.string   "person"
     t.string   "event"
     t.text     "story"
@@ -94,10 +86,12 @@ ActiveRecord::Schema.define(:version => 20130719013557) do
     t.string   "lesson1_quote"
     t.string   "lesson2_quote"
     t.string   "lesson3_quote"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.string   "place_and_date"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "story_header"
+    t.string   "date"
+    t.string   "location"
+    t.string   "video_image"
   end
 
 end

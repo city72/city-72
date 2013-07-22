@@ -27,9 +27,11 @@ admin_user.delete unless !admin_user
 AdminUser.create!(email: 'admin@sf72.org', password: '123456')
 
 story_data = {
+  video_url: 'http://player.vimeo.com/video/5772729',
   event: 'Hurricane Sandy',
   person: 'Kristin',
-  place_and_date: 'New York City, Nov 2012',
+  location: 'New York City',
+  date: 'Nov 2012',
   story: 'Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin\'s apartment quickly became the tech hub of her neighborhood. Hear her story.',
   story_header: 'Hurricane',
   quote: 'After Hurricane Sandy we set up a generator and started charging people\'s phones',
@@ -42,23 +44,26 @@ story_data = {
   lesson1_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
   lesson2_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
   lesson3_quote: 'Everyone has something to share. Even a bike can be an invaluable tool.',
-  remote_main_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374180775/crmev0rblqeaefgbw2ws.jpg"
+  remote_video_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180775/crmev0rblqeaefgbw2ws.jpg'
 }
 
 Story.create!(story_data)
 
 story_data[:person] = 'Jim'
-story_data[:place_and_date] = 'New Orleans, Jan 2005'
+story_data[:location] = 'New Orleans'
+story_data[:date] = 'Jan 2005'
 story_data[:event] = 'Hurricane Katrina'
 Story.create!(story_data)
 
 story_data[:person] = 'Jennifer and Peter'
-story_data[:place_and_date] = 'San Francisco Jun 1926'
+story_data[:location] = 'San Francisco'
+story_data[:date] = 'Jun 1926'
 story_data[:event] = 'Great San Francisco Fire and Earthquake'
 Story.create!(story_data)
 
 story_data[:person] = 'Bruce'
-story_data[:place_and_date] = 'Los Angeles, Jul 1980'
+story_data[:location] = 'Los Angeles'
+story_data[:date] = 'Jul 1980'
 story_data[:event] = 'Heat Wave of 1980'
 Story.create!(story_data)
 

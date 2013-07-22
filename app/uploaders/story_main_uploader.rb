@@ -5,7 +5,7 @@ class StoryMainUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
 
   process :convert => 'png'
-  process :resize_to_fit => [960, 540]
+  process :resize_to_fit => [235, 150]
 
   # def extension_white_list
   #   %w(png)

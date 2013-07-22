@@ -2,7 +2,7 @@
 	%div.main-container.story-detail{"ng-controller" => "storyDetailController"}
 		= render :partial => "partials/header"
 		.intro-video
-			%img{src: "#{@story.main_image.url}"}
+			%iframe.video-opening{src: "#{@story.video_url}"}
 			%ul.social-media
 				%li.twitter
 					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
@@ -13,7 +13,7 @@
 				%h2
 					%span#name #{@story.person},
 					%span.story-disaster#disaster #{@story.event}
-				%strong.story-location #{@story.place_and_date}
+				%strong.story-location #{@story.location}, #{@story.date}
 				.story-description
 					%h3 #{@story.story_header},
 					%p#main_story #{@story.story}
