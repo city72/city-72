@@ -100,15 +100,19 @@ body {
 	padding: 53px 0 44px;
 }
 
-// TODO: para caldera que lo mira por TV
 .main-nav {
-  li.active, li:hover {
-    a {
-      color: $highlight;
-    }
-  }
+
+	li.active {
+		border-top: 3px solid orange;
+		padding: 50px;
+	}
+
+	li.active, li:hover {
+		a {
+      		color: $highlight;
+		}
+	}
 }
-// END
 
 .main-nav a {
 	display: block;
@@ -514,16 +518,21 @@ body {
 .app-details {
 	@include span-columns(4.5);
 	padding-left: 1.8rem;
-}
 
-.app-details .btn {
-	margin-top: 0.9rem;
-	font-size: 1.5rem;
-	color: #FFF;
-	padding: 0.5rem 3.3rem;
-	display: inline-block;
-	background-color: $highlight;
-	border-radius: 2rem;
+	.btn {
+		margin-top: 0.9rem;
+		font-size: 1.5rem;
+		color: #FFF;
+		padding: 0.5rem 3.3rem;
+		display: inline-block;
+		background-color: $highlight;
+		border-radius: 2rem;
+		cursor: pointer;
+	}
+
+	.btn:hover {
+		background-color: $dark-grey;
+	}
 }
 
 .app-video {
@@ -712,6 +721,12 @@ a.checklist {
 		font-size: 1.6em;
 		color: $highlight;
 		margin-right: 0.8rem;
+		cursor: pointer;
+	}
+
+	.btn:hover {
+		background-color: $dark-grey;
+		color: #FFF;
 	}
 
 	.btn.tips {
@@ -719,8 +734,8 @@ a.checklist {
 	}
 }
 
-.modal-bg,
-.modal {
+.basics .modal-bg,
+.basics .modal {
 	display: none;
 }
 
@@ -737,12 +752,13 @@ a.checklist {
 }
 
 .modal {
+
 	position: absolute;
 	max-width: 940px;
 	left: 50%;
 	margin-left: -470px;
 	top: 50.6rem;
-	padding: 0 4.3%;
+	padding: 4.3rem 4.3% 0;
 	background-color: #FFF;
 	z-index: 2;
 
@@ -753,7 +769,7 @@ a.checklist {
 		font-weight: normal;
 	}
 
-	.event-during,
+	.modal-title,
 	.event-after {
 		margin: 0.1rem 7.9rem 0;
 		font-size: 2.2rem;
@@ -878,7 +894,7 @@ a.checklist {
 	float: left;
 }
 
-/* Story detail */
+/* STORY DETAIL */
 
 h2 .story-disaster {
 	color: $body-color;
@@ -1083,4 +1099,43 @@ h2 .story-disaster {
 	line-height: 1;
 	font-family: $font-medium;
 	color: $dark-grey;
+}
+
+/* TOUR */
+
+.tour-modal .modal {
+	top: 17.7rem;
+}
+
+.tour-modal .modal-title {
+	margin-left:0;
+}
+
+.tour-intro {
+	
+	h2 {
+		color: $dark-grey;
+		margin: 0;
+		line-height: 1;
+	}
+
+	p {
+		margin: 0.6rem 0 4.8rem;
+		font-size: 1.3rem;
+		line-height: 1.5;
+	}
+}
+
+.tour-tooltip {
+	background-color: #EDEDED;
+	border: 1px solid #C2C2C2;
+	border-radius: 4px;
+	font-size: 0.85rem;
+	padding: 1rem 2rem 1rem 6.4rem;
+	width: 21rem;
+	@include box-shadow(2px 2px 4px rgba(0,0,0,.25));
+
+	p {
+		margin: 0;
+	}
 }

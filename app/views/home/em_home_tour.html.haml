@@ -1,1 +1,70 @@
-HOME EMERGENCY MODE TOUR
+.home-em
+	.wrapper.em-header
+		= render :partial => "partials/header"
+	.alert-wide
+		.wrapper
+			%h3 Emergency Mode: 8.3 Earthquake on San Andreas Fault
+			%p An 8.3 earthquake struck the San Andreas fault on Thursday at 5:56 am. City agencies are working around the clock to restore the damage. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis nisl eget urna cursus pulvinar ac nec metus. Ut tempor odio id consectetur malesuada. 
+	.map-container
+		.wrapper
+			%input.input-address{type: "text", placeholder: "Enter Address"}
+		.map-area
+	%ul.tw-tabs
+		%li.active
+			%a{href:"#"} Citizen Reports Via Twitter
+		%li 
+			%a{href:"#"} Official Reports <span>(12)</span><br /> From SFDEM
+	.main-container
+		.updates		
+			.citizen-reports
+				.active-hashtags
+					%h4 Active hashtags:
+					%strong #SF72
+					%strong #SFQUAKE
+					%strong #SFEMERGENCY
+					%strong #MUNI
+				.stream
+					.tweet-meta
+						%span 12 min ago
+						%img{src: "http://placekitten.com/48/48"}
+					.tweet
+						%h4 Neil deGrasse Tyson <span>@neiltyson</span>
+						%p No power on Valencia between 21st and 22nd. Traffic jams at the intersection. #sfquake http://ow.ly/l6778Yj 
+					
+			.official-reports
+		.status
+			%h3 Service Status
+			%h4 511 Priority Alerts
+			%ul.alerts-list
+				%li
+					%h2 Capitol Corridor Systemwide Delays
+					%p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
+					%a{src: "#"} See Details
+				%li
+					%h2 Capitol Corridor Systemwide Delays
+					%p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
+					%a{src: "#"} See Details
+				%li
+					%h2 Muni Delays
+					%p J and F Lines out of service. N Judah is being restarted now.
+					%a{src: "#"} See Details
+			%h4 Other City Feed
+.tour-modal
+	.modal
+		%h2.modal-title In an emergency
+		.tour-intro
+			%h2 Great headline about what this will be. 
+			%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dui massa, tempor non congue id, vulputate rhoncus nisi. Phasellus ultricies vehicula nisi, vitae sodales libero tempus suscipit.
+		%ol.quick-guide
+			%li
+				%h2 Shelters, hazards and helpful stuff
+				%p Don’t just prepare to help yourself. Prepare so that your family, your loved ones, or your neighbors will have a shoulder to lean on in the event of a disaster. 
+			%li
+				%h2 Updates from the city and citizens
+				%p Don’t just prepare to help yourself. Prepare so that your family, your loved ones, or your neighbors will have a shoulder to lean on in the event of a disaster. 
+			%li
+				%h2 What’s up with BART?
+				%p If you leave home, leave a sign telling friends and family your location. Digitaly savvy? Send a tweet or Facebook update telling everyone know that you’re ok.
+	.modal-bg
+.tour-tooltip
+	%p This will be a tool tip on the page that gives people information about what they can find. like in the event of an emergency. more information blah blay Check out
