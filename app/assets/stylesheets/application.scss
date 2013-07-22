@@ -169,12 +169,31 @@ body {
 	margin-top: 2rem;
 }
 
+.by-line {
+	@include span-columns(4);
+	@include shift(0.7);
+	position: relative;
+	margin-top: 1.2rem;
+	font-size: 0.9rem;
+	line-height: 1.25;
+}
+
+.by-line:before {
+	font-family: 'sf72-icons';
+	font-size: 1.8rem;
+	content: 'y';
+	color: $dark-grey;
+	position: absolute;
+	top: 1rem;
+	left: -3.5rem;
+}
+
 /* MOCKUP */
 /* .home { background: url(/assets/00-home.png) -30px 0; } */
 /* .home-em { background: url(/assets/01-home-em.png) center top no-repeat; } */
 /* .connect { background: url(/assets/03-connect.png) -30px 0; } */
-/* .prepare { background: url(/assets/04a-prepare.png) -30px 0; } */
-.prepare-popup { background: url(/assets/04b-prepare-popup.png) center 0 no-repeat; }
+/*.prepare { background: url(/assets/04a-prepare.png) -30px 0; } */
+/* .prepare-popup { background: url(/assets/04b-prepare-popup.png) center 0 no-repeat; } */
 /* .stories { background: url(/assets/05-stories.png) -30px 0; } */
 /* .story-detail { background: url(/assets/06-story-detail.png) -30px 0; } */
 /* .things { background: url(/assets/07-things.png) -30px 0; } */
