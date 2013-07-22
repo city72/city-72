@@ -1,0 +1,114 @@
+@font-face {
+	font-family: 'sf72-icons';
+	src:url('/assets/sf72-icons.eot');
+	src:url('/assets/sf72-icons.eot?#iefix') format('embedded-opentype'),
+		url('/assets/sf72-icons.woff') format('woff'),
+		url('/assets/sf72-icons.ttf') format('truetype'),
+		url('/assets/sf72-icons.svg#sf72-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'sf72-icons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-quick-guide, .icon-sms, .icon-fuel, .icon-close, .icon-twitter-big, .icon-twitter-big-on, .icon-bus, .icon-bus-on, .icon-map, .icon-map-on, .icon-disaster-other, .icon-disaster-connection, .icon-disaster-terrorist, .icon-disaster-hurricane, .icon-disaster-earthquake, .icon-disaster-radiation, .icon-disaster-flood, .icon-pdf, .icon-map-marker, .icon-arrow, .icon-mail, .icon-print, .icon-share-fb, .icon-share-twitter, .icon-sf72 {
+	font-family: 'sf72-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-quick-guide:before {
+	content: "\61";
+}
+.icon-sms:before {
+	content: "\62";
+}
+.icon-fuel:before {
+	content: "\63";
+}
+.icon-close:before {
+	content: "\78";
+}
+.icon-twitter-big:before {
+	content: "\64";
+}
+.icon-twitter-big-on:before {
+	content: "\65";
+}
+.icon-bus:before {
+	content: "\66";
+}
+.icon-bus-on:before {
+	content: "\67";
+}
+.icon-map:before {
+	content: "\68";
+}
+.icon-map-on:before {
+	content: "\69";
+}
+.icon-disaster-other:before {
+	content: "\6a";
+}
+.icon-disaster-connection:before {
+	content: "\6b";
+}
+.icon-disaster-terrorist:before {
+	content: "\6c";
+}
+.icon-disaster-hurricane:before {
+	content: "\6d";
+}
+.icon-disaster-earthquake:before {
+	content: "\6e";
+}
+.icon-disaster-radiation:before {
+	content: "\6f";
+}
+.icon-disaster-flood:before {
+	content: "\70";
+}
+.icon-pdf:before {
+	content: "\71";
+}
+.icon-map-marker:before {
+	content: "\72";
+}
+.icon-arrow:before {
+	content: "\73";
+}
+.icon-mail:before {
+	content: "\74";
+}
+.icon-print:before {
+	content: "\75";
+}
+.icon-share-fb:before {
+	content: "\76";
+}
+.icon-share-twitter:before {
+	content: "\77";
+}
+.icon-sf72:before {
+	content: "\79";
+}
