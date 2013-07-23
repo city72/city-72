@@ -3,17 +3,39 @@
 		= render :partial => "partials/header"
 	.alert-wide
 		.wrapper
-			%h3 Emergency Mode: 8.3 Earthquake on San Andreas Fault
-			%p An 8.3 earthquake struck the San Andreas fault on Thursday at 5:56 am. City agencies are working around the clock to restore the damage. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis nisl eget urna cursus pulvinar ac nec metus. Ut tempor odio id consectetur malesuada. 
+			.alert-info
+				%h3 8.3 Earthquake on San Andreas Fault
+				%p An 8.3 earthquake struck the San Andreas fault on Thursday at 5:56 am.
+			.em-quick-guide-trigger
+				%a{src:"#"} Show Quick Guide
+	
 	.map-container
 		.wrapper
-			%input.input-address{type: "text", placeholder: "Enter Address"}
+			.map-heading
+				%h3 Crisis Map <span>Refresh</span>
+			.map-actions
+				%ul.social-media
+					%li.twitter
+						%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"}
+							%span.icon-share-twitter
+					%li.facebook
+						%a{href: "http://facebook.com"}
+							%span.icon-share-fb
+					%li.print
+						%a{href: "#"}
+							%span.icon-print
+					%li.email
+						%a{href: "#"}
+							%span.icon-mail
+				%a.map-tips-trigger Show Map Tips
 		.map-area
-	%ul.tw-tabs
-		%li.active
-			%a{href:"#"} Citizen Reports Via Twitter
-		%li 
-			%a{href:"#"} Official Reports <span>(12)</span><br /> From SFDEM
+			%iframe.map{src: "http://google.org/crisismap/a/ideo.com/SF72test?hl=en&llbox=37.801668%2C37.791749%2C-122.409517%2C-122.42915&t=ROADMAP&layers=1%2Clayer0%2Clayer1&embedded=true", height: "400"}
+	.tw-tabs-container
+		%ul.tw-tabs
+			%li.active
+				%a{href:"#"} Citizen Reports Via Twitter
+			%li 
+				%a{href:"#"} Official Reports <span>(12)</span><br /> From SFDEM
 	.main-container
 		.updates		
 			.citizen-reports
