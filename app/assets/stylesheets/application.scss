@@ -92,8 +92,12 @@ body {
 }
 
 .logo a {
-	color: $highlight;
-	text-decoration: none;
+	margin-top: 0.9rem;
+	display: block;
+	text-indent: -9999px;
+	width: 114px;
+	height: 40px;
+	background: url(sf72-logo.png) no-repeat top left;
 }
 
 .main-nav > li {
@@ -127,6 +131,7 @@ body {
 
 	li.active {
 		border-top: 3px solid orange;
+		padding-top: 50px;
 	}
 
 	li.active, li:hover {
@@ -1147,25 +1152,49 @@ h2 .story-disaster {
 	@include span-columns(8.8);
 	padding-left: 1.8rem;
 
-  // TODO: para caldera que lo mira por TV
-  li:hover, li.active {
-    background-color: $highlight;
-  }
-  // END
-
 	li {
 		text-align: center;
 		display: inline-block;
 		margin: 1.4rem 0.9rem 0 0;
+		font-family: $font-medium;
 		font-size: 1.6rem;
+		position: relative;
 
 		a {
 			color: $body-light;
 			display: block;
 			padding: 0.6rem 0.2rem;
-			border: 2px solid $body-light;
+			border: 1px solid $body-light;
 			width: 12.6rem;
 		}
+	}
+
+	li:hover a, li.active a {
+		color: $highlight;
+	}
+
+  	li.active:before,
+  	li:hover:before {
+	    content: ' ';
+	    border-color: #999 transparent transparent;
+	    border-style: solid;
+	    border-width: 14px;
+	    position: absolute;
+	    bottom: -27px;
+	    left: 50%;
+	    margin-left: -14px;
+	}
+
+	li.active:after,
+	li:hover:after {
+	    content: ' ';
+	    border-color: #FFF transparent transparent;
+	    border-style: solid;
+	    border-width: 13px;
+	    position: absolute;
+	    bottom: -24px;
+	    left: 50%;
+		margin-left: -13px;
 	}
 }
 
@@ -1180,7 +1209,17 @@ h2 .story-disaster {
 		width: 12.6rem;
 		padding: 1.6rem 0.2rem 1.1rem 3rem;
 		font-size: 1.1rem;
+		position: relative;
 	}
+}
+
+.list-download a:before {
+	font-family: 'sf72-icons';
+	content: "q";
+	font-size: 1.5rem;
+	position: absolute;
+	top: 1.3rem;
+	left: 1rem;
 }
 
 .tabs-content {
