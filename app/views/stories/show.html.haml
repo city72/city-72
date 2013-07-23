@@ -5,9 +5,11 @@
 			%iframe.video-opening{src: "#{@story.video_url}"}
 			%ul.social-media
 				%li.twitter
-					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"} Twitter
+					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"}
+						%span.icon-share-twitter
 				%li.facebook
-					%a{href: "http://facebook.com"} Facebook
+					%a{href: "http://facebook.com"}
+						%span.icon-share-fb
 		.intro-row
 			.main-intro
 				%h2
@@ -49,21 +51,24 @@
 					%a
 						%img{src: "http://placekitten.com/300/170"}
 						.story-data
-							.story-type.hurricane
+							.story-type
+								%span.icon-disaster-hurricane
 							%h5 Jack & Lauren
 							%p New Orleans, LA
 				%li
 					%a
 						%img{src: "http://placekitten.com/300/170"}
 						.story-data
-							.story-type.hurricane
+							.story-type
+								%span.icon-disaster-earthquake
 							%h5 Marvin
 							%p New Orleans, LA
 				%li
 					%a
 						%img{src: "http://placekitten.com/300/170"}
 						.story-data
-							.story-type.hurricane
+							.story-type
+								%span.icon-disaster-flood
 							%h5 Keiko
 							%p Tokyo, Japan.
 

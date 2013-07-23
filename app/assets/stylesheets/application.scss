@@ -1040,15 +1040,15 @@ a.checklist:before {
 }
 
 .story-type {
-	width: 2rem;
 	height: 2rem;
 	float: left;
+	margin-right: 0.5rem;
 }
 
 .story-type span {
-	font-size: 1.7rem;
+	font-size: 1.5rem;
 	display: block;
-	margin-top: 0.4rem;
+	margin-top: 0.3rem;
 }
 
 /* STORY DETAIL */
@@ -1136,10 +1136,24 @@ h2 .story-disaster {
 
 .learned-list a {
 	position: absolute;
-	bottom: 1rem;
-	left: 2.4rem;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 	color: $highlight-dark;
 	font-size: 1.5rem;
+	padding: 1rem 1rem 1rem 2.4rem;
+}
+
+.learned-list a:hover {
+	color: $dark-grey;
+}
+
+.learned-list a:before {
+	font-family: 'sf72-icons';
+	content: 's';
+	position: absolute;
+	right: 1.2rem;
+	top: 1.1rem;
 }
 
 /* THINGS */
