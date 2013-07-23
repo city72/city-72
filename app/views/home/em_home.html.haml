@@ -33,42 +33,62 @@
 	.tw-tabs-container
 		%ul.tw-tabs
 			%li.active
-				%a{href:"#"} Citizen Reports Via Twitter
+				%a{href:"#"}
+					.updates-count 12
+					%h3 Citizen Updates
+					%span Via Twitter
 			%li 
-				%a{href:"#"} Official Reports <span>(12)</span><br /> From SFDEM
+				%a{href:"#"}
+					.updates-count 12
+					%h3 Official Reports
+					%span From SFDEM
+			%li 
+				%a{href:"#"}
+					.updates-count 12
+					%h3 Service Status
+					%span 511 Priority Alerts
 	.main-container
 		.updates		
 			.citizen-reports
-				.active-hashtags
-					%h4 Active hashtags:
-					%strong #SF72
-					%strong #SFQUAKE
-					%strong #SFEMERGENCY
-					%strong #MUNI
-				.stream
-					.tweet-meta
-						%span 12 min ago
-						%img{src: "http://placekitten.com/48/48"}
-					.tweet
-						%h4 Neil deGrasse Tyson <span>@neiltyson</span>
-						%p No power on Valencia between 21st and 22nd. Traffic jams at the intersection. #sfquake http://ow.ly/l6778Yj 
+				%ul.stream
+					%li.tweet
+						.tweet-avatar
+							%img{src: "http://placekitten.com/95/95"}
+						.tweet-body
+							%h4 Neil deGrasse Tyson <span>@neiltyson</span>
+							%p No power on Valencia between 21st and 22nd. Traffic jams at the intersection. #sfquake http://ow.ly/l6778Yj
+							%span.date 12 min ago
+					%li.tweet
+						.tweet-avatar
+							%img{src: "http://placekitten.com/95/95"}
+						.tweet-body
+							%h4 Neil deGrasse Tyson <span>@neiltyson</span>
+							%p No power on Valencia between 21st and 22nd. Traffic jams at the intersection. #sfquake http://ow.ly/l6778Yj
+							%span.date 12 min ago 
+					%li.tweet
+						.tweet-avatar
+							%img{src: "http://placekitten.com/95/95"}
+						.tweet-body
+							%h4 Neil deGrasse Tyson <span>@neiltyson</span>
+							%p No power on Valencia between 21st and 22nd. Traffic jams at the intersection. #sfquake http://ow.ly/l6778Yj
+							%span.date 12 min ago 
 					
 			.official-reports
-		.status
-			%h3 Service Status
-			%h4 511 Priority Alerts
-			%ul.alerts-list
-				%li
-					%h2 Capitol Corridor Systemwide Delays
-					%p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
-					%a{src: "#"} See Details
-				%li
-					%h2 Capitol Corridor Systemwide Delays
-					%p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
-					%a{src: "#"} See Details
-				%li
-					%h2 Muni Delays
-					%p J and F Lines out of service. N Judah is being restarted now.
-					%a{src: "#"} See Details
-			%h4 Other City Feed
-
+			.status
+				%h3 Service Status
+				%h4 511 Priority Alerts
+				%ul.alerts-list
+					%li
+						%h2 Capitol Corridor Systemwide Delays
+						%p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
+						%a{src: "#"} See Details
+					%li
+						%h2 Capitol Corridor Systemwide Delays
+						%p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
+						%a{src: "#"} See Details
+					%li
+						%h2 Muni Delays
+						%p J and F Lines out of service. N Judah is being restarted now.
+						%a{src: "#"} See Details
+				%h4 Other City Feed
+= render :partial => "partials/footer"

@@ -78,6 +78,7 @@ body {
 
 .main-container {
 	@include outer-container;
+	width: 960px;
 }
 
 /* HEADER */
@@ -191,7 +192,7 @@ body {
 
 /* MOCKUP */
 /* .home { background: url(/assets/00-home.png) -30px 0; } */
-/* .home-em { background: url(/assets/01-home-em.png) center top no-repeat; } */
+/* .home-em { background: url(/assets/01-home-em.png) center -288px no-repeat; } */
 /* .connect { background: url(/assets/03-connect.png) -30px 0; } */
 /*.prepare { background: url(/assets/04a-prepare.png) -30px 0; } */
 /* .prepare-popup { background: url(/assets/04b-prepare-popup.png) center 0 no-repeat; } */
@@ -431,6 +432,7 @@ body {
 
 .wrapper {
 	@include outer-container;
+	width: 960px;
 }
 
 .em-header {
@@ -443,36 +445,39 @@ body {
 	background: $highlight-dark;
 	width: 100%;
 	z-index: 0;
+	margin: -0.9rem 0 0.1rem;
 
 	.wrapper {
-		padding: 0 5rem 0.9rem 0;
+		padding: 2.6rem 5rem 2.7rem 0;
+		position: relative;
 	}
 
 	h3 {
-		margin-bottom: 0;
+		margin: 0;
 	}
 
 	p {
 		margin-top: 0;
-		font-size: 0.9rem;
+		font-size: 1rem;
 		line-height: 1.25;
 	}
 
 	.alert-info {
-		@include span-columns(7);
+		@include span-columns(7.5);
 	}
 
 	.em-quick-guide-trigger {
-		@include span-columns(3);
-		@include shift(1);
+		position: absolute;
+		right: 0;
+		top: 2.6rem;
 
 		a {
 			cursor: pointer;
-			margin-top: 2rem;
+			margin-top: 1.1rem;
 			border-radius: 4px;
 			display: inline-block;
 			background-color: #FFF;
-			padding: 0.5rem 1rem;
+			padding: 0.5rem 3rem 0.5rem 1rem;
 			color: $highlight-dark;
 			font-family: $font-medium;
 		}
@@ -497,7 +502,7 @@ body {
 
 	.social-media {
 		@include shift(3);
-		padding-left: 0;
+		padding-left: 1.2rem;
 		margin-right: 1rem;
 		float: left;
 
@@ -505,11 +510,20 @@ body {
 			margin-right: 0.4rem;
 			font-size: 1.5rem;
 		}
+
+		span.icon-mail {
+			font-size: 0.8em;
+		}
+
+		span.icon-print {
+			font-size: 0.9em;
+		}
 	}
 
 	.map-tips-trigger {
 		display: inline-block;
-		padding: 0.5rem 1rem;
+		padding: 0.5rem 1.2rem;
+		margin-top: 0.3rem;
 		border-radius: 4px;
 		font-family: $font-medium;
 		background-color: $light-grey;
@@ -534,34 +548,53 @@ body {
 	width: 100%;
 }
 
-.updates {
-	@include span-columns(8)
-}
-
-.status {
-	@include span-columns(4)
-}
-
 .tw-tabs-container {
 	background-color: #666;
 
 }
 
 .tw-tabs {
-	padding-left: 8.2rem;
+	@include outer-container;
 	margin-top: 0;
-}
 
-.tw-tabs li { display: inline-block; }
+	li {
+	@include span-columns(4);
+	}
+}
 
 .tw-tabs a {
 	display: inline-block;
-	margin-right: 0.4rem;
-	padding: 1.8rem 1.4rem;
-	width: 12.1rem;
+	padding: 2.7rem 0 2.5rem 4.7rem;
 	font-family: $font-medium;
 	line-height: 1.3;
 	color: #FFF;
+	position: relative;
+	opacity: 0.5;
+
+	h3 {
+		font-size: 1.625rem;
+		margin: 0;
+	}
+
+	span {
+		font-size: 0.825rem;
+		text-transform: uppercase;
+
+	}
+
+	.updates-count {
+		position: absolute;
+		top: 2.85rem;
+		left: 2.1rem;
+		border: 2px solid;
+		padding: 0.2rem;
+		line-height: 1.2;
+	}
+}
+
+.tw-tabs a:hover,
+.tw-tabs .active a {
+	opacity: 1;
 }
 
 .active-hashtags {
@@ -582,51 +615,62 @@ body {
 }
 
 .stream {
-	@include outer-container;
-	margin-top: 3.4rem;
-
-	.tweet-meta {
-		@include span-columns(2.4);
-		text-align: right;
-		font-size: 1.1rem;
-		padding-right: 0.2rem;
-	}
+	margin-top: 1rem;
 
 	.tweet {
-		@include span-columns(9.6);	
+		@include outer-container;
+		margin-bottom: 0.5rem;
+		padding: 1.5rem 1rem;
+		border-bottom: 2px solid $light-grey;
 	}
 
-}
-
-.tweet-meta span {
-	display: block;
-	margin-bottom: 0.15rem;
-}
-
-.tweet {
-
-	padding-right: 6rem;
-
-	h4 {
-		line-height: 1.2;
+	.tweet-avatar {
+		@include span-columns(2.4);
+		text-align: center;
 		font-size: 1.1rem;
-		margin: 0.2rem 0 0.2rem;
-		color: $dark-grey;
+		padding-right: 0.2rem;
 
-		span {
-			color: $body-color;
+		img {
+			border-radius: 50%;
 		}
 	}
 
-	p {
-		margin-top: 0.2rem;
-		font-size: 1.2rem;
-		line-height: 1.4;
-		color: $dark-grey;
+	.tweet-body {
+		@include span-columns(9.6);	
+
+		h4 {
+			margin: 0rem 0 0.8rem;
+			line-height: 1;
+			font-family: $font-medium;
+			font-size: 1.1rem;
+			font-weight: normal;
+			
+			color: #3FA8F4;
+
+			span {
+				color: $mid-grey;
+			}
+		}
+
+		p {
+			margin-top: 0.2rem;
+			font-size: 1.2rem;
+			line-height: 1.4;
+			color: $dark-grey;
+		}
 	}
+
+	.date {
+		font-size: 1.1rem;
+		color: $mid-grey;
+	}
+
 }
 
+
+
 .status {
+	display: none;
 	margin-top: 4.1rem;
 	padding-left: 1rem;
 
