@@ -988,6 +988,11 @@ a.checklist:before {
 	display: none;
 }
 
+.basics .modal-bg.active,
+.basics .modal.active {
+	display: block;
+}
+
 .modal-bg {
 	height: 120rem;
 	position: absolute;
