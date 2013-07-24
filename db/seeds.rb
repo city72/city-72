@@ -42,28 +42,28 @@ story_data = {
   lesson1_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
   lesson2_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
   lesson3_quote: 'Everyone has something to share. Even a bike can be an invaluable tool.',
-  remote_video_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374696089/Hurracane_Sandy_tfecsh.jpg'
+  remote_video_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Hurracane_Sandy_cxijg8.jpg'
 }
 
 Story.create!(story_data)
 
 stories = [
   ['Jim', 'New Orleans', 'Jan 2005', 'Hurricane Katrina', 
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374696088/katrina_qveqxy.jpg'],
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/katrina_dwkp12.jpg'],
   ['Jennifer and Peter', 'San Francisco', 'Jun 1926', 'Great San Francisco Fire and Earthquake',
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374696087/earthquake_pxiwb4.jpg'],
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/earthquake_l6bq6t.jpg'],
   ['Bruce', 'Los Angeles', 'Jul 1980', 'Heat Wave of 1980',
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374696087/heat-wave_vranm4.jpg'],
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/heat-wave_y97b9d.jpg'],
   ['Pedro', 'Santiago de Chile', 'Mar 2010', 'Chilean earthquake of 2010',
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374696087/2010-Chile-Earthquake-81_pgusof.jpg'],
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/2010-Chile-Earthquake-81_wvcuek.jpg'],
   ['Ronaldo', 'Rio de Janeiro', 'Oct 2011', 'Brazilian floods of 2011',
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374696412/rio-floods_v7sksj.jpg'],
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/rio-floods_h751xk.jpg'],
   ['Jane', 'Mississippi River Valley', 'Mar 2011', 'mississippi river floods of 2011',
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374696088/Mississippi_River_Flooding_t607_gaqgiv.jpg'],
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Mississippi_River_Flooding_t607_hqb2ql.jpg'],
   ['Paul', 'American Samoa', 'Jun 2011', 'Samoa earthquake of 2009',
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374696089/samoa_xh9tfd.jpg'],
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/samoa_vileze.jpg'],
   ['Brad', 'California', 'Oct 2007', 'California wildfires of 2007',
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374696087/wildfire_mggmoo.jpg']
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/wildfire_gy1hl6.jpg']
 ]
 
 stories.each do |person, location, date, event, remote_video_image_url|
@@ -78,43 +78,43 @@ end
 Kit.create!(
   title: 'Adventurer Kit',
   url: 'http://www.amazon.com/Rothco-Deluxe-Adventurer-Survival-Knife/dp/B002PEZH3O/ref=sr_1_2?ie=UTF8&qid=1374187984&sr=8-2&keywords=survival+kits',use_case: 'aewr',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374696100/survival_xtsca8.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
   )
 Kit.create!(
   title: 'Lifeline Kit',
   url: 'http://www.amazon.com/Lifeline-29-Piece-Ultralight-Survival-Kit/dp/B002KV9PNA/ref=sr_1_4?ie=UTF8&qid=1374187984&sr=8-4&keywords=survival+kits', use_case: 'aewr',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374696100/lifeline_dkt7ao.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703486/food_bgf0f8.jpg"
   )
 Kit.create!(
   title: 'Emergency Kit',
   url: 'http://www.amazon.com/Quakehold-70280-Grab-n-Go-Emergency-2-Person/dp/B000FJQQVI/ref=sr_1_1?ie=UTF8&qid=1374187984&sr=8-1&keywords=survival+kits', use_case: 'aewr',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374696100/emergency_kit_mkxzmw.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/emergency-survival-kit_avucbi.jpg"
   )
 
 Item.create!(
   category: Categories::PERSONAL.to_s,
   title: 'Warm Clothes',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374696109/clothes_wxfkto.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid2_dxovpo.jpg"
   )
 
 Item.create!(
   category: Categories::USEFUL.to_s,
   title: 'Bottled Water',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374696109/water_stwrvb.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/water_y78yt0.jpg"
   )
 
 Item.create!(
   category: Categories::USEFUL.to_s,
   title: 'First Aid Kit',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374696109/first_aid_afrmvj.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg"
   )
 
 Item.create!(
   category: Categories::ESSENTIAL.to_s,
   title: 'First Aid Kit',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374696109/first_aid_afrmvj.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg"
   )
