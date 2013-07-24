@@ -556,9 +556,10 @@ body {
 .tw-tabs {
 	@include outer-container;
 	margin-top: 0;
+	width: 960px;
 
 	li {
-	@include span-columns(4);
+		@include span-columns(4);
 	}
 }
 
