@@ -7,12 +7,26 @@
 				%h3 8.3 Earthquake on San Andreas Fault
 				%p An 8.3 earthquake struck the San Andreas fault on Thursday at 5:56 am.
 			.em-quick-guide-trigger
-				%a{src:"#"} Show Quick Guide
-	
+				%a.show-quick-guide{src:"#"} Show Quick Guide
+				%a.hide-quick-guide{src: "#"} Hide Quick Guide
+	.em-quick-guide
+		.wrapper
+			%h3 Quick Guide
+			%ol.quick-guide
+				%li
+					%h2 Leave a trail.
+					%p If you leave home, leave a sign telling friends and family your location. Digitaly savvy? Send a tweet or Facebook update telling everyone know that you’re ok.
+				%li
+					%h2 Stay tuned.
+					%p Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.
+
+				%li
+					%h2 Check SF72.
+					%p In the event of an emergency, this site will go into emergency mode and bring you live updates and tweets from around the city, information on missing persons, and ways you can help.
 	.map-container
 		.wrapper
 			.map-heading
-				%h3 Crisis Map <span>Refresh</span>
+				%h3 Crisis Map <a class="icon-refresh" href="#"></a>
 			.map-actions
 				%ul.social-media
 					%li.twitter
@@ -72,7 +86,7 @@
 							%h4 Neil deGrasse Tyson <span>@neiltyson</span>
 							%p No power on Valencia between 21st and 22nd. Traffic jams at the intersection. #sfquake http://ow.ly/l6778Yj
 							%span.date 12 min ago 
-					
+				%a.btn-rounded{href: "#"} Show more
 			.official-reports
 			.status
 				%h3 Service Status

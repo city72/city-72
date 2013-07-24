@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-quick-guide, .icon-sms, .icon-fuel, .icon-close, .icon-twitter-big, .icon-twitter-big-on, .icon-bus, .icon-bus-on, .icon-map, .icon-map-on, .icon-disaster-other, .icon-disaster-connection, .icon-disaster-terrorist, .icon-disaster-hurricane, .icon-disaster-earthquake, .icon-disaster-radiation, .icon-disaster-flood, .icon-pdf, .icon-map-marker, .icon-arrow, .icon-mail, .icon-print, .icon-share-fb, .icon-share-twitter, .icon-sf72 {
+.icon-quick-guide, .icon-sms, .icon-fuel, .icon-close, .icon-twitter-big, .icon-twitter-big-on, .icon-bus, .icon-bus-on, .icon-map, .icon-map-on, .icon-disaster-other, .icon-disaster-connection, .icon-disaster-terrorist, .icon-disaster-hurricane, .icon-disaster-earthquake, .icon-disaster-radiation, .icon-disaster-flood, .icon-pdf, .icon-map-marker, .icon-arrow, .icon-mail, .icon-print, .icon-share-fb, .icon-share-twitter, .icon-sf72, .icon-refresh, .icon-unfold, .icon-dropdown, .icon-close-small {
 	font-family: 'sf72-icons';
 	speak: none;
 	font-style: normal;
@@ -111,4 +111,16 @@ you can use the generic selector below, but it's slower:
 }
 .icon-sf72:before {
 	content: "\79";
+}
+.icon-refresh:before {
+	content: "\7a";
+}
+.icon-unfold:before {
+	content: "\31";
+}
+.icon-dropdown:before {
+	content: "\32";
+}
+.icon-close-small:before {
+	content: "\33";
 }
