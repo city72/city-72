@@ -1,3 +1,4 @@
+= javascript_include_tag "em"
 .home-em
 	.wrapper.em-header
 		= render :partial => "partials/header"
@@ -47,17 +48,17 @@
 	.tw-tabs-container
 		%ul.tw-tabs
 			%li.active
-				%a{href:"#"}
+				%a{href:"#tab-citizen-updates"}
 					.updates-count 12
 					%h3 Citizen Updates
 					%span Via Twitter
 			%li 
-				%a{href:"#"}
+				%a{href:"#tab-official-reports"}
 					.updates-count 12
 					%h3 Official Reports
 					%span From SFDEM
 			%li 
-				%a{href:"#"}
+				%a{href:"#tab-service-status"}
 					.updates-count 12
 					%h3 Service Status
 					%span 511 Priority Alerts

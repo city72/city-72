@@ -5,19 +5,7 @@ $( ->
 		{ href: '#tab-personal-content', contentSelector: '.personal', anchorSelector: '[href="#tab-personal-content"]' }
 	]
 
-	showActive = ->
-		urlHash = window.location.hash || categories[0].href
-		activeElem = _(categories).find (cat) -> cat.href == urlHash
-		inactiveElems = _(categories).filter (cat) -> cat.href != urlHash
+	showActive categories
 
-		$(activeElem.contentSelector).show()
-		$(activeElem.anchorSelector).parent('li').addClass 'active'
-
-		_(inactiveElems).each (inactiveElem) ->
-			$(inactiveElem.contentSelector).hide()
-			$(inactiveElem.anchorSelector).parent('li').removeClass 'active'
-
-	showActive()
-
-	window.onhashchange = -> showActive()
+	window.onhashchange = -> showActive categories
 )
