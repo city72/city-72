@@ -8,4 +8,14 @@ $( ->
 	showActive reports
 
 	window.onhashchange = -> showActive reports
+
+	$('a.show-quick-guide').click ->
+		$('.em-quick-guide').show()
+		$('a.hide-quick-guide').show()
+		$(this).hide()
+
+	$('a.hide-quick-guide').click ->
+		$('.em-quick-guide').hide()
+		$('a.show-quick-guide').show()
+		$(this).hide()
 )
