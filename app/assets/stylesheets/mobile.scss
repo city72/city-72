@@ -91,8 +91,18 @@
 		color: #FFF;
 		position: absolute;
 		display: block;
-		top: 0.5rem;
-		left: 0.5rem;
+		top: .5rem;
+		left: .5rem;
+		text-indent: -9999px;
+	}
+	#build-menu-button:after {
+		font-size: 1.3rem;
+		left: .4rem;
+		top: -.2rem;
+		position: absolute;
+		font-family: 'sf72-icons';
+		content: "5";
+		text-indent: 0;
 	}
 
 	/* MOBILE GRID */
