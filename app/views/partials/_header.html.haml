@@ -1,7 +1,7 @@
 .header
 	%h1.logo
 		%a{href:"/home"} SF72
-	.main-nav
+	%ul.main-nav
 		%li
 			%a{href:"/connect"}
 				%strong Connect
@@ -19,3 +19,31 @@
 			%a{href:"/about"}
 				%strong About SF72
 				%span The vision behind SF72
+	.mobile-menu
+		.menu-mobile-heading SF72
+		%ul.main-nav
+			%li
+				%a{href:"/"}
+					%strong Home
+			%li
+				%a{href:"/connect"}
+					%strong Connect
+			%li
+				%a{href:"/prepare"}
+					%strong Prepare
+			%li
+				%a{href:"/about"}
+					%strong About SF72
+
+		.menu-mobile-heading Emergency Tools
+		%a.try-demo Try demo
+		%ul.main-nav
+			%li
+				%a{href:"/"}
+					%strong Quick Guide
+			%li
+				%a{href:"/connect"}
+					%strong Maps
+			%li
+				%a{href:"/prepare"}
+					%strong Updates
