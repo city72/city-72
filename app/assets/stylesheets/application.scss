@@ -805,6 +805,13 @@ body {
 }
 
 /* CONNECT */
+
+.connect .page-intro .big-title,
+.about .page-intro .big-title {
+	background: url(/assets/placeholder/connect.jpg) no-repeat left top;
+	background-size: 100%;
+}
+
 .app-signup {
 	@include outer-container;
 }
@@ -855,6 +862,11 @@ body {
 
 /* PREPARE */
 
+.prepare .page-intro .big-title {
+	background: url(/assets/placeholder/prepare.jpg) no-repeat left top;
+	background-size: 100%;
+}
+
 .prepare .tooltip {
 	line-height: 1.25;
 	font-size: 0.95rem;	
@@ -876,12 +888,17 @@ body {
 a.prepare-people,
 a.prepare-things
  {
-	background: url(http://placekitten.com/493/378/);
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/placeholder/prepare-people.jpg);
+	background-size: 100%;
 	display: block;
 	color: #FFF;
 	padding: 0.8rem 1rem 1rem;
 	height: 22.6rem;
 	position: relative;
+}
+
+a.prepare-things {
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/placeholder/prepare-supplies.jpg);
 }
 
 a.prepare-people p,
@@ -1176,7 +1193,8 @@ a.checklist:before {
 	width: 960px;
 	height: 28.8rem;
 	
-	background: url(http://placekitten.com/960/460/);
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/placeholder/stories.jpg);
+	background-size: 100%;
 	color: #FFF;
 
 	.photo-overlay {
@@ -1346,6 +1364,10 @@ h2 .story-disaster {
 }
 
 /* THINGS */
+
+.things .intro {
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/placeholder/supplies.jpg);
+}
 
 .action-bar {
 	@include outer-container;
