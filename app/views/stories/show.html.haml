@@ -1,75 +1,75 @@
 %div(ng-app="project")
-	%div.main-container.story-detail{"ng-controller" => "storyDetailController"}
-		= render :partial => "partials/header"
-		.intro-video
-			%iframe.video-opening{src: "#{@story.video_url}"}
-			%ul.social-media
-				%li.twitter
-					%a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"}
-						%span.icon-share-twitter
-				%li.facebook
-					%a{href: "http://facebook.com"}
-						%span.icon-share-fb
-		.intro-row
-			.main-intro
-				%h2
-					%span#name #{@story.person},
-					%span.story-disaster#disaster #{@story.event}
-				%strong.story-location #{@story.location}, #{@story.date}
-				.story-description
-					%h3 #{@story.story_header},
-					%p#main_story #{@story.story}
-			.main-quote &ldquo;<span id="main_quote">#{@story.quote}</span>&rdquo;
-		.needed
-			%h3 What I needed.
-			%ul.needed-list
-				%li
-					%img{src: "#{@story.item1_image}"}
-					%p &ldquo;#{@story.item1_quote}&rdquo;
-				%li
-					%img{src: "#{@story.item2_image}"}
-					%p &ldquo;#{@story.item2_quote}&rdquo;
-				%li
-					%img{src: "#{@story.item3_image}"}
-					%p &ldquo;#{@story.item3_quote}&rdquo;
-		.learned
-			%h3 What I learned.
-			%ul.learned-list
-				%li
-					%p &ldquo;#{@story.lesson1_quote}&rdquo;
-					%a{href: "/connect"} See the app
-				%li
-					%p &ldquo;#{@story.lesson2_quote}&rdquo;
-					%a{href: "/prepare/things"} Get your stuff
-				%li
-					%p &ldquo;#{@story.lesson3_quote}&rdquo;
-					%a{href: "/prepare/stories"} Link to another page
-		.similar
-			%h3 Similar to #{@story.person}
-			%ul.story-list
-				%li
-					%a
-						%img{src: "http://placekitten.com/300/170"}
-						.story-data
-							.story-type
-								%span.icon-disaster-hurricane
-							%h5 Jack & Lauren
-							%p New Orleans, LA
-				%li
-					%a
-						%img{src: "http://placekitten.com/300/170"}
-						.story-data
-							.story-type
-								%span.icon-disaster-earthquake
-							%h5 Marvin
-							%p New Orleans, LA
-				%li
-					%a
-						%img{src: "http://placekitten.com/300/170"}
-						.story-data
-							.story-type
-								%span.icon-disaster-flood
-							%h5 Keiko
-							%p Tokyo, Japan.
+  %div.main-container.story-detail{"ng-controller" => "storyDetailController"}
+    = render :partial => "partials/header"
+    .intro-video
+      %iframe.video-opening{src: "#{@story.video_url}"}
+      %ul.social-media
+        %li.twitter
+          %a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"}
+            %span.icon-share-twitter
+        %li.facebook
+          %a{href: "http://facebook.com"}
+            %span.icon-share-fb
+    .intro-row
+      .main-intro
+        %h2
+          %span#name #{@story.person},
+          %span.story-disaster#disaster #{@story.event}
+        %strong.story-location #{@story.location}, #{@story.date}
+        .story-description
+          %h3 #{@story.story_header},
+          %p#main_story #{@story.story}
+      .main-quote &ldquo;<span id="main_quote">#{@story.quote}</span>&rdquo;
+    .needed
+      %h3 What I needed.
+      %ul.needed-list
+        %li
+          %img{src: "#{@story.item1_image}"}
+          %p &ldquo;#{@story.item1_quote}&rdquo;
+        %li
+          %img{src: "#{@story.item2_image}"}
+          %p &ldquo;#{@story.item2_quote}&rdquo;
+        %li
+          %img{src: "#{@story.item3_image}"}
+          %p &ldquo;#{@story.item3_quote}&rdquo;
+    .learned
+      %h3 What I learned.
+      %ul.learned-list
+        %li
+          %p &ldquo;#{@story.lesson1_quote}&rdquo;
+          %a{href: "/connect"} See the app
+        %li
+          %p &ldquo;#{@story.lesson2_quote}&rdquo;
+          %a{href: "/prepare/things"} Get your stuff
+        %li
+          %p &ldquo;#{@story.lesson3_quote}&rdquo;
+          %a{href: "/prepare/stories"} Link to another page
+    .similar
+      %h3 Similar to #{@story.person}
+      %ul.story-list
+        %li
+          %a
+            %img{src: "http://placekitten.com/300/170"}
+            .story-data
+              .story-type
+                %span.icon-disaster-hurricane
+              %h5 Jack & Lauren
+              %p New Orleans, LA
+        %li
+          %a
+            %img{src: "http://placekitten.com/300/170"}
+            .story-data
+              .story-type
+                %span.icon-disaster-earthquake
+              %h5 Marvin
+              %p New Orleans, LA
+        %li
+          %a
+            %img{src: "http://placekitten.com/300/170"}
+            .story-data
+              .story-type
+                %span.icon-disaster-flood
+              %h5 Keiko
+              %p Tokyo, Japan.
 
 = render :partial => "partials/footer"

@@ -1,19 +1,19 @@
 .main-container.stories
-	= render :partial => "partials/header"
-	.intro
-		.photo-overlay
-			%h2 A personal look at disaster.
-			%p No matter your living situation &mdash; young, old, single, married, or living with a disability &mdash; people just like you have dealt with disaster. Hear stories from real disaster survivors, and learn what they wished they&apos;d known.
-	%h3 Stories of resilience, from around the world.
-	%ul.story-list
-		- @stories.each do |story|
-			%li
-				%a{href: "#{ story_path(story.id) }"}
-					%img{src: "#{story.video_image}"}
-					.story-data
-						.story-type
-							%span.icon-disaster-hurricane
-						%h5 #{story.person}
-						%p #{story.location}
+  = render :partial => "partials/header"
+  .intro
+    .photo-overlay
+      %h2 A personal look at disaster.
+      %p No matter your living situation &mdash; young, old, single, married, or living with a disability &mdash; people just like you have dealt with disaster. Hear stories from real disaster survivors, and learn what they wished they&apos;d known.
+  %h3 Stories of resilience, from around the world.
+  %ul.story-list
+    - @stories.each do |story|
+      %li
+        %a{href: "#{ story_path(story.id) }"}
+          %img{src: "#{story.video_image}"}
+          .story-data
+            .story-type
+              %span.icon-disaster-hurricane
+            %h5 #{story.person}
+            %p #{story.location}
 
 = render :partial => "partials/footer"

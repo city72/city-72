@@ -1,50 +1,50 @@
 = javascript_include_tag "things"
 .main-container.things
-	= render :partial => "partials/header"
-	.intro
-		.photo-overlay
-			%h2 Get your kit together.
-			%p Whether you’re just starting out or you’re a preparedness pro, it’s easy to build – or add to – your disaster kit. You’ll be surprised at how much you already have. It’s just a matter of getting organized.
-	.action-bar
-		%ul.tabs
-			%li.active
-				%a{href:"#tab-essentials-content"} Essentials
-			%li
-				%a{href:"#tab-useful-content"} Useful
-			%li
-				%a{href:"#tab-personal-content"} Personal
-		.list-download
-			%a Download full list
-	%ul.tabs-content 
-		%li.tab-essentials-content
-			%p.tab-tip A good rule of thumb is to have supplies for about 3 days, or 72 hours.
-			%ul.things-list.essential
-				- @items.select {|item| item.category == "#{Categories::ESSENTIAL.to_s}" }.each do |item|
-					%li
-						%img{src: "#{item.image}"}
-						%h4 "#{item.title}"
-						%p.overlay-text "#{item.use_case}"
-			%ul.things-list.useful
-				- @items.select {|item| item.category == "#{Categories::USEFUL.to_s}" }.each do |item|
-					%li
-						%img{src: "#{item.image}"}
-						%h4 "#{item.title}"
-						%p.overlay-text "#{item.use_case}"
-			%ul.things-list.personal
-				- @items.select {|item| item.category == "#{Categories::PERSONAL.to_s}" }.each do |item|
-					%li
-						%img{src: "#{item.image}"}
-						%h4 "#{item.title}"
-						%p.overlay-text "#{item.use_case}"
-		%li.tab-useful-content
-		%li.tab-personal-content
-	.kits
-		%h2 Things to share
-		%p No worries, we’ve got your backpack. Below you’ll find some pre-assembled kits you can buy directly from amazon.com
-		%ul.kits-list
-			- @kits.each do |kit|
-				%li
-					%a{href: "#{kit.url}"}
-						%img{src: "#{kit.image}"}
-						%span "#{kit.title}"
+  = render :partial => "partials/header"
+  .intro
+    .photo-overlay
+      %h2 Get your kit together.
+      %p Whether you’re just starting out or you’re a preparedness pro, it’s easy to build – or add to – your disaster kit. You’ll be surprised at how much you already have. It’s just a matter of getting organized.
+  .action-bar
+    %ul.tabs
+      %li.active
+        %a{href:"#tab-essentials-content"} Essentials
+      %li
+        %a{href:"#tab-useful-content"} Useful
+      %li
+        %a{href:"#tab-personal-content"} Personal
+    .list-download
+      %a Download full list
+  %ul.tabs-content 
+    %li.tab-essentials-content
+      %p.tab-tip A good rule of thumb is to have supplies for about 3 days, or 72 hours.
+      %ul.things-list.essential
+        - @items.select {|item| item.category == "#{Categories::ESSENTIAL.to_s}" }.each do |item|
+          %li
+            %img{src: "#{item.image}"}
+            %h4 "#{item.title}"
+            %p.overlay-text "#{item.use_case}"
+      %ul.things-list.useful
+        - @items.select {|item| item.category == "#{Categories::USEFUL.to_s}" }.each do |item|
+          %li
+            %img{src: "#{item.image}"}
+            %h4 "#{item.title}"
+            %p.overlay-text "#{item.use_case}"
+      %ul.things-list.personal
+        - @items.select {|item| item.category == "#{Categories::PERSONAL.to_s}" }.each do |item|
+          %li
+            %img{src: "#{item.image}"}
+            %h4 "#{item.title}"
+            %p.overlay-text "#{item.use_case}"
+    %li.tab-useful-content
+    %li.tab-personal-content
+  .kits
+    %h2 Things to share
+    %p No worries, we’ve got your backpack. Below you’ll find some pre-assembled kits you can buy directly from amazon.com
+    %ul.kits-list
+      - @kits.each do |kit|
+        %li
+          %a{href: "#{kit.url}"}
+            %img{src: "#{kit.image}"}
+            %span "#{kit.title}"
 = render :partial => "partials/footer"
