@@ -382,6 +382,16 @@ body {
 	height: 220px;	
 }
 
+.my-people {
+	background: url(/assets/static/connect.jpg) 100% 70%;
+	background-size: 230%;
+}
+
+.my-stuff {
+	background: url(/assets/static/prepare-supplies.jpg) -20px top;
+	background-size: 115%;
+}
+
 .social-media {
 	margin: 0.4rem 0 -2.6rem;
 	@include shift(10);
