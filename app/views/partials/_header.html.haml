@@ -1,49 +1,53 @@
 .header
-	%h1.logo
-		%a{href:"/home"} SF72
-	%ul.main-nav
-		%li
-			%a{href:"/connect"}
-				%strong Connect
-				%span The SF72 Mobile App
-		%li
-			%a{href:"/prepare"}
-				%strong Prepare
-				%span Stories, tools &amp; resources
-			%ul.submenu
-				%li
-					%a{href:"/stories"} People
-				%li
-					%a{href:"/things"} Things
-		%li
-			%a{href:"/about"}
-				%strong About SF72
-				%span The vision behind SF72
-	.mobile-menu
-		.menu-mobile-heading SF72
-		%ul.main-nav
-			%li
-				%a{href:"/"}
-					%strong Home
-			%li
-				%a{href:"/connect"}
-					%strong Connect
-			%li
-				%a{href:"/prepare"}
-					%strong Prepare
-			%li
-				%a{href:"/about"}
-					%strong About SF72
+  %h1.logo
+    %a{href:"/home"} SF72
+  %ul.main-nav
+    %li
+      %a{href:"/connect"}
+        %strong Connect
+        %span The SF72 Mobile App
+    %li
+      %a{href:"/prepare"}
+        %strong Prepare
+        %span Stories, tools &amp; resources
+      %ul.submenu
+        %li
+          %a{href:"/stories"} People
+        %li
+          %a{href:"/things"} Things
+    %li
+      %a{href:"/about"}
+        %strong About SF72
+        %span The vision behind SF72
+    %li
+      %a{href:"/em/home"}
+        %strong Emergency Mode
+        %span Preview crisis tools
+  .mobile-menu
+    .menu-mobile-heading SF72
+    %ul.main-nav
+      %li
+        %a{href:"/"}
+          %strong Home
+      %li
+        %a{href:"/connect"}
+          %strong Connect
+      %li
+        %a{href:"/prepare"}
+          %strong Prepare
+      %li
+        %a{href:"/about"}
+          %strong About SF72
 
-		.menu-mobile-heading Emergency Tools
-		%a.try-demo Try demo
-		%ul.main-nav
-			%li
-				%a{href:"/"}
-					%strong Quick Guide
-			%li
-				%a{href:"/connect"}
-					%strong Maps
-			%li
-				%a{href:"/prepare"}
-					%strong Updates
+    .menu-mobile-heading Emergency Tools
+    %a{href:"/em/home"}.try-demo Try demo
+    %ul.main-nav
+      %li
+        %a{href:"/"}
+          %strong Quick Guide
+      %li
+        %a{href:"/connect"}
+          %strong Maps
+      %li
+        %a{href:"/prepare"}
+          %strong Updates
