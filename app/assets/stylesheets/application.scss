@@ -808,7 +808,7 @@ body {
 
 .connect .page-intro .big-title,
 .about .page-intro .big-title {
-	background: url(/assets/placeholder/connect.jpg) no-repeat left top;
+	background: url(/assets/static/connect.jpg) no-repeat left top;
 	background-size: 100%;
 }
 
@@ -863,7 +863,7 @@ body {
 /* PREPARE */
 
 .prepare .page-intro .big-title {
-	background: url(/assets/placeholder/prepare.jpg) no-repeat left top;
+	background: url(/assets/static/prepare.jpg) no-repeat left top;
 	background-size: 100%;
 }
 
@@ -888,7 +888,7 @@ body {
 a.prepare-people,
 a.prepare-things
  {
-	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/placeholder/prepare-people.jpg);
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-people.jpg);
 	background-size: 100%;
 	display: block;
 	color: #FFF;
@@ -898,7 +898,7 @@ a.prepare-things
 }
 
 a.prepare-things {
-	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/placeholder/prepare-supplies.jpg);
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-supplies.jpg);
 }
 
 a.prepare-people p,
@@ -1193,7 +1193,7 @@ a.checklist:before {
 	width: 960px;
 	height: 28.8rem;
 	
-	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/placeholder/stories.jpg);
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/stories.jpg);
 	background-size: 100%;
 	color: #FFF;
 
@@ -1366,7 +1366,7 @@ h2 .story-disaster {
 /* THINGS */
 
 .things .intro {
-	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/placeholder/supplies.jpg);
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/supplies.jpg);
 }
 
 .action-bar {
