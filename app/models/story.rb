@@ -9,6 +9,7 @@ class Story < ActiveRecord::Base
 		:lesson1_quote,
     :lesson2_quote,
 		:lesson3_quote,
+		:category,
 
 		:remote_item1_image_url,
 		:remote_item2_image_url,
@@ -19,4 +20,6 @@ class Story < ActiveRecord::Base
 	mount_uploader :item1_image, StoryItemUploader
 	mount_uploader :item2_image, StoryItemUploader
 	mount_uploader :item3_image, StoryItemUploader
+
+	validates :category, inclusion: { in: StoryCategories::all_to_s, message: "%{value} is not a valid category" }
 end

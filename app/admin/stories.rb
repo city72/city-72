@@ -10,6 +10,7 @@ ActiveAdmin.register Story do
 		end
 		column :person
 		column :event
+    column :category
 		default_actions
 	end
 
@@ -17,6 +18,7 @@ ActiveAdmin.register Story do
     f.inputs "Event Details" do
       f.input :person, label: "Person Name"
       f.input :event
+      f.input :category, as: :select, collection: StoryCategories::all
       f.input :location
       f.input :date
       f.input :video_url
