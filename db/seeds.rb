@@ -27,6 +27,7 @@ AdminUser.create!(email: 'admin@sf72.org', password: '123456') unless admin_user
 story_data = {
   video_url: 'http://player.vimeo.com/video/5772729',
   event: 'Hurricane Sandy',
+  category: StoryCategories::HURRICANE_OR_TORNADO,
   person: 'Kristin',
   location: 'New York City',
   date: 'Nov 2012',
@@ -48,29 +49,30 @@ story_data = {
 Story.create!(story_data)
 
 stories = [
-  ['Jim', 'New Orleans', 'Jan 2005', 'Hurricane Katrina', 
+  ['Jim', 'New Orleans', 'Jan 2005', 'Hurricane Katrina', StoryCategories::HURRICANE_OR_TORNADO,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/katrina_dwkp12.jpg'],
-  ['Jennifer and Peter', 'San Francisco', 'Jun 1926', 'Great San Francisco Fire and Earthquake',
+  ['Jennifer and Peter', 'San Francisco', 'Jun 1926', 'Great San Francisco Fire and Earthquake', StoryCategories::EARTHQUAKE,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/earthquake_l6bq6t.jpg'],
-  ['Bruce', 'Los Angeles', 'Jul 1980', 'Heat Wave of 1980',
+  ['Bruce', 'Los Angeles', 'Jul 1980', 'Heat Wave of 1980', StoryCategories::OTHER_EMERGENCY,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/heat-wave_y97b9d.jpg'],
-  ['Pedro', 'Santiago de Chile', 'Mar 2010', 'Chilean earthquake of 2010',
+  ['Pedro', 'Santiago de Chile', 'Mar 2010', 'Chilean earthquake of 2010', StoryCategories::EARTHQUAKE,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/2010-Chile-Earthquake-81_wvcuek.jpg'],
-  ['Ronaldo', 'Rio de Janeiro', 'Oct 2011', 'Brazilian floods of 2011',
+  ['Ronaldo', 'Rio de Janeiro', 'Oct 2011', 'Brazilian floods of 2011', StoryCategories::TSUNAMI_OR_FLOOD,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/rio-floods_h751xk.jpg'],
-  ['Jane', 'Mississippi River Valley', 'Mar 2011', 'mississippi river floods of 2011',
+  ['Jane', 'Mississippi River Valley', 'Mar 2011', 'mississippi river floods of 2011', StoryCategories::TSUNAMI_OR_FLOOD,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Mississippi_River_Flooding_t607_hqb2ql.jpg'],
-  ['Paul', 'American Samoa', 'Jun 2011', 'Samoa earthquake of 2009',
+  ['Paul', 'American Samoa', 'Jun 2011', 'Samoa earthquake of 2009', StoryCategories::EARTHQUAKE,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/samoa_vileze.jpg'],
-  ['Brad', 'California', 'Oct 2007', 'California wildfires of 2007',
+  ['Brad', 'California', 'Oct 2007', 'California wildfires of 2007', StoryCategories::OTHER_EMERGENCY,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/wildfire_gy1hl6.jpg']
 ]
 
-stories.each do |person, location, date, event, remote_video_image_url|
+stories.each do |person, location, date, event, category, remote_video_image_url|
   story_data[:person] = person
   story_data[:location] = location
   story_data[:date] = date
   story_data[:event] = event
+  story_data[:category] = category
   story_data[:remote_video_image_url] = remote_video_image_url
   Story.create!(story_data)
 end

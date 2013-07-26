@@ -6,6 +6,11 @@ class StoriesController < ApplicationController
 
   def show
   	@story = Story.find(params[:id])
+    @related_stories = Story.where(category: @story.category).limit(3)
+    related_stories_count = @related_stories.count
+    if related_stories_count < 3
+      @related_stories.concat Story.where("category != ?", @story.category).limit(3 - related_stories_count)
+    end
   end
 
   def update

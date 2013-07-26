@@ -47,29 +47,14 @@
     .similar
       %h3 Similar to #{@story.person}
       %ul.story-list
-        %li
-          %a
-            %img{src: "http://placekitten.com/300/170"}
-            .story-data
-              .story-type
-                %span.icon-disaster-hurricane
-              %h5 Jack & Lauren
-              %p New Orleans, LA
-        %li
-          %a
-            %img{src: "http://placekitten.com/300/170"}
-            .story-data
-              .story-type
-                %span.icon-disaster-earthquake
-              %h5 Marvin
-              %p New Orleans, LA
-        %li
-          %a
-            %img{src: "http://placekitten.com/300/170"}
-            .story-data
-              .story-type
-                %span.icon-disaster-flood
-              %h5 Keiko
-              %p Tokyo, Japan.
+        - @related_stories.each do |related_story|
+          %li
+            %a{href: "/stories/#{ related_story.id }"}
+              %img{src: "#{ related_story.video_image }"}
+              .story-data
+                .story-type
+                  %span.icon-disaster-hurricane
+                %h5 "#{ related_story.person }"
+                %p "#{ related_story.location }"
 
 = render :partial => "partials/footer"
