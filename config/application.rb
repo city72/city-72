@@ -62,5 +62,12 @@ module IdeoSf72
     config.assets.paths << Rails.root.join("app", "assets", "components")
 
     config.assets.initialize_on_precompile = false
+
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
   end
 end
