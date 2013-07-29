@@ -4,6 +4,7 @@ ActiveAdmin.register Mode do
 	index do
 		selectable_column
 		column :em_mode
+		column :text
 		default_actions
 	end
 end

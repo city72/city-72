@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130729192340) do
+ActiveRecord::Schema.define(:version => 20130729215738) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20130729192340) do
     t.boolean  "em_mode"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "title"
+    t.string   "text"
   end
 
   create_table "stories", :force => true do |t|

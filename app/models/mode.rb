@@ -1,3 +1,3 @@
 class Mode < ActiveRecord::Base
-	attr_accessible :em_mode
+	attr_accessible :em_mode, :text
 end

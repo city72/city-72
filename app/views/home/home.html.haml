@@ -1,5 +1,5 @@
 :javascript
-  makeCorsRequest(window.location.origin + "/em", function(xhr){
+  makeCorsRequest("http://0.0.0.0:3000/em", function(xhr){
     var response = $.parseJSON(xhr.responseText)
     if(response.em_mode) {
       window.location = window.location.origin + "/em/home";
