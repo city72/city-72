@@ -1239,8 +1239,28 @@ a.checklist:before {
 	margin-top: 0.5rem;
 }
 
-.story-list li {
-	margin-bottom: 2rem;
+.story-list {
+
+	li {
+		margin-bottom: 2rem;
+
+		div.quote-dialog {
+			height: 170px;
+			width: 300px;
+			display: none;
+		}
+
+		a:hover {
+			div.quote-dialog {
+				display: block;
+			}
+			img {
+				display: none
+			}
+		}
+	}
+
+
 }
 
 .story-data {

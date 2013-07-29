@@ -9,6 +9,8 @@
     - @stories.each do |story|
       %li
         %a{href: "#{ story_path(story.id) }"}
+          .quote-dialog
+            "#{story.quote}"
           %img{src: "#{story.video_image}"}
           .story-data
             .story-type
