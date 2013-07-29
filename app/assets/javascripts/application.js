@@ -16,3 +16,4 @@
 //= require header
 //= require tabs_manager
 //= require jquery.mobile-menu.js
+//= require popups

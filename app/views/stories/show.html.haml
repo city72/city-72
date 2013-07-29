@@ -5,10 +5,10 @@
       %iframe.video-opening{src: "#{@story.video_url}"}
       %ul.social-media
         %li.twitter
-          %a{href: "http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:&url=http://sf72.org"}
+          %a{onClick: "twitterShare()"}
             %span.icon-share-twitter
         %li.facebook
-          %a{href: "http://facebook.com"}
+          %a{onClick: "facebookShare()"}
             %span.icon-share-fb
     .intro-row
       .main-intro
