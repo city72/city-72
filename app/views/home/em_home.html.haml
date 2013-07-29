@@ -37,10 +37,10 @@
             %a{onClick: "facebookShare()"}
               %span.icon-share-fb
           %li.print
-            %a{href: "#"}
+            %a{onClick: "window.print()"}
               %span.icon-print
           %li.email
-            %a{href: "#"}
+            %a{href: "mailto:someone@example.com?Subject=Hello%20again", target:"_top"}
               %span.icon-mail
         %a.map-tips-trigger Show Map Tips
     .map-area
