@@ -19,7 +19,7 @@ $( ->
 		$('a.show-quick-guide').show()
 		$(this).hide()
 
-	makeCorsRequest("http://0.0.0.0:3000/em", 
+	makeCorsRequest(window.location.origin + "/em",
 		(xhr) ->
 			response = $.parseJSON xhr.responseText
 			$('.alert-info h3').text(response.title)
