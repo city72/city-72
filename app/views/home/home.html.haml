@@ -1,3 +1,10 @@
+:javascript
+  makeCorsRequest(window.location.origin + "/em", function(xhr){
+    var response = $.parseJSON(xhr.responseText)
+    if(response.em_mode) {
+      window.location = window.location.origin + "/em/home";
+    }
+  })
 .main-container.home
   = render :partial => "partials/header"
   .intro-video

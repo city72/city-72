@@ -14,13 +14,8 @@ window.createCORSRequest = (method, url) ->
     xhr = null
   xhr
 
-# xhr = createCORSRequest("GET", url)
-# throw new Error("CORS not supported")  unless xhr
-
 # Make the actual CORS request.
-window.makeCorsRequest = (url, method) ->
-  
-  url = "http://localhost:3001"
+window.makeCorsRequest = (url, successCallback, method) ->
   if method
     xhr = createCORSRequest(method, url)
   else
@@ -31,9 +26,7 @@ window.makeCorsRequest = (url, method) ->
   
   # Response handlers.
   xhr.onload = ->
-    response = $.parseJSON(xhr.responseText)
-    # title = getTitle(text)
-    alert "Response from CORS request to " + url + ": " + response.text
+    successCallback(xhr)
 
   xhr.onerror = ->
     alert "Woops, there was an error making the request."

@@ -32,5 +32,7 @@ IdeoSf72::Application.routes.draw do
   get "about" => "home#about"
 
   resources :stories
+
+  get "em" => "emergency_mode#index"
   
 end
