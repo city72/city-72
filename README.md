@@ -57,12 +57,6 @@ On OS X, using Homebrew:
 
     brew install imagemagick
 
-### Generate static pages
-
-    bundle exec rake assets:precompile:nondigest
-    bundle exec rake static:update_application_css
-    bundle exec rake static:generate
-
 ### DB Setup
 
 **TODO**: Change this to make it part of a migration!
