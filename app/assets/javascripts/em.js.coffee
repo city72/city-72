@@ -19,9 +19,8 @@ $( ->
 		$('a.show-quick-guide').show()
 		$(this).hide()
 
-	makeCorsRequest(window.location.origin + "/em",
-		(xhr) ->
-			response = $.parseJSON xhr.responseText
+	$.get(window.location.origin + "/em",
+		(response) ->
 			$('.alert-info h3').text(response.title)
 			$('.alert-info p').text(response.text)
 	)
