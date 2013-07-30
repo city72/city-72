@@ -5,12 +5,12 @@
   .alert-wide
     .wrapper
       .alert-info
-        %h3
-        %p
+        %h3 8.3 Earthquake on San Andreas Fault
+        %p An 8.3 earthquake struck the San Andreas fault on Thursday at 5:56 am.
       .em-quick-guide-trigger
         %a.show-quick-guide{src:"#"} Show Quick Guide
         %a.hide-quick-guide{src: "#"} Hide Quick Guide
-  .em-quick-guide
+  .em-quick-guide.active
     .wrapper
       %h3 Quick Guide
       %ol.quick-guide
@@ -62,6 +62,16 @@
           .updates-count 12
           %h3 Service Status
           %span 511 Priority Alerts
+    %ul.tw-tabs-mobile
+      %li.active
+        %a{href:"#tab-citizen-updates"}
+          %h3 Citizen
+      %li 
+        %a{href:"#tab-official-reports"}
+          %h3 Official
+      %li 
+        %a{href:"#tab-service-status"}
+          %h3 Service
   .main-container
     .updates    
       .citizen-reports

@@ -155,6 +155,7 @@
 	.my-stuff,
 	.near-me {
 		margin: 0 auto;
+		width: 320px;
 	}
 
 	.footer {
@@ -293,7 +294,8 @@
 
 
 	/* PEOPLE */
-	.stories .intro {
+	.stories .intro,
+	.things .intro {
 		background-image:
 			-webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.5) 100%),
 			url(/assets/static/prepare-people.jpg);
@@ -333,7 +335,7 @@
 			margin-bottom: 0.7rem;
 
 			a {
-				height: 197px;
+				height: 181px;
 				display: block;
 				position: relative;
 			}
@@ -478,4 +480,179 @@
 	.similar .story-list li a {
 		height: 181px;
 	}
+
+	/* THINGS */
+	.things .intro {
+		background-image: url(/assets/static/supplies.jpg);
+		background-size: 160%;
+
+		.photo-overlay p { 
+			bottom: -11.3rem;
+		}
+	}
+
+	.action-bar .tabs,
+	.tw-tabs-mobile {
+		@include span-columns(4);
+		margin: 0;
+		padding: 0;
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+
+		li {
+			margin: 0;
+			display: block;
+			float: left;
+
+			a {
+				border-color: #CBCBCB;
+				font-size: 1rem;
+				width: 6.75rem;
+				padding: 0.4rem 0 0.3rem;
+				margin-right: -1px;
+			}
+		}
+
+		li:first-child a {
+			margin-left: -1px;
+		}
+
+		li.active a,
+		li:hover a {
+			background-color: $highlight;
+			color: #FFF;
+			border-color: $highlight;
+			position: relative;
+			z-index: 2;
+		}
+
+		li.active:before,
+		li:hover:before {
+			display: none;
+		}
+
+		li.active:after,
+		li:hover:after {
+			border-color: $highlight transparent transparent;
+			border-width: 9px;
+			bottom: -17px;
+			margin-left: -9px;
+		}
+	}
+
+	.action-bar .list-download,
+	.tab-tip {
+		display: none;
+	}
+
+	.things-list li {
+		@include span-columns(4);
+		text-align: center;
+	}
+
+	.kits {
+		background-color: #F7F7F7;
+		padding-top: 0.6rem;
+
+		h2 {
+			margin: 1rem 3% 0;
+			font-size: 1.5rem;
+		}
+
+		p {
+			margin: 1rem 3% 0;
+			font-size: 1rem;
+		}
+
+		.kits-list li {
+			@include span-columns(4);
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+	}
+
+	/* ALERTS */
+	
+	.alert-wide {
+		margin-top: 2.7rem;
+
+		.wrapper {
+			padding: 0.2rem 3%;
+		}
+
+		.alert-info {
+			@include span-columns(4);
+			@include omega;
+		}
+
+		h3 {
+			line-height: 1.2;
+			margin: 1.2rem 0 0.8rem;
+		}
+	}
+
+	.em-quick-guide-trigger {
+		display: none;
+	}
+
+	.em-quick-guide {
+		padding: 0 3%;
+
+		.quick-guide {
+			li {
+				padding-left: 0;
+				padding-top: 3.5rem;
+				position: relative;
+				margin-bottom: 1rem;
+			}
+
+			li:before {
+				position: absolute;
+				top: 0;
+				padding: 0.4rem 0.9rem 0.2rem 0.9rem;
+				float: none;
+				margin-left: 0;
+				background-color: $highlight-dark;
+				font-size: 1.2rem;
+			}
+
+			h2 {
+				font-size: 1.5rem;
+			}
+
+			p {
+				font-size: 1rem;
+				line-height: 1.5;
+			}
+		}
+	}
+
+	.map-actions {
+		display: none;
+	}
+
+	.map-heading {
+		@include span-columns(4);
+
+		h3 { margin: 0.8rem 0 0.8rem 3%; }
+	}
+
+	.tw-tabs {
+		display: none;
+	}
+
+	.tw-tabs-mobile {
+		display: block;
+
+		a {
+			display: block;
+			text-align: center;
+			border: 1px solid $body-light;
+
+			h3 {
+				margin: 0;
+				font-size: 1rem;
+			}
+		}
+	}
+
 }

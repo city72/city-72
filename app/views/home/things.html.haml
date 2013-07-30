@@ -22,19 +22,19 @@
         - @items.select {|item| item.category == "#{Categories::ESSENTIAL.to_s}" }.each do |item|
           %li
             %img{src: "#{item.image}"}
-            %h4 "#{item.title}"
+            %h4 #{item.title}
             %p.overlay-text "#{item.use_case}"
       %ul.things-list.useful
         - @items.select {|item| item.category == "#{Categories::USEFUL.to_s}" }.each do |item|
           %li
             %img{src: "#{item.image}"}
-            %h4 "#{item.title}"
+            %h4 #{item.title}
             %p.overlay-text "#{item.use_case}"
       %ul.things-list.personal
         - @items.select {|item| item.category == "#{Categories::PERSONAL.to_s}" }.each do |item|
           %li
             %img{src: "#{item.image}"}
-            %h4 "#{item.title}"
+            %h4 #{item.title}
             %p.overlay-text "#{item.use_case}"
     %li.tab-useful-content
     %li.tab-personal-content
@@ -46,5 +46,5 @@
         %li
           %a{href: "#{kit.url}"}
             %img{src: "#{kit.image}"}
-            %span "#{kit.title}"
+            %span #{kit.title}
 = render :partial => "partials/footer"

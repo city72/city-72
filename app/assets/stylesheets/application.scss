@@ -634,6 +634,10 @@ body {
 
 }
 
+.tw-tabs-mobile {
+	display: none;
+}
+
 .tw-tabs {
 	@include outer-container;
 	margin-top: 0;
