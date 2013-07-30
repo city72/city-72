@@ -50,6 +50,8 @@
         - @related_stories.each do |related_story|
           %li
             %a{href: "/stories/#{ related_story.id }"}
+              .quote-dialog
+                "#{ related_story.quote }"
               %img{src: "#{ related_story.video_image }"}
               .story-data
                 .story-type
