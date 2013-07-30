@@ -378,6 +378,104 @@
 
 	}
 
+	/* STORY DETAIL */
+	
+	.intro-row {
+		.main-intro {
+			margin-top: 0.5rem;
+			margin-bottom: 0;
+
+			h2 {
+				margin-top: 0;
+
+				.story-disaster {
+					display: block;
+				}
+			}
+
+			.story-location {
+				font-size: 0.7rem;
+				color: $dark-grey;
+				font-weight: normal;
+				font-family: $font-bold;
+			}
+
+			.story-description {
+				margin-top: 1.5rem;
+
+				h3 {
+					font-size: 1rem;
+				}
+			}
+		}
+
+		.main-quote {
+			@include span-columns(4);
+			font-size: 1rem;
+			padding: 0 3%;
+			margin: 0;
+			margin-bottom: 1.6rem;
+			border-left: none;
+			line-height: 1.375;
+		}
+	}
+
+	.needed-list li,
+	.learned-list li,
+	.story-list li {
+		@include span-columns(4);
+	}
+
+	.needed h3,
+	.learned h3,
+	.similar h3 {
+		padding-left: 3%;
+	}
+
+	.needed-list {
+		li {
+			text-align: center;
+
+			p {
+				text-indent: 0;
+				padding: 0;
+				margin-left: 3%;
+				text-align: left;
+				font-family: $font-regular;
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.learned {
+		background-color: #F7F7F7;
+		padding-top: 1rem;
+		margin-top: -0.8rem;
+	}
+
+	.learned-list {
+		margin-bottom: 3.5rem;
+		padding-bottom: 1.2rem;
 
 
+		li {
+			background: transparent;
+			height: auto;
+			padding: 0 3% 3rem;
+		}
+
+		p {
+			color: #A2A0A0;
+			line-height: 1.375;
+			text-indent: 0;
+		}
+
+		a {
+			padding-left: 6%;
+		}
+	}
+
+	.similar .story-list li a {
+		height: 181px;
+	}
 }
