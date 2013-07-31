@@ -2,23 +2,38 @@
   = render :partial => "partials/header"
   .page-intro
     .big-title
-      %h1 Connect
-      %span Give a little, get a lot
+      %h1 SF72 App
+      %span Connect with your people
       .tooltip
         .tooltip-content <strong>1/2 full?</strong> or half empty, depending on how your day is going.
     %h2 Preparedness is all about people.
-    %p People are most resilant in emergencies when they are connected to others. Getting prepared for emergencies is simple and effective when you do it with friends and family. There are lots of ways to get connected. Choose the one that’s best for you.
+    %p History has taught us one thing: people are most resilient in emergencies when they are connected to others. The kind of connections that are meaningful to us in everyday life become even more crucial during an emergency.
+    %p But recent emergencies, including Sandy, Boston and Fukushima, have shown that there is also an emerging role for technology in emergency response. In fact, text messaging is one of the most reliable forms of communication in an emergency, since it is unlikely that all networks will go down.
+    %p The SF72 app is designed to bring together these two simple facts. 
   .app-signup
-    .app-details
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a euismod nisl, vel tempor massa. In at tortor eu mauris fringilla dignissim nec quis velit. Pellentesque eu orcised neque consectetur cursus.
-      %p Donec eleifend porta turpis ultrices laoreet. Curabitur vulputate, tellus sed sollicitudin interdum, risus sapien dictum turpis, non euismod elit quam vitae dolor. Vestibulum at neque mauris. Fusce vel augue lectus. Donec eleifend porta arcu.
-      %a.btn-rounded Sign up
+    .app-title
+      %h3.coming-soon Coming Soon!
+      %h3 The SF72 App
     .app-video
-  %ul.in-context
+    .app-details
+      %p In just 5 minutes, the SF72 app will hook you up with everything you need to immediately get connected in the event of an emergency. Start with yourself. Share with five friends. Watch the strength of our city grow from there.
+      %strong Want to know when the SF72 App goes live? Sign up by email and we’ll keep you in the loop.
+      .subscribe-form
+        %input.email{type: "text", placeholder: "Notify me"}
+        %input.submit{type: "submit", value: "Go"}
+  %ul.app-features
     %li
-      %img{src: "http://placekitten.com/458/324"}
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a euismod nisl, vel tempor massa. In at tortor eu mauris fringilla dignissim nec quis velit. Pellentesque eu orcised neque consectetur cursus.
+      %img{src: "http://placekitten.com/300/390"}
+      %ul.features-detail
+        %li Geo-tracks your location relative to your loved ones, so you can quickly find a meetup spot.
+        %li Integrates with your existing social networks.
     %li
-      %img{src: "http://placekitten.com/458/324"}
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a euismod nisl, vel tempor massa. In at tortor eu mauris fringilla dignissim nec quis velit. Pellentesque eu orcised neque consectetur cursus.
+      %img{src: "http://placekitten.com/300/390"}
+      %ul.features-detail
+        %li Helps you send an emergency group text to your Inner Circle of friends. (SMS is the most reliable form of emergency communication, since it is unlikely that all networks will go down.)
+    %li
+      %img{src: "http://placekitten.com/300/390"}
+      %ul.features-detail
+        %li Aggregates emergency updates from around the city through both official city announcements, and crowdsourced updates from fellow citizens on the street.
+        %li Shows where you can find nearby shelter, food, and community resources.
 = render :partial => "partials/footer"
