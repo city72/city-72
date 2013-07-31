@@ -20,8 +20,6 @@ gem "carrierwave"
 gem "rmagick"
 gem 'cloudinary'
 
-gem 'rack-cors', :require => 'rack/cors'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
