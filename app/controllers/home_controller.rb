@@ -31,7 +31,7 @@ class HomeController < ApplicationController
     @kits = Kit.all
   end
 
-  def quake_guide
+  def quick_guide
   end
 
 end
