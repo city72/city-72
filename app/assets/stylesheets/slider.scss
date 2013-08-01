@@ -1,0 +1,69 @@
+.bx-wrapper {
+	position: relative;
+	margin: 0 auto 60px;
+	padding: 0;
+}
+
+.bx-wrapper .bx-pager {
+	position: absolute;
+	bottom: -30px;
+	width: 100%;
+	text-align: center;
+}
+
+.bx-pager-item {
+	display: inline-block;
+}
+
+.bx-pager a {
+	border: 1px solid #FBB03B;
+	text-indent: -9999px;
+	display: block;
+	width: 13px;
+	height: 13px;
+	margin: 1rem 6px;
+	outline: 0;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.bx-pager a.active {
+	background-color: #FBB03B;
+}
+
+.bx-controls-direction a {
+	position: absolute;
+	top: 4.9rem;
+	outline: 0;
+	width: 32px;
+	height: 32px;
+	text-indent: -9999px;
+	z-index: 9999;
+	font-size: 3.1rem;
+}
+
+.bx-controls-direction a:before {
+	font-family: 'sf72-icons';
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: 's';
+	text-indent: 0;
+}
+
+.bx-controls-direction a.bx-prev { 
+	left: 1rem;
+}
+
+.bx-controls-direction a.bx-prev:before { 
+	-webkit-transform: rotate(180deg);
+}
+
+.bx-controls-direction a.bx-next { 
+	right: 1.6rem;
+}
+
+.bx-controls-direction a.disabled {
+	display: none;
+}

@@ -17,3 +17,4 @@
 //= require tabs_manager
 //= require jquery.mobile-menu.js
 //= require popups
+//= require jquery.bxslider.min.js

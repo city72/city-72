@@ -4,6 +4,18 @@
       window.location = window.location.origin + "/em/home";
     }
   })
+:javascript
+  $(document).ready(function(){
+    $('.slider-during .slider').bxSlider({
+      infiniteLoop: false,
+      hideControlOnEnd: true
+    });
+    $('.slider-after .slider').bxSlider({
+      infiniteLoop: false,
+      hideControlOnEnd: true
+    });
+  });
+
 .main-container.home
   = render :partial => "partials/header"
   .intro-video
@@ -21,20 +33,53 @@
       %p Here&apos;s the thing: actual emergencies look more like people coming together than cities falling apart. In fact, people who are more connected fare better in the face of crisis.
       %p SF72 is a new platform, designed to help San Francisco build connections and prepare for emergencies before something happens to the city we love. This way, we can act swiftly, safely and efficiently if disaster strikes. And we can show the world just how connected we are.
     %a.intro-app
-      %span In the event of an emergency, this site will go into emergency mode, becoming a hub where you can access live updates from around the city and locate nearby resources and shelters.
+      %span In the event of an emergency, this site will go into Emergency Mode where it will provide a live stream of updates from the City as well as crowdsourced citizen reports.
       %strong Preview the SF72 <br />Emergency Mode.
   %ul.col-3
     %li
       .my-people
-      %h4 The tools
-      %p SF72 takes the mystery out of emergency preparation, and makes it simple, local, and human. This site contains real stories – and insights – from people who have survived emergencies around the world, tips for how to build your kit, and a guide for how to share the love. <a href="prepare">Check out the SF72 Prepare resources.</a>
+      %h4 Prepare
+      %p Take the mystery out of emergency preparation by exploring our tools and resources – including real stories from people who have coped with emergencies, a quick guide to gathering supplies, and tips for how you can share the love.<br /> <a href="prepare">Check out the SF72 Prepare resources.</a>
     %li
       .my-stuff
-      %h4 The app
-      %p The SF72 App helps you leverage your existing networks, easily get in touch with loved ones, and keep tabs on the status of the city. <a href="connect">Learn more about the SF72 App.</a>
+      %h4 SF72 app
+      %p The SF72 App helps you leverage your existing networks, easily get in touch with loved ones, and keep tabs on the status of the city.<br /> <a href="connect">Learn more about the SF72 App.</a>
     %li
       .near-me
-      %h4 The vision
-      %p If we can be prepared for the first 72 hours after a disaster, we will be ready for an emergency, no matter what form it takes. 72 hours might seem like a lot, but that’s really only nine meals. It’s just a long weekend. <a href="about">Explore the vision behind SF72.</a>
-      
+      %h4 About SF72
+      %p If we can be prepared for the first 72 hours after a disaster, we will be ready for an emergency, no matter what form it takes. 72 hours might seem like a lot, but that&apos;s really only nine meals. It&apos;s just a long weekend.<br /> <a href="about">Explore the vision behind SF72.</a>
+  .basics-section
+    %h2 Quake Basics
+    %p A few easy steps to keep your cool when the earth shakes.
+  .basics-slider
+    .slider-header
+      %ul.basics-tabs
+        %li During a quake
+        %li After a quake
+      %a.quick-list-trigger{href:"#"} See full Quake Guide
+    .slider-body
+      .slider-during
+        %a.prev{href: "#"}
+        %a.next{href: "#"}
+        %ol.slider.quick-guide
+          %li
+            %h2 Drop, cover and hold.
+            %p Duck under a strong table or desk. Cover your head and neck with your arms against an interior wall. Stay away from windows.
+          %li
+            %h2 Stay calm.
+            %p Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.
+          %li
+            %h2 Stay put.
+            %p Shelter in place–whether you’re in a car, in bed, or in a public place. Do not try to run out of the building during strong shaking, hold tight until the shaking stops. If you’re outdoors, steer clear of wires or falling objects.
+      .slider-after
+        %ol.slider.quick-guide
+          %li
+            %h2 Leave a trail.
+            %p If you leave home, leave a sign telling friends and family your location. Digitaly savvy? Send a tweet or Facebook update telling everyone know that you’re ok.
+          %li
+            %h2 Stay tuned.
+            %p Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.
+          %li
+            %h2 Check SF72.
+            %p In the event of an emergency, this site will go into emergency mode and bring you live updates and tweets from around the city, information on missing persons, and ways you can help.
 = render :partial => "partials/footer"
