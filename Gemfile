@@ -5,6 +5,11 @@ gem 'rails', '3.2.13'
 
 gem 'unicorn-rails'
 
+gem 'rack-cache'
+gem 'dalli'
+gem 'kgio'
+gem "memcachier"
+
 gem 'newrelic_rpm'
 
 gem 'activeadmin'
@@ -28,9 +33,6 @@ group :assets do
   gem 'bourbon', '~> 3.1.8'
   gem 'neat', '~> 1.3.0'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -40,18 +42,3 @@ group :test, :development do
   gem 'pry'
   gem 'pry-debugger'
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
