@@ -15,6 +15,6 @@ states = [
   { href: '#tab-after-earth-quake', contentSelector: '.slider-after', anchorSelector: '[href="#tab-after-earth-quake"]' }
 ]
 
-showActive states
+showActive states, false
 
-window.onhashchange = -> showActive states
+window.onhashchange = -> showActive states, false
