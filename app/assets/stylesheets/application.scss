@@ -235,6 +235,7 @@ body {
 /* .story-detail { background: url(/assets/06-story-detail.png) -30px 0; } */
 /* .things { background: url(/assets/07-things.png) -30px 0; } */
 /* .about { background: url(/assets/08-about.png) -30px 0; } */
+/* .quick-guide-page { background: url(/assets/09-quick-guide-page.png) -30px 0; } */
 
 /* HOME */
 .video-opening {
@@ -465,9 +466,33 @@ body {
 
 	li {
 		float: left;
-		padding: 0.8rem 0.6rem 0.8rem 1.9rem;
-		color: #FFF;
-		font-size: 1.3rem;
+
+		a {
+			display: block;
+			padding: 0.8rem 0.6rem 0.8rem 1.9rem;
+			color: #FFF;
+			font-size: 1.3rem;
+			opacity: 0.6;
+			position: relative;
+		}
+	}
+
+	li.active {
+		a {
+			opacity: 1;
+		}
+
+		a:before {
+			content: '';
+			width: 0px;
+			height: 0px;
+			border-style: solid;
+			border-width: 0 11px 13px 11px;
+			border-color: transparent transparent $light-grey transparent;
+			position: absolute;
+			bottom: 0;
+			left: 2rem;
+		}
 	}
 }
 
@@ -475,6 +500,16 @@ body {
 	float: right;
 	color: #FFF;
 	padding: 1.1rem 2.6rem;
+	position: relative
+}
+
+.quick-list-trigger:before {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	font-family: 'sf72-icons';
+	content: 'q';
+	font-size: 1.5rem;
 }
 
 /* COMMON ELEMENTS */
@@ -1147,7 +1182,7 @@ a.checklist:before {
 
 .quick-guide-trigger:before {
 	font-family: "sf72-icons";
-	content: "a";
+	content: "1";
 	position: absolute;
 	top: 0;
 	font-size: 3.47rem;
@@ -1254,8 +1289,7 @@ a.checklist:before {
 	background: rgba(0,0,0,0.6);
 }
 
-.modal {
-
+/* .modal had this styles:
 	position: absolute;
 	max-width: 940px;
 	left: 50%;
@@ -1264,21 +1298,7 @@ a.checklist:before {
 	padding: 4.3rem 4.3% 0;
 	background-color: #FFF;
 	z-index: 2;
-
-	h4 {
-		margin: 4.3rem 0 0 7.9rem;
-		font-family: $font-medium;
-		font-size: 1em;
-		font-weight: normal;
-	}
-
-	.modal-title,
-	.event-after {
-		margin: 0.1rem 7.9rem 0;
-		font-size: 2.2rem;
-		color: $highlight-dark;
-	}
-}
+*/
 
 .quick-guide {
 	margin: 0;
@@ -1317,12 +1337,6 @@ a.checklist:before {
 	}
 }
 
-.quick-guide.full-page {
-	li {
-		margin-bottom: 4.5rem;
-	}
-}
-
 .slider.quick-guide {
 
 	li {
@@ -1348,16 +1362,87 @@ a.checklist:before {
 	display: none;
 }
 
-.modal .event-after { color: $highlight; }
+.quick-guide-page .quick-guide {
+	margin: 0 7rem 0 3.9rem;
+}
+
+.quick-guide-page .basics {
+
+	h4 {
+		margin: 4.3rem 0 0 7.9rem;
+		font-family: $font-medium;
+		font-size: 1em;
+		font-weight: normal;
+	}
+
+	> h2 {
+		margin: 0.1rem 11.8rem 0;
+		font-size: 2.2rem;
+		color: $highlight-dark;
+	}
+}
+
+.quick-guide-page .quick-guide {
+	li {
+		margin-bottom: 4.5rem;
+	}
+}
+
+.quick-guide-page .basics .event-after { color: $highlight; }
 .quick-guide.second li:before{ background-color: $highlight }
 
-.modal-share p {
-	padding: 0.2rem 0 0 7.9rem;
-	font-family: $font-medium;
-	font-size: 1.3rem;
-	line-height: 1.3;
-	color: $highlight;
+.quick-guide-share {
+	margin-bottom: 1.9rem;
+
+	.share-options {
+		float: right;
+		margin: -0.5rem 8.6rem 0 0;
+
+		li {
+			float: left;
+
+			a {
+				display: block;
+				text-indent: -9999px;
+				position: relative;
+				height: 32px;
+				width: 32px;
+				color: $body-light;
+				font-size: 1.6rem;
+				margin-left: 1rem;
+			}
+
+			a:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				text-indent: 0;
+				font-family: 'sf72-icons';
+				content: 'w';
+			}
+
+			a.facebook:before { content: 'v'; }
+			a.print:before { content: 'u'; }
+			a.email:before { content: 't'; }
+
+			a:hover {
+				color: $dark-grey;
+			}
+		}
+
+
+	}
+
+	p {
+		margin: 0.6rem 0;
+		padding-left: 11.9rem;
+		font-family: $font-bold;
+		font-size: 1rem;
+		line-height: 1.3;
+		color: $dark-grey;
+	}
 }
+
 
 /* STORIES */
 
