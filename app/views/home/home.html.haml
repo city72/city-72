@@ -1,21 +1,4 @@
-:javascript
-  $.get(window.location.origin + "/em", function(response){
-    if(response.em_mode) {
-      window.location = window.location.origin + "/em/home";
-    }
-  })
-:javascript
-  $(document).ready(function(){
-    $('.slider-during .slider').bxSlider({
-      infiniteLoop: false,
-      hideControlOnEnd: true
-    });
-    $('.slider-after .slider').bxSlider({
-      infiniteLoop: false,
-      hideControlOnEnd: true
-    });
-  });
-
+= javascript_include_tag "home"
 .main-container.home
   = render :partial => "partials/header"
   .intro-video
@@ -54,8 +37,10 @@
   .basics-slider
     .slider-header
       %ul.basics-tabs
-        %li During a quake
-        %li After a quake
+        %li
+          %a{href:"#tab-during-earth-quake"} During a quake
+        %li
+          %a{href:"#tab-after-earth-quake"} After a quake
       %a.quick-list-trigger{href:"quake_guide"} See full Quake Guide
     .slider-body
       .slider-during
