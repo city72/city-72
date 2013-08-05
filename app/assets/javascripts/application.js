@@ -18,3 +18,6 @@
 //= require jquery.mobile-menu.js
 //= require popups
 //= require jquery.bxslider.min.js
+//= require modernizr.js
+//= require raphael-min.js
+//= require magic.js
