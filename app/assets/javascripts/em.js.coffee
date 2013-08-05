@@ -11,13 +11,13 @@ $( ->
 
 	$('a.show-quick-guide').click ->
 		$('.em-quick-guide').show()
-		$('a.hide-quick-guide').show()
-		$(this).hide()
+		$('a.hide-quick-guide').css('display', 'show')
+		$(this).css('display', 'none')
 
 	$('a.hide-quick-guide').click ->
 		$('.em-quick-guide').hide()
-		$('a.show-quick-guide').show()
-		$(this).hide()
+		$('a.show-quick-guide').css('display', 'show')
+		$(this).css('display', 'none')
 
 	$.get(window.location.origin + "/em",
 		(response) ->
