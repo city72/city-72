@@ -1177,47 +1177,12 @@ a.checklist:before {
 	@include omega;
 }
 
-.quick-guide-trigger {
-	padding-top: 4.9rem;
-	position: relative;
-
-	h3 {
-		margin: 0;
-		color: $highlight-dark;
-	}
-
-	p {
-		padding-right: 10rem;
-		margin-top: 0;
-		font-family: $font-medium;
-		font-size: 1.3em;
-		line-height: 1.25em;
-		color: $body-light;
-	}
-}
-
-.quick-guide-trigger:before {
-	font-family: "sf72-icons";
-	content: "1";
-	position: absolute;
-	top: 0;
-	font-size: 3.47rem;
-	color: $highlight-dark;
-}
-
-.video-future {
-	margin: 0 0 0.2rem 0.8rem;
-	background-color: #FBB03B;
-	width: 427px;
-	height: 213px;
-}
-
 .basics-video strong {
 	padding-left: 0.8rem;
 	font-family: $font-medium;
 	color: $dark-grey;
 }
-
+/*
 .alert-sf-block {
 	background-color: $highlight;
 	padding: 1.2rem;
@@ -1282,6 +1247,7 @@ a.checklist:before {
 	left: 2.5rem;
 	font-size: 4rem;
 }
+*/
 
 .basics .modal-bg,
 .basics .modal {
@@ -1316,6 +1282,66 @@ a.checklist:before {
 	z-index: 2;
 */
 
+.existing-networks {
+
+	margin-left: 1.8rem;
+
+	h2 {
+		margin: 4.8rem 0 0;
+		color: $dark-grey;
+		font-size: 2.2rem;
+	}
+
+	.intro-networks {
+		margin: 0 11rem 0 0;
+		line-height: 1.35;
+		font-size: 1.3rem;
+	}
+
+	.networks-list {
+		@include outer-container;
+
+		li {
+			@include span-columns(6);
+			@include omega(2n);
+			padding: 0.9rem 3.3rem 0 6.3rem;
+			height: 15rem;
+			position: relative;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			color: $dark-grey;
+			margin-bottom: 0;
+		}
+
+		p {
+			margin: 0 0 0.5rem;
+		}
+
+		a {
+			display: block;
+			margin-bottom: 0.5rem;
+		}
+
+		li:before {
+			position: absolute;
+			top: 1.3rem;
+			left: 1.4rem;
+			font-family: "sf72-icons";
+			font-size: 3.3rem;
+			color: $body-light;
+		}
+
+		li.facebook:before {content: "v";}
+		li.airbnb:before {content: "v";}
+		li.twitter:before {content: "w";}
+		li.gplus:before {content: "w";}
+	}
+}
+
+
+
 .quick-guide {
 	margin: 0;
 	padding: 0;
@@ -1323,7 +1349,7 @@ a.checklist:before {
 	
 	h2 {
 		margin: -0.3rem 0 0;
-		font-size: 2.2rem;
+		font-size: 2rem;
 		line-height: 1;
 		color: $dark-grey;
 	}
@@ -1337,10 +1363,10 @@ a.checklist:before {
 		content: counter(list-counter);
 		counter-increment: list-counter;
 		float: left;
-		margin-left:-7.9rem;
-		padding: 0.5rem 1.8rem;
+		margin: -0.3rem 0 0 -7rem;
+		padding: 0.5rem 1.5rem;
 		font-family: $font-medium;
-		font-size: 2.2rem;
+		font-size: 2rem;
 		color: #FFF;
 		background-color: $highlight-dark;
 		border-radius: 50%;
@@ -1348,8 +1374,8 @@ a.checklist:before {
 
 	p {
 		margin: 0.4rem 0 0;
-		font-size: 1.3rem;
-		line-height: 1.7rem;
+		font-size: 1.2rem;
+		line-height: 1.6rem;
 	}
 }
 
@@ -1379,7 +1405,7 @@ a.checklist:before {
 }
 
 .quick-guide-page .quick-guide {
-	margin: 0 7rem 0 3.9rem;
+	margin: 0 9rem 0 3.9rem;
 }
 
 .quick-guide-page .basics {
@@ -1393,14 +1419,14 @@ a.checklist:before {
 
 	> h2 {
 		margin: 0.1rem 11.8rem 0;
-		font-size: 2.2rem;
+		font-size: 2rem;
 		color: $highlight-dark;
 	}
 }
 
 .quick-guide-page .quick-guide {
 	li {
-		margin-bottom: 4.5rem;
+		margin-bottom: 2.5rem;
 	}
 }
 
