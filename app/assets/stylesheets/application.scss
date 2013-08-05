@@ -227,7 +227,7 @@ body {
 
 /* MOCKUP */
 /* .home { background: url(/assets/00-home.png) -30px 0; } */
-/* .home-em { background: url(/assets/01-home-em.png) center -288px no-repeat; } */
+/* .home-em { background: url(/assets/01-home-em.png) center 0 no-repeat; } */
 /* .connect { background: url(/assets/03-connect.png) -30px 0; } */
 /* .prepare { background: url(/assets/04a-prepare.png) -30px 0; } */
 /* .prepare-popup { background: url(/assets/04b-prepare-popup.png) center 0 no-repeat; } */
@@ -573,19 +573,20 @@ body {
 	background: $highlight-dark;
 	width: 100%;
 	z-index: 0;
-	margin: -0.9rem 0 0.1rem;
+	margin: -0.1rem 0 0.1rem;
 
 	.wrapper {
-		padding: 2.6rem 5rem 2.7rem 0;
+		padding: 1.3rem 5rem 0.2rem 0.7rem;
 		position: relative;
 	}
 
 	h3 {
 		margin: 0;
+		font-size: 1.3rem;
 	}
 
 	p {
-		margin-top: 0;
+		margin-top: -0.2rem;
 		font-size: 1rem;
 		line-height: 1.25;
 	}
@@ -596,27 +597,27 @@ body {
 
 	.em-quick-guide-trigger {
 		position: absolute;
-		right: 0;
-		top: 2.6rem;
+		right: 1.1rem;
+		top: 1.7rem;
 
 		a {
 			cursor: pointer;
-			margin-top: 1.1rem;
 			border-radius: 4px;
 			display: inline-block;
 			background-color: #FFF;
-			padding: 0.5rem 3rem 0.5rem 1rem;
+			padding: 0.2rem 1.4rem 0.1rem 0.5rem;
 			color: $highlight-dark;
 			font-family: $font-medium;
 			position: relative
 		}
 
 		a:after {
+			position: absolute;
+			right: 0.35rem;
+			top: 0.3rem;
 			font-family: "sf72-icons";
 			content: "1";
-			position: absolute;
-			right: 0.5rem;
-			top: 0.5rem;
+			font-size: 0.8rem;
 		}
 
 		.hide-quick-guide {
@@ -659,23 +660,33 @@ body {
 	display: block;
 }
 
+.map-container {
+	background-color: $light-grey;
+}
+
 .map-heading {
 	@include span-columns(6);
 	h3 {
-		color: $highlight-dark;
-
+		color: $dark-grey;
+		margin: 0.4rem 0.6rem;
+		letter-spacing: -1px;
+		font-size: 1.1rem;
+		
+		/*
 		.icon-refresh {
 			vertical-align: middle;
 			display: inline-block;
 			font-size: 1.3rem;
 			color: $mid-grey;
 		}
+		*/
 	}
 }
 
 .map-actions {
-	@include span-columns(6);
-	margin-top: 1.2rem;
+	@include span-columns(2);
+	@include shift(3.65);
+	margin-top: 0.6rem;
 
 	.social-media {
 		@include shift(3);
@@ -699,12 +710,10 @@ body {
 
 	.map-tips-trigger {
 		display: inline-block;
-		padding: 0.5rem 1.2rem;
-		margin-top: 0.3rem;
-		border-radius: 4px;
+		padding: 0 2rem 0 0;
 		font-family: $font-medium;
-		background-color: $light-grey;
-		color: $dark-grey;
+		color: $body-color;
+		font-size: 0.9rem;
 	}
 }
 
@@ -718,8 +727,9 @@ body {
 
 .map-area {
 	width: 100%;
-	height: 25.3rem;
+	height: 26.7rem;
 	background-color: rgba(250, 250, 250, 0.9);
+	overflow: hidden;
 }
 .map-area iframe {
 	width: 100%;
@@ -727,7 +737,6 @@ body {
 
 .tw-tabs-container {
 	background-color: #666;
-
 }
 
 .tw-tabs-mobile {
@@ -738,6 +747,7 @@ body {
 	@include outer-container;
 	margin-top: 0;
 	width: 960px;
+	padding: 0 4rem;
 
 	li {
 		@include span-columns(4);
@@ -746,7 +756,7 @@ body {
 
 .tw-tabs a {
 	display: inline-block;
-	padding: 2.7rem 0 2.5rem 4.7rem;
+	padding: 0.7rem 0 0.7rem 4.2rem;
 	font-family: $font-medium;
 	line-height: 1.3;
 	color: #FFF;
@@ -754,12 +764,13 @@ body {
 	opacity: 0.5;
 
 	h3 {
-		font-size: 1.625rem;
-		margin: 0;
+		margin: 0.1rem 0 0;
+		line-height: 1;
+		font-size: 1.1rem;
 	}
 
 	span {
-		font-size: 0.825rem;
+		font-size: 0.6rem;
 		text-transform: uppercase;
 
 	}
@@ -784,11 +795,11 @@ body {
 	width: 0px;
 	height: 0px;
 	border-style: solid;
-	border-width: 0 15px 16px 15px;
+	border-width: 0 9px 10px 9px;
 	border-color: transparent transparent #ffffff transparent;
 	position: absolute;
 	bottom: 0;
-	left: 5.2rem;
+	left: 4.3rem;
 }
 
 .active-hashtags {
@@ -861,6 +872,10 @@ body {
 
 }
 
+.updates {
+	text-align: center;
+}
+
 .updates .btn-rounded {
 	@include shift(2.4);
 }
@@ -871,6 +886,7 @@ body {
 	display: none;
 	margin-top: 4.1rem;
 	padding-left: 1rem;
+	text-align: left;
 
 	li {
 		margin-bottom: 2.2rem;

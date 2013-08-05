@@ -8,7 +8,7 @@
         %h3 8.3 Earthquake on San Andreas Fault
         %p An 8.3 earthquake struck the San Andreas fault on Thursday at 5:56 am.
       .em-quick-guide-trigger
-        %a.show-quick-guide{src:"#"} Show Quick Guide
+        %a.show-quick-guide{src:"#"} What should I do?
         %a.hide-quick-guide{src: "#"} Hide Quick Guide
   .em-quick-guide.active
     .wrapper
@@ -27,39 +27,23 @@
   .map-container
     .wrapper
       .map-heading
-        %h3 Crisis Map <a class="icon-refresh" href="#"></a>
+        %h3 Crisis Map
       .map-actions
-        %ul.social-media
-          %li.twitter
-            %a{onClick: "twitterShare()"}
-              %span.icon-share-twitter
-          %li.facebook
-            %a{onClick: "facebookShare()"}
-              %span.icon-share-fb
-          %li.print
-            %a{onClick: "window.print()"}
-              %span.icon-print
-          %li.email
-            %a{href: "mailto:someone@example.com?Subject=Hello%20again", target:"_top"}
-              %span.icon-mail
-        %a.map-tips-trigger Show Map Tips
+        %a.map-tips-trigger Show map tips
     .map-area
-      %iframe.map{src: "http://google.org/crisismap/a/ideo.com/SF72test?hl=en&llbox=37.801668%2C37.791749%2C-122.409517%2C-122.42915&t=ROADMAP&layers=1%2Clayer0%2Clayer1&embedded=true", height: "400"}
+      %iframe.map{src: "http://google.org/crisismap/a/ideo.com/SF72test?hl=en&llbox=37.801668%2C37.791749%2C-122.409517%2C-122.42915&t=ROADMAP&layers=1%2Clayer0%2Clayer1&embedded=true", height: "458"}
   .tw-tabs-container
     %ul.tw-tabs
       %li.active
         %a{href:"#tab-citizen-updates"}
-          .updates-count 12
           %h3 Citizen Updates
           %span Via Twitter
       %li 
         %a{href:"#tab-official-reports"}
-          .updates-count 12
           %h3 Official Reports
           %span From SFDEM
       %li 
         %a{href:"#tab-service-status"}
-          .updates-count 12
           %h3 Service Status
           %span 511 Priority Alerts
     %ul.tw-tabs-mobile
@@ -75,30 +59,13 @@
   .main-container
     .updates    
       .citizen-reports
-        %ul.stream
-          %li.tweet
-            .tweet-avatar
-              %img{src: "http://placekitten.com/95/95"}
-            .tweet-body
-              %h4 Neil deGrasse Tyson <span>@neiltyson</span>
-              %p No power on Valencia between 21st and 22nd. Traffic jams at the intersection. #sfquake http://ow.ly/l6778Yj
-              %span.date 12 min ago
-          %li.tweet
-            .tweet-avatar
-              %img{src: "http://placekitten.com/95/95"}
-            .tweet-body
-              %h4 Neil deGrasse Tyson <span>@neiltyson</span>
-              %p No power on Valencia between 21st and 22nd. Traffic jams at the intersection. #sfquake http://ow.ly/l6778Yj
-              %span.date 12 min ago 
-          %li.tweet
-            .tweet-avatar
-              %img{src: "http://placekitten.com/95/95"}
-            .tweet-body
-              %h4 Neil deGrasse Tyson <span>@neiltyson</span>
-              %p No power on Valencia between 21st and 22nd. Traffic jams at the intersection. #sfquake http://ow.ly/l6778Yj
-              %span.date 12 min ago 
-        %a.btn-rounded{href: "#"} Show more
+        <style type="text/css">#twitter-widget-0{width:720px;}</style>
+        <a class="twitter-timeline" href="https://twitter.com/SF_emergency" data-widget-id="364391164582969346" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive">Tweets by @SF_emergency</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       .official-reports
+        <style type="text/css">#twitter-widget-1{width:720px;}</style>
+        <a class="twitter-timeline" href="https://twitter.com/SF_emergency" data-widget-id="364391164582969346" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive">Tweets by @SF_emergency</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       .status
         %h3 Service Status
         %h4 511 Priority Alerts
