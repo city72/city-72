@@ -204,10 +204,12 @@ body {
 	background-color: $light-grey;
 	padding: 1.5em;
 	margin-top: 2rem;
+	color: #b2b2b2;
+	font-family: $font-medium;
 }
 
 .by-line {
-	@include span-columns(4);
+	@include span-columns(3.5);
 	@include shift(0.7);
 	position: relative;
 	margin-top: 1.2rem;
@@ -224,6 +226,50 @@ body {
 	top: 1rem;
 	left: -3.5rem;
 }
+
+.resources-block {
+	@include span-columns(4);
+	@include shift(0.5);
+	font-size: 0.875rem;
+
+	h2 {
+		font-size: 0.875rem;
+		font-weight: normal;
+		color: #969696;
+		margin-bottom: 0;
+	}
+
+	ul {
+		margin-top: 0;
+		width: 13.75rem;
+	}
+
+	li {
+		@include span-columns(6);
+		@include omega(2n);
+		line-height: 1.25;
+
+		a {
+			color: #b2b2b2;
+		}
+	}
+}
+
+.privacy-list {
+	@include span-columns(3);
+
+	li {
+		display: inline-block;
+		font-size: 0.875rem;
+		font-family: $font-medium;
+		
+		a { 
+			color: #969696;
+		}
+	}
+}
+
+
 
 /* MOCKUP */
 /* .home { background: url(/assets/00-home.png) -30px 0; } */
@@ -1895,6 +1941,15 @@ h2 .story-disaster {
 
 	p {
 		margin: 0;
+	}
+}
+
+/* ABOUT */
+.about-data {
+	@include outer-container;
+
+	li {
+		@include span-columns(4);
 	}
 }
 
