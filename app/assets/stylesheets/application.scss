@@ -110,6 +110,10 @@ body {
 	left: 0;
 }
 
+.logo-mobile {
+	display: none;
+}
+
 /*
 .logo a {
 	margin-top: 0.9rem;
@@ -354,6 +358,10 @@ body {
 	line-height: 1.2;
 	color: $dark-grey;
 	font-family: $font-medium;
+}
+
+.col-3 .mobile-link {
+	display: none;
 }
 
 .main-intro h2 {
