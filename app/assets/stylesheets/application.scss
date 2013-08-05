@@ -573,7 +573,7 @@ body {
 	background: $highlight-dark;
 	width: 100%;
 	z-index: 0;
-	margin: -0.1rem 0 0.1rem;
+	margin: -0.1rem 0 0;
 
 	.wrapper {
 		padding: 1.3rem 5rem 0.2rem 0.7rem;
@@ -623,12 +623,14 @@ body {
 		.hide-quick-guide {
 			background-color: #E5E5E5;
 			color: $dark-grey;
+			margin-top: 6rem;
 		}
 
 		.hide-quick-guide:after {
-			content: "3";
-			padding-top: 0.08rem;
-			font-size: 0.9rem;
+			-moz-transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+			transform: rotate(180deg);
+			margin-top: -0.1rem;
 		}
 
 		.show-quick-guide {
@@ -648,10 +650,14 @@ body {
 .em-quick-guide {
 	display: none;
 	background-color: #F4F4F4;
-	box-shadow: #DDD 0 -10px 10px inset;
+	box-shadow: #EEE 0 -7px 7px inset;
 
 	h3 {
 		color: $highlight-dark;
+	}
+
+	.quick-guide li {
+		margin-bottom: 2.5rem;
 	}
 
 	.quick-guide li:before {
@@ -717,6 +723,15 @@ body {
 		font-family: $font-medium;
 		color: $body-color;
 		font-size: 0.9rem;
+		position: relative;
+	}
+
+	.map-tips-trigger:before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-family: "sf72-icons";
+		content: "6";
 	}
 }
 
