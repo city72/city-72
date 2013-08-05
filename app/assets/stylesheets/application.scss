@@ -621,7 +621,6 @@ body {
 		}
 
 		.hide-quick-guide {
-			display: none;
 			background-color: #E5E5E5;
 			color: $dark-grey;
 		}
@@ -630,6 +629,10 @@ body {
 			content: "3";
 			padding-top: 0.08rem;
 			font-size: 0.9rem;
+		}
+
+		.show-quick-guide {
+			display: none;
 		}
 	}
 
