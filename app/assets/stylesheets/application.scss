@@ -1550,6 +1550,13 @@ a.checklist:before {
 			height: 170px;
 			width: 300px;
 			display: none;
+			margin-bottom: 1.1rem;
+			padding: 1rem;
+			line-height: 1.2;
+			font-family: $font-medium;
+			font-size: 1.3rem;
+			background-color: $highlight;
+			color: #FFF;
 		}
 
 		a:hover {
