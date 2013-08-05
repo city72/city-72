@@ -2,6 +2,11 @@ $.get window.location.origin + "/em", (response) ->
   if response.em_mode
     window.location = window.location.origin + "/em/home";
 
+states = [
+  { href: '#tab-during-earth-quake', contentSelector: '.slider-during', anchorSelector: '[href="#tab-during-earth-quake"]' }
+  { href: '#tab-after-earth-quake', contentSelector: '.slider-after', anchorSelector: '[href="#tab-after-earth-quake"]' }
+]
+
 $(document).ready ->
   $('.slider-during .slider').bxSlider
     infiniteLoop: false,
@@ -10,11 +15,10 @@ $(document).ready ->
     infiniteLoop: false,
     hideControlOnEnd: true
 
-states = [
-  { href: '#tab-during-earth-quake', contentSelector: '.slider-during', anchorSelector: '[href="#tab-during-earth-quake"]' }
-  { href: '#tab-after-earth-quake', contentSelector: '.slider-after', anchorSelector: '[href="#tab-after-earth-quake"]' }
-]
+  if window.location.hash == states[0].href
+    $('.slider-after').hide()
+  else
+    $('.slider-during').hide()
+  showActive states
 
-showActive states, false
-
-window.onhashchange = -> showActive states, false
+window.onhashchange = -> showActive states
