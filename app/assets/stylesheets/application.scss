@@ -95,6 +95,22 @@ body {
 	margin-top: 2.6rem;
 }
 
+.logo {
+	display: block;
+	position: relative;
+}
+
+.logo.active:before {
+	width: 150px;
+	background-color: $highlight;
+	content: '';
+	position: absolute;
+	height: 4px;
+	top: 0;
+	left: 0;
+}
+
+/*
 .logo a {
 	margin-top: 0.9rem;
 	display: block;
@@ -115,6 +131,7 @@ body {
 	color: $highlight;
 	font-size: 2.5rem;
 }
+*/
 
 .main-nav > li {
 	@include span-columns(2.2);
@@ -167,6 +184,10 @@ body {
 		a {
 			color: $highlight-dark;
 		}
+	}
+
+	li.em-link.active {
+		border-top: 5px solid $highlight-dark;
 	}
 
 	/*
