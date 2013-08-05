@@ -1,7 +1,8 @@
 $( ->
 	windowPath = window.location.pathname
 
-	paths = ['/connect', '/prepare', '/about']
+	paths = []
+	$('.header a').each (index, elem) -> paths.push elem.pathname
 
 	if windowPath == '/home' || windowPath == '/'
 		$('[href="/home"]').parent('h1').addClass('active')
