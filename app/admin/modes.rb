@@ -1,5 +1,6 @@
 ActiveAdmin.register Mode do
-  config.paginate = false
+	actions :all, :except => [:destroy, :new]
+  	config.paginate = false
 
 	index do
 		selectable_column

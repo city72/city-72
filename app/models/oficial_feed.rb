@@ -1,0 +1,2 @@
+class OficialFeed < Feed
+end

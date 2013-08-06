@@ -1,0 +1,2 @@
+class CitizenFeed < Feed
+end
