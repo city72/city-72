@@ -4,13 +4,13 @@
 		.quick-guide-share
 			%ul.share-options
 				%li
-					%a.twitter{href:"#"} Twitter
+					%a.twitter{onClick: "twitterShare()"} Twitter
 				%li
-					%a.facebook{href:"#"} Facebook
+					%a.facebook{onClick: "facebookShare()"} Facebook
 				%li
-					%a.print{href:"#"} Share
+					%a.print{onClick: "window.print()"} Print
 				%li
-					%a.email{href:"#"} Print
+					%a.email{href: "mailto:someone@example.com?Subject=SF-72%20Quick%20Guide"} Share
 			%p There’s safety in numbers. <br />Spread the word!
 		%h2 During a quake
 		%ol.quick-guide
