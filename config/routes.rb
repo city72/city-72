@@ -1,5 +1,8 @@
 IdeoSf72::Application.routes.draw do
 
+  resources :emails
+
+
   resources :suscriptions
 
 
@@ -41,7 +44,5 @@ IdeoSf72::Application.routes.draw do
   get "em" => "emergency_mode#index"
 
   get "quick_guide" => "home#quick_guide"
-
-  get "send_mail" => "suscriptions#send_mail"
   
 end
