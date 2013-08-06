@@ -1,5 +1,8 @@
 IdeoSf72::Application.routes.draw do
 
+  resources :suscriptions
+
+
   resources :kits
 
 
@@ -32,6 +35,8 @@ IdeoSf72::Application.routes.draw do
   get "about" => "home#about"
 
   resources :stories
+
+  resources :suscriptions
 
   get "em" => "emergency_mode#index"
 

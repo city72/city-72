@@ -21,3 +21,4 @@
 //= require modernizr.js
 //= require raphael-min.js
 //= require magic.js
+//= require cors
