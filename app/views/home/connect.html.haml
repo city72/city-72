@@ -1,4 +1,5 @@
 = javascript_include_tag "connect"
+= javascript_include_tag "mailchimp"
 .main-container.connect
   = render :partial => "partials/header"
   .page-intro
@@ -22,6 +23,27 @@
       .subscribe-form
         %input.email{type: "text", placeholder: "Notify me"}
         %input.submit{type: "submit", value: "Go"}
+        / Begin MailChimp Signup Form
+        %link{:href => "http://cdn-images.mailchimp.com/embedcode/classic-081711.css", :rel => "stylesheet", :type => "text/css"}/
+        :css
+          #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+          /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        #mc_embed_signup
+          %form#mc-embedded-subscribe-form.validate{:action => "http://sf72.us6.list-manage1.com/subscribe/post?u=da2f717cb23345cc17718c642&id=a56b545c6c", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+            %h2 Subscribe to our mailing list
+            .indicates-required
+              %span.asterisk *
+              indicates required
+            .mc-field-group
+              %label{:for => "mce-EMAIL"}
+                Email Address
+                %span.asterisk *
+              %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => ""}/
+            #mce-responses.clear
+              #mce-error-response.response{:style => "display:none"}
+              #mce-success-response.response{:style => "display:none"}
+            .clear
+              %input#mc-embedded-subscribe.button{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
   %ul.app-features
     %li
       %img{src: "http://placekitten.com/300/390"}
