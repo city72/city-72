@@ -724,6 +724,10 @@ body {
 		}
 
 		.show-quick-guide {
+			display: block;
+		}
+
+		.hide-quick-guide {
 			display: none;
 		}
 	}
