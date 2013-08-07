@@ -109,6 +109,7 @@ body {
 .header {
 	@include outer-container;
 	position: relative;
+	margin-bottom: 1rem;
 }
 
 #logo {
@@ -221,29 +222,39 @@ body {
 		border-top: 5px solid $highlight-dark;
 	}
 
-	/*
+
 	.submenu {
+		position: absolute;
 		line-height: 1.4;
 		margin: 0 0 -0.8rem;
-		top: 5.8rem;
+		top: 4.7rem;
 		font-family: $font-medium;
 		display: none;
 		@include transition(all 0.5s ease-in);
 	}
 
-	li:hover .submenu {
+	li.active .submenu {
+		display: block;
+	}
+
+	li:hover .submenu,
+	li.active .submenu {
 		display: block;
 
 		a {
-			color: $body-color;
+			color: #C2C2C2;
 		}
 
-		a:hover {
+		a:hover,
+		li.active a {
 			color: $highlight;
 		}
-	}
-	*/
 
+		li.active {
+			padding-top: 0;
+			border-top: none;
+		}
+	}
 }
 
 
