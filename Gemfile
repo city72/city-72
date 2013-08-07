@@ -25,9 +25,6 @@ gem "carrierwave"
 gem "rmagick"
 gem 'cloudinary'
 
-gem 'json', '~> 1.7.7'
-gem 'mandrill-api'
-
 gem 'rack-cors', :require => 'rack/cors'
 
 # Gems used only for assets and not required
