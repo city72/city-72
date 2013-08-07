@@ -6,8 +6,6 @@ $( ->
 
 	if windowPath == '/home' || windowPath == '/'
 		$('[href="/home"]').addClass('active')
-	else if windowPath in ['/prepare', '/stories', '/things']
-		$('[href="/prepare"]').parent('li').addClass('active')
 	else
 		_(paths).each (path) -> if path == windowPath then $('[href="' + path + '"]').parent('li').addClass('active')
 )
