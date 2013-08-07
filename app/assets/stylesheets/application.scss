@@ -1678,7 +1678,7 @@ a.checklist:before {
 			height: 170px;
 			width: 300px;
 			display: none;
-			margin-bottom: 1.1rem;
+			margin-bottom: 0.95rem;
 			padding: 1rem;
 			line-height: 1.2;
 			font-family: $font-medium;
@@ -1747,7 +1747,8 @@ h2 .story-disaster {
 
 .main-quote {
 	@include span-columns(4);
-	@include shift(1);
+	@include shift(0.5);
+	@include omega;
 	padding: 0 1.1rem;
 	margin-top: 10rem;
 	font-family: $font-medium;
@@ -1774,7 +1775,6 @@ h2 .story-disaster {
 .learned h3,
 .similar h3 {
 	margin: 0;
-	padding-left: 1.8rem;
 	color: $dark-grey;
 }
 
@@ -1784,7 +1784,6 @@ h2 .story-disaster {
 	line-height: 1.5rem;
 	text-indent: -0.5rem;
 	margin-top: 0.5rem;
-	padding-left: 1.8rem;
 }
 
 .learned {
@@ -1971,7 +1970,6 @@ h2 .story-disaster {
 	font-family: $font-medium;
 	color: $dark-grey;
 	font-size: 1rem;
-	text-align: center;
 }
 
 .overlay-text {
@@ -2001,7 +1999,6 @@ h2 .story-disaster {
 
 .kits-list span {
 	display: block;
-	text-align: center;
 	line-height: 1;
 	font-family: $font-medium;
 	color: $dark-grey;
