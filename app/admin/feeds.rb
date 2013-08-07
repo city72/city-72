@@ -1,18 +1,24 @@
 ActiveAdmin.register Feed do
-	actions :all, :except => [:destroy, :new, :show]
-  	config.paginate = false
+	actions :all, :except => [:destroy, :new]
+	config.paginate = false
 
-	index do
-		selectable_column
-		column :type
-		column :widget_id
-		default_actions
+	form do
+		render "edit"
 	end
 
-	form do |f|
-		f.inputs "copy-paste the number from widgets data-widget-id" do
-			f.input :widget_id
+	controller do
+		def index
+			redirect_to "/admin/feeds/1/edit"
 		end
-		f.actions
+
+		def update
+			@feed = CitizenFeed.first
+			@feed.update_attributes(params[:feed])
+			redirect_to "/admin/feeds/1"
+		end
+
+		def edit
+			@feed = CitizenFeed.first
+		end
 	end
 end
