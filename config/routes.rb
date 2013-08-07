@@ -35,5 +35,7 @@ IdeoSf72::Application.routes.draw do
   get "em" => "emergency_mode#index"
 
   get "quick_guide" => "home#quick_guide"
+
+  get "our_manifesto" => "home#our_manifesto"
   
 end

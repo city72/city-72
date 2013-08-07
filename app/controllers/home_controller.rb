@@ -35,4 +35,7 @@ class HomeController < ApplicationController
   def quick_guide
   end
 
+  def our_manifesto
+  end
+
 end
