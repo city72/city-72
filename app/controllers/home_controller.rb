@@ -7,7 +7,6 @@ class HomeController < ApplicationController
 
   def em_home
     @citizen_feed = CitizenFeed.first
-    @oficial_feed = OficialFeed.first
   end
 
   def em_home_tour

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>ThestreamRails</title>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+<%= csrf_meta_tag %>
+</head>
+<body>
+
+<h1>Emergency mode configuration</h1>
+
+<form accept-charset="UTF-8" action="/admin/modes/1" id="edit_mode" method="post" novalidate="novalidate">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <input name="_method" type="hidden" value="put" />
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"/>
+
+  <div class="field">
+    <label for="em_mode">Emergency Mode</label><br />
+    <input id="em_mode" name="mode[em_mode]" type="checkbox" value="1" <%= @mode.em_mode ? 'checked="checked"' : "" %>/>
+  </div>
+  <div class="field">
+    <label for="title">Title</label><br />
+    <input id="title" name="mode[title]" size="30" type="text" value="<%= @mode.title %>"/>
+  </div>
+  <div class="field">
+    <label for="text">Text</label><br />
+    <input id="text" name="mode[text]" size="30" type="text" value="<%= @mode.text %>"/>
+  </div>
+  <div class="actions">
+    <input name="commit" type="submit" value="Update Emergency Mode" />
+  </div>
+</form>
+
+<a href="/tweets">Back</a>
+
+
+</body>
+</html>
+
+
+AHHHH

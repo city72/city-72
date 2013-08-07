@@ -69,19 +69,42 @@
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         .status
           %h3 Service Status
-          %h4 511 Priority Alerts
-          %ul.alerts-list
-            %li
-              %h2 Capitol Corridor Systemwide Delays
-              %p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
-              %a{src: "#"} See Details
-            %li
-              %h2 Capitol Corridor Systemwide Delays
-              %p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
-              %a{src: "#"} See Details
-            %li
-              %h2 Muni Delays
-              %p J and F Lines out of service. N Judah is being restarted now.
-              %a{src: "#"} See Details
-          %h4 Other City Feed
+          %span 511 Priority Alerts
+    %ul.tw-tabs-mobile
+      %li.active
+        %a{href:"#tab-citizen-updates"}
+          %h3 Citizen
+      %li 
+        %a{href:"#tab-official-reports"}
+          %h3 Official
+      %li 
+        %a{href:"#tab-service-status"}
+          %h3 Service
+  .main-container
+    .updates    
+      .citizen-reports
+        <style type="text/css">#twitter-widget-0{width:720px;}</style>
+        <a class="twitter-timeline" data-widget-id="#{@citizen_feed.widget_id}" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      .official-reports
+        <style type="text/css">#twitter-widget-1{width:720px;}</style>
+        <a class="twitter-timeline" data-widget-id="364807510647001088" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      .status
+        %h3 Service Status
+        %h4 511 Priority Alerts
+        %ul.alerts-list
+          %li
+            %h2 Capitol Corridor Systemwide Delays
+            %p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
+            %a{src: "#"} See Details
+          %li
+            %h2 Capitol Corridor Systemwide Delays
+            %p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
+            %a{src: "#"} See Details
+          %li
+            %h2 Muni Delays
+            %p J and F Lines out of service. N Judah is being restarted now.
+            %a{src: "#"} See Details
+        %h4 Other City Feed
 = render :partial => "partials/footer"
