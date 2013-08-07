@@ -7,8 +7,6 @@ $( ->
 
 	showActive reports
 
-	window.onhashchange = -> showActive reports
-
 	$('.em-quick-guide').hide()
 
 	$('a.show-quick-guide').click ->
@@ -26,4 +24,22 @@ $( ->
 			$('.alert-info h3').text(response.title)
 			$('.alert-info p').text(response.text)
 	)
+
+	mobileSections = [
+		{ href: '#map' },
+		{ href: '#quick-guide' },
+		{ href: '#updates' }
+	]
+
+	showMobileTab = (sections) ->
+		urlHash = window.location.hash || sections[0].href
+		$(urlHash).show()
+		_(_(sections).filter((elem) -> elem.href != urlHash)).each (section) -> $(section.href).hide()
+
+	showMobileTab mobileSections
+
+	window.onhashchange = ->
+		showActive reports
+		showMobileTab mobileSections
+
 )
