@@ -5,8 +5,6 @@ $( ->
 		{ href: '#tab-service-status', contentSelector: '.status', anchorSelector: '[href="#tab-service-status"]' }
 	]
 
-	showActive reports
-
 	$('.em-quick-guide').hide()
 
 	$('a.show-quick-guide').click ->
@@ -26,16 +24,17 @@ $( ->
 	)
 
 	mobileSections = [
-		{ href: '#map' },
-		{ href: '#quick-guide' },
-		{ href: '#updates' }
+		{ href: '#mobile-maps' },
+		{ href: '#mobile-quick-guide' },
+		{ href: '#mobile-updates' }
 	]
 
 	showMobileTab = (sections) ->
 		urlHash = window.location.hash || sections[0].href
-		$(urlHash).show()
-		_(_(sections).filter((elem) -> elem.href != urlHash)).each (section) -> $(section.href).hide()
+		$(urlHash).addClass 'active'
+		_(_(sections).filter((elem) -> elem.href != urlHash)).each (section) -> $(section.href).removeClass 'active'
 
+	showActive reports
 	showMobileTab mobileSections
 
 	window.onhashchange = ->
