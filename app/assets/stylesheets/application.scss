@@ -1907,6 +1907,28 @@ h2 .story-disaster {
 
 .things-list li {
 	margin-bottom: 4.5rem;
+
+	div.use-case-dialog {
+		height: 170px;
+		width: 300px;
+		display: none;
+		margin-bottom: 1.1rem;
+		padding: 1rem;
+		line-height: 1.2;
+		font-family: $font-medium;
+		font-size: 1.3rem;
+		background-color: $highlight;
+		color: #FFF;
+	}
+}
+
+.things-list li:hover {
+	div.use-case-dialog {
+		display: block;
+	}
+	img {
+		display: none
+	}
 }
 
 .things-list h4 {

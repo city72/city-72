@@ -21,18 +21,24 @@
       %ul.things-list.essential
         - @items.select {|item| item.category == "#{Categories::ESSENTIAL.to_s}" }.each do |item|
           %li
+            .use-case-dialog
+              &ldquo;#{item.use_case}&rdquo;
             %img{src: "#{item.image}"}
             %h4 #{item.title}
             %p.overlay-text "#{item.use_case}"
       %ul.things-list.useful
         - @items.select {|item| item.category == "#{Categories::USEFUL.to_s}" }.each do |item|
           %li
+            .use-case-dialog
+              &ldquo;#{item.use_case}&rdquo;
             %img{src: "#{item.image}"}
             %h4 #{item.title}
             %p.overlay-text "#{item.use_case}"
       %ul.things-list.personal
         - @items.select {|item| item.category == "#{Categories::PERSONAL.to_s}" }.each do |item|
           %li
+            .use-case-dialog
+              &ldquo;#{item.use_case}&rdquo;
             %img{src: "#{item.image}"}
             %h4 #{item.title}
             %p.overlay-text "#{item.use_case}"
