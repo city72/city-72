@@ -1,4 +1,5 @@
 ActiveAdmin.register Kit do
+  menu false
   config.paginate = false
 
   index do

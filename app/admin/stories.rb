@@ -1,4 +1,5 @@
 ActiveAdmin.register Story do
+  menu false
 	config.paginate = false
 
 	index do

@@ -1,4 +1,5 @@
 ActiveAdmin.register Item do
+  menu false
   config.paginate = false
 
   scope :all
