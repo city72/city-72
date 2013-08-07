@@ -59,6 +59,10 @@ a {
 	color: $highlight;
 }
 
+h1, h2, h3, h4, h5 {
+	font-weight: normal;
+}
+
 ::selection {
 	background: #FBB03B;
 	color: #FFF;
@@ -109,7 +113,7 @@ body {
 
 #logo {
 	@include span-columns(2.4);
-	margin-top: 2.6rem;
+	margin-top: 2.35rem;
 }
 
 .logo {
@@ -155,9 +159,13 @@ body {
 */
 
 .main-nav > li {
-	@include span-columns(2.2);
+	@include span-columns(1.7);
 	padding: 53px 0 44px;
 	position: relative;
+}
+
+.main-nav > li:first-child {
+	margin-left: 2.5rem;
 }
 
 .main-nav {
@@ -180,9 +188,11 @@ body {
 	}
 
 	span {
-		text-transform: uppercase;
-		font-size: 0.6rem;
-		font-family: $font-medium;
+		display: block;
+		margin-top: 0.4rem;
+		line-height: 1.3;
+		font-size: 0.7rem;
+		font-family: $font-bold;
 	}
 
 	li.active {
@@ -200,7 +210,7 @@ body {
 		position: absolute;
 		top: -0.1rem;
 		right: 0.5rem;
-		width: auto;
+		width: 11rem;
 
 		a {
 			color: $highlight-dark;
@@ -370,13 +380,13 @@ body {
 }
 
 .main-intro h2,
-.col-3 h4 {
+.site-sections h4 {
 	line-height: 1.2;
 	color: $dark-grey;
 	font-family: $font-bold;
 }
 
-.col-3 .mobile-link {
+.site-sections .mobile-link {
 	display: none;
 }
 
@@ -389,12 +399,12 @@ body {
 	margin: 10px 0 1rem;
 }
 
-.col-3 {
+.site-sections {
 	@include outer-container;
 	margin-top: 0.7rem;
 }
 
-.col-3 li {
+.site-sections li {
 	@include span-columns(4);
 	@include omega(3n);
 }
@@ -468,27 +478,29 @@ body {
 	opacity: 1;
 }
 
-.col-3 h4,
-.col-3 p {
+.site-sections h4,
+.site-sections p {
 	padding: 0 1rem 0 0;
 }
 
-.col-3 h4 {
+.site-sections h4 {
 	margin-bottom: 0;
 	margin-top: 1.9rem;
 	@include col-title;
 }
 
-.col-3 p {
+.site-sections p {
 	margin-top: 0.7rem;
 }
 
 .my-people,
 .my-stuff,
 .near-me {
+	display: block;
 	background: url(http://placekitten.com/300/220/) no-repeat top left;
 	width: 300px;
-	height: 220px;	
+	height: 220px;
+	text-indent: -9999px;
 }
 
 .my-people {
@@ -1195,6 +1207,7 @@ a.prepare-things
  {
 	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-people.jpg);
 	background-size: 100%;
+	background-repeat: no-repeat;
 	display: block;
 	color: #FFF;
 	padding: 0.8rem 1rem 1rem;
@@ -1204,6 +1217,14 @@ a.prepare-things
 
 a.prepare-things {
 	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-supplies.jpg);
+}
+
+a.prepare-people:hover {
+	background-image: -webkit-linear-gradient(top, rgba(241,90,36,0.3) 0%,rgba(241,90,36,0.3) 100%), -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-people.jpg);
+}
+
+a.prepare-things:hover {
+	background-image: -webkit-linear-gradient(top, rgba(241,90,36,0.3) 0%,rgba(241,90,36,0.3) 100%), -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-supplies.jpg);
 }
 
 a.prepare-people p,
@@ -1232,6 +1253,11 @@ a.prepare-things:after {
 	position: absolute;
 	bottom: 1rem;
 	right: 1.8rem;
+}
+
+a.prepare-people:hover:after,
+a.prepare-things:hover:after {
+	color: $highlight-dark;
 }
 
 a.checklist {
@@ -1623,7 +1649,7 @@ a.checklist:before {
 }
 
 .stories h3 {
-	margin: 1.9rem 0.7rem 0;
+	margin: 1.9rem 0 0;
 	color: $dark-grey;
 	letter-spacing: -1px;
 }
@@ -1808,7 +1834,6 @@ h2 .story-disaster {
 
 .action-bar .tabs {
 	@include span-columns(8.8);
-	padding-left: 1.8rem;
 
 	li {
 		text-align: center;
@@ -1822,7 +1847,7 @@ h2 .story-disaster {
 			color: $body-light;
 			display: block;
 			padding: 0.6rem 0.2rem;
-			border: 1px solid $body-light;
+			border: 1px solid #C2C2C2;
 			width: 12.6rem;
 		}
 	}
@@ -1834,7 +1859,7 @@ h2 .story-disaster {
   	li.active:before,
   	li:hover:before {
 	    content: ' ';
-	    border-color: #999 transparent transparent;
+	    border-color: #C2C2C2 transparent transparent;
 	    border-style: solid;
 	    border-width: 14px;
 	    position: absolute;
@@ -1863,11 +1888,11 @@ h2 .story-disaster {
 
 	a {
 		display: block;
-		text-decoration: underline;
 		width: 12.6rem;
 		padding: 1.6rem 0.2rem 1.1rem 3rem;
 		font-size: 1.1rem;
 		position: relative;
+		color: $dark-grey;
 	}
 }
 
@@ -1887,7 +1912,6 @@ h2 .story-disaster {
 .tab-tip{
 	font-size: 1.3rem;
 	margin-top: 0.2em;
-	padding-left: 1.8rem;
 }
 
 .things-list,
@@ -1948,7 +1972,7 @@ h2 .story-disaster {
 }
 
 .kits h2 {
-	margin: 1.4rem 1.8rem 0;
+	margin: 1.4rem 0 0;
 	line-height: 1;
 	font-size: 2.2rem;
 	color: $dark-grey;
@@ -1957,7 +1981,7 @@ h2 .story-disaster {
 .kits p {
 	font-size: 1.3rem;
 	line-height: 1.2;
-	margin: 0.8rem 15rem 2.5rem 1.8rem;
+	margin: 0.8rem 15rem 2.5rem 0;
 }
 
 .kits-list a {

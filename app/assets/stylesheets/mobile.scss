@@ -149,11 +149,11 @@
 		padding-left: 0;
 	}
 
-	.col-3 li {
+	.site-sections li {
 		@include span-columns(4);
 	}
 
-	.col-3 {
+	.site-sections {
 
 		h4,
 		.web-link {
