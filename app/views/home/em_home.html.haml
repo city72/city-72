@@ -10,7 +10,7 @@
       .em-quick-guide-trigger
         %a.show-quick-guide{src:"#"} What should I do?
         %a.hide-quick-guide{src: "#"} Hide Quick Guide
-  .em-quick-guide.active
+  .em-quick-guide.active#mobile-quick-guide
     .wrapper
       %h3 Quick Guide
       %ol.quick-guide
@@ -24,7 +24,7 @@
         %li
           %h2 Check SF72.
           %p In the event of an emergency, this site will go into emergency mode and bring you live updates and tweets from around the city, information on missing persons, and ways you can help.
-  .map-container
+  .map-container#mobile-maps
     .wrapper
       .map-heading
         %h3 Crisis Map
@@ -32,55 +32,56 @@
         %a.map-tips-trigger{href:"#"} Show map tips
     .map-area
       %iframe.map{src: "http://google.org/crisismap/a/ideo.com/SF72test?hl=en&llbox=37.801668%2C37.791749%2C-122.409517%2C-122.42915&t=ROADMAP&layers=1%2Clayer0%2Clayer1&embedded=true", height: "458"}
-  .tw-tabs-container
-    %ul.tw-tabs
-      %li.active
-        %a{href:"#tab-citizen-updates"}
-          %h3 Citizen Updates
-          %span Via Twitter
-      %li 
-        %a{href:"#tab-official-reports"}
-          %h3 Official Reports
-          %span From SFDEM
-      %li 
-        %a{href:"#tab-service-status"}
+  #mobile-updates
+    .tw-tabs-container
+      %ul.tw-tabs
+        %li.active
+          %a{href:"#tab-citizen-updates"}
+            %h3 Citizen Updates
+            %span Via Twitter
+        %li 
+          %a{href:"#tab-official-reports"}
+            %h3 Official Reports
+            %span From SFDEM
+        %li 
+          %a{href:"#tab-service-status"}
+            %h3 Service Status
+            %span 511 Priority Alerts
+      %ul.tw-tabs-mobile
+        %li.active
+          %a{href:"#tab-citizen-updates"}
+            %h3 Citizen
+        %li 
+          %a{href:"#tab-official-reports"}
+            %h3 Official
+        %li 
+          %a{href:"#tab-service-status"}
+            %h3 Service
+    .main-container
+      .updates    
+        .citizen-reports
+          <style type="text/css">#twitter-widget-0{width:720px;}</style>
+          <a class="twitter-timeline" data-widget-id="#{@citizen_feed.widget_id}" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        .official-reports
+          <style type="text/css">#twitter-widget-1{width:720px;}</style>
+          <a class="twitter-timeline" data-widget-id="#{@oficial_feed.widget_id}" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        .status
           %h3 Service Status
-          %span 511 Priority Alerts
-    %ul.tw-tabs-mobile
-      %li.active
-        %a{href:"#tab-citizen-updates"}
-          %h3 Citizen
-      %li 
-        %a{href:"#tab-official-reports"}
-          %h3 Official
-      %li 
-        %a{href:"#tab-service-status"}
-          %h3 Service
-  .main-container
-    .updates    
-      .citizen-reports
-        <style type="text/css">#twitter-widget-0{width:720px;}</style>
-        <a class="twitter-timeline" data-widget-id="#{@citizen_feed.widget_id}" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      .official-reports
-        <style type="text/css">#twitter-widget-1{width:720px;}</style>
-        <a class="twitter-timeline" data-widget-id="#{@oficial_feed.widget_id}" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      .status
-        %h3 Service Status
-        %h4 511 Priority Alerts
-        %ul.alerts-list
-          %li
-            %h2 Capitol Corridor Systemwide Delays
-            %p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
-            %a{src: "#"} See Details
-          %li
-            %h2 Capitol Corridor Systemwide Delays
-            %p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
-            %a{src: "#"} See Details
-          %li
-            %h2 Muni Delays
-            %p J and F Lines out of service. N Judah is being restarted now.
-            %a{src: "#"} See Details
-        %h4 Other City Feed
+          %h4 511 Priority Alerts
+          %ul.alerts-list
+            %li
+              %h2 Capitol Corridor Systemwide Delays
+              %p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
+              %a{src: "#"} See Details
+            %li
+              %h2 Capitol Corridor Systemwide Delays
+              %p On Thursday, July 11th, at 10:37am, trains are delayed systemwide due to a bridge delay between Martinez and Suisun&hellip;
+              %a{src: "#"} See Details
+            %li
+              %h2 Muni Delays
+              %p J and F Lines out of service. N Judah is being restarted now.
+              %a{src: "#"} See Details
+          %h4 Other City Feed
 = render :partial => "partials/footer"
