@@ -110,3 +110,5 @@ Item.create!(
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg"
   )
+
+CitizenFeed.create!(widget_id: "364391164582969346")
