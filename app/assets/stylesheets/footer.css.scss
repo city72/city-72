@@ -1,0 +1,69 @@
+/* FOOTER */
+.footer {
+	background-color: $light-grey;
+	padding: 1.5em;
+	margin-top: 2rem;
+	color: #b2b2b2;
+	font-family: $font-medium;
+}
+
+.by-line {
+	@include span-columns(3.5);
+	@include shift(0.7);
+	position: relative;
+	margin-top: 1.2rem;
+	font-size: 0.9rem;
+	line-height: 1.25;
+}
+
+.by-line:before {
+	font-family: 'sf72-icons';
+	font-size: 1.8rem;
+	content: 'y';
+	color: $dark-grey;
+	position: absolute;
+	top: 1rem;
+	left: -3.5rem;
+}
+
+.resources-block {
+	@include span-columns(4);
+	@include shift(0.5);
+	font-size: 0.875rem;
+
+	h2 {
+		font-size: 0.875rem;
+		font-weight: normal;
+		color: #969696;
+		margin-bottom: 0;
+	}
+
+	ul {
+		margin-top: 0;
+		width: 13.75rem;
+	}
+
+	li {
+		@include span-columns(6);
+		@include omega(2n);
+		line-height: 1.25;
+
+		a {
+			color: #b2b2b2;
+		}
+	}
+}
+
+.privacy-list {
+	@include span-columns(3);
+
+	li {
+		display: inline-block;
+		font-size: 0.875rem;
+		font-family: $font-medium;
+		
+		a { 
+			color: #969696;
+		}
+	}
+}

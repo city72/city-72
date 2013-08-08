@@ -1,0 +1,105 @@
+/* ABOUT */
+.about-data {
+	@include outer-container;
+
+	li {
+		@include span-columns(4);
+	}
+
+	h2 {
+		@include col-title;
+	}
+}
+
+.contact-block {
+	background-color: #fbb03b;
+	@include outer-container;
+
+	.contact-heading {
+		@include span-columns(4);
+		padding: 0 1.8rem;
+		
+		h3 {
+			color: $dark-grey;
+			line-height: 1.2;
+
+			strong {
+				font-weight: normal;
+				display: block;
+				margin-bottom: 1rem;
+			}
+
+			span {
+				color: #FFF;
+			}
+		}
+	}
+
+	.contact-form {
+		@include span-columns(8);
+		margin-top: 1.8rem;
+		margin-bottom: 1.8rem;
+
+		.name,
+		.from-email,
+		.message {
+			width: 46%;
+			padding: 1rem;
+			margin: 0 3% 3% 0;
+			border: 1px solid #FFF;
+			background-color: rgba(0, 0, 0, 0);
+			font-size: 1.3rem;
+
+			@include placeholder {
+			    color: #FFF;
+			}
+		}
+
+		.message {
+			width: 95.5%;
+			height: 216px;
+		}
+
+		.send {
+			line-height: 1;
+			background-color: #FFF;
+			border: 0;
+			padding: 0.8rem 1.8rem;
+			font-family: $font-medium;
+			font-size: 1.6em;
+			color: $highlight;
+			margin-right: 0.8rem;
+			cursor: pointer;
+		}
+
+		.send:hover {
+			background-color: $dark-grey;
+			color: #FFF;
+		}
+	}
+}
+
+/* MANIFESTO */
+.manifesto .page-intro .big-title {
+	background: url(/assets/static/manifesto.jpg) no-repeat left top;
+	background-size: 100%;
+}
+
+.aside {
+	@include span-columns(3.5);
+	@include shift(.5);
+	margin-top: 3.5rem;
+	
+	div {
+		border-left: 2px solid;
+		padding-left: 1.5rem;
+		line-height: 1.45;
+		font-family: $font-bold;
+		color: $body-light;
+		margin-bottom: 1rem;
+	}
+
+	.highlighted {
+		color: $highlight;
+	}
+}

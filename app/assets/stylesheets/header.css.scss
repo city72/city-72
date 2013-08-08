@@ -1,0 +1,156 @@
+/* HEADER */
+.header {
+	@include outer-container;
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+#logo {
+	@include span-columns(2.4);
+	margin-top: 2.35rem;
+}
+
+.logo {
+	display: block;
+	position: relative;
+}
+
+.logo.active:before {
+	width: 150px;
+	background-color: $highlight;
+	content: '';
+	position: absolute;
+	height: 4px;
+	top: 0;
+	left: 0;
+}
+
+.logo-mobile {
+	display: none;
+}
+
+/*
+.logo a {
+	margin-top: 0.9rem;
+	display: block;
+	text-indent: -9999px;
+	width: 114px;
+	height: 40px;
+	position: relative;
+}
+
+.logo a:after {
+	line-height: 1;
+	text-indent: 0;
+	font-family: "sf72-icons";
+	content: '4';
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: $highlight;
+	font-size: 2.5rem;
+}
+*/
+
+.main-nav > li {
+	@include span-columns(1.7);
+	padding: 53px 0 44px;
+	position: relative;
+}
+
+.main-nav > li:first-child {
+	margin-left: 2.5rem;
+}
+
+.main-nav {
+
+	margin: 0;
+
+	a {
+		display: block;
+		color: $body-color;
+		text-decoration: none;
+	}
+
+	strong {
+		display: block;
+		margin-bottom: -0.28rem;
+		font-family: $font-medium;
+		font-size: 1.25rem;
+		font-weight: normal;
+		line-height: 1;
+	}
+
+	span {
+		display: block;
+		margin-top: 0.4rem;
+		line-height: 1.3;
+		font-size: 0.7rem;
+		font-family: $font-bold;
+	}
+
+	li.active {
+		border-top: 3px solid orange;
+		padding-top: 50px;
+	}
+
+	li.active, li:hover {
+		a {
+      		color: $highlight;
+		}
+	}
+
+	li.em-link {
+		position: absolute;
+		top: -0.1rem;
+		right: 0.5rem;
+		width: 11rem;
+
+		a {
+			color: $highlight-dark;
+		}
+	}
+
+	li.em-link.active {
+		border-top: 5px solid $highlight-dark;
+	}
+
+
+	.submenu {
+		position: absolute;
+		line-height: 1.4;
+		margin: 0 0 -0.8rem;
+		top: 4.7rem;
+		font-family: $font-medium;
+		display: none;
+		@include transition(all 0.5s ease-in);
+	}
+
+	li.active .submenu {
+		display: block;
+	}
+
+	li:hover .submenu,
+	li.active .submenu {
+		display: block;
+
+		a {
+			color: #C2C2C2;
+		}
+
+		a:hover,
+		li.active a {
+			color: $highlight;
+		}
+
+		li.active {
+			padding-top: 0;
+			border-top: none;
+		}
+	}
+}
+
+
+#build-menu-button {
+	display: none;
+}

@@ -1,0 +1,299 @@
+/* HOME */
+.video-opening {
+	width: 100%;
+	height: 33.5rem;
+}
+
+.intro-row {
+	@include outer-container;
+}
+
+.main-intro {
+	@include span-columns(7.5);
+	margin-bottom: 2.9rem;
+}
+
+.intro-app {
+	@include span-columns(3.5);
+	@include shift(.5);
+	margin-top: 3.5rem;
+	font-family: $font-medium;
+	font-size: 1rem;
+	line-height: 1.45;
+	padding: 3.6rem 0.5rem 3.6rem 1.5rem;
+	position: relative;
+}
+
+.intro-app span {
+	color: $dark-grey;
+}
+
+.intro-app strong {
+	display: block;
+	margin-top: 0.6rem;
+}
+
+.intro-app:after {
+	position: absolute;
+	left: 0.35rem;
+	top: 3.65rem;
+	height: 12rem;
+	border-left: 2px solid #FBB03B;
+	content: '';
+}
+
+.main-intro h2,
+.site-sections h4 {
+	line-height: 1.2;
+	color: $dark-grey;
+	font-family: $font-bold;
+}
+
+.site-sections .mobile-link {
+	display: none;
+}
+
+.main-intro h2 {
+	margin-bottom: 0;
+}
+
+.main-intro p {
+	@include intro-parragraph;
+	margin: 10px 0 1rem;
+}
+
+.site-sections {
+	@include outer-container;
+	margin-top: 0.7rem;
+}
+
+.site-sections li {
+	@include span-columns(4);
+	@include omega(3n);
+}
+
+.intro-video,
+.page-intro {
+	position: relative;
+}
+
+.tooltip {
+	position: absolute;
+	top: 2rem;
+	right: -0.5rem;
+	width: 0;
+	padding: 1.1rem 1rem 1rem;
+	font-family: $font-medium;
+	font-size: 1rem;
+	background-color: $highlight;
+	color: #FFF;
+	@include transition(all 0.3s ease-in);
+	overflow: hidden;
+
+	.tooltip-content {
+		margin-left: 4rem;
+		width: 13.8rem;
+		opacity: 0;
+		@include transition(all 0.3s ease-in);
+		text-align: left;
+		font-family: $font-regular;
+	}
+}
+
+.tooltip:before,
+.tooltip:after {
+	font-family: "sf72-icons";
+	content:'y';
+	color: #FFF;
+	position: absolute;
+	top: 0.4rem;
+	left: 0.5rem;
+	font-size: 1.05rem;
+	opacity: 1;
+	@include transition(all 0.3s ease-in);
+}
+
+.prepare .tooltip:after {
+	font-family: "sf72-icons";
+	content:'c';
+	opacity: 0;
+	font-size: 3rem;
+	left: 1.2rem;
+	top: 0.9rem;
+}
+
+.big-title:hover .tooltip,
+.intro-video:hover .tooltip {
+	width: 19.8rem;
+
+	.tooltip-content {
+		opacity: 1;
+		@include transition(all 0.3s 0.3s ease-in);
+	}
+
+}
+
+.big-title:hover .tooltip:before {
+	opacity: 0;
+}
+
+.prepare .big-title:hover .tooltip:after {
+	opacity: 1;
+}
+
+.site-sections h4,
+.site-sections p {
+	padding: 0 1rem 0 0;
+}
+
+.site-sections h4 {
+	margin-bottom: 0;
+	margin-top: 1.9rem;
+	@include col-title;
+}
+
+.site-sections p {
+	margin-top: 0.7rem;
+}
+
+.my-people,
+.my-stuff,
+.near-me {
+	display: block;
+	background: url(http://placekitten.com/300/220/) no-repeat top left;
+	width: 300px;
+	height: 220px;
+	text-indent: -9999px;
+}
+
+.my-people {
+	background: url(/assets/static/connect.jpg) 100% 70%;
+	background-size: 230%;
+}
+
+.my-stuff {
+	background: url(/assets/static/prepare-supplies.jpg) -20px top;
+	background-size: 115%;
+}
+
+.social-media {
+	margin: 0.4rem 0 -2.6rem;
+	@include shift(10);
+	padding-left: 3.2rem;
+	cursor: pointer;
+
+	li {
+		display: inline-block;
+		margin-right: 0.4rem;
+	}
+
+	a {
+		font-size: 1.6rem;
+		color: $mid-grey;
+		font-size: 1.6rem;
+	}
+
+	a:hover {
+		font-size: 1.6rem;
+		color: $dark-grey;
+		font-size: 1.6rem;
+	}
+}
+
+.basics-section {
+
+	h2 {
+		margin-bottom: 0;
+		color: $dark-grey;
+	}
+
+	p {
+		margin-top: 0;
+		font-size: 1.2rem;
+	}
+}
+
+.slider-header {
+	background-color: $highlight;
+	height: 3.3rem;
+}
+
+.slider-body {
+	background-color: $light-grey;
+	height: 15.5rem;
+	margin-bottom: 1.4rem;
+}
+
+.basics-tabs {
+	margin: 0;
+	float: left;
+
+	li {
+		float: left;
+
+		a {
+			display: block;
+			padding: 0.8rem 0.6rem 0.8rem 1.9rem;
+			color: #FFF;
+			font-size: 1.3rem;
+			opacity: 0.6;
+			position: relative;
+		}
+	}
+
+	li.active {
+		a {
+			opacity: 1;
+		}
+
+		a:before {
+			content: '';
+			width: 0px;
+			height: 0px;
+			border-style: solid;
+			border-width: 0 11px 13px 11px;
+			border-color: transparent transparent $light-grey transparent;
+			position: absolute;
+			bottom: 0;
+			left: 2rem;
+		}
+	}
+}
+
+.slider.quick-guide {
+
+	li {
+		margin: 1.8rem 1.9rem;
+		padding-right: 7.5rem;
+		width: 51rem;
+		height: 13rem;
+	}
+
+	li:before {
+		background-color: $highlight;
+		margin: 0 0 0 -7.1rem;
+		padding: 0.55rem 1.4rem;
+	}
+
+	h2 {
+		font-family: $font-medium;
+		margin: 0.2rem 0 0;
+	}
+
+}
+
+.quick-list-trigger {
+	float: right;
+	color: #FFF;
+	padding: 1.1rem 2.6rem;
+	position: relative
+}
+
+.quick-list-trigger:before {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	font-family: 'sf72-icons';
+	content: 'q';
+	font-size: 1.5rem;
+}

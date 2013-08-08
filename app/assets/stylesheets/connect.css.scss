@@ -1,0 +1,119 @@
+/* CONNECT */
+
+.connect .page-intro .big-title,
+.about .page-intro .big-title {
+	background: url(/assets/static/connect.jpg) no-repeat left top;
+	background-size: 100%;
+}
+
+.app-signup {
+	@include outer-container;
+}
+
+.btn-rounded {
+	margin-top: 0.9rem;
+	font-size: 1.5rem;
+	color: #FFF;
+	padding: 0.5rem 1.3rem;
+	display: inline-block;
+	background-color: $highlight;
+	border-radius: 2rem;
+	cursor: pointer;
+	min-width: 11.7rem;
+	text-align: center;
+}
+
+.btn-rounded:hover {
+	background-color: $dark-grey;
+}
+
+.app-title {
+
+	h3 {
+		line-height: 1;
+		font-size: 1.31rem;
+		color: $dark-grey;
+		margin: 0.4rem 0 1rem;
+	}
+
+	.coming-soon {
+		margin:3.3rem 0 0;
+		color: $highlight;
+	}
+}
+
+.app-video {
+	float: right;
+	width: 516px;
+	height: 361px;
+	margin: -3.95rem 0.9rem 0 0;
+	background: $light-grey url(http://placekitten.com/516/361/) no-repeat top left;
+}
+
+.app-details {
+	@include span-columns(4.9);
+	
+	p {
+		margin: 0 0 1rem;
+		line-height: 1.6;
+	}
+
+	strong {
+		font-weight: normal;
+		font-family: $font-medium;
+		color: $dark-grey;
+	}
+}
+
+.subscribe-form {
+	margin-top: 2.8rem;
+
+	.email {
+		width: 17.7rem;
+		border: 2px solid #EEE;
+		font-size: 1.5rem;
+		padding: 0.6rem 1.1rem;
+	}
+	
+	.submit {
+		margin: 0 -1.5rem 0 0.3rem;
+		padding: 0.7rem 1.5rem;
+		background-color: #FFA500;
+		border: none;
+		color: #FFF;
+		font-size: 1.5rem;
+		cursor: pointer;
+	}
+
+	.submit:hover {
+		background-color: $dark-grey;
+	}
+
+}
+
+.app-features {
+	@include outer-container;
+	margin-top: 4.1rem;
+}
+
+.app-features > li {
+	@include span-columns(4)
+}
+
+.features-detail{
+	margin: 1.1rem 1rem 0;
+
+	li {
+		position: relative;
+		margin-bottom: 1rem;
+	}
+
+	li:before {
+		position: absolute;
+		top: -0.05rem;
+		left: -1rem;
+		font-size: 1.2rem;
+		content: "\2022";
+		color: $highlight;
+	}
+}
