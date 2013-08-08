@@ -1,3 +1,4 @@
+= javascript_include_tag "about"
 .main-container.about
 	= render :partial => "partials/header"
 	.page-intro
@@ -20,4 +21,9 @@
 			%h2 Why
 			%p A little now will mean a lot later. Small actions have a huge impact; connecting with your network, downloading an app, or watching a video is the first step towards being better prepared for an emergency. 
 			%p Leave it to San Francisco to lead the charge for a different kind of emergency prep. Let&apos;s start the movement.
+	.contact-form
+		%input.from-email
+		%input.subject
+		%input.message
+		%input.send{ type: "button" }
 = render :partial => "partials/footer"

@@ -1,15 +1,9 @@
 IdeoSf72::Application.routes.draw do
 
-  resources :emails
-
-
   resources :suscriptions
-
-
   resources :kits
-
-
   resources :items
+  resources :stories
 
   root to: 'home#home'
 
@@ -28,14 +22,12 @@ IdeoSf72::Application.routes.draw do
 
   get "about" => "home#about"
 
-  resources :stories
-
-  resources :suscriptions
-
   get "em" => "emergency_mode#index"
 
   get "quick_guide" => "home#quick_guide"
 
   get "our_manifesto" => "home#our_manifesto"
+
+  post "emails" => "emails#send_email"
   
 end

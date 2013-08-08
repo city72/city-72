@@ -27,6 +27,9 @@ gem 'cloudinary'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'json', '~> 1.7.7'
+gem 'mandrill-api'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
