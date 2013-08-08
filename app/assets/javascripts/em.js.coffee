@@ -5,15 +5,13 @@ $( ->
 		{ href: '#tab-service-status', contentSelector: '.status', anchorSelector: '[href="#tab-service-status"]' }
 	]
 
-	$('.em-quick-guide').hide()
-
 	$('a.show-quick-guide').click ->
-		$('.em-quick-guide').show()
+		$('.em-quick-guide').addClass 'active'
 		$('a.hide-quick-guide').css('display', 'block')
 		$(this).css('display', 'none')
 
 	$('a.hide-quick-guide').click ->
-		$('.em-quick-guide').hide()
+		$('.em-quick-guide').removeClass 'active'
 		$('a.show-quick-guide').css('display', 'block')
 		$(this).css('display', 'none')
 
