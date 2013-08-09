@@ -31,5 +31,6 @@
 			%input.from-email{ placeholder: "Your email" }
 			%textarea.message{ placeholder: "Tell us about it." }
 			%input.send{ type: "button", value: "Submit" }
-			=show_simple_captcha
+			-if @render_captcha
+				=show_simple_captcha(:label => "", :placeholder => "")
 = render :partial => "partials/footer"

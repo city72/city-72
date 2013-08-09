@@ -1,3 +1,5 @@
+require 'mandrill'
+
 class HomeController < ApplicationController
   def index
   end
@@ -19,6 +21,7 @@ class HomeController < ApplicationController
   end
 
   def about
+    @render_captcha = MailHelper::posible_attack?
   end
 
   def prepare_people

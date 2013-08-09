@@ -1,9 +1,6 @@
-require 'mandrill'
-
 class EmailsController < ApplicationController
 	def send_email
-		if simple_captcha_valid?
-			mandrill = Mandrill::API.new 'D7R-wjVdpCoJoIEnVkgnAQ'
+		if simple_captcha_valid? || !MailHelper::posible_attack?
 			message = {
 				from_email: params[:from_email],
 				from_name: params[:name],
@@ -14,7 +11,7 @@ class EmailsController < ApplicationController
 			responseMsj = "The email was sent"
 			if(!params[:from_email].blank?)
 				begin
-					mandrill.messages.send(message) # Mandrill errors are thrown as exceptions
+					MailHelper::sendMail(message)
 				rescue Mandrill::Error => e
 					puts "A mandrill error occurred: #{e.class} - #{e.message}"
 					responseMsj = "The email could not be sent"
