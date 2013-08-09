@@ -3,7 +3,7 @@
   = render :partial => "partials/header"
   .page-intro
     .big-title
-      %h1 SF72 App
+      %h1 The App
       %span Connect with your people
       .tooltip
         .tooltip-content <strong>1/2 full?</strong> or half empty, depending on how your day is going.
@@ -20,16 +20,14 @@
       %p In just 5 minutes, the SF72 app will hook you up with everything you need to immediately get connected in the event of an emergency. Start with yourself. Share with five friends. Watch the strength of our city grow from there.
       %strong Want to know when the SF72 App goes live? Sign up by email and we’ll keep you in the loop.
       .subscribe-form
-        %input.email{type: "text", placeholder: "Notify me"}
-        %input.submit{type: "submit", value: "Go"}
         #mc_embed_signup
           %form#mc-embedded-subscribe-form.validate{:action => "http://sf72.us6.list-manage1.com/subscribe/post?u=da2f717cb23345cc17718c642&id=a56b545c6c", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
-            %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => ""}/
+            %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", :placeholder => "Notify me"}/
+            %input.submit{type: "submit", value: "Go", :name => "subscribe"}
             #mce-responses.clear
               #mce-error-response.response{:style => "display:none"}
               #mce-success-response.response{:style => "display:none"}
-            .clear
-              %input.submit{type: "submit", value: "Go", :name => "subscribe"}
+
   %ul.app-features
     %li
       %img{src: "http://placekitten.com/300/390"}

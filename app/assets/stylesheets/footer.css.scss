@@ -5,6 +5,10 @@
 	margin-top: 2rem;
 	color: #b2b2b2;
 	font-family: $font-medium;
+
+	a:hover {
+		color: $dark-grey;
+	}
 }
 
 .by-line {
@@ -46,7 +50,7 @@
 	li {
 		@include span-columns(6);
 		@include omega(2n);
-		line-height: 1.25;
+		line-height: 18px;
 
 		a {
 			color: #b2b2b2;

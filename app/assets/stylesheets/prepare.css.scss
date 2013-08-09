@@ -32,7 +32,7 @@ a.prepare-things
 	display: block;
 	color: #FFF;
 	padding: 0.8rem 1rem 1rem;
-	height: 22.6rem;
+	height: 22.4rem;
 	position: relative;
 }
 
@@ -291,7 +291,7 @@ a.checklist:before {
 	.photo-overlay {
 		position: absolute;
 		left: 1.8rem;
-		bottom: 3.1rem;
+		bottom: 2rem;
 		width: 57rem;
 	}
 
@@ -301,7 +301,7 @@ a.checklist:before {
 	}
 
 	p {
-		margin: 0.7rem 14rem 0 0;
+		margin: 0.7rem 11rem 0 0;
 		line-height: 1.25;
 		font-size: 1.35rem;
 	}
@@ -310,7 +310,6 @@ a.checklist:before {
 .stories h3 {
 	margin: 1.9rem 0 0;
 	color: $dark-grey;
-	letter-spacing: -1px;
 }
 
 .story-list {
@@ -323,11 +322,12 @@ a.checklist:before {
 		margin-bottom: 2rem;
 
 		div.quote-dialog {
+			text-indent: -0.5rem;
 			height: 170px;
 			width: 300px;
 			display: none;
 			margin-bottom: 0.95rem;
-			padding: 1rem;
+			padding: 1rem 1rem 1rem 1.5rem;
 			line-height: 1.2;
 			font-family: $font-medium;
 			font-size: 1.3rem;
@@ -373,7 +373,7 @@ a.checklist:before {
 .story-type span {
 	font-size: 1.5rem;
 	display: block;
-	margin-top: 0.3rem;
+	margin-top: 0.25rem;
 }
 
 /* STORY DETAIL */
@@ -392,6 +392,11 @@ h2 .story-disaster {
 	p { margin-top: 0;}
 }
 
+.story-location {
+	font-weight: normal;
+	font-family: $font-medium;
+}
+
 
 .main-quote {
 	@include span-columns(4);
@@ -404,6 +409,7 @@ h2 .story-disaster {
 	color: $highlight;
 	border-left: 1px solid;
 	line-height: 1.2;
+	text-indent: -0.5rem;
 }
 
 .needed-list,
@@ -427,8 +433,8 @@ h2 .story-disaster {
 }
 
 .needed p {
-	font-size: 1.3rem;
-	font-family: $font-medium;
+	font-size: 1.18rem;
+	font-family: $font-regular;
 	line-height: 1.5rem;
 	text-indent: -0.5rem;
 	margin-top: 0.5rem;
@@ -456,6 +462,7 @@ h2 .story-disaster {
 
 .learned-list p {
 	margin: 1rem 0 0;
+	line-height: 1.3;
 }
 
 .learned-list a {
@@ -475,9 +482,10 @@ h2 .story-disaster {
 .learned-list a:before {
 	font-family: 'sf72-icons';
 	content: 's';
+	font-size: 1.1rem;
 	position: absolute;
 	right: 1.2rem;
-	top: 1.1rem;
+	top: 0.9rem;
 }
 
 /* THINGS */
@@ -550,7 +558,11 @@ h2 .story-disaster {
 		padding: 1.6rem 0.2rem 1.1rem 3rem;
 		font-size: 1.1rem;
 		position: relative;
+	}
+
+	a:hover {
 		color: $dark-grey;
+		cursor: pointer;
 	}
 }
 
@@ -559,8 +571,8 @@ h2 .story-disaster {
 	content: "q";
 	font-size: 1.5rem;
 	position: absolute;
-	top: 1.3rem;
-	left: 1rem;
+	top: 1.2rem;
+	left: 1.2rem;
 }
 
 .tabs-content {
@@ -620,6 +632,7 @@ h2 .story-disaster {
 	font-family: $font-medium;
 	color: $dark-grey;
 	font-size: 1rem;
+	text-align: center;
 }
 
 .overlay-text {
@@ -652,4 +665,5 @@ h2 .story-disaster {
 	line-height: 1;
 	font-family: $font-medium;
 	color: $dark-grey;
+	text-align: center;
 }

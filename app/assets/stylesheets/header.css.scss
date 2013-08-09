@@ -15,6 +15,7 @@
 	position: relative;
 }
 
+/*
 .logo.active:before {
 	width: 150px;
 	background-color: $highlight;
@@ -24,6 +25,7 @@
 	top: 0;
 	left: 0;
 }
+*/
 
 .logo-mobile {
 	display: none;
@@ -119,7 +121,7 @@
 	.submenu {
 		position: absolute;
 		line-height: 1.4;
-		margin: 0 0 -0.8rem;
+		margin: 0.1rem 0 -0.8rem;
 		top: 4.7rem;
 		font-family: $font-medium;
 		display: none;
@@ -136,6 +138,8 @@
 
 		a {
 			color: #C2C2C2;
+			font-size: 0.9rem;
+			line-height: 1.45;
 		}
 
 		a:hover,

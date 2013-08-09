@@ -47,16 +47,17 @@
 			border-radius: 4px;
 			display: inline-block;
 			background-color: #FFF;
-			padding: 0.2rem 1.4rem 0.1rem 0.5rem;
+			padding: 0.4rem 1.4rem 0.3rem 0.7rem;
 			color: $highlight-dark;
 			font-family: $font-medium;
+			font-size: 14px;
 			position: relative
 		}
 
 		a:after {
 			position: absolute;
-			right: 0.35rem;
-			top: 0.3rem;
+			right: 0.4rem;
+			top: 0.37rem;
 			font-family: "sf72-icons";
 			content: "1";
 			font-size: 0.8rem;
@@ -116,15 +117,14 @@
 }
 
 .map-container {
-	background-color: $light-grey;
+	background-color: #FFF;
 }
 
 .map-heading {
 	@include span-columns(6);
 	h3 {
 		color: $dark-grey;
-		margin: 0.4rem 0.6rem;
-		letter-spacing: -1px;
+		margin: 0.4rem 0.6rem 0.4rem 0;
 		font-size: 1.1rem;
 		
 		/*
@@ -220,7 +220,7 @@
 
 .tw-tabs a {
 	display: inline-block;
-	padding: 0.7rem 0 0.7rem 4.2rem;
+	padding: 1rem 0 1rem 4.2rem;
 	font-family: $font-medium;
 	line-height: 1.3;
 	color: #FFF;
@@ -234,9 +234,9 @@
 	}
 
 	span {
+		font-family: $font-regular;
 		font-size: 0.6rem;
 		text-transform: uppercase;
-
 	}
 
 	.updates-count {

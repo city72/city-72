@@ -125,7 +125,7 @@
 	.main-intro {
 		@include span-columns(4);
 		margin: 1rem 0;
-		padding: 0 0.5rem;
+		padding: 0 3%;
 
 		h2 { font-size: 1.42rem; }
 		p { 
@@ -155,8 +155,7 @@
 
 	.site-sections {
 
-		h4,
-		.web-link {
+		h4 {
 			display: none;
 		}
 
@@ -165,8 +164,22 @@
 			font-family: "HelveticaNeueLT-Medium";
 			font-size: 2.7rem;
 			color: #FFF;
-			margin: -4.3rem 0 0;
+			margin: -4.3rem 0 2rem;
 			padding: 0 0 0 6%;
+			position: relative;
+		}
+
+		.mobile-link:after {
+			position: absolute;
+			font-family: 'sf72-icons';
+			content: 's';
+			top: 0.4rem;
+			right: 6%;
+			font-size: 1.8rem
+		}
+
+		p {
+			padding: 0 3% 0.5rem;
 		}
 	}
 
@@ -175,6 +188,19 @@
 	.near-me {
 		margin: 0 auto;
 		width: 320px;
+	}
+
+	.near-me {
+		background: url(http://placekitten.com/320/220/) no-repeat top left;
+	}
+
+	.basics-section {
+		padding: 0 3%;
+		background-color: $light-grey;
+
+		h2 {
+			font-size: 1.5rem;
+		}
 	}
 
 	.footer {
@@ -553,7 +579,7 @@
 		margin: 0;
 		padding: 0;
 		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-
+		
 		li {
 			margin: 0;
 			display: block;

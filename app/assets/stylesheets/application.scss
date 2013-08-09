@@ -33,7 +33,6 @@ $font-medium:'HelveticaNeueLT-Medium';
 $font-bold:'HelveticaNeueLT-Bold';
 
 /* CSS Mini Reset */
-
 html, body, div, form, fieldset, legend, label {
 	margin: 0;
 	padding: 0;
@@ -69,7 +68,7 @@ h1, h2, h3, h4, h5 {
 	text-shadow: none;
 }
 
-/* GRID & Typography */
+/* Grid & Typography */
 $max-width: 960px;
 $gutter: 30px;
 $border-box-sizing: false;
@@ -119,47 +118,50 @@ body {
 
 /* COMMON ELEMENTS */
 
-.page-intro .big-title {
-	background: url(http://placekitten.com/960/492/) no-repeat left top;
-	width: 960px;
-	height: 492px;
-	text-align: center;
-	padding-top: 12.3rem;
+.page-intro {
 
-	h1 {
-		font-family: $font-bold;
-		font-size: 6.25rem;
-		margin: 0;
-		line-height: 1;
-		color: #FFF;
+	.big-title {
+		background: url(http://placekitten.com/960/492/) no-repeat left top;
+		width: 960px;
+		height: 492px;
+		text-align: center;
+		padding-top: 12.3rem;
+
+		h1 {
+			font-family: $font-bold;
+			font-size: 6.25rem;
+			margin: 0;
+			line-height: 1;
+			color: #FFF;
+		}
+
+		span { 
+			display: block;
+			margin: 0.6rem 0 0;
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			color: #FFF;
+		}
 	}
 
-	span { 
+	strong {
 		display: block;
-		margin: 0.6rem 0 0;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		color: #FFF;
+		font-family: $font-regular;
 	}
-}
 
-.page-intro strong {
-	display: block;
-	font-family: $font-regular;
-}
+	h2 {
+		margin: 1.6rem 0 0 0;
+		color: $dark-grey;
+		font-family: $font-bold;
+		font-size: 2.2rem;
+	}
 
-.page-intro h2 {
-	margin: 1.6rem 0 0 0;
-	color: $dark-grey;
-	font-family: $font-bold;
-	font-size: 2.2rem;
-}
-
-.page-intro p {
-	@include intro-parragraph;
-	margin: 0.1rem 0 1rem 0;
-	width: 43rem;
-}
+	p {
+		@include intro-parragraph;
+		margin: 0.1rem 0 1rem 0;
+		width: 43rem;
+	}
+} 
 
 .quick-guide {
 	margin: 0;

@@ -97,6 +97,10 @@
 		@include transition(all 0.3s ease-in);
 		text-align: left;
 		font-family: $font-regular;
+
+		strong {
+			font-family: $font-bold;
+		}
 	}
 }
 
@@ -150,10 +154,16 @@
 	margin-bottom: 0;
 	margin-top: 1.9rem;
 	@include col-title;
+	font-size: 1.3rem;
 }
 
 .site-sections p {
-	margin-top: 0.7rem;
+	margin-top: 0.4rem;
+	line-height: 1.5;
+}
+
+.site-sections a:hover{
+	color: $dark-grey;
 }
 
 .my-people,
