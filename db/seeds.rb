@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 Story.delete_all
 Kit.delete_all
 Item.delete_all
@@ -111,4 +103,10 @@ Item.create!(
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg"
   )
 
+CitizenFeed.delete_all
+
 CitizenFeed.create!(widget_id: "364391164582969346")
+
+Mode.delete_all
+
+Mode.create!(em_mode: false, title: '8.3 Earthquake on San Andreas Fault', text: 'An 8.3 earthquake struck the San Andreas fault on Thursday at 5:56 am.')
