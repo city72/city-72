@@ -13,14 +13,17 @@ ActiveAdmin.register Mode do
   		end
 
 		def update
-			@mode = Mode.first
-			@mode.em_mode = params[:mode][:em_mode] ? true : false
-			@mode.update_attributes(params[:mode])
-			redirect_to "/admin/modes/1"
+			mode = Mode.first
+			mode.em_mode = params[:mode][:em_mode] ? true : false
+			mode.update_attributes(params[:mode])
+			feed = CitizenFeed.first
+			feed.update_attributes!(params[:feed])
+			redirect_to "/admin/modes/1/edit"
 		end
 
 		def edit
 			@mode = Mode.first
+			@feed = CitizenFeed.first
 		end
     end
 end
