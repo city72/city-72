@@ -86,6 +86,7 @@ GEM
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    galetahub-simple_captcha (0.1.5)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -213,6 +214,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 3.2.1)
   dalli
+  galetahub-simple_captcha
   haml-rails
   jquery-rails (= 2.3.0)
   json (~> 1.7.7)
