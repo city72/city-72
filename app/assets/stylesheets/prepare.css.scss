@@ -231,7 +231,7 @@ a.checklist:before {
 
 	.intro-networks {
 		margin: 0 11rem 0 0;
-		@include intro-parragraph;
+		@include intro-paragraph;
 	}
 
 	.networks-list {
@@ -326,7 +326,7 @@ a.checklist:before {
 			height: 170px;
 			width: 300px;
 			display: none;
-			margin-bottom: 0.95rem;
+			margin-bottom: 1rem;
 			padding: 1rem 1rem 1rem 1.5rem;
 			line-height: 1.2;
 			font-family: $font-medium;
@@ -399,17 +399,26 @@ h2 .story-disaster {
 
 
 .main-quote {
-	@include span-columns(4);
-	@include shift(0.5);
+	@include span-columns(3.5);
+	@include shift(.5);
 	@include omega;
-	padding: 0 1.1rem;
-	margin-top: 10rem;
+	padding: 0 0.5rem 0 1.5rem;
+	margin-top: 11.5rem;
 	font-family: $font-medium;
-	font-size: 1.5rem;
+	font-size: 1rem;
+	line-height: 1.45;
 	color: $highlight;
-	border-left: 1px solid;
-	line-height: 1.2;
 	text-indent: -0.5rem;
+	position: relative;
+}
+
+.main-quote:after {
+	position: absolute;
+	left: 0.35rem;
+	top: 0;
+	height: 100%;
+	border-left: 2px solid $highlight;
+	content: '';
 }
 
 .needed-list,
@@ -436,7 +445,7 @@ h2 .story-disaster {
 	font-size: 1.18rem;
 	font-family: $font-regular;
 	line-height: 1.5rem;
-	text-indent: -0.5rem;
+	text-indent: -0.5em;
 	margin-top: 0.5rem;
 }
 
@@ -580,7 +589,7 @@ h2 .story-disaster {
 }
 
 .tab-tip{
-	font-size: 1.3rem;
+	@include intro-paragraph;
 	margin-top: 0.2em;
 }
 
@@ -606,7 +615,7 @@ h2 .story-disaster {
 		display: none;
 		width: 300px;
 		height: 230px;
-		margin-bottom: -53px;
+		margin-bottom: -52px;
 		padding: 1rem;
 		line-height: 1.2;
 		font-family: $font-medium;
@@ -651,8 +660,7 @@ h2 .story-disaster {
 }
 
 .kits p {
-	font-size: 1.3rem;
-	line-height: 1.2;
+	@include intro-paragraph;
 	margin: 0.8rem 15rem 2.5rem 0;
 }
 

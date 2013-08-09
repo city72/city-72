@@ -14,5 +14,6 @@
         %label{:for => "widget_id"} Widget ID
         %br/
         %input#widget_id{:name => "feed[widget_id]", :size => "30", :type => "text", :value => @feed.widget_id}/
+        .info Go to <a href="https://twitter.com/settings/widgets">https://twitter.com/settings/widgets</a>, create your widget and paste here the ID (you can get it from the generated code, right below preview area)
       .actions
         %input{:name => "commit", :type => "submit", :value => "Update Emergency Mode"}/

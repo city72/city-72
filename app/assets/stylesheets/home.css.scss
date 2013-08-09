@@ -9,7 +9,7 @@
 }
 
 .main-intro {
-	@include span-columns(7.5);
+	@include span-columns(7.8);
 	margin-bottom: 2.9rem;
 }
 
@@ -38,7 +38,7 @@
 	left: 0.35rem;
 	top: 3.65rem;
 	height: 12rem;
-	border-left: 2px solid #FBB03B;
+	border-left: 2px solid $highlight;
 	content: '';
 }
 
@@ -58,7 +58,7 @@
 }
 
 .main-intro p {
-	@include intro-parragraph;
+	@include intro-paragraph;
 	margin: 10px 0 1rem;
 }
 
@@ -219,7 +219,7 @@
 
 	p {
 		margin-top: 0;
-		font-size: 1.2rem;
+		@include intro-paragraph;
 	}
 }
 

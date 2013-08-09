@@ -79,7 +79,7 @@ h3 {font-size: 1.5rem; font-family: $font-medium;}
 h4 {font-size: 1.3rem;}
 h5 {margin: 0}
 
-@mixin intro-parragraph {
+@mixin intro-paragraph {
 	font-size: 1.187rem;
 	line-height: 1.36;
 }
@@ -95,7 +95,7 @@ h5 {margin: 0}
 body {
 	font-family: $font-regular;
 	font-size: 16px;
-	line-height: 1.375;
+	line-height: 1.5;
 	color: $body-color;
 }
 
@@ -157,7 +157,7 @@ body {
 	}
 
 	p {
-		@include intro-parragraph;
+		@include intro-paragraph;
 		margin: 0.1rem 0 1rem 0;
 		width: 43rem;
 	}
