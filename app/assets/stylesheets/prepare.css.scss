@@ -531,6 +531,10 @@ h2 .story-disaster {
 		color: $highlight;
 	}
 
+	li.essentials-trigger:hover a, li.essentials-trigger.active a {
+		color: $highlight-dark;
+	}
+
   	li.active:before,
   	li:hover:before {
 	    content: ' ';
@@ -611,7 +615,7 @@ h2 .story-disaster {
 .things-list li {
 	margin-bottom: 4.5rem;
 
-	div.use-case-dialog {
+	.use-case-dialog {
 		display: none;
 		width: 300px;
 		height: 230px;
@@ -626,6 +630,10 @@ h2 .story-disaster {
 		position: relative;
 		text-indent: -0.5em;
 	}
+}
+
+.things-list.essential li .use-case-dialog {
+	background-color: $highlight-dark;
 }
 
 .things-list li:hover {
