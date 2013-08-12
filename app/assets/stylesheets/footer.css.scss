@@ -5,6 +5,7 @@
 	margin-top: 2rem;
 	color: #b2b2b2;
 	font-family: $font-medium;
+	font-size: 0.8rem;
 
 	a:hover {
 		color: $dark-grey;
@@ -13,10 +14,8 @@
 
 .by-line {
 	@include span-columns(3.5);
-	@include shift(0.7);
 	position: relative;
-	margin-top: 1.2rem;
-	font-size: 0.9rem;
+	margin-top: 0.83rem;
 	line-height: 1.25;
 }
 
@@ -33,10 +32,10 @@
 .resources-block {
 	@include span-columns(4);
 	@include shift(0.5);
-	font-size: 0.875rem;
+	font-size: 0.8rem;
 
 	h2 {
-		font-size: 0.875rem;
+		font-size: 0.8rem;
 		font-weight: normal;
 		color: #969696;
 		margin-bottom: 0;
@@ -59,15 +58,13 @@
 }
 
 .privacy-list {
-	@include span-columns(3);
+	@include span-columns(4);
 
 	li {
-		display: inline-block;
-		font-size: 0.875rem;
-		font-family: $font-medium;
+		font-family: $font-regular;
 		
 		a { 
-			color: #969696;
+			color: #b2b2b2;
 		}
 	}
 }
