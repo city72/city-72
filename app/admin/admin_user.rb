@@ -1,5 +1,5 @@
 ActiveAdmin.register AdminUser do
-  menu false
+  menu :label => "Manage Admin Users"
   index do                            
     column :email                     
     column :current_sign_in_at        
@@ -15,21 +15,5 @@ ActiveAdmin.register AdminUser do
       f.input :password_confirmation  
     end                               
     f.actions                         
-  end
-
-  ActiveAdmin.register_page "Storiess" do
-    menu parent: "CMS", url: '/admin/stories'
-  end
-
-  ActiveAdmin.register_page "Itemss" do
-    menu parent: "CMS", url: '/admin/items'
-  end
-
-  ActiveAdmin.register_page "Kitss" do
-    menu parent: "CMS", url: '/admin/kits'
-  end
-
-  ActiveAdmin.register_page "Admin Userss" do
-    menu parent: "CMS", url: '/admin/admin_users'
   end
 end                                   
