@@ -85,10 +85,11 @@ h5 {margin: 0}
 }
 
 @mixin col-title {
-	font-size: 1rem;
+	font-size: 1.3rem;
+	font-family: $font-bold;
+	font-weight: normal;
 	line-height: 1.375;
 	color: #505050;
-	font-weight: normal;
 }
 
 /* LAYOUT */

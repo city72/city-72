@@ -8,7 +8,13 @@
 
 	h2 {
 		@include col-title;
+		margin-bottom: 0;
 	}
+
+	p {
+		margin-top: 0.4rem;
+	}
+
 }
 
 .contact-block {
@@ -46,7 +52,9 @@
 			width: 46%;
 			padding: 1rem;
 			margin: 0 3% 3% 0;
-			border: 1px solid #FFF;
+			background: url(/assets/static/diagonal.png);
+			background-size: 49px 50px;
+			border: none;
 			background-color: rgba(0, 0, 0, 0);
 			font-size: 1.3rem;
 

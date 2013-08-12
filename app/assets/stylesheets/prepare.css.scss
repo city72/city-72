@@ -455,46 +455,46 @@ h2 .story-disaster {
 
 .learned-list {
 	margin-top: 0.5rem;
-}
 
-.learned-list li {
-	background-color: $light-grey;
-	position: relative;
-	height: 13.8rem;
-	font-family: $font-medium;
-	padding: 0 1rem 0.5rem 1.8rem;
-	text-indent: -0.5rem;
-	font-size: 1.3rem;
-	line-height: 1.5rem;
-	height: 13.8rem;
-}
+	li {
+		background-color: $light-grey;
+		position: relative;
+		height: 13.8rem;
+		font-family: $font-medium;
+		padding: 0 1rem 0.5rem 1.8rem;
+		text-indent: -0.5em;
+		font-size: 1.3rem;
+		line-height: 1.5rem;
+		height: 13.8rem;
+	}
 
-.learned-list p {
-	margin: 1rem 0 0;
-	line-height: 1.3;
-}
+	p {
+		margin: 1rem 0 0;
+		line-height: 1.3;
+	}
 
-.learned-list a {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	color: $highlight-dark;
-	font-size: 1.5rem;
-	padding: 1rem 1rem 1rem 2.4rem;
-}
+	a {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		color: $highlight-dark;
+		font-size: 1.5rem;
+		padding: 1rem 1rem 1rem 2.4rem;
+	}
 
-.learned-list a:hover {
-	color: $dark-grey;
-}
+	a:hover {
+		color: $dark-grey;
+	}
 
-.learned-list a:before {
-	font-family: 'sf72-icons';
-	content: 's';
-	font-size: 1.1rem;
-	position: absolute;
-	right: 1.2rem;
-	top: 0.9rem;
+	a:before {
+		font-family: 'sf72-icons';
+		content: 's';
+		font-size: 1.1rem;
+		position: absolute;
+		right: 1.2rem;
+		top: 0.9rem;
+	}
 }
 
 /* THINGS */
@@ -616,7 +616,7 @@ h2 .story-disaster {
 		width: 300px;
 		height: 230px;
 		margin-bottom: -52px;
-		padding: 1rem;
+		padding: 1rem 1rem 1rem 1.5rem;
 		line-height: 1.2;
 		font-family: $font-medium;
 		font-size: 1.3rem;
@@ -624,6 +624,7 @@ h2 .story-disaster {
 		color: #FFF;
 		z-index: 2;
 		position: relative;
+		text-indent: -0.5em;
 	}
 }
 
