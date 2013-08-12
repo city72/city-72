@@ -1,7 +1,3 @@
-.quick-guide-page .quick-guide {
-	margin: 0 9rem 0 3.9rem;
-}
-
 .quick-guide-page .basics {
 
 	h4 {
@@ -14,26 +10,50 @@
 	> h2 {
 		margin: 0.1rem 11.8rem 0;
 		font-family: $font-medium;
-		font-size: 2rem;
+		font-size: 1.55rem;
 		color: $highlight-dark;
+	}
+
+	.event-after{
+		margin-top: 2.2rem;
+		color: $highlight;
 	}
 }
 
 .quick-guide-page .quick-guide {
+	margin: 0 13rem 0 3.9rem;
+	
+	h2 {
+		margin: 0;
+		font-size: 1.55rem;
+	}
+
 	li {
-		margin-bottom: 2.5rem;
+		margin-bottom: 1.4rem;
+	}
+
+	li:before {
+		margin: -0.6rem 0 0 -4.7rem;
+		padding: 0.5rem 1.3rem;
+		font-size: 1.5rem;
+	}
+
+	p {
+		margin: 0.2rem 0 0;
+		font-size: 1rem;
+		line-height: 1.4rem;
+		color: $dark-grey;
 	}
 }
 
-.quick-guide-page .basics .event-after { color: $highlight; }
 .quick-guide.second li:before{ background-color: $highlight }
 
 .quick-guide-share {
-	margin-bottom: 1.9rem;
+	margin: 3.6rem 0 1.9rem;
 
 	.share-options {
 		float: right;
-		margin: -0.5rem 8.6rem 0 0;
+		margin: 0 13.1rem 0 0;
 
 		li {
 			float: left;
@@ -47,6 +67,7 @@
 				color: $body-light;
 				font-size: 1.6rem;
 				margin-left: 1rem;
+				cursor: pointer;
 			}
 
 			a:before {
@@ -76,6 +97,6 @@
 		font-family: $font-bold;
 		font-size: 1rem;
 		line-height: 1.3;
-		color: $dark-grey;
+		color: $highlight;
 	}
 }
