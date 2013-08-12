@@ -222,8 +222,8 @@
 }
 
 .slider-header {
-	background-color: $highlight;
-	height: 3.3rem;
+	background-color: $dark-grey;
+	height: 3.8rem;
 }
 
 .slider-body {
@@ -241,19 +241,14 @@
 
 		a {
 			display: block;
-			padding: 0.8rem 0.6rem 0.8rem 1.9rem;
-			color: #FFF;
-			font-size: 1.3rem;
-			opacity: 0.6;
+			padding: 1rem 0.6rem 0.8rem 1.9rem;
+			color: #a9a9a9;
+			font-size: 1.4rem;
 			position: relative;
 		}
 	}
 
 	li.active {
-		a {
-			opacity: 1;
-		}
-
 		a:before {
 			content: '';
 			width: 0px;
@@ -266,12 +261,22 @@
 			left: 2rem;
 		}
 	}
+
+	li.active .trigger-during,
+	li .trigger-during:hover {
+		color: $highlight-dark;
+	}
+
+	li.active .trigger-after,
+	li .trigger-after:hover {
+		color: $highlight;
+	}
 }
 
 .slider.quick-guide {
 
 	li {
-		margin: 1.8rem 1.9rem;
+		margin: 1.8rem 3.4rem;
 		padding-right: 7.5rem;
 		width: 51rem;
 		height: 13rem;
@@ -279,22 +284,43 @@
 
 	li:before {
 		background-color: $highlight;
-		margin: 0 0 0 -7.1rem;
+		margin: 0 0 0 -5.4rem;
 		padding: 0.55rem 1.4rem;
 	}
 
 	h2 {
+		margin: 0.5rem 0 0;
 		font-family: $font-medium;
-		margin: 0.2rem 0 0;
+		font-size: 2.3rem;
+	}
+
+	p {
+		line-height: 1.7rem;
 	}
 
 }
 
+.slider-during {
+	.slider.quick-guide li:before {
+		background-color: $highlight-dark;
+	}
+
+	.bx-pager a.active {
+		background-color: $highlight-dark;
+		border: 1px solid $highlight-dark;
+	}
+}
+
 .quick-list-trigger {
-	float: right;
 	color: #FFF;
-	padding: 1.1rem 2.6rem;
-	position: relative
+	float: right;
+	padding: 1.1rem 2rem 1.1rem 3.2rem;
+	position: relative;
+	font-size: 1.25rem;
+}
+
+.quick-list-trigger:hover {
+	color: $highlight;
 }
 
 .quick-list-trigger:before {
@@ -302,6 +328,6 @@
 	top: 0.5rem;
 	left: 0.5rem;
 	font-family: 'sf72-icons';
-	content: 'q';
-	font-size: 1.5rem;
+	content: 'u';
+	font-size: 1.7rem;
 }

@@ -15,11 +15,10 @@
 @import "icons";
 @import "helvetica_neue";
 @import "mobile_menu";
-@import "slider";
 
 /* Main colors */
 $dark-grey: #4D4D4D;
-$body-color : #9b9b9b;
+$body-color: #9b9b9b;
 $body-light: #a2a2a2;
 $mid-grey: #b4b4b4;
 $light-grey: #e6e6e6;
@@ -204,6 +203,7 @@ body {
 
 @import "header";
 @import "footer";
+@import "slider";
 @import "home";
 @import "em_home";
 @import "connect";

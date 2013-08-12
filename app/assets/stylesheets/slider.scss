@@ -16,7 +16,7 @@
 }
 
 .bx-pager a {
-	border: 1px solid #FBB03B;
+	border: 1px solid $body-color;
 	text-indent: -9999px;
 	display: block;
 	width: 13px;
@@ -29,18 +29,20 @@
 }
 
 .bx-pager a.active {
-	background-color: #FBB03B;
+	background-color: $highlight;
+	border-color: $highlight;
 }
 
 .bx-controls-direction a {
+	color: #bfbfbf;
 	position: absolute;
-	top: 4.9rem;
+	top: 5.9rem;
 	outline: 0;
 	width: 32px;
 	height: 32px;
 	text-indent: -9999px;
 	z-index: 9999;
-	font-size: 3.1rem;
+	font-size: 2.5rem;
 }
 
 .bx-controls-direction a:before {
@@ -53,17 +55,23 @@
 }
 
 .bx-controls-direction a.bx-prev { 
-	left: 1rem;
+	left: 1.8rem;
+}
+
+.bx-controls-direction a.bx-next { 
+	right: 1.2rem;
 }
 
 .bx-controls-direction a.bx-prev:before { 
 	-webkit-transform: rotate(180deg);
 }
 
-.bx-controls-direction a.bx-next { 
-	right: 1.6rem;
+.bx-controls-direction a:hover,
+.bx-controls-direction a:active {
+	color: $dark-grey;
 }
 
 .bx-controls-direction a.disabled {
-	display: none;
+	color: #d3d3d3;
+	cursor: default;
 }
