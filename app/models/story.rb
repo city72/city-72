@@ -1,7 +1,7 @@
 class Story < ActiveRecord::Base
 	attr_accessible :video_url, :video_image,
-    :person, :event,
-    :location, :date,
+    :person, :person_type,
+    :event, :location, :date,
     :story_header, :story, :quote,
 	:item1_image, :item1_quote, :item1_subtitle, :item1_link,
     :item2_image, :item2_quote, :item2_subtitle, :item2_link,

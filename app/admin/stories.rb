@@ -18,6 +18,7 @@ ActiveAdmin.register Story do
   form do |f|
     f.inputs "Event Details" do
       f.input :person, label: "Person Name"
+      f.input :person_type, label: "Person Type", as: :select, collection: PersonTypes::all
       f.input :event
       f.input :category, as: :select, collection: StoryCategories::all
       f.input :location

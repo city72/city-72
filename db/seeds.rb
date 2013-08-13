@@ -11,6 +11,7 @@ story_data = {
   event: 'Hurricane Sandy',
   category: StoryCategories::HURRICANE_OR_TORNADO,
   person: 'Kristin',
+  person_type: PersonTypes::COMMUNITY_HUB,
   location: 'New York City',
   date: 'Nov 2012',
   story: 'Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin\'s apartment quickly became the tech hub of her neighborhood. Hear her story.',
@@ -36,28 +37,29 @@ story_data = {
 Story.create!(story_data)
 
 stories = [
-  ['Jim', 'New Orleans', 'Jan 2005', 'Hurricane Katrina', StoryCategories::HURRICANE_OR_TORNADO,
+  ['Jim', PersonTypes::DISASTER_SURVIVOR, 'New Orleans', 'Jan 2005', 'Hurricane Katrina', StoryCategories::HURRICANE_OR_TORNADO,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/katrina_dwkp12.jpg'],
-  ['Jennifer and Peter', 'San Francisco', 'Jun 1926', 'Great San Francisco Fire and Earthquake', StoryCategories::EARTHQUAKE,
+  ['Jennifer and Peter', PersonTypes::DISASTER_SURVIVOR, 'San Francisco', 'Jun 1926', 'Great San Francisco Fire and Earthquake', StoryCategories::EARTHQUAKE,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/earthquake_l6bq6t.jpg'],
-  ['Bruce', 'Los Angeles', 'Jul 1980', 'Heat Wave of 1980', StoryCategories::OTHER_EMERGENCY,
+  ['Bruce', PersonTypes::COMMUNITY_HUB, 'Los Angeles', 'Jul 1980', 'Heat Wave of 1980', StoryCategories::OTHER_EMERGENCY,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/heat-wave_y97b9d.jpg'],
-  ['Pedro', 'Santiago de Chile', 'Mar 2010', 'Chilean earthquake of 2010', StoryCategories::EARTHQUAKE,
+  ['Pedro', PersonTypes::DISASTER_SURVIVOR, 'Santiago de Chile', 'Mar 2010', 'Chilean earthquake of 2010', StoryCategories::EARTHQUAKE,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/2010-Chile-Earthquake-81_wvcuek.jpg'],
-  ['Ronaldo', 'Rio de Janeiro', 'Oct 2011', 'Brazilian floods of 2011', StoryCategories::TSUNAMI_OR_FLOOD,
+  ['Ronaldo', PersonTypes::DISASTER_SURVIVOR, 'Rio de Janeiro', 'Oct 2011', 'Brazilian floods of 2011', StoryCategories::TSUNAMI_OR_FLOOD,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/rio-floods_h751xk.jpg'],
-  ['Jane', 'Mississippi River Valley', 'Mar 2011', 'mississippi river floods of 2011', StoryCategories::TSUNAMI_OR_FLOOD,
+  ['Jane', PersonTypes::DISASTER_SURVIVOR, 'Mississippi River Valley', 'Mar 2011', 'mississippi river floods of 2011', StoryCategories::TSUNAMI_OR_FLOOD,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Mississippi_River_Flooding_t607_hqb2ql.jpg'],
-  ['Paul', 'American Samoa', 'Jun 2011', 'Samoa earthquake of 2009', StoryCategories::EARTHQUAKE,
+  ['Paul', PersonTypes::COMMUNITY_HUB, 'American Samoa', 'Jun 2011', 'Samoa earthquake of 2009', StoryCategories::EARTHQUAKE,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/samoa_vileze.jpg',
         nil, nil, true],
-  ['Brad', 'California', 'Oct 2007', 'California wildfires of 2007', StoryCategories::OTHER_EMERGENCY,
+  ['Brad', PersonTypes::DISASTER_SURVIVOR, 'California', 'Oct 2007', 'California wildfires of 2007', StoryCategories::OTHER_EMERGENCY,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/wildfire_gy1hl6.jpg',
         StoryItemsDisplayTypes::FULL_BLEED_PHOTOS, StoryItemsTitles::WHAT_SHOULD_I_OFFER]
 ]
 
-stories.each do |person, location, date, event, category, remote_video_image_url, items_images_display_type, items_title, only_two_items|
+stories.each do |person, person_type, location, date, event, category, remote_video_image_url, items_images_display_type, items_title, only_two_items|
   story_data[:person] = person
+  story_data[:person_type] = person_type
   story_data[:location] = location
   story_data[:date] = date
   story_data[:event] = event
