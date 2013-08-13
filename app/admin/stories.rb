@@ -42,20 +42,17 @@ ActiveAdmin.register Story do
         f.input :item1_image, label: 'Image', hint: f.template.image_tag(f.object.item1_image.url, size: "100x100")
         f.input :item1_subtitle, label: 'Subtitle'
         f.input :item1_quote, label: 'Quote'
-        f.input :item1_link, label: 'Link'
 
       end
       f.inputs "Second Item" do
         f.input :item2_image, label: 'Image', hint: f.template.image_tag(f.object.item2_image.url, size: "100x100")
         f.input :item2_subtitle, label: 'Subtitle'
         f.input :item2_quote, label: 'Quote'
-        f.input :item2_link, label: 'Link'
       end
       f.inputs "Third Item" do
         f.input :item3_image, label: 'Image', hint: f.template.image_tag(f.object.item3_image.url, size: "100x100")
         f.input :item3_subtitle, label: 'Subtitle'
         f.input :item3_quote, label: 'Quote'
-        f.input :item3_link, label: 'Link'
       end
 
     end
