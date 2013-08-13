@@ -42,12 +42,12 @@
           %a{href: "/prepare"} Make a Plan
       %ul.needed-list.two-cols
         %li
-          %img{src: "#{@story.item1_image}"}
+          %img{src: "#{@story.item1_image_url(:full_bleed)}"}
           %h4 Emergency Supplies
           %p &ldquo;#{@story.item1_quote}&rdquo;
           %a{href: "/prepare/things"} Gather your supplies
         %li
-          %img{src: "#{@story.item2_image}"}
+          %img{src: "#{@story.item2_image_url(:full_bleed)}"}
           %h4 Meetup Plan
           %p &ldquo;#{@story.item2_quote}&rdquo;
           %a{href: "/connect"} See the app
