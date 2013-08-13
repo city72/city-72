@@ -30,7 +30,7 @@ class HomeController < ApplicationController
   def prepare_things
   end
 
-  def things
+  def supplies
     @items = Item.all
     @kits = Kit.all
   end

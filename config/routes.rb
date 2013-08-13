@@ -18,7 +18,7 @@ IdeoSf72::Application.routes.draw do
 
   get "connect" => "home#connect"
 
-  get "things" => "home#things"
+  get "supplies" => "home#supplies"
 
   get "about" => "home#about"
 
