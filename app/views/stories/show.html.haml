@@ -23,34 +23,34 @@
           %p#main_story #{@story.story}
       .main-quote <span id="main_quote">#{@story.quote}</span>
     .needed
-      %h3 How I&apos;m prepared
+      %h3 #{@story.items_title}
       - if @story.items_images_display_type == StoryItemsDisplayTypes::OBJECT_PHOTOS
         %ul.needed-list
           %li
             %img{src: "#{@story.item1_image}"}
-            %h4 Emergency Supplies
+            %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
             %a{href: "/prepare/things"} Gather your supplies
           %li
             %img{src: "#{@story.item2_image}"}
-            %h4 Meetup Plan
+            %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
             %a{href: "/connect"} See the app
           %li
             %img{src: "#{@story.item3_image}"}
-            %h4 Out of State Contact
+            %h4 #{@story.item3_subtitle}
             %p &ldquo;#{@story.item3_quote}&rdquo;
             %a{href: "/prepare"} Make a Plan
       - else
         %ul.needed-list.two-cols
           %li
             %img{src: "#{@story.item1_image_url(:full_bleed)}"}
-            %h4 Emergency Supplies
+            %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
             %a{href: "/prepare/things"} Gather your supplies
           %li
             %img{src: "#{@story.item2_image_url(:full_bleed)}"}
-            %h4 Meetup Plan
+            %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
             %a{href: "/connect"} See the app
     .similar
