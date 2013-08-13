@@ -38,5 +38,4 @@ $( ->
 	window.onhashchange = ->
 		showActive reports
 		showMobileTab mobileSections
-
 )
