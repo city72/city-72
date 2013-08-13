@@ -10,6 +10,32 @@
 	font-size: 0.95rem;	
 }
 
+.make-plan {
+
+	margin-top: 3rem;
+	
+	p {
+		padding-right: 180px;
+	}
+
+	a {
+		color: $highlight-dark;
+		font-family: $font-bold;
+		display: inline-block;
+		position: relative;
+		padding-right: 1em;
+	}
+
+	a:after {
+		position: absolute;
+		right: 0;
+		top: 0.3em;
+		font-family: 'sf72-icons';
+		content: 's';
+		font-size: 0.7em;
+	}
+}
+
 .col-2 {
 	@include outer-container;
 }
@@ -21,64 +47,66 @@
 
 .prepare-sections {
 	margin-top: 3.8rem;
-}
 
-a.prepare-people,
-a.prepare-things
- {
-	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-people.jpg);
-	background-size: 100%;
-	background-repeat: no-repeat;
-	display: block;
-	color: #FFF;
-	padding: 0.8rem 1rem 1rem;
-	height: 22.4rem;
-	position: relative;
-}
+	a {
+		height: 26.7rem;
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-people.jpg);
+		background-size: 100%;
+		background-repeat: no-repeat;
+		display: block;
+		color: #FFF;
+		padding: 0.8rem 1.8rem 1rem;
+		position: relative;
+	}
 
-a.prepare-things {
-	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-supplies.jpg);
-}
+	a.prepare-things {
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-supplies.jpg);
+	}
 
-a.prepare-people:hover {
-	background-image: -webkit-linear-gradient(top, rgba(241,90,36,0.3) 0%,rgba(241,90,36,0.3) 100%), -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-people.jpg);
-}
+	a.prepare-people:hover {
+		background-image: -webkit-linear-gradient(top, rgba(241,90,36,0.3) 0%,rgba(241,90,36,0.3) 100%), -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-people.jpg);
+	}
 
-a.prepare-things:hover {
-	background-image: -webkit-linear-gradient(top, rgba(241,90,36,0.3) 0%,rgba(241,90,36,0.3) 100%), -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-supplies.jpg);
-}
+	a.prepare-things:hover {
+		background-image: -webkit-linear-gradient(top, rgba(241,90,36,0.3) 0%,rgba(241,90,36,0.3) 100%), -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-supplies.jpg);
+	}
+	
 
-a.prepare-people p,
-a.prepare-things p {
-	margin: 1rem 10rem 0 1rem;
-	line-height: 1.4;
-	font-size: 1.1rem;
-}
+	h2 {
+		margin: 1.5rem 0 0;
+	}
 
-a.prepare-people strong,
-a.prepare-things strong {
-	position: absolute;
-	bottom: 0.6rem;
-	left: 1.8rem;
-	font-family: $font-medium;
-	font-size: 2.7rem;
-	display: block;
-}
+	p {
+		margin: 0.4rem 22rem 0 0;
+		font-size: 1.187rem;
+	}
 
-a.prepare-people:after,
-a.prepare-things:after {
-	font-family: 'sf72-icons';
-	speak: none;
-	content: 's';
-	font-size: 1.8rem;
-	position: absolute;
-	bottom: 1rem;
-	right: 1.8rem;
-}
+	strong {
+		display: inline-block;
+		position: relative;
+		margin-top: 0.7rem;
+		padding-right: 1em;
+		font-family: $font-medium;
+		font-size: 1.187rem;
+		color: $highlight-dark;
+	}
 
-a.prepare-people:hover:after,
-a.prepare-things:hover:after {
-	color: $highlight-dark;
+	strong:after {
+		position: absolute;
+		top: 0.3em;
+		right: 0.2rem;
+		font-family: 'sf72-icons';
+		speak: none;
+		content: 's';
+		font-size: 0.7em;
+	}
+	
+	/*
+	strong:hover:after,
+	strong:hover:after {
+		color: $highlight-dark;
+	}
+	*/
 }
 
 a.checklist {
@@ -138,55 +166,6 @@ a.checklist:before {
 	font-family: $font-medium;
 	color: $dark-grey;
 }
-/*
-.alert-sf-block {
-	background-color: $highlight;
-	padding: 1.2rem;
-	color: #FFF;
-	position: relative;
-	
-	h2 {
-		padding-left: 4.4rem;
-		font-size: 2.2em;
-		margin: 1.5rem 0 0.8rem;
-	}
-
-	p {
-		position: absolute;
-		font-size: 1.3em;
-		right: 4rem;
-		top: 0.8rem;
-		width: 24.5rem;
-		line-height: 1.2;
-	}
-	
-	.input-text {
-		background-color: rgba(0, 0, 0, 0);
-		margin: 0 0.9rem 0 4.2rem;
-		padding: 0.7rem 1.2rem 0.7rem;
-		border: 2px solid #FFF;
-		width: 24.7rem;
-		font-size: 1.5rem;
-
-		@include placeholder {
-		    color: #FFF;
-		}
-	}
-
-	.btn.tips {
-		@include omega;
-	}
-}
-
-.alert-sf-block:after {
-	font-family: "sf72-icons";
-	position: absolute;
-	content: 'b';
-	top: 0.8rem;
-	left: 2.5rem;
-	font-size: 4rem;
-}
-*/
 
 .basics .modal-bg,
 .basics .modal {
@@ -230,25 +209,30 @@ a.checklist:before {
 	}
 
 	.intro-networks {
-		margin: 0 11rem 0 0;
+		margin: 0 21rem 0 0;
 		@include intro-paragraph;
 	}
 
 	.networks-list {
 		@include outer-container;
+		margin: 2.3rem auto 4.7rem;
 
 		li {
-			@include span-columns(6);
-			@include omega(2n);
-			padding: 0.9rem 3.3rem 0 4.9rem;
-			height: 15rem;
+			@include span-columns(4);
+			@include omega(3n);
+			padding: 4rem 3.3rem 0 0;
 			position: relative;
+
+			strong {
+				font-weight: normal;
+				color: $highlight;
+			}
 		}
 
 		h3 {
+			margin: 1.8rem 0 0;
 			font-size: 1.25rem;
 			color: $dark-grey;
-			margin-bottom: 0;
 		}
 
 		p {
@@ -262,17 +246,45 @@ a.checklist:before {
 
 		li:before {
 			position: absolute;
-			top: 1.3rem;
+			top: 0;
 			left: 0;
 			font-family: "sf72-icons";
 			font-size: 3.3rem;
 			color: $body-light;
 		}
 
-		li.facebook:before {content: "v";}
-		li.airbnb:before {content: "v";}
-		li.twitter:before {content: "w";}
-		li.gplus:before {content: "w";}
+		li.facebook:before {
+			content: "v";
+			color: #3b5994;
+		}
+		li.airbnb:before {
+			content: "v";
+			color: #00b0ff;
+		}
+		li.twitter:before {
+			content: "w";
+			color: #51a1ca;
+		}
+	}
+}
+
+.talk-to-friends {
+	margin-top: 4.8rem;
+
+	h2 {
+		color: $dark-grey;
+		margin-bottom: 0;
+	}
+
+	p {
+		@include intro-paragraph;
+		margin: 0 22rem 1rem 0;
+	}
+
+	p.small {
+		font-size: 0.8rem;
+		font-family: $font-bold;
+		color: $dark-grey;
 	}
 }
 
@@ -308,29 +320,23 @@ a.checklist:before {
 }
 
 .stories h3 {
-	margin: 1.9rem 0 0;
+	margin: 2rem 0 0.6rem;
 	color: $dark-grey;
 }
 
 .story-list {
 	margin-top: 0.5rem;
-}
-
-.story-list {
 
 	li {
-		margin-bottom: 2rem;
+		margin-bottom: 1.7rem;
 
 		div.quote-dialog {
-			text-indent: -0.5rem;
-			height: 170px;
+			height: 190px;
 			width: 300px;
 			display: none;
 			margin-bottom: 1rem;
-			padding: 1rem 1rem 1rem 1.5rem;
-			line-height: 1.2;
-			font-family: $font-medium;
-			font-size: 1.3rem;
+			padding: 1rem;
+			font-family: $font-bold;
 			background-color: $highlight;
 			color: #FFF;
 		}
@@ -352,38 +358,61 @@ a.checklist:before {
 	margin-top: 0.5rem;
 }
 
-.story-data h5 {
-	color: $dark-grey;
+.story-data h5,
+.story-data p {
+	font-size: 0.87rem;
+	line-height: 1.2;
 	font-family: $font-bold;
+	color: $dark-grey;
 }
 
 .story-data p {
 	margin: 0;
-	color: $body-color;
-	font-size: 0.83rem;
-	line-height: 1;
+	color: $body-light;
 }
 
 .story-type {
-	height: 2rem;
+	height: 3rem;
 	float: left;
-	margin-right: 0.5rem;
+	width: 2.1rem;
 }
 
 .story-type span {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	display: block;
-	margin-top: 0.25rem;
+	color: $highlight-dark;
+}
+
+.story-type span.hub {
+	color: $highlight;
 }
 
 /* STORY DETAIL */
 
-h2 .story-disaster {
+.story-detail .main-intro {
+	margin-bottom: 3.8rem;
+
+	h2 {
+		line-height: 1.12;
+	}
+}
+
+.story-main-details {
+	margin-bottom: 0.5rem;
+	font-size: 2.25rem;
+	font-family: $font-bold;
 	color: $body-color;
+	line-height: 1.12;
+}
+
+.story-location {
+	font-weight: normal;
+	font-family: $font-medium;
+	font-size: 0.875rem;
 }
 
 .story-description {
-	margin-top: 3.2rem;
+	margin-top: 1.8rem;
 
 	h3 { 
 		margin-bottom: 0;
@@ -392,23 +421,17 @@ h2 .story-disaster {
 	p { margin-top: 0;}
 }
 
-.story-location {
-	font-weight: normal;
-	font-family: $font-medium;
-}
-
 
 .main-quote {
 	@include span-columns(3.5);
 	@include shift(.5);
 	@include omega;
 	padding: 0 0.5rem 0 1.5rem;
-	margin-top: 11.5rem;
+	margin-top: 10.85rem;
 	font-family: $font-medium;
 	font-size: 1rem;
 	line-height: 1.45;
 	color: $highlight;
-	text-indent: -0.5rem;
 	position: relative;
 }
 
@@ -422,65 +445,52 @@ h2 .story-disaster {
 }
 
 .needed-list,
-.learned-list,
 .story-list {
 	@include outer-container;
 }
 
-.needed-list li,
-.learned-list li,
 .story-list li {
 	@include span-columns(4);
 	@include omega(3n);
 }
 
 .needed h3,
-.learned h3,
 .similar h3 {
 	margin: 0;
 	color: $dark-grey;
+	font-family: $font-bold;
 }
 
-.needed p {
-	font-size: 1.18rem;
-	font-family: $font-regular;
-	line-height: 1.5rem;
-	text-indent: -0.5em;
-	margin-top: 0.5rem;
-}
-
-.learned {
-	margin-bottom: 2.7rem;
-}
-
-.learned-list {
-	margin-top: 0.5rem;
+.needed-list {
+	@include row(table);
+	margin-bottom: 4.5rem;
 
 	li {
-		background-color: $light-grey;
+		@include span-columns(4, table);
 		position: relative;
-		height: 13.8rem;
-		font-family: $font-medium;
-		padding: 0 1rem 0.5rem 1.8rem;
-		text-indent: -0.5em;
-		font-size: 1.3rem;
-		line-height: 1.5rem;
-		height: 13.8rem;
+		height: 100%;
+	}
+
+	h4 {
+		margin: 0.2rem 0 0;
+		font-family: $font-bold;
+		color: $dark-grey;
 	}
 
 	p {
-		margin: 1rem 0 0;
-		line-height: 1.3;
+		font-family: $font-regular;
+		margin: 0 0 3.2rem;
 	}
 
 	a {
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		width: 100%;
-		color: $highlight-dark;
+		display: block;
+		padding-right: 0.8em;
 		font-size: 1.5rem;
-		padding: 1rem 1rem 1rem 2.4rem;
+		font-family: $font-bold;
+		color: $highlight-dark;
 	}
 
 	a:hover {
@@ -488,13 +498,17 @@ h2 .story-disaster {
 	}
 
 	a:before {
+		position: absolute;
+		right: 0;
+		top: 0.6em;
+		font-size: 0.6em;
 		font-family: 'sf72-icons';
 		content: 's';
-		font-size: 1.1rem;
-		position: absolute;
-		right: 1.2rem;
-		top: 0.9rem;
 	}
+}
+
+.needed-list.two-cols li{
+	@include span-columns(6, table);
 }
 
 /* THINGS */

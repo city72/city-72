@@ -10,12 +10,12 @@
       %li
         %a{href: "#{ story_path(story.id) }"}
           .quote-dialog
-            &ldquo;#{story.quote}&rdquo;
+            #{story.quote}
           %img{src: "#{story.video_image}"}
           .story-data
             .story-type
               %span.icon-disaster-hurricane
             %h5 #{story.person}
-            %p #{story.location}
+            %p #{story.location} <br /> #{story.location}
 
 = render :partial => "partials/footer"

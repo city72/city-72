@@ -13,37 +13,44 @@
     .intro-row
       .main-intro
         %h2
-          %span#name #{@story.person},
+          %span#name #{@story.person}
+        .story-main-details
+          %span.kind-of Crisis Survivor,
           %span.story-disaster#disaster #{@story.event}
         %strong.story-location #{@story.location}, #{@story.date}
         .story-description
-          %h3 #{@story.story_header},
+          / %h3 #{@story.story_header}
           %p#main_story #{@story.story}
-      .main-quote &ldquo;<span id="main_quote">#{@story.quote}</span>&rdquo;
+      .main-quote <span id="main_quote">#{@story.quote}</span>
     .needed
-      %h3 What I needed.
+      %h3 How I&apos;m prepared.
       %ul.needed-list
         %li
           %img{src: "#{@story.item1_image}"}
+          %h4 Emergency Supplies
           %p &ldquo;#{@story.item1_quote}&rdquo;
+          %a{href: "/prepare/things"} Gather your supplies
         %li
           %img{src: "#{@story.item2_image}"}
+          %h4 Meetup Plan
           %p &ldquo;#{@story.item2_quote}&rdquo;
-        %li
-          %img{src: "#{@story.item3_image}"}
-          %p &ldquo;#{@story.item3_quote}&rdquo;
-    .learned
-      %h3 What I learned.
-      %ul.learned-list
-        %li
-          %p &ldquo;#{@story.lesson1_quote}&rdquo;
           %a{href: "/connect"} See the app
         %li
-          %p &ldquo;#{@story.lesson2_quote}&rdquo;
-          %a{href: "/prepare/things"} Get your stuff
+          %img{src: "#{@story.item3_image}"}
+          %h4 Out of State Contact
+          %p &ldquo;#{@story.item3_quote}&rdquo;
+          %a{href: "/prepare"} Make a Plan
+      %ul.needed-list.two-cols
         %li
-          %p &ldquo;#{@story.lesson3_quote}&rdquo;
-          %a{href: "/prepare/stories"} Link to another page
+          %img{src: "#{@story.item1_image}"}
+          %h4 Emergency Supplies
+          %p &ldquo;#{@story.item1_quote}&rdquo;
+          %a{href: "/prepare/things"} Gather your supplies
+        %li
+          %img{src: "#{@story.item2_image}"}
+          %h4 Meetup Plan
+          %p &ldquo;#{@story.item2_quote}&rdquo;
+          %a{href: "/connect"} See the app
     .similar
       %h3 Similar to #{@story.person}
       %ul.story-list
@@ -51,7 +58,7 @@
           %li
             %a{href: "/stories/#{ related_story.id }"}
               .quote-dialog
-                &ldquo;#{ related_story.quote }&rdquo;
+                #{ related_story.quote }
               %img{src: "#{ related_story.video_image }"}
               .story-data
                 .story-type
