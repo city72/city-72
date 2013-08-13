@@ -519,12 +519,14 @@ a.checklist:before {
 
 .action-bar {
 	@include outer-container;
+	@include reset-all()
 }
 
 .action-bar .tabs {
 	@include span-columns(8.8);
 
 	li {
+		@include omega(3n);
 		text-align: center;
 		display: inline-block;
 		margin: 1.4rem 0.9rem 0 0;
@@ -632,17 +634,14 @@ a.checklist:before {
 	.use-case-dialog {
 		display: none;
 		width: 300px;
-		height: 230px;
+		height: 250px;
 		margin-bottom: -52px;
-		padding: 1rem 1rem 1rem 1.5rem;
-		line-height: 1.2;
-		font-family: $font-medium;
-		font-size: 1.3rem;
 		background-color: $highlight;
+		padding: 1rem;
+		font-family: $font-bold;
 		color: #FFF;
 		z-index: 2;
 		position: relative;
-		text-indent: -0.5em;
 	}
 }
 
