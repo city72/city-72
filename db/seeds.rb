@@ -49,13 +49,14 @@ stories = [
   ['Jane', 'Mississippi River Valley', 'Mar 2011', 'mississippi river floods of 2011', StoryCategories::TSUNAMI_OR_FLOOD,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Mississippi_River_Flooding_t607_hqb2ql.jpg'],
   ['Paul', 'American Samoa', 'Jun 2011', 'Samoa earthquake of 2009', StoryCategories::EARTHQUAKE,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/samoa_vileze.jpg'],
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/samoa_vileze.jpg',
+        nil, nil, true],
   ['Brad', 'California', 'Oct 2007', 'California wildfires of 2007', StoryCategories::OTHER_EMERGENCY,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/wildfire_gy1hl6.jpg',
         StoryItemsDisplayTypes::FULL_BLEED_PHOTOS, StoryItemsTitles::WHAT_SHOULD_I_OFFER]
 ]
 
-stories.each do |person, location, date, event, category, remote_video_image_url, items_images_display_type, items_title|
+stories.each do |person, location, date, event, category, remote_video_image_url, items_images_display_type, items_title, only_two_items|
   story_data[:person] = person
   story_data[:location] = location
   story_data[:date] = date
@@ -64,6 +65,11 @@ stories.each do |person, location, date, event, category, remote_video_image_url
   story_data[:remote_video_image_url] = remote_video_image_url
   story_data[:items_images_display_type] = items_images_display_type || story_data[:items_images_display_type]
   story_data[:items_title] = items_title || story_data[:items_title]
+  if only_two_items
+    story_data[:remote_item3_image_url] = ''
+  else
+    story_data[:remote_item3_image_url] = 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg'
+  end
   Story.create!(story_data)
 end
 
