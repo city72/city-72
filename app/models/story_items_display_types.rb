@@ -1,6 +1,6 @@
 module StoryItemsDisplayTypes
-  OBJECT_PHOTOS = :Object_photos
-  FULL_BLEED_PHOTOS = :Full_bleed_photos
+  OBJECT_PHOTOS = "Object_photos"
+  FULL_BLEED_PHOTOS = "Full_bleed_photos"
 
   def self.all
   	return [OBJECT_PHOTOS, FULL_BLEED_PHOTOS]
