@@ -33,25 +33,30 @@ ActiveAdmin.register Story do
     end
 
     f.inputs "Needed Items" do
+
+      f.input :items_images_display_type, label: 'Images Display Type', as: :select, collection: StoryItemsDisplayTypes::all
+      f.input :items_title, label: 'Title', as: :select, collection: StoryItemsTitles::all
+
       f.inputs "First Item" do
-        f.input :item1_quote, label: 'Quote'
         f.input :item1_image, label: 'Image', hint: f.template.image_tag(f.object.item1_image.url, size: "100x100")
+        f.input :item1_subtitle, label: 'Subtitle'
+        f.input :item1_quote, label: 'Quote'
+        f.input :item1_link, label: 'Link'
 
       end
       f.inputs "Second Item" do
-        f.input :item2_quote, label: 'Quote'
         f.input :item2_image, label: 'Image', hint: f.template.image_tag(f.object.item2_image.url, size: "100x100")
+        f.input :item2_subtitle, label: 'Subtitle'
+        f.input :item2_quote, label: 'Quote'
+        f.input :item2_link, label: 'Link'
       end
       f.inputs "Third Item" do
-        f.input :item3_quote, label: 'Quote'
         f.input :item3_image, label: 'Image', hint: f.template.image_tag(f.object.item3_image.url, size: "100x100")
+        f.input :item3_subtitle, label: 'Subtitle'
+        f.input :item3_quote, label: 'Quote'
+        f.input :item3_link, label: 'Link'
       end
 
-    end
-    f.inputs "Lessons Learned" do
-        f.input :lesson1_quote
-        f.input :lesson2_quote
-        f.input :lesson3_quote
     end
     f.actions
   end
