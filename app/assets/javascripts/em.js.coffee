@@ -39,3 +39,8 @@ $( ->
 		showActive reports
 		showMobileTab mobileSections
 )
+
+$(window).load ->
+	#strange bug, if called once, it doesn't work
+	$("#joyride-steps").joyride()
+	$("#joyride-steps").joyride()
