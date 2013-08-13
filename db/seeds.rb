@@ -16,16 +16,21 @@ story_data = {
   story: 'Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin\'s apartment quickly became the tech hub of her neighborhood. Hear her story.',
   story_header: 'Hurricane',
   quote: 'After Hurricane Sandy we set up a generator and started charging people\'s phones',
-  remote_item1_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
   item1_quote: 'It means you can leave the house at night.',
-  remote_item2_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
   item2_quote: 'We didn\'t use it but it helped us feel safe.',
-  remote_item3_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
   item3_quote: 'Our friends came around because we had wine.',
-  lesson1_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
-  lesson2_quote: 'I wish I had set a meeting spot with my friends. Once the hurricane hit, it was too late.',
-  lesson3_quote: 'Everyone has something to share. Even a bike can be an invaluable tool.',
-  remote_video_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Hurracane_Sandy_cxijg8.jpg'
+  item1_link: 'http://www.ideo.com/',
+  item2_link: 'http://www.ideo.com/',
+  item3_link: 'http://www.ideo.com/',
+  item1_subtitle: 'Emergency Supplies',
+  item2_subtitle: 'Meetup Plan',
+  item3_subtitle: 'Out of State Contact',
+  remote_item1_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
+  remote_item2_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
+  remote_item3_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
+  remote_video_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Hurracane_Sandy_cxijg8.jpg',
+  items_images_display_type: StoryItemsDisplayTypes::OBJECT_PHOTOS,
+  items_title: StoryItemsTitles::HOW_I_AM_PREPARED
 }
 
 Story.create!(story_data)
@@ -46,16 +51,19 @@ stories = [
   ['Paul', 'American Samoa', 'Jun 2011', 'Samoa earthquake of 2009', StoryCategories::EARTHQUAKE,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/samoa_vileze.jpg'],
   ['Brad', 'California', 'Oct 2007', 'California wildfires of 2007', StoryCategories::OTHER_EMERGENCY,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/wildfire_gy1hl6.jpg']
+        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/wildfire_gy1hl6.jpg',
+        StoryItemsDisplayTypes::FULL_BLEED_PHOTOS, StoryItemsTitles::WHAT_SHOULD_I_OFFER]
 ]
 
-stories.each do |person, location, date, event, category, remote_video_image_url|
+stories.each do |person, location, date, event, category, remote_video_image_url, items_images_display_type, items_title|
   story_data[:person] = person
   story_data[:location] = location
   story_data[:date] = date
   story_data[:event] = event
   story_data[:category] = category
   story_data[:remote_video_image_url] = remote_video_image_url
+  story_data[:items_images_display_type] = items_images_display_type || story_data[:items_images_display_type]
+  story_data[:items_title] = items_title || story_data[:items_title]
   Story.create!(story_data)
 end
 
