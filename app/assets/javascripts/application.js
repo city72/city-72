@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore/underscore-min.js
+//= require underscore-min.js
 //= require header
 //= require tabs_manager
 //= require jquery.mobile-menu.js
