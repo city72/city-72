@@ -488,7 +488,7 @@
 
 .modal {
 	.video-opening {
-		height: 22rem;
+		height: 28.8rem;
 	}
 
 	.tour-intro {
@@ -507,7 +507,23 @@
 		}
 	}
 
-	.tour-intro-step-2 {
-		padding: 1.4rem 3.1rem;
+	.tour-intro-step2 {
+		padding: 0.4rem 3.1rem 1.4rem;
+
+		.btn {
+			display: inline-block;
+			margin-top: 1rem;
+			padding: 0.3rem 1rem 0.2rem;
+			cursor: pointer;
+			font-family: $font-bold;
+			font-size: 1.4rem;
+			color: #FFF;
+			background-color: $highlight-dark;
+
+		}
+
+		.btn:hover {
+			background-color: $dark-grey;
+		}
 	}
 }
