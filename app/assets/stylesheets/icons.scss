@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-quick-guide, .icon-sms, .icon-fuel, .icon-close, .icon-twitter-big, .icon-twitter-big-on, .icon-bus, .icon-bus-on, .icon-map, .icon-map-on, .icon-disaster-other, .icon-disaster-connection, .icon-disaster-terrorist, .icon-disaster-hurricane, .icon-disaster-earthquake, .icon-disaster-radiation, .icon-disaster-flood, .icon-pdf, .icon-map-marker, .icon-arrow, .icon-mail, .icon-print, .icon-share-fb, .icon-share-twitter, .icon-sf72, .icon-refresh, .icon-unfold, .icon-dropdown, .icon-close-small, .icon-logo-sf72, .icon-menu-mobile {
+.icon-quick-guide, .icon-sms, .icon-fuel, .icon-close, .icon-twitter-big, .icon-twitter-big-on, .icon-map-on, .icon-disaster-other, .icon-disaster-connection, .icon-disaster-terrorist, .icon-disaster-hurricane, .icon-disaster-earthquake, .icon-disaster-radiation, .icon-disaster-flood, .icon-pdf, .icon-map-marker, .icon-arrow, .icon-mail, .icon-print, .icon-share-fb, .icon-share-twitter, .icon-sf72, .icon-refresh, .icon-unfold, .icon-dropdown, .icon-close-small, .icon-logo-sf72, .icon-menu-mobile, .icon-map-tips, .icon-alert, .icon-transport, .icon-info {
 	font-family: 'sf72-icons';
 	speak: none;
 	font-style: normal;
@@ -55,17 +55,8 @@ you can use the generic selector below, but it's slower:
 .icon-twitter-big-on:before {
 	content: "\65";
 }
-.icon-bus:before {
-	content: "\66";
-}
-.icon-bus-on:before {
-	content: "\67";
-}
-.icon-map:before {
-	content: "\68";
-}
 .icon-map-on:before {
-	content: "\69";
+	content: "\68";
 }
 .icon-disaster-other:before {
 	content: "\6a";
@@ -129,4 +120,16 @@ you can use the generic selector below, but it's slower:
 }
 .icon-menu-mobile:before {
 	content: "\35";
+}
+.icon-map-tips:before {
+	content: "\36";
+}
+.icon-alert:before {
+	content: "\66";
+}
+.icon-transport:before {
+	content: "\67";
+}
+.icon-info:before {
+	content: "\69";
 }

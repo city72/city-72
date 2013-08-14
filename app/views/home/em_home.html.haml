@@ -91,23 +91,28 @@
       %iframe.video-opening#video-opening{src: "http://player.vimeo.com/video/57727292?api=1&player_id=video-opening"}
 %ol#joyride-steps{"style" => "display:none"}
   %li{"data-class" => "alert-info"}
-    %p.header Incident Bar
+    .icon.icon-info
+    %h4.header Incident Bar
     %p.description Announces the incident and its severity. Click on “What should I do?” to get next steps. 
     %p.index 1 of 5
   %li{"data-class" => "map-container"}
-    %p.header Street Status
+    .icon.icon-map-on
+    %h4.header Street Status
     %p.description A geo-tagged crisis map that shows nearby shelters and resources, as well as hazardous or road-blocked areas – so you can find safety in your surroundings.
     %p.index 2 of 5
   %li{"data-id" => "citizen-updates-tab"}
-    %p.header  Crowdsourced Updates
+    .icon.icon-twitter-big-on
+    %h4.header  Crowdsourced Updates
     %p.description A live stream of crowdsourced updates from Twitter – so you can get a full picture of what’s going on.
     %p.index 3 of 5
   %li{"data-id" => "transportation-updates-tab"}
-    %p.header Official Updates
+    .icon.icon-alert
+    %h4.header Official Updates
     %p.description Up-to-date content from official city sources that will keep you informed during a crisis – so you can know exactly what is happening, when it happens.
     %p.index 4 of 5
   %li{"data-class" => "citizen-reports"}
-    %p.header Transportation Alerts
+    .icon.icon-transport
+    %h4.header Transportation Alerts
     %p.description Up-to-date information about what the status of public transportation – so you can navigate the city quickly, easily, and safely.
     %p.index 5 of 5
 = render :partial => "partials/footer"
