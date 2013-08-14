@@ -1,0 +1,48 @@
+Index
+	Cache
+		Considerations
+		Assets' cache
+		HTML's cache
+	Tecnologies
+	Web app structure
+	Admin management
+	Media management
+	Newsletter susciption
+	Contact form
+
+Cache:
+	Considerations:
+		-Production uses 3 levels of cache: Browser, CloudFront (CDN), Memcache.
+		-Browser' and Memcache's cache is setted with max-age, and CDN's cache with s-maxage.
+			If s-maxage is not setted, the resource is cached on CloudFront for 1 day.
+		-Browser' cache is ignored when user press F5.
+		-If Memcache receives multiple request for the same stale resource, it process only one and
+			leave the others waiting until it caches the resource.
+		-Assests' cache max-age can be very high, because when an asset changes, Rails changes its name with a new hash.
+
+	Assets' cache: configured through production.rb
+		config.static_cache_control = "public, max-age=20"
+
+	HTML's cache is configured on controller's after_filter:
+		-There are 2 base controllers: 'DinamicContent' and 'StaticContent', differing only on the cache times they set.
+		-All controllers extend any of those, and each method can override the cache, if explicitly set.
+
+Tecnologies:
+	-HAML for views.
+	-CoffeeScript for front end logic.
+	-Sass for styling.
+
+Web app structure:
+	-For any .haml that requires logic there's a .js.coffee.
+
+Admin management: through ActiveAdmin.
+
+Media management:
+	Videos: iframe to vimeo.com
+	Images: image upload to cloudinary, through image uploaders (i.e.: story_item_uploader.rb)
+
+Newsletter susciption: through MailChimps script given on the page (copy/paste, all js, no server)
+
+Contact form:
+	-CORS post request (because CDN and Heroku url are in different domains).
+	-If there are more than X emails sent, captcha activates.
