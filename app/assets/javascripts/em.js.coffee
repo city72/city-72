@@ -56,4 +56,6 @@ $( ->
                     player.addEvent "finish", onFinish
             else
                 $('.modal-wrapper').hide()
+
+    $('a.icon-close').click -> $('.modal-wrapper').hide()
 )
