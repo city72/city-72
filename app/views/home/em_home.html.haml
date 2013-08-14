@@ -1,5 +1,6 @@
 = stylesheet_link_tag "joyride-2.1"
 = javascript_include_tag "jquery.joyride-2.1"
+= javascript_include_tag "froogaloop.min"
 = javascript_include_tag "em"
 .home-em
   .wrapper.em-header
@@ -87,7 +88,7 @@
           %h3 Service
     .em-preview-modal
       .intro-video
-      %iframe.video-opening{src: "http://player.vimeo.com/video/57727292"}
+      %iframe.video-opening#video-opening{src: "http://player.vimeo.com/video/57727292?api=1&player_id=video-opening"}
 %ol#joyride-steps{"style" => "display:none"}
   %li{"data-class" => "alert-info"}
     %p.header Incident Bar

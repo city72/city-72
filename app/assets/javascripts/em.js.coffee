@@ -42,8 +42,14 @@ $( ->
     $('.em-preview-modal').hide()
     $.get window.location.origin + "/em", (response) ->
         if !response.em_mode
-            $('.em-preview-modal').show()
             $("#joyride-steps").joyride()
             #strange bug, if called once, it doesn't work
             $("#joyride-steps").joyride()
+            $('.em-preview-modal').show()
+            onFinish = (id) ->
+               console.log "finished"
+            iframe = $("#video-opening")[0]
+            player = $f(iframe)
+            player.addEvent "ready", ->
+                player.addEvent "finish", onFinish
 )
