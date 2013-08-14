@@ -42,15 +42,18 @@ $( ->
     $('.em-preview-modal').hide()
     $.get window.location.origin + "/em", (response) ->
         if !response.em_mode
-            $("#joyride-steps").joyride()
-            #strange bug, if called once, it doesn't work
-            $("#joyride-steps").joyride()
-            $('.em-preview-modal').show()
-            onFinish = (id) ->
-               $('.tour-intro').hide()
-               $('.tour-intro-step2').show()
-            iframe = $("#video-opening")[0]
-            player = $f(iframe)
-            player.addEvent "ready", ->
-                player.addEvent "finish", onFinish
+            if $(window).width() > 480 and $(window).height() > 480
+                $("#joyride-steps").joyride()
+                #strange bug, if called once, it doesn't work
+                $("#joyride-steps").joyride()
+                $('.em-preview-modal').show()
+                onFinish = (id) ->
+                   $('.tour-intro').hide()
+                   $('.tour-intro-step2').show()
+                iframe = $("#video-opening")[0]
+                player = $f(iframe)
+                player.addEvent "ready", ->
+                    player.addEvent "finish", onFinish
+            else
+                $('.modal-wrapper').hide()
 )
