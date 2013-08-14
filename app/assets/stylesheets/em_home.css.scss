@@ -485,3 +485,29 @@
 	}
 
 }
+
+.modal {
+	.video-opening {
+		height: 22rem;
+	}
+
+	.tour-intro {
+		padding: 1.4rem 3.1rem;
+
+		h2 {
+			color: $highlight-dark;
+			margin: 0;
+		}
+
+		h3 {
+			color: $dark-grey;
+			margin: 0;
+			font-size: 2.25rem;
+			font-family: $font-bold;
+		}
+	}
+
+	.tour-intro-step-2 {
+		padding: 1.4rem 3.1rem;
+	}
+}

@@ -86,9 +86,18 @@
       %li 
         %a{href:"#tab-service-status"}
           %h3 Service
-    .em-preview-modal
-      .intro-video
-      %iframe.video-opening#video-opening{src: "http://player.vimeo.com/video/57727292?api=1&player_id=video-opening"}
+    .modal-wrapper
+      .em-preview-modal.modal
+        .intro-video
+          %iframe.video-opening#video-opening{src: "http://player.vimeo.com/video/57727292?api=1&player_id=video-opening"}
+        .tour-intro
+          %h2 SF72 Crisis Mode
+          %h3 The city&apos;s hub for emergency response.
+        .tour-intro-step2
+          %p Okay, so it might not look exactly like Godzilla attacking our City by the Bay, but a San Francisco emergency will leave a lot of us wondering what to do, and how to connect.
+          %p In the event of an emergency, SF72.org will automatically go into Crisis Mode, where you can access a stream of offical updates, crowdsourced reports, and a crisis map that tells you how to navigate the city. 
+          %p Take a tour through SF72 Crisis Mode to better understand how to use this resource, in the event of a real (non-reptile) disaster.
+          %a.btn{href:"#"} Take a tour
 %ol#joyride-steps{"style" => "display:none"}
   %li{"data-class" => "alert-info"}
     .icon.icon-info

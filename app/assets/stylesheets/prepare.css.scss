@@ -167,39 +167,6 @@ a.checklist:before {
 	color: $dark-grey;
 }
 
-.basics .modal-bg,
-.basics .modal {
-	display: none;
-}
-
-.basics .modal-bg.active,
-.basics .modal.active {
-	display: block;
-}
-
-.modal-bg {
-	height: 120rem;
-	position: absolute;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1;
-	background: rgba(0,0,0,0.6);
-}
-
-/* .modal had this styles:
-	position: absolute;
-	max-width: 940px;
-	left: 50%;
-	margin-left: -470px;
-	top: 50.6rem;
-	padding: 4.3rem 4.3% 0;
-	background-color: #FFF;
-	z-index: 2;
-*/
-
 .existing-networks {
 
 	h2 {
