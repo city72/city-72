@@ -487,6 +487,15 @@
 }
 
 .modal {
+	.icon-close {
+		font-size: 2.6rem;
+		color: #FFF;
+		top: -3.5rem;
+		right: 0;
+		position: absolute;
+	}
+
+
 	.video-opening {
 		height: 28.8rem;
 	}
@@ -520,7 +529,6 @@
 			font-size: 1.4rem;
 			color: #FFF;
 			background-color: $highlight-dark;
-
 		}
 
 		.btn:hover {
