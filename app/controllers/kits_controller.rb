@@ -1,2 +1,0 @@
-class KitsController < ApplicationController
-end

@@ -10,6 +10,12 @@ IdeoSf72::Application.configure do
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = true
+
+  # -We don't set s-maxage on static assets because we don't mind them being cached on
+  # CDN for 1 day. This is because Rails changes the hashes appendended to the assets when they are updated,
+  # so cache is invalidated indirectly.
+  # -"public" makes assests available to be cached by intermediate cache layers (CDN and Memcache)
+  # -"max-age" sets time in seconds for assets to be cached on browser and on Memcache (not on CDN)
   config.static_cache_control = "public, max-age=20"
 
   # Compress JavaScripts and CSS

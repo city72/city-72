@@ -1,6 +1,6 @@
 require 'mandrill'
 
-class HomeController < ApplicationController
+class HomeController < StaticContentController
   def index
   end
 
