@@ -47,7 +47,8 @@ $( ->
             $("#joyride-steps").joyride()
             $('.em-preview-modal').show()
             onFinish = (id) ->
-               console.log "finished"
+               $('.tour-intro').hide()
+               $('.tour-intro-step2').show()
             iframe = $("#video-opening")[0]
             player = $f(iframe)
             player.addEvent "ready", ->
