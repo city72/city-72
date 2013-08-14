@@ -8,7 +8,7 @@ class EmailsController < ApplicationController
 				subject: "SF-72 contact form",
 				text: params[:message]
 			}
-			responseMsj = "The email was sent"
+			responseMsj = ""
 			if(!params[:from_email].blank?)
 				begin
 					MailHelper::sendMail(message)
@@ -20,8 +20,12 @@ class EmailsController < ApplicationController
 				responseMsj = "Please enter an email address"
 			end
 		else
-		  responseMsj = "wrong captcha solving"
+			responseMsj = "wrong captcha solving"
 		end
-		render json: { msj: responseMsj }
+		if responseMsj.blank?
+			render json: { msj: "The email was sent" }
+		else
+			render json: { msj: responseMsj, status: 500 }, status: 500
+		end
 	end
 end

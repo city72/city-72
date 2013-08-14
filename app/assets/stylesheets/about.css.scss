@@ -41,6 +41,14 @@
 		}
 	}
 
+	.successful-response-container{
+		display: none;
+	}
+
+	.error-response-container{
+		display: none;
+	}
+
 	.contact-form {
 		@include span-columns(8);
 		margin-top: 1.8rem;

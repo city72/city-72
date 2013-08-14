@@ -35,4 +35,9 @@
 			%input.send{ type: "button", value: "Submit" }
 			-if @render_captcha
 				=show_simple_captcha(:label => "", :placeholder => "")
+		.successful-response-container
+			%p Thanks!
+			%p Your feedback makes it better for all of us.
+		.error-response-container
+			%p
 = render :partial => "partials/footer"
