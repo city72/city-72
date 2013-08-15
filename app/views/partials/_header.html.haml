@@ -28,28 +28,54 @@
         %strong Crisis Mode
         %span In an emergency check here for live news streams and resources.
   .mobile-menu
-    %ul.main-nav
-      %li
-        %a{href:"/"}
-          %strong Home
-      %li
-        %a{href:"/prepare"}
-          %strong Prepare
-      %li
-        %a{href:"/connect"}
-          %strong The App
-      %li
-        %a{href:"/about"}
-          %strong About Us
-
-    .menu-mobile-heading Crisis mode
-    %ul.main-nav
-      %li
-        %a{href:"/em/home#mobile-quick-guide"}
-          %strong What to do
-      %li
-        %a{href:"/em/home#mobile-maps"}
-          %strong Map
-      %li
-        %a{href:"/em/home#mobile-updates"}
-          %strong Updates
+    .normal-mode
+      %ul.main-nav
+        %li
+          %a{href:"/"}
+            %strong Home
+        %li
+          %a{href:"/prepare"}
+            %strong Prepare
+        %li
+          %a{href:"/connect"}
+            %strong The App
+        %li
+          %a{href:"/about"}
+            %strong About Us
+      .menu-mobile-heading Crisis mode
+      %ul.main-nav
+        %li
+          %a{href:"/em/home#mobile-quick-guide"}
+            %strong What to do
+        %li
+          %a{href:"/em/home#mobile-maps"}
+            %strong Map
+        %li
+          %a{href:"/em/home#mobile-updates"}
+            %strong Updates
+    .crisis-mode{style: "display:none" }
+      %ul.main-nav
+        %li
+          %a{href:"/em/home#mobile-quick-guide"}
+            %strong What to do
+        %li
+          %a{href:"/em/home#mobile-maps"}
+            %strong Maps
+        %li
+          %a{href:"/em/home#mobile-updates"}
+            %strong Updates
+      .menu-mobile-heading Emergency Tools
+      %a.try-demo{href:"/em/home"} Try demo
+      %ul.main-nav
+        %li
+          %a{href:"/"}
+            %strong Home
+        %li
+          %a{href:"/prepare"}
+            %strong Prepare
+        %li
+          %a{href:"/connect"}
+            %strong The App
+        %li
+          %a{href:"/about"}
+            %strong About SF72
