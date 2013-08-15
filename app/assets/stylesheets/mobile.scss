@@ -1,3 +1,9 @@
+@mixin intro-paragraph-mobile {
+	font-size: 1rem;
+	color: #515050;
+	line-height: 1.375;
+}
+
 @include media($mobile) {
 
 	.main-container.home {
@@ -67,6 +73,7 @@
 					padding: 0;
 					float: none;
 					width: 100%;
+					margin-left: 0;
 				}
 
 				li.active {
@@ -194,15 +201,131 @@
 		background: url(http://placekitten.com/320/220/) no-repeat top left;
 	}
 
+	.basics-wrapper {
+		background-color: #f3f3f3;
+		padding-top: 0.2rem;
+	}
+
 	.basics-section {
 		padding: 0 3%;
-		background-color: $light-grey;
 
 		h2 {
 			font-size: 1.5rem;
 		}
 	}
 
+	.basics-tabs {
+		@include span-columns(4);
+		margin: 0;
+		padding: 0;
+		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+		
+		li {
+			margin: 0;
+			display: block;
+			float: left;
+			position: relative;
+
+			a {
+				display: block;
+				background-color: #FFF;
+				border: 1px solid #CBCBCB;
+				font-size: 1rem;
+				font-family: $font-bold;
+				width: 10.05rem;
+				padding: 0.4rem 0.9rem 0.3rem;
+				margin-right: -1px;
+				background-color: #FFF;
+			}
+
+			a:before {
+				display: none;
+			}
+		}
+
+		li:first-child a {
+			margin-left: -1px;
+		}
+
+
+		li.active a,
+		li:hover a {
+			background-color: $highlight;
+			color: #FFF !important;
+			border-color: $highlight;
+			position: relative;
+			z-index: 2;
+		}
+
+		li.active:before,
+		li:hover:before {
+			display: none;
+		}
+
+		li.active:after,
+		li:hover:after {
+			content: '';
+			border-color: $highlight transparent transparent;
+			border-width: 9px;
+			border-style: solid;
+			bottom: -17px;
+			margin-left: -9px;
+			position: absolute;
+			left: 50%;
+		}
+	}
+
+	.quick-list-trigger {
+		display: none;
+	}
+
+	.bx-viewport {
+		height: auto !important;
+		padding: 3%;
+	}
+
+	.bx-controls {
+		display: none;
+	}
+
+	.slider-header,
+	.slider-body {
+		background-color: transparent;
+		height: auto;
+		margin-bottom: 0;
+	}
+
+	.slider-header {
+		height: 60px;
+	}
+
+	.slider.quick-guide {
+
+		width: 100% !important;
+
+
+		li {
+			float: none !important;
+			margin: 0;
+			padding: 3rem 0 0;
+		}
+
+		li:before {
+			font-size: 1.3rem;
+			margin: -3rem 0 0;
+			padding: 0.35rem 0.9rem 0.3rem 0.95rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+		}
+
+		p {
+			@include intro-paragraph-mobile;
+		}
+	}
+
+/*
 	.footer {
 		padding: 0 1em;
 	}
@@ -218,6 +341,7 @@
 		left: -2.1rem;
 		top: -0.1rem;
 	}
+*/
 
 
 	/* CONNECT */
