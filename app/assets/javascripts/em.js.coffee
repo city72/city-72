@@ -58,4 +58,5 @@ $( ->
                 $('.modal-wrapper').hide()
 
     $('a.icon-close').click -> $('.modal-wrapper').hide()
+    $('a.btn').click -> $('.modal-wrapper').hide()
 )
