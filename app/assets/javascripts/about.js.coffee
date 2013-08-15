@@ -1,8 +1,11 @@
 $(->
 	$('input.send').click ->
+		$('.error-response-container').hide()
+		$('.sending-notification').show()
 		makeCorsRequest(
 			"#{window.location.origin}/emails", 
 			(xhr) ->
+				$('.sending-notification').hide()
 				response = $.parseJSON xhr.response
 				if xhr.status == 200
 					$('.contact-form').hide()

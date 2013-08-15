@@ -49,6 +49,10 @@
 		display: none;
 	}
 
+	.sending-notification{
+		display: none;
+	}
+
 	.contact-form {
 		@include span-columns(8);
 		margin-top: 1.8rem;

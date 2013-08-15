@@ -64,6 +64,7 @@ function mce_init_form(){
       options = { url: 'http://sf72.us6.list-manage.com/subscribe/post-json?u=da2f717cb23345cc17718c642&id=a56b545c6c&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
                     beforeSubmit: function(){
                         $('#mce_tmp_error_msg').remove();
+                        $('#sending-notification').show();
                         $('.datefield','#mc_embed_signup').each(
                             function(){
                                 var txt = 'filled';
@@ -94,6 +95,9 @@ function mce_init_form(){
                                       }
                                     });
                             });
+                        if(!mce_validator.form()) {
+                            $('#sending-notification').hide();
+                        }
                         return mce_validator.form();
                     }, 
                     success: mce_success_cb
@@ -104,6 +108,7 @@ function mce_init_form(){
     });
 }
 function mce_success_cb(resp){
+    $('#sending-notification').hide();
     $('#mce-success-response').hide();
     $('#mce-error-response').hide();
     if (resp.result=="success"){
