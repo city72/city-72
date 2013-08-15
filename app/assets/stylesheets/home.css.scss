@@ -83,11 +83,12 @@
 	width: 0;
 	padding: 1.1rem 1rem 1rem;
 	font-family: $font-medium;
-	font-size: 1rem;
 	background-color: $highlight;
 	color: #FFF;
 	@include transition(all 0.3s ease-in);
 	overflow: hidden;
+	line-height: 1.25;
+	font-size: 0.95rem;	
 
 	.tooltip-content {
 		margin-left: 4rem;
@@ -116,13 +117,28 @@
 	@include transition(all 0.3s ease-in);
 }
 
-.prepare .tooltip:after {
-	font-family: "sf72-icons";
-	content:'c';
+.tooltip:after {
 	opacity: 0;
 	font-size: 3rem;
 	left: 1.2rem;
 	top: 0.9rem;
+}
+
+.prepare .tooltip:after {
+	content:'c';
+}
+
+.about .tooltip:after {
+	content: '7';
+	left: 1.1rem;
+	top: 0.8rem;
+}
+
+.connect .tooltip:after {
+	content: '8';
+	font-size: 2rem;
+	left: 1rem;
+	top: 1.3rem;
 }
 
 .big-title:hover .tooltip,
@@ -140,7 +156,7 @@
 	opacity: 0;
 }
 
-.prepare .big-title:hover .tooltip:after {
+.big-title:hover .tooltip:after {
 	opacity: 1;
 }
 
