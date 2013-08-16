@@ -1,6 +1,10 @@
 /* ABOUT */
+
+.read-manifesto { display: none; }
+
 .about-data {
 	@include outer-container;
+	margin-top: 4rem;
 
 	li {
 		@include span-columns(4);
@@ -55,6 +59,7 @@
 
 	.contact-form {
 		@include span-columns(8);
+		@include omega;
 		margin-top: 1.8rem;
 		margin-bottom: 1.8rem;
 
@@ -69,6 +74,7 @@
 			border: none;
 			background-color: rgba(0, 0, 0, 0);
 			font-size: 1.3rem;
+			color: #FFF;
 
 			@include placeholder {
 			    color: #FFF;

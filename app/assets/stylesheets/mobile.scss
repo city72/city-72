@@ -382,12 +382,15 @@
 
 		p {
 			width: 94%;
-			font-size: 1rem;
 			font-family: $font-regular;
-			margin: 0 3%;
-			line-height: 1.37;
+			margin: 0.8rem 3%;
+			@include intro-paragraph-mobile;
 		}
 
+	}
+
+	.connect .page-intro h2 {
+		display: none;
 	}
 
 	.connect .page-intro .big-title,
@@ -406,6 +409,7 @@
 
 		h3 {
 			margin-bottom: 0.7rem;
+			font-size: 1.5rem;
 		}
 	}
 
@@ -416,6 +420,7 @@
 
 		p {
 			text-align: left;
+			@include intro-paragraph-mobile;
 		}
 	}
 
@@ -457,6 +462,7 @@
 
 		li {
 			margin-bottom: 0.2rem;
+			margin-left: 3%;
 		}
 
 		li:last-child {
