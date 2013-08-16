@@ -188,9 +188,20 @@
 	height: 26.7rem;
 	background-color: rgba(250, 250, 250, 0.9);
 	overflow: hidden;
+	position: relative;
 }
+
 .map-area iframe {
 	width: 100%;
+}
+
+.map-tooltip-placement {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 50%;
+	margin-left: -10px;
+	top: 139px;
 }
 
 .tw-tabs-container {
@@ -332,6 +343,7 @@
 
 .updates {
 	text-align: center;
+	margin-bottom: -42px;
 }
 
 .updates .btn-rounded {
@@ -449,6 +461,11 @@
 		font-size: 0.7em;
 		font-family: 'sf72-icons';
 		content: 's';
+	}
+
+	.joyride-next-tip:last-child:after {
+		display: none;
+		padding-right: 0.3em;
 	}
 
 	.joyride-next-tip:hover {

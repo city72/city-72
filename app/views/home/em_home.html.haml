@@ -32,22 +32,23 @@
       .map-heading
         %h3 Crisis Map
       .map-actions
-        %a.map-tips-trigger{href:"#"} Show map tips
+        / %a.map-tips-trigger{href:"#"} Show map tips
     .map-area
+      .map-tooltip-placement
       %iframe.map{src: "http://google.org/crisismap/a/gmail.com/SF72?hl=en&llbox=37.81402%2C37.73342%2C-122.29152%2C-122.50214&t=ROADMAP&layers=layer2%2Clayer1%2Clayer0&embedded=true", height: "458"}
   #mobile-updates
     .tw-tabs-container
       %ul.tw-tabs
-        %li.active
-          %a#citizen-updates-tab{href:"#tab-citizen-updates"}
+        %li.active#citizen-updates-tab
+          %a{href:"#tab-citizen-updates"}
             %h3 Citizen Updates
             %span Via Twitter
-        %li 
+        %li#official-reports-tab 
           %a{href:"#tab-official-reports"}
             %h3 Official Reports
             %span From SFDEM
-        %li 
-          %a#transportation-updates-tab{href:"#tab-service-status"}
+        %li#transportation-updates-tab
+          %a{href:"#tab-service-status"}
             %h3 Service Status
             %span 511 Priority Alerts
       %ul.tw-tabs-mobile
@@ -76,16 +77,6 @@
           <style type="text/css">#twitter-widget-1{width:720px;}</style>
           <a class="twitter-timeline" data-widget-id="365523273829732352" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    %ul.tw-tabs-mobile
-      %li.active
-        %a{href:"#tab-citizen-updates"}
-          %h3 Citizen
-      %li 
-        %a{href:"#tab-official-reports"}
-          %h3 Official
-      %li 
-        %a{href:"#tab-service-status"}
-          %h3 Service
     .modal-wrapper
       .em-preview-modal.modal
         %a.icon-close{href:"#"}
@@ -105,7 +96,8 @@
     %h4.header Incident Bar
     %p.description Announces the incident and its severity. Click on “What should I do?” to get next steps. 
     %p.index 1 of 5
-  %li{"data-class" => "map-container"}
+  %li{"data-class" => "map-tooltip-placement",
+      "data-options"  => "tipLocation:left"}
     .icon.icon-map-on
     %h4.header Street Status
     %p.description A geo-tagged crisis map that shows nearby shelters and resources, as well as hazardous or road-blocked areas – so you can find safety in your surroundings.
@@ -115,12 +107,13 @@
     %h4.header  Crowdsourced Updates
     %p.description A live stream of crowdsourced updates from Twitter – so you can get a full picture of what’s going on.
     %p.index 3 of 5
-  %li{"data-id" => "transportation-updates-tab"}
+  %li{"data-id" => "official-reports-tab"}
     .icon.icon-alert
     %h4.header Official Updates
     %p.description Up-to-date content from official city sources that will keep you informed during a crisis – so you can know exactly what is happening, when it happens.
     %p.index 4 of 5
-  %li{"data-class" => "citizen-reports"}
+  %li{"data-id" => "transportation-updates-tab",
+      "data-button" => "Finish"}
     .icon.icon-transport
     %h4.header Transportation Alerts
     %p.description Up-to-date information about what the status of public transportation – so you can navigate the city quickly, easily, and safely.
