@@ -538,6 +538,12 @@
 		padding: 0.4rem 3.1rem 1.4rem;
 		display: none;
 
+		strong {
+			font-weight: normal;
+			font-family: $font-bold;
+			color: $dark-grey;
+		}
+
 		.btn {
 			display: inline-block;
 			margin-top: 1rem;
