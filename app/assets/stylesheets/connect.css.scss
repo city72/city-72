@@ -90,6 +90,17 @@
 
 	#sending-notification{
 		display: none;
+		text-align: right;
+		color: #FFA500;
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		margin-right: 0.5rem;
+	}
+
+	.response {
+		font-size: 0.81rem;
+		margin: 0.25rem 0.25rem 0 0;
+		color: $dark-grey;
 	}
 
 }
