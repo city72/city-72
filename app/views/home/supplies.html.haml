@@ -3,8 +3,9 @@
   = render :partial => "partials/header"
   .intro
     .photo-overlay
+      %h2.mobile-title Supplies
       %h2 Get your kit together.
-      %p Whether you’re just starting out or you’re a preparedness pro, it’s easy to build – or add to – your disaster kit. You’ll be surprised at how much you already have. It’s just a matter of getting organized.
+      %p People are most resilant in emergencies when they are connected to others. Getting prepared for emergencies is simple and effective when you do it with friends and family. There are lots of ways to get connected. Choose the one that’s best for you
   .action-bar
     %ul.tabs
       %li.essentials-trigger.active
@@ -25,7 +26,7 @@
               #{item.use_case}
             %img{src: "#{item.image}"}
             %h4 #{item.title}
-            %p.overlay-text "#{item.use_case}"
+            %p.overlay-text #{item.use_case}
       %ul.things-list.useful
         - @items.select {|item| item.category == "#{Categories::USEFUL.to_s}" }.each do |item|
           %li
@@ -33,7 +34,7 @@
               #{item.use_case}
             %img{src: "#{item.image}"}
             %h4 #{item.title}
-            %p.overlay-text "#{item.use_case}"
+            %p.overlay-text #{item.use_case}
       %ul.things-list.personal
         - @items.select {|item| item.category == "#{Categories::PERSONAL.to_s}" }.each do |item|
           %li
@@ -41,7 +42,7 @@
               #{item.use_case}
             %img{src: "#{item.image}"}
             %h4 #{item.title}
-            %p.overlay-text "#{item.use_case}"
+            %p.overlay-text #{item.use_case}
     %li.tab-useful-content
     %li.tab-personal-content
   .kits

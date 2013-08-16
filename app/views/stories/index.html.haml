@@ -2,6 +2,7 @@
   = render :partial => "partials/header"
   .intro
     .photo-overlay
+      %h2.mobile-title Stories
       %h2 A personal look at disaster.
       %p No matter your living situation &mdash; young, old, single, married, or living with a disability &mdash; people just like you have dealt with disaster. Hear stories from real disaster survivors, and learn what they wished they&apos;d known.
   %h3 Stories of resilience, from around the world.
@@ -16,6 +17,6 @@
             .story-type
               %span.icon-disaster-hurricane
             %h5 #{story.person}
-            %p #{story.person_type} <br /> #{story.location}
+            %p <span class="person-type">#{story.person_type}</span> #{story.location}
 
 = render :partial => "partials/footer"

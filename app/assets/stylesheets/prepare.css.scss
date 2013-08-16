@@ -5,11 +5,6 @@
 	background-size: 100%;
 }
 
-.prepare .tooltip {
-	line-height: 1.25;
-	font-size: 0.95rem;	
-}
-
 .make-plan {
 
 	margin-top: 3rem;
@@ -24,6 +19,10 @@
 		display: inline-block;
 		position: relative;
 		padding-right: 1em;
+	}
+
+	a:hover {
+		color: $dark-grey;
 	}
 
 	a:after {
@@ -248,6 +247,13 @@ a.checklist:before {
 		margin: 0 22rem 1rem 0;
 	}
 
+	.coming-kit h4 {
+		margin-bottom: 0;
+		font-size: 0.8rem;
+		font-family: $font-bold;
+		color: $highlight-dark;
+	}
+
 	p.small {
 		font-size: 0.8rem;
 		font-family: $font-bold;
@@ -274,6 +280,10 @@ a.checklist:before {
 		width: 57rem;
 	}
 
+	.mobile-title {
+		display: none;
+	}
+
 	h2 {
 		line-height: 1;
 		margin: 0;
@@ -297,7 +307,7 @@ a.checklist:before {
 	li {
 		margin-bottom: 1.7rem;
 
-		div.quote-dialog {
+		.quote-dialog {
 			height: 190px;
 			width: 300px;
 			display: none;
@@ -352,6 +362,10 @@ a.checklist:before {
 
 .story-type span.hub {
 	color: $highlight;
+}
+
+.person-type {
+	display: block;
 }
 
 /* STORY DETAIL */
