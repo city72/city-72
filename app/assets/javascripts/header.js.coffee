@@ -17,4 +17,14 @@ $( ->
 		if response.em_mode
 			$('.mobile-menu .normal-mode').hide()
 			$('.mobile-menu .crisis-mode').show()
+
+  #Setting the active button when the click is resolved in the client side
+  js_buttons_li = $('.js-button-li')
+
+  js_buttons_li.children('a').click (event) -> 
+    $('#build-menu-overlay').trigger('click')
+    js_buttons_li.each (i, e) ->
+      $(e).removeClass('active')
+    $(this).parent().addClass('active')
+
 )
