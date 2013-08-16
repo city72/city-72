@@ -143,7 +143,7 @@ var mobileApp = mobileApp || {};
       }
 
       // EVENT HANDLER FOR MENU BUTTON
-      $("#build-menu-button, #build-menu-overlay, .mobile-menu.mobile-nav-0").on("click", function(e){
+      $("#build-menu-button, #build-menu-overlay").on("click", function(e){
         e.preventDefault();
         var html = $("html");
         var page = $("#"+_this.config.page_id);
