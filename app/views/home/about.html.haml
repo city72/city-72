@@ -42,6 +42,7 @@
 			%input.from-email{ placeholder: "Your email" }
 			%textarea.message{ placeholder: "Tell us about it." }
 			%input.send{ type: "button", value: "Submit" }
+			%span.sending-notification Sending&hellip;
 			-if @render_captcha
 				=show_simple_captcha(:label => "", :placeholder => "")
 		.successful-response-container
@@ -49,6 +50,4 @@
 			%p Your feedback makes it better for all of us.
 		.error-response-container
 			%p
-		.sending-notification
-			%p Sending information please wait
 = render :partial => "partials/footer"

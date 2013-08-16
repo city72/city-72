@@ -514,7 +514,7 @@
 
 
 	.video-opening {
-		height: 28.8rem;
+		height: 21.9rem;
 	}
 
 	.tour-intro {
@@ -523,12 +523,13 @@
 		h2 {
 			color: $highlight-dark;
 			margin: 0;
+			font-size: 1.5rem;
 		}
 
 		h3 {
 			color: $dark-grey;
 			margin: 0;
-			font-size: 2.25rem;
+			font-size: 1.5rem;
 			font-family: $font-bold;
 		}
 	}
