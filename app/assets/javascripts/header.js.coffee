@@ -1,11 +1,14 @@
 $( ->
 	windowPath = window.location.pathname
-
+  hash = window.location.hash
+  
 	paths = _($('.header a')).pluck 'pathname'
 
 	if windowPath == '/home' || windowPath == '/'
-		$('[href="/home"]').addClass('active')
-	else
+    homeLinks = $('[href="/home"]')
+    homeLinks.addClass('active')
+    homeLinks.parent('li').addClass('active')
+  else
 		_(paths).each (path) ->
 			if path == windowPath
 				$('[href="' + path + '"]').parent('li').addClass('active')
