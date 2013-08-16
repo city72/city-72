@@ -1,6 +1,38 @@
 /* ABOUT */
 
-.read-manifesto { display: none; }
+.about .page-intro .big-title {
+	background: url(/assets/static/about-us-title.jpg) no-repeat left top;
+}
+
+.about .main-intro p {
+	width: 40rem;
+}
+
+.aside .connection {
+	border-left: 2px solid $highlight;
+	margin-top: 1.6rem;
+
+	strong {
+		font-weight: normal;
+		font-family: $font-bold;
+		color: $dark-grey;
+	}
+
+	a {
+		padding-top: 3rem;
+		display: block;
+		position: relative;
+	}
+
+	a:after {
+		position: absolute;
+		top: 1rem;
+		left: 0;
+		font-family: "sf72-icons";
+		content:'a';
+		font-size: 1.5rem;
+	}
+}
 
 .about-data {
 	@include outer-container;

@@ -1,7 +1,7 @@
 /* PREPARE */
 
 .prepare .page-intro .big-title {
-	background: url(/assets/static/prepare.jpg) no-repeat left top;
+	background: url(/assets/static/prepare-title.jpg) no-repeat left top;
 	background-size: 100%;
 }
 
@@ -49,7 +49,7 @@
 
 	a {
 		height: 26.7rem;
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-people.jpg);
+		background-image: url(/assets/static/prepare-stories-2.jpg);
 		background-size: 100%;
 		background-repeat: no-repeat;
 		display: block;
@@ -59,15 +59,7 @@
 	}
 
 	a.prepare-things {
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-supplies.jpg);
-	}
-
-	a.prepare-people:hover {
-		background-image: -webkit-linear-gradient(top, rgba(241,90,36,0.3) 0%,rgba(241,90,36,0.3) 100%), -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-people.jpg);
-	}
-
-	a.prepare-things:hover {
-		background-image: -webkit-linear-gradient(top, rgba(241,90,36,0.3) 0%,rgba(241,90,36,0.3) 100%), -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0.5) 100%), url(/assets/static/prepare-supplies.jpg);
+		background-image: url(/assets/static/prepare-supplies-1.jpg);
 	}
 	
 
@@ -83,29 +75,28 @@
 	strong {
 		display: inline-block;
 		position: relative;
-		margin-top: 0.7rem;
-		padding-right: 1em;
+		margin-top: 1.2rem;
+		padding: 0.5rem 2rem 0.5rem 1rem;
 		font-family: $font-medium;
 		font-size: 1.187rem;
-		color: $highlight-dark;
+		background-color: $highlight;
+		color: #FFF;
 	}
 
 	strong:after {
 		position: absolute;
-		top: 0.3em;
-		right: 0.2rem;
+		top: 1.6em;
+		right: 1.2rem;
 		font-family: 'sf72-icons';
 		speak: none;
 		content: 's';
-		font-size: 0.7em;
+		font-size: 0.5em;
 	}
-	
-	/*
-	strong:hover:after,
-	strong:hover:after {
-		color: $highlight-dark;
+
+	a:hover strong,
+	strong:hover {
+		background-color: $dark-grey;
 	}
-	*/
 }
 
 a.checklist {
@@ -167,9 +158,11 @@ a.checklist:before {
 }
 
 .existing-networks {
+	background: url(/assets/static/prepare-networks.jpg) no-repeat  right 60px;
+	padding-top: 0.1rem;
 
 	h2 {
-		margin: 4.8rem 0 0;
+		margin: 4.7rem 0 0;
 		color: $dark-grey;
 		font-size: 2.2rem;
 	}
@@ -235,7 +228,9 @@ a.checklist:before {
 }
 
 .talk-to-friends {
+	background: url(/assets/static/prepare-sf72.jpg) no-repeat right 0;
 	margin-top: 4.8rem;
+	background-size: 200px;
 
 	h2 {
 		color: $dark-grey;

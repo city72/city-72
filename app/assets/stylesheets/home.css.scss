@@ -184,20 +184,20 @@
 .my-stuff,
 .near-me {
 	display: block;
-	background: url(http://placekitten.com/300/220/) no-repeat top left;
+	background: url(/assets/static/home-prepare.jpg) no-repeat top left;
 	width: 300px;
 	height: 220px;
 	text-indent: -9999px;
 }
 
 .my-people {
-	background: url(/assets/static/connect.jpg) 100% 70%;
-	background-size: 230%;
+	background: url(/assets/static/home-supplies.jpg) top left;
+	background-size: 100%;
 }
 
 .my-stuff {
-	background: url(/assets/static/prepare-supplies.jpg) -20px top;
-	background-size: 115%;
+	background: url(/assets/static/home-prepare.jpg) left top;
+	background-size: 100%;
 }
 
 .social-media {
