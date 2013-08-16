@@ -158,7 +158,7 @@ a.checklist:before {
 }
 
 .existing-networks {
-	background: url(/assets/static/prepare-networks.jpg) no-repeat  right 60px;
+	background: url(/assets/static/prepare-networks.jpg) no-repeat right 40px;
 	padding-top: 0.1rem;
 
 	h2 {
@@ -198,9 +198,8 @@ a.checklist:before {
 			margin: 0 0 0.5rem;
 		}
 
-		a {
-			display: block;
-			margin-bottom: 0.5rem;
+		a:hover {
+			color: $dark-grey;
 		}
 
 		li:before {
