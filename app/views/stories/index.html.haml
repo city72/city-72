@@ -3,9 +3,9 @@
   .intro
     .photo-overlay
       %h2.mobile-title Stories
-      %h2 A personal look at disaster.
-      %p No matter your living situation &mdash; young, old, single, married, or living with a disability &mdash; people just like you have dealt with disaster. Hear stories from real disaster survivors, and learn what they wished they&apos;d known.
-  %h3 Stories of resilience, from around the world.
+      %h2 A personal look at emergencies, connection, and our city by the Bay.
+      %p Watch stories of people who have lived through disasters &ndash; and those who are already fostering connections in San Francisco. No matter your situation, chances are, there’s someone like you with wisdom to share.
+  %h3 Watch these videos to learn how you can get prepared.
   %ul.story-list
     - @stories.each do |story|
       %li
@@ -18,5 +18,14 @@
               %span.icon-disaster-hurricane
             %h5 #{story.person}
             %p <span class="person-type">#{story.person_type}</span> #{story.location}
+    %li
+      %a{href: "#"}
+        %img
+        .story-data
+          .story-type
+            %span.icon-disaster-tsunami
+          %h5 Coming soon!
+          %p More stories of resilience and community.
+
 
 = render :partial => "partials/footer"

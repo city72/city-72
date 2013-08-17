@@ -1,8 +1,8 @@
 $( ->
 	categories = [
-		{ href: '#tab-essentials-content', contentSelector: '.essential', anchorSelector: '[href="#tab-essentials-content"]' }
-		{ href: '#tab-useful-content', contentSelector: '.useful', anchorSelector: '[href="#tab-useful-content"]' }
-		{ href: '#tab-personal-content', contentSelector: '.personal', anchorSelector: '[href="#tab-personal-content"]' }
+		{ href: '#tab-essentials-content', contentSelector: '.tab-essentials-content', anchorSelector: '[href="#tab-essentials-content"]' }
+		{ href: '#tab-useful-content', contentSelector: '.tab-useful-content', anchorSelector: '[href="#tab-useful-content"]' }
+		{ href: '#tab-personal-content', contentSelector: '.tab-personal-content', anchorSelector: '[href="#tab-personal-content"]' }
 	]
 
 	showActive categories

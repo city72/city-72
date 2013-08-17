@@ -4,8 +4,8 @@
   .intro
     .photo-overlay
       %h2.mobile-title Supplies
-      %h2 Get your kit together.
-      %p People are most resilant in emergencies when they are connected to others. Getting prepared for emergencies is simple and effective when you do it with friends and family. There are lots of ways to get connected. Choose the one that’s best for you
+      %h2 Gather your gear.
+      %p Whether you’re just starting out or you’re a preparedness pro, it’s easy to build &ndash or add to &ndash; your emergency supplies. A good rule of thumb is to have supplies for about 3 days, or 72 hours. Start with what you already have; it’s just a matter of getting organized.
   .action-bar
     %ul.tabs
       %li.essentials-trigger.active
@@ -18,7 +18,7 @@
       %a Download full list
   %ul.tabs-content 
     %li.tab-essentials-content
-      %p.tab-tip A good rule of thumb is to have supplies for about 3 days, or 72 hours.
+      %p.tab-tip Set aside these basics, and store them in a central location.
       %ul.things-list.essential
         - @items.select {|item| item.category == "#{Categories::ESSENTIAL.to_s}" }.each do |item|
           %li
@@ -27,6 +27,8 @@
             %img{src: "#{item.image}"}
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
+    %li.tab-useful-content
+      %p.tab-tip These items represent things that many people want in an emergency—but don’t always think of. Stash them away, and you’ll get through the first 72 hours more easily.
       %ul.things-list.useful
         - @items.select {|item| item.category == "#{Categories::USEFUL.to_s}" }.each do |item|
           %li
@@ -35,6 +37,8 @@
             %img{src: "#{item.image}"}
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
+    %li.tab-personal-content
+      %p.tab-tip In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort.
       %ul.things-list.personal
         - @items.select {|item| item.category == "#{Categories::PERSONAL.to_s}" }.each do |item|
           %li
@@ -43,11 +47,9 @@
             %img{src: "#{item.image}"}
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
-    %li.tab-useful-content
-    %li.tab-personal-content
   .kits
-    %h2 Things to share
-    %p No worries, we’ve got your backpack. Below you’ll find some pre-assembled kits you can buy directly from amazon.com
+    %h2 Sharing is caring.
+    %p Emergencies are opportunities to come together and support those around you. What items would you’d like to share? Uncorking a bottle of wine, singing songs, or sharing a meal are even more meaningful in the days <em>after</em> an emergency than before.
     %ul.kits-list
       - @kits.each do |kit|
         %li
