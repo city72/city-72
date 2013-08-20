@@ -24,13 +24,17 @@ $( ->
     mobileSections = [
         { href: '#mobile-maps' },
         { href: '#mobile-quick-guide' },
-        { href: '#mobile-updates' }
+        { href: '#mobile-updates' },
     ]
 
     showMobileTab = (sections) ->
         urlHash = window.location.hash || sections[0].href
         $(urlHash).addClass 'active'
         _(_(sections).filter((elem) -> elem.href != urlHash)).each (section) -> $(section.href).removeClass 'active'
+
+        is_report = _(_(reports).filter((elem) -> elem.href == urlHash))._wrapped.length > 0
+        if is_report
+            $('#mobile-updates').addClass 'active'
 
     showActive reports
     showMobileTab mobileSections

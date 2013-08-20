@@ -13,12 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore-min.js
-//= require tabs_manager
-//= require jquery.mobile-menu.js
-//= require popups
-//= require jquery.bxslider.min.js
 //= require modernizr.js
+//= require jquery.mobile-menu.js
+//= require jquery.bxslider.min.js
 //= require raphael-min.js
 //= require magic.js
+//= require tabs_manager
+//= require popups
 //= require cors
 //= require header
