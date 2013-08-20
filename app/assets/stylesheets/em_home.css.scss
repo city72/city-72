@@ -231,9 +231,19 @@
 	display: none;
 }
 
+#mobile-updates {
+	background-color: #E9E9E9;
+}
+
+.updates {
+	background-color: #FFF;
+	box-shadow: 7px 0 7px rgba(0,0,0,0.1), -7px 0 7px rgba(0,0,0,0.1);
+}
+
 .tw-tabs {
 	@include outer-container;
 	margin-top: 0;
+	margin-bottom: 0;
 	width: 960px;
 	padding: 0 4rem;
 
@@ -288,6 +298,12 @@
 	position: absolute;
 	bottom: 0;
 	left: 4.3rem;
+}
+
+.tw-tabs .updates {
+	padding-top: 1rem;
+	background-color: #FFF;
+	box-shadow: 7px 0 7px rgba(0,0,0,0.1), -7px 0 7px rgba(0,0,0,0.1);
 }
 
 .active-hashtags {
