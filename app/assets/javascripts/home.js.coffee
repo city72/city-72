@@ -10,6 +10,7 @@ states = [
 $(document).ready ->
   window.sliderDuring = $('.slider-during .slider').bxSlider
     infiniteLoop: false,
+    responsive: false,
     onSlideBefore: ($slideElement, oldIndex, newIndex) ->
       if newIndex > 0
         $('.slider-during .bx-prev').removeClass 'disabled'
@@ -20,6 +21,7 @@ $(document).ready ->
 
   window.sliderAfter = $('.slider-after .slider').bxSlider
     infiniteLoop: false,
+    responsive: false,
     onSlideBefore: ($slideElement, oldIndex, newIndex) ->
       if newIndex == sliderAfter.getSlideCount()-1
         $('.slider-after .bx-next').addClass 'disabled'

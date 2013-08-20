@@ -151,6 +151,10 @@
 		}
 	}
 
+	.home .intro-video {
+		margin-top: 2.75rem;
+	}
+
 	.video-opening {
 		height: 11.2rem;
 	}
@@ -314,6 +318,7 @@
 
 
 		li {
+			width: 100% !important;
 			float: none !important;
 			margin: 0;
 			padding: 3rem 0 0;
