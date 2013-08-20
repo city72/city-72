@@ -1,33 +1,58 @@
-$( ->
-	windowPath = window.location.pathname
-  hash = window.location.hash
-  
-	paths = _($('.header a')).pluck 'pathname'
+Sf72 = {} || Sf72
 
-	if windowPath == '/home' || windowPath == '/'
-    homeLinks = $('[href="/home"]')
-    homeLinks.addClass('active')
-    homeLinks.parent('li').addClass('active')
-  else
-		_(paths).each (path) ->
-			if path == windowPath
-				$('[href="' + path + '"]').parent('li').addClass('active')
-				#if link is in a submenu, also set active to parent li
-				if $('[href="' + path + '"]').closest('.submenu')
-					$('[href="' + path + '"]').closest('ul.submenu').parent('li').addClass('active')
+jQuery ((Sf72) ->
 
-	$.get window.location.origin + "/em", (response) ->
-		if response.em_mode
-			$('.mobile-menu .normal-mode').hide()
-			$('.mobile-menu .crisis-mode').show()
+    Header = 
 
-  #Setting the active button when the click is resolved in the client side
-  js_buttons_li = $('.js-button-li')
+        _setAsActiveBtn: (elem) ->
+            $(elem).parent('li').addClass('active')
 
-  js_buttons_li.children('a').click (event) -> 
-    $('#build-menu-overlay').trigger('click')
-    js_buttons_li.each (i, e) ->
-      $(e).removeClass('active')
-    $(this).parent().addClass('active')
+        _initializeMobileMenu: ->
+            $("body").mobile_menu({
+                menu: '.mobile-menu',
+                menu_width: 270,
+                prepend_button_to: '.header'
+            });
+                
+        _initializeActiveButton: ->
+            windowPath = window.location.pathname
+            hash = window.location.hash
+            paths = _($('.header a')).pluck 'pathname'
 
-)
+            if windowPath == '/home' || windowPath == '/'
+                $('[href="/home"]').addClass('active')
+                Header._setAsActiveBtn $('[href="/home"]')
+            else
+                _(paths).each (path) ->
+                    if path == windowPath
+                        Header._setAsActiveBtn $('[href="' + path + '"]')
+                        Header._setAsActiveBtn $('[href="' + path + hash + '"]')
+                        $('[href="' + path + '"]').closest('ul.submenu') if $('[href="' + path + '"]').closest('.submenu')
+
+        _initializeMobileActiveBtn: ->
+            js_buttons_li = $('.js-button-li')
+            js_buttons_li.children('a').click ->
+                $('#build-menu-overlay').trigger('click')
+                js_buttons_li.each (i,e) ->
+                    $(e).removeClass('active')
+                Header._setAsActiveBtn $(this)
+
+        _defineMode: ->
+            $.get window.location.origin + "/em", (response) ->
+                if response.em_mode
+                    $('.mobile-menu .normal-mode').hide()
+                    $('.mobile-menu .crisis-mode').show()
+
+        init: ->
+            $( ->
+                Header._initializeMobileMenu()
+                Header._initializeMobileActiveBtn()
+                Header._initializeActiveButton()
+                Header._defineMode()
+            )
+    
+    Sf72.Header = Header       
+
+)(Sf72)
+
+Sf72.Header.init()

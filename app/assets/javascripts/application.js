@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore-min.js
-//= require header
 //= require tabs_manager
 //= require jquery.mobile-menu.js
 //= require popups
@@ -22,3 +21,4 @@
 //= require raphael-min.js
 //= require magic.js
 //= require cors
+//= require header
