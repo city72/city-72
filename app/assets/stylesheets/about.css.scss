@@ -133,6 +133,7 @@
 			border: none;
 			background-color: rgba(0, 0, 0, 0);
 			font-size: 1.3rem;
+			font-family: $font-regular;
 			color: #FFF;
 
 			@include placeholder {
@@ -176,7 +177,7 @@
 	margin-top: 3.5rem;
 	
 	div {
-		border-left: 2px solid;
+		border-left: 2px solid $highlight;
 		padding-left: 1.5rem;
 		line-height: 1.45;
 		font-family: $font-bold;
@@ -193,7 +194,7 @@
 		padding-top: 2rem;
 		background: url(/assets/static/download.png) no-repeat top left;
 		background-size: 50px;
-		color: #A0A0A0;
+		color: $highlight;
 	}
 }
 
