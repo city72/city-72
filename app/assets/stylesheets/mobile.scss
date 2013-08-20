@@ -1138,8 +1138,34 @@
 
 	.contact-block {
 
+		padding-bottom: 3rem;
+
 		.contact-heading {
 			@include span-columns(4);
+			width: 94%;
+			margin: 0 3%;
+			padding: 0;
+		}
+
+		.contact-form {
+			@include span-columns(4);
+			width: 94%;
+			margin: 0 3%;
+
+			.name,
+			.from-email,
+			.message {
+				width: 100%;
+				border: 1px solid rgba(255, 255, 255, 0.6);
+				padding: 0.7rem 1rem;
+				font-size: 1rem;
+				margin-bottom: 1rem;
+			}
+		}
+
+		.successful-response-container {
+			width: 100%;
+			margin: 0 3%;
 		}
 	}
 
