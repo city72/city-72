@@ -7,28 +7,39 @@
     = csrf_meta_tag
   %body
     %h1 Emergency mode configuration
-    %form#edit_mode{"accept-charset" => "UTF-8", :action => "/admin/modes/1", :method => "post", :novalidate => "novalidate"}
-      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-      %input{:name => "_method", :type => "hidden", :value => "put"}/
-      %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}/
-      .field
-        %label{:for => "em_mode"} Emergency Mode
-        %br/
-        %input#em_mode{ name: "mode[em_mode]", type: "checkbox", value: "1", checked: @mode.em_mode }
-      %h2 Configure the Incident Bar
-      .field
-        %label{:for => "title"} Title
-        %br/
-        %input#title{:name => "mode[title]", :size => "30", :type => "text", :value => @mode.title}/
-      .field
-        %label{:for => "text"} Text
-        %br/
-        %input#text{:name => "mode[text]", :size => "30", :type => "text", :value => @mode.text}/
-      %h2 Configure the Citizen Updates Feed
-      .field
-        %label{:for => "widget_id"} Widget ID
-        %br/
+    
+    - if @mode.em_mode
+      %button#update_crisis_info Update info
+      %form#turn-off-form{"accept-charset" => "UTF-8", :action => "/admin/modes/1", :method => "post", :novalidate => "novalidate"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %input{:name => "_method", :type => "hidden", :value => "put"}/
+        %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}/
+        %input{name: "mode[em_mode]", type: "hidden", value: "0"}
+        %input{name: "commit", type: "submit", value: "Turn OFF"}
+    - else
+      %button#turn-on-btn Turn it ON
+
+
+    #modal-panel
+      %form#edit_mode{"accept-charset" => "UTF-8", :action => "/admin/modes/1", :method => "post", :novalidate => "novalidate"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %input{:name => "_method", :type => "hidden", :value => "put"}/
+        %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}/
+        %input{ name: "mode[em_mode]", type: "hidden", value: "1", checked: @mode.em_mode }
+        %h2 Describe the incident
+        .field
+          %label{:for => "title"} Title
+          %br/
+          %input#title{:name => "mode[title]", :size => "30", :type => "text", :value => @mode.title}/
+        .field
+          %label{:for => "text"} Text
+          %br/
+          %input#text{:name => "mode[text]", :size => "30", :type => "text", :value => @mode.text}/
+        %h2 Configure the Citizen Updates Feed
+        .field
+          %label{:for => "widget_id"} Widget ID
+          %br/
         %input#widget_id{:name => "feed[widget_id]", :size => "30", :type => "text", :value => @feed.widget_id}/
         .info Go to <a href="https://twitter.com/settings/widgets">https://twitter.com/settings/widgets</a>, create your widget and paste here the ID (you can get it from the generated code, right below preview area)
-      .actions
-        %input{:name => "commit", :type => "submit", :value => "Update Emergency Mode"}/
+        .actions
+          %input{:name => "commit", :type => "submit", :value => "Update Emergency Mode"}/
