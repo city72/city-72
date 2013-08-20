@@ -93,13 +93,18 @@
 }
 
 .em-quick-guide {
-	display: none;
+	overflow: hidden;
+	height: 0;
 	background-color: #F4F4F4;
 	box-shadow: #EEE 0 -7px 7px inset, #E3E3E3 0 7px 7px inset;
-	
+	@include transition (all 0.5s ease-in-out);
 
 	h3 {
 		color: $highlight-dark;
+	}
+
+	.quick-guide h2 {
+		font-size: 1.5rem;
 	}
 
 	.quick-guide li {
@@ -112,7 +117,7 @@
 }
 
 .em-quick-guide.active {
-	display: block;
+	height: 480px;
 }
 
 .map-container {
@@ -190,10 +195,19 @@
 
 .map-area {
 	width: 100%;
-	height: 26.7rem;
+	height: 29.2rem;
 	background-color: rgba(250, 250, 250, 0.9);
 	overflow: hidden;
 	position: relative;
+}
+
+.map-area:before {
+	pointer-events: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	content: '';
+	box-shadow: 0 -7px 7px rgba(0, 0, 0, 0.1) inset, 0 7px 7px rgba(0, 0, 0, 0.1) inset;
 }
 
 .map-area iframe {
@@ -504,6 +518,7 @@
 		float: left;
 		font-family: $font-bold;
 		color: #c2c2c2;
+		margin-top: 0.25rem;
 	}
 
 }
