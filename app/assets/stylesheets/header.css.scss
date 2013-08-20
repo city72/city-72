@@ -106,10 +106,29 @@
 		position: absolute;
 		top: -0.1rem;
 		right: 0.5rem;
-		width: 11rem;
+		width: 12.6rem;
 
 		a {
 			color: $highlight-dark;
+		}
+
+		a:hover {
+			color: #CE3000;
+		}
+
+		.preview-nav-link {
+			position: relative;
+			font-style: normal;
+		}
+
+		.preview-nav-link:after {
+			position: absolute;
+			right: -1em;
+			top: 0;
+			font-family: 'sf72-icons';
+			content: 's';
+			font-size: 0.8em;
+			
 		}
 	}
 

@@ -42,6 +42,19 @@
 	content: '';
 }
 
+.home .intro-app {
+	
+	span {
+		color: $highlight;
+	}
+
+	strong {
+		font-family: $font-bold;
+		font-weight: normal;
+		margin-top: 0;
+	}
+}
+
 .main-intro h2 {
 	line-height: 1.2;
 	color: $dark-grey;
@@ -301,7 +314,7 @@
 	li:before {
 		background-color: $highlight;
 		margin: 0 0 0 -5.4rem;
-		padding: 0.55rem 1.4rem;
+		padding: 0.6rem 1.35rem 0.5rem 1.45rem;
 	}
 
 	h2 {

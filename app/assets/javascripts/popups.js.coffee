@@ -3,7 +3,7 @@ window.twitterShare = (text) ->
 	if text
 		window.open("http://twitter.com/share?text=#{text}:", '', 'width=600,height=300')
 	else
-		window.open("http://twitter.com/share?text=The%20San%20Francisco%20Manifesto%20from%20SF72.org:", '', 'width=600,height=300')
+		window.open("http://twitter.com/share?text=Let’s%20get%20connected.+Let’s%20get%20prepared.%20SF72.org:", '', 'width=600,height=300')
 
 window.facebookShare = -> window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
 								      'facebook-share-dialog',
