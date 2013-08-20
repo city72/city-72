@@ -205,10 +205,7 @@
 	.near-me {
 		margin: 0 auto;
 		width: 320px;
-	}
-
-	.near-me {
-		background: url(http://placekitten.com/320/220/) no-repeat top left;
+		background-size: 100%;
 	}
 
 	.basics-wrapper {
@@ -982,10 +979,40 @@
 		}
 	}
 
-	/* ALERTS */
+	/* CRISIS MODE */
+
+	.home-em {
+		.header {
+			background-color: rgba(255, 255, 255, 0.65);
+			border-bottom: 1px solid #CBCBCB;
+
+			.logo-mobile:after,
+			#build-menu-button {
+				color: #4D4D4D
+			}
+		}
+	}
+
+	#mobile-updates,
+	#mobile-maps,
+	#mobile-quick-guide {
+		display: none;
+	}
+
+	#mobile-updates.active,
+	#mobile-maps.active,
+	#mobile-quick-guide.active {
+		display: block;
+		margin-top: 2.75rem;
+	}
+
+	.em-quick-guide {
+		display: block;
+		margin-top: 0;
+		background-color: #FFF;
+	}
 	
 	.alert-wide {
-		margin-top: 2.7rem;
 
 		.wrapper {
 			padding: 0.2rem 3%;
@@ -1054,15 +1081,47 @@
 
 	.tw-tabs-mobile {
 		display: block;
+		position: relative;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 
-		a {
-			display: block;
-			text-align: center;
-			border: 1px solid $body-light;
+		li {
 
-			h3 {
-				margin: 0;
-				font-size: 1rem;
+			a {
+				display: block;
+				text-align: center;
+				border: 1px solid $body-light;
+				border-style: none solid;
+				font-family: $font-bold;
+				color: #C3C2C2;
+
+				h3 {
+					margin: 0;
+					font-size: 1rem;
+				}
+			}
+
+			a:hover {
+				background-color: $highlight-dark;
+				border-color: $highlight-dark;
+			}
+
+		}
+
+		li.active {
+			a {
+				background-color: $highlight-dark;
+				border-color: $highlight-dark;
+			}
+
+			a:after {
+				content: '';
+				border-color: $highlight-dark transparent transparent;
+				border-width: 9px;
+				border-style: solid;
+				bottom: -17px;
+				margin-left: -9px;
+				position: absolute;
+				left: 50%;
 			}
 		}
 	}

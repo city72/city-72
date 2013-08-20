@@ -5,28 +5,29 @@
 .home-em
   .wrapper.em-header
     = render :partial => "partials/header"
-  .alert-wide
-    .wrapper
-      .alert-info
-        %h3 8.3 earthquake strikes the San Andreas Fault.
-        %p At 5:56 am on Thursday, an 8.3 earthquake struck on the San Andreas Fault.The epicenter was near Santa Cruz, CA.
-      .em-quick-guide-trigger
-        %a.show-quick-guide{src:"#"} What should I do?
-        %a.hide-quick-guide{src: "#"} Hide what to do
-  .em-quick-guide#mobile-quick-guide
-    .wrapper
-      %h3 What should I do?
-      %ol.quick-guide
-        %li
-          %h2 Drop, cover and hold on.
-          %p Drop down and get under a strong table. If you are not near a table, drop against an interior wall and cover your head and neck with your arms. Stay away from windows.
-        %li
-          %h2 Stay put.
-          %p Whether you’re in a car, bed, or public place, stay put and wait until the shaking stops. If you’re outdoors, steer clear of wires or falling objects. The only time not to stay put? If you’re near the coast in an earthquake, immediately go to high ground, as tsunamis often follow.
+  .what-to-do-wrapper#mobile-quick-guide
+    .alert-wide
+      .wrapper
+        .alert-info
+          %h3 8.3 earthquake strikes the San Andreas Fault.
+          %p At 5:56 am on Thursday, an 8.3 earthquake struck on the San Andreas Fault.The epicenter was near Santa Cruz, CA.
+        .em-quick-guide-trigger
+          %a.show-quick-guide{src:"#"} What should I do?
+          %a.hide-quick-guide{src: "#"} Hide what to do
+    .em-quick-guide
+      .wrapper
+        %h3 What should I do?
+        %ol.quick-guide
+          %li
+            %h2 Drop, cover and hold on.
+            %p Drop down and get under a strong table. If you are not near a table, drop against an interior wall and cover your head and neck with your arms. Stay away from windows.
+          %li
+            %h2 Stay put.
+            %p Whether you’re in a car, bed, or public place, stay put and wait until the shaking stops. If you’re outdoors, steer clear of wires or falling objects. The only time not to stay put? If you’re near the coast in an earthquake, immediately go to high ground, as tsunamis often follow.
 
-        %li
-          %h2 Stay calm.
-          %p Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.
+          %li
+            %h2 Stay calm.
+            %p Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.
   .map-container#mobile-maps
     .wrapper
       .map-heading
