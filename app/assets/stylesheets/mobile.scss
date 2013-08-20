@@ -12,6 +12,10 @@
 
 @include media($mobile) {
 
+	.mobile-hidden {
+		display: none;
+	}
+
 	.main-container.home {
 		margin-left: 0;
 	}
@@ -227,7 +231,8 @@
 		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 		
 		li {
-			margin: 0;
+			width: 51%;
+			margin: 0 0 0 -1%;
 			display: block;
 			float: left;
 			position: relative;
@@ -238,10 +243,11 @@
 				border: 1px solid #CBCBCB;
 				font-size: 1rem;
 				font-family: $font-bold;
-				width: 10.05rem;
+				width: 100%;
 				padding: 0.4rem 0.9rem 0.3rem;
 				margin-right: -1px;
 				background-color: #FFF;
+				text-align: center;
 			}
 
 			a:before {
@@ -393,10 +399,9 @@
 		display: none;
 	}
 
-	.connect .page-intro .big-title,
-	.about .page-intro .big-title {
-		background-position: 60% 0;
-		background-size: 170%;
+	.connect .page-intro .big-title {
+		background-position: 0 -1%;
+		background-size: 233%;
 	}
 
 	.app-title {
@@ -510,13 +515,16 @@
 		.prepare-things,
 		.prepare-people {
 			padding: 0.8rem 3% 1rem;
-			height: 10.5rem;
-			margin-bottom: 13rem;
+			height: 11.4rem;
+			margin-bottom: 10.8rem;
+			background-size: 142%;
 		}
 
 		.prepare-people {
 			height: 11.5rem;
 			margin-bottom: 11rem;
+			background-size: 150%;
+			background-position: -139px -26px;
 		}
 
 		h2 {
@@ -532,8 +540,16 @@
 		strong {
 			font-size: 1.5rem;
 			display: block;
+			background-color: transparent;
+			color: $highlight-dark;
+			padding: 0.5rem 0 0.5rem 0;
+			margin-top: 0.2rem;
 		}
-
+		
+		.prepare-things:hover strong,
+		.prepare-people:hover strong {
+			background-color: transparent;
+		}
 	}
 
 	.existing-networks {
@@ -542,6 +558,7 @@
 
 		h2 {
 			font-size: 1.5rem;
+			margin: 0;
 		}
 
 		.intro-networks {
@@ -555,6 +572,8 @@
 			li {
 				@include span-columns(4);
 				padding-right: 0;
+
+				strong { font-family: $font-bold; }
 			}
 
 			h3 {
@@ -575,6 +594,8 @@
 
 		h2 {
 			font-size: 1.5rem;
+			line-height: 1.2;
+			margin-bottom: 0.5rem;
 		}
 
 		p {
@@ -1043,6 +1064,82 @@
 				margin: 0;
 				font-size: 1rem;
 			}
+		}
+	}
+
+	/* ABOUT */
+
+	.about .page-intro .big-title {
+		background-position: 60% 0;
+		background-size: 170%;
+	}
+
+	.about .page-intro h2 {
+		margin: 0;
+	}
+
+	.about .main-intro p {
+		width: 94%;
+		margin: 0.8rem 0 0.4rem;
+	}
+
+	.aside {
+		margin: 0;
+		width: 94%;
+
+		.connection {
+			padding-left: 4%;
+			margin: 0;
+			border-left: none;
+
+			strong {
+				margin-bottom: 0.8rem;
+			}
+
+			a {
+				padding-top: 0;
+				font-size: 1.45rem;
+				color: $highlight-dark;
+			}
+
+			a:after {
+				left: 99%;
+				top: 0.3em;
+				font-size: 0.7em;
+				content: 's';
+			}
+		}
+	}
+
+	.about-data li {
+		@include span-columns(4);
+		@include omega;
+
+		img {
+			width: 100%;
+		}
+
+		h2, p {
+			margin-left: 3%;
+			margin-right: 3%;
+		}
+
+		h2 {
+			margin-top: -3.5rem;
+			font-size: 2.2rem;
+			color: #FFF;
+		}
+
+		p {
+			@include mobile-body-paragraph;
+			padding: 0.8rem 0;
+		}
+	}
+
+	.contact-block {
+
+		.contact-heading {
+			@include span-columns(4);
 		}
 	}
 
