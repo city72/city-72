@@ -27,17 +27,20 @@
       - if !@story.item3_image.blank?
         %ul.needed-list
           %li
-            %img{src: "#{@story.item1_image}"}
+            = retina_image_tag @story.item1_image
+            / %img{src: "#{@story.item1_image}"}
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
             %a{href: "/prepare/supplies"} Gather your supplies
           %li
-            %img{src: "#{@story.item2_image}"}
+            = retina_image_tag @story.item2_image
+            / %img{src: "#{@story.item2_image}"}
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
             %a{href: "/connect"} See the app
           %li
-            %img{src: "#{@story.item3_image}"}
+            = retina_image_tag @story.item3_image
+            / %img{src: "#{@story.item3_image}"}
             %h4 #{@story.item3_subtitle}
             %p &ldquo;#{@story.item3_quote}&rdquo;
             %a{href: "/prepare"} Make a Plan
@@ -47,12 +50,12 @@
         - else
           %ul.needed-list.two-cols
             %li
-              %img{src: "#{@story.item1_image_url(:full_bleed)}"}
+              = full_bleed_image_tag @story.item1_image
               %h4 #{@story.item1_subtitle}
               %p &ldquo;#{@story.item1_quote}&rdquo;
               %a{href: "/prepare/supplies"} Gather your supplies
             %li
-              %img{src: "#{@story.item2_image_url(:full_bleed)}"}
+              = full_bleed_image_tag @story.item2_image
               %h4 #{@story.item2_subtitle}
               %p &ldquo;#{@story.item2_quote}&rdquo;
               %a{href: "/connect"} See the app
@@ -64,7 +67,7 @@
             %a{href: "/stories/#{ related_story.id }"}
               .quote-dialog
                 #{ related_story.quote }
-              %img{src: "#{ related_story.video_image }"}
+              = retina_image_tag related_story.video_image
               .story-data
                 .story-type
                   %span.icon-disaster-hurricane

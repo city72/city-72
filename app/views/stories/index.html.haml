@@ -12,8 +12,7 @@
         %a{href: "#{ story_path(story.id) }"}
           .quote-dialog
             #{story.quote}
-          = retina_image_tag story.video_image, 300, 190
-          / %img{src: "#{story.video_image}"}
+          = retina_image_tag story.video_image
           .story-data
             .story-type
               %span.icon-disaster-hurricane

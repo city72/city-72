@@ -9,7 +9,7 @@ class RetinaResponsive
 			$.each images, (i, e) ->
 				retina_url = $(e).attr('alt')
 				$(e).attr('src', retina_url)
-			console.log('Retina responsive!')
+			true
 
 	check: ->
 		checkRetinaDisplay()
