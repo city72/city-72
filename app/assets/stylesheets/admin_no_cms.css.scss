@@ -1,0 +1,95 @@
+.modal a.close-modal {
+	background: url(/images/close.png)
+}
+
+#modal-panel, #confirm-off-panel {
+	padding: 20px;
+}
+
+.admin-btn {
+	display: inline-block !important;
+	padding:0 10px !important;
+	line-height: 40px !important;
+	color:#000 !important;
+	text-shadow: none !important;
+	-webkit-font-smoothing: none !important;
+	-webkit-border-radius: 3px !important;
+	-moz-border-radius: 3px !important;
+	border-radius: 3px !important;
+	font-weight: normal !important;
+	font-size: 14px !important;
+	border: 2px solid !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+}
+
+.orange-btn {
+	background: #ff9900 !important;
+	color: #fff !important;
+	border-color: #de8300 !important;
+}
+
+.orange-btn:hover {
+	background: #ffa92e !important;
+}
+
+.black-btn {
+	background: #333 !important;
+	color:#fff !important;
+	border-color: #000 !important;
+}
+
+.black-btn:hover {
+	background: #444 !important;
+}
+
+#modal-panel h2 {
+	margin:0;
+	padding: 15px 0 10px 0;
+	color: #333;
+}
+
+#modal-panel label {
+	font-weight: bold;
+	font-size:13px;
+	color: #555;
+}
+
+#modal-panel input[type="text"] {
+	font-size: 12px;
+	margin:2px 0 2px 0;
+	width: 95%;
+}
+
+#modal-panel .form-section.configure-updates {
+	padding-top:15px;
+}
+
+#modal-panel #turn-off-btn {
+	background: #000;
+}
+
+#confirm-off-panel .message {
+	font-size: 16px;
+	padding-bottom: 20px;
+}
+
+.form-section h2 .circle {
+	display: inline-block;
+	text-align: center;
+	font-size: 18px;
+	line-height: 35px;
+	width: 35px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
+	color:#fff;
+	background: #ff9900;
+	font-weight: normal;
+}
+
+.form-section h2 {
+	font-size: 20px !important;
+	font-weight: bold !important;
+	color:#444 !important;
+}
