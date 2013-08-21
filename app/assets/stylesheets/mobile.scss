@@ -5,7 +5,7 @@
 }
 
 @mixin mobile-body-paragraph {
-	font-size: 0.84rem;
+	font-size: 1rem;
 	line-height: 1.35;
 	color: #515050;
 }
@@ -92,8 +92,10 @@
 				}
 
 				a {
-					padding: 0.8rem 0;
+					padding: 0.6rem 0;
 					margin: 0.2rem;
+					color: #7B7B7B;
+					font-size: 1.55rem;
 				}
 			}
 
@@ -452,10 +454,6 @@
 	.app-features {
 		li { 
 			@include span-columns(4);
-
-			img {
-				width: 100%;
-			}
 		}
 
 		p { 
@@ -530,7 +528,7 @@
 		}
 
 		h2 {
-			margin: 8rem 0 0;
+			margin: 0 0 9.5rem;
 			font-size: 1.5rem;
 		}
 

@@ -73,13 +73,13 @@ $gutter: 30px;
 $border-box-sizing: false;
 $mobile: new-breakpoint(max-width 480px 4);
 
-h2 {font-size: 2.25rem; font-family: $font-bold;}
+h2 {font-size: 2.125rem; font-family: $font-bold;}
 h3 {font-size: 1.5rem; font-family: $font-medium;}
 h4 {font-size: 1.3rem;}
 h5 {margin: 0}
 
 @mixin intro-paragraph {
-	font-size: 1.187rem;
+	font-size: 1.125rem;
 	line-height: 1.36;
 }
 
