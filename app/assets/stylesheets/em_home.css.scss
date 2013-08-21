@@ -560,6 +560,21 @@
 
 }
 
+.joyride-tip-guide[data-index="1"] {
+	top: 201px !important;
+	left: 57% !important;
+
+	span.joyride-nub {
+		left: auto !important;
+		right: 28px !important;
+    }
+}
+
+.joyride-tip-guide[data-index="3"],
+.joyride-tip-guide[data-index="4"]{
+	margin-left: 40px;
+}
+
 .modal {
 	.icon-close {
 		font-size: 2.6rem;

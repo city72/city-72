@@ -290,6 +290,11 @@
 		}
 	}
 
+	.bx-wrapper {
+		margin: 0 auto;
+		padding: 0 0 60px;
+	}
+
 	.quick-list-trigger {
 		display: none;
 	}
@@ -312,6 +317,20 @@
 
 	.slider-header {
 		height: 60px;
+	}
+
+	.slider-body {
+		position: relative;
+	}
+
+	.slider-body:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 999;
 	}
 
 	.slider.quick-guide {

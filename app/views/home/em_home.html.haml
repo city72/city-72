@@ -99,13 +99,15 @@
     %h4.header What happened?
     %p.description Announces the crisis and its severity. Click on &ldquo;What should I do?&rdquo; to get next steps. 
     %p.index 1 of 6
-  %li{"data-class" => "em-quick-guide-trigger"}
+  %li{"data-class" => "em-quick-guide-trigger",
+      "tipContainer" => ".alert-wide .wrapper"}
     .icon.icon-info
     %h4.header What should I do?
     %p.description Three simple action steps—so you know what to do. These tips will change depending on the type of disaster and timeline. Check back often. 
     %p.index 2 of 6
   %li{"data-class" => "map-tooltip-placement",
-      "data-options"  => "tipLocation:left"}
+      "data-options"  => "tipLocation:left",
+      }
     .icon.icon-map-on
     %h4.header Street Status
     %p.description A geo-tagged crisis map that shows nearby shelters and resources, as well as hazardous or road-blocked areas &ndash; so you can find safety in your surroundings
