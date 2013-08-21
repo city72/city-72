@@ -28,19 +28,16 @@
         %ul.needed-list
           %li
             = retina_image_tag @story.item1_image
-            / %img{src: "#{@story.item1_image}"}
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
             %a{href: "/prepare/supplies"} Gather your supplies
           %li
             = retina_image_tag @story.item2_image
-            / %img{src: "#{@story.item2_image}"}
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
             %a{href: "/connect"} See the app
           %li
             = retina_image_tag @story.item3_image
-            / %img{src: "#{@story.item3_image}"}
             %h4 #{@story.item3_subtitle}
             %p &ldquo;#{@story.item3_quote}&rdquo;
             %a{href: "/prepare"} Make a Plan

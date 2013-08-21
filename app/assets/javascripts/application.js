@@ -19,7 +19,6 @@
 //= require raphael-min.js
 //= require magic.js
 //= require jquery.modal.js
-//= require retina
 //= require sf72
 //= require retina_responsive
 //= require tabs_manager
