@@ -1119,12 +1119,13 @@
 		li {
 
 			a {
+				background-color: #FFF;
 				display: block;
 				text-align: center;
 				border: 1px solid $body-light;
 				border-style: none solid;
 				font-family: $font-bold;
-				color: #C3C2C2;
+				color: #515050;
 
 				h3 {
 					margin: 0;
@@ -1156,6 +1157,14 @@
 				left: 50%;
 			}
 		}
+	}
+
+	.updates {
+		box-shadow: 0 0 0 transparent;
+	}
+
+	.updates:before {
+		display: none;
 	}
 
 	/* ABOUT */
