@@ -1,5 +1,7 @@
 class Header 
 
+    initilized = false
+
     # Initializes the header
     init: ->
         if !initilized
@@ -49,7 +51,5 @@ class Header
             if response.em_mode
                 $('.mobile-menu .normal-mode').hide()
                 $('.mobile-menu .crisis-mode').show()
-
-    initilized = false
 
 @Sf72.Header = new Header(@Sf72)
