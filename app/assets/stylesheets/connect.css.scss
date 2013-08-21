@@ -2,7 +2,8 @@
 
 .connect .page-intro .big-title,
 .about .page-intro .big-title {
-	background: url(/assets/static/theapp-title.jpg) no-repeat left top;
+	@include retina-image(/assets/static/theapp-title, 960px 490px, jpg);
+	background-repeat: no-repeat;
 	background-size: 100%;
 }
 
@@ -47,7 +48,8 @@
 	width: 516px;
 	height: 361px;
 	margin: -3.95rem 0.9rem 0 0;
-	background: $light-grey url(/assets/static/theapp-coming.jpg) no-repeat top left;
+	@include retina-image(/assets/static/theapp-coming, 516px 361px, jpg);
+	background-repeat: no-repeat;
 }
 
 .app-details {
@@ -108,10 +110,26 @@
 .app-features {
 	@include outer-container;
 	margin-top: 4.1rem;
+
+	.screen-1,
+	.screen-2,
+	.screen-3 {
+		width: 280px;
+		height: 530px;
+		@include retina-image(/assets/static/theapp-screen-1, 280px 530px, jpg);
+	}
+
+	.screen-2 { 
+		@include retina-image(/assets/static/theapp-screen-2, 280px 530px, jpg);
+	}
+
+	.screen-3 { 
+		@include retina-image(/assets/static/theapp-screen-3, 280px 530px, jpg);
+	}
 }
 
 .app-features > li {
-	@include span-columns(4)
+	@include span-columns(4);
 }
 
 .features-detail{

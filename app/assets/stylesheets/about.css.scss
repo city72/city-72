@@ -1,7 +1,7 @@
 /* ABOUT */
 
 .about .page-intro .big-title {
-	background: url(/assets/static/about-us-title.jpg) no-repeat left top;
+	@include retina-image(/assets/static/about-us-title, 960px 490px, jpg);
 }
 
 .about .main-intro p {
@@ -49,6 +49,25 @@
 
 	p {
 		margin-top: 0.4rem;
+	}
+
+	.about-who,
+	.about-what,
+	.about-why {
+		width: 300px;
+		height: 190px;
+	}
+
+	.about-who {
+		@include retina-image(/assets/static/about-us-1, 300px 190px, jpg);
+	}
+
+	.about-what {
+		@include retina-image(/assets/static/about-us-2, 300px 190px, jpg);
+	}
+
+	.about-why {
+		@include retina-image(/assets/static/about-us-3, 300px 190px, jpg);
 	}
 
 }

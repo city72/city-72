@@ -1,8 +1,8 @@
 /* PREPARE */
 
 .prepare .page-intro .big-title {
-	background: url(/assets/static/prepare-title.jpg) no-repeat left top;
-	background-size: 100%;
+	@include retina-image(/assets/static/prepare-title, 960px 490px, jpg);
+	background-position: left top;
 }
 
 .make-plan {
@@ -49,8 +49,7 @@
 
 	a {
 		height: 26.7rem;
-		background-image: url(/assets/static/prepare-stories-2.jpg);
-		background-size: 100%;
+		@include retina-image(/assets/static/prepare-stories-2, 960px 420px, jpg);
 		background-repeat: no-repeat;
 		display: block;
 		color: #FFF;
@@ -59,7 +58,7 @@
 	}
 
 	a.prepare-things {
-		background-image: url(/assets/static/prepare-supplies-1.jpg);
+		@include retina-image(/assets/static/prepare-supplies-1, 960px 420px, jpg);
 	}
 	
 
@@ -159,7 +158,9 @@ a.checklist:before {
 }
 
 .existing-networks {
-	background: url(/assets/static/prepare-networks.jpg) no-repeat right 40px;
+	@include retina-image(/assets/static/prepare-networks, 300px 190px, jpg);
+	background-repeat: no-repeat;
+	background-position: right 40px;
 	padding-top: 0.1rem;
 
 	h2 {
@@ -228,7 +229,9 @@ a.checklist:before {
 }
 
 .talk-to-friends {
-	background: url(/assets/static/prepare-sf72.jpg) no-repeat right 0;
+	@include retina-image(/assets/static/prepare-sf72, 300px 300px, jpg);
+	background-position: right 0;
+	background-repeat: no-repeat;
 	margin-top: 4.8rem;
 	background-size: 200px;
 
@@ -263,8 +266,7 @@ a.checklist:before {
 	position: relative;
 	width: 960px;
 	height: 28.8rem;
-	
-	background-image: url(/assets/static/stories.jpg);
+	@include retina-image(/assets/static/stories, 960px 460px, jpg);
 	background-size: 100%;
 	color: #FFF;
 
@@ -496,7 +498,7 @@ a.checklist:before {
 /* THINGS */
 
 .things .intro {
-	background-image:  url(/assets/static/supplies-title.jpg);
+	@include retina-image(/assets/static/supplies-title, 960px 460px, jpg);
 }
 
 .action-bar {
