@@ -15,44 +15,9 @@
 	position: relative;
 }
 
-/*
-.logo.active:before {
-	width: 150px;
-	background-color: $highlight;
-	content: '';
-	position: absolute;
-	height: 4px;
-	top: 0;
-	left: 0;
-}
-*/
-
 .logo-mobile {
 	display: none;
 }
-
-/*
-.logo a {
-	margin-top: 0.9rem;
-	display: block;
-	text-indent: -9999px;
-	width: 114px;
-	height: 40px;
-	position: relative;
-}
-
-.logo a:after {
-	line-height: 1;
-	text-indent: 0;
-	font-family: "sf72-icons";
-	content: '4';
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: $highlight;
-	font-size: 2.5rem;
-}
-*/
 
 .main-nav > li {
 	@include span-columns(1.7);
@@ -108,19 +73,6 @@
 		right: 0.5rem;
 		width: 12.6rem;
 
-		strong {
-			
-		}
-
-		a:hover {
-			color: $body-light;
-		}
-
-		a:hover,
-		a:hover .preview-nav-link {
-			color: $highlight-dark;
-		}
-
 		.preview-nav-link {
 			position: relative;
 			font-style: normal;
@@ -135,6 +87,16 @@
 			font-size: 0.8em;
 			
 		}
+	}
+
+	li.em-link:hover,
+	li.em-link:hover a {
+		color: $body-color;
+	}
+
+	li.em-link:hover strong,
+	li.em-link:hover .preview-nav-link {
+		color: $highlight-dark;
 	}
 
 	li.em-link.active {
