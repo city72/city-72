@@ -108,12 +108,17 @@
 		right: 0.5rem;
 		width: 12.6rem;
 
-		a {
-			color: $highlight-dark;
+		strong {
+			
 		}
 
 		a:hover {
-			color: #CE3000;
+			color: $body-light;
+		}
+
+		a:hover,
+		a:hover .preview-nav-link {
+			color: $highlight-dark;
 		}
 
 		.preview-nav-link {
