@@ -4,6 +4,8 @@ class StoryItemUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
   include CarrierWave::RMagick
 
+  retina!
+
   process :convert => 'png'
   process :resize_to_fill => [300, 190]
 

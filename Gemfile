@@ -32,6 +32,8 @@ gem 'mandrill-api'
 
 gem "galetahub-simple_captcha", :require => "simple_captcha"
 
+gem 'retina_rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'bourbon', '~> 3.1.8'
