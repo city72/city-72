@@ -198,19 +198,20 @@
 .near-me {
 	display: block;
 	background: url(/assets/static/home-prepare.jpg) no-repeat top left;
+	@include retina-image(/assets/static/home-prepare, 300px 220px, jpg);
 	width: 300px;
 	height: 220px;
 	text-indent: -9999px;
 }
 
 .my-people {
-	background: url(/assets/static/home-supplies.jpg) top left;
-	background-size: 100%;
+	background-position: top left;
+	@include retina-image(/assets/static/home-supplies, 300px 220px, jpg);
 }
 
 .my-stuff {
-	background: url(/assets/static/home-app.jpg) left top;
-	background-size: 100%;
+	background-position: left top;
+	@include retina-image(/assets/static/home-app, 300px 220px, jpg);
 }
 
 .social-media {
