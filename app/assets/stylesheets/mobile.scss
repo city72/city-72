@@ -507,6 +507,12 @@
 
 	}
 
+	.prepare .get-connected {
+		margin: 1rem 3% 0;
+		border-left: 0;
+		padding: 0 3%;
+	}
+
 	.col-2 li {
 		@include span-columns(4);
 	}

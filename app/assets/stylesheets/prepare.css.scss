@@ -5,13 +5,18 @@
 	background-position: left top;
 }
 
+.prepare .get-connected {
+	font-family: $font-regular;
+	color: $highlight;
+}
+
+.prepare .main-intro p {
+	width: 36em;
+}
+
 .make-plan {
 
 	margin-top: 3rem;
-	
-	p {
-		padding-right: 175px;
-	}
 
 	a {
 		color: $highlight-dark;
@@ -219,8 +224,14 @@ a.checklist:before {
 			color: #3b5994;
 		}
 		li.airbnb:before {
-			content: "v";
+			width: 55px;
+			height: 55px;
+			top: 12px;
+			@include retina-image(/assets/static/airbnb-logo, 55px 55px);
+			background-repeat: no-repeat;
+			background-position: top left;
 			color: #00b0ff;
+			content: '';
 		}
 		li.twitter:before {
 			content: "w";
