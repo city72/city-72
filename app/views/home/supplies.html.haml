@@ -24,7 +24,7 @@
           %li
             .use-case-dialog
               #{item.use_case}
-            %img{src: "#{item.image}"}
+            = retina_image_tag item.image
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
     %li.tab-useful-content
@@ -34,7 +34,7 @@
           %li
             .use-case-dialog
               #{item.use_case}
-            %img{src: "#{item.image}"}
+            = retina_image_tag item.image
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
     %li.tab-personal-content
@@ -44,7 +44,7 @@
           %li
             .use-case-dialog
               #{item.use_case}
-            %img{src: "#{item.image}"}
+            = retina_image_tag item.image
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
   .kits
@@ -54,6 +54,6 @@
       - @kits.each do |kit|
         %li
           %a{href: "#", onClick:"window.open('#{kit.url}', '', 'width=600,height=500')"}
-            %img{src: "#{kit.image}"}
+            = retina_image_tag kit.image
             %span #{kit.title}
 = render :partial => "partials/footer"
