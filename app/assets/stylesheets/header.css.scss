@@ -94,7 +94,6 @@
 		color: $body-color;
 	}
 
-	li.em-link a,
 	li.em-link strong,
 	li.em-link .preview-nav-link {
 		color: $highlight-dark;
@@ -103,7 +102,7 @@
 	li.em-link.active a,
 	li.em-link:hover strong,
 	li.em-link:hover .preview-nav-link {
-		color: $highlight-dark;
+		color: #CE3000;
 	}
 
 	li.em-link.active {

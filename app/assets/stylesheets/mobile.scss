@@ -89,6 +89,10 @@
 				li.active {
 					border: none;
 					padding-top: 0;
+
+					a {
+						color: $highlight;
+					}
 				}
 
 				a {
@@ -1120,6 +1124,10 @@
 				line-height: 1.5;
 			}
 		}
+	}
+
+	.map-container .wrapper {
+		display: none;
 	}
 
 	.map-actions {

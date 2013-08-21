@@ -74,6 +74,8 @@
 		border: 2px solid #EEE;
 		font-size: 1.5rem;
 		padding: 0.6rem 1.1rem;
+		-webkit-border-radius: 0;
+		-webkit-appearance: none;
 	}
 	
 	.submit {
@@ -85,6 +87,7 @@
 		font-size: 1.5rem;
 		cursor: pointer;
 		-webkit-appearance: none;
+		-webkit-border-radius: 0;
 	}
 
 	.submit:hover {

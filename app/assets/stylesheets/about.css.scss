@@ -155,6 +155,7 @@
 			font-size: 1.3rem;
 			font-family: $font-regular;
 			color: #FFF;
+			-webkit-border-radius: 0;
 
 			@include placeholder {
 			    color: #FFF;
@@ -177,6 +178,7 @@
 			margin-right: 0.8rem;
 			cursor: pointer;
 			-webkit-appearance: none;
+			-webkit-border-radius: 0;
 		}
 
 		.send:hover {
