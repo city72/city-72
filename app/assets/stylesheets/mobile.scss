@@ -1230,6 +1230,10 @@
 		}
 	}
 
+	.about-data {
+		margin-top: 3rem;
+	}
+
 	.about-data li {
 		@include span-columns(4);
 		@include omega;

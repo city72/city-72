@@ -493,6 +493,7 @@
 		height: 54px;
 		font-size: 3.3rem;
 		color: $highlight-dark;
+		margin-bottom: 0.4rem;
 	}
 
 	h4 {
@@ -500,6 +501,11 @@
 		font-family: $font-bold;
 		font-size: 1rem;
 		margin: 0;
+	}
+
+	p {
+		font-size: 1rem;
+		line-height: 1.25;
 	}
 
 	.joyride-next-tip {
@@ -555,7 +561,7 @@
 		float: left;
 		font-family: $font-bold;
 		color: #c2c2c2;
-		margin-top: 0.25rem;
+		margin-top: 0.1rem;
 	}
 
 }

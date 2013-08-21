@@ -36,7 +36,8 @@
 
 .about-data {
 	@include outer-container;
-	margin-top: 4rem;
+	margin-top: 0;
+	margin-bottom: 3rem;
 
 	li {
 		@include span-columns(4);

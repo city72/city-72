@@ -94,6 +94,7 @@
 		color: $body-color;
 	}
 
+	li.em-link.active a,
 	li.em-link:hover strong,
 	li.em-link:hover .preview-nav-link {
 		color: $highlight-dark;
