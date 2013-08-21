@@ -208,3 +208,7 @@ ActiveAdmin.setup do |config|
 
 
 end
+
+module ActiveAdmin:ViewHelpers
+  include RetinaImageHelper
+end
