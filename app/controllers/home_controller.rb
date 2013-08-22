@@ -1,7 +1,13 @@
 require 'mandrill'
 
 class HomeController < StaticContentController
+  
   def index
+    if is_crisis_mode
+      redirect_to em_home_path
+    else
+      redirect_to home_path
+    end
   end
 
   def home
@@ -38,5 +44,12 @@ class HomeController < StaticContentController
 
   def our_manifesto
   end
+
+  private
+  
+  def is_crisis_mode
+    Mode.first.em_mode
+  end
+
 
 end
