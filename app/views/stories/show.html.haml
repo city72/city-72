@@ -75,25 +75,6 @@
               .quote-dialog
                 #{ related_story.quote }
               = retina_image_tag related_story.video_image
-              / It should use a partial!
-              .story-data
-                .story-type
-                  - case related_story.category
-                  - when "Tsunami or Flood"
-                    %span.icon-disaster-flood
-                  - when "Biohazard or Radiation"
-                    %span.icon-disaster-radiation
-                  - when "Earthquake"
-                    %span.icon-disaster-earthquake
-                  - when "Hurricane or Tornado"
-                    %span.icon-disaster-hurricane
-                  - when "Terrorist Atack"
-                    %span.icon-disaster-terrorist
-                  - when "Connection Story"
-                    %span.icon-disaster-connection
-                  - when "Other Emergency"
-                    %span.icon-disaster-other
-                %h5 #{ related_story.person }
-                %p #{ related_story.location }
+              = render partial: "category_icon", locals: {story: related_story}
 
 = render :partial => "partials/footer"
