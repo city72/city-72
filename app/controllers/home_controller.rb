@@ -8,6 +8,7 @@ class HomeController < StaticContentController
   end
 
   def em_home
+    @mode = Mode.all.first
     @citizen_feed = CitizenFeed.first
   end
 
