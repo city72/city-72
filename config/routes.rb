@@ -5,7 +5,7 @@ IdeoSf72::Application.routes.draw do
   resources :items
   resources :stories
 
-  root to: 'home#home'
+  root to: 'home#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
