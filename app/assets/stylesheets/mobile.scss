@@ -157,7 +157,7 @@
 		}
 	}
 
-	.home .intro-video {
+	.intro-video {
 		margin-top: 2.75rem;
 	}
 
@@ -436,7 +436,7 @@
 
 		.coming-soon {
 			font-size: 1rem;
-			margin: 4.6rem 0 0;
+			margin: 2.1rem 0 0;
 		}
 
 		h3 {
@@ -509,6 +509,10 @@
 		}
 
 
+	}
+
+	.prepare .main-intro p {
+		width: 94%;
 	}
 
 	.prepare .get-connected {
@@ -722,6 +726,7 @@
 				position: absolute;
 				z-index: 0;
 				width: 100%;
+				height: auto;
 			}
 
 			.story-data {
@@ -840,6 +845,8 @@
 	}
 
 	.needed-list {
+		@include reset-display;
+		display: block;
 		margin-top: 2.9rem;
 
 		li {
@@ -870,6 +877,16 @@
 		a {
 			left: 3%;
 		}
+	}
+
+	.needed-list.two-cols li {
+		@include reset-display;
+		@include span-columns(4);
+	}
+
+	.needed-list.two-cols li:last-child {
+		width: 100%;
+		margin-right: 0;
 	}
 
 	.learned {
@@ -1026,6 +1043,7 @@
 		top: -9px;
 		right: -5px;
 		z-index: 2;
+		pointer-events: none;
 
 		.ribbon-inner {
 			@include transform(rotate(45deg));
