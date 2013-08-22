@@ -18,11 +18,10 @@
 //= require jquery.bxslider.min.js
 //= require raphael-min.js
 //= require magic.js
-//= require jquery.modal.js
 //= require sf72
-//= require retina_responsive
 //= require tabs_manager
 //= require popups
 //= require cors
 //= require header
+//= require retina_responsive
 //= require init
