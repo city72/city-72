@@ -229,10 +229,10 @@ a.checklist:before {
 			color: #3b5994;
 		}
 		li.airbnb:before {
-			width: 55px;
-			height: 55px;
+			width: 56px;
+			height: 56px;
 			top: 12px;
-			@include retina-image(/assets/static/airbnb-logo, 55px 55px);
+			@include retina-image(/assets/static/airbnb-logo, 56px 56px);
 			background-repeat: no-repeat;
 			background-position: top left;
 			color: #00b0ff;
