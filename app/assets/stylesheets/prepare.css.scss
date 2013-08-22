@@ -3,6 +3,7 @@
 .prepare .page-intro .big-title {
 	@include retina-image(/assets/static/prepare-title, 960px 490px, jpg);
 	background-position: left top;
+	text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
 }
 
 .prepare .get-connected {
