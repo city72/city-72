@@ -45,22 +45,32 @@ $( ->
         showMobileTab mobileSections
 
     $('.em-preview-modal').hide()
-    $.get window.location.origin + "/em", (response) ->
-        if !response.em_mode
-            if $(window).width() > 480 and $(window).height() > 480
-                $("#joyride-steps").joyride()
-                #strange bug, if called once, it doesn't work
-                $("#joyride-steps").joyride()
-                $('.em-preview-modal').show()
-                onFinish = (id) ->
-                   $('.tour-intro').hide()
-                   $('.tour-intro-step2').show()
-                iframe = $("#video-opening")[0]
-                player = $f(iframe)
-                player.addEvent "ready", ->
-                    player.addEvent "finish", onFinish
-            else
-                $('.modal-wrapper').hide()
+
+    isMobile = -> $(window).width() < 480 or $(window).height() < 480
+
+    startJoyride = ->
+        $("#joyride-steps").joyride()
+        #strange bug, if called once, it doesn't work
+        $("#joyride-steps").joyride()
+
+    showIntroVideo = ->
+
+    showIntro = ->
+        if !isMobile()
+            
+            startJoyride()
+
+            $('.em-preview-modal').show()
+            iframe = $("#video-opening")[0]
+            player = $f(iframe)
+            player.addEvent "ready", ->
+                player.addEvent "finish", (id) ->
+                    $('.tour-intro').hide()
+                    $('.tour-intro-step2').show()
+        else
+            $('.modal-wrapper').hide()
+
+    showIntro()
 
     $('a.icon-close').click -> $('.modal-wrapper').hide()
     $('a.btn').click -> $('.modal-wrapper').hide()
