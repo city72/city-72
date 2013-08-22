@@ -5,7 +5,7 @@
 }
 
 .about .main-intro p {
-	width: 40rem;
+	width: 100%;
 }
 
 .aside .connection {
@@ -195,13 +195,13 @@
 }
 
 .aside {
-	@include span-columns(3.5);
-	@include shift(.5);
+	@include span-columns(3.3);
+	@include shift(.7);
 	margin-top: 3.5rem;
 	
 	div {
 		border-left: 2px solid $highlight;
-		padding-left: 1.5rem;
+		padding-left: 1rem;
 		line-height: 1.45;
 		font-family: $font-bold;
 		color: $body-light;
