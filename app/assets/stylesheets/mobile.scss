@@ -1276,6 +1276,7 @@
 	.about-data li {
 		@include span-columns(4);
 		@include omega;
+		padding-right: 0;
 
 		img {
 			width: 100%;
