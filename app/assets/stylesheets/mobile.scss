@@ -1060,6 +1060,12 @@
 		}
 	}
 
+	.em-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+
 	.home-em {
 		.header {
 			background-color: rgba(255, 255, 255, 0.65);
@@ -1082,7 +1088,7 @@
 	#mobile-maps.active,
 	#mobile-quick-guide.active {
 		display: block;
-		margin-top: 2.75rem;
+		padding-top: 44px;
 	}
 
 	.em-quick-guide {
