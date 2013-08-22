@@ -379,7 +379,7 @@ a.checklist:before {
 	color: $highlight-dark;
 }
 
-.story-type span.hub {
+.story-type span.icon-disaster-connection {
 	color: $highlight;
 	font-size: 1.3rem;
 }
@@ -533,7 +533,7 @@ a.checklist:before {
 		@include omega(3n);
 		text-align: center;
 		display: inline-block;
-		margin: 1.4rem 0.9rem 0 0;
+		margin: 1.4rem 0.9rem 0.6rem 0;
 		font-family: $font-medium;
 		font-size: 1.6rem;
 		position: relative;
