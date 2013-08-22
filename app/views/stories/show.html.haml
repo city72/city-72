@@ -40,7 +40,7 @@
             = retina_image_tag @story.item3_image
             %h4 #{@story.item3_subtitle}
             %p &ldquo;#{@story.item3_quote}&rdquo;
-            %a{href: "/prepare"} Make a Plan
+            %a{href: "/prepare"} Make a plan
       - else
         - if @story.items_images_display_type == StoryItemsDisplayTypes::FULL_BLEED_PHOTOS
           %ul.needed-list.two-cols.wide-img

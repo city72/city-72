@@ -64,11 +64,11 @@
 	}
 
 	.about-what {
-		@include retina-image(/assets/static/about-us-2, 300px 190px, jpg);
+		@include retina-image(/assets/static/about-us-3, 300px 190px, jpg);
 	}
 
 	.about-why {
-		@include retina-image(/assets/static/about-us-3, 300px 190px, jpg);
+		@include retina-image(/assets/static/about-us-2, 300px 190px, jpg);
 	}
 
 }
