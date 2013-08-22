@@ -78,6 +78,9 @@ $( ->
 
     initializeShowMapTipsBtn()
 
-    $('a.icon-close').click -> $('.modal-wrapper').hide()
+    $('a.icon-close').click -> 
+        $('.modal-wrapper').hide(0, ->
+                $('.em-preview-modal').remove()
+            )
     $('a.btn').click -> $('.modal-wrapper').hide()
 )
