@@ -72,6 +72,12 @@ $( ->
 
     showIntro()
 
+    initializeShowMapTipsBtn = ->
+        $('.map-tips-trigger').click ->
+            startJoyride()
+
+    initializeShowMapTipsBtn()
+
     $('a.icon-close').click -> $('.modal-wrapper').hide()
     $('a.btn').click -> $('.modal-wrapper').hide()
 )
