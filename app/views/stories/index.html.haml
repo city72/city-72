@@ -12,6 +12,7 @@
         %a{href: "#{ story_path(story.id) }"}
           .quote-dialog
             #{story.quote}
+            %span.fake-link See story
           = retina_image_tag story.video_image
           = render partial: "category_icon", locals: {story: story}
     %li

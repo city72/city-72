@@ -335,6 +335,25 @@ a.checklist:before {
 			font-family: $font-bold;
 			background-color: $highlight;
 			color: #FFF;
+			position: relative;
+
+			.fake-link {
+				display: block;
+				position: absolute;
+				bottom: 1rem;
+				left: 1rem;
+				padding-right: 0.8em;
+			}
+
+			.fake-link:after {
+				position: absolute;
+				right: 0;
+				top: 0.4em;
+				font-size: 0.7em;
+				font-family: 'sf72-icons';
+				content: 's';
+			}
+
 		}
 
 		a:hover {
