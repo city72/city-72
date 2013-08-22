@@ -23,7 +23,7 @@ ActiveAdmin.register Story do
       f.input :category, as: :select, collection: StoryCategories::all
       f.input :location
       f.input :date
-      f.input :video_url
+      f.input :video_url, hint: 'The URL should follow this format <strong>http://vimeo.com/NNNNNNNN</strong>'.html_safe
       f.input :video_image, hint: f.template.image_tag(f.object.video_image.url, size: "100x100")
     end
 

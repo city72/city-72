@@ -2,7 +2,7 @@
   %div.main-container.story-detail{"ng-controller" => "storyDetailController"}
     = render :partial => "partials/header"
     .intro-video
-      %iframe.video-opening{src: "#{@story.video_url}?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933"}
+      %iframe.video-opening{src: "http://player.vimeo.com/video/#{@story.video_url.split('/')[-1]}?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933"}
       %ul.social-media
         %li.twitter
           %a{onClick: "twitterShare()"}
