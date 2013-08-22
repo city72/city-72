@@ -15,12 +15,12 @@ $( ->
         $('a.show-quick-guide').css('display', 'block')
         $(this).css('display', 'none')
 
-    $.get(window.location.origin + "/em",
-        (response) ->
-            if response.em_mode
-                $('.alert-info h3').text(response.title)
-                $('.alert-info p').text(response.text)
-    )
+    # $.get(window.location.origin + "/em",
+    #     (response) ->
+    #         if response.em_mode
+    #             $('.alert-info h3').text(response.title)
+    #             $('.alert-info p').text(response.text)
+    # )
 
     mobileSections = [
         { href: '#mobile-maps' },
