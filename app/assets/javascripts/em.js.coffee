@@ -17,8 +17,9 @@ $( ->
 
     $.get(window.location.origin + "/em",
         (response) ->
-            $('.alert-info h3').text(response.title)
-            $('.alert-info p').text(response.text)
+            if response.em_mode
+                $('.alert-info h3').text(response.title)
+                $('.alert-info p').text(response.text)
     )
 
     mobileSections = [
