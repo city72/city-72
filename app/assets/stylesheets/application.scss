@@ -79,8 +79,8 @@ h4 {font-size: 1.3rem;}
 h5 {margin: 0}
 
 @mixin intro-paragraph {
-	font-size: 1.125rem;
-	line-height: 1.36;
+	font-size: 1.1875rem;
+	line-height: 1.45;
 }
 
 @mixin col-title {
@@ -159,7 +159,7 @@ body {
 	p {
 		@include intro-paragraph;
 		margin: 0.1rem 0 1rem 0;
-		width: 43rem;
+		width: 44rem;
 	}
 } 
 

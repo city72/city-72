@@ -7,7 +7,6 @@
 }
 
 .prepare .get-connected {
-	font-family: $font-regular;
 	color: $highlight;
 }
 
@@ -342,7 +341,7 @@ a.checklist:before {
 			display: none;
 			margin-bottom: 1rem;
 			padding: 1rem;
-			font-family: $font-bold;
+			font-family: $font-medium;
 			background-color: $highlight;
 			color: #FFF;
 			position: relative;
@@ -705,7 +704,7 @@ a.checklist:before {
 		margin-bottom: -52px;
 		background-color: $highlight;
 		padding: 1rem;
-		font-family: $font-bold;
+		font-family: $font-medium;
 		color: #FFF;
 		z-index: 2;
 		position: relative;
