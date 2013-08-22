@@ -50,6 +50,7 @@
 
 	strong {
 		font-family: $font-bold;
+		color: $dark-grey;
 		font-weight: normal;
 		margin-top: 0;
 	}
@@ -272,7 +273,7 @@
 .quick-list-trigger:before {
 	position: absolute;
 	top: 0.5rem;
-	left: 0.5rem;
+	left: 0.8rem;
 	font-family: 'sf72-icons';
 	content: 'u';
 	font-size: 1.7rem;

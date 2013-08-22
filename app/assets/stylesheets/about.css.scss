@@ -24,6 +24,10 @@
 		position: relative;
 	}
 
+	a:hover {
+		color: $dark-grey;
+	}
+
 	a:after {
 		position: absolute;
 		top: 1rem;
@@ -36,8 +40,8 @@
 
 .about-data {
 	@include outer-container;
-	margin-top: 0;
-	margin-bottom: 3rem;
+	margin-top: 20px;
+	margin-bottom: 4.25rem;
 
 	li {
 		@include span-columns(4);
@@ -219,6 +223,10 @@
 		background-size: 50px;
 		color: $highlight;
 		position: relative;
+	}
+
+	.download-manifesto a:hover {
+		color: $dark-grey;
 	}
 	
 	.download-manifesto a:after {

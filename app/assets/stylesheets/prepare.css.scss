@@ -212,7 +212,7 @@ a.checklist:before {
 		}
 
 		h3 {
-			margin: 1.8rem 0 0;
+			margin: 1.3rem 0 0;
 			font-size: 1.25rem;
 			color: $dark-grey;
 		}
@@ -322,7 +322,7 @@ a.checklist:before {
 }
 
 .stories .intro h2 {
-	margin: 0 8rem 0 0;
+	margin: 0;
 }
 
 .stories h3 {
@@ -408,10 +408,32 @@ a.checklist:before {
 	color: $highlight-dark;
 }
 
+.story-type span .icon-disaster-hurricane {
+	padding-left: 0.5rem;
+}
+
 .story-type span.icon-disaster-connection {
 	color: $highlight;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 }
+
+.story-type span .icon-disaster-hurricane {
+	font-size: 1.5rem;
+}
+
+.story-type span .icon-disaster-flood {
+	font-size: 1.4rem;
+}
+
+.story-type span .icon-disaster-other {
+	font-size: 1.5rem;
+}
+
+.story-type span .icon-disaster-radiation {
+	font-size: 1.5rem;
+	padding-left: 0.2rem;
+}
+
 
 .person-type {
 	display: block;
@@ -542,6 +564,17 @@ a.checklist:before {
 
 .needed-list.two-cols li{
 	@include span-columns(6, table);
+	text-align: center;
+
+	img {
+		margin: 0 auto;
+	}
+
+	h4,
+	p,
+	a {
+		text-align: left;
+	}
 }
 
 /* SUPPLIES */

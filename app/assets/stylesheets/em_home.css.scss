@@ -81,6 +81,11 @@
 		.hide-quick-guide {
 			display: none;
 		}
+
+		.show-quick-guide,
+		.hide-quick-guide {
+			width: 152px;
+		}
 	}
 
 	.em-quick-guide-trigger.active {
@@ -412,9 +417,6 @@
 
 .status {
 	display: none;
-	margin-top: 4.1rem;
-	padding-left: 1rem;
-	text-align: left;
 
 	li {
 		margin-bottom: 2.2rem;

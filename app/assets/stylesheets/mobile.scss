@@ -454,6 +454,10 @@
 			text-align: left;
 			@include intro-paragraph-mobile;
 		}
+
+		strong {
+			padding-right: 0;
+		}
 	}
 
 	.app-video {
@@ -478,6 +482,11 @@
 	.app-features {
 		li { 
 			@include span-columns(4);
+		}
+
+		.screen-1,
+		.screen-2,
+		.screen-3 {
 			margin-left: 20px;
 		}
 
