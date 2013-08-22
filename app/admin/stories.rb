@@ -35,8 +35,8 @@ ActiveAdmin.register Story do
 
     f.inputs "Needed Items" do
 
-      f.input :items_images_display_type, label: 'Images Display Type', as: :select, collection: StoryItemsDisplayTypes::all
-      f.input :items_title, label: 'Title', as: :select, collection: StoryItemsTitles::all
+      f.input :items_images_display_type, label: 'Images Display Type', as: :select, collection: StoryItemsDisplayTypes::all, include_blank: false
+      f.input :items_title, label: 'Title', as: :select, collection: StoryItemsTitles::all, include_blank: false
 
       f.inputs "First Item" do
         f.input :item1_image, label: 'Image', hint: f.template.image_tag(f.object.item1_image.url, size: "100x100")
