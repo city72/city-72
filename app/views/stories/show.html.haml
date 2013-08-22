@@ -24,7 +24,7 @@
       .main-quote <span id="main_quote">#{@story.quote}</span>
     .needed
       %h3 #{@story.items_title}
-      - if !@story.item3_image.blank?
+      - if @story.items_images_display_type == StoryItemsDisplayTypes::COLUMN_3_SQUARE
         %ul.needed-list
           %li
             = retina_image_tag @story.item1_image
@@ -41,31 +41,31 @@
             %h4 #{@story.item3_subtitle}
             %p &ldquo;#{@story.item3_quote}&rdquo;
             %a{href: "/prepare"} Make a plan
-      - else
-        - if @story.items_images_display_type == StoryItemsDisplayTypes::FULL_BLEED_PHOTOS
-          %ul.needed-list.two-cols.wide-img
-            %li
-              = full_bleed_image_tag @story.item1_image
-              %h4 #{@story.item1_subtitle}
-              %p &ldquo;#{@story.item1_quote}&rdquo;
-              %a{href: "/prepare/supplies"} Gather your supplies
-            %li
-              = full_bleed_image_tag @story.item2_image
-              %h4 #{@story.item2_subtitle}
-              %p &ldquo;#{@story.item2_quote}&rdquo;
-              %a{href: "/connect"} See the app
-        - else
-          %ul.needed-list.two-cols
-            %li
-              = retina_image_tag @story.item1_image
-              %h4 #{@story.item1_subtitle}
-              %p &ldquo;#{@story.item1_quote}&rdquo;
-              %a{href: "/prepare/supplies"} Gather your supplies
-            %li
-              = retina_image_tag @story.item2_image
-              %h4 #{@story.item2_subtitle}
-              %p &ldquo;#{@story.item2_quote}&rdquo;
-              %a{href: "/connect"} See the app
+      - elsif @story.items_images_display_type == StoryItemsDisplayTypes::COLUMN_2_SQUARE
+        %ul.needed-list.two-cols
+          %li
+            = retina_image_tag @story.item1_image
+            %h4 #{@story.item1_subtitle}
+            %p &ldquo;#{@story.item1_quote}&rdquo;
+            %a{href: "/prepare/supplies"} Gather your supplies
+          %li
+            = retina_image_tag @story.item2_image
+            %h4 #{@story.item2_subtitle}
+            %p &ldquo;#{@story.item2_quote}&rdquo;
+            %a{href: "/connect"} See the app
+      - elsif @story.items_images_display_type == StoryItemsDisplayTypes::COLUMN_2_BLEED
+        %ul.needed-list.two-cols.wide-img
+          %li
+            = full_bleed_image_tag @story.item1_image
+            %h4 #{@story.item1_subtitle}
+            %p &ldquo;#{@story.item1_quote}&rdquo;
+            %a{href: "/prepare/supplies"} Gather your supplies
+          %li
+            = full_bleed_image_tag @story.item2_image
+            %h4 #{@story.item2_subtitle}
+            %p &ldquo;#{@story.item2_quote}&rdquo;
+            %a{href: "/connect"} See the app
+          
     .similar
       %h3 Similar to #{@story.person}
       %ul.story-list

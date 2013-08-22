@@ -1,9 +1,10 @@
 module StoryItemsDisplayTypes
-  OBJECT_PHOTOS = "Object_photos"
-  FULL_BLEED_PHOTOS = "Full_bleed_photos"
+  COLUMN_3_SQUARE = "3 columns (square images)"
+  COLUMN_2_SQUARE = "2 columns (square images)"
+  COLUMN_2_BLEED = "2 columns (full bleed images)"
 
   def self.all
-  	return [OBJECT_PHOTOS, FULL_BLEED_PHOTOS]
+  	return [COLUMN_3_SQUARE, COLUMN_2_SQUARE, COLUMN_2_BLEED]
   end
 
   def self.all_to_s
