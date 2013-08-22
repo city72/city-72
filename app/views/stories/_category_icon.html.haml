@@ -1,0 +1,17 @@
+.story-data
+    .story-type
+        - case story.category
+            - when "Tsunami or Flood"
+                %span.icon-disaster-flood
+            - when "Biohazard or Radiation"
+                %span.icon-disaster-radiation
+            - when "Earthquake"
+                %span.icon-disaster-earthquake
+            - when "Hurricane or Tornado"
+                %span.icon-disaster-hurricane
+            - when "Terrorist Atack"
+                %span.icon-disaster-terrorist
+            - when "Connection Story"
+                %span.icon-disaster-connection
+            - when "Other Emergency"
+                %span.icon-disaster-other

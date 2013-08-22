@@ -15,7 +15,7 @@
         %h2
           %span#name #{@story.person}
         .story-main-details
-          %span.kind-of Crisis Survivor,
+          %span.kind-of #{@story.person_type},
           %span.story-disaster#disaster #{@story.event}
         %strong.story-location #{@story.location}, #{@story.date}
         .story-description
@@ -44,8 +44,6 @@
       - else
         - if @story.items_images_display_type == StoryItemsDisplayTypes::FULL_BLEED_PHOTOS
           %ul.needed-list.two-cols.wide-img
-        - else
-          %ul.needed-list.two-cols
             %li
               = full_bleed_image_tag @story.item1_image
               %h4 #{@story.item1_subtitle}
@@ -53,6 +51,18 @@
               %a{href: "/prepare/supplies"} Gather your supplies
             %li
               = full_bleed_image_tag @story.item2_image
+              %h4 #{@story.item2_subtitle}
+              %p &ldquo;#{@story.item2_quote}&rdquo;
+              %a{href: "/connect"} See the app
+        - else
+          %ul.needed-list.two-cols
+            %li
+              = retina_image_tag @story.item1_image
+              %h4 #{@story.item1_subtitle}
+              %p &ldquo;#{@story.item1_quote}&rdquo;
+              %a{href: "/prepare/supplies"} Gather your supplies
+            %li
+              = retina_image_tag @story.item2_image
               %h4 #{@story.item2_subtitle}
               %p &ldquo;#{@story.item2_quote}&rdquo;
               %a{href: "/connect"} See the app
@@ -65,9 +75,24 @@
               .quote-dialog
                 #{ related_story.quote }
               = retina_image_tag related_story.video_image
+              / It should use a partial!
               .story-data
                 .story-type
-                  %span.icon-disaster-hurricane
+                  - case related_story.category
+                  - when "Tsunami or Flood"
+                    %span.icon-disaster-flood
+                  - when "Biohazard or Radiation"
+                    %span.icon-disaster-radiation
+                  - when "Earthquake"
+                    %span.icon-disaster-earthquake
+                  - when "Hurricane or Tornado"
+                    %span.icon-disaster-hurricane
+                  - when "Terrorist Atack"
+                    %span.icon-disaster-terrorist
+                  - when "Connection Story"
+                    %span.icon-disaster-connection
+                  - when "Other Emergency"
+                    %span.icon-disaster-other
                 %h5 #{ related_story.person }
                 %p #{ related_story.location }
 
