@@ -11,9 +11,6 @@ class HomeController < StaticContentController
     @citizen_feed = CitizenFeed.first
   end
 
-  def em_home_tour
-  end
-
   def connect
   end
 
