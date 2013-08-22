@@ -29,6 +29,7 @@
 		display: inline-block;
 		position: relative;
 		padding-right: 1em;
+		padding-left: 1.5em;
 	}
 
 	a:hover {
@@ -42,6 +43,15 @@
 		font-family: 'sf72-icons';
 		content: 's';
 		font-size: 0.7em;
+	}
+
+	a:before {
+		position: absolute;
+		left: 0;
+		top: -0.3em;
+		font-family: 'sf72-icons';
+		content: 'q';
+		font-size: 1.3em;
 	}
 }
 
