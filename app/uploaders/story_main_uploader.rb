@@ -6,14 +6,14 @@ class StoryMainUploader < CarrierWave::Uploader::Base
 
   process :convert => 'png'
 
-  process :resize_to_fill => [600, 380]
+  process :resize_and_pad => [600, 380]
 
   version :common do
-	process :resize_to_fill => [300, 190]  	
+	process :resize_and_pad => [300, 190]  	
   end
 
   version :retina do
-  	process :resize_to_fill => [600, 380]
+  	process :resize_and_pad => [600, 380]
   end
 
 end
