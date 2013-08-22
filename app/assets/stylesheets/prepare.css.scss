@@ -11,6 +11,10 @@
 	color: $highlight;
 }
 
+.prepare .main-intro {
+	margin-bottom: -0.6rem;
+}
+
 .prepare .main-intro p {
 	width: 100%;
 }
@@ -243,7 +247,7 @@ a.checklist:before {
 
 .talk-to-friends {
 	@include retina-image(/assets/static/prepare-sf72, 300px 300px, jpg);
-	background-position: right 0;
+	background-position: 43.5rem 0;
 	background-repeat: no-repeat;
 	margin-top: 4.8rem;
 	background-size: 200px;
