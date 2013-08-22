@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-quick-guide, .icon-sms, .icon-fuel, .icon-close, .icon-twitter-big, .icon-twitter-big-on, .icon-map-on, .icon-disaster-other, .icon-disaster-connection, .icon-disaster-terrorist, .icon-disaster-hurricane, .icon-disaster-earthquake, .icon-disaster-radiation, .icon-disaster-flood, .icon-pdf, .icon-map-marker, .icon-arrow, .icon-mail, .icon-print, .icon-share-fb, .icon-share-twitter, .icon-sf72, .icon-refresh, .icon-unfold, .icon-dropdown, .icon-close-small, .icon-logo-sf72, .icon-menu-mobile, .icon-map-tips, .icon-alert, .icon-transport, .icon-info, .icon-about-tooltip, .icon-app-tooltip {
+.icon-quick-guide, .icon-sms, .icon-fuel, .icon-close, .icon-twitter-big, .icon-twitter-big-on, .icon-map-on, .icon-disaster-other, .icon-disaster-connection, .icon-disaster-terrorist, .icon-disaster-hurricane, .icon-disaster-earthquake, .icon-disaster-radiation, .icon-disaster-flood, .icon-pdf, .icon-map-marker, .icon-arrow, .icon-mail, .icon-print, .icon-share-fb, .icon-share-twitter, .icon-sf72, .icon-refresh, .icon-unfold, .icon-dropdown, .icon-close-small, .icon-logo-sf72, .icon-menu-mobile, .icon-map-tips, .icon-alert, .icon-transport, .icon-info, .icon-about-tooltip, .icon-app-tooltip, .icon-manifesto {
 	font-family: 'sf72-icons';
 	speak: none;
 	font-style: normal;
@@ -138,4 +138,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon-app-tooltip:before {
 	content: "\38";
+}
+.icon-manifesto:before {
+	content: "\39";
 }

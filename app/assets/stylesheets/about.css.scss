@@ -29,7 +29,7 @@
 		top: 1rem;
 		left: 0;
 		font-family: "sf72-icons";
-		content:'a';
+		content:'9';
 		font-size: 1.5rem;
 	}
 }
@@ -216,9 +216,18 @@
 	.download-manifesto a{
 		display: block;
 		padding-top: 2rem;
-		background: url(/assets/static/download.png) no-repeat top left;
 		background-size: 50px;
 		color: $highlight;
+		position: relative;
+	}
+	
+	.download-manifesto a:after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-family: "sf72-icons";
+		content:'9';
+		font-size: 1.5rem;
 	}
 }
 
