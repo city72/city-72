@@ -38,20 +38,28 @@
 	box-shadow:         0 1px 1px 1px #ccc;
 }
 
-.switch-on {
+.admin-btn.switch-on {
 	background: #f15a24 !important;
 }
 
-.switch-on:hover {
+.admin-btn.switch-on:hover {
 	background: #ef4a11 !important;
 }
 
-.switch-off {
+.admin-btn.switch-off {
 	background: #f7931e !important;
 }
 
-.switch-off:hover {
+.admin-btn.switch-off:hover {
 	background: #ff9b24 !important;
+}
+
+.admin-btn.black-btn {
+	background: #222 !important;
+}
+
+.admin-btn.black-btn:hover {
+	background: #000 !important;
 }
 
 #modal-panel h2 {

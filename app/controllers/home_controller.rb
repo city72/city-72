@@ -3,7 +3,7 @@ require 'mandrill'
 class HomeController < StaticContentController
   
   def index
-    if is_crisis_mode
+    if CurrentMode.isCrisisMode
       redirect_to em_home_path
     else
       redirect_to home_path
@@ -14,7 +14,7 @@ class HomeController < StaticContentController
   end
 
   def em_home
-    @mode = Mode.all.first
+    @mode = CurrentMode.getCurrentMode
     @citizen_feed = CitizenFeed.first
   end
 
@@ -47,9 +47,4 @@ class HomeController < StaticContentController
 
   private
   
-  def is_crisis_mode
-    Mode.first.em_mode
-  end
-
-
 end
