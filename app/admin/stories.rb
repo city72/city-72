@@ -6,7 +6,7 @@ ActiveAdmin.register Story do
 		selectable_column
 		column :video_image do |story|
 			if story.video_image.to_s != ""
-				retina_image_tag story.video_image
+				image_tag(story.video_image.url)
 			end
 		end
 		column :person
