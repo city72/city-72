@@ -63,7 +63,7 @@
 }
 
 .bx-controls-direction a.bx-prev:before { 
-	-webkit-transform: rotate(180deg);
+	@include transform(rotate(180deg));
 }
 
 .bx-controls-direction a:hover,
