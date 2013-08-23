@@ -23,17 +23,32 @@
     .em-quick-guide
       .wrapper
         %h3 What should I do?
-        %ol.quick-guide
-          %li
-            %h2 Drop, cover and hold on.
-            %p Drop down and get under a strong table. If you are not near a table, drop against an interior wall and cover your head and neck with your arms. Stay away from windows.
-          %li
-            %h2 Stay put.
-            %p Whether you’re in a car, bed, or public place, stay put and wait until the shaking stops. If you’re outdoors, steer clear of wires or falling objects. The only time not to stay put? If you’re near the coast in an earthquake, immediately go to high ground, as tsunamis often follow.
+        - if !@mode.em_mode
+          %ol.quick-guide
+            %li
+              %h2 Drop, cover and hold on.
+              %p Drop down and get under a strong table. If you are not near a table, drop against an interior wall and cover your head and neck with your arms. Stay away from windows.
+            %li
+              %h2 Stay put.
+              %p Whether you’re in a car, bed, or public place, stay put and wait until the shaking stops. If you’re outdoors, steer clear of wires or falling objects. The only time not to stay put? If you’re near the coast in an earthquake, immediately go to high ground, as tsunamis often follow.
 
-          %li
-            %h2 Stay calm.
-            %p Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.
+            %li
+              %h2 Stay calm.
+              %p Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.
+        - else
+          %ol.quick-guide
+            - if !@mode.recommendation_1_title.empty?
+              %li
+                %h2 #{@mode.recommendation_1_title}
+                %p #{@mode.recommendation_1_text}
+            - if !@mode.recommendation_2_title.empty?
+              %li
+                %h2 #{@mode.recommendation_2_title}
+                %p #{@mode.recommendation_2_text}
+            - if !@mode.recommendation_3_title.empty?
+              %li
+                %h2 #{@mode.recommendation_3_title}
+                %p #{@mode.recommendation_3_text}
   .map-container#mobile-maps
     .wrapper
       .map-heading
