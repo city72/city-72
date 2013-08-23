@@ -222,10 +222,10 @@
 }
 
 .slider.quick-guide {
+	-webkit-font-smoothing: antialiased;
 
 	li {
-		margin: 1.8rem 3.4rem;
-		padding-right: 7.5rem;
+		padding: 1.8rem 10.9rem 1.8rem 10.9rem;
 		width: 51rem;
 		height: 13rem;
 	}
@@ -244,6 +244,7 @@
 
 	p {
 		line-height: 1.7rem;
+		color: #777;
 	}
 
 }

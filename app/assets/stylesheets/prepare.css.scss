@@ -615,31 +615,37 @@ a.checklist:before {
 		color: $highlight-dark;
 	}
 
-  	li.active:before,
-  	li:hover:before {
-	    content: ' ';
-	    border-color: #C2C2C2 transparent transparent;
-	    border-style: solid;
-	    border-width: 14px;
-	    position: absolute;
-	    bottom: -27px;
-	    left: 50%;
-	    margin-left: -14px;
+	li.active:before,
+  	li:hover:before,
+  	li.active:after,
+	li:hover:after {
+		top: 59px;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
 	}
 
 	li.active:after,
 	li:hover:after {
-	    content: ' ';
-	    border-color: #FFF transparent transparent;
-	    border-style: solid;
-	    border-width: 13px;
-	    position: absolute;
-	    bottom: -24px;
-	    left: 50%;
-		margin-left: -13px;
+		border-color: rgba(255, 255, 255, 0);
+		border-top-color: #FFFFFF;
+		border-width: 14px;
+		left: 50%;
+		margin-left: -14px;
+	}
+
+	li.active:before,
+  	li:hover:before {
+		border-color: rgba(44, 44, 44, 0);
+		border-top-color: #9B9B9B;
+		border-width: 15px;
+		left: 50%;
+		margin-left: -15px;
 	}
 }
-
 
 .action-bar .list-download {
 	@include span-columns(3.2);
