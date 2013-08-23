@@ -8,15 +8,16 @@ $(->
 		_confirmPanel: ->
 			$('#confirm-off-panel').modal()
 
-		_emptyForm: ->
-			$('input[name="mode[title]"]').val('')
-			$('input[name="mode[text]"]').val('')
-			$('input[name="mode[recommendation_1_title]"]').val('')
-			$('textarea[name="mode[recommendation_1_text]"]').val('')
-			$('input[name="mode[recommendation_2_title]"]').val('')
-			$('textarea[name="mode[recommendation_2_text]"]').val('')
-			$('input[name="mode[recommendation_3_title]"]').val('')
-			$('textarea[name="mode[recommendation_3_text]"]').val('')
+		_fillFormWithLastCrisisInfo: ->
+			$('input[name="mode[title]"]').val($('.lastcrisis-title').text())
+			$('input[name="mode[text]"]').val($('.lastcrisis-text').text())
+			$('input[name="mode[recommendation_1_title]"]').val($('.lastcrisis-recommendation_1_title').text())
+			$('textarea[name="mode[recommendation_1_text]"]').val($('.lastcrisis-recommendation_1_text').text())
+			$('input[name="mode[recommendation_2_title]"]').val($('.lastcrisist-recommendation_2_title').text())
+			$('textarea[name="mode[recommendation_2_text]"]').val($('.lastcrisis-recommendation_2_text').text())
+			$('input[name="mode[recommendation_3_title]"]').val($('.lastcrisis-recommendation_3_title').text())
+			$('textarea[name="mode[recommendation_3_text]"]').val($('.lastcrisis-recommendation_3_text').text())
+
 
 		_fillFormWithCurrentInfo: ->
 			$('input[name="mode[title]"]').val($('.current-title').text())
@@ -34,7 +35,7 @@ $(->
 		initializeTurnOnBtn: ->
 			$('#turn-on-btn').click ->
 				Admin._setFormAction 'switch-on'
-				Admin._emptyForm()
+				Admin._fillFormWithLastCrisisInfo()
 				Admin._showPanel()
 
 		initializeTurnOffBtn: ->

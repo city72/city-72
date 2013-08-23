@@ -6,4 +6,8 @@ class Mode < ActiveRecord::Base
 
 	validates_uniqueness_of :em_mode
 
+	def self.last_crisis_mode_info
+		Mode.where(em_mode: true).first
+	end
+
 end

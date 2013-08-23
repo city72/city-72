@@ -36,6 +36,7 @@ ActiveAdmin.register Mode do
 		def edit
 			@isCrisisMode = CurrentMode.isCrisisMode
 			@mode = CurrentMode.getCurrentMode
+			@lastCrisisModeInfo = Mode.last_crisis_mode_info
 			@feed = CitizenFeed.first
 		end
     end
