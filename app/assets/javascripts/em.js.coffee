@@ -15,13 +15,6 @@ $( ->
         $('a.show-quick-guide').css('display', 'block')
         $(this).css('display', 'none')
 
-    # $.get(window.location.origin + "/em",
-    #     (response) ->
-    #         if response.em_mode
-    #             $('.alert-info h3').text(response.title)
-    #             $('.alert-info p').text(response.text)
-    # )
-
     mobileSections = [
         { href: '#mobile-maps' },
         { href: '#mobile-quick-guide' },
@@ -57,9 +50,7 @@ $( ->
 
     showIntro = ->
         if !isMobile()
-            
             startJoyride()
-
             $('.em-preview-modal').show()
             iframe = $("#video-opening")[0]
             player = $f(iframe)
