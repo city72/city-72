@@ -1,3 +1,8 @@
+.mode-config.header {
+	margin:0 !important;
+	padding: 0 !important;
+}
+
 .modal a.close-modal {
 	background: url(/images/close.png)
 }
@@ -12,39 +17,41 @@
 
 .admin-btn {
 	display: inline-block !important;
-	padding:0 10px !important;
+	padding:0 15px !important;
 	line-height: 40px !important;
-	color:#000 !important;
+	color:#fff !important;
 	text-shadow: none !important;
 	-webkit-font-smoothing: none !important;
-	-webkit-border-radius: 3px !important;
-	-moz-border-radius: 3px !important;
-	border-radius: 3px !important;
-	font-weight: normal !important;
-	font-size: 14px !important;
-	border: 2px solid !important;
+	font-size: 18px !important;
 	cursor: pointer !important;
 	text-decoration: none !important;
+	font-weight: bold !important;
+	border: 0 !important;
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
 }
 
-.orange-btn {
-	background: #ff9900 !important;
-	color: #fff !important;
-	border-color: #de8300 !important;
+.admin-btn:hover {
+	-moz-box-shadow:    0 1px 1px 1px #ccc;
+	-webkit-box-shadow: 0 1px 1px 1px #ccc;
+	box-shadow:         0 1px 1px 1px #ccc;
 }
 
-.orange-btn:hover {
-	background: #ffa92e !important;
+.switch-on {
+	background: #f15a24 !important;
 }
 
-.black-btn {
-	background: #333 !important;
-	color:#fff !important;
-	border-color: #000 !important;
+.switch-on:hover {
+	background: #ef4a11 !important;
 }
 
-.black-btn:hover {
-	background: #444 !important;
+.switch-off {
+	background: #f7931e !important;
+}
+
+.switch-off:hover {
+	background: #ff9b24 !important;
 }
 
 #modal-panel h2 {
@@ -119,4 +126,111 @@
 
 .clear {
 	clear: both;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.crisis-current-info, .crisis-control {
+	width:600px;
+	padding:10px !important;
+	margin:10px !important;
+}
+
+.crisis-current-info {
+	width:600px;
+}
+
+.crisis-control {
+	width:300px;
+	background: #fafafa;
+	text-align: center;
+}
+
+.crisis-control ul {
+	padding: 15px 0 0 20px !important;
+	text-align: left;
+}
+
+.crisis-current-info h2, h3 {
+	margin:0 !important;
+	padding: 0 !important;
+	font-weight: bold !important;
+}
+
+.crisis-current-info h3 {
+	font-size: 14px !important;
+	color:#999 !important;
+}
+
+.crisis-current-info h2 {
+	margin-top: 20px !important;
+	font-size: 16px !important;
+	color:#888 !important;
+}
+
+.crisis-current-info .field {
+	padding-top:5px;
+}
+
+.crisis-current-info .field div {
+	margin: 8px 0 12px 0;
+	padding: 3px 5px;
+	border: 1px solid #d6d6d6;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #939393;
+}
+
+.crisis-current-info .field h3 span {
+	font-weight: normal !important;
+}
+
+#active_admin_content {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.mode-config.header, .mode-config.content {
+	padding: 0 30px !important;
+}
+
+.mode-config.header {
+	padding: 12px 0 0 45px !important;
+	height:68px;
+	font-weight: bold !important;
+}
+
+.mode-config.header.crisis-mode {
+	background: #f15a24;
+}
+
+.mode-config.header h1 {
+	font-weight: bold !important;
+}
+
+.mode-config.header.crisis-mode h1, .mode-config.header.crisis-mode span {
+	color: #fff !important;
+}
+
+.mode-config.header.preview-mode {
+	background: #e7e8e8;
+}
+
+.mode-config.header.preview-mode h1 {
+	color: #f7931e !important;
+}
+
+.mode-config.header.preview-mode span {
+	color: #939393 !important;
+}
+
+.mode-config.content {
+	padding-top: 20px !important;
 }
