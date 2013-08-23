@@ -45,6 +45,24 @@
             %br/
           %input#widget_id{:name => "feed[widget_id]", :size => "30", :type => "text", :value => @feed.widget_id}/
           .info Go to <a href="https://twitter.com/settings/widgets">https://twitter.com/settings/widgets</a>, create your widget and paste here the ID (you can get it from the generated code, right below preview area)
+        .form-section.what-should-i-do
+          %h2
+            .circle 3
+            What should I do?
+            .clear
+            .field
+              %h3 Recommendation #1
+              %input{name: 'mode[recommendation_1_title]', type: 'text', value: @mode.recommendation_1_title}
+              %textarea{name: 'mode[recommendation_1_text]'} #{@mode.recommendation_1_text}
+            .field
+              %h3 Recommendation #2
+              %input{name: 'mode[recommendation_2_title]', type: 'text', value: @mode.recommendation_2_title}
+              %textarea{name: 'mode[recommendation_2_text]'} #{@mode.recommendation_2_text}
+            .field
+              %h3 Recommendation #3
+              %input{name: 'mode[recommendation_3_title]', type: 'text', value: @mode.recommendation_3_title}
+              %textarea{name: 'mode[recommendation_3_text]'} #{@mode.recommendation_3_text}
+            .clear
         .actions
           %input{:name => "commit", :type => "submit", :value => "Update Crisis Mode", :class => 'admin-btn orange-btn'}/
 
