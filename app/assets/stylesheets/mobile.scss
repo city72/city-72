@@ -188,7 +188,7 @@
 
 		.mobile-link {
 			display: block;
-			font-family: "HelveticaNeueLT-Medium";
+			font-family: $font-bold;
 			font-size: 2.7rem;
 			color: #FFF;
 			margin: -4.3rem 0 2rem;
@@ -876,6 +876,11 @@
 				text-align: left;
 				font-family: $font-regular;
 				@include intro-paragraph-mobile;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
 			}
 		}
 
