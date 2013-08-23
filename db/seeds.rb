@@ -2,9 +2,11 @@ Story.delete_all
 Kit.delete_all
 Item.delete_all
 
-admin_user = AdminUser.where(email: 'admin@sf72.org').first
-
-AdminUser.create!(email: 'admin@sf72.org', password: '123456') unless admin_user
+if AdminUser.create(email: 'admin@sf72.org', password: '123456')
+  puts "Admin user created"
+else
+  puts "Admin user already exist"
+end
 
 story_data = {
   video_url: 'http://player.vimeo.com/video/5772729',
@@ -31,7 +33,11 @@ story_data = {
   items_title: StoryItemsTitles::HOW_I_AM_PREPARED
 }
 
-Story.create!(story_data)
+if Story.create(story_data)
+  puts "Story created"
+else
+  puts "Story already exist"
+end
 
 stories = [
   ['Jim', PersonTypes::DISASTER_SURVIVOR, 'New Orleans', 'Jan 2005', 'Hurricane Katrina', StoryCategories::HURRICANE_OR_TORNADO,
@@ -69,47 +75,47 @@ stories.each do |person, person_type, location, date, event, category, remote_vi
   else
     story_data[:remote_item3_image_url] = 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg'
   end
-  Story.create!(story_data)
+  Story.create(story_data)
 end
 
-Kit.create!(
+Kit.create(
   title: 'Adventurer Kit',
   url: 'http://www.amazon.com/Rothco-Deluxe-Adventurer-Survival-Knife/dp/B002PEZH3O/ref=sr_1_2?ie=UTF8&qid=1374187984&sr=8-2&keywords=survival+kits',use_case: 'aewr',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
   )
-Kit.create!(
+Kit.create(
   title: 'Lifeline Kit',
   url: 'http://www.amazon.com/Lifeline-29-Piece-Ultralight-Survival-Kit/dp/B002KV9PNA/ref=sr_1_4?ie=UTF8&qid=1374187984&sr=8-4&keywords=survival+kits', use_case: 'aewr',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703486/food_bgf0f8.jpg"
   )
-Kit.create!(
+Kit.create(
   title: 'Emergency Kit',
   url: 'http://www.amazon.com/Quakehold-70280-Grab-n-Go-Emergency-2-Person/dp/B000FJQQVI/ref=sr_1_1?ie=UTF8&qid=1374187984&sr=8-1&keywords=survival+kits', use_case: 'aewr',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/emergency-survival-kit_avucbi.jpg"
   )
 
-Item.create!(
+Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Warm Clothes',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid2_dxovpo.jpg"
   )
 
-Item.create!(
+Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Bottled Water',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/water_y78yt0.jpg"
   )
 
-Item.create!(
+Item.create(
   category: Categories::USEFUL.to_s,
   title: 'First Aid Kit',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg"
   )
 
-Item.create!(
+Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'First Aid Kit',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
@@ -118,8 +124,10 @@ Item.create!(
 
 CitizenFeed.delete_all
 
-CitizenFeed.create!(widget_id: "364391164582969346")
+CitizenFeed.create(widget_id: "364391164582969346")
 
 Mode.delete_all
 
-Mode.create!(em_mode: false, title: 'Simulation: 8.3 earthquake strikes the San Andreas Fault.', text: 'Thursday at 5:56 am. The epicenter was near Santa Cruz, CA.')
+Mode.create(em_mode: false, title: 'Simulation: 8.3 earthquake strikes the San Andreas Fault.', text: 'Thursday at 5:56 am. The epicenter was near Santa Cruz, CA.')
+
+CurrentMode.create id: 1, mode: false
