@@ -75,59 +75,123 @@ stories.each do |person, person_type, location, date, event, category, remote_vi
   else
     story_data[:remote_item3_image_url] = 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg'
   end
-  Story.create(story_data)
+  if Story.create(story_data)
+    puts "Story created"
+  else
+    puts "Story already exist"
+  end
 end
 
-Kit.create(
+status = Kit.create(
   title: 'Adventurer Kit',
   url: 'http://www.amazon.com/Rothco-Deluxe-Adventurer-Survival-Knife/dp/B002PEZH3O/ref=sr_1_2?ie=UTF8&qid=1374187984&sr=8-2&keywords=survival+kits',use_case: 'aewr',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
   )
-Kit.create(
+if status 
+  puts "Kit created"
+else
+  puts "Kit already exist"
+end
+
+status = Kit.create(
   title: 'Lifeline Kit',
   url: 'http://www.amazon.com/Lifeline-29-Piece-Ultralight-Survival-Kit/dp/B002KV9PNA/ref=sr_1_4?ie=UTF8&qid=1374187984&sr=8-4&keywords=survival+kits', use_case: 'aewr',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703486/food_bgf0f8.jpg"
   )
-Kit.create(
+if status 
+  puts "Kit created"
+else
+  puts "Kit already exist"
+end
+
+status = Kit.create(
   title: 'Emergency Kit',
   url: 'http://www.amazon.com/Quakehold-70280-Grab-n-Go-Emergency-2-Person/dp/B000FJQQVI/ref=sr_1_1?ie=UTF8&qid=1374187984&sr=8-1&keywords=survival+kits', use_case: 'aewr',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/emergency-survival-kit_avucbi.jpg"
   )
+if status 
+  puts "Kit created"
+else
+  puts "Kit already exist"
+end
 
-Item.create(
+status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Warm Clothes',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid2_dxovpo.jpg"
   )
+if status 
+  puts "Item created"
+else
+  puts "Item already exist"
+end
 
-Item.create(
+status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Bottled Water',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/water_y78yt0.jpg"
   )
 
-Item.create(
+if status 
+  puts "Item created"
+else
+  puts "Item already exist"
+end
+
+status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'First Aid Kit',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg"
   )
 
-Item.create(
+if status 
+  puts "Item created"
+else
+  puts "Item already exist"
+end
+
+status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'First Aid Kit',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg"
   )
 
+if status 
+  puts "Item created"
+else
+  puts "Item already exist"
+end
+
 CitizenFeed.delete_all
 
-CitizenFeed.create(widget_id: "364391164582969346")
+if CitizenFeed.create(widget_id: "364391164582969346")
+  puts "CitizenFeed created"
+else
+  puts "CitizenFeed already exist"
+end
 
 Mode.delete_all
 
-Mode.create(em_mode: false, title: 'Simulation: 8.3 earthquake strikes the San Andreas Fault.', text: 'Thursday at 5:56 am. The epicenter was near Santa Cruz, CA.')
+status = Mode.create(id: 1, em_mode: false, title: 'Simulation: 8.3 earthquake strikes the San Andreas Fault.', text: 'Thursday at 5:56 am. The epicenter was near Santa Cruz, CA.')
 
-CurrentMode.create id: 1, mode: false
+if status
+  puts "Preview mode created"
+else
+  puts "Preview mode already exist"
+end
+
+status = Mode.create(em_mode: true, title: 'Simulation: 8.3 earthquake strikes the San Andreas Fault.', text: 'Thursday at 5:56 am. The epicenter was near Santa Cruz, CA.')
+
+if status
+  puts "Crisis mode created"
+else
+  puts "Crisis mode already exist"
+end
+
+if CurrentMode.count < 1
+  puts "CurrentMode created" if CurrentMode.create mode: false 
+end

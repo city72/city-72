@@ -9,7 +9,7 @@
     %script{:src => "/assets/application.js?body=1", :type => "text/javascript"}
     = csrf_meta_tag
   %body
-    -if @mode.em_mode
+    -if @isCrisisMode
       .mode-config.header.crisis-mode
         %span CURRENTLY
         %h1 In Crisis Mode
@@ -23,29 +23,29 @@
       .crisis-current-info.left
         .field
           %h3 Title
-          %div #{@mode.title}
+          %div.current-title #{@mode.title}
         .field
           %h3 Description
-          %div #{@mode.text}
+          %div.current-text #{@mode.text}
         %h2 What to do
         .field
           %h3 
             Recommendation #1
-            %span #{@mode.recommendation_1_title}
-          %div #{@mode.recommendation_1_text}
+            %span.current-recommendation_1_title #{@mode.recommendation_1_title}
+          %div.current-recommendation_1_text #{@mode.recommendation_1_text}
         .field
           %h3 
             Recommendation #2
-            %span #{@mode.recommendation_2_title}
-          %div #{@mode.recommendation_2_text}
+            %span.current-recommendation_2_title #{@mode.recommendation_2_title}
+          %div.current-recommendation_2_text #{@mode.recommendation_2_text}
         .field
           %h3 
             Recommendation #3
-            %span #{@mode.recommendation_3_title}
-          %div #{@mode.recommendation_3_text}
+            %span.current-recommendation_3_title #{@mode.recommendation_3_title}
+          %div.current-recommendation_3_text #{@mode.recommendation_3_text}
 
       .crisis-control.left
-        - if @mode.em_mode
+        - if @isCrisisMode
           %button#turn-off-btn.admin-btn.switch-off Switch to Preview Mode
           %ul
             %li Returns to normal home page, with SF72 video
@@ -60,14 +60,12 @@
       .clear
       %button#update_crisis_info.admin-btn.switch-on Update info
 
-
-
       #modal-panel.modal
         %form#edit_mode{"accept-charset" => "UTF-8", :action => "/admin/modes/1", :method => "post", :novalidate => "novalidate"}
           %input{:name => "utf8", :type => "hidden", :value => "✓"}/
           %input{:name => "_method", :type => "hidden", :value => "put"}/
           %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}/
-          %input{ name: "mode[em_mode]", type: "hidden", value: "1", checked: @mode.em_mode }
+          %input{ name: "mode_action", type: "hidden", value: "update"}
           .form-section.describe-incident
             %h2
               .circle 1 
@@ -108,7 +106,7 @@
             %input#widget_id{:name => "feed[widget_id]", :size => "30", :type => "text", :value => @feed.widget_id}/
             .info Go to <a href="https://twitter.com/settings/widgets">https://twitter.com/settings/widgets</a>, create your widget and paste here the ID (you can get it from the generated code, right below preview area)
           .actions
-            %input{:name => "commit", :type => "submit", :value => "Update Crisis Mode", :class => 'admin-btn switch-on'}/
+            %input{:name => "commit", :type => "submit", :value => "Update Info", :class => 'admin-btn switch-on'}/
 
       #confirm-off-panel.modal
         .message Are you sure you want to switch to Preview Mode?
@@ -116,6 +114,6 @@
           %input{:name => "utf8", :type => "hidden", :value => "✓"}/
           %input{:name => "_method", :type => "hidden", :value => "put"}/
           %input{:name => "authenticity_token", :type => "hidden", :value => form_authenticity_token}/
-          %input{name: "mode[em_mode]", type: "hidden", value: "0"}
+          %input{ name: "mode_action", type: "hidden", value: "switch"}
           %input{name: "commit", type: "submit", value: "Switch to Preview Mode", :class => 'admin-btn switch-off'}
           = link_to "Cancel", "#close-modal", rel: "modal:close", class: "admin-btn black-btn"
