@@ -6,6 +6,10 @@
 	padding: 20px;
 }
 
+#modal-panel {
+	width:750px;
+}
+
 .admin-btn {
 	display: inline-block !important;
 	padding:0 10px !important;
@@ -92,4 +96,27 @@
 	font-size: 20px !important;
 	font-weight: bold !important;
 	color:#444 !important;
+}
+
+.form-section h3 {
+	font-size:15px !important;
+	margin:10px 0 0 0 !important;
+	padding:0 !important;
+	font-weight: normal !important;
+}
+
+.form-section textarea {
+	width: 95% !important;
+	height: 75px !important;
+	font-size: 12px !important;
+}
+
+.what-should-i-do .field {
+	float: left;
+	width: 230px;
+	margin-right:15px;
+}
+
+.clear {
+	clear: both;
 }

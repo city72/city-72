@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130822174340) do
+ActiveRecord::Schema.define(:version => 20130823141706) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -73,10 +73,16 @@ ActiveRecord::Schema.define(:version => 20130822174340) do
 
   create_table "modes", :force => true do |t|
     t.boolean  "em_mode"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "title"
     t.string   "text"
+    t.string   "recommendation_1_title"
+    t.text     "recommendation_1_text"
+    t.string   "recommendation_2_title"
+    t.text     "recommendation_2_text"
+    t.string   "recommendation_3_title"
+    t.text     "recommendation_3_text"
   end
 
   create_table "simple_captcha_data", :force => true do |t|
