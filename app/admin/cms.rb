@@ -7,7 +7,7 @@ ActiveAdmin.register_page "CMS" do
     menu parent: "CMS", url: '/admin/items'
   end
 
-  ActiveAdmin.register_page "Manage Kits" do
+  ActiveAdmin.register_page "Manage Items to Share" do
     menu parent: "CMS", url: '/admin/kits'
   end
 end

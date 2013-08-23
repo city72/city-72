@@ -14,9 +14,12 @@
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
-//   body.active_admin {
-//      .status_tag { background: #6090DB; }
-//   }
+	body.active_admin {
+    	img {
+			max-width: 150px;
+			max-height: 120px;
+		}
+	}
 //
 // Notice that Active Admin CSS rules are nested within a
 // 'body.active_admin' selector to prevent conflicts with

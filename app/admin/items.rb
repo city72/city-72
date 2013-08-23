@@ -14,7 +14,7 @@ ActiveAdmin.register Item do
     selectable_column
     column :image do |item|
       if item.image.to_s != ""
-        image_tag(item.image_url, size: "100x100")
+        image_tag(item.image_url)
       end
     end
     column :title
@@ -26,8 +26,8 @@ ActiveAdmin.register Item do
     f.inputs "Item Details" do
       f.input :title
       f.input :category, as: :radio, collection: Categories::all
-      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url, size: "100x100")
-      f.input :use_case
+      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
+      f.input :use_case, label: "Rollover"
     end
     f.actions
   end

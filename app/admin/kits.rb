@@ -6,7 +6,7 @@ ActiveAdmin.register Kit do
     selectable_column
     column :image do |kit|
       if kit.image.to_s != ""
-        image_tag(kit.image_url, size: "100x100")
+        image_tag(kit.image_url)
       end
     end
     column :title
@@ -14,11 +14,11 @@ ActiveAdmin.register Kit do
   end
 
   form do |f|
-    f.inputs "Item Details" do
+    f.inputs "Items to Share Details" do
       f.input :title
-      f.input :url, as: :url, label: "Kit URL"
-      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url, size: "100x100")
-      f.input :use_case
+      f.input :url, as: :url, label: "Item URL"
+      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
+      f.input :use_case, label: "Rollover"
     end
     f.actions
   end
