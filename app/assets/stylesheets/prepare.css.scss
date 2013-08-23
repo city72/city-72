@@ -338,13 +338,14 @@ a.checklist:before {
 		.quote-dialog {
 			height: 190px;
 			width: 300px;
-			display: none;
+			opacity: 0;
 			margin-bottom: 1rem;
 			padding: 1rem;
 			font-family: $font-medium;
 			background-color: $highlight;
 			color: #FFF;
-			position: relative;
+			position: absolute;
+			@include transition (opacity 0.2s ease-in);
 
 			.fake-link {
 				display: block;
@@ -367,10 +368,7 @@ a.checklist:before {
 
 		a:hover {
 			div.quote-dialog {
-				display: block;
-			}
-			img {
-				display: none
+				opacity: 1;
 			}
 		}
 	}
@@ -407,28 +405,29 @@ a.checklist:before {
 	color: $highlight-dark;
 }
 
-.story-type span .icon-disaster-hurricane {
+.story-type .icon-disaster-hurricane {
 	padding-left: 0.5rem;
+	font-size: 1.5rem;
 }
 
-.story-type span.icon-disaster-connection {
+.story-type .icon-disaster-connection {
 	color: $highlight;
 	font-size: 1.2rem;
 }
 
-.story-type span .icon-disaster-hurricane {
-	font-size: 1.5rem;
-}
-
-.story-type span .icon-disaster-flood {
+.story-type .icon-disaster-flood {
 	font-size: 1.4rem;
 }
 
-.story-type span .icon-disaster-other {
+.story-type .icon-disaster-other {
 	font-size: 1.5rem;
 }
 
-.story-type span .icon-disaster-radiation {
+.story-type .icon-disaster-earthquake {
+	font-size: 1.5rem;
+}
+
+.story-type .icon-disaster-radiation {
 	font-size: 1.5rem;
 	padding-left: 0.2rem;
 }
@@ -698,7 +697,7 @@ a.checklist:before {
 	margin-bottom: 4.5rem;
 
 	.use-case-dialog {
-		display: none;
+		opacity: 0;
 		width: 300px;
 		height: 250px;
 		margin-bottom: -52px;
@@ -707,7 +706,8 @@ a.checklist:before {
 		font-family: $font-medium;
 		color: #FFF;
 		z-index: 2;
-		position: relative;
+		position: absolute;
+		@include transition (opacity 0.2s ease-in);
 	}
 }
 
@@ -717,10 +717,7 @@ a.checklist:before {
 
 .things-list li:hover {
 	div.use-case-dialog {
-		display: block;
-	}
-	img {
-		display: none
+		opacity: 1;
 	}
 }
 
