@@ -27,7 +27,7 @@ story_data = {
   remote_item2_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
   remote_item3_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
   remote_video_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Hurracane_Sandy_cxijg8.jpg',
-  items_images_display_type: StoryItemsDisplayTypes::OBJECT_PHOTOS,
+  items_images_display_type: StoryItemsDisplayTypes::COLUMN_3_SQUARE,
   items_title: StoryItemsTitles::HOW_I_AM_PREPARED
 }
 
@@ -51,7 +51,7 @@ stories = [
         nil, nil, true],
   ['Brad', PersonTypes::DISASTER_SURVIVOR, 'California', 'Oct 2007', 'California wildfires of 2007', StoryCategories::OTHER_EMERGENCY,
         'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/wildfire_gy1hl6.jpg',
-        StoryItemsDisplayTypes::FULL_BLEED_PHOTOS, StoryItemsTitles::WHAT_SHOULD_I_OFFER]
+        StoryItemsDisplayTypes::COLUMN_2_BLEED, StoryItemsTitles::WHAT_SHOULD_I_OFFER]
 ]
 
 stories.each do |person, person_type, location, date, event, category, remote_video_image_url, items_images_display_type, items_title, only_two_items|
