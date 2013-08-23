@@ -9,7 +9,7 @@
     %script{:src => "/assets/application.js?body=1", :type => "text/javascript"}
     = csrf_meta_tag
   %body
-    %h1 Emergency mode configuration
+    %h1 Crisis mode configuration
     
     - if @mode.em_mode
       %button#update_crisis_info.admin-btn.orange-btn Update info
@@ -46,7 +46,7 @@
           %input#widget_id{:name => "feed[widget_id]", :size => "30", :type => "text", :value => @feed.widget_id}/
           .info Go to <a href="https://twitter.com/settings/widgets">https://twitter.com/settings/widgets</a>, create your widget and paste here the ID (you can get it from the generated code, right below preview area)
         .actions
-          %input{:name => "commit", :type => "submit", :value => "Update Emergency Mode", :class => 'admin-btn orange-btn'}/
+          %input{:name => "commit", :type => "submit", :value => "Update Crisis Mode", :class => 'admin-btn orange-btn'}/
 
     #confirm-off-panel.modal
       .message Are you sure you want to turn off the Crisis mode?
