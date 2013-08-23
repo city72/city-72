@@ -28,7 +28,6 @@ ActiveAdmin.register Story do
     end
 
     f.inputs "Story Details" do
-      f.input :story_header
       f.input :story
       f.input :quote
     end
