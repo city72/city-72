@@ -24,7 +24,7 @@ ActiveAdmin.register Story do
       f.input :location
       f.input :date
       f.input :video_url, hint: 'The URL should follow this format <strong>http://vimeo.com/NNNNNNNN</strong>'.html_safe
-      f.input :video_image, hint: f.template.image_tag(f.object.video_image.url)
+      f.input :video_image, hint: (f.template.image_tag(f.object.video_image.url) unless f.object.video_image.blank?)
     end
 
     f.inputs "Story Details" do
@@ -38,18 +38,18 @@ ActiveAdmin.register Story do
       f.input :items_title, label: 'Title', as: :select, collection: StoryItemsTitles::all, include_blank: false
 
       f.inputs "First Item" do
-        f.input :item1_image, label: 'Image', hint: f.template.image_tag(f.object.item1_image.url)
+        f.input :item1_image, label: 'Image', hint: (f.template.image_tag(f.object.item1_image.url) unless f.object.item1_image.blank?)
         f.input :item1_subtitle, label: 'Subtitle'
         f.input :item1_quote, label: 'Quote'
 
       end
       f.inputs "Second Item" do
-        f.input :item2_image, label: 'Image', hint: f.template.image_tag(f.object.item2_image.url)
+        f.input :item2_image, label: 'Image', hint: (f.template.image_tag(f.object.item2_image.url) unless f.object.item2_image.blank?)
         f.input :item2_subtitle, label: 'Subtitle'
         f.input :item2_quote, label: 'Quote'
       end
       f.inputs "Third Item" do
-        f.input :item3_image, label: 'Image', hint: f.template.image_tag(f.object.item3_image.url)
+        f.input :item3_image, label: 'Image', hint: (f.template.image_tag(f.object.item3_image.url) unless f.object.item3_image.blank?)
         f.input :item3_subtitle, label: 'Subtitle'
         f.input :item3_quote, label: 'Quote'
       end

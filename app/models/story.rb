@@ -20,4 +20,5 @@ class Story < ActiveRecord::Base
 	mount_uploader :item3_image, StoryItemUploader
 
 	validates :category, inclusion: { in: StoryCategories::all_to_s, message: "%{value} is not a valid category" }
+	validates :person, :person_type, :event, :location, :date, :video_url, :video_image, :story, :quote, presence: true
 end
