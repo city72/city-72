@@ -35,7 +35,7 @@ class HomeController < StaticContentController
   end
 
   def supplies
-    @items = Item.all
+    @items = Item.find(:all, order: 'items.order ASC')
     @kits = Kit.all
   end
 

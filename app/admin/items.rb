@@ -27,7 +27,7 @@ ActiveAdmin.register Item do
     f.inputs "Item Details" do
       f.input :title
       f.input :category, as: :radio, collection: Categories::all
-      f.input :order
+      f.input :order, hint: "The item with the smaller number is shown first"
       f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
       f.input :use_case, label: "Rollover"
     end
