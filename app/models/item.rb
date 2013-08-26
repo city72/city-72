@@ -5,6 +5,6 @@ class Item < ActiveRecord::Base
 
   validates :category, inclusion: { in: Categories::all_to_s, message: "%{value} is not a valid category" }
 
-  validates :order, presence: true
+  validates :order, :title, :image, :use_case, presence: true
 
 end
