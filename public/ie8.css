@@ -1,0 +1,36 @@
+.tooltip-content,
+.tooltip:after {
+  visibility: hidden;
+}
+
+.tooltip:before {
+  visibility: visible;
+}
+
+.big-title:hover .tooltip-content,
+.big-title:hover .tooltip:after  {
+  visibility: visible;
+}
+
+.big-title:hover .tooltip:before {
+  visibility: hidden;
+}
+
+.tw-tabs a {
+	color: #B2B2B2;
+}
+
+.tw-tabs a:hover,
+.tw-tabs .active a {
+	color: #FFF;
+}
+
+.story-list li .quote-dialog,
+.things-list li .use-case-dialog {
+	visibility: hidden;
+}
+
+.story-list li a:hover .quote-dialog,
+.things-list li:hover .quote-dialog {
+	visibility: visible;
+}
