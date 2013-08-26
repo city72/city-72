@@ -18,8 +18,7 @@ ActiveAdmin.register Kit, as: 'Item To Share' do
     f.inputs "Items to Share Details" do
       f.input :title
       f.input :url, as: :url, label: "Item URL"
-      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
-      f.input :use_case, label: "Rollover"
+      f.input :image, :as => :file, :hint => (f.template.image_tag(f.object.image.url) unless f.object.image.blank?)
     end
     f.actions
   end
