@@ -1,9 +1,6 @@
 IdeoSf72::Application.routes.draw do
 
-  resources :suscriptions
-  resources :kits
-  resources :items
-  resources :stories
+  resources :stories, only: [:index, :show]
 
   root to: 'home#index'
 
@@ -14,7 +11,6 @@ IdeoSf72::Application.routes.draw do
   
   get "home" => "home#home"
   get "em/home" => "home#em_home"
-  get "em/home_tour" => "home#em_home_tour"
 
   get "connect" => "home#connect"
 

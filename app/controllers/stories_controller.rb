@@ -1,4 +1,6 @@
-class StoriesController < MostlyStaticContentController
+class StoriesController < ApplicationController
+
+  after_filter :static_content
 
   def index
     @stories = Story.all
