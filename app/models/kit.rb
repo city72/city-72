@@ -3,5 +3,7 @@ class Kit < ActiveRecord::Base
 
   mount_uploader :image, KitUploader
 
-  validates :url, :format => URI::regexp(%w(http https))
+  validates :title, :image, presence: true
+  validates :url, :format => URI::regexp(%w(http https)), allow_blank: true
+
 end
