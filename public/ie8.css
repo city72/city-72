@@ -7,6 +7,8 @@
   visibility: visible;
 }
 
+/* OPACITY ISSUE */
+
 .big-title:hover .tooltip-content,
 .big-title:hover .tooltip:after  {
   visibility: visible;
