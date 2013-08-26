@@ -176,7 +176,7 @@ end
 
 Mode.delete_all
 
-status = Mode.create(id: 1, em_mode: false, title: 'Simulation: 8.3 earthquake strikes the San Andreas Fault.', text: 'Thursday at 5:56 am. The epicenter was near Santa Cruz, CA.')
+status = Mode.create(em_mode: false, title: 'Simulation: 8.3 earthquake strikes the San Andreas Fault.', text: 'Thursday at 5:56 am. The epicenter was near Santa Cruz, CA.')
 
 if status
   puts "Preview mode created"

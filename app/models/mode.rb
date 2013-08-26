@@ -1,5 +1,5 @@
 class Mode < ActiveRecord::Base
-	attr_accessible :title, :text, 
+	attr_accessible :title, :text, :em_mode,
 		:recommendation_1_title, :recommendation_1_text, 
 		:recommendation_2_title, :recommendation_2_text,
 		:recommendation_3_title, :recommendation_3_text
