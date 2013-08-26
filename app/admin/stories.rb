@@ -1,5 +1,5 @@
 ActiveAdmin.register Story do
-  menu false
+  menu parent: 'CMS', label: 'Manage Stories'
 	config.paginate = false
 
 	index do

@@ -1,5 +1,5 @@
 ActiveAdmin.register Item do
-  menu false
+  menu parent: 'CMS', label: 'Manage Items'
   config.paginate = false
 
   scope :all
