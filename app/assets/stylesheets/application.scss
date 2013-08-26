@@ -276,6 +276,7 @@ body {
 	font-size: 1.05rem;
 	opacity: 1;
 	@include transition(all 0.3s ease-in);
+	-webkit-font-smoothing: antialiased;
 }
 
 .tooltip:after {

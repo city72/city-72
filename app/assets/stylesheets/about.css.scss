@@ -35,6 +35,7 @@
 		font-family: "sf72-icons";
 		content:'9';
 		font-size: 1.5rem;
+		-webkit-font-smoothing: antialiased;
 	}
 }
 
@@ -126,7 +127,8 @@
 			left: 0;
 			font-family: "sf72-icons";
 			font-size: 2rem;
-			content: "y"
+			content: "y";
+			-webkit-font-smoothing: antialiased;
 		}
 	}
 
@@ -236,6 +238,7 @@
 		font-family: "sf72-icons";
 		content:'9';
 		font-size: 1.5rem;
+		-webkit-font-smoothing: antialiased;
 	}
 }
 
