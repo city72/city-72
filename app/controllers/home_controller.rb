@@ -23,7 +23,9 @@ class HomeController < ApplicationController
   end
 
   def supplies
-    @items = Item.find(:all, order: 'items.order ASC')
+    @essentials = Item.where(category: Categories::ESSENTIAL.to_s).order('items.order ASC')
+    @useful = Item.where(category: Categories::USEFUL.to_s).order('items.order ASC')
+    @personal = Item.where(category: Categories::PERSONAL.to_s).order('items.order ASC')
     @kits = Kit.all
   end
 

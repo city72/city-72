@@ -20,7 +20,7 @@
     %li.tab-essentials-content
       %p.tab-tip Set aside these basics, and store them in a central location.
       %ul.things-list.essential
-        - @items.select {|item| item.category == "#{Categories::ESSENTIAL.to_s}" }.each do |item|
+        - @essentials.each do |item|
           %li
             .use-case-dialog
               #{item.use_case}
@@ -30,7 +30,7 @@
     %li.tab-useful-content
       %p.tab-tip These items represent things that many people want in an emergency—but don’t always think of. Stash them away, and you’ll get through the first 72 hours more easily.
       %ul.things-list.useful
-        - @items.select {|item| item.category == "#{Categories::USEFUL.to_s}" }.each do |item|
+        - @useful.each do |item|
           %li
             .use-case-dialog
               #{item.use_case}
@@ -40,7 +40,7 @@
     %li.tab-personal-content
       %p.tab-tip In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort.
       %ul.things-list.personal
-        - @items.select {|item| item.category == "#{Categories::PERSONAL.to_s}" }.each do |item|
+        - @personal.each do |item|
           %li
             .use-case-dialog
               #{item.use_case}
