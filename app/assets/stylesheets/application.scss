@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Grid & Typography */
-$max-width: 960px;
+$max-width: 1020px;
 $gutter: 30px;
 $border-box-sizing: false;
 $mobile: new-breakpoint(max-width 480px 4);
@@ -101,7 +101,8 @@ body {
 
 .main-container {
 	@include outer-container;
-	width: 960px;
+	width: 1020px;
+	padding: 0 30px;
 }
 
 /* MOCKUP */

@@ -10,6 +10,10 @@
 	color: #515050;
 }
 
+.main-container {
+	padding: 0;
+}
+
 @include media($mobile) {
 
 	.mobile-hidden {
@@ -579,6 +583,7 @@
 		p {
 			@include intro-paragraph-mobile;
 			margin: 1.3rem 0 0 0;
+			text-shadow: 0 0 0 transparent;
 		}
 
 		strong {
@@ -704,6 +709,7 @@
 				bottom: -11.5rem;
 				position: absolute;
 				text-align: left;
+				text-shadow: 0 0 0 transparent;
 				@include intro-paragraph-mobile;
 			}
 		}
@@ -985,6 +991,7 @@
 			border-width: 9px;
 			bottom: -17px;
 			margin-left: -9px;
+			top: 37px;
 		}
 
 		li.essentials-trigger.active a,
