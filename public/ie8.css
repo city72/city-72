@@ -36,3 +36,8 @@
 .things-list li:hover .quote-dialog {
 	visibility: visible;
 }
+
+/* HOME */
+.intro-video .social-media {
+	float: right;
+}
