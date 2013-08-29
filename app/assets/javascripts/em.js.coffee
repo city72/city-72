@@ -49,14 +49,13 @@ $( ->
     showIntro = ->
         if !window.Sf72.Utils.isMobile()
             startJoyride()
-            if !window.Sf72.Utils.isOldInternetExplorer()
-                $('.em-preview-modal').show()
-                iframe = $("#video-opening")[0]
-                player = $f(iframe)
-                player.addEvent "ready", ->
-                    player.addEvent "finish", (id) ->
-                        $('.tour-intro').hide()
-                        $('.tour-intro-step2').show()
+            $('.em-preview-modal').show()
+            iframe = $("#video-opening")[0]
+            player = $f(iframe)
+            player.addEvent "ready", ->
+                player.addEvent "finish", (id) ->
+                    $('.tour-intro').hide()
+                    $('.tour-intro-step2').show()
         else
             $('.modal-wrapper').hide()
 
