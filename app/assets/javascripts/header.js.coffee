@@ -8,7 +8,6 @@ class Header
             _initializeMobileMenu()
             _initializeMobileActiveBtn()
             _initializeActiveButton()
-            _defineMode()
             initilized = true
 
     # Initializes jquery.mobile-menu.js
@@ -25,6 +24,9 @@ class Header
             hash = window.location.hash
             paths = _($('.header a')).pluck 'pathname'
 
+            if window.Sf72.Utils.isMobile && windowPath == '/em/home' && !hash
+                window.Sf72.Utils.redirectTo '/em/home#mobile-quick-guide'
+                window.Sf72.Utils.setAsActiveBtn $('[href="/em/home#mobile-quick-guide"]')
             if windowPath == '/home' || windowPath == '/'
                 $('[href="/home"]').addClass('active')
                 window.Sf72.Utils.setAsActiveBtn $('[href="/home"]')
@@ -44,12 +46,5 @@ class Header
             js_buttons_li.each (i,e) ->
                 $(e).removeClass('active')
             window.Sf72.Utils.setAsActiveBtn $(this)
-
-    # Shows the proper content based on the current mode
-    _defineMode = ->
-        $.get window.location.origin + "/em", (response) ->
-            if response.em_mode
-                $('.mobile-menu .normal-mode').hide()
-                $('.mobile-menu .crisis-mode').show()
 
 @Sf72.Header = new Header(@Sf72)

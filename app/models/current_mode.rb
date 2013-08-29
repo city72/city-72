@@ -5,42 +5,42 @@ class CurrentMode < ActiveRecord::Base
   CRISIS = true
   PREVIEW = !CRISIS
 
-  def self.isCrisisMode
-    currentMode == CRISIS
+  def self.is_crisis_mode
+    current_mode == CRISIS
   end
 
-  def self.isPreviewMode
-    currentMode == PREVIEW
+  def self.is_preview_mode
+    current_mode == PREVIEW
   end
 
-  def self.getCurrentMode
-  	Mode.where( em_mode: currentMode ).first
+  def self.get_current_mode
+  	Mode.where( em_mode: current_mode ).first
   end
 
-  def self.toggleMode
-    if isCrisisMode
-      switchToPreviewMode
+  def self.toggle_mode
+    if is_crisis_mode
+      switch_to_preview_mode
     else
-      switchToCrisisMode
+      switch_to_crisis_mode
     end
   end
 
-  def self.switchToCrisisMode
-    setMode CRISIS
+  def self.switch_to_crisis_mode
+    set_mode CRISIS
   end
 
-  def self.switchToPreviewMode
-    setMode PREVIEW
+  def self.switch_to_preview_mode
+    set_mode PREVIEW
   end
 
   private
-  def self.setMode mode
+  def self.set_mode mode
     current_mode = CurrentMode.first
     current_mode.mode = mode
     current_mode.save
   end
 
-  def self.currentMode
+  def self.current_mode
     CurrentMode.first.mode
   end
 

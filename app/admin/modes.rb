@@ -9,7 +9,7 @@ ActiveAdmin.register Mode do
 
 	controller do
       	def index
-      		mode = CurrentMode.getCurrentMode
+      		mode = CurrentMode.get_current_mode
       		redirect_to edit_admin_mode_path mode
   		end
 
@@ -18,10 +18,10 @@ ActiveAdmin.register Mode do
 			mode_action = params[:mode_action]
 
 			if mode_action == "switch-on" || mode_action == "switch-off"
-				CurrentMode.toggleMode
+				CurrentMode.toggle_mode
 			end
 
-			mode = CurrentMode.getCurrentMode
+			mode = CurrentMode.get_current_mode
 			
 			if mode_action == "update" || mode_action == "switch-on"
 				mode.update_attributes(params[:mode])
@@ -34,9 +34,9 @@ ActiveAdmin.register Mode do
 		end
 
 		def edit
-			@isCrisisMode = CurrentMode.isCrisisMode
-			@mode = CurrentMode.getCurrentMode
-			@lastCrisisModeInfo = Mode.last_crisis_mode_info
+			@is_crisis_mode = CurrentMode.is_crisis_mode
+			@mode = CurrentMode.get_current_mode
+			@last_crisis_mode_info = Mode.last_crisis_mode_info
 			@feed = CitizenFeed.first
 		end
     end
