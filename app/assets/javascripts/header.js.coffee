@@ -12,11 +12,12 @@ class Header
 
     # Initializes jquery.mobile-menu.js
     _initializeMobileMenu = ->
-        $("body").mobile_menu({
-            menu: '.mobile-menu',
-            menu_width: 270,
-            prepend_button_to: '.header'
-        });
+        if !window.Sf72.Utils.isOldInternetExplorer()
+            $("body").mobile_menu({
+                menu: '.mobile-menu',
+                menu_width: 270,
+                prepend_button_to: '.header'
+            });
 
     # Sets the active button based on the URL
     _initializeActiveButton = ->
@@ -24,7 +25,7 @@ class Header
             hash = window.location.hash
             paths = _($('.header a')).pluck 'pathname'
 
-            if window.Sf72.Utils.isMobile && windowPath == '/em/home' && !hash
+            if window.Sf72.Utils.isMobile() && windowPath == '/em/home' && hash.length == 0
                 window.Sf72.Utils.redirectTo '/em/home#mobile-quick-guide'
                 window.Sf72.Utils.setAsActiveBtn $('[href="/em/home#mobile-quick-guide"]')
             if windowPath == '/home' || windowPath == '/'

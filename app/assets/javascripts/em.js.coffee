@@ -39,8 +39,6 @@ $( ->
 
     $('.em-preview-modal').hide()
 
-    isMobile = -> $(window).width() < 480 or $(window).height() < 480
-
     startJoyride = ->
         $("#joyride-steps").joyride()
         #strange bug, if called once, it doesn't work
@@ -49,15 +47,16 @@ $( ->
     showIntroVideo = ->
 
     showIntro = ->
-        if !isMobile()
+        if !window.Sf72.Utils.isMobile()
             startJoyride()
-            $('.em-preview-modal').show()
-            iframe = $("#video-opening")[0]
-            player = $f(iframe)
-            player.addEvent "ready", ->
-                player.addEvent "finish", (id) ->
-                    $('.tour-intro').hide()
-                    $('.tour-intro-step2').show()
+            if !window.Sf72.Utils.isOldInternetExplorer()
+                $('.em-preview-modal').show()
+                iframe = $("#video-opening")[0]
+                player = $f(iframe)
+                player.addEvent "ready", ->
+                    player.addEvent "finish", (id) ->
+                        $('.tour-intro').hide()
+                        $('.tour-intro-step2').show()
         else
             $('.modal-wrapper').hide()
 
