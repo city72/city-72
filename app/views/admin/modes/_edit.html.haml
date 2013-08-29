@@ -9,7 +9,7 @@
     %script{:src => "/assets/application.js?body=1", :type => "text/javascript"}
     = csrf_meta_tag
   %body
-    -if @isCrisisMode
+    -if @is_crisis_mode
       .mode-config.header.crisis-mode
         %span CURRENTLY
         %h1 In Crisis Mode
@@ -45,7 +45,7 @@
           %div.current-recommendation_3_text #{@mode.recommendation_3_text}
 
       .crisis-control.left
-        - if @isCrisisMode
+        - if @is_crisis_mode
           %button#turn-off-btn.admin-btn.switch-off Switch to Preview Mode
           %ul
             %li Returns to normal home page, with SF72 video
@@ -118,7 +118,7 @@
           %input{name: "commit", type: "submit", value: "Switch to Preview Mode", :class => 'admin-btn switch-off'}
           = link_to "Cancel", "#close-modal", rel: "modal:close", class: "admin-btn black-btn"
 
-- if !@isCrisisMode
+- if !@is_crisis_mode
   #lastCrisisInfo{style: 'display:none'}
     .lastcrisis-title #{@lastCrisisModeInfo.title}
     .lastcrisis-text #{@lastCrisisModeInfo.text}
