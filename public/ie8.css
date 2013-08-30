@@ -36,3 +36,36 @@
 .things-list li:hover .quote-dialog {
 	visibility: visible;
 }
+
+/* HOME */
+
+.home .social-media {
+	float: right;
+}
+
+
+.bx-controls-direction a.bx-prev {
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=-1, M12=1.2246063538223773e-16, M21=-1.2246063538223773e-16, M22=-1, SizingMethod='auto expand');
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=-1, M12=1.2246063538223773e-16, M21=-1.2246063538223773e-16, M22=-1, SizingMethod='auto expand')";
+	overflow: visible;
+	width: 40px;
+	height: 55px;
+}
+
+.bx-controls-direction a.bx-prev:before {
+	top: 0px;
+}
+
+.bx-controls-direction a.bx-prev:before {
+
+}
+
+/* CRISIS MODE */ 
+.modal-wrapper {
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+    zoom: 1;
+}
+
+.em-preview-modal {
+	margin-top: 0;
+}
