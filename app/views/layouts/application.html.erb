@@ -6,16 +6,17 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <!--[if (gte IE 6)&(lte IE 8)]>
-  	<link rel="stylesheet" type="text/css" href="ie8.css" />
-    <script type="text/javascript" src="selectivizr-min.js"></script>
+  <!--[if lt IE 9]>
+  	<link rel="stylesheet" type="text/css" href="/ie8.css" />
+    <script type="text/javascript" src="/selectivizr-min.js"></script>
   <![endif]-->
 </head>
 <body>
 
+
 <%= yield %>
- <!--[if (gte IE 6)&(lte IE 8)]>
-	<script src="rem.min.js"></script>
+<!--[if lt IE 9]>
+  <script src="/rem.min.js"></script>
 <![endif]-->
 </body>
 </html>

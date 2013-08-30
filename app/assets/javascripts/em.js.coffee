@@ -39,8 +39,6 @@ $( ->
 
     $('.em-preview-modal').hide()
 
-    isMobile = -> $(window).width() < 480 or $(window).height() < 480
-
     startJoyride = ->
         $("#joyride-steps").joyride()
         #strange bug, if called once, it doesn't work
@@ -49,7 +47,7 @@ $( ->
     showIntroVideo = ->
 
     showIntro = ->
-        if !isMobile()
+        if !window.Sf72.Utils.isMobile()
             startJoyride()
             $('.em-preview-modal').show()
             iframe = $("#video-opening")[0]

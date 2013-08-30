@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore-min.js
 //= require modernizr.js
+//= require jquery.browser.js
 //= require jquery.mobile-menu.js
 //= require jquery.bxslider.min.js
 //= require raphael-min.js
