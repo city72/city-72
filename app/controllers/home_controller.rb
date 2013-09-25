@@ -8,11 +8,7 @@ class HomeController < ApplicationController
   before_filter :set_current_mode
 
   def index
-    if CurrentMode.is_crisis_mode
-      redirect_to em_home_path
-    else
-      redirect_to home_path
-    end
+    @crisis_mode = CurrentMode.is_crisis_mode
   end
 
   def em_home
