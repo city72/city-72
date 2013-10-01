@@ -2,12 +2,12 @@
 .header {
 	@include outer-container;
 	position: relative;
-	margin-bottom: 1rem;
 }
 
 #logo {
-	@include span-columns(2.4);
+	@include span-columns(2.8);
 	margin-top: 2.35rem;
+	padding-left: 2rem;
 }
 
 .logo {
@@ -20,13 +20,15 @@
 }
 
 .main-nav > li {
-	@include span-columns(1.7);
-	padding: 53px 0 44px;
+	@include span-columns(2.1);
+	@include omega;
+	padding: 48px 20px 50px;
 	position: relative;
-}
+	border-right: 2px solid lighten( $light-grey, 5% );
 
-.main-nav > li:first-child {
-	margin-left: 2.5rem;
+	&:first-child {
+		border-left: 2px solid lighten( $light-grey, 5% );
+	}
 }
 
 .main-nav {
@@ -43,7 +45,7 @@
 		display: block;
 		margin-bottom: -0.28rem;
 		font-family: $font-medium;
-		font-size: 1.25rem;
+		font-size: 0.95rem;
 		font-weight: normal;
 		line-height: 1;
 	}
@@ -56,22 +58,15 @@
 		font-family: $font-bold;
 	}
 
-	li.active {
-		border-top: 3px solid orange;
-		padding-top: 50px;
-	}
-
 	li.active, li:hover {
+      	background-color: lighten( $light-grey, 5% );
+		
 		a {
-      		color: $highlight;
+      		color: $dark-grey;
 		}
 	}
 
 	li.em-link {
-		position: absolute;
-		top: -0.1rem;
-		right: 0.5rem;
-		width: 12.6rem;
 
 		.preview-nav-link {
 			position: relative;
@@ -100,7 +95,7 @@
 
 	li.em-link strong,
 	li.em-link .preview-nav-link {
-		color: $highlight-dark;
+		color: $highlight;
 	}
 
 	li.em-link.active a {
