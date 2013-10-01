@@ -8,6 +8,10 @@
 	@include outer-container;
 }
 
+.inner {
+	width: 900px;
+}
+
 .main-intro {
 	@include span-columns(7.8);
 	margin-bottom: 2.9rem;

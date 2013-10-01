@@ -24,11 +24,7 @@
 	@include omega;
 	padding: 48px 20px 50px;
 	position: relative;
-	border-right: 2px solid lighten( $light-grey, 5% );
-
-	&:first-child {
-		border-left: 2px solid lighten( $light-grey, 5% );
-	}
+	border-left: 2px solid lighten( $light-grey, 5% );
 }
 
 .main-nav {
