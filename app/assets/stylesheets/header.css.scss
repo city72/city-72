@@ -22,19 +22,18 @@
 .main-nav > li {
 	@include span-columns(2.1);
 	@include omega;
-	padding: 48px 20px 50px;
 	position: relative;
 	border-left: 2px solid lighten( $light-grey, 5% );
 }
 
 .main-nav {
-
 	margin: 0;
 
 	a {
 		display: block;
 		color: $body-color;
 		text-decoration: none;
+		padding: 48px 20px 50px;
 	}
 
 	strong {
@@ -54,8 +53,16 @@
 		font-family: $font-bold;
 	}
 
-	li.active, li:hover {
+	li.active {
       	background-color: lighten( $light-grey, 5% );
+		
+		a {
+      		color: $dark-grey;
+		}
+	}
+
+	li:hover {
+      	background-color: lighten( $light-grey, 7.5% );
 		
 		a {
       		color: $dark-grey;
