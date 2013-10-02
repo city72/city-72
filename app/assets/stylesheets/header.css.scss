@@ -5,9 +5,9 @@
 }
 
 #logo {
-	@include span-columns(2.8);
-	margin-top: 2.35rem;
-	padding-left: 2rem;
+	@include span-columns(3.2829);
+	margin-top: 2rem;
+	padding-left: 3.8rem;
 }
 
 .logo {
@@ -20,7 +20,7 @@
 }
 
 .main-nav > li {
-	@include span-columns(2.1);
+	@include span-columns(2.02);
 	@include omega;
 	position: relative;
 	border-left: 2px solid lighten( $light-grey, 5% );
@@ -33,14 +33,14 @@
 		display: block;
 		color: $body-color;
 		text-decoration: none;
-		padding: 48px 20px 50px;
+		padding: 45px 25px 44px;
 	}
 
 	strong {
 		display: block;
 		margin-bottom: -0.28rem;
 		font-family: $font-medium;
-		font-size: 0.95rem;
+		font-size: 0.9rem;
 		font-weight: normal;
 		line-height: 1;
 	}
@@ -98,7 +98,7 @@
 
 	li.em-link strong,
 	li.em-link .preview-nav-link {
-		color: $highlight;
+		color: $highlight-dark;
 	}
 
 	li.em-link.active a {
@@ -107,7 +107,7 @@
 
 	li.em-link:hover strong,
 	li.em-link:hover .preview-nav-link {
-		color: #CE3000;
+		color: $highlight-dark;
 	}
 
 	li.em-link.active {
