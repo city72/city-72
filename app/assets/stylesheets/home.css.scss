@@ -1,46 +1,85 @@
 /* HOME */
-.video-opening {
-	width: 100%;
-	height: 540px;
-}
 
-.intro-row {
-	@include outer-container;
-}
-
-.main-intro {
-	@include span-columns(7.8);
-	margin-bottom: 2.9rem;
-}
-
-.intro-app {
-	@include span-columns(3.5);
-	@include shift(.5);
-	margin-top: 3.5rem;
-	font-family: $font-bold;
-	font-size: 1rem;
-	line-height: 1.45;
-	padding: 3.6rem 0.5rem 3.6rem 1.5rem;
-	position: relative;
-}
-
-.intro-app span {
-	color: $dark-grey;
-}
-
-.intro-app strong {
-	display: block;
-	margin-top: 0.6rem;
-}
-
-.intro-app:after {
+@mixin home-icon {
+	font: {
+		family: 'sf72-icons';
+		size: 3rem;
+	}
+	-webkit-font-smoothing: antialiased;
+	width: 110px;
+	height: 110px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 60px;
+	border-radius: 60px;
 	position: absolute;
-	left: 0.35rem;
-	top: 3.65rem;
-	height: 8.5rem;
-	border-left: 2px solid $highlight;
-	content: '';
+	text-align: center;
+	padding-top: 15px;
 }
+
+.home .page-intro:after {
+	@include home-icon;
+	color: $highlight;
+	content: '!';
+	background: #FFF;
+	bottom: -75px;
+	left: 45px;
+}
+
+.home .page-intro .big-title {
+	@include retina-image(/assets/static/home, 1020px 538px, jpg);
+	background-position: left top;
+	text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+}
+
+.home .page-intro .big-title {
+	
+	h1 {
+		font-size: 3.5rem;
+	}
+
+	h1:before {
+		font-family: 'sf72-icons';
+		font-size: 5rem;
+		content: 'y';
+		color: #FFFFFF;
+		-webkit-font-smoothing: antialiased;
+		display: block;
+		margin-bottom: 30px;	
+	}
+}
+
+.questions {
+	background-image: url("/assets/static/clock.svg");
+	background-repeat: no-repeat;
+	background-position: 730px 100px;
+	@include row();
+	padding: 0 30px;
+	
+	ul {
+		@include row();
+
+		li {
+			@include span-columns(6);
+			margin-bottom: 80px;
+
+			h2 {
+				color: $highlight;
+				line-height: 1rem;
+				margin-top: 7rem;
+			}
+
+			span {
+				font-size: 1.2rem;
+				@include span-columns(11);
+			}
+		}
+	}
+}
+
+
+
+
+
 
 .home .intro-app {
 	
