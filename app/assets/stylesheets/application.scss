@@ -22,7 +22,6 @@ $body-color: #9b9b9b;
 $body-light: #a2a2a2;
 $mid-grey: #b4b4b4;
 $light-grey: #e6e6e6;
-
 $highlight: #FBB03B;
 $highlight-dark: #F15A24;
 
@@ -30,6 +29,39 @@ $highlight-dark: #F15A24;
 $font-regular:'HelveticaNeueLT-Roman';
 $font-medium:'HelveticaNeueLT-Medium';
 $font-bold:'HelveticaNeueLT-Bold';
+
+/* Icons */
+$arrow: 'A';
+$hands: 'C';
+$first-aid: 'D';
+$phone: 'E';
+
+/* Home icons mixins */
+@mixin icon($color,$icon,$bg,$pos-top,$pos-left){
+	&:before{
+		font-family: 'sf72-icons';
+		font-size: 3rem;
+		color: $color;
+		content: $icon;
+		speak: none;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 50px;
+		top: $pos-top;
+		left: $pos-left;
+		text-align: center;
+		padding-top: 15px;
+		background-color: $bg;
+		position: absolute;
+		height: 85px;
+		width: 100px;
+	}
+}
 
 /* CSS Mini Reset */
 html, body, div, form, fieldset, legend, label {

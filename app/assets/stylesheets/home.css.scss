@@ -1,28 +1,9 @@
 /* HOME */
 
-@mixin home-icon {
-	font: {
-		family: 'sf72-icons';
-		size: 3rem;
-	}
-	-webkit-font-smoothing: antialiased;
-	width: 110px;
-	height: 110px;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 60px;
-	border-radius: 60px;
-	position: absolute;
-	text-align: center;
-	padding-top: 15px;
-}
 
-.home .page-intro:after {
-	@include home-icon;
-	color: $highlight;
-	content: '!';
-	background: #FFF;
-	bottom: -75px;
-	left: 45px;
+.home .page-intro {
+	@include icon($highlight,$arrow,#FFF,490px,45px);
+	position: relative;
 }
 
 .home .page-intro .big-title {
@@ -75,6 +56,90 @@
 		}
 	}
 }
+
+.connection {
+	@include row();
+	@include retina-image(/assets/static/home-connection, 683px 420px, jpg);
+	background-position: top right;
+	background-repeat: no-repeat; 
+	position: relative;
+
+	div {
+		@include span-columns(4.2);
+		@include icon($highlight,$arrow,#FFF,370px,290px);
+		color: #FFF;
+		background-color: $highlight;
+		padding: 0 30px;
+		height: 420px;
+
+		h2 {
+			font-size: 2.05rem;
+			margin: 2rem 0 1rem;
+			line-height: 2.7rem;
+		}
+
+		span {
+			@include row();
+			font-family: $font-regular;
+			font-size: 1.16rem;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.learn {
+	@include row();
+
+	h1 {
+		color: $dark-grey;
+		padding: 0 30px;
+		margin: 6.5rem 0 5rem;
+		font-family: $font-bold;
+	}
+	
+	h2 {
+		margin: 4rem 0 1rem;
+		}
+
+	ul {
+		@include row();
+		
+		li {
+			@include span-columns(4);
+			margin-right: 0.28125rem;
+			width: 337px;
+			height: 345px;
+			margin-bottom: 100px; 
+			background-repeat: no-repeat;
+			color: #FFF;
+			padding: 30px;
+			position: relative;
+		}
+
+		.learn-connect {
+			@include retina-image(/assets/static/learn-1, 337px 345px, jpg);
+			
+			h2 {
+				@include icon(#FFF,$hands,$highlight,-50px,45px);
+			}	
+		}
+		.learn-supplies {
+			@include retina-image(/assets/static/learn-2, 337px 345px, jpg);
+			
+			h2 {
+				@include icon(#FFF,$first-aid,$highlight,-50px,45px);		
+			}
+		}
+		.learn-plan {
+			@include retina-image(/assets/static/learn-3, 337px 345px, jpg);
+			
+			h2 {
+				@include icon(#FFF,$phone,$highlight,-50px,45px);
+			}
+		}
+	}
+}
+
 
 
 
