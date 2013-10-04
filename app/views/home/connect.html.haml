@@ -1,46 +1,29 @@
 = javascript_include_tag "mailchimp"
 .main-container.connect
   = render :partial => "partials/header"
-  .page-intro
-    .big-title
-      %h1 The App
-      %span Connect with your people.
-      .tooltip
-        .tooltip-content <strong>Boots for walking.</strong> Keep a pair of sturdy shoes under your bed.
-    %h2 Preparedness is all about people.
-    %p The same kinds of connections that are meaningful to us in everyday life &ndash; with friends, family, neighbors, and communities &ndash; are even more crucial during a crisis.
-    %p Recent disasters, including Sandy, Boston and Fukushima, have shown that there is an emerging role for social media and technology in emergency response. In fact, text messaging is one of the most reliable forms of communication in an emergency, because it is unlikely that all networks will go down. 
-  .app-signup
-    .app-title
-      %h3.coming-soon Coming Soon!
-      %h3 The SF72 App
-    .app-video
-    .app-details
-      %p The SF72 app uses geo-location to help you locate your people &ndash; and resources near you &ndash; in case of an emergency. Downloading it is a great step to get prepared. Then share it with five friends. Watch the strength of our city grow.
-      %strong Sign up by email to find out when the SF72 App is live.
-      .subscribe-form
-        #mc_embed_signup
-          %form#mc-embedded-subscribe-form.validate{:action => "http://sf72.us6.list-manage1.com/subscribe/post?u=da2f717cb23345cc17718c642&id=a56b545c6c", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
-            %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", :placeholder => "Notify me"}/
-            %input.submit{type: "submit", value: "Go", :name => "subscribe"}
-            #sending-notification Sending&hellip;
-            #mce-responses.clear
-              #mce-error-response.response{:style => "display:none"} 
-              #mce-success-response.response{:style => "display:none"} Almost finished...We need to confirm your email to complete the address. To complete the subscription process, please click the link in the email we just sent you.
-
-  %ul.app-features
-    %li
-      .screen-1
-      %ul.features-detail
-        %li Integrate your existing social networks with the SF72 app to establish your circle.
-        %li Geo-track your loved ones relative to your location, to quickly establish a meetup spot.
-    %li
-      .screen-2
-      %ul.features-detail
-        %li Send emergency group texts to your inner circle of friends. (Texting is the most reliable form of emergency communication, since it is unlikely that all networks will go down.)
-    %li
-      .screen-3
-      %ul.features-detail
-        %li Find nearby shelter, food, and community resources.
-        %li Access aggregated emergency updates from both official city announcements, and crowdsourced updates from fellow San Franciscans.
+  .opening
+    %h1 Preparedness is all about people
+    %div
+      %p People are most resilient when connected to others in a crisis. What digital networks and groups do you belong to? These might be the people that you lean on in an emergency.
+  .existing-networks
+    .use
+      %h2 Use your digital networks.
+      %p.intro-networks In the event of an emergency, you will rely on your existing networks &ndash; both digital and physical. Think about the connections and communities you’re part of, so you can band together if something happens.
+    .know
+      %h3 Know what to do.
+      %p Tips and tools for real emergency situations
+      %a{ :href => "#", :title => "Meet the Team" } Read our blog
+    %ul.networks-list
+      %li.facebook
+        %h3 Facebook
+        %p <strong>Now</strong> Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together.
+        %p <strong>In an emergency</strong> Post your status to let friends and family know that you are okay.
+      %li.twitter
+        %h3 Twitter
+        %p <strong>Now</strong> Add emergency-related accounts to your Twitter feed, so you can stay informed. A few favorites: <a href="http://twitter.com/SF_Emergency">@SF_Emergency</a>, <a href="http://twitter.com/511SFBay">@511SFBay</a>, <a href="http://twitter.com/Emergency_In_SF">@Emergency_In_SF</a>.
+        %p <strong>In an emergency</strong> Tweet updates about yourself and your surroundings. Use hashtag <a href="https://twitter.com/search?q=%23SF72">#SF72</a> to be included in our Crisis Mode feed.
+      %li.airbnb
+        %h3 Airbnb
+        %p <strong>Now</strong> Create an Airbnb profile so you are ready to find or share a place to stay if anything happens.
+        %p <strong>In an emergency</strong> Find a place to stay, or share your place with those in need.
   = render :partial => "partials/footer"

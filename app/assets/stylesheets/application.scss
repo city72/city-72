@@ -112,7 +112,8 @@ h5 {margin: 0}
 
 @mixin intro-paragraph {
 	font-size: 1.1875rem;
-	line-height: 1.45;
+	line-height: 1.55;
+	color: lighten( $mid-grey, 2% );
 }
 
 @mixin col-title {
@@ -233,6 +234,40 @@ body {
 		line-height: 1.6rem;
 	}
 }
+
+.opening {
+	@include row(block,RTL);
+	@include retina-image(/assets/static/connected, 1020px 420px, jpg);
+	background-position: top right;
+	background-repeat: no-repeat; 
+	position: relative;
+	
+	h1 {
+		@include span-columns(8.7171);
+		font-family: $font-bold;
+		font-size: 3.56rem;
+		line-height: 1;
+		color: #FFF;
+		padding: 110px 130px 30px;
+	}
+
+
+	div {
+		@include span-columns(3.2829);
+		color: #FFF;
+		background-color: $highlight;
+		padding: 0 30px;
+		height: 420px;
+
+		p {
+			font-size: 1.1rem;
+			line-height: 2rem;
+			margin-top: 5rem;
+		}
+	}
+}
+
+@include reset-layout-direction;
 
 .modal-wrapper {
 	height: 100%;
