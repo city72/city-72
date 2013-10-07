@@ -1,8 +1,12 @@
 /* CONNECT */
 
+.opening {
+	@include retina-image(/assets/static/connected, 1020px 420px, jpg);
+}
 
 .existing-networks {
-	padding: 6rem 30px;
+	@include row();
+	padding: 7rem 30px 3.5rem;
 
 	.use {
 		@include span-columns(8.5);
@@ -37,63 +41,132 @@
 			margin: 0.6rem 0;
 		}
 	}
+}
 
-	.networks-list {
-		@include outer-container;
-		margin: 2.3rem auto 4.7rem;
+.networks-list {
+	background-color: $subtle-grey;
+	@include row();
+	padding: 2.5rem 30px;
+	color: $text-grey;
 
-		li {
-			@include span-columns(4);
-			@include omega(3n);
-			padding: 4rem 3.3rem 0 0;
-			position: relative;
+	li {
+		@include span-columns(4);
+		@include omega(3n);
+		padding: 6.5rem 3.3rem 0 0;
+		position: relative;
 
-			strong {
-				font-weight: normal;
-				color: $highlight;
-			}
+		strong {
+			font-weight: normal;
+			color: $highlight;
 		}
+	}
+
+	h3 {
+		margin: 1.3rem 0 0;
+		font-size: 1.25rem;
+		color: $dark-grey;
+		font-family: $font-bold;
+		line-height: 1.65rem;
+	}
+
+	p {
+		margin: 0 0 0.5rem;
+
+		strong {
+			display: block;
+			color: $dark-grey;
+			margin: 2rem 0rem 0rem;
+			font-family: $font-bold;
+
+			&:after {
+				content:' \2014';
+			};
+		}
+	}
+
+	a:hover {
+		color: $dark-grey;
+	}
+
+	li.facebook {
+		@include icon(#FFF,$facebook-icn,$highlight,0,0);
+	}
+	li.airbnb {
+		@include icon(#FFF,$airbnb-icn,$highlight,0,0);
+	}
+	li.twitter {
+		@include icon(#FFF,$twitter-icn,$highlight,0,0);
+	}
+}
+
+.full-img-article {
+	@include row();
+	@include retina-image(/assets/static/physical, 1020px 396px, jpg);
+	background-repeat: no-repeat;
+	padding: 0 30px;
+
+	ul {
+		@include row();
+		font-size: 2.125rem;
+		color: #FFF;
+		margin-top: 4rem;
 
 		h3 {
-			margin: 1.3rem 0 0;
-			font-size: 1.25rem;
-			color: $dark-grey;
+			font-size: 2.125rem;
+			line-height: 2.65rem;
 		}
 
 		p {
-			margin: 0 0 0.5rem;
+			font-size: 1.1875rem;
+			width: 430px;
 		}
 
-		a:hover {
-			color: $dark-grey;
+		.use {
+			@include span-columns(6);
 		}
 
-		li:before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			font-family: "sf72-icons";
-			font-size: 3.3rem;
-			color: $body-light;
-		}
+		.what {
+			@include span-columns(5.5);
+			@include shift(0.5);
 
-		li.facebook:before {
-			content: "v";
-			color: #3b5994;
-		}
-		li.airbnb:before {
-			width: 56px;
-			height: 56px;
-			top: 12px;
-			@include retina-image(/assets/static/airbnb-logo, 56px 56px);
-			background-repeat: no-repeat;
-			background-position: top left;
-			color: #00b0ff;
-			content: '';
-		}
-		li.twitter:before {
-			content: "w";
-			color: #51a1ca;
+			.your-net {
+				list-style-type: disc;
+				font-size: 1.5rem;
+				margin: 0;
+
+				> li {
+					margin: 0;
+
+					> ul {
+						margin: 0;
+
+						> li {
+							font-size: 1.3125rem;
+						}
+
+						li:before {
+						    content:'\00B7';
+						    font-size:50px;
+						    vertical-align:middle;
+						    line-height:20px;
+						    padding-right: 5px;
+						}
+					}
+				}
+				
+				.net-first {
+					@include span-columns(5.5);
+				}
+
+			}
 		}
 	}
 }
+
+
+
+
+
+
+
+

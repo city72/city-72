@@ -21,7 +21,9 @@ $dark-grey: #4D4D4D;
 $body-color: #9b9b9b;
 $body-light: #a2a2a2;
 $mid-grey: #b4b4b4;
+$text-grey: #7f7f7f;
 $light-grey: #e6e6e6;
+$subtle-grey: #eaeaea;
 $highlight: #FBB03B;
 $highlight-dark: #F15A24;
 
@@ -35,6 +37,9 @@ $arrow: 'A';
 $hands: 'C';
 $first-aid: 'D';
 $phone: 'E';
+$airbnb-icn: 'F';
+$twitter-icn: 'G';
+$facebook-icn: 'H';
 
 /* Home icons mixins */
 @mixin icon($color,$icon,$bg,$pos-top,$pos-left){
@@ -237,7 +242,6 @@ body {
 
 .opening {
 	@include row(block,RTL);
-	@include retina-image(/assets/static/connected, 1020px 420px, jpg);
 	background-position: top right;
 	background-repeat: no-repeat; 
 	position: relative;
