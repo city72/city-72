@@ -163,6 +163,53 @@
 	}
 }
 
+.learn-more {
+	@include row();
+	padding: 0 30px;
+
+	h3 {
+		font-size: 2.125rem;
+		margin: 4.5rem 0 0;
+		color: $dark-grey;
+	}
+
+	> p {
+		@include intro-paragraph;
+		@include span-columns(8);
+
+	}
+
+	ul {
+		@include row();
+		@include span-columns(12);
+		margin: 3rem 0 7.5rem;
+
+		li {
+			@include row();
+			@include span-columns(4);	
+			background-position: top left;
+			background-repeat: no-repeat; 
+			position: relative;
+			padding-top: 80px;
+		}
+		
+		.red-cross {
+			@include retina-image(/assets/static/red-cross, 100% 100%, jpg);
+
+		}
+
+		.nen {
+			@include retina-image(/assets/static/nen, 100% 100%, jpg);
+
+		}
+
+		.nert {
+			@include retina-image(/assets/static/nert, 100% 100%, jpg);
+
+		}
+	}
+
+}
 
 
 
