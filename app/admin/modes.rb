@@ -1,5 +1,5 @@
 ActiveAdmin.register Mode do
-	menu :label => "Crisis Mode"
+	menu :label => "In an Emergency"
 	actions :all, :except => [:destroy, :new]
   	config.paginate = false
 
