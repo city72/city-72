@@ -30,12 +30,12 @@
             = retina_image_tag @story.item1_image
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
-            = link_to "Gather your supplies", supplies_path
+            = link_to "Gather Supplies", supplies_path
           %li
             = retina_image_tag @story.item2_image
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
-            = link_to "See the app", connect_path
+            = link_to "Get Connected", connect_path
           %li
             = retina_image_tag @story.item3_image
             %h4 #{@story.item3_subtitle}
@@ -47,24 +47,24 @@
             = retina_image_tag @story.item1_image
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
-            = link_to "Gather your supplies", supplies_path
+            = link_to "Gather Supplies", supplies_path
           %li
             = retina_image_tag @story.item2_image
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
-            = link_to "See the app", connect_path
+            = link_to "Get Connected", connect_path
       - elsif @story.items_images_display_type == StoryItemsDisplayTypes::COLUMN_2_BLEED
         %ul.needed-list.two-cols.wide-img
           %li
             = full_bleed_image_tag @story.item1_image
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
-            = link_to "Gather your supplies", supplies_path
+            = link_to "Gather Supplies", supplies_path
           %li
             = full_bleed_image_tag @story.item2_image
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
-            = link_to "See the app", connect_path
+            = link_to "Get Connected", connect_path
           
     .similar
       %h3 Similar to #{@story.person}
