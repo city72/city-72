@@ -1,11 +1,10 @@
 = javascript_include_tag "supplies"
 .main-container.things
   = render :partial => "partials/header"
-  .intro
-    .photo-overlay
-      %h2.mobile-title Supplies
-      %h2 Gather your gear.
-      %p Whether you’re just starting out or you’re a preparedness pro, it’s easy to build &ndash; or add to &ndash; your emergency supplies. A good rule of thumb is to have supplies for about 3 days, or 72 hours. Start with what you already have; it’s just a matter of getting organized.
+  .opening.supplies
+    %h1 You’re more prepared than you think.
+    %div
+      %p Whether you’re just starting out or a preparedness pro, gathering your emergency supplies is easy. A good rule of thumb is to have supplies for about 3 days, or 72 hours. You’ll be surprised at how much you already have.
   .action-bar
     %ul.tabs
       %li.essentials-trigger.active
@@ -18,7 +17,7 @@
       %a{href:"/pdf/SF72_supplies.pdf"} Download full list
   %ul.tabs-content 
     %li.tab-essentials-content
-      %p.tab-tip Set aside these basics, and store them in a central location.
+      %p.tab-tip In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort.
       %ul.things-list.essential
         - @essentials.each do |item|
           %li

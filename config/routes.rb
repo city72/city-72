@@ -25,5 +25,7 @@ IdeoSf72::Application.routes.draw do
   get "our_manifesto" => "home#our_manifesto"
 
   post "emails" => "emails#send_email"
+
+  get "plan" => "home#plan"
   
 end

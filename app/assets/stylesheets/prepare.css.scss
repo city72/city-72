@@ -533,13 +533,30 @@ a.checklist:before {
 
 /* SUPPLIES */
 
-.things .intro {
-	@include retina-image(/assets/static/supplies-title, 960px 460px, jpg);
+.supplies {
+	@include retina-image(/assets/static/supplies-cover, 1020px 420px, jpg);
+	background-position-x: 260px;
+	
+	h1 {
+		margin-top: 0;
+		line-height: 4.5625rem;
+	}
+
+	div {
+
+		p {
+			font-size: 1.1875rem;
+			line-height: 1.625rem;
+			margin-top: 4rem;
+		}
+	}
 }
 
 .action-bar {
 	@include outer-container;
-	@include reset-all()
+	@include reset-all();
+	padding: 0 30px;
+	margin-top: 5rem;
 }
 
 .action-bar .tabs {
@@ -633,6 +650,7 @@ a.checklist:before {
 
 .tabs-content {
 	margin-top: 0;
+	padding: 0 30px;
 }
 
 .tab-tip{
@@ -695,6 +713,11 @@ a.checklist:before {
 .overlay-text {
 	display: none;
 }
+
+.kits {
+	padding: 0 30px;
+	margin-bottom: 7rem;
+} 
 
 .kits h2, .kits p {
 	margin-left: 1.8rem;
