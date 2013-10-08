@@ -214,19 +214,22 @@ a.checklist:before {
 
 .stories .intro,
 .things .intro {
-	position: relative;
-	width: 960px;
-	height: 28.8rem;
-	@include retina-image(/assets/static/stories, 960px 460px, jpg);
-	background-size: 100%;
-	color: #FFF;
+	width: 1020px;
 
-	.photo-overlay {
-		position: absolute;
-		left: 1.8rem;
-		bottom: 2rem;
-		width: 57rem;
-		text-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+	.intro-video {
+		@include row();
+	}
+
+	.personal-look {
+		@include row();
+		padding: 0 30px;
+
+		p {
+			@include span-columns(10);
+			line-height: 1.6875rem;
+			font-size: 1.1875rem;
+			margin-top: 0.8rem;
+		}
 	}
 
 	.mobile-title {
@@ -234,31 +237,20 @@ a.checklist:before {
 	}
 
 	h2 {
-		line-height: 1;
-		margin: 0;
+		font-size: 2.125rem;
+		color: $dark-grey;
+		margin: 6rem 0 0;
 	}
-
-	p {
-		margin: 0.7rem 11rem 0 0;
-		line-height: 1.25;
-		font-size: 1.35rem;
-	}
-}
-
-.stories .intro h2 {
-	margin: 0;
-}
-
-.stories h3 {
-	margin: 2rem 0 0.6rem;
-	color: $dark-grey;
 }
 
 .story-list {
-	margin-top: 0.5rem;
+	margin-top: 2rem;
+	padding: 0 30px;
 
 	li {
 		margin-bottom: 1.7rem;
+		@include icon($highlight,$video-play,rgba(255, 255, 255, 0.7),20%,32%);
+		position: relative;
 
 		.quote-dialog {
 			height: 190px;
@@ -297,8 +289,30 @@ a.checklist:before {
 			}
 		}
 	}
+}
+.basic-guide {
+	@include row();
+	padding: 0 30px;
 
-
+	h3 {
+		@include span-columns(9.7);
+		@include shift(1);
+		font-size: 1.1875rem;
+		line-height: 1.6875rem;
+		margin-top: 4rem;
+	}
+	
+	h3:before {
+		font-family: 'sf72-icons';
+		font-size: 2.7rem;
+		content: 'n';
+		color: $highlight-dark;
+		position: relative;
+		left: -4.5rem;
+		top: 3rem;
+		display: block;
+		-webkit-font-smoothing: antialiased;
+	}
 }
 
 .story-data {

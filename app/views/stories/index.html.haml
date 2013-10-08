@@ -1,20 +1,21 @@
 .main-container.stories
   = render :partial => "partials/header"
   .intro
-    .photo-overlay
-      %h2.mobile-title Stories
-      %h2 A personal look at emergencies and connection.
-      %p Watch stories of people who have lived through disasters &ndash; and those who are already fostering connections in San Francisco. No matter your situation, chances are, there’s someone like you with wisdom to share.
-  %h3 Watch these videos to learn how you can get prepared.
+    .intro-video
+      %iframe.video-opening{src: "http://player.vimeo.com/video/72855510?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933", width: "100%", height: "573"}
+      .personal-look 
+        %h2.mobile-title Stories
+        %h2 A personal look at emergencies and connection.
+        %p Watch stories of people who have lived through disasters &ndash; and those who are already fostering connections in San Francisco. No matter your situation, chances are, there’s someone like you with wisdom to share.
   %ul.story-list
-    - @stories.each do |story|
-      %li
-        %a{href: "#{ story_path(story.id) }"}
-          .quote-dialog
-            #{story.quote}
-            %span.fake-link See story
-          = retina_image_tag story.video_image
-          = render partial: "category_icon", locals: {story: story}
+    / - @stories.each do |story|
+    /   %li
+    /     %a{href: "#{ story_path(story.id) }"}
+    /       .quote-dialog
+    /         #{story.quote}
+    /         %span.fake-link See story
+    /       = retina_image_tag story.video_image
+    /       = render partial: "category_icon", locals: {story: story}
     %li.coming-soon-story
       %a{href: "#"}
         .quote-dialog Coming Soon
@@ -92,6 +93,8 @@
         .story-data
           %h5 Coming soon!
           %p More stories of resilience and community.
+  .basic-guide
+    %h3 After experiencing an earthquake in Japan, Judy took steps to prepare at home in San Francisco. Learn a few easy steps from our Quake Basics guide to help keep your cool when the earth shakes.
 
 
   = render :partial => "partials/footer"
