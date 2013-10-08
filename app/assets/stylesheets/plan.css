@@ -102,12 +102,12 @@
 }
 
 .print-this {
-	margin: 7rem 0 0;
+	margin: 7rem 0 4rem;
 	height: 290px;
 	@include row();
 	@include retina-image(/assets/static/print, 510px 507px, jpg);
 	background-repeat: no-repeat;
-	background-position-y: 60px;
+	background-position-y: 30px;
 	background-position-x: 730px;
 
 	h2 {
@@ -156,9 +156,33 @@
 
 	ul {
 		@include row();
+		@include span-columns(12);
 		
 		li {
 			@include span-columns(4);
+			position: relative;
+			height: 300px;
+			padding-top: 90px;
+			margin-top: 3rem;
+
+			p {
+				@include row();
+				@include span-columns(9.5);
+				font-size: 1rem;
+			}
+
+			.geo {
+				@include icon(#FFF,'N',$highlight,0,0);
+				@include icon-mid;
+			}
+			.sms {
+				@include icon(#FFF,'V',$highlight,0,0);
+				@include icon-mid;
+			}
+			.shelter {
+				@include icon(#FFF,'M',$highlight,0,0);
+				@include icon-mid;
+			}
 		}
 	}
 

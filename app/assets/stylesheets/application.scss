@@ -79,6 +79,16 @@ $video-play: 'I';
 	}
 }
 
+@mixin icon-mid{
+	&:before{
+		font-size: 2.3rem;
+		border-radius: 50px;
+		padding-top: 17px;
+		height: 68px;
+		width: 85px;
+	}
+}
+
 
 /* CSS Mini Reset */
 html, body, div, form, fieldset, legend, label {
