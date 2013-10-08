@@ -300,6 +300,7 @@ a.checklist:before {
 		font-size: 1.1875rem;
 		line-height: 1.6875rem;
 		margin-top: 4rem;
+		margin-bottom: 3.5rem;
 	}
 	
 	h3:before {
@@ -313,6 +314,22 @@ a.checklist:before {
 		display: block;
 		-webkit-font-smoothing: antialiased;
 	}
+}
+
+.basics-slider {
+	padding: 0 30px;
+}
+
+.slider-header {
+	background-color: $dark-grey;
+	height: 3.8rem;
+	overflow: hidden;
+}
+
+.slider-body {
+	background-color: $light-grey;
+	height: 15.5rem;
+	margin-bottom: 6.5rem;
 }
 
 .story-data {

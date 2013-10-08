@@ -1,3 +1,4 @@
+= javascript_include_tag "home"
 .main-container.stories
   = render :partial => "partials/header"
   .intro
@@ -95,6 +96,37 @@
           %p More stories of resilience and community.
   .basic-guide
     %h3 After experiencing an earthquake in Japan, Judy took steps to prepare at home in San Francisco. Learn a few easy steps from our Quake Basics guide to help keep your cool when the earth shakes.
-
-
+  .basics-slider
+    .slider-header
+      %ul.basics-tabs
+        %li.active
+          %a.trigger-during{href:"#tab-during-earth-quake"} During a quake
+        %li
+          %a.trigger-after{href:"#tab-after-earth-quake"} After a quake
+      %a.quick-list-trigger{href:"quick_guide"} Print Full Guide
+    .slider-body
+      .slider-during
+        %a.prev{href: "#"}
+        %a.next{href: "#"}
+        %ol.slider.quick-guide
+          %li
+            %h2 Drop, cover and hold.
+            %p Duck under a strong table or desk. Cover your head and neck with your arms against an interior wall. Stay away from windows.
+          %li
+            %h2 Stay calm.
+            %p Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.
+          %li
+            %h2 Stay put.
+            %p Shelter in place–whether you’re in a car, in bed, or in a public place. Do not try to run out of the building during strong shaking, hold tight until the shaking stops. If you’re outdoors, steer clear of wires or falling objects.
+      .slider-after
+        %ol.slider.quick-guide
+          %li
+            %h2 Leave a trail.
+            %p If you leave home, leave a sign telling friends and family your location. Digitaly savvy? Send a tweet or Facebook update telling everyone know that you’re ok.
+          %li
+            %h2 Stay tuned.
+            %p Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.
+          %li
+            %h2 Check SF72.
+            %p In the event of an emergency, this site will go into emergency mode and bring you live updates and tweets from around the city, information on missing persons, and ways you can help.
   = render :partial => "partials/footer"
