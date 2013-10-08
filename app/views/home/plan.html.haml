@@ -1,7 +1,31 @@
-.main-container.connect
+.main-container.plan
   = render :partial => "partials/header"
-  .opening
-    %h1 Preparedness is all about people
+  .opening.em-plan
+    %h1 Make an emergency plan with your people
     %div
-      %p People are most resilient when connected to others in a crisis. What digital networks and groups do you belong to? These might be the people that you lean on in an emergency.
+      %p The same connections that are important in everyday life—to friends, family, neighbors, and communities—are even more crucial in a crisis. And recent disasters have proved that social media and technology play an important role in emergency preparedness and response, too.
+  .meet-up
+    %h2 Set up your meet up.
+    %p First, make a meetup plan with your inner circle of friends, relatives, or immediate family. That way, you will each know what to do in an emergency.
+  .plan-basics
+    %h2 What basics does your plan need to include?
+    .plan-list
+      %ul
+        %li.select <strong>Select a few of your nearest and dearest.</strong> Who’s the group you’ll want to get in touch with if something happens?
+        %li.pick <strong>Pick an out of state contact.</strong> Who can serve as a hub for information, if you can’t reach others in your local area?
+        %li.agree <strong>Agree on a place to meet. </strong> How about a park? A landmark? Don’t choose a house—in case it’s inaccessible.
+  .print-this
+    %h2 Print this.
+    %p Use the simple forms in this pdf to make a plan with a few people close to you, so you all know what to do in the event of an emergency. Print a copy for yourself, and email or print copies for the people in your group. And stick your copy on the fridge or somewhere else you won’t forget.
+    %a{href: "/pdf/SF72_prepare_plan.pdf"} Download</br>Make a Plan
+  .stay-tuned
+    %h2 Stay tuned.
+    %p SF72 is developing innovative tools to help San Franciscans get prepared—from a mobile app to educational workshops. Interested in what the mobile app might look like? A few features of the mobile app are detailed below. Would you use a tool like this? Interested in working on it? Send your feedback to info@sf72.org.
+    %ul
+      %li
+        %p Geo-track your loved ones relative to your location, to quickly establish a meetup spot.
+      %li
+        %p Send emergency group texts to your inner circle of friends.
+      %li
+        %p Find nearby shelter, food, and community resources.
   = render :partial => "partials/footer"

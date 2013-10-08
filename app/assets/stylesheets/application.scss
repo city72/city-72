@@ -69,6 +69,17 @@ $video-play: 'I';
 	}
 }
 
+@mixin icon-mini{
+	&:before{
+		font-size: 1.65rem;
+		border-radius: 50px;
+		padding-top: 22px;
+		height: 63px;
+		width: 85px;
+	}
+}
+
+
 /* CSS Mini Reset */
 html, body, div, form, fieldset, legend, label {
 	margin: 0;
@@ -413,3 +424,4 @@ body {
 @import "quick_guide";
 @import "about";
 @import "mobile";
+@import "plan";
