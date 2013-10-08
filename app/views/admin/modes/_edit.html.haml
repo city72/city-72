@@ -78,27 +78,29 @@
               %label{:for => "text"} Text
               %br/
               %input#text{:name => "mode[text]", :size => "30", :type => "text", :value => @mode.text}/
-          .form-section.what-should-i-do
-            %h2
-              .circle 2
-              What should I do?
-              .clear
-              .field
-                %h3 Recommendation #1
-                %input{name: 'mode[recommendation_1_title]', type: 'text', value: @mode.recommendation_1_title}
-                %textarea{name: 'mode[recommendation_1_text]'} #{@mode.recommendation_1_text}
-              .field
-                %h3 Recommendation #2
-                %input{name: 'mode[recommendation_2_title]', type: 'text', value: @mode.recommendation_2_title}
-                %textarea{name: 'mode[recommendation_2_text]'} #{@mode.recommendation_2_text}
-              .field
-                %h3 Recommendation #3
-                %input{name: 'mode[recommendation_3_title]', type: 'text', value: @mode.recommendation_3_title}
-                %textarea{name: 'mode[recommendation_3_text]'} #{@mode.recommendation_3_text}
-              .clear
+          / 
+            -# This is commented temporarily because it may be added back later.
+            .form-section.what-should-i-do
+              %h2
+                .circle 2
+                What should I do?
+                .clear
+                .field
+                  %h3 Recommendation #1
+                  %input{name: 'mode[recommendation_1_title]', type: 'text', value: @mode.recommendation_1_title}
+                  %textarea{name: 'mode[recommendation_1_text]'} #{@mode.recommendation_1_text}
+                .field
+                  %h3 Recommendation #2
+                  %input{name: 'mode[recommendation_2_title]', type: 'text', value: @mode.recommendation_2_title}
+                  %textarea{name: 'mode[recommendation_2_text]'} #{@mode.recommendation_2_text}
+                .field
+                  %h3 Recommendation #3
+                  %input{name: 'mode[recommendation_3_title]', type: 'text', value: @mode.recommendation_3_title}
+                  %textarea{name: 'mode[recommendation_3_text]'} #{@mode.recommendation_3_text}
+                .clear
           .form-section.configure-updates
             %h2
-              .circle 3
+              .circle 2
               Configure the Citizen Updates Feed
             .field
               %label{:for => "widget_id"} Widget ID
