@@ -65,7 +65,7 @@
 
 .resources {
 	@include row();
-	@include span-columns(5);
+	@include span-columns(4);
 }
 
 .resources-links {
@@ -73,14 +73,13 @@
 
 	.resources-first,
 	.resources-last {
-		@include span-columns(6);
+		@include span-columns(5);
 	}
 }
 
 .social {
-	margin-top: 50px;
 	@include row();
-	@include span-columns(2);
+	@include span-columns(3);
 }
 
 
