@@ -282,13 +282,13 @@ body {
 		@include span-columns(3.2829);
 		color: #FFF;
 		background-color: $highlight;
-		padding: 0 30px;
+		padding: 0 20px 0 30px;
 		height: 420px;
 
 		p {
-			font-size: 1.1rem;
-			line-height: 2rem;
-			margin-top: 5rem;
+			font-size: 1.1875rem;
+			line-height: 1.6875rem;
+			margin-top: 1.9rem;
 		}
 	}
 }

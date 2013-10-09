@@ -2,38 +2,38 @@
 .main-container.connect
   = render :partial => "partials/header"
   .opening
-    %h1 Preparedness is all about people
+    %h1 Preparedness is all about people.
     %div
-      %p People are most resilient when connected to others in a crisis. What digital networks and groups do you belong to? These might be the people that you lean on in an emergency.
+      %p When disaster strikes, we come together to help each other. The most resilient communities are the most connected. Getting prepared is about knowing your neighbors, saying hi to the regulars at the local market, and staying in touch with family and friends—both digitally and in person.
   .existing-networks
     .use
-      %h2 Use your digital networks.
-      %p.intro-networks In the event of an emergency, you will rely on your existing networks &ndash; both digital and physical. Think about the connections and communities you’re part of, so you can band together if something happens.
+      %h2 Connect through your digital networks.
+      %p.intro-networks In the event of an emergency, we all turn to our existing tools and networks—many of which are digital. Think about your connections and the online communities you’re already a part of, so you can share updates and information when something happens.
     .know
       %h3 Know what to do.
-      %p Tips and tools for real emergency situations
-      %a{ :href => "#", :title => "Meet the Team" } Read our blog
+      %p Tips and tools for real emergency situations.
+      %a{href:"http://em4sf.wordpress.com/"}Read our blog
   .networks-list
     %ul
       %li.facebook
-        %h3 Create</br>a Facebook group
-        %p <strong>Now</strong> Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together.
-        %p <strong>In an emergency</strong> Post your status to let friends and family know that you are okay.
+        %h3 Use your</br>Facebook account
+        %p <strong>Now:</strong> Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together.
+        %p <strong>In an emergency:</strong> Post your status to Facebook to let friends and family know you are ok.
       %li.twitter
-        %h3 Follow</br>on Twitter
-        %p <strong>Now</strong> Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites: <a href="http://twitter.com/SF_Emergency">SFDEM</a>, <a href="http://twitter.com/511SFBay">511</a> and <a href="http://twitter.com/Emergency_In_SF">Emergencies in SF</a>.
-        %p <strong>In an emergency</strong> Post about yourself and your area. Use <a href="https://twitter.com/search?q=%23SF72">#SF72</a> to include them in the crowdsourced emergency feed.
+        %h3 Check updates</br>on Twitter
+        %p <strong>Now:</strong> Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites: <a href="http://twitter.com/SF_Emergency">SFDEM</a>, <a href="http://twitter.com/511SFBay">511</a> and <a href="https://twitter.com/SF311">311</a>.
+        %p <strong>In an emergency:</strong> Post about yourself and your area. Use <a href="https://twitter.com/search?q=%23SF72">#SF72</a> to include them in the crowdsourced emergency feed.
       %li.airbnb
-        %h3 Get an</br>Airbnb Account
-        %p <strong>Now</strong> Create an Airbnb profile so you are ready to find or share a place to stay if anything happens.
-        %p <strong>In an emergency</strong> Find a place to stay, or share your place with those in need.
+        %h3 Sign up</br>for Airbnb
+        %p <strong>Now:</strong> Create an AirBnB proﬁle so you are ready to ﬁnd or share a place to stay if anything happens.
+        %p <strong>In an emergency:</strong> Find a place to stay, or share your place with those in need.
   .full-img-article
     %ul
       %li.use
-        %h3 Use your physical</br>networks.
-        %p In the event of an emergency, you will rely on your existing networks – both digital and physical. Think about the connections and communities you’re part of, so you can band together if something happens.
+        %h3 Connect through</br>your local networks.
+        %p Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens.
       %li.what
-        %h3 What are your</br>networks?
+        %h3 How to</br>Connect
         %ul.your-net  
           %li.net-first
             %ul
@@ -44,18 +44,21 @@
             %ul
               %li My neighborhood bar
               %li My school
-              %li My church
+              %li My congregation
   .learn-more
     %h3 Learn more from our partners.
-    %p In the event of an emergency, you will rely on your existing networks – both digital and physical. Think about the connections and communities you’re part of, so you can band together if something happens.
+    %p To get even better prepared as a household, neighborhood, or community, connect with these organizations.
     %ul
       %li.red-cross
-        %p Amerian Red Cross, Bay Area Chapter provides a variety of trainings including first aid, CPR, and how to prepare for emergencies.
+        = link_to image_tag( '/assets/static/red-cross.jpg'), 'http://www.redcross.org/ca/san-francisco'
+        %p <strong>Amerian Red Cross</strong>, Bay Area Chapter provides a variety of trainings including first aid, CPR, and how to prepare for emergencies.
         <a href="http://www.redcross.org/ca/san-francisco">www.redcross.org/ca/san-francisco</a>
       %li.nen
-        %p Neighborhood Empowerment Network equips San Francisco’s neighborhoods with tools and programs designed to create safe, clean, and economically resilient communities.
+        = link_to image_tag( '/assets/static/nen.jpg'), 'http://www.empowersf.org'
+        %p <strong>Neighborhood Empowerment Network</strong> equips SF neighborhoods with tools and programs designed to create safe, clean, and economically resilient communities.
         <a href="http://empowersf.org/">www.empowersf.org</a>
       %li.nert
-        %p San Francisco Neighborhood Emergency Response Teams is free training offered through the San Francisco Fire Department. It teaches the basics of emergency preparedness and hands-on emergency response so you can take care of yourself, your family and your neighbors.
+        = link_to image_tag( '/assets/static/nert.jpg'), 'http://www.sfgov.org/sfnert'
+        %p <strong>San Francisco Neighborhood Emergency Response Teams</strong> teaches emergency preparedness and response basics through free hands-on training so you are ready to take care of yourself and others.
         <a href="http://www.sfgov.org/sfnert">www.sfgov.org/sfnert</a>
   = render :partial => "partials/footer"

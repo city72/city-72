@@ -77,10 +77,6 @@
 			color: $dark-grey;
 			margin: 2rem 0rem 0rem;
 			font-family: $font-bold;
-
-			&:after {
-				content:' \2014';
-			};
 		}
 	}
 
@@ -190,22 +186,12 @@
 			background-position: top left;
 			background-repeat: no-repeat; 
 			position: relative;
-			padding-top: 80px;
-		}
-		
-		.red-cross {
-			@include retina-image(/assets/static/red-cross, 100% 100%, jpg);
+			padding-top: 20px;
 
-		}
-
-		.nen {
-			@include retina-image(/assets/static/nen, 100% 100%, jpg);
-
-		}
-
-		.nert {
-			@include retina-image(/assets/static/nert, 100% 100%, jpg);
-
+			strong {
+				font-weight: normal;
+				font-family: $font-bold;
+			}
 		}
 	}
 
