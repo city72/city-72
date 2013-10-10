@@ -5,23 +5,20 @@
   %a.logo-mobile{href:"/home"}
   %ul.main-nav
     %li
-      %a{href:"/prepare"}
-        %strong Prepare
-      %ul.submenu
-        %li
-          %a{href:"/stories"} Stories
-        %li
-          %a{href:"/supplies"} Supplies
-    %li
       %a{href:"/connect"}
-        %strong The App
+        %strong Get<br>Connnected
     %li
-      %a{href:"/about"}
-        %strong About Us
+      %a{href:"/supplies"}
+        %strong Gather<br>Supplies
+    %li
+      %a{href:"/stories"}
+        %strong Watch<br>Stories
+    %li
+      %a{href:"/plan"}
+        %strong Make<br>a Plan
     %li.em-link
       %a{href:"/em/home"}
-        %strong Crisis Mode
-        %span Live updates and crisis tools in<br />an emergency. <em class="preview-nav-link">Preview now</em>
+        %strong In an<br>Emergency
   - unless browser.ie?
     .mobile-menu
       - if @preview

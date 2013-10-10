@@ -12,6 +12,9 @@
 
 .main-container {
 	padding: 0;
+	background-color: #fff;
+	@include box-shadow(0 0 10px 1px rgba(0, 0, 0, 0.1));
+
 }
 
 @include media($mobile) {

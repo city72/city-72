@@ -2,12 +2,12 @@
 .header {
 	@include outer-container;
 	position: relative;
-	margin-bottom: 1rem;
 }
 
 #logo {
-	@include span-columns(2.4);
-	margin-top: 2.35rem;
+	@include span-columns(3.2829);
+	margin-top: 2rem;
+	padding-left: 3.8rem;
 }
 
 .logo {
@@ -20,30 +20,27 @@
 }
 
 .main-nav > li {
-	@include span-columns(1.7);
-	padding: 53px 0 44px;
+	@include span-columns(2.02);
+	@include omega;
 	position: relative;
-}
-
-.main-nav > li:first-child {
-	margin-left: 2.5rem;
+	border-left: 2px solid lighten( $light-grey, 5% );
 }
 
 .main-nav {
-
 	margin: 0;
 
 	a {
 		display: block;
 		color: $body-color;
 		text-decoration: none;
+		padding: 45px 25px 44px;
 	}
 
 	strong {
 		display: block;
 		margin-bottom: -0.28rem;
 		font-family: $font-medium;
-		font-size: 1.25rem;
+		font-size: 0.9rem;
 		font-weight: normal;
 		line-height: 1;
 	}
@@ -57,21 +54,22 @@
 	}
 
 	li.active {
-		border-top: 3px solid orange;
-		padding-top: 50px;
+      	background-color: lighten( $light-grey, 5% );
+		
+		a {
+      		color: $dark-grey;
+		}
 	}
 
-	li.active, li:hover {
+	li:hover {
+      	background-color: lighten( $light-grey, 7.5% );
+		
 		a {
-      		color: $highlight;
+      		color: $dark-grey;
 		}
 	}
 
 	li.em-link {
-		position: absolute;
-		top: -0.1rem;
-		right: 0.5rem;
-		width: 12.6rem;
 
 		.preview-nav-link {
 			position: relative;
@@ -109,13 +107,8 @@
 
 	li.em-link:hover strong,
 	li.em-link:hover .preview-nav-link {
-		color: #CE3000;
+		color: $highlight-dark;
 	}
-
-	li.em-link.active {
-		border-top: 5px solid $highlight-dark;
-	}
-
 
 	.submenu {
 		position: absolute;

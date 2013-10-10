@@ -1,19 +1,15 @@
-= javascript_include_tag "about"
 .main-container.about
 	= render :partial => "partials/header"
 	.page-intro
 		.big-title
 			%h1 About Us
-			%span The vision behind SF72
-			.tooltip 
-				.tooltip-content <strong>Bills, bills, bills.</strong> Keep small bills on hand with your supplies. 
-		
+			%span The vision behind SF72		
 		.intro-row
 			.main-intro
 				%h2 What is SF72?
 				%p SF72 is San Francisco’s hub for emergency preparedness. Our mission is to enable San Franciscans to get prepared. The best way to do this is for us to get connected to each other and share resources. If we can be prepared for the first 72 hours after a disaster, we will be ready for an emergency, no matter what form it takes.
 			.aside
-				.connection
+				.connect
 					%strong We believe in connection,<br /> not catastrophe.
 					%a.read-manifesto{href:'our_manifesto'} Read the SF72 Manifesto
 	%ul.about-data
@@ -29,22 +25,4 @@
 			.about-why
 			%h2 Why
 			%p A little now will mean a lot later. Small steps towards preparedness have a huge impact. Connecting with your network, downloading our app, or watching a video is the first step towards being better prepared. 
-	.contact-block
-		.contact-heading
-			%h3
-				%strong Have thoughts?<br /> Send them our way.
-				%span SF72 belongs to all<br /> of us.
-		.contact-form
-			%input.name{ placeholder: "Your name" }
-			%input.from-email{ placeholder: "Your email" }
-			%textarea.message{ placeholder: "Tell us what you think about SF72." }
-			%input.send{ type: "button", value: "Submit" }
-			%span.sending-notification Sending&hellip;
-			-if @render_captcha
-				=show_simple_captcha(:label => "", :placeholder => "")
-		.successful-response-container
-			%p Thanks!
-			%p Your feedback makes it better for all of us.
-		.error-response-container
-			%p
-= render :partial => "partials/footer"
+	= render :partial => "partials/footer"

@@ -1,71 +1,88 @@
 /* FOOTER */
-.footer {
-	background-color: $light-grey;
-	padding: 1.5em;
-	margin-top: 2rem;
-	color: #b2b2b2;
-	font-family: $font-medium;
-	font-size: 0.8rem;
 
-	a:hover {
-		color: $dark-grey;
-	}
-}
 
-.by-line {
-	@include span-columns(3.5);
-	position: relative;
-	margin-top: 0.83rem;
-	line-height: 1.25;
-}
-
-.by-line:before {
-	font-family: 'sf72-icons';
-	font-size: 1.8rem;
-	content: 'y';
-	color: $dark-grey;
-	position: absolute;
-	top: 1rem;
-	left: -3.5rem;
-	-webkit-font-smoothing: antialiased;
-}
-
-.resources-block {
-	@include span-columns(4);
-	@include shift(0.5);
-	font-size: 0.8rem;
-
-	h2 {
-		font-size: 0.8rem;
-		font-weight: normal;
-		color: #969696;
-		margin-bottom: 0;
-	}
-
-	ul {
-		margin-top: 0;
-		width: 13.75rem;
-	}
-
-	li {
-		@include span-columns(6);
-		@include omega(2n);
-		line-height: 18px;
+.footer-top {
+	@include row();
+	background-color: lighten( $light-grey, 5% );
+	padding: 20px 30px;
+	
+	.by-line {
+		@include span-columns(5);
+		font-family: $font-regular;
+		@include shift(2);
+		position: relative;
+		margin-top: 1.83rem;
+		line-height: 1.45;
+		font-size: 0.9rem;
 
 		a {
-			color: #b2b2b2;
+			color: $mid-grey;
 		}
+	}
+
+	.by-line:before {
+		font-family: 'sf72-icons';
+		font-size: 2.7rem;
+		content: 'y';
+		color: $mid-grey;
+		position: absolute;
+		left: -6.5rem;
+		bottom: 0.1rem;
+		-webkit-font-smoothing: antialiased;
 	}
 }
 
-.privacy-list {
+.footer-bottom {
+	background-color: $light-grey;
+	font-size: 0.83rem;
+	padding: 30px 30px 50px;
+
+	ul {
+
+		li {
+
+			h2 {
+				font-size: 0.9rem;
+			}
+		}
+	}
+
+	.footer-links {
+		@include row();
+		margin: 0;
+	}
+	a {
+		color: $mid-grey;
+	}
+
+}
+
+.more {
+	@include row();
+	@include span-columns(3);
+	@include shift(2);
+}
+
+.resources {
+	@include row();
 	@include span-columns(4);
+}
 
-	li {
-		font-family: $font-regular;
-		
-		a { 
-			color: #b2b2b2;
-		}
+.resources-links {
+	@include row();
+
+	.resources-first,
+	.resources-last {
+		@include span-columns(5);
 	}
 }
+
+.social {
+	@include row();
+	@include span-columns(3);
+}
+
+
+
+
+
