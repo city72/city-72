@@ -1,0 +1,190 @@
+/*   PLAN   */
+
+
+.plan {
+
+	h2 {
+		font-size: 2.125rem;
+		line-height: 1.625rem;
+		color: $dark-grey;
+	}
+
+	.em-plan {
+		@include retina-image(/assets/static/plan, 1020px 420px, jpg);
+
+		h1 {
+			margin-top: 0;
+			line-height: 4.5625rem;
+			padding: 130px 70px 30px;
+		}
+
+		div {
+
+			p {
+				font-size: 1.1475rem;
+				line-height: 1.625rem;
+				margin-top: 3rem;
+			}
+		}
+	}
+}
+
+.meet-up,
+.plan-basics,
+.print-this,
+.stay-tuned {
+	padding: 0 30px;
+}
+
+.meet-up {
+	@include row();
+	margin: 7rem 0 8rem;
+
+	h2,
+	p {
+		margin: 0 0 1rem;
+	}
+
+	p {
+		@include span-columns(8.5);
+		font-size: 1.1875rem;
+
+	}
+}
+
+.plan-basics {
+	@include retina-image(/assets/static/basics, 510px 507px, jpg);
+	background-repeat: no-repeat;
+	background-position: right;
+	@include row();
+	height: 510px;
+	margin: 3rem 0 2rem;
+	background-color: $subtle-grey;
+
+	h2 {
+		font-size: 1.3125rem;
+		margin-top: -3rem;
+	}
+
+	ul {
+		@include span-columns(3.6);
+		@include shift(1.7);
+		font-size: 1.1875rem;
+
+		li {
+			margin: 2.5rem 0 0;
+			position: relative;
+
+			strong {
+				font-weight: normal;
+				color: $dark-grey;
+				font-family: $font-bold;
+			}
+
+		}
+
+		.select {
+			@include icon(#FFF,'J',$highlight,8px,-120px);
+			@include icon-mini;
+		}
+
+		.pick {
+			@include icon(#FFF,'L',$highlight,8px,-120px);
+			@include icon-mini;
+		}
+
+		.agree {
+			@include icon(#FFF,'K',$highlight,8px,-120px);
+			@include icon-mini;
+		}
+
+	}
+}
+
+.print-this {
+	margin: 7rem 0 4rem;
+	height: 290px;
+	@include row();
+	@include retina-image(/assets/static/print, 510px 507px, jpg);
+	background-repeat: no-repeat;
+	background-position-y: 30px;
+	background-position-x: 730px;
+
+	h2 {
+		margin-bottom: 0;
+	}
+
+	p {
+		@include row();
+		@include span-columns(7.5);
+		font-size: 1.1875rem;
+	}
+
+	a {
+		font-family: $font-bold;
+		@include span-columns(5);
+		@include shift(0.5);
+		position: relative;
+	}
+
+	a:before {
+		position: absolute;
+		display: block;
+		left: -1.1em;
+		top: -0.2rem;
+		font-family: 'sf72-icons';
+		content: 'q';
+		font-size: 2.3em;
+		-webkit-font-smoothing: antialiased;
+	}
+}
+
+.stay-tuned {
+	background-color: $subtle-grey;
+	padding: 4rem 30px;
+	@include row();
+	@include retina-image(/assets/static/app, 510px 507px);
+	background-repeat: no-repeat;
+	background-position-y: 60px;
+	background-position-x: 668px;
+
+	p {
+		@include row();
+		@include span-columns(7.5);
+		font-size: 1.1875rem;
+	}
+
+	ul {
+		@include row();
+		@include span-columns(12);
+		
+		li {
+			@include span-columns(4);
+			position: relative;
+			height: 300px;
+			padding-top: 90px;
+			margin-top: 3rem;
+
+			p {
+				@include row();
+				@include span-columns(9.5);
+				font-size: 1rem;
+			}
+
+			.geo {
+				@include icon(#FFF,'N',$highlight,0,0);
+				@include icon-mid;
+			}
+			.sms {
+				@include icon(#FFF,'V',$highlight,0,0);
+				@include icon-mid;
+			}
+			.shelter {
+				@include icon(#FFF,'M',$highlight,0,0);
+				@include icon-mid;
+			}
+		}
+	}
+
+}
+
