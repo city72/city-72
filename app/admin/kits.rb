@@ -1,5 +1,5 @@
 ActiveAdmin.register Kit, as: 'Item To Share' do
-  menu parent: 'CMS', label: 'Manage Items to Share'
+  menu parent: 'CMS', label: 'Manage Supplies to Share'
   
   config.paginate = false
 
