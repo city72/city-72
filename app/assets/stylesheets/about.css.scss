@@ -4,7 +4,6 @@
 	@include retina-image(/assets/static/about-us-title, 960px 490px, jpg);
 }
  .page-intro {
- 	padding: 0 30px;
 
  	.main-intro {
  		@include span-columns(8);
