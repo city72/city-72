@@ -69,16 +69,16 @@
     .main-container.updates-wrapper
       .updates
         .citizen-reports
-          <style type="text/css">#twitter-widget-0{width:720px;}</style>
-          <a class="twitter-timeline" data-widget-id="#{@citizen_feed.widget_id}" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+          <style type="text/css">#twitter-widget-0{width:70%}</style>
+          <a class="twitter-timeline" data-widget-id="#{@citizen_feed.widget_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         .official-reports
-          <style type="text/css">#twitter-widget-1{width:720px;}</style>
-          <a class="twitter-timeline" data-widget-id="364807510647001088" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+          <style type="text/css">#twitter-widget-1{width:70%}</style>
+          <a class="twitter-timeline" data-widget-id="364807510647001088" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         .status
-          <style type="text/css">#twitter-widget-2{width:720px;}</style>
-          <a class="twitter-timeline" href="https://twitter.com/511SFBay" data-widget-id="370622485349146624" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
+          <style type="text/css">#twitter-widget-2{width:70%}</style>
+          <a class="twitter-timeline" href="https://twitter.com/511SFBay" data-widget-id="370622485349146624" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     = render :partial => "partials/footer"
     .modal-wrapper
@@ -99,32 +99,32 @@
     .icon.icon-info
     %h4.header What happened?
     %p.description Announces the crisis and its severity. Click on &ldquo;What should I do?&rdquo; to get next steps. 
-    %p.index 1 of 6
-  %li{"data-class" => "em-quick-guide-trigger"}
-    .icon.icon-info
-    %h4.header What should I do?
-    %p.description Three simple action steps—so you know what to do. These tips will change depending on the type of disaster and timeline. Check back often. 
-    %p.index 2 of 6
+    %p.index 1 of 5
+  / %li{"data-class" => "em-quick-guide-trigger"}
+  /   .icon.icon-info
+  /   %h4.header What should I do?
+  /   %p.description Three simple action steps—so you know what to do. These tips will change depending on the type of disaster and timeline. Check back often. 
+  /   %p.index 2 of 6
   %li{"data-class" => "map-tooltip-placement",
-      "data-options"  => "tipLocation:left",
+      "data-options"  => "tipLocation:right",
       }
     .icon.icon-map-on
     %h4.header Street Status
     %p.description A geo-tagged crisis map that shows nearby shelters and resources, as well as hazardous or road-blocked areas &ndash; so you can find safety in your surroundings
-    %p.index 3 of 6
+    %p.index 2 of 5
   %li{"data-id" => "citizen-updates-tab"}
     .icon.icon-twitter-big-on
     %h4.header  Crowdsourced Updates
     %p.description A live stream of crowdsourced updates from Twitter &ndash; so you can get an on-the-ground picture of what’s going on.
-    %p.index 4 of 6
+    %p.index 3 of 5
   %li{"data-id" => "official-reports-tab"}
     .icon.icon-alert
     %h4.header Official Updates
     %p.description Up-to-date content from official city sources &ndash; so you can know exactly what is happening, when it happens.
-    %p.index 5 of 6
+    %p.index 4 of 5
   %li{"data-id" => "transportation-updates-tab",
       "data-button" => "Finish"}
     .icon.icon-transport
     %h4.header Transportation alerts
     %p.description Public transportation status updates &ndash; so you can navigate the city quickly, easily, and safely.
-    %p.index 6 of 6
+    %p.index 5 of 5
