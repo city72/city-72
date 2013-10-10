@@ -6,7 +6,7 @@
 
 .existing-networks {
 	@include row();
-	padding: 7rem 30px 3.5rem;
+	padding: 3.75rem 30px 3.5rem;
 
 	.use {
 		@include span-columns(8.5);
@@ -19,6 +19,7 @@
 
 		.intro-networks {
 			margin: 0;
+			color: $body-color;
 			@include intro-paragraph;
 			@include span-columns(10);
 

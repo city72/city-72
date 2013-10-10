@@ -140,7 +140,6 @@ h5 {margin: 0}
 @mixin intro-paragraph {
 	font-size: 1.1875rem;
 	line-height: 1.55;
-	color: lighten( $mid-grey, 2% );
 }
 
 @mixin col-title {

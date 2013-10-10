@@ -47,7 +47,7 @@
 			h2 {
 				color: $highlight;
 				line-height: 1rem;
-				margin-top: 7rem;
+				margin-top: 3.75rem;
 			}
 
 			span {
@@ -96,6 +96,7 @@
 		padding: 0 30px;
 		margin: 6.5rem 0 5rem;
 		font-family: $font-bold;
+		line-height: 2.65rem;
 	}
 	
 	h2 {
@@ -113,30 +114,48 @@
 			margin-bottom: 100px; 
 			background-repeat: no-repeat;
 			color: #FFF;
-			padding: 30px;
+			padding: 60px 40px 30px 30px;
 			position: relative;
+			transition: all 0.2s ease-out;
+
+			&:hover {
+				background-image: none;
+				background-color: $highlight;
+
+				h2 {
+					display: none;
+				}
+
+				p {
+					display: block;
+					font-size: 1.265rem;
+				}
+			}
+
+			h2 {
+				line-height: 2.65rem;
+
+				&:before {
+					line-height: 4.5rem;
+				}
+			}
+
+			p {
+				display: none;
+			}
 		}
 
 		.learn-connect {
 			@include retina-image(/assets/static/learn-1, 337px 345px, jpg);
-			
-			h2 {
-				@include icon(#FFF,$hands,$highlight,-50px,45px);
-			}	
+			@include icon(#FFF,$hands,$highlight,-50px,45px);
 		}
 		.learn-supplies {
 			@include retina-image(/assets/static/learn-2, 337px 345px, jpg);
-			
-			h2 {
-				@include icon(#FFF,$first-aid,$highlight,-50px,45px);		
-			}
+			@include icon(#FFF,$first-aid,$highlight,-50px,45px);	
 		}
 		.learn-plan {
 			@include retina-image(/assets/static/learn-3, 337px 345px, jpg);
-			
-			h2 {
-				@include icon(#FFF,$phone,$highlight,-50px,45px);
-			}
+			@include icon(#FFF,$phone,$highlight,-50px,45px);
 		}
 	}
 }
