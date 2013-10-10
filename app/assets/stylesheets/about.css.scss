@@ -3,12 +3,20 @@
 .about .page-intro .big-title {
 	@include retina-image(/assets/static/about-us-title, 960px 490px, jpg);
 }
+ .page-intro {
+ 	padding: 0 30px;
+
+ 	.main-intro {
+ 		@include span-columns(8);
+ 	}
+ }
 
 .about .main-intro p {
 	width: 100%;
 }
 
-.aside .connection {
+.aside .connect {
+	@include row();
 	border-left: 2px solid $highlight;
 	margin-top: 1.6rem;
 
@@ -43,6 +51,7 @@
 	@include outer-container;
 	margin-top: 20px;
 	margin-bottom: 4.25rem;
+	padding: 0 30px;
 
 	li {
 		@include span-columns(4);
