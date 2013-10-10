@@ -2,7 +2,7 @@
 = javascript_include_tag "jquery.joyride-2.1"
 = javascript_include_tag "froogaloop.min"
 = javascript_include_tag "em"
-.home-em
+.home-em.main-container
   .demo-ribbon
     .ribbon-inner Demo
   .wrapper.em-header
@@ -13,29 +13,29 @@
         .alert-info
           %h3 #{@mode.title}
           %p #{@mode.text}
-        .em-quick-guide-trigger
-          %a.show-quick-guide{src:"#"} What should I do?
-          %a.hide-quick-guide{src: "#"} Hide what to do
+        / .em-quick-guide-trigger
+        /   %a.show-quick-guide{src:"#"} What should I do?
+        /   %a.hide-quick-guide{src: "#"} Hide what to do
     .em-quick-guide
       .wrapper
-        %h3 What to do
-        %ol.quick-guide
-          - if !@mode.recommendation_1_title.empty?
-            %li
-              %h2 #{@mode.recommendation_1_title}
-              %p #{@mode.recommendation_1_text}
-          - if !@mode.recommendation_2_title.empty?
-            %li
-              %h2 #{@mode.recommendation_2_title}
-              %p #{@mode.recommendation_2_text}
-          - if !@mode.recommendation_3_title.empty?
-            %li
-              %h2 #{@mode.recommendation_3_title}
-              %p #{@mode.recommendation_3_text}
+        / %h3 What to do
+        / %ol.quick-guide
+        /   - if !@mode.recommendation_1_title.empty?
+        /     %li
+        /       %h2 #{@mode.recommendation_1_title}
+        /       %p #{@mode.recommendation_1_text}
+        /   - if !@mode.recommendation_2_title.empty?
+        /     %li
+        /       %h2 #{@mode.recommendation_2_title}
+        /       %p #{@mode.recommendation_2_text}
+        /   - if !@mode.recommendation_3_title.empty?
+        /     %li
+        /       %h2 #{@mode.recommendation_3_title}
+        /       %p #{@mode.recommendation_3_text}
   .map-container#mobile-maps
     .wrapper
       .map-heading
-        %h3 Crisis Map
+        %h3 Emergency Map
       .map-actions
         %a.map-tips-trigger{href:"#"} Show map tips
     .map-area
@@ -80,7 +80,7 @@
           <style type="text/css">#twitter-widget-2{width:720px;}</style>
           <a class="twitter-timeline" href="https://twitter.com/511SFBay" data-widget-id="370622485349146624" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      = render :partial => "partials/footer"
+    = render :partial => "partials/footer"
     .modal-wrapper
       .em-preview-modal.modal
         %a.icon-close{href:"#"}
