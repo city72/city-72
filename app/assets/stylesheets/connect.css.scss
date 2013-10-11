@@ -193,6 +193,31 @@
 				font-weight: normal;
 				font-family: $font-bold;
 			}
+			
+			a {
+				background-repeat: no-repeat;
+				height: 70px;
+    			width: 100%;				
+			}
+
+			#red-cross {
+				@include retina-image(/assets/static/redcross, 258px 61px);
+				background-position-y: 10px; 
+				text-indent:-9999px;
+				display:block;
+			}
+
+			#nen {
+				@include retina-image(/assets/static/nen, 142px 67x);
+				text-indent:-9999px;
+				display:block;
+			}
+
+			#nert {
+				@include retina-image(/assets/static/nert, 69px 75px);
+				text-indent:-9999px;
+				display:block;
+			}
 		}
 	}
 
