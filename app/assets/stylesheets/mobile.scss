@@ -40,10 +40,58 @@ $mobile-gray-title: #808080;
 		background-color: #FFF;
 	}
 
-	.footer { display: none }
+	.footer {
+
+		color: #515150;
+
+		.by-line {
+			@include span-columns(4);
+			font-size: 0.68rem;
+			margin: 0 0 0 30px;
+			width: 240px;
+
+			&:before {
+				font-size: 1.375rem;
+				color: #959595;
+				left: -2.3rem;
+				top: -0.1rem;
+			}
+		}
+
+		.footer-bottom a{
+			color: #515150;
+			padding: 4px 0;
+			display: inline-block;
+		}
+
+		.more,
+		.resources {
+			@include span-columns(2);
+			margin-left: 0;
+			font-size: 0.68rem;
+		}
+
+		.resources {
+			@include omega();
+		}
+
+		.resources-first,
+		.resources-last {
+			@include span-columns(4);
+		}
+
+		.social {
+			margin-top: -100px;
+		}
+
+		.social h2 {
+			display: none;
+		}
+
+	}
 
 	/* MOBILE MAIN NAV */
-    .logo {
+  .logo {
 		display: none;
 	}
 
@@ -199,11 +247,18 @@ $mobile-gray-title: #808080;
 
 	.questions ul li {
 		@include span-columns(4);
+		@include omega();
+		margin-bottom: 23px;
 
 		h2{
 			margin-top: 0;
 			font-size: 1.5rem;
-		} 
+			font-family: $font-medium;
+		}
+
+		span {
+			@include mobile-body-paragraph();
+		}
 
 	}
 
@@ -245,6 +300,125 @@ $mobile-gray-title: #808080;
 			font-family: $font-medium;
 		}
 	}
+
+	/* GENERAL ELEMENTS */
+	.opening {
+		margin-top: 44px;
+
+		h1 {
+			@include span-columns(4);
+			font-size: 2rem;
+			font-family: $font-medium;
+			line-height: 1.1;
+			padding: 75px 22px 0;
+			height: 222px;
+			text-align: center;
+		}
+
+		div {
+			@include span-columns(4);
+			height: auto;
+
+			p {
+				font-size: 1rem;
+				line-height: 1.375;
+				margin: 20px 0;
+			}
+		}
+	}
+
+	.learn-more {
+		ul li {
+			@include span-columns(4);
+		}
+	}
+
+	/* GET CONNECTED */
+	.existing-networks {
+		padding: 34px 22px 0;
+
+		.use {
+			@include span-columns(4);
+			line-height: 1.16;
+
+			h2 {
+				margin: 0;
+				color: #4D4D4D;
+				line-height: 1.16;
+			}
+
+			.intro-networks {
+				@include mobile-body-paragraph;
+			}
+
+		}
+
+		.know {
+			@include span-columns(4);
+			border-left: none;
+			border-top: solid 1px #CACACA;
+			padding-left: 0;
+			margin-top: 9px;
+			padding-top: 18px;
+
+			h3 {
+				font-size: 1rem;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.networks-list{
+		li {
+			@include span-columns(4);
+			padding: 0;
+			margin-bottom: 20px;
+
+			&.facebook:before,
+			&.twitter:before,
+			&.airbnb:before {
+				font-size: 2rem;
+				width: 57px;
+				height: 52px;
+				padding-top: 5px;
+				top: 10px;
+			}
+		}
+
+		h3 {
+			padding-left: 72px;
+			font-size: 16px;
+			line-height: 1.2;
+		}
+
+		p strong {
+			margin: 1.5rem 0rem 0rem;
+		}
+	}
+
+	.full-img-article{
+		ul .use,
+		ul .what {
+			@include span-columns(4);
+		}
+
+	}
+
+	/* SUPPLIES */
+	.opening.supplies {
+		background-position-x: 0;
+	}
+
+	.action-bar {
+		margin-top: 36px;
+		padding: 0;
+
+		.tabs {
+			@include box-shadow(0 0 0 transparent);
+		} 
+	}
+
+	/* OLD STYLES */
 
 	.intro-video {
 		margin-top: 2.75rem;
@@ -811,6 +985,7 @@ $mobile-gray-title: #808080;
 	}
 
 	.story-list {
+		padding: 0;
 		
 		li {
 			@include span-columns(4);
@@ -1036,7 +1211,6 @@ $mobile-gray-title: #808080;
 		@include span-columns(4);
 		margin: 0;
 		padding: 0;
-		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 		
 		li {
 			margin: 0;
@@ -1119,7 +1293,9 @@ $mobile-gray-title: #808080;
 	.things-list li:hover img { display: inline; }
 
 	.kits {
-		padding-top: 0.6rem;
+		padding: 0.6rem 13px;
+    background-color: #FFF;
+
 
 		h2 {
 			margin: 1rem 3% 0;
@@ -1140,6 +1316,7 @@ $mobile-gray-title: #808080;
 
 	/* CRISIS MODE */
 
+	/*
 	.demo-ribbon {
 		display: block;
 		width: 85px;
@@ -1165,6 +1342,7 @@ $mobile-gray-title: #808080;
 			box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
 		}
 	}
+	*/
 
 	.em-header {
 		position: fixed;
