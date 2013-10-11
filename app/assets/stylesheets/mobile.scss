@@ -418,6 +418,25 @@ $mobile-gray-title: #808080;
 		} 
 	}
 
+	/* MAKE A PLAN */
+
+	.meet-up {
+		margin: 2rem 0 8rem;
+	}
+
+	.meet-up p {
+		@include span-columns(4);
+	}
+
+	.plan-basics {
+		background-image: none;
+		padding: 0;
+	}
+
+	.plan-basics ul {
+		@include span-columns(4);
+	}
+
 	/* OLD STYLES */
 
 	.intro-video {
@@ -494,11 +513,14 @@ $mobile-gray-title: #808080;
 		}
 	}
 
+	.basics-slider {
+		padding: 0;
+	}
+
 	.basics-tabs {
 		@include span-columns(4);
 		margin: 0;
 		padding: 0;
-		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
 		
 		li {
 			width: 51%;
@@ -799,6 +821,11 @@ $mobile-gray-title: #808080;
 
 	a.checklist {
 		display: none;
+	}
+
+	.plan .em-plan h1 {
+		padding: 80px 0 !important;
+		line-height: 1.1 !important;
 	}
 
 	.make-plan {
