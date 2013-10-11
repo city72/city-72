@@ -38,7 +38,7 @@
 
 .meet-up {
 	@include row();
-	margin: 3.75rem 0 8rem;
+	margin: 3.75rem 0 6rem;
 
 	h2,
 	p {
@@ -102,7 +102,7 @@
 }
 
 .print-this {
-	margin: 7rem 0 4rem;
+	margin: 5rem 0 2rem;
 	height: 290px;
 	@include row();
 	@include retina-image(/assets/static/print, 510px 507px, jpg);
@@ -146,8 +146,12 @@
 	@include row();
 	@include retina-image(/assets/static/app, 510px 507px);
 	background-repeat: no-repeat;
-	background-position-y: 60px;
-	background-position-x: 668px;
+	background-position-y: 90px;
+	background-position-x: 658px;
+
+	h2 {
+		margin-bottom: 0;
+	}
 
 	p {
 		@include row();
@@ -162,9 +166,9 @@
 		li {
 			@include span-columns(4);
 			position: relative;
-			height: 320px;
-			padding-top: 90px;
-			margin-top: 3rem;
+			height: 170px;
+			padding-top: 80px;
+			margin-top: 2rem;
 
 			p {
 				@include row();
@@ -189,3 +193,6 @@
 
 }
 
+.plan .basics-slider {
+	margin-top: 75px;
+}
