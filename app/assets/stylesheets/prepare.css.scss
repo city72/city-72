@@ -250,6 +250,7 @@ a.checklist:before {
 	li {
 		margin-bottom: 1.7rem;
 		@include icon($highlight,$video-play,rgba(255, 255, 255, 0.7),20%,32%);
+		@include icon-play;
 		position: relative;
 
 		.quote-dialog {
@@ -289,7 +290,12 @@ a.checklist:before {
 			}
 		}
 	}
+
+	.coming-soon-story:before {
+		display:none !important;
+	}
 }
+
 .basic-guide {
 	@include row();
 	padding: 0 30px;

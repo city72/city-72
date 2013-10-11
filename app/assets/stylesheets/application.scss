@@ -89,6 +89,19 @@ $video-play: 'I';
 	}
 }
 
+@mixin icon-play{
+	&:before{
+		font-size: 2.35rem;
+		border-radius: 40px;
+		padding: 10px 4px 45px 10px;
+		height: 20px !important;
+		width: 62px !important;
+		top: 23%;
+		left: 36%;
+	}
+}
+
+
 
 /* CSS Mini Reset */
 html, body, div, form, fieldset, legend, label {
