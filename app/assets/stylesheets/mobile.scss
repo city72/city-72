@@ -1,3 +1,5 @@
+$mobile-gray-title: #808080;
+
 @mixin intro-paragraph-mobile {
 	font-size: 1rem;
 	color: #515050;
@@ -35,7 +37,7 @@
 		width: 100%;
 		height: 2.75rem;
 		z-index: 999;
-		background-color: rgba(0, 0, 0, 0.35);
+		background-color: #FFF;
 	}
 
 	.footer { display: none }
@@ -59,7 +61,7 @@
 	.logo-mobile:after {
 		font-family: "sf72-icons";
 		font-size: 1.4rem;
-		color: #FFF;
+		color: $mobile-gray-title;
 		content: "y";
 	}
 
@@ -68,9 +70,9 @@
 	}
 
 	#build-menu {
-		padding: 0.5rem 1rem;
+		padding: 0;
 		width: 270px;
-		background-color: #F1F1F2;
+		background-color: #FBFBFB;
 		position: relative;
 
 		.mobile-menu{
@@ -103,11 +105,16 @@
 				}
 
 				a {
-					padding: 0.6rem 0;
-					margin: 0.2rem;
-					color: #7B7B7B;
-					font-size: 1.55rem;
+					border-bottom: 1px solid #D4D4D4;
+					padding: 22px;
+					color: #9B9B9B;
 				}
+
+				strong {
+					font-size: 1.3125rem;
+					font-weight: bold;
+				}
+
 			}
 
 			.try-demo {
@@ -125,7 +132,7 @@
 
 	#build-menu-button {
 		display: block;
-		color: #FFF;
+		color: $mobile-gray-title;
 		position: absolute;
 		display: block;
 		top: .5rem;
@@ -161,6 +168,81 @@
 		p { 
 			font-size: 1rem;
 			color: $body-color;
+		}
+	}
+
+	.home .page-intro {
+		margin-top: 29px;
+
+		&:before {
+			display: none;
+		}
+
+		.big-title {
+			padding-top: 80px;
+		}
+
+	}
+
+	.home .page-intro .big-title h1 {
+		font-size: 2.03rem;
+		line-height: 1.1;
+		font-family: $font-medium;
+		font-weight: normal;
+
+		&:before {
+			display: none;
+		}
+
+	}
+
+
+	.questions ul li {
+		@include span-columns(4);
+
+		h2{
+			margin-top: 0;
+			font-size: 1.5rem;
+		} 
+
+	}
+
+	.connection {
+		> div {
+			width: 100%;
+			padding: 0;
+			background-color: transparent;
+			height: auto;
+
+			h2 {
+				font-size: 1.5rem;
+				padding: 23px;
+				line-height: 1.3;
+				margin: 20px 0;
+				font-family: $font-medium
+			}
+
+			span {
+				background-color: $highlight;
+				padding: 23px;
+				font-size: 1rem;
+				margin-bottom: 0;
+			}
+
+			&:before {
+				display: none;
+			}
+		}
+
+	}
+
+	.learn {
+
+		h1 {
+			margin: 34px 0;
+			font-size: 1.5rem;
+			line-height: 1.2;
+			font-family: $font-medium;
 		}
 	}
 
