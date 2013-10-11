@@ -10,14 +10,14 @@
         %h2 Know what to do. 
         %p Watch these videos and learn how to get prepared from a few of your fellow San Franciscans. They’ve got lessons and advice to share from their experiences in the local community and in disasters.
   %ul.story-list
-    / - @stories.each do |story|
-    /   %li
-    /     %a{href: "#{ story_path(story.id) }"}
-    /       .quote-dialog
-    /         #{story.quote}
-    /         %span.fake-link See story
-    /       = retina_image_tag story.video_image
-    /       = render partial: "category_icon", locals: {story: story}
+    - @stories.each do |story|
+      %li
+        %a{href: "#{ story_path(story.id) }"}
+          .quote-dialog
+            #{story.quote}
+            %span.fake-link See story
+          = retina_image_tag story.video_image
+          = render partial: "category_icon", locals: {story: story}
     %li.coming-soon-story
       %a{href: "#"}
         .quote-dialog Coming Soon

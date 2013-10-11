@@ -19,13 +19,16 @@
   .learn
     %h1 Good news. You’re more prepared than you think.</br>Learn more... 
     %ul
-      %li.learn-connect
-        %h2 Get</br>Connected
-        %span Make the most of your existing networks of friends, family, neighbors, and colleagues—so you can get help, and help others.
-      %li.learn-supplies
-        %h2 Gather</br>Supplies
-        %span Find out what’s essential, useful, and nice to have in an emergency. You probably already have many of the supplies you need.
-      %li.learn-plan
-        %h2 Make</br>a Plan
-        %span Make a basic plan with your loved ones—so you know what to do in an emergency.
+      %li
+        %a.learn-connect{href:"/connect"}
+          %h2 Get</br>Connected
+          %p Make the most of your existing networks of friends, family, neighbors, and colleagues—so you can get help, and help others.
+      %li
+        %a.learn-supplies{href:"/supplies"}
+          %h2 Gather</br>Supplies
+          %p Find out what’s essential, useful, and nice to have in an emergency. You probably already have many of the supplies you need.
+      %li
+        %a.learn-plan{href:"/plan"}
+          %h2 Make</br>a Plan
+          %p Make a basic plan with your loved ones—so you know what to do in an emergency.
   = render :partial => "partials/footer"
