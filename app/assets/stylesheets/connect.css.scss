@@ -41,6 +41,15 @@
 		p {
 			margin: 0.6rem 0;
 		}
+
+		a {
+			@include retina-image(/assets/static/read-blog, 45px 45px);
+			padding: 2px 36px 0;
+			background-repeat: no-repeat;
+			background-position: 0px 0;
+			display: block;
+			height: 35px;
+		}
 	}
 }
 
