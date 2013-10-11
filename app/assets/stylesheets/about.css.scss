@@ -10,8 +10,12 @@
  	}
  }
 
-.about .main-intro p {
-	width: 100%;
+.about .main-intro {
+	padding: 0 30px;
+
+	p {
+
+	}
 }
 
 .aside .connect {
@@ -207,6 +211,21 @@
 .manifesto .page-intro .big-title {
 	background: url(/assets/static/manifesto.jpg) no-repeat left top;
 	background-size: 100%;
+	border-top: 1px solid $light-grey;
+}
+
+.intro-row {
+	@include row();
+}
+
+.manifesto .main-intro {
+	@include row();
+	@include span-columns(8);
+	padding: 60px 30px;
+
+	p {
+		@include span-columns(12);
+	}
 }
 
 .aside {
