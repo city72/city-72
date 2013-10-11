@@ -1,3 +1,4 @@
+= provide(:title, 'Watch Stories - ' + @story.event)
 %div(ng-app="project")
   %div.main-container.story-detail{"ng-controller" => "storyDetailController"}
     = render :partial => "partials/header"
