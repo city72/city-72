@@ -105,57 +105,62 @@
 
 	ul {
 		@include row();
-		
-		li {
-			@include span-columns(4);
-			margin-right: 0.28125rem;
-			width: 337px;
-			height: 345px;
-			margin-bottom: 100px; 
-			background-repeat: no-repeat;
-			color: #FFF;
-			padding: 60px 40px 30px 30px;
-			position: relative;
-			transition: all 0.2s ease-out;
 
-			&:hover {
-				background-image: none;
-				background-color: $highlight;
+			li {
+			@include row();
+			@include span-columns(4);
+		
+			a {
+				@include row();
+				margin-right: 0.28125rem;
+				width: 337px;
+				height: 345px;
+				margin-bottom: 100px; 
+				background-repeat: no-repeat;
+				color: #FFF;
+				padding: 60px 40px 30px 30px;
+				position: relative;
+				transition: all 0.2s ease-out;
+
+				&:hover {
+					background-image: none;
+					background-color: $highlight;
+
+					h2 {
+						display: none;
+					}
+
+					p {
+						display: block;
+						font-size: 1.265rem;
+					}
+				}
 
 				h2 {
-					display: none;
+					line-height: 2.65rem;
+
+					&:before {
+						line-height: 4.5rem;
+					}
 				}
 
 				p {
-					display: block;
-					font-size: 1.265rem;
+					display: none;
 				}
 			}
 
-			h2 {
-				line-height: 2.65rem;
-
-				&:before {
-					line-height: 4.5rem;
-				}
+			.learn-connect {
+				@include retina-image(/assets/static/learn-1, 337px 345px, jpg);
+				@include icon(#FFF,$hands,$highlight,-50px,45px);
 			}
-
-			p {
-				display: none;
+			.learn-supplies {
+				@include retina-image(/assets/static/learn-2, 337px 345px, jpg);
+				@include icon(#FFF,$first-aid,$highlight,-50px,45px);	
 			}
-		}
-
-		.learn-connect {
-			@include retina-image(/assets/static/learn-1, 337px 345px, jpg);
-			@include icon(#FFF,$hands,$highlight,-50px,45px);
-		}
-		.learn-supplies {
-			@include retina-image(/assets/static/learn-2, 337px 345px, jpg);
-			@include icon(#FFF,$first-aid,$highlight,-50px,45px);	
-		}
-		.learn-plan {
-			@include retina-image(/assets/static/learn-3, 337px 345px, jpg);
-			@include icon(#FFF,$phone,$highlight,-50px,45px);
+			.learn-plan {
+				@include retina-image(/assets/static/learn-3, 337px 345px, jpg);
+				@include icon(#FFF,$phone,$highlight,-50px,45px);
+			}
 		}
 	}
 }
