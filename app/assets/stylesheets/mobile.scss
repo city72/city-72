@@ -1,15 +1,36 @@
 $mobile-gray-title: #808080;
+$mobile-dark-text: #515050;
+$mobile-padding: 23px;
 
 @mixin intro-paragraph-mobile {
 	font-size: 1rem;
-	color: #515050;
+	color: $mobile-dark-text;
 	line-height: 1.375;
 }
 
 @mixin mobile-body-paragraph {
 	font-size: 1rem;
 	line-height: 1.35;
-	color: #515050;
+	color: $mobile-dark-text;
+}
+
+@mixin mobile-title {
+	font-size: 1.5rem;
+	font-family: $font-bold;
+	color: $mobile-dark-text;
+	line-height: 1.16;
+}
+
+@mixin right-arrow($color, $top, $right) {
+	&:before {
+		font-family: 'sf72-icons';
+		content: "\73";
+		position: absolute;
+		top: $top;
+		right: $right;
+		font-size: 2rem;
+		color: $color;
+	}
 }
 
 .main-container {
@@ -38,6 +59,7 @@ $mobile-gray-title: #808080;
 		height: 2.75rem;
 		z-index: 999;
 		background-color: #FFF;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 	}
 
 	.footer {
@@ -50,6 +72,11 @@ $mobile-gray-title: #808080;
 			margin: 0 0 0 30px;
 			width: 240px;
 
+			a {
+				display: block;
+				color: $highlight;
+			}
+
 			&:before {
 				font-size: 1.375rem;
 				color: #959595;
@@ -58,10 +85,18 @@ $mobile-gray-title: #808080;
 			}
 		}
 
-		.footer-bottom a{
-			color: #515150;
-			padding: 4px 0;
-			display: inline-block;
+		.footer-bottom {
+			padding: 10px 30px 20px;
+
+			a{
+				color: $mobile-dark-text;
+				padding: 4px 0;
+				display: inline-block;
+			}
+
+			h2 {
+				font-size: 0.7rem;
+			}
 		}
 
 		.more,
@@ -120,8 +155,20 @@ $mobile-gray-title: #808080;
 	#build-menu {
 		padding: 0;
 		width: 270px;
-		background-color: #FBFBFB;
 		position: relative;
+		background-color: #F4F4F4;
+
+		&:after {
+			content: '';
+			position: absolute;
+			box-shadow: -2px -1px 1px rgba(0, 0, 0, 0.1) inset;
+			top: 44px;
+			right: 0;
+			width: 22px;
+			height: 101%;
+			z-index: 999;
+		}
+
 
 		.mobile-menu{
 			display: block !important;
@@ -141,6 +188,7 @@ $mobile-gray-title: #808080;
 					float: none;
 					width: 100%;
 					margin-left: 0;
+					background-color: #FFF;
 				}
 
 				li.active {
@@ -161,6 +209,24 @@ $mobile-gray-title: #808080;
 				strong {
 					font-size: 1.3125rem;
 					font-weight: bold;
+				}
+
+				li.em-link {
+					padding: $mobile-padding;
+					background-color: #F4F4F4;
+
+					p {
+						font-family: $font-medium;
+						font-size: 0.75rem;
+						line-height: 1.2;
+					}
+
+					a {
+						font-family: $font-medium;
+						padding: 10px 0;
+						border-bottom: none;
+						font-size: 1.3125rem;
+					}
 				}
 
 			}
@@ -244,11 +310,12 @@ $mobile-gray-title: #808080;
 
 	}
 
-
+	.questions { padding: 0 $mobile-padding;}
 	.questions ul li {
 		@include span-columns(4);
 		@include omega();
-		margin-bottom: 23px;
+		margin-bottom: $mobile-padding;
+		
 
 		h2{
 			margin-top: 0;
@@ -258,6 +325,7 @@ $mobile-gray-title: #808080;
 
 		span {
 			@include mobile-body-paragraph();
+			width: auto;
 		}
 
 	}
@@ -271,7 +339,7 @@ $mobile-gray-title: #808080;
 
 			h2 {
 				font-size: 1.5rem;
-				padding: 23px;
+				padding: $mobile-padding;
 				line-height: 1.3;
 				margin: 20px 0;
 				font-family: $font-medium
@@ -279,7 +347,7 @@ $mobile-gray-title: #808080;
 
 			span {
 				background-color: $highlight;
-				padding: 23px;
+				padding: $mobile-padding;
 				font-size: 1rem;
 				margin-bottom: 0;
 			}
@@ -294,10 +362,71 @@ $mobile-gray-title: #808080;
 	.learn {
 
 		h1 {
-			margin: 34px 0;
+			margin: 34px 0 20px;
 			font-size: 1.5rem;
 			line-height: 1.2;
 			font-family: $font-medium;
+			padding: $mobile-padding;
+		}
+
+		ul li {
+			@include span-columns(4);
+
+			a {
+				padding: 0 22px;
+				width: auto;
+				height: auto;
+				margin-bottom: 15px;
+
+				h2 {
+					@include mobile-title;
+					margin-top: 0;
+					padding-left: 54px;
+					position: relative;					
+					@include right-arrow($highlight, -27px, 0);
+				}
+
+				p,
+				&:hover p {
+					@include mobile-body-paragraph;
+					line-height: 1.38;
+					display: block;
+				}
+
+				&:hover{
+					background-color: transparent;
+
+					h2 {
+						display: block;
+					}
+				}
+			}
+
+			.learn-connect,
+			.learn-supplies,
+			.learn-plan {
+				background-image: none;
+
+				br{
+					content:" ";
+					padding:0.03em;
+
+					&:after {
+						content:" ";
+					}
+				}
+
+				&:before {
+					font-size: 25px;
+					width: 42px;
+					padding-top: 3px;
+					height: 39px;
+					left: $mobile-padding;
+					top: -11px;
+				}
+			}
+
+
 		}
 	}
 
@@ -310,7 +439,7 @@ $mobile-gray-title: #808080;
 			font-size: 2rem;
 			font-family: $font-medium;
 			line-height: 1.1;
-			padding: 75px 22px 0;
+			padding: 75px $mobile-padding 0;
 			height: 222px;
 			text-align: center;
 		}
@@ -318,6 +447,7 @@ $mobile-gray-title: #808080;
 		div {
 			@include span-columns(4);
 			height: auto;
+			padding: 0 $mobile-padding;
 
 			p {
 				font-size: 1rem;
@@ -335,20 +465,22 @@ $mobile-gray-title: #808080;
 
 	/* GET CONNECTED */
 	.existing-networks {
-		padding: 34px 22px 0;
+		padding: 34px $mobile-padding 0;
+		margin: 0;
+
 
 		.use {
 			@include span-columns(4);
 			line-height: 1.16;
 
 			h2 {
-				margin: 0;
-				color: #4D4D4D;
-				line-height: 1.16;
+				margin: 0 0 10px;
+				@include mobile-title;
 			}
 
 			.intro-networks {
 				@include mobile-body-paragraph;
+				width: auto;
 			}
 
 		}
@@ -365,10 +497,30 @@ $mobile-gray-title: #808080;
 				font-size: 1rem;
 				margin-bottom: 0;
 			}
+
+			p {
+				@include mobile-body-paragraph;
+				float: left;
+				width: 173px;
+				margin: 0 0 20px;
+			}
+
+			a {
+				float: right;
+				width: 83px;
+				font-size: 0.7rem;
+				padding: 34px 0 0;
+				font-family: $font-medium;
+				text-align: center;
+				background-position: top center;
+				margin-top: -9px;
+			}
 		}
 	}
 
 	.networks-list{
+		padding: 0 $mobile-padding;
+
 		li {
 			@include span-columns(4);
 			padding: 0;
@@ -397,11 +549,102 @@ $mobile-gray-title: #808080;
 	}
 
 	.full-img-article{
-		ul .use,
-		ul .what {
-			@include span-columns(4);
+		padding: $mobile-padding;
+		
+		ul {
+			margin: 0;
+
+			.use,
+			.what {
+				@include span-columns(4);
+			}
+
+			h3 {
+				@include mobile-title;
+				color: #FFF;
+				margin: 15px 0 12px;
+			}
+
+			p {
+				@include mobile-body-paragraph;
+				color: #FFF;
+				width: auto;
+			}
+
+			.what {
+				margin: 0;
+
+				h3 br {
+					content:" ";
+					padding:0.03em;
+
+					&:after {
+						content:" ";
+					}
+				}
+
+				.your-net {
+					margin-bottom: 15px;
+
+					.net-first,
+					.net-second {
+						@include span-columns(4);
+					}
+
+					 > li > ul > li {
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+
+	.learn-more {
+		padding: 0 $mobile-padding;
+
+		h3 {
+			margin-top: 0;
+			@include mobile-title;
 		}
 
+		p {
+			@include mobile-body-paragraph;
+			width: auto;
+		}
+
+		ul {
+			margin: 0 0 60px;
+
+			li {
+				padding: 0 0 20px;
+
+				#red-cross,
+				#nen,
+				#nert {
+					background-size: 70%;
+					height: 56px;
+				}
+
+				#nen {
+					background-size: 37%;
+				}
+
+				#nert {
+					background-size: 21%;
+				}
+			}
+
+			p {
+				font-size: 0.75rem;
+				color: #7F7F7F;
+				line-height: 1.5;
+				margin-bottom: 0;
+			}
+
+			a {
+				font-size: 0.75rem;
+			}
+		}	
 	}
 
 	/* SUPPLIES */
@@ -415,7 +658,41 @@ $mobile-gray-title: #808080;
 
 		.tabs {
 			@include box-shadow(0 0 0 transparent);
+
+			li a {
+				color: $mobile-dark-text;
+			}
 		} 
+	}
+
+	/* STORIES */
+
+	.stories .intro {
+		height: auto;
+		margin-bottom: 0;
+		width: 100%;
+
+		.personal-look {
+			background-color: #FBB03B;
+			padding: 0 23px;
+			margin-top: -8px;
+
+
+			h2 {
+				display: none;
+			}
+
+			p {
+				@include mobile-body-paragraph;
+				color: #FFF;
+				width: auto;
+			}
+
+		} 
+	}
+
+	.story-list {
+		margin-top: 10px;
 	}
 
 	/* MAKE A PLAN */
@@ -434,6 +711,10 @@ $mobile-gray-title: #808080;
 	}
 
 	.plan-basics ul {
+		@include span-columns(4);
+	}
+
+	.print-this p {
 		@include span-columns(4);
 	}
 
@@ -888,8 +1169,7 @@ $mobile-gray-title: #808080;
 	}
 
 	.existing-networks {
-		background-image: none;
-		margin: 0 3%;
+		
 
 		h2 {
 			font-size: 1.5rem;
@@ -966,7 +1246,6 @@ $mobile-gray-title: #808080;
 
 
 	/* STORIES */
-	.stories .intro,
 	.things .intro {
 		background-size: 176%;
 		width: 100%;
