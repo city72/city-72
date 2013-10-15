@@ -253,6 +253,7 @@ $mobile-padding: 23px;
 		left: .5rem;
 		text-indent: -9999px;
 	}
+
 	#build-menu-button:after {
 		font-size: 1.3rem;
 		left: .4rem;
@@ -261,6 +262,10 @@ $mobile-padding: 23px;
 		font-family: 'sf72-icons';
 		content: "5";
 		text-indent: 0;
+	}
+
+	#build-menu-page {
+		max-width: 320px;
 	}
 
 	/* MOBILE GRID */
@@ -673,6 +678,18 @@ $mobile-padding: 23px;
 		} 
 	}
 
+	.things .tabs-content {
+		padding: 0 $mobile-padding;
+	}
+
+	.things-list img {
+		margin-left: -12px;
+	}
+
+	.kits-list img {
+		margin-left: -2px;
+	}
+
 	/* STORIES */
 
 	.stories .intro {
@@ -702,12 +719,9 @@ $mobile-padding: 23px;
 	.story-list {
 		margin-top: 10px;
 
-		li a {
-			height: 180px;
-
-			img {
-				height: 180px;
-			}
+		li a,
+		li a img {
+			height: 203px;
 		}
 
 		.quote-dialog {
@@ -817,6 +831,7 @@ $mobile-padding: 23px;
 		p {
 			@include mobile-body-paragraph;
 			width: auto;
+			margin-top: 0.5rem;
 		}
 
 		ul {
@@ -887,7 +902,7 @@ $mobile-padding: 23px;
 			font-size: 1.3rem;
 			padding: 12px 0;
 
-			@include right-arrow($highlight-dark, 3px, -3px);
+			@include right-arrow($highlight-dark, 12px, -3px, 1.2rem);
 			
 			&:after {
 				display: none;
@@ -1816,15 +1831,15 @@ $mobile-padding: 23px;
 		margin-bottom: 1.5rem;
 
 		h4 {
-			text-align: left;
-			margin: 0.3rem 3% 0;
+			text-align: center;
+			margin: 0.3rem 0 0;
 		}
 
 		.overlay-text {
 			display: block;
 			@include mobile-body-paragraph;
 			text-align: left;
-			margin: 0 3%;
+			margin: 0;
 		}
 	}
 
@@ -1837,7 +1852,7 @@ $mobile-padding: 23px;
 
 
 		h2 {
-			margin: 1rem 3% 0;
+			margin: 2rem 3% 0;
 			font-size: 1.5rem;
 		}
 
@@ -2088,7 +2103,7 @@ $mobile-padding: 23px;
 	}
 
 	.about-data {
-		margin-top: 3rem;
+		margin-top: 0;
 	}
 
 	.about-data li {
