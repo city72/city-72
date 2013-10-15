@@ -540,7 +540,7 @@ a.checklist:before {
 /* SUPPLIES */
 
 .supplies {
-	@include retina-image(/assets/static/supplies-cover, 1020px 420px, jpg);
+	@include retina-image(/assets/static/supplies_header, 750px 417px, jpg);
 	background-position-x: 260px;
 	
 	h1 {

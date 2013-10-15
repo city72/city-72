@@ -281,7 +281,7 @@ body {
 	position: relative;
 	
 	h1 {
-		@include span-columns(8.7171);
+		@include span-columns(8.62938893);
 		font-family: $font-bold;
 		font-size: 3.56rem;
 		line-height: 1;
@@ -291,11 +291,11 @@ body {
 
 
 	div {
-		@include span-columns(3.2829);
+		@include span-columns(3.37061107);
 		color: #FFF;
 		background-color: $highlight;
 		padding: 0 20px 0 30px;
-		height: 420px;
+		height: 417px;
 
 		p {
 			font-size: 1.1875rem;

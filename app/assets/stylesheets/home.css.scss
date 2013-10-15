@@ -7,7 +7,7 @@
 }
 
 .home .page-intro .big-title {
-	@include retina-image(/assets/static/home, 1020px 538px, jpg);
+	@include retina-image(/assets/static/home-prepare, 1020px 538px, jpg);
 	background-position: left top;
 	text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
 }
@@ -60,7 +60,7 @@
 
 .connection {
 	@include row();
-	@include retina-image(/assets/static/home-connection, 683px 420px, jpg);
+	@include retina-image(/assets/static/threedesktop, 683px 420px, jpg);
 	background-position: top right;
 	background-repeat: no-repeat; 
 	position: relative;
@@ -150,15 +150,15 @@
 			}
 
 			.learn-connect {
-				@include retina-image(/assets/static/learn-1, 337px 345px, jpg);
+				@include retina-image(/assets/static/home1_3, 337px 345px);
 				@include icon(#FFF,$hands,$highlight,-50px,45px);
 			}
 			.learn-supplies {
-				@include retina-image(/assets/static/learn-2, 337px 345px, jpg);
+				@include retina-image(/assets/static/home2_3, 337px 345px);
 				@include icon(#FFF,$first-aid,$highlight,-50px,45px);	
 			}
 			.learn-plan {
-				@include retina-image(/assets/static/learn-3, 337px 345px, jpg);
+				@include retina-image(/assets/static/home3_3, 337px 345px);
 				@include icon(#FFF,$phone,$highlight,-50px,45px);
 			}
 		}
