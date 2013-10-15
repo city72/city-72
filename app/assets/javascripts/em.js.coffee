@@ -54,8 +54,6 @@ $( ->
         else
             $('.modal-wrapper').hide()
 
-    showIntro()
-
     initializeShowMapTipsBtn = ->
         $('.map-tips-trigger').click ->
             startJoyride()
