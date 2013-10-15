@@ -243,6 +243,14 @@ a.checklist:before {
 	}
 }
 
+.stories .intro h2 {
+	margin-top: 2.5rem;
+}
+
+.stories .intro .personal-look p {
+	margin-top: 0.2rem;
+}
+
 .story-list {
 	margin-top: 2rem;
 	padding: 0 30px;
@@ -725,7 +733,6 @@ a.checklist:before {
 .kits {
 	padding: 40px 30px;
 	margin-bottom: 7rem;
-	background-color: $subtle-grey;
 } 
 
 .kits h2, .kits p {
