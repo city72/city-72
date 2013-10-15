@@ -41,7 +41,7 @@ class Header
     # Adds click callback for setting the active button when the request
     # is resolved in the client side
     _initializeMobileActiveBtn = ->
-        js_buttons_li = $('.js-button-li')
+        js_buttons_li = $('li.em-li')
         js_buttons_li.children('a').click ->
             $('#build-menu-overlay').trigger('click')
             js_buttons_li.each (i,e) ->
