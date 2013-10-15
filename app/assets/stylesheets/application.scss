@@ -284,9 +284,9 @@ body {
 		@include span-columns(8.62938893);
 		font-family: $font-bold;
 		font-size: 3.56rem;
-		line-height: 1;
+		line-height: 1.2;
 		color: #FFF;
-		padding: 110px 130px 30px;
+		padding: 98px 130px 30px;
 	}
 
 
@@ -434,6 +434,17 @@ body {
 
 .big-title:hover .tooltip:after {
 	opacity: 1;
+}
+
+
+/* FIXING HOVERS */
+.footer-top .by-line a:hover,
+.footer-bottom a:hover,
+.know a:hover,
+.learn-more ul li a:hover,
+.print-this a:hover,
+.stay-tuned a:hover {
+	color: #4D4D4D;
 }
 
 @import "header";

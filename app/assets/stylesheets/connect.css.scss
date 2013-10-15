@@ -6,7 +6,7 @@
 
 .existing-networks {
 	@include row();
-	padding: 3.75rem 30px 3.5rem;
+	padding: 6.9rem 30px 3.5rem;
 
 	.use {
 		@include span-columns(8.5);
@@ -14,7 +14,7 @@
 		h2 {
 			margin: 0 0 1rem;
 			color: $dark-grey;
-			line-height: 0.8;
+			line-height: 1.2;
 		}
 
 		.intro-networks {
@@ -30,12 +30,14 @@
 		@include span-columns(3);
 		border-left: solid 1px $highlight;
 		padding-left: 1rem;
+		margin-top: 50px;
 
-		H3{
+		h3{
 			color: $dark-grey;
-			margin: 0 0 1rem;
+			margin: 0;
 			line-height: 1.4rem;
 			font-size: 1.3rem;
+			font-family: $font-bold;
 		}
 
 		p {
@@ -44,11 +46,12 @@
 
 		a {
 			@include retina-image(/assets/static/read-blog, 30px 30px);
-			padding: 2px 36px 0;
+			padding: 2px 0 0 44px;
 			background-repeat: no-repeat;
 			background-position: 0px 0;
 			display: block;
 			height: 35px;
+			font-family: $font-bold;
 		}
 	}
 }
@@ -115,11 +118,13 @@
 		@include row();
 		font-size: 2.125rem;
 		color: #FFF;
-		margin-top: 4rem;
+		margin: 4rem 0 3.5rem;
 
 		h3 {
+			font-weight: $font-bold;
 			font-size: 2.125rem;
 			line-height: 2.65rem;
+			margin-top: 0;
 		}
 
 		p {
@@ -175,20 +180,20 @@
 
 	h3 {
 		font-size: 2.125rem;
-		margin: 4.5rem 0 0;
+		margin: 6.5rem 0 0;
 		color: $dark-grey;
 	}
 
 	> p {
 		@include intro-paragraph;
 		@include span-columns(8);
-
+		margin-top: 0.5rem;
 	}
 
 	ul {
 		@include row();
 		@include span-columns(12);
-		margin: 3rem 0 7.5rem;
+		margin: 0 0 7.5rem;
 
 		li {
 			@include row();
@@ -201,12 +206,17 @@
 			strong {
 				font-weight: normal;
 				font-family: $font-bold;
+				color: #474745;
 			}
 			
 			a {
 				background-repeat: no-repeat;
 				height: 70px;
-    			width: 100%;				
+    		width: 100%;				
+			}
+
+			p {
+				width: 240px;
 			}
 
 			#red-cross {

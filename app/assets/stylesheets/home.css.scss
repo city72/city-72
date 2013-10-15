@@ -100,15 +100,16 @@
 	}
 	
 	h2 {
-		margin: 4rem 0 1rem;
-		}
+		margin: 0.8rem 0 1rem;
+		line-height: 1.356 !important;
+	}
 
 	ul {
 		@include row();
 
 			li {
 			@include row();
-			@include span-columns(4);
+			@include span-columns(3.93);
 		
 			a {
 				@include row();
