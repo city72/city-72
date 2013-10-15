@@ -57,11 +57,11 @@
             .field
               %label{:for => "title"} Title
               %br/
-              %input#title{:name => "mode[title]", :size => "30", :type => "text", :value => @mode.title}/
+              %input#title{:name => "mode[title]", :size => "30", :type => "text", :maxlength => 255, :value => @mode.title}/
             .field
               %label{:for => "text"} Text
               %br/
-              %input#text{:name => "mode[text]", :size => "30", :type => "text", :value => @mode.text}/
+              %input#text{:name => "mode[text]", :size => "30", :type => "text", :maxlength => 255, :value => @mode.text}/
           / 
             -# This is commented temporarily because it may be added back later.
             .form-section.what-should-i-do
