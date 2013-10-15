@@ -1,19 +1,35 @@
 /* ABOUT */
 
 
+.about-intro {
+
+	h1 {
+		max-width: 720px;
+		text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+	}
+
+	div {
+		@include span-columns(3.375);
+
+		p {
+			margin-top: 3rem;
+		}
+	}
+}
+
 .about .main-intro {
 	padding: 0 30px;
-	@include span-columns(8);
+	@include span-columns(7.5);
 
-	p {
-
+	h2 {
+		margin-top: 60px;
 	}
 }
 
 .aside .connect {
 	@include row();
 	border-left: 2px solid $highlight;
-	margin-top: 1.6rem;
+	margin-top: 3.8rem;
 
 	strong {
 		font-weight: normal;
@@ -44,8 +60,8 @@
 
 .about-data {
 	@include outer-container;
-	margin-top: 20px;
-	margin-bottom: 4.25rem;
+	margin-top: 120px;
+	margin-bottom: 7.25rem;
 	padding: 0 30px;
 
 	li {
@@ -56,6 +72,7 @@
 	h2 {
 		@include col-title;
 		margin-bottom: 0;
+		line-height: 2.5rem;
 	}
 
 	p {
@@ -65,20 +82,20 @@
 	.about-who,
 	.about-what,
 	.about-why {
-		width: 300px;
-		height: 190px;
+		width: 302px;
+		height: 172px;
 	}
 
 	.about-who {
-		@include retina-image(/assets/static/about-us-1, 300px 190px, jpg);
+		@include retina-image(/assets/static/about-us-1, 302px 172px, jpg);
 	}
 
 	.about-what {
-		@include retina-image(/assets/static/about-us-3, 300px 190px, jpg);
+		@include retina-image(/assets/static/about-us-2, 302px 172px, jpg);
 	}
 
 	.about-why {
-		@include retina-image(/assets/static/about-us-2, 300px 190px, jpg);
+		@include retina-image(/assets/static/about-us-3, 302px 172px, jpg);
 	}
 
 }
