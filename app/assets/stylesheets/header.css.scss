@@ -5,7 +5,7 @@
 }
 
 #logo {
-	@include span-columns(3.2829);
+	@include span-columns(3.37061107);
 	margin-top: 2rem;
 	padding-left: 3.8rem;
 }
@@ -20,7 +20,7 @@
 }
 
 .main-nav > li {
-	@include span-columns(2.02);
+	@include span-columns(2);
 	@include omega;
 	position: relative;
 	border-left: 2px solid lighten( $light-grey, 5% );

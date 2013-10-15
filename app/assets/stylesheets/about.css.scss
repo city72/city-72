@@ -1,17 +1,9 @@
 /* ABOUT */
 
-.about .page-intro .big-title {
-	@include retina-image(/assets/static/about-us-title, 960px 490px, jpg);
-}
- .page-intro {
-
- 	.main-intro {
- 		@include span-columns(8);
- 	}
- }
 
 .about .main-intro {
 	padding: 0 30px;
+	@include span-columns(8);
 
 	p {
 

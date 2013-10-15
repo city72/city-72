@@ -1,7 +1,7 @@
 /* CONNECT */
 
 .opening {
-	@include retina-image(/assets/static/connected, 1020px 420px, jpg);
+	@include retina-image(/assets/static/header, 751px 417px, jpg);
 }
 
 .existing-networks {
@@ -43,7 +43,7 @@
 		}
 
 		a {
-			@include retina-image(/assets/static/read-blog, 45px 45px);
+			@include retina-image(/assets/static/read-blog, 30px 30px);
 			padding: 2px 36px 0;
 			background-repeat: no-repeat;
 			background-position: 0px 0;
@@ -107,7 +107,7 @@
 
 .full-img-article {
 	@include row();
-	@include retina-image(/assets/static/physical, 1020px 396px, jpg);
+	@include retina-image(/assets/static/gardening, 1020px 401px, jpg);
 	background-repeat: no-repeat;
 	padding: 0 30px;
 
@@ -217,7 +217,7 @@
 			}
 
 			#nen {
-				@include retina-image(/assets/static/nen, 142px 67x);
+				@include retina-image(/assets/static/nen, 142px 67px);
 				text-indent:-9999px;
 				display:block;
 			}
