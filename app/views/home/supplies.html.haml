@@ -53,7 +53,6 @@
     %ul.kits-list
       - @kits.each do |kit|
         %li
-          %a{href: "#", onClick:"window.open('#{kit.url}', '', 'width=600,height=500'); return false;"}
-            = retina_image_tag kit.image
-            %span #{kit.title}
+          = retina_image_tag kit.image
+          %span #{kit.title}
   = render :partial => "partials/footer"
