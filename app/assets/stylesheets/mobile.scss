@@ -16,7 +16,7 @@ $mobile-padding: 23px;
 
 @mixin mobile-title {
 	font-size: 1.5rem;
-	font-family: $font-medium;
+	font-family: $font-bold;
 	color: $mobile-dark-text;
 	line-height: 1.16;
 }
@@ -559,7 +559,7 @@ $mobile-padding: 23px;
 			padding-left: 72px;
 			font-size: 16px;
 			line-height: 1.2;
-			font-family: $font-medium;
+			font-family: $font-bold;
 		}
 
 		p {
@@ -885,6 +885,17 @@ $mobile-padding: 23px;
 		@include span-columns(4);
 		@include mobile-body-paragraph;
 	}
+
+	.about .intro-row .main-intro {
+		h2 {
+			margin-top: 25px;
+		}
+
+		p {
+			@include mobile-body-paragraph;
+		}
+
+	} 
 
 	.about .aside,
 	.manifesto .aside {
@@ -1344,6 +1355,7 @@ $mobile-padding: 23px;
 	.plan .em-plan h1 {
 		padding: 80px 0 172px;
 		line-height: 1.1;
+		max-width: 100%;
 	}
 
 	.make-plan {
@@ -2207,6 +2219,10 @@ $mobile-padding: 23px;
 
 	.opening.supplies {
 		@include retina-image(/assets/mobile/supplies-header, 320px 273px, jpg);
+	}
+
+	.about .opening {
+		@include retina-image(/assets/mobile/about-us-header, 320px 273px, jpg);
 	}
 
 	.plan .em-plan {
