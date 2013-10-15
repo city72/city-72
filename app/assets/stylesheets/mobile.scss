@@ -886,6 +886,17 @@ $mobile-padding: 23px;
 		@include mobile-body-paragraph;
 	}
 
+	.about .intro-row .main-intro {
+		h2 {
+			margin-top: 25px;
+		}
+
+		p {
+			@include mobile-body-paragraph;
+		}
+
+	} 
+
 	.about .aside,
 	.manifesto .aside {
 		width: 100%;
@@ -2208,6 +2219,10 @@ $mobile-padding: 23px;
 
 	.opening.supplies {
 		@include retina-image(/assets/mobile/supplies-header, 320px 273px, jpg);
+	}
+
+	.about .opening {
+		@include retina-image(/assets/mobile/about-us-header, 320px 273px, jpg);
 	}
 
 	.plan .em-plan {
