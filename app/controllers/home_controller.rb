@@ -5,8 +5,6 @@ class HomeController < ApplicationController
   after_filter :dynamic_content, only: [:index, :em_home]
   after_filter :static_content, only: [:home, :connect, :about, :supplies, :quick_guide, :our_manifesto]
 
-  before_filter :set_current_mode
-
   def index
     @crisis_mode = CurrentMode.is_crisis_mode
   end
@@ -28,11 +26,5 @@ class HomeController < ApplicationController
   end
 
   empty_methods :home, :connect, :quick_guide, :our_manifesto
-
-  private
-  def set_current_mode
-    @mode = CurrentMode.get_current_mode
-    @preview = CurrentMode.is_preview_mode
-  end
 
 end
