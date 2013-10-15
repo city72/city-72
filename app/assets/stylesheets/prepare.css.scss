@@ -411,9 +411,26 @@ a.checklist:before {
 
 .story-detail .main-intro {
 	margin-bottom: 3.8rem;
+	@include row();
+	@include span-columns(8);
 
 	h2 {
 		line-height: 1.12;
+	}
+}
+
+.story-detail .intro-video {
+	
+	iframe {
+		width: 100%;
+		height: 540px;
+	}
+}
+
+.story-detail {
+	
+	.intro-row, {
+		padding: 0 30px;
 	}
 }
 
@@ -468,7 +485,7 @@ a.checklist:before {
 
 .needed-list,
 .story-list {
-	@include outer-container;
+	padding: 0 30px;
 }
 
 .story-list li {
@@ -481,6 +498,7 @@ a.checklist:before {
 	margin: 0;
 	color: $dark-grey;
 	font-family: $font-bold;
+	padding: 0 30px;
 }
 
 .needed-list {
@@ -528,6 +546,11 @@ a.checklist:before {
 		font-family: 'sf72-icons';
 		content: 's';
 	}
+}
+
+.similar {
+	@include row();
+	margin-bottom: 60px;
 }
 
 .needed-list.two-cols li{
