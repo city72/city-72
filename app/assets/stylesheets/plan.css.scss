@@ -54,7 +54,7 @@
 }
 
 .plan-basics {
-	@include retina-image(/assets/static/basics, 510px 507px, jpg);
+	@include retina-image(/assets/static/bridge, 510px 636px, jpg);
 	background-repeat: no-repeat;
 	background-position: right;
 	@include row();
@@ -106,10 +106,10 @@
 	margin: 5rem 0 2rem;
 	height: 290px;
 	@include row();
-	@include retina-image(/assets/static/print, 510px 507px, jpg);
+	@include retina-image(/assets/static/plan-print, 300px 190px, jpg);
 	background-repeat: no-repeat;
 	background-position-y: 30px;
-	background-position-x: 730px;
+	background-position-x: 660px;
 
 	h2 {
 		margin-bottom: 0;
@@ -145,7 +145,7 @@
 	padding: 4rem 30px;
 	margin-bottom: 3rem;
 	@include row();
-	@include retina-image(/assets/static/app, 510px 507px);
+	@include retina-image(/assets/static/app, 147px 210px);
 	background-repeat: no-repeat;
 	background-position-y: 90px;
 	background-position-x: 658px;
