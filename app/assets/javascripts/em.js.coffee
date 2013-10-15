@@ -67,4 +67,31 @@ $( ->
                 $('.em-preview-modal').remove()
             )
     $('a.btn').click -> $('.modal-wrapper').hide()
+
+
+    map = 
+        elements: [".map-container", ".map-area", ".map"]
+        triggerElement: '.expand-map-trigger'
+        
+        isCollapsed: true
+
+        _changeMapHeight: (action) ->
+            $.each this.elements, (index, elem) -> $(elem).animate { height: action($(elem).height()) }
+
+        collapse: -> 
+            this._changeMapHeight (currentHeight) -> currentHeight - 300
+            $(this.triggerElement).html("Expand Map")
+            this.isCollapsed = true
+        expand: -> 
+            this._changeMapHeight (currentHeight) -> currentHeight + 300
+            $(this.triggerElement).html("Collapse Map")
+            this.isCollapsed = false
+
+        switchState: ->
+            if this.isCollapsed
+                this.expand()
+            else
+                this.collapse()
+
+    $('.expand-map-trigger').click -> map.switchState()
 )
