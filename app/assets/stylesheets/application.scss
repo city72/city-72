@@ -436,6 +436,17 @@ body {
 	opacity: 1;
 }
 
+
+/* FIXING HOVERS */
+.footer-top .by-line a:hover,
+.footer-bottom a:hover,
+.know a:hover,
+.learn-more ul li a:hover,
+.print-this a:hover,
+.stay-tuned a:hover {
+	color: #4D4D4D;
+}
+
 @import "header";
 @import "footer";
 @import "slider";
