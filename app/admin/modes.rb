@@ -16,7 +16,6 @@ ActiveAdmin.register Mode do
 		end
 
 		def update
-			binding.pry
 			mode_action = params[:mode_action]
 
 			if mode_action == "switch-on" || mode_action == "switch-off"
