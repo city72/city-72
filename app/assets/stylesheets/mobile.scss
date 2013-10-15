@@ -16,7 +16,7 @@ $mobile-padding: 23px;
 
 @mixin mobile-title {
 	font-size: 1.5rem;
-	font-family: $font-medium;
+	font-family: $font-bold;
 	color: $mobile-dark-text;
 	line-height: 1.16;
 }
@@ -559,7 +559,7 @@ $mobile-padding: 23px;
 			padding-left: 72px;
 			font-size: 16px;
 			line-height: 1.2;
-			font-family: $font-medium;
+			font-family: $font-bold;
 		}
 
 		p {
@@ -1344,6 +1344,7 @@ $mobile-padding: 23px;
 	.plan .em-plan h1 {
 		padding: 80px 0 172px;
 		line-height: 1.1;
+		max-width: 100%;
 	}
 
 	.make-plan {
