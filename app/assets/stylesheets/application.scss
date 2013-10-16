@@ -46,7 +46,7 @@ $video-play: 'I';
 @mixin icon($color,$icon,$bg,$pos-top,$pos-left){
 	&:before{
 		font-family: 'sf72-icons';
-		font-size: 3rem;
+		font-size: 3.5rem;
 		color: $color;
 		content: $icon;
 		speak: none;
