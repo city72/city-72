@@ -12,13 +12,6 @@
 	.em-plan {
 		@include retina-image(/assets/static/plan-header, 750px 417px, jpg);
 
-		h1 {
-			margin-top: 0;
-			line-height: 4.5625rem;
-			padding: 130px 70px 30px;
-			max-width: 71.21%;
-		}
-
 		div {
 
 			p {

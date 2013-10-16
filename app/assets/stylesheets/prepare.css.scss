@@ -572,12 +572,6 @@ a.checklist:before {
 
 .supplies {
 	@include retina-image(/assets/static/supplies_header, 750px 417px, jpg);
-	background-position-x: 260px;
-	
-	h1 {
-		margin-top: 0;
-		line-height: 4.5625rem;
-	}
 
 	div {
 

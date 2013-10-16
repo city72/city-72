@@ -920,6 +920,7 @@ $mobile-padding: 23px;
 	.aside .download-manifesto {
 		border-left: none;
 		padding: 0 $mobile-padding;
+		margin-top: 20px;
 
 		a {
 			padding: 0;
@@ -1703,17 +1704,22 @@ $mobile-padding: 23px;
 	.similar h3 {
 		padding: 0 $mobile-padding;
 	}
+	
+	.needed {
+		margin-top: 2rem;
+	}
 
 	.needed-list {
 		@include reset-display;
 		display: block;
-		margin-top: 2.9rem;
+		margin-top: 0.9rem;
 		padding: 0;
 
 		li {
 			text-align: center;
 			padding-right: 0;
 			margin-right: 0;
+			margin-bottom: 1.2rem;
 
 			h4 {
 				text-align: left;
@@ -1732,6 +1738,10 @@ $mobile-padding: 23px;
 				width: 100%;
 				height: auto;
 			}
+		}
+
+		&.two-cols li {
+			padding-right: 0;
 		}
 
 		li:last-child {
@@ -1792,6 +1802,11 @@ $mobile-padding: 23px;
 
 			.main-intro {
 				@include span-columns (4);
+				padding: 0;
+			}
+
+			.main-quote {
+				padding: 0;
 			}
 		}
 	}

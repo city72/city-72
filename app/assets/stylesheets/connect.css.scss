@@ -114,6 +114,7 @@
 	@include retina-image(/assets/static/gardening, 1020px 401px, jpg);
 	background-repeat: no-repeat;
 	padding: 0 30px;
+	text-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 
 	ul {
 		@include row();
