@@ -623,7 +623,7 @@ a.checklist:before {
   	li:hover:before,
   	li.active:after,
 	li:hover:after {
-		top: 59px;
+		top: 3.63rem;
 		border: solid transparent;
 		content: " ";
 		height: 0;
@@ -636,18 +636,18 @@ a.checklist:before {
 	li:hover:after {
 		border-color: rgba(255, 255, 255, 0);
 		border-top-color: #FFFFFF;
-		border-width: 14px;
+		border-width: 0.83rem;
 		left: 50%;
-		margin-left: -14px;
+		margin-left: -0.83rem;
 	}
 
 	li.active:before,
   	li:hover:before {
 		border-color: rgba(44, 44, 44, 0);
 		border-top-color: #9B9B9B;
-		border-width: 15px;
+		border-width: 0.9rem;
 		left: 50%;
-		margin-left: -15px;
+		margin-left: -0.9rem;
 	}
 }
 
