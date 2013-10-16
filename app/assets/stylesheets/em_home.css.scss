@@ -187,18 +187,20 @@
 		bottom: -5px;
 		right: 8px;
 		font-family: "sf72-icons";
-		content: "i";
+		content: "?";
 		font-size: 1.65rem;
 		position: relative;
+		-webkit-font-smoothing: antialiased;
 	}
 
 	.expand-map-trigger:before {
 		bottom: -5px;
 		right: 8px;
 		font-family: "sf72-icons";
-		content: "i";
+		content: "X";
 		font-size: 1.65rem;
 		position: relative;
+		-webkit-font-smoothing: antialiased;
 	}
 
 }
