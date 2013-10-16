@@ -452,7 +452,7 @@ $mobile-padding: 23px;
 		h1 {
 			@include span-columns(4);
 			font-size: 2rem;
-			font-family: $font-medium;
+			font-family: $font-bold;
 			line-height: 1.1;
 			padding: 75px $mobile-padding 0;
 			height: 222px;
