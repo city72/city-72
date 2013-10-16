@@ -22,7 +22,6 @@ class ApplicationController < ActionController::Base
   private
     def set_current_mode
       @mode = CurrentMode.get_current_mode
-      @preview = CurrentMode.is_preview_mode
     end
 
 end
