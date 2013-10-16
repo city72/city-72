@@ -1372,7 +1372,7 @@ $mobile-padding: 23px;
 	}
 
 	.plan .em-plan h1 {
-		padding: 80px 0 172px;
+		padding: 100px 0 142px;
 		line-height: 1.1;
 		max-width: 100%;
 	}
@@ -1701,13 +1701,14 @@ $mobile-padding: 23px;
 	.needed h3,
 	.learned h3,
 	.similar h3 {
-		padding-left: 3%;
+		padding: 0 $mobile-padding;
 	}
 
 	.needed-list {
 		@include reset-display;
 		display: block;
 		margin-top: 2.9rem;
+		padding: 0;
 
 		li {
 			text-align: center;
@@ -1716,14 +1717,12 @@ $mobile-padding: 23px;
 
 			h4 {
 				text-align: left;
-				margin: 0.2rem 3% 0;
+				margin: 0.2rem $mobile-padding 0;
 			}
 
 			p {
 				text-indent: 0;
-				padding: 0;
-				margin-left: 3%;
-				margin-right: 3%;
+				padding: 0 $mobile-padding;
 				text-align: left;
 				font-family: $font-regular;
 				@include intro-paragraph-mobile;
@@ -1740,7 +1739,7 @@ $mobile-padding: 23px;
 		}
 
 		a {
-			left: 3%;
+			left: $mobile-padding;
 		}
 	}
 
@@ -1779,6 +1778,21 @@ $mobile-padding: 23px;
 
 		a {
 			padding-left: 6%;
+		}
+	}
+
+	.story-detail {
+
+		.intro-video iframe {
+			height: 180px;
+		}
+
+		.intro-row {
+			padding: 0 $mobile-padding;
+
+			.main-intro {
+				@include span-columns (4);
+			}
 		}
 	}
 
