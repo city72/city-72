@@ -1,16 +1,38 @@
 /* ABOUT */
 
-.about .page-intro .big-title {
-	@include retina-image(/assets/static/about-us-title, 960px 490px, jpg);
+.opening.about-intro {
+	@include retina-image(/assets/static/about-header, 750px 417px, jpg);
 }
 
-.about .main-intro p {
-	width: 100%;
+.about-intro {
+
+	h1 {
+		max-width: 720px;
+		text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+	}
+
+	div {
+		@include span-columns(3.38);
+
+		p {
+			margin-top: 3rem;
+		}
+	}
 }
 
-.aside .connection {
+.about .main-intro {
+	padding: 0 30px;
+	@include span-columns(7.5);
+
+	h2 {
+		margin-top: 60px;
+	}
+}
+
+.aside .connect {
+	@include row();
 	border-left: 2px solid $highlight;
-	margin-top: 1.6rem;
+	margin-top: 3.8rem;
 
 	strong {
 		font-weight: normal;
@@ -41,8 +63,9 @@
 
 .about-data {
 	@include outer-container;
-	margin-top: 20px;
-	margin-bottom: 4.25rem;
+	margin-top: 120px;
+	margin-bottom: 7.25rem;
+	padding: 0 30px;
 
 	li {
 		@include span-columns(4);
@@ -52,6 +75,7 @@
 	h2 {
 		@include col-title;
 		margin-bottom: 0;
+		line-height: 2.5rem;
 	}
 
 	p {
@@ -61,20 +85,20 @@
 	.about-who,
 	.about-what,
 	.about-why {
-		width: 300px;
-		height: 190px;
+		width: 302px;
+		height: 172px;
 	}
 
 	.about-who {
-		@include retina-image(/assets/static/about-us-1, 300px 190px, jpg);
+		@include retina-image(/assets/static/about-us-1, 302px 172px, jpg);
 	}
 
 	.about-what {
-		@include retina-image(/assets/static/about-us-3, 300px 190px, jpg);
+		@include retina-image(/assets/static/about-us-2, 302px 172px, jpg);
 	}
 
 	.about-why {
-		@include retina-image(/assets/static/about-us-2, 300px 190px, jpg);
+		@include retina-image(/assets/static/about-us-3, 302px 172px, jpg);
 	}
 
 }
@@ -199,6 +223,21 @@
 .manifesto .page-intro .big-title {
 	background: url(/assets/static/manifesto.jpg) no-repeat left top;
 	background-size: 100%;
+	border-top: 1px solid $light-grey;
+}
+
+.intro-row {
+	@include row();
+}
+
+.manifesto .main-intro {
+	@include row();
+	@include span-columns(8);
+	padding: 60px 30px;
+
+	p {
+		@include span-columns(12);
+	}
 }
 
 .aside {

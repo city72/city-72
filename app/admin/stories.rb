@@ -37,22 +37,18 @@ ActiveAdmin.register Story do
       f.input :items_images_display_type, label: 'Images Display Type', as: :select, collection: StoryItemsDisplayTypes::all, include_blank: false
       f.input :items_title, label: 'Title', as: :select, collection: StoryItemsTitles::all, include_blank: false
 
-      f.inputs "First Item" do
-        f.input :item1_image, label: 'Image', hint: (f.template.image_tag(f.object.item1_image.url) unless f.object.item1_image.blank?)
-        f.input :item1_subtitle, label: 'Subtitle'
-        f.input :item1_quote, label: 'Quote'
+      item_configuration = Proc.new do |index|
+        f.input "item#{index}_image".to_sym, 
+                label: 'Image', 
+                hint: (f.template.image_tag(f.object.send("item#{index}_image".to_sym).url) unless f.object.send("item#{index}_image".to_sym).blank?)
+        f.input "item#{index}_subtitle".to_sym, label: 'Subtitle'
+        f.input "item#{index}_quote".to_sym, label: 'Quote'
+        f.input "item#{index}_link".to_sym, label: 'Link Title'
+      end
 
-      end
-      f.inputs "Second Item" do
-        f.input :item2_image, label: 'Image', hint: (f.template.image_tag(f.object.item2_image.url) unless f.object.item2_image.blank?)
-        f.input :item2_subtitle, label: 'Subtitle'
-        f.input :item2_quote, label: 'Quote'
-      end
-      f.inputs "Third Item" do
-        f.input :item3_image, label: 'Image', hint: (f.template.image_tag(f.object.item3_image.url) unless f.object.item3_image.blank?)
-        f.input :item3_subtitle, label: 'Subtitle'
-        f.input :item3_quote, label: 'Quote'
-      end
+      f.inputs("First Item") { item_configuration.call(1) }
+      f.inputs("Second Item") { item_configuration.call(2) }
+      f.inputs("Third Item") { item_configuration.call(3) }
 
     end
     f.actions

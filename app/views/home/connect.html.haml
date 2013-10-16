@@ -1,46 +1,65 @@
+= provide(:title, 'Get Connected')
 = javascript_include_tag "mailchimp"
 .main-container.connect
   = render :partial => "partials/header"
-  .page-intro
-    .big-title
-      %h1 The App
-      %span Connect with your people.
-      .tooltip
-        .tooltip-content <strong>Boots for walking.</strong> Keep a pair of sturdy shoes under your bed.
-    %h2 Preparedness is all about people.
-    %p The same kinds of connections that are meaningful to us in everyday life &ndash; with friends, family, neighbors, and communities &ndash; are even more crucial during a crisis.
-    %p Recent disasters, including Sandy, Boston and Fukushima, have shown that there is an emerging role for social media and technology in emergency response. In fact, text messaging is one of the most reliable forms of communication in an emergency, because it is unlikely that all networks will go down. 
-  .app-signup
-    .app-title
-      %h3.coming-soon Coming Soon!
-      %h3 The SF72 App
-    .app-video
-    .app-details
-      %p The SF72 app uses geo-location to help you locate your people &ndash; and resources near you &ndash; in case of an emergency. Downloading it is a great step to get prepared. Then share it with five friends. Watch the strength of our city grow.
-      %strong Sign up by email to find out when the SF72 App is live.
-      .subscribe-form
-        #mc_embed_signup
-          %form#mc-embedded-subscribe-form.validate{:action => "http://sf72.us6.list-manage1.com/subscribe/post?u=da2f717cb23345cc17718c642&id=a56b545c6c", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
-            %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => "", :placeholder => "Notify me"}/
-            %input.submit{type: "submit", value: "Go", :name => "subscribe"}
-            #sending-notification Sending&hellip;
-            #mce-responses.clear
-              #mce-error-response.response{:style => "display:none"} 
-              #mce-success-response.response{:style => "display:none"} Almost finished...We need to confirm your email to complete the address. To complete the subscription process, please click the link in the email we just sent you.
-
-  %ul.app-features
-    %li
-      .screen-1
-      %ul.features-detail
-        %li Integrate your existing social networks with the SF72 app to establish your circle.
-        %li Geo-track your loved ones relative to your location, to quickly establish a meetup spot.
-    %li
-      .screen-2
-      %ul.features-detail
-        %li Send emergency group texts to your inner circle of friends. (Texting is the most reliable form of emergency communication, since it is unlikely that all networks will go down.)
-    %li
-      .screen-3
-      %ul.features-detail
-        %li Find nearby shelter, food, and community resources.
-        %li Access aggregated emergency updates from both official city announcements, and crowdsourced updates from fellow San Franciscans.
-= render :partial => "partials/footer"
+  .opening
+    %h1 Preparedness is all about people.
+    %div
+      %p When disaster strikes, we come together to help each other. Getting prepared is about knowing your neighbors, saying hi to the regulars at the local market, and staying in touch with family and friends—both digitally and in person.
+  .existing-networks
+    .use
+      %h2 Connect through your<br /> digital networks.
+      %p.intro-networks In the event of an emergency, we all turn to our existing tools and networks—many of which are digital. Think about your connections and the online communities you’re already a part of, so you can share updates and information when something happens.
+    .know
+      %h3 Know what to do.
+      %p Tips and tools for real emergency situations.
+      %a{href:"http://em4sf.wordpress.com/"}Read our blog
+  .networks-list
+    %ul
+      %li.facebook
+        %h3 Use your</br>Facebook account
+        %p <strong>Now:</strong> Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together.
+        %p <strong>In an emergency:</strong> Post your status to Facebook to let friends and family know you are ok.
+      %li.twitter
+        %h3 Check updates</br>on Twitter
+        %p <strong>Now:</strong> Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites: <a href="http://twitter.com/SF_Emergency">SFDEM</a>, <a href="http://twitter.com/511SFBay">511</a> and <a href="https://twitter.com/SF311">311</a>.
+        %p <strong>In an emergency:</strong> Post about yourself and your area. Use <a href="https://twitter.com/search?q=%23SF72">#SF72</a> to include them in the crowdsourced emergency feed.
+      %li.airbnb
+        %h3 Sign up</br>for Airbnb
+        %p <strong>Now:</strong> Create an AirBnB proﬁle so you are ready to ﬁnd or share a place to stay if anything happens.
+        %p <strong>In an emergency:</strong> Find a place to stay, or share your place with those in need.
+  .full-img-article
+    %ul
+      %li.use
+        %h3 Connect through</br>your local networks.
+        %p Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens.
+      %li.what
+        %h3 How to</br>Connect
+        %ul.your-net  
+          %li.net-first
+            %ul
+              %li My yoga class
+              %li My workplace
+              %li My book club
+          %li.net-second
+            %ul
+              %li My neighborhood bar
+              %li My school
+              %li My congregation
+  .learn-more
+    %h3 Learn more from our partners.
+    %p To get even better prepared as a household, neighborhood, or community, connect with these organizations.
+    %ul
+      %li
+        <a id="red-cross" href="http://www.redcross.org/ca/san-francisco">www.redcross.org/ca/san-francisco</a>
+        %p <strong>American Red Cross, Bay Area Chapter</strong> provides a variety of trainings including first aid, CPR, and how to prepare for emergencies.
+        <a href="http://www.redcross.org/ca/san-francisco">www.redcross.org/ca/san-francisco</a>
+      %li
+        <a id="nen" href="http://empowersf.org/">www.empowersf.org</a>
+        %p <strong>Neighborhood Empowerment Network</strong> equips SF neighborhoods with tools and programs designed to create safe, clean, and economically resilient communities.
+        <a href="http://empowersf.org/">www.empowersf.org</a>
+      %li
+        <a id="nert" href="http://www.sfgov.org/sfnert">www.sfgov.org/sfnert</a>
+        %p <strong>San Francisco Neighborhood Emergency Response Teams</strong> teaches emergency preparedness and response basics through free hands-on training so you are ready to take care of yourself and others.
+        <a href="http://www.sfgov.org/sfnert">www.sfgov.org/sfnert</a>
+  = render :partial => "partials/footer"

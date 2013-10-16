@@ -1,46 +1,176 @@
 /* HOME */
-.video-opening {
-	width: 100%;
-	height: 540px;
-}
 
-.intro-row {
-	@include outer-container;
-}
 
-.main-intro {
-	@include span-columns(7.8);
-	margin-bottom: 2.9rem;
-}
-
-.intro-app {
-	@include span-columns(3.5);
-	@include shift(.5);
-	margin-top: 3.5rem;
-	font-family: $font-bold;
-	font-size: 1rem;
-	line-height: 1.45;
-	padding: 3.6rem 0.5rem 3.6rem 1.5rem;
+.home .page-intro {
+	@include icon($highlight,$arrow,#FFF,490px,45px);
 	position: relative;
 }
 
-.intro-app span {
-	color: $dark-grey;
+.home .page-intro .big-title {
+	@include retina-image(/assets/static/home-prepare, 1020px 538px, jpg);
+	background-position: left top;
+	text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
 }
 
-.intro-app strong {
-	display: block;
-	margin-top: 0.6rem;
+.home .page-intro .big-title {
+	
+	h1 {
+		font-size: 3.5rem;
+		text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+	}
+
+	h1:before {
+		font-family: 'sf72-icons';
+		font-size: 5rem;
+		content: 'y';
+		color: #FFFFFF;
+		-webkit-font-smoothing: antialiased;
+		display: block;
+		margin-bottom: 30px;	
+	}
 }
 
-.intro-app:after {
-	position: absolute;
-	left: 0.35rem;
-	top: 3.65rem;
-	height: 8.5rem;
-	border-left: 2px solid $highlight;
-	content: '';
+.questions {
+	background-image: url("/assets/static/clock.svg");
+	background-repeat: no-repeat;
+	background-position: 730px 100px;
+	@include row();
+	padding: 0 30px;
+	
+	ul {
+		@include row();
+
+		li {
+			@include span-columns(6);
+			margin-bottom: 80px;
+
+			h2 {
+				color: $highlight;
+				line-height: 1rem;
+				margin-top: 3.75rem;
+			}
+
+			span {
+				font-size: 1.2rem;
+				@include span-columns(11);
+			}
+		}
+	}
 }
+
+.connection {
+	@include row();
+	@include retina-image(/assets/static/threedesktop, 683px 420px, jpg);
+	background-position: top right;
+	background-repeat: no-repeat; 
+	position: relative;
+
+	div {
+		@include span-columns(4.2);
+		@include icon($highlight,$arrow,#FFF,370px,290px);
+		color: #FFF;
+		background-color: $highlight;
+		padding: 0 30px;
+		height: 420px;
+
+		h2 {
+			font-size: 2.05rem;
+			margin: 2rem 0 1rem;
+			line-height: 2.7rem;
+		}
+
+		span {
+			@include row();
+			font-family: $font-regular;
+			font-size: 1.16rem;
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.learn {
+	@include row();
+
+	h1 {
+		color: $dark-grey;
+		padding: 0 30px;
+		margin: 6.5rem 0 5rem;
+		font-family: $font-bold;
+		line-height: 2.65rem;
+	}
+	
+	h2 {
+		margin: 0.8rem 0 1rem;
+		line-height: 1.356 !important;
+	}
+
+	ul {
+		@include row();
+
+			li {
+			@include row();
+			@include span-columns(3.93);
+		
+			a {
+				@include row();
+				margin-right: 0.28125rem;
+				width: 337px;
+				height: 345px;
+				margin-bottom: 100px; 
+				background-repeat: no-repeat;
+				color: #FFF;
+				padding: 60px 40px 30px 30px;
+				position: relative;
+				transition: all 0.2s ease-out;
+
+				&:hover {
+					background-image: none;
+					background-color: $highlight;
+
+					h2 {
+						display: none;
+					}
+
+					p {
+						display: block;
+						font-size: 1.265rem;
+					}
+				}
+
+				h2 {
+					line-height: 2.65rem;
+
+					&:before {
+						line-height: 4.5rem;
+					}
+				}
+
+				p {
+					display: none;
+				}
+			}
+
+			.learn-connect {
+				@include retina-image(/assets/static/home1_3, 337px 345px);
+				@include icon(#FFF,$hands,$highlight,-50px,45px);
+			}
+			.learn-supplies {
+				@include retina-image(/assets/static/home2_3, 337px 345px);
+				@include icon(#FFF,$first-aid,$highlight,-50px,45px);	
+			}
+			.learn-plan {
+				@include retina-image(/assets/static/home3_3, 337px 345px);
+				@include icon(#FFF,$phone,$highlight,-50px,45px);
+			}
+		}
+	}
+}
+
+
+
+
+
+
 
 .home .intro-app {
 	
@@ -238,7 +368,7 @@
 
 	h2 {
 		margin: 0.5rem 0 0;
-		font-family: $font-medium;
+		font-family: $font-bold;
 		font-size: 2.125rem;
 	}
 

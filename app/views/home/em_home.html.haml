@@ -1,130 +1,129 @@
+= provide(:title, 'In an Emergency')
 = stylesheet_link_tag "joyride-2.1"
 = javascript_include_tag "jquery.joyride-2.1"
 = javascript_include_tag "froogaloop.min"
 = javascript_include_tag "em"
-.home-em
+.home-em.main-container
   .demo-ribbon
     .ribbon-inner Demo
   .wrapper.em-header
     = render :partial => "partials/header"
-  .what-to-do-wrapper#mobile-quick-guide
-    .alert-wide
-      .wrapper
-        .alert-info
-          %h3 #{@mode.title}
-          %p #{@mode.text}
-        .em-quick-guide-trigger
-          %a.show-quick-guide{src:"#"} What should I do?
-          %a.hide-quick-guide{src: "#"} Hide what to do
-    .em-quick-guide
-      .wrapper
-        %h3 What to do
-        %ol.quick-guide
-          - if !@mode.recommendation_1_title.empty?
-            %li
-              %h2 #{@mode.recommendation_1_title}
-              %p #{@mode.recommendation_1_text}
-          - if !@mode.recommendation_2_title.empty?
-            %li
-              %h2 #{@mode.recommendation_2_title}
-              %p #{@mode.recommendation_2_text}
-          - if !@mode.recommendation_3_title.empty?
-            %li
-              %h2 #{@mode.recommendation_3_title}
-              %p #{@mode.recommendation_3_text}
-  .map-container#mobile-maps
+.what-to-do-wrapper#mobile-quick-guide
+  .alert-wide
     .wrapper
-      .map-heading
-        %h3 Crisis Map
+      .alert-info
+        %h3 #{@mode.title}
+        %p #{@mode.text}
       .map-actions
-        %a.map-tips-trigger{href:"#"} Show map tips
-    .map-area
-      .map-tooltip-placement
-      %iframe.map{src: "http://google.org/crisismap/a/gmail.com/SF72?hl=en&llbox=37.81402%2C37.73342%2C-122.29152%2C-122.50214&t=ROADMAP&layers=layer2%2Clayer1%2Clayer0&embedded=true", height: "498"}
-  #mobile-updates
-    .tw-tabs-container
-      %ul.tw-tabs
-        %li.active#citizen-updates-tab
-          %a{href:"#tab-citizen-updates"}
-            %h3 Crowdsourced updates
-            %span From Twitter
-        %li#official-reports-tab 
-          %a{href:"#tab-official-reports"}
-            %h3 Official updates
-            %span From SFDEM
-        %li#transportation-updates-tab
-          %a{href:"#tab-service-status"}
-            %h3 Transportation status
-            %span From 511.org
-      %ul.tw-tabs-mobile
-        %li.active
-          %a{href:"#tab-citizen-updates"}
-            %h3 Crowdsourced
-        %li 
-          %a{href:"#tab-official-reports"}
-            %h3 Official
-        %li 
-          %a{href:"#tab-service-status"}
-            %h3 Transportation
-    .main-container.updates-wrapper
-      .updates
-        .citizen-reports
-          <style type="text/css">#twitter-widget-0{width:720px;}</style>
-          <a class="twitter-timeline" data-widget-id="#{@citizen_feed.widget_id}" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        .official-reports
-          <style type="text/css">#twitter-widget-1{width:720px;}</style>
-          <a class="twitter-timeline" data-widget-id="364807510647001088" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        .status
-          <style type="text/css">#twitter-widget-2{width:720px;}</style>
-          <a class="twitter-timeline" href="https://twitter.com/511SFBay" data-widget-id="370622485349146624" width="520" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    .modal-wrapper
-      .em-preview-modal.modal
-        %a.icon-close{href:"#"}
-        .intro-video
-          %iframe.video-opening#video-opening{src: "http://player.vimeo.com/video/72931517?api=1&player_id=video-opening"}
-        .tour-intro
-          %h2 SF72 CRISIS MODE
-          %h3 The city’s hub for emergency response.
-        .tour-intro-step2
-          %p A real emergency might not look like a monster attacking our City by the Bay, but it might leave many of us wondering what to do.
-          %p In an emergency, this site will go into Crisis Mode, and you will be able to access a stream of official updates, crowdsourced reports, and a crisis map to navigate city resources. 
-          %p <strong>Tour SF72 Crisis Mode</strong> to better understand how to use this resource, in the event of an emergency. The non-monster kind.
-          %a.btn{href:"#"} Take a tour
+        %a.map-tips-trigger{href:"#"} Map Guide
+        %a.expand-map-trigger{href:"#"} Expand Map
+      / .em-quick-guide-trigger
+      /   %a.show-quick-guide{src:"#"} What should I do?
+      /   %a.hide-quick-guide{src: "#"} Hide what to do
+  .em-quick-guide
+    .wrapper
+      / %h3 What to do
+      / %ol.quick-guide
+      /   - if !@mode.recommendation_1_title.empty?
+      /     %li
+      /       %h2 #{@mode.recommendation_1_title}
+      /       %p #{@mode.recommendation_1_text}
+      /   - if !@mode.recommendation_2_title.empty?
+      /     %li
+      /       %h2 #{@mode.recommendation_2_title}
+      /       %p #{@mode.recommendation_2_text}
+      /   - if !@mode.recommendation_3_title.empty?
+      /     %li
+      /       %h2 #{@mode.recommendation_3_title}
+      /       %p #{@mode.recommendation_3_text}
+.map-container#mobile-maps
+  .wrapper      
+  .map-area
+    .map-tooltip-placement
+    %iframe.map{src: "http://google.org/crisismap/a/gmail.com/SF72?hl=en&llbox=37.81402%2C37.73342%2C-122.29152%2C-122.50214&t=ROADMAP&layers=layer2%2Clayer1%2Clayer0&embedded=true", height: "498"}
+#mobile-updates
+  .tw-tabs-container
+    %ul.tw-tabs
+      %li.active#citizen-updates-tab
+        %a{href:"#tab-citizen-updates"}
+          %h3 Crowdsourced updates
+          %span From Twitter
+      %li#official-reports-tab 
+        %a{href:"#tab-official-reports"}
+          %h3 Official updates
+          %span From SFDEM
+      %li#transportation-updates-tab
+        %a{href:"#tab-service-status"}
+          %h3 Transportation status
+          %span From 511.org
+    %ul.tw-tabs-mobile
+      %li.active
+        %a{href:"#tab-citizen-updates"}
+          %h3 Crowdsourced
+      %li 
+        %a{href:"#tab-official-reports"}
+          %h3 Official
+      %li 
+        %a{href:"#tab-service-status"}
+          %h3 Transportation
+.main-container.updates-wrapper
+  .updates
+    .citizen-reports
+      <style type="text/css">#twitter-widget-1{width:70%}</style>
+      <a class="twitter-timeline" data-widget-id="#{@citizen_feed.widget_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    .official-reports
+      <style type="text/css">#twitter-widget-2{width:70%}</style>
+      <a class="twitter-timeline" data-widget-id="364807510647001088" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    .status
+      <style type="text/css">#twitter-widget-3{width:70%}</style>
+      <a class="twitter-timeline" href="https://twitter.com/511SFBay" data-widget-id="370622485349146624" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+.main-container
+  = render :partial => "partials/footer"
+/ .modal-wrapper
+/   .em-preview-modal.modal
+/     %a.icon-close{href:"#"}
+/     .tour-intro
+/       %h2 SF72 CRISIS MODE
+/       %h3 The city’s hub for emergency response.
+/     .tour-intro-step2
+/       %p A real emergency might not look like a monster attacking our City by the Bay, but it might leave many of us wondering what to do.
+/       %p In an emergency, this site will go into Crisis Mode, and you will be able to access a stream of official updates, crowdsourced reports, and a crisis map to navigate city resources. 
+/       %p <strong>Tour SF72 Crisis Mode</strong> to better understand how to use this resource, in the event of an emergency. The non-monster kind.
+/       %a.btn{href:"#"} Take a tour
 %ol#joyride-steps{"style" => "display:none"}
   %li{"data-class" => "alert-info"}
     .icon.icon-info
     %h4.header What happened?
     %p.description Announces the crisis and its severity. Click on &ldquo;What should I do?&rdquo; to get next steps. 
-    %p.index 1 of 6
-  %li{"data-class" => "em-quick-guide-trigger"}
-    .icon.icon-info
-    %h4.header What should I do?
-    %p.description Three simple action steps—so you know what to do. These tips will change depending on the type of disaster and timeline. Check back often. 
-    %p.index 2 of 6
+    %p.index 1 of 5
+  / %li{"data-class" => "em-quick-guide-trigger"}
+  /   .icon.icon-info
+  /   %h4.header What should I do?
+  /   %p.description Three simple action steps—so you know what to do. These tips will change depending on the type of disaster and timeline. Check back often. 
+  /   %p.index 2 of 6
   %li{"data-class" => "map-tooltip-placement",
-      "data-options"  => "tipLocation:left",
+      "data-options"  => "tipLocation:right",
       }
     .icon.icon-map-on
     %h4.header Street Status
     %p.description A geo-tagged crisis map that shows nearby shelters and resources, as well as hazardous or road-blocked areas &ndash; so you can find safety in your surroundings
-    %p.index 3 of 6
+    %p.index 2 of 5
   %li{"data-id" => "citizen-updates-tab"}
     .icon.icon-twitter-big-on
     %h4.header  Crowdsourced Updates
     %p.description A live stream of crowdsourced updates from Twitter &ndash; so you can get an on-the-ground picture of what’s going on.
-    %p.index 4 of 6
+    %p.index 3 of 5
   %li{"data-id" => "official-reports-tab"}
     .icon.icon-alert
     %h4.header Official Updates
     %p.description Up-to-date content from official city sources &ndash; so you can know exactly what is happening, when it happens.
-    %p.index 5 of 6
+    %p.index 4 of 5
   %li{"data-id" => "transportation-updates-tab",
       "data-button" => "Finish"}
     .icon.icon-transport
     %h4.header Transportation alerts
     %p.description Public transportation status updates &ndash; so you can navigate the city quickly, easily, and safely.
-    %p.index 6 of 6
-= render :partial => "partials/footer"
+    %p.index 5 of 5

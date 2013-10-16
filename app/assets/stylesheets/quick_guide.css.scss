@@ -1,3 +1,8 @@
+.basics {
+	border-top: 1px solid $light-grey;
+	padding-top: 90px;
+}
+
 .quick-guide-page .basics {
 
 	h4 {
@@ -9,7 +14,7 @@
 
 	> h2 {
 		margin: 0.1rem 11.8rem 0;
-		font-family: $font-medium;
+		font-family: $font-bold;
 		font-size: 1.55rem;
 		color: $highlight-dark;
 	}

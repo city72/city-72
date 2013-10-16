@@ -1,15 +1,16 @@
+= provide(:title, 'Watch Stories - ' + @story.event)
 %div(ng-app="project")
   %div.main-container.story-detail{"ng-controller" => "storyDetailController"}
     = render :partial => "partials/header"
     .intro-video
       %iframe.video-opening{src: "http://player.vimeo.com/video/#{@story.video_url.split('/')[-1]}?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933"}
-      %ul.social-media
-        %li.twitter
-          %a{onClick: "twitterShare()"}
-            %span.icon-share-twitter
-        %li.facebook
-          %a{onClick: "facebookShare()"}
-            %span.icon-share-fb
+    %ul.social-media
+      %li.twitter
+        %a{onClick: "twitterShare()"}
+          %span.icon-share-twitter
+      %li.facebook
+        %a{onClick: "facebookShare()"}
+          %span.icon-share-fb
     .intro-row
       .main-intro
         %h2
@@ -30,41 +31,41 @@
             = retina_image_tag @story.item1_image
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
-            = link_to "Gather your supplies", supplies_path
+            = link_to @story.item1_link.presence || "Gather Supplies", supplies_path
           %li
             = retina_image_tag @story.item2_image
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
-            = link_to "See the app", connect_path
+            = link_to @story.item2_link.presence || "Get Connected", connect_path
           %li
             = retina_image_tag @story.item3_image
             %h4 #{@story.item3_subtitle}
             %p &ldquo;#{@story.item3_quote}&rdquo;
-            = link_to "Make a plan", prepare_path
+            = link_to @story.item3_link.presence || "Make a plan", prepare_path
       - elsif @story.items_images_display_type == StoryItemsDisplayTypes::COLUMN_2_SQUARE
         %ul.needed-list.two-cols
           %li
             = retina_image_tag @story.item1_image
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
-            = link_to "Gather your supplies", supplies_path
+            = link_to @story.item1_link.presence || "Gather Supplies", supplies_path
           %li
             = retina_image_tag @story.item2_image
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
-            = link_to "See the app", connect_path
+            = link_to @story.item2_link.presence || "Get Connected", connect_path
       - elsif @story.items_images_display_type == StoryItemsDisplayTypes::COLUMN_2_BLEED
         %ul.needed-list.two-cols.wide-img
           %li
             = full_bleed_image_tag @story.item1_image
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
-            = link_to "Gather your supplies", supplies_path
+            = link_to @story.item1_link.presence || "Gather Supplies", supplies_path
           %li
             = full_bleed_image_tag @story.item2_image
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
-            = link_to "See the app", connect_path
+            = link_to @story.item2_link.presence || "Get Connected", connect_path
           
     .similar
       %h3 Similar to #{@story.person}
@@ -77,4 +78,4 @@
               = retina_image_tag related_story.video_image
               = render partial: "category_icon", locals: {story: related_story}
 
-= render :partial => "partials/footer"
+    = render :partial => "partials/footer"

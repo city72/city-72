@@ -21,8 +21,9 @@ $dark-grey: #4D4D4D;
 $body-color: #9b9b9b;
 $body-light: #a2a2a2;
 $mid-grey: #b4b4b4;
+$text-grey: #7f7f7f;
 $light-grey: #e6e6e6;
-
+$subtle-grey: #eaeaea;
 $highlight: #FBB03B;
 $highlight-dark: #F15A24;
 
@@ -30,6 +31,77 @@ $highlight-dark: #F15A24;
 $font-regular:'HelveticaNeueLT-Roman';
 $font-medium:'HelveticaNeueLT-Medium';
 $font-bold:'HelveticaNeueLT-Bold';
+
+/* Icons */
+$arrow: 'A';
+$hands: 'C';
+$first-aid: 'D';
+$phone: 'E';
+$airbnb-icn: 'F';
+$twitter-icn: 'G';
+$facebook-icn: 'H';
+$video-play: 'I';
+
+/* Home icons mixins */
+@mixin icon($color,$icon,$bg,$pos-top,$pos-left){
+	&:before{
+		font-family: 'sf72-icons';
+		font-size: 3rem;
+		color: $color;
+		content: $icon;
+		speak: none;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 50px;
+		top: $pos-top;
+		left: $pos-left;
+		text-align: center;
+		padding-top: 15px;
+		background-color: $bg;
+		position: absolute;
+		height: 85px;
+		width: 100px;
+	}
+}
+
+@mixin icon-mini{
+	&:before{
+		font-size: 1.65rem;
+		border-radius: 50px;
+		padding-top: 22px;
+		height: 63px;
+		width: 85px;
+	}
+}
+
+@mixin icon-mid{
+	&:before{
+		font-size: 2.3rem;
+		border-radius: 50px;
+		padding-top: 17px;
+		height: 68px;
+		width: 85px;
+	}
+}
+
+@mixin icon-play{
+	&:before{
+		font-size: 2.35rem;
+		border-radius: 40px;
+		padding: 10px 4px 45px 10px;
+		height: 20px !important;
+		width: 62px !important;
+		top: 23%;
+		left: 36%;
+	}
+}
+
+
 
 /* CSS Mini Reset */
 html, body, div, form, fieldset, legend, label {
@@ -68,7 +140,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Grid & Typography */
-$max-width: 960px;
+
 $gutter: 30px;
 $border-box-sizing: false;
 $mobile: new-breakpoint(max-width 480px 4);
@@ -80,7 +152,7 @@ h5 {margin: 0}
 
 @mixin intro-paragraph {
 	font-size: 1.1875rem;
-	line-height: 1.45;
+	line-height: 1.55;
 }
 
 @mixin col-title {
@@ -123,10 +195,10 @@ body {
 
 	.big-title {
 		background: url(http://placekitten.com/960/492/) no-repeat left top;
-		width: 960px;
-		height: 492px;
+		width: 1020px;
+		height: 538px;
 		text-align: center;
-		padding-top: 12.3rem;
+		padding-top: 9.3rem;
 		text-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 
 		h1 {
@@ -201,6 +273,39 @@ body {
 		line-height: 1.6rem;
 	}
 }
+
+.opening {
+	@include row(block,RTL);
+	background-position: top right;
+	background-repeat: no-repeat; 
+	position: relative;
+	
+	h1 {
+		@include span-columns(8.62938893);
+		font-family: $font-bold;
+		font-size: 3.56rem;
+		line-height: 1.2;
+		color: #FFF;
+		padding: 98px 130px 30px;
+	}
+
+
+	div {
+		@include span-columns(3.37061107);
+		color: #FFF;
+		background-color: $highlight;
+		padding: 0 20px 0 30px;
+		height: 417px;
+
+		p {
+			font-size: 1.1875rem;
+			line-height: 1.6875rem;
+			margin-top: 1.9rem;
+		}
+	}
+}
+
+@include reset-layout-direction;
 
 .modal-wrapper {
 	height: 100%;
@@ -331,6 +436,17 @@ body {
 	opacity: 1;
 }
 
+
+/* FIXING HOVERS */
+.footer-top .by-line a:hover,
+.footer-bottom a:hover,
+.know a:hover,
+.learn-more ul li a:hover,
+.print-this a:hover,
+.stay-tuned a:hover {
+	color: #4D4D4D;
+}
+
 @import "header";
 @import "footer";
 @import "slider";
@@ -340,4 +456,5 @@ body {
 @import "prepare";
 @import "quick_guide";
 @import "about";
+@import "plan";
 @import "mobile";
