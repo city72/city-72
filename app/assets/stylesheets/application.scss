@@ -284,18 +284,21 @@ body {
 		@include span-columns(8.62938893);
 		font-family: $font-bold;
 		font-size: 3.56rem;
-		line-height: 1.2;
+		line-height: 4.5625rem;
 		color: #FFF;
 		padding: 98px 130px 30px;
+		text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+		margin-top: 0;
 	}
 
 
 	div {
-		@include span-columns(3.37061107);
+		@include span-columns(3.38061107);
 		color: #FFF;
 		background-color: $highlight;
 		padding: 0 20px 0 30px;
 		height: 417px;
+		margin-right: -1px;
 
 		p {
 			font-size: 1.1875rem;
