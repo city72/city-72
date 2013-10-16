@@ -42,12 +42,12 @@ ActiveAdmin.register Mode do
 		end
 
 		private
-			def params_with_valid_size?
-				params[:mode][:text].size <= 255 && params[:mode][:title].size <= 255
+			def params_with_invalid_size?
+				params[:mode][:text].size > 255 || params[:mode][:title].size > 255
 			end
 
 			def validate_params_length
-				if params[:mode_action] == "switch-on" && params_with_valid_size?
+				if params[:mode_action] == "switch-on" && params_with_invalid_size?
 					flash[:errors] = "text values can't be longer than 255 characters"
 					redirect_to edit_admin_mode_path(@mode)
 				end
