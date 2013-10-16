@@ -21,67 +21,41 @@
         %strong In an<br>Emergency
   - unless browser.ie?
     .mobile-menu
-      - if @preview
-        .normal-mode
-          %ul.main-nav
-            %li
-              %a{href:"/home"}
-                %strong Home
-            %li
-              %a{href:"/connect"}
-                %strong Get Connected
-            %li
-              %a{href:"/supplies"}
-                %strong Gather Supplies
-            %li
-              %a{href:"/stories"}
-                %strong Watch Stories
-            %li
-              %a{href:"/plan"}
-                %strong Make a Plan
-            %li.em-link
-              %strong In an Emergency
-              .fold
-                %p Live updates + crisis tools in an emergency.
-                %ul
-                  %li.em-li 
-                    %a{href:"/em/home#mobile-maps"} Situation Map
-                  %li.em-li
-                    %a{href:"/em/home#mobile-updates"} Updates
+      .normal-mode
+        %ul.main-nav
+          %li
+            %a{href:"/home"}
+              %strong Home
+          %li
+            %a{href:"/connect"}
+              %strong Get Connected
+          %li
+            %a{href:"/supplies"}
+              %strong Gather Supplies
+          %li
+            %a{href:"/stories"}
+              %strong Watch Stories
+          %li
+            %a{href:"/plan"}
+              %strong Make a Plan
+          %li.em-link
+            %strong In an Emergency
+            .fold
+              %p Live updates + crisis tools in an emergency.
+              %ul
+                %li.em-li 
+                  %a{href:"/em/home#mobile-maps"} Situation Map
+                %li.em-li
+                  %a{href:"/em/home#mobile-updates"} Updates
 
-          / .menu-mobile-heading Crisis mode
-          / %ul.main-nav
-          /  %li.js-button-li
-          /    %a{href:"/em/home#mobile-quick-guide"}
-          /      %strong What to do
-          /  %li.js-button-li
-          /    %a{href:"/em/home#mobile-maps"}
-          /      %strong Map
-          /  %li.js-button-li
-          /    %a{href:"/em/home#mobile-updates"}
-          /      %strong Updates
-      -else
-        .crisis-mode
-          %ul.main-nav
-            %li.js-button-li
-              %a{href:"/em/home#mobile-quick-guide"}
-                %strong What to do
-            %li.js-button-li
-              %a{href:"/em/home#mobile-maps"}
-                %strong Map
-            %li.js-button-li
-              %a{href:"/em/home#mobile-updates"}
-                %strong Updates
-          %ul.main-nav
-            %li
-              %a{href:"/home"}
-                %strong Home
-            %li
-              %a{href:"/prepare"}
-                %strong Prepare
-            %li
-              %a{href:"/connect"}
-                %strong The App
-            %li
-              %a{href:"/about"}
-                %strong About Us
+        / .menu-mobile-heading Crisis mode
+        / %ul.main-nav
+        /  %li.js-button-li
+        /    %a{href:"/em/home#mobile-quick-guide"}
+        /      %strong What to do
+        /  %li.js-button-li
+        /    %a{href:"/em/home#mobile-maps"}
+        /      %strong Map
+        /  %li.js-button-li
+        /    %a{href:"/em/home#mobile-updates"}
+        /      %strong Updates
