@@ -295,9 +295,11 @@
 	}
 
 	span {
-		font-family: $font-regular;
+		font-family: $font-bold;
 		font-size: 0.6rem;
 		text-transform: uppercase;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
 	.updates-count {

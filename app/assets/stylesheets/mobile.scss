@@ -733,8 +733,10 @@ $mobile-padding: 23px;
 	.story-list {
 		margin-top: 10px;
 
+		li span,
 		li a,
-		li a img {
+		li a img,
+		li span img {
 			height: 203px;
 		}
 
@@ -1561,7 +1563,8 @@ $mobile-padding: 23px;
 			@include span-columns(4);
 			margin-bottom: 0.7rem;
 
-			a {
+			a,
+			span {
 				display: block;
 				position: relative;
 			}
