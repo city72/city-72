@@ -292,6 +292,12 @@ a.checklist:before {
 
 		}
 
+		a:hover {
+			div.quote-dialog {
+				opacity: 1;
+			}
+		}
+
 		span:hover {
 			div.quote-dialog {
 				opacity: 1;
