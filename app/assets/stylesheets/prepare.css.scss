@@ -257,7 +257,7 @@ a.checklist:before {
 
 	li {
 		margin-bottom: 1.7rem;
-		@include icon($highlight,$video-play,rgba(255, 255, 255, 0.7),20%,32%);
+		@include icon($highlight,3.5rem,$video-play,rgba(255, 255, 255, 0.7),20%,32%);
 		@include icon-play;
 		position: relative;
 

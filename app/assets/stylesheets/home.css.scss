@@ -2,7 +2,7 @@
 
 
 .home .page-intro {
-	@include icon($highlight,$arrow,#FFF,490px,45px);
+	@include icon($highlight,3.5rem,$arrow,#FFF,490px,45px);
 	position: relative;
 }
 
@@ -68,7 +68,7 @@
 
 	div {
 		@include span-columns(4.2);
-		@include icon($highlight,$arrow,#FFF,370px,290px);
+		@include icon($highlight,3.5rem,$arrow,#FFF,370px,290px);
 		color: #FFF;
 		background-color: $highlight;
 		padding: 0 30px;
@@ -153,15 +153,15 @@
 
 			.learn-connect {
 				@include retina-image(/assets/static/home1_3, 337px 345px);
-				@include icon(#FFF,$hands,$highlight,-50px,45px);
+				@include icon(#FFF,3.5rem,$hands,$highlight,-50px,45px);
 			}
 			.learn-supplies {
 				@include retina-image(/assets/static/home2_3, 337px 345px);
-				@include icon(#FFF,$first-aid,$highlight,-50px,45px);	
+				@include icon(#FFF,3.5rem,$first-aid,$highlight,-50px,45px);	
 			}
 			.learn-plan {
 				@include retina-image(/assets/static/home3_3, 337px 345px);
-				@include icon(#FFF,$phone,$highlight,-50px,45px);
+				@include icon(#FFF,3.5rem,$phone,$highlight,-50px,45px);
 			}
 		}
 	}

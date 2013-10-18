@@ -3,11 +3,22 @@
 
 .connect .opening {
 	@include retina-image(/assets/static/header, 750px 417px, jpg);
+
+	h1 {
+		margin-top: 2.2rem;	
+	}
+
+	div {
+
+		p {
+			margin-top: 4.2rem;	
+		}
+	}
 }
 
 .existing-networks {
 	@include row();
-	padding: 6.9rem 30px 3.5rem;
+	padding: 3rem 30px 3.5rem;
 
 	.use {
 		@include span-columns(8.5);
@@ -99,13 +110,13 @@
 	}
 
 	li.facebook {
-		@include icon(#FFF,$facebook-icn,$highlight,0,0);
+		@include icon(#FFF,3.2rem,$facebook-icn,$highlight,0,0);
 	}
 	li.airbnb {
-		@include icon(#FFF,$airbnb-icn,$highlight,0,0);
+		@include icon(#FFF,3.2rem,$airbnb-icn,$highlight,0,0);
 	}
 	li.twitter {
-		@include icon(#FFF,$twitter-icn,$highlight,0,0);
+		@include icon(#FFF,3.2rem,$twitter-icn,$highlight,0,0);
 	}
 }
 
