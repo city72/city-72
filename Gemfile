@@ -4,6 +4,7 @@ ruby "1.9.3"
 gem 'rails', '3.2.13'
 gem 'unicorn-rails'
 gem 'rack-cache'
+gem 'rack-timeout'
 gem 'dalli'
 gem 'kgio'
 gem "memcachier"
