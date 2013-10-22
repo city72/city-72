@@ -257,7 +257,7 @@ a.checklist:before {
 
 	li {
 		margin-bottom: 1.7rem;
-		@include icon($highlight,$video-play,rgba(255, 255, 255, 0.7),20%,32%);
+		@include icon($highlight,3.5rem,$video-play,rgba(255, 255, 255, 0.7),20%,32%);
 		@include icon-play;
 		position: relative;
 
@@ -290,6 +290,12 @@ a.checklist:before {
 				content: 's';
 			}
 
+		}
+
+		a:hover {
+			div.quote-dialog {
+				opacity: 1;
+			}
 		}
 
 		span:hover {

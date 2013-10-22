@@ -43,10 +43,10 @@ $facebook-icn: 'H';
 $video-play: 'I';
 
 /* Home icons mixins */
-@mixin icon($color,$icon,$bg,$pos-top,$pos-left){
+@mixin icon($color,$icon-font-size,$icon,$bg,$pos-top,$pos-left){
 	&:before{
 		font-family: 'sf72-icons';
-		font-size: 3.5rem;
+		font-size: $icon-font-size;
 		color: $color;
 		content: $icon;
 		speak: none;

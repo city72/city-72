@@ -12,6 +12,10 @@
 	.em-plan {
 		@include retina-image(/assets/static/plan-header, 750px 417px, jpg);
 
+		h1 {
+			margin-top: 2.5rem;
+		}
+
 		div {
 
 			p {
@@ -78,17 +82,17 @@
 		}
 
 		.select {
-			@include icon(#FFF,'J',$highlight,8px,-120px);
+			@include icon(#FFF,3.5rem,'J',$highlight,8px,-120px);
 			@include icon-mini;
 		}
 
 		.pick {
-			@include icon(#FFF,'L',$highlight,8px,-120px);
+			@include icon(#FFF,3.5rem,'L',$highlight,8px,-120px);
 			@include icon-mini;
 		}
 
 		.agree {
-			@include icon(#FFF,'K',$highlight,8px,-120px);
+			@include icon(#FFF,3.5rem,'K',$highlight,8px,-120px);
 			@include icon-mini;
 		}
 
@@ -171,15 +175,15 @@
 			}
 
 			.geo {
-				@include icon(#FFF,'N',$highlight,0,0);
+				@include icon(#FFF,3.5rem,'N',$highlight,0,0);
 				@include icon-mid;
 			}
 			.sms {
-				@include icon(#FFF,'V',$highlight,0,0);
+				@include icon(#FFF,3.5rem,'V',$highlight,0,0);
 				@include icon-mid;
 			}
 			.shelter {
-				@include icon(#FFF,'M',$highlight,0,0);
+				@include icon(#FFF,3.5rem,'M',$highlight,0,0);
 				@include icon-mid;
 			}
 		}
