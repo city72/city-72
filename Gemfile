@@ -8,7 +8,7 @@ gem 'rack-timeout'
 gem 'dalli'
 gem 'kgio'
 gem "memcachier"
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '>= 3.6.8.168'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'haml-rails'
