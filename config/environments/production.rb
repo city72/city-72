@@ -44,7 +44,9 @@ IdeoSf72::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += ['*.js', '*.png', '*.jpg', '*.jpeg', '*.gif']
+  config.assets.precompile += ['*.js',
+                                'active_admin.css', 'admin_no_cms.css', 'jquery.modal.css', #add css not imported in application.css.scss
+                                '*.png', '*.jpg', '*.jpeg', '*.gif']
 
   client = Dalli::Client.new
   config.action_dispatch.rack_cache = {
