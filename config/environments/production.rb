@@ -44,7 +44,8 @@ IdeoSf72::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += ['*.js',
-                                'active_admin.css', 'admin_no_cms.css', 'jquery.modal.css', #add css not imported in application.css.scss
+                                #add css not imported in application.css.scss
+                                'joysadfsdfsdride-2.1.css', 'active_admin.css', 'admin_no_cms.css', 'jquery.modal.css',
                                 '*.png', '*.jpg', '*.jpeg', '*.gif']
 
   client = Dalli::Client.new
