@@ -17,8 +17,7 @@ IdeoSf72::Application.configure do
   # -"public" makes assests available to be cached by intermediate cache layers (CDN and Memcache)
   # -"max-age" sets time in seconds for assets to be cached on browser and on Memcache (not on CDN)
   
-  #config.static_cache_control = "public, max-age=20"
-  config.static_cache_control = "public, max-age=0"
+  config.static_cache_control = "public, max-age=#{1.day.to_i}"
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -44,7 +43,10 @@ IdeoSf72::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += ['*.js', '*.css']
+  config.assets.precompile += ['*.js',
+                                #add css not imported in application.css.scss
+                                'joysadfsdfsdride-2.1.css', 'active_admin.css', 'admin_no_cms.css', 'jquery.modal.css',
+                                '*.png', '*.jpg', '*.jpeg', '*.gif']
 
   client = Dalli::Client.new
   config.action_dispatch.rack_cache = {

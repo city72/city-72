@@ -14,7 +14,7 @@ Cache:
 	Considerations:
 		-Production uses 3 levels of cache: Browser, CloudFront (CDN), Memcache.
 		-Browser' and Memcache's cache is setted with max-age, and CDN's cache with s-maxage.
-			If s-maxage is not setted, the resource is cached on CloudFront for 1 day.
+			If s-maxage is not setted, CloudFront uses max-age as cache header.
 		-Browser' cache is ignored when user press F5.
 		-If Memcache receives multiple request for the same stale resource, it process only one and
 			leave the others waiting until it caches the resource.
