@@ -510,6 +510,7 @@ a.checklist:before {
 .needed-list {
 	@include row(table);
 	margin-bottom: 4.5rem;
+	position: relative;
 
 	li {
 		@include span-columns(4, table);
@@ -532,7 +533,6 @@ a.checklist:before {
 	a {
 		position: absolute;
 		bottom: 0;
-		left: 0;
 		display: block;
 		padding-right: 0.8em;
 		font-size: 1.5rem;
