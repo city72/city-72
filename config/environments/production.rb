@@ -47,11 +47,4 @@ IdeoSf72::Application.configure do
                                 #add css not imported in application.css.scss
                                 'joyride-2.1.css', 'active_admin.css', 'admin_no_cms.css', 'jquery.modal.css',
                                 '*.png', '*.jpg', '*.jpeg', '*.gif']
-
-  client = Dalli::Client.new
-  config.action_dispatch.rack_cache = {
-    :metastore    => client,
-    :entitystore  => client,
-    :allow_reload => false
-  }
 end

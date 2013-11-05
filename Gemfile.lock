@@ -68,7 +68,6 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
-    dalli (2.6.4)
     debugger (1.6.1)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -118,7 +117,6 @@ GEM
     mandrill-api (1.0.39)
       excon (~> 0.16.0)
       json (~> 1.7.7)
-    memcachier (0.0.2)
     meta_search (1.1.3)
       actionpack (~> 3.1)
       activerecord (~> 3.1)
@@ -218,22 +216,18 @@ DEPENDENCIES
   carrierwave
   cloudinary
   coffee-rails (~> 3.2.1)
-  dalli
   galetahub-simple_captcha
   haml-rails
   heroku-deflater
   jquery-rails (= 2.3.0)
   json (~> 1.7.7)
-  kgio
   mandrill-api
-  memcachier
   meta_search (>= 1.1.0.pre)
   neat (~> 1.3.0)
   newrelic_rpm (>= 3.6.8.168)
   pg
   pry
   pry-debugger
-  rack-cache
   rack-cors
   rack-timeout
   rails (= 3.2.13)
