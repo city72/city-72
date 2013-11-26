@@ -36,9 +36,7 @@ module IdeoSf72
 
     config.assets.initialize_on_precompile = false
 
-    config.cache_store = :dalli_store
-
-     config.middleware.use Rack::Cors do
+    config.middleware.use Rack::Cors do
       allow do
         origins '*'
         resource '/suscriptions', :headers => :any, :methods => [:get, :post, :options]

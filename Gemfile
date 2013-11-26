@@ -3,11 +3,7 @@ ruby "1.9.3"
 
 gem 'rails', '3.2.13'
 gem 'unicorn-rails'
-gem 'rack-cache'
 gem 'rack-timeout'
-gem 'dalli'
-gem 'kgio'
-gem "memcachier"
 gem 'newrelic_rpm', '>= 3.6.8.168'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
