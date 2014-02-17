@@ -1,19 +1,19 @@
 ---
 development:
-  cloud_name: hee3ety71
-  api_key: '136595561532171'
-  api_secret: krFmMw4Mai-5l7gLXj7xTfHgWfk
+  cloud_name: dvg6m7bog
+  api_key: '914791968974562'
+  api_secret: -EF8WvABbpG50E8_xCVtqvCD33w
   enhance_image_tag: true
   static_image_support: false
 production:
-  cloud_name: hee3ety71
-  api_key: '136595561532171'
-  api_secret: krFmMw4Mai-5l7gLXj7xTfHgWfk
+  cloud_name: dvg6m7bog
+  api_key: '914791968974562'
+  api_secret: -EF8WvABbpG50E8_xCVtqvCD33w
   enhance_image_tag: true
   static_image_support: true
 test:
-  cloud_name: hee3ety71
-  api_key: '136595561532171'
-  api_secret: krFmMw4Mai-5l7gLXj7xTfHgWfk
+  cloud_name: dvg6m7bog
+  api_key: '914791968974562'
+  api_secret: -EF8WvABbpG50E8_xCVtqvCD33w
   enhance_image_tag: true
   static_image_support: false
