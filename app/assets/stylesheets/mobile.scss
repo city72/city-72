@@ -560,7 +560,9 @@ $mobile-padding: 23px;
 
 			&.facebook:before,
 			&.twitter:before,
-			&.airbnb:before {
+			&.airbnb:before,
+			&.drive:before,
+			&.neighbors:before {
 				font-size: 2rem;
 				width: 57px;
 				height: 52px;
@@ -610,7 +612,7 @@ $mobile-padding: 23px;
 			}
 
 			.what {
-				margin: 17px 0 0;
+				margin: 0;
 
 				h3 br {
 					content:" ";
@@ -651,7 +653,7 @@ $mobile-padding: 23px;
 		}
 
 		ul {
-			margin: 0 0 60px;
+			margin: 0;
 
 			li {
 				padding: 0 0 20px;
@@ -2287,6 +2289,18 @@ $mobile-padding: 23px;
 		@include retina-image(/assets/mobile/nert, 54px 58px);
 		background-size: auto;
 		height: 58px;
+	}
+
+	.learn-more ul li #aux {
+		@include retina-image(/assets/mobile/auxiliary, 54px 54px);
+		background-size: auto;
+		height: 54px;
+	}
+
+	.learn-more ul li #council {
+		@include retina-image(/assets/mobile/interfaith, 54px 54px);
+		background-size: auto;
+		height: 54px;
 	}
 
 	.opening.supplies {

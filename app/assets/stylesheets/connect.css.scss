@@ -79,6 +79,7 @@
 		@include omega(3n);
 		padding: 6.5rem 3.3rem 0 0;
 		position: relative;
+		margin-bottom: 3rem;
 
 		strong {
 			font-weight: normal;
@@ -117,6 +118,12 @@
 	}
 	li.twitter {
 		@include icon(#FFF,3.2rem,$twitter-icn,$highlight,0,0);
+	}
+	li.neighbors {
+		@include icon(#FFF,3.2rem,$neighbors-icn,$highlight,0,0);
+	}
+	li.drive {
+		@include icon(#FFF,3.2rem,$drive-icn,$highlight,0,0);
 	}
 }
 
@@ -190,6 +197,7 @@
 .learn-more {
 	@include row();
 	padding: 0 30px;
+	margin-bottom: 7.5rem;
 
 	h3 {
 		font-size: 2.125rem;
@@ -207,7 +215,6 @@
 	ul {
 		@include row();
 		@include span-columns(12);
-		margin: 0 0 7.5rem;
 
 		li {
 			@include row();
@@ -233,23 +240,30 @@
 				width: 240px;
 			}
 
+			.partner-logo {
+				text-indent:-9999px;
+				display:block;
+			}
+
 			#red-cross {
 				@include retina-image(/assets/static/redcross, 258px 61px);
 				background-position-y: 10px; 
-				text-indent:-9999px;
-				display:block;
 			}
 
 			#nen {
 				@include retina-image(/assets/static/nen, 142px 67px);
-				text-indent:-9999px;
-				display:block;
 			}
 
 			#nert {
 				@include retina-image(/assets/static/nert, 69px 75px);
-				text-indent:-9999px;
-				display:block;
+			}
+
+			#aux {
+				@include retina-image(/assets/static/auxiliary, 72px 72px);
+			}
+
+			#council {
+				@include retina-image(/assets/static/interfaith, 72px 72px);
 			}
 		}
 	}
