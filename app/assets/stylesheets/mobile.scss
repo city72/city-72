@@ -2289,6 +2289,18 @@ $mobile-padding: 23px;
 		height: 58px;
 	}
 
+	.learn-more ul li #aux {
+		@include retina-image(/assets/mobile/auxiliary, 54px 54px);
+		background-size: auto;
+		height: 54px;
+	}
+
+	.learn-more ul li #council {
+		@include retina-image(/assets/mobile/interfaith, 54px 54px);
+		background-size: auto;
+		height: 54px;
+	}
+
 	.opening.supplies {
 		@include retina-image(/assets/mobile/supplies-header, 320px 273px, jpg);
 	}
