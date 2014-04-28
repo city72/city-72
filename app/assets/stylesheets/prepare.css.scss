@@ -593,7 +593,7 @@ a.checklist:before {
 	@include outer-container;
 	@include reset-all();
 	padding: 0 30px;
-	margin-top: 1rem;
+	margin-top: 1.01rem;
 }
 
 .action-bar .tabs {
@@ -659,25 +659,42 @@ a.checklist:before {
 
 .action-bar .list-download {
 	@include span-columns(3.2);
-	margin-top: 2.5rem;
 
-	a {
+	.pdf-languages-trigger {
 		display: block;
 		width: 12.6rem;
 		padding: 0.3rem 0.2rem 1.1rem 3.7rem;
-/*		font-size: 1.1rem;*/
 		position: relative;
 		font-family: $font-bold;
 		line-height: 1.56rem;
+	}
+}
+
+.list-download {
+	position: relative;
+	margin-top: 2.5rem;
+
+	a {
+		font-family: $font-bold;
+		width: 12.6rem;
 	}
 
 	a:hover {
 		color: $dark-grey;
 		cursor: pointer;
 	}
+
+	a.active {
+		color: $dark-grey;
+	}
 }
 
-.list-download a:before {
+.print-this .list-download {
+	clear: both;
+}
+
+
+.list-download > a:before {
 	font-family: 'sf72-icons';
 	content: "q";
 	font-size: 2.3rem;
@@ -685,6 +702,56 @@ a.checklist:before {
 	top: 1.1rem;
 	left: 1.2rem;
 	-webkit-font-smoothing: antialiased;
+}
+
+.download-languages {
+	position: absolute;
+	top: 55px;
+	left: 0;
+	border: 1px solid #C2C2C2;
+	background: #FFF;
+	opacity: 0;
+	@include transition (all 0.2s ease-in-out);
+
+	&.active {
+		opacity: 1;
+	}
+
+	&:before,
+	&:after {
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	&:before {
+		top: -1.7rem;
+		border-color: rgba(44, 44, 44, 0);
+		border-bottom-color: #9B9B9B;
+		border-width: 0.85rem;
+		left: 50%;
+		margin-left: -0.85rem;
+		
+	}
+
+	&:after{
+		top: -1.6rem;
+		border-color: rgba(255, 255, 255, 0);
+		border-bottom-color: #FFFFFF;
+		border-width: 0.85rem;
+		left: 50%;
+		margin-left: -0.85rem;
+	}
+
+	a {
+		display: block;
+		padding: 0.7rem 0.5rem;
+		text-align: center;
+		border-bottom: 1px solid #c2c2c2;
+	}
 }
 
 .tabs-content {

@@ -15,7 +15,18 @@
       %li
         %a{href:"#tab-personal-content"} Personal
     .list-download
-      %a{href:"/pdf/SF72_supplies.pdf"} Download</br>full supply list
+      %a.pdf-languages-trigger Download</br>full supply list
+      %ul.download-languages
+        %li
+          %a{href:"/pdf/SF72_supplies_english.pdf", title:"Download supply list in english"} English
+        %li
+          %a{href:"/pdf/SF72_supplies_spanish.pdf", lang:"es", title:"Descargar lista de provisiones en español"} Español
+        %li
+          %a{href:"/pdf/SF72_supplies_chinese.pdf", lang:"zh", title:"在中国的下载列表供应"} 漢語
+        %li
+          %a{href:"/pdf/SF72_supplies_russian.pdf", lang:"ru", title:"Скачать список поставок на русском"} русский
+        %li
+          %a{href:"/pdf/SF72_supplies_vietnamese.pdf", lang:"vi", title:"Tải về danh sách cung cấp bằng tiếng Việt"} Việt
   %ul.tabs-content 
     %li.tab-essentials-content
       %p.tab-tip In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort.

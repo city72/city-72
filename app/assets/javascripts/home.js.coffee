@@ -4,6 +4,11 @@ states = [
 ]
 
 $(document).ready ->
+
+  $('a.pdf-languages-trigger').click ->
+    $(this).toggleClass 'active'
+    $('.download-languages').toggleClass 'active'
+
   window.sliderDuring = $('.slider-during .slider').bxSlider
     infiniteLoop: false,
     responsive: false,
