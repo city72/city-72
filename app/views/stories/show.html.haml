@@ -75,7 +75,7 @@
             %a{href: "/stories/#{ related_story.id }"}
               .quote-dialog
                 #{ related_story.quote }
-              = retina_image_tag related_story.video_image, related_story.person
+              = retina_image_tag related_story.video_image, "#{related_story.person}: #{related_story.event} - #{related_story.location}"
               = render partial: "category_icon", locals: {story: related_story}
 
     = render :partial => "partials/footer"
