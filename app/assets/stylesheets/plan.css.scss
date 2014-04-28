@@ -118,14 +118,14 @@
 		font-size: 1.1875rem;
 	}
 
-	a {
+	.pdf-languages-trigger {
 		font-family: $font-bold;
 		@include span-columns(5);
 		@include shift(0.5);
 		position: relative;
 	}
 
-	a:before {
+	.pdf-languages-trigger:before {
 		position: absolute;
 		display: block;
 		left: -1.1em;

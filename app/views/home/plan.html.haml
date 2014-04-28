@@ -19,7 +19,19 @@
   .print-this
     %h2 Print this.
     %p Use the simple forms in this pdf to make a plan with a few people close to you, so you all know what to do in the event of an emergency. Print a copy for yourself, and email or print copies for the people in your group. Stick your copy on the fridge—or somewhere else you won’t forget.
-    %a{href: "/pdf/SF72_prepare_plan.pdf"} Download</br>Make a Plan
+    .list-download
+      %a.pdf-languages-trigger Download</br>Make a Plan
+      %ul.download-languages
+        %li
+          %a{href:"/pdf/SF72_plan_english.pdf", title:"Download Make a Plan in english"} English
+        %li
+          %a{href:"/pdf/SF72_plan_spanish.pdf", lang:"es", title:"Descargar Haga un Plan en español"} Español
+        %li
+          %a{href:"/pdf/SF72_plan_chinese.pdf", lang:"zh", title:"在中国下载制定计划"} 漢語
+        %li
+          %a{href:"/pdf/SF72_plan_russian.pdf", lang:"ru", title:"Скачать Составьте план на русском"} русский
+        %li
+          %a{href:"/pdf/SF72_plan_vietnamese.pdf", lang:"vi", title:"Tải về Lập kế hoạch bằng tiếng Việt"} Việt
   .stay-tuned
     %h2 Imagine this.
     %p SF72 is always thinking about innovative new tools to help San Franciscans plan ahead—including a mobile app that would help you find and communicate with your loved ones in the event of a crisis.</br>A few features are detailed below. Would you use a tool like this? Interested in collaborating with SF72 to make this real? Send feedback to <a href="mailto:sf72@sfgov.org">sf72@sfgov.org</a>.
