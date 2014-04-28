@@ -64,6 +64,6 @@
     %ul.kits-list
       - @kits.each do |kit|
         %li
-          = retina_image_tag kit.image, item.title
+          = retina_image_tag kit.image, kit.title
           %span #{kit.title}
   = render :partial => "partials/footer"
