@@ -16,7 +16,7 @@
           .quote-dialog
             #{story.quote}
             %span.fake-link See story
-          = retina_image_tag story.video_image
+          = retina_image_tag story.video_image, "#{story.person}: #{story.event} - #{story.location}"
           = render partial: "category_icon", locals: {story: story}
     %li.coming-soon-story
       %span

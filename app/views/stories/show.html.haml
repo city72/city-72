@@ -28,41 +28,41 @@
       - if @story.items_images_display_type == StoryItemsDisplayTypes::COLUMN_3_SQUARE
         %ul.needed-list
           %li
-            = retina_image_tag @story.item1_image
+            = retina_image_tag @story.item1_image, @story.item1_subtitle
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
             = link_to @story.item1_link.presence || "Gather Supplies", supplies_path
           %li
-            = retina_image_tag @story.item2_image
+            = retina_image_tag @story.item2_image, @story.item2_subtitle
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
             = link_to @story.item2_link.presence || "Get Connected", connect_path
           %li
-            = retina_image_tag @story.item3_image
+            = retina_image_tag @story.item3_image, @story.item3_subtitle
             %h4 #{@story.item3_subtitle}
             %p &ldquo;#{@story.item3_quote}&rdquo;
             = link_to @story.item3_link.presence || "Make a plan", prepare_path
       - elsif @story.items_images_display_type == StoryItemsDisplayTypes::COLUMN_2_SQUARE
         %ul.needed-list.two-cols
           %li
-            = retina_image_tag @story.item1_image
+            = retina_image_tag @story.item1_image, @story.item1_subtitle
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
             = link_to @story.item1_link.presence || "Gather Supplies", supplies_path
           %li
-            = retina_image_tag @story.item2_image
+            = retina_image_tag @story.item2_image, @story.item2_subtitle
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
             = link_to @story.item2_link.presence || "Get Connected", connect_path
       - elsif @story.items_images_display_type == StoryItemsDisplayTypes::COLUMN_2_BLEED
         %ul.needed-list.two-cols.wide-img
           %li
-            = full_bleed_image_tag @story.item1_image
+            = full_bleed_image_tag @story.item1_image, @story.item1_subtitle
             %h4 #{@story.item1_subtitle}
             %p &ldquo;#{@story.item1_quote}&rdquo;
             = link_to @story.item1_link.presence || "Gather Supplies", supplies_path
           %li
-            = full_bleed_image_tag @story.item2_image
+            = full_bleed_image_tag @story.item2_image, @story.item2_subtitle
             %h4 #{@story.item2_subtitle}
             %p &ldquo;#{@story.item2_quote}&rdquo;
             = link_to @story.item2_link.presence || "Get Connected", connect_path
@@ -75,7 +75,7 @@
             %a{href: "/stories/#{ related_story.id }"}
               .quote-dialog
                 #{ related_story.quote }
-              = retina_image_tag related_story.video_image
+              = retina_image_tag related_story.video_image, related_story.person
               = render partial: "category_icon", locals: {story: related_story}
 
     = render :partial => "partials/footer"

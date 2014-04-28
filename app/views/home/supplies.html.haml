@@ -35,7 +35,7 @@
           %li
             .use-case-dialog
               #{item.use_case}
-            = retina_image_tag item.image
+            = retina_image_tag item.image, item.title
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
     %li.tab-useful-content
@@ -45,7 +45,7 @@
           %li
             .use-case-dialog
               #{item.use_case}
-            = retina_image_tag item.image
+            = retina_image_tag item.image, item.title
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
     %li.tab-personal-content
@@ -55,7 +55,7 @@
           %li
             .use-case-dialog
               #{item.use_case}
-            = retina_image_tag item.image
+            = retina_image_tag item.image, item.title
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
   .kits
