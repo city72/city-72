@@ -7,7 +7,7 @@ class RetinaResponsive
 		if isRetinaDisplay()
 			images = $('img.retina-img')
 			$.each images, (i, e) ->
-				retina_url = $(e).attr('alt')
+				retina_url = $(e).attr('data-retina-url')
 				$(e).attr('src', retina_url)
 			true
 
