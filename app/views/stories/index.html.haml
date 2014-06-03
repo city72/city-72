@@ -8,7 +8,7 @@
       .personal-look 
         %h2.mobile-title Stories
         %h2 Know what to do. 
-        %p Watch these videos and learn how to get prepared from a few of your fellow San Franciscans. They’ve got lessons and advice to share from their experiences in the local community and in disasters.
+        %p Watch these videos and learn how to get prepared from a few of your fellow <span class="to-replace-moniker">Citizens</span>. They’ve got lessons and advice to share from their experiences in the local community and in disasters.
   %ul.story-list
     - @stories.each do |story|
       %li
@@ -86,6 +86,6 @@
             %h2 Stay tuned.
             %p Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.
           %li
-            %h2 Check SF72.
+            %h2 Check <span class="to-replace-abr">City</span>72.
             %p In the event of an emergency, this site will go into emergency mode and bring you live updates and tweets from around the city, information on missing persons, and ways you can help.
   = render :partial => "partials/footer"
