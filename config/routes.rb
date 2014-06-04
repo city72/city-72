@@ -1,11 +1,10 @@
 City72::Application.routes.draw do
 
+  devise_for :admin_users
+
   resources :stories, only: [:index, :show]
 
   root to: 'home#index'
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
 
   get "prepare" => "home#prepare"
 
@@ -27,5 +26,9 @@ City72::Application.routes.draw do
   post "emails" => "emails#send_email"
 
   get "plan" => "home#plan"
+
+  scope "/admin_user" do
+    get "test" => "test#index"
+  end
 
 end

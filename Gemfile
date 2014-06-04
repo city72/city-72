@@ -21,6 +21,10 @@ gem "browser"
 
 gem 'heroku-deflater', :group => :production
 
+gem 'simple_form', '~> 2.1.1'
+gem 'bootstrap-sass', '~> 3.1.1.1'
+gem 'devise', '~> 3.0.0'
+
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'bourbon', '~> 3.1.8'
