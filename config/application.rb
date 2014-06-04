@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module IdeoSf72
+module City72
   class Application < Rails::Application
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"

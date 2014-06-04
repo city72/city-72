@@ -1,4 +1,4 @@
-IdeoSf72::Application.routes.draw do
+City72::Application.routes.draw do
 
   resources :stories, only: [:index, :show]
 
@@ -8,7 +8,7 @@ IdeoSf72::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get "prepare" => "home#prepare"
-  
+
   get "home" => "home#home"
   get "em/home" => "home#em_home"
 
@@ -27,5 +27,5 @@ IdeoSf72::Application.routes.draw do
   post "emails" => "emails#send_email"
 
   get "plan" => "home#plan"
-  
+
 end

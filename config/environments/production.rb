@@ -1,4 +1,4 @@
-IdeoSf72::Application.configure do
+City72::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -16,7 +16,7 @@ IdeoSf72::Application.configure do
   # so cache is invalidated indirectly.
   # -"public" makes assests available to be cached by intermediate cache layers (CDN and Memcache)
   # -"max-age" sets time in seconds for assets to be cached on browser and on Memcache (not on CDN)
-  
+
   config.static_cache_control = "public, max-age=#{1.day.to_i}"
 
   # Compress JavaScripts and CSS

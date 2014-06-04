@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-IdeoSf72::Application.load_tasks
+City72::Application.load_tasks
