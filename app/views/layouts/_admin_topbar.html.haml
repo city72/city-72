@@ -1,0 +1,26 @@
+.header
+  .emergency
+    %label Emergency Mode
+    %select
+      %option off
+      %option on
+  %h1.logo City72
+
+%nav.navbar
+  %ul.nav.navbar-nav
+    %li
+      = link_to "City Info", city_info_index_path
+    %li
+      %a{:href => "#"} Connections
+    %li
+      %a{:href => "#"} Supplies
+    %li
+      %a{:href => "#"} Stories
+    %li
+      %a{:href => "#"} Plan
+    %li
+      %a{:href => "#"} About
+    %li.em-menu
+      %a{:href => "#"} Map
+    %li.em-menu
+      %a{:href => "#"} Updates

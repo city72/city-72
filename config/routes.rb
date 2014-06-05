@@ -27,8 +27,10 @@ City72::Application.routes.draw do
 
   get "plan" => "home#plan"
 
-  scope "/admin_user" do
-    get "test" => "test#index"
+  scope "/admin" do
+    root to: "admin_landing#index"
+
+    resources :city_info, only: [:index]
   end
 
 end
