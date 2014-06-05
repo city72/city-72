@@ -1,0 +1,41 @@
+@import "bootstrap";
+
+
+/* GENERAL */
+$gold-color: #FBB03B;
+$orange-em: #ef561c;
+$light-grey: #f2f2f2;
+
+/* HEADER */
+
+.header .emergency {
+  @extend .pull-right;
+  color: $orange-em;
+}
+
+.logo {
+  color: $gold-color;
+  font-weight: bold;
+}
+
+
+/* NAV */
+
+.navbar {
+  background-color: #f2f2f2;
+
+  a {
+    color: #2b2a26;
+    font-weight: bold;
+  }
+
+  .em-menu a {
+    color: $orange-em;
+  }
+}
+
+
+/* LANDING */
+.landing {
+  text-align: center;
+}

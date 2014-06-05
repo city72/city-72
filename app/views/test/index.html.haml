@@ -1,28 +1,90 @@
-.header
-  %h1.logo City72
-  .emergency
-    %label Emergency Mode
-    %select
-      %option off
-      %option on
-%ul.nav
-  %li 
-    %a{:href => "#"} City Info
-  %li 
-    %a{:href => "#"} Connections
-  %li 
-    %a{:href => "#"} Supplies
-  %li 
-    %a{:href => "#"} Stories
-  %li 
-    %a{:href => "#"} Plan
-  %li 
-    %a{:href => "#"} About
-  %li.em-menu 
-    %a{:href => "#"} Map
-  %li.em-menu 
-    %a{:href => "#"} Updates
-.main-container
-  %h1 City72 Content Editor 
-  %p Your city's guide <br /> to getting prepared.
-  %a{:href => "#"} Get Started
+.container
+  .header
+    .emergency
+      %label Emergency Mode
+      %select
+        %option off
+        %option on
+    %h1.logo City72
+    
+  %nav.navbar
+    %ul.nav.navbar-nav
+      %li 
+        %a{:href => "#"} City Info
+      %li 
+        %a{:href => "#"} Connections
+      %li 
+        %a{:href => "#"} Supplies
+      %li 
+        %a{:href => "#"} Stories
+      %li 
+        %a{:href => "#"} Plan
+      %li 
+        %a{:href => "#"} About
+      %li.em-menu 
+        %a{:href => "#"} Map
+      %li.em-menu 
+        %a{:href => "#"} Updates
+  .main-content.landing
+    %h1 City72 Content Editor 
+    %p Your city's guide <br /> to getting prepared.
+    %a{:href => "#"} Get Started
+
+  .main-content.city-info
+    %p.screen-info Fill in your city's details below to create your custom City72 site.
+    %a.btn.btn-primary{:href => "#"} Save Changes
+
+  %form{:role => "form"}
+    .form-group
+      %label{:for => "for"} City Name <span class="help">(e.g. New York, Denver ... )</span>
+      %input.form-control{:id => "city-name", :type => "text"}/
+
+    .form-group
+      %label{:for => "city-abr"} City Abbreviation <span class="help">(e.g. NY, Den ... up to 4 letters )</span>
+      %input.form-control{:id => "city-abr", :type => "text"}/
+      %span.input-group-addon 72
+
+    .form-group
+      %label{:for => "city-moniker"} What are the residents of your city called?  <span class="help">(e.g. New Yorkers, Denverites ... )</span>
+      %input.form-control{:id => "city-moniker", :type => "text"}/
+      %span.help-block If you leave this field blank your site will refer to people as "[City] residents."
+
+    .form-group
+      %label{:for => "select-color"}  Accent Color for Website 
+      %select#select-color{:name => "select-color"}
+        %option{:value => "1"} Gold
+        %option{:value => "2"} Green
+        %option{:value => "3"} Blue
+
+    .form-group
+      %label{:for => "select-city-image"} Homepage Image: Your City 
+      %input{:type => "file"}/ 
+      %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
+
+[image upload widget buttons, etc.]
+
+Image Credit (e.g. Flickr user name)
+
+
+Homepage Image: Residents of Your City
+
+Image Credit (e.g. Flickr user name)
+
+This website brought to you by... (e.g. the San Francisco Department of Emergency Management)
+
+Footer Information
+
+Your Agency's Website
+
+Contact Us Email
+name@example.com
+
+City Affiliates
+These links appear in the footer of each page of the site (add up to 8 links)
+
+Name of Affiliate (name and corresponding URL)
+Name of Affiliate
+
++ Add an Affiliate
+
+Save Changes
