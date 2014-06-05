@@ -2,7 +2,9 @@
 
 
 /* GENERAL */
-$gold-color: #FBB03B;
+$accent-gold: #FBAF33;
+$accent-green: #A2C63A;
+$accent-blue: #477B95;
 $orange-em: #ef561c;
 $light-grey: #f2f2f2;
 
@@ -14,7 +16,7 @@ $light-grey: #f2f2f2;
 }
 
 .logo {
-  color: $gold-color;
+  color: $accent-gold;
   font-weight: bold;
 }
 

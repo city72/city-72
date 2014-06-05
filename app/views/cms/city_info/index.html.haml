@@ -5,21 +5,21 @@
 %form{:role => "form"}
   .form-group
     %label{:for => "for"} City Name <span class="help">(e.g. New York, Denver ... )</span>
-    %input.form-control{:id => "city-name", :type => "text"}/
+    %input.form-control#city-name{:type => "text"}/
 
   .form-group
     %label{:for => "city-abr"} City Abbreviation <span class="help">(e.g. NY, Den ... up to 4 letters )</span>
-    %input.form-control{:id => "city-abr", :type => "text"}/
+    %input.form-control#city-abr{ :type => "text"}/
     %span.input-group-addon 72
 
   .form-group
-    %label{:for => "city-moniker"} What are the residents of your city called?  <span class="help">(e.g. New Yorkers, Denverites ... )</span>
-    %input.form-control{:id => "city-moniker", :type => "text"}/
+    %label{:for => "city-moniker"} What are the residents of your city called? <span class="help">(e.g. New Yorkers, Denverites ... )</span>
+    %input.form-control#city-moniker{ :type => "text"}/
     %span.help-block If you leave this field blank your site will refer to people as "[City] residents."
 
   .form-group
     %label{:for => "select-color"}  Accent Color for Website
-    %select#select-color{:name => "select-color"}
+    %select.form-control#select-color{:name => "select-color"}
       %option{:value => "1"} Gold
       %option{:value => "2"} Green
       %option{:value => "3"} Blue
@@ -27,34 +27,47 @@
   .form-group
     %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
     %label{:for => "select-city-image"} Homepage Image: Your City
-    %input#select-city-image{:type => "file"}/
+    %input.form-control#select-city-image{:type => "file"}/
 
   .form-group
-    %label{:for => "city-image-credit"} Image Credit (e.g. Flickr user name)
+    %label{:for => "city-image-credit"} Image Credit <span class="help">(e.g. Flickr user name)</span>
+    %input.form-control#city-image-credit{:type => "text"}/ 
+
+  .form-group
+    %label{:for => "select-resident-image"} Homepage Image: Residents of Your City
+    %input.form-control#select-resident-image{:type => "file"}/
+
+  .form-group
+    %label{:for => "resident-image-credit"} Image Credit <span class="help">(e.g. Flickr user name)</span>
+    %input.form-control#resident-image-credit{:type => "text"}/
+    .form-group
+    %label{:for => "resident-image-credit"} Image Credit <span class="help">(e.g. Flickr user name)</span>
+    %input.form-control#resident-image-credit{:type => "text"}/
+
+  .form-group
+    %label{:for => "brought-by"} This website brought to you by... <span class="help">(e.g. the San Francisco Department of Emergency Management)</span>
+    %input.form-control#brought-by{:type => "text"}/
+
+  %h2 Footer Information
+
+  .form-group
+    %label{:for => "agency-site"} Your Agency's Website
+    %input.form-control#agency-site{:type => "text"}/
+
+  .form-group
+    %label{:for => "contact-email"} Contact Us Email
+    %input.form-control#contact-email{:type => "text", :placeholder => "name@example.com"}/
 
 
+  %h3 City Affiliates
+  %p These links appear in the footer of each page of the site (add up to 8 links)
 
+  .form-group
+    %label{:for => "affiliate-1"} Name of Affiliate <span class="help">(name and corresponding URL)</span>
+    %input.form-control#affiliate-1{:type => "text", :placeholder => "name@example.com"}/
+    %span.input-group-addon http://
+    %input.form-control#affiliate-1-url{:type => "text"}/
 
+  %a.btn{:href => "#"} Add an Affiliate 
 
-Homepage Image: Residents of Your City
-
-Image Credit (e.g. Flickr user name)
-
-This website brought to you by... (e.g. the San Francisco Department of Emergency Management)
-
-Footer Information
-
-Your Agency's Website
-
-Contact Us Email
-name@example.com
-
-City Affiliates
-These links appear in the footer of each page of the site (add up to 8 links)
-
-Name of Affiliate (name and corresponding URL)
-Name of Affiliate
-
-+ Add an Affiliate
-
-Save Changes
+  %a.btn.btn-primary{:href => "#"} Save Changes
