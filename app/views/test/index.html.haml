@@ -57,13 +57,15 @@
         %option{:value => "3"} Blue
 
     .form-group
-      %label{:for => "select-city-image"} Homepage Image: Your City 
-      %input{:type => "file"}/ 
       %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
+      %label{:for => "select-city-image"} Homepage Image: Your City 
+      %input#select-city-image{:type => "file"}/ 
 
-[image upload widget buttons, etc.]
+    .form-group
+      %label{:for => "city-image-credit"} Image Credit (e.g. Flickr user name)
+      
 
-Image Credit (e.g. Flickr user name)
+
 
 
 Homepage Image: Residents of Your City
