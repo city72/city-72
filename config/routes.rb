@@ -30,7 +30,7 @@ City72::Application.routes.draw do
   namespace :cms do
     root to: "landing#index"
 
-    resources :city_info, only: [:index]
+    resources :city_info, only: [:index, :update]
     resources :connections, only: [:index]
     resources :supplies, only: [:index]
     resources :stories, only: [:index]

@@ -6,10 +6,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: ideo_sf72_development
+  database: city72_development
   pool: 5
-  username: ideo
-  password: ideo
+  username: city72
+  password: city72
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -18,17 +18,17 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: ideo_sf72_testing
+  database: city72_testing
   pool: 5
-  username: ideo
-  password: ideo
+  username: city72
+  password: city72
   host: localhost
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: ideo_sf72_production
+  database: city72_production
   pool: 5
-  username: ideo
-  password: ideo
+  username: city72
+  password: city72
   host: localhost
