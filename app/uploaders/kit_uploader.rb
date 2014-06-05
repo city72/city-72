@@ -1,10 +1,6 @@
 # encoding: utf-8
 
-class KitUploader < CarrierWave::Uploader::Base
-  include Cloudinary::CarrierWave
-  include CarrierWave::RMagick
-
-  process :convert => 'png'
+class KitUploader < BaseImageUploader
   process :resize_and_pad => [600, 380]
 
   version :common do
@@ -14,5 +10,5 @@ class KitUploader < CarrierWave::Uploader::Base
   version :retina do
   	process :resize_and_pad => [600, 380]
   end
-  
+
 end

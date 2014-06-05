@@ -1,10 +1,6 @@
 # encoding: utf-8
 
-class ItemUploader < CarrierWave::Uploader::Base
-  include Cloudinary::CarrierWave
-  include CarrierWave::RMagick
-
-  process :convert => 'png'
+class ItemUploader < BaseImageUploader
   process :resize_and_pad => [600, 380]
 
   version :common do
