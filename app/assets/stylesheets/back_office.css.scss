@@ -1,5 +1,9 @@
 @import "bootstrap";
 
+body {
+  color: #232323;
+}
+
 
 /* GENERAL */
 $accent-gold: #FBAF33;
@@ -8,11 +12,18 @@ $accent-blue: #477B95;
 $orange-em: #ef561c;
 $light-grey: #f2f2f2;
 
+.container {
+  width: 768px !important;
+}
+
 /* HEADER */
 
 .header .emergency {
   @extend .pull-right;
   color: $orange-em;
+  padding: 15px 0 0;
+
+  label { padding-right: 15px;}
 }
 
 .logo {
@@ -36,8 +47,28 @@ $light-grey: #f2f2f2;
   }
 }
 
-
 /* LANDING */
 .landing {
   text-align: center;
+}
+
+/* GENERAL FORM STYLES */
+
+.screen-intro {
+  @include make-row();
+}
+
+
+.screen-info {
+  font-size: 24px;
+  color: #505050;
+  @include make-sm-column(8);
+}
+
+.action-area {
+  @include make-sm-column(3);
+}
+
+label .help {
+  font-weight: normal;
 }
