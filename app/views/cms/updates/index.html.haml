@@ -7,24 +7,18 @@
   %form{:role => "form"}
     %h2 Official Updates
     .form-group
-      %label{:for => "your-feed"} Your organization's Twitter feed <span class="help">(e.g. @SF_emergency)</span>
+      %label{:for => "your-feed"} Your organization's Official Twitter feed <span class="help">(e.g. @SF_emergency)</span>
       %input.form-control#your-feed{:type => "text"}/
     
-    %h2 Partner Updates
+    / %h2 Partner Updates
     .form-group
       %label{:for => "partner-feed"} Partner Twitter feeds <span class="help">(e.g. @USGS, @RedCrossBayArea)</span>
       %input.form-control#partner-feed{:type => "text"}/
-      %input.form-control#partner-feed-1{:type => "text"}/
-      %input.form-control#partner-feed-2{:type => "text"}/
-      %a{:href => "#"} Add a Twitter Feed
 
-    %h2 Transportation Updates
+    / %h2 Transportation Updates
     .form-group
-      %label{:for => "transportation-feed"} Relevant Twitter feeds <span class="help">(e.g. @511sfbay)</span>
+      %label{:for => "transportation-feed"} Relevant transport Twitter feeds <span class="help">(e.g. @511sfbay)</span>
       %input.form-control#transportation-feed{:type => "text"}/
-      %input.form-control#transportation-feed-1{:type => "text"}/
-      %input.form-control#transportation-feed-2{:type => "text"}/
-      %a{:href => "#"} Add a Twitter Feed
 
 
   %a.btn.btn-primary{:href => "#"} Save Changes
