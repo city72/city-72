@@ -5,24 +5,25 @@
       %a.btn.btn-primary{:href => "#"} Save Changes
   %form{:role => "form"}
     %h2 Social Networks and services
-    %p Your City72 site will automatically include 3 digital connection networks:
-Facebook, Twitter, Google Drive
+    %p Your City72 site will automatically include 3 digital connection networks: Facebook, Twitter, Google Drive
 
-    %label{:for => "fb-page"} Your Facebook Page
-      %span.input-group-addon http://
-      %input.form-control#fb-page{ :type => "text"}/
+    %label{:for => "fb-page"}
+      %span Your Facebook Page
+      .input-group
+        %span.input-group-addon http://
+        %input.form-control#fb-page{ :type => "text"}/
 
-    %label{:for => "fb-page"} What Twitter accounts are useful to follow in your area?
-      %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
-      %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
-      %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
-      %a{:href => "#"} Add a Twitter feed
-      %p.help-block
-        %p Such as:
-        %ul 
-          %li Transportation authorities
-          %li City agencies
-          %li Reliable, trusted feeds focused on emergency updates
+    %label{:for => "fb-page"}What Twitter accounts are useful to follow in your area?
+    %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
+    %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
+    %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
+    %a{:href => "#"} Add a Twitter feed
+    %p.help-block
+      %p Such as:
+      %ul 
+        %li Transportation authorities
+        %li City agencies
+        %li Reliable, trusted feeds focused on emergency updates
 
     %h2 Additional Networks
     %p What social networks or services would be useful community resources in your city? City72 is pre-populated with two (Nextdoor and AirBnb) in case you want to include them.
