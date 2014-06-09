@@ -1,9 +1,8 @@
-class Cms::CityInfoController < BackOfficeController
+class Cms::CitiesController < BackOfficeController
 
-  def index
+  def show
     @city = City.first
     raise "Corrupt Database" if @city.nil?
-
   end
 
 end

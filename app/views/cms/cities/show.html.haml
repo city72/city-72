@@ -5,7 +5,7 @@
       %a.btn.btn-primary{:href => "#"} Save Changes
 
   -# %form{:role => "form"}
-  = simple_form_for @city, url: cms_city_info_path(@city), html: { method: :put } do |f|
+  = simple_form_for @city, url: cms_city_path, html: { method: :put } do |f|
     .form-group
       = f.input :name, input_html: { class: 'form-control', id: "city-name"}, label: 'City Name <span class="help">(e.g. New York, Denver ... )</span>'.html_safe
 
