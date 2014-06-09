@@ -26,10 +26,11 @@
         %a.btn{:href => "#"} Edit Story
 
   %h2 Your city's Identity Statement
-    %textarea#identity-statement{:name => "", :cols => "30", :rows => "10"}
-    %p.help-block Express the personality of your city through your Identity Statement – the rallying cry for city and residents alike.
-
-  %a.btn.btn-primary{:href => "#"} Save Changes
+  %p.help-block Express the personality of your city through your Identity Statement – the rallying cry for city and residents alike.
+  %textarea.form-control#identity-statement{:name => "", :cols => "90", :rows => "7"}
+  
+  .form-actions
+    %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
 
 / MODAL: Story
 .modal.edit-element.edit-story.fade
@@ -59,13 +60,16 @@
             %label Call to Action <span class="help">(link at the end of the story)</span>
             .radio
               %label{:for => "story-cta-1"}
-                %input.form-control#story-cta-1{:type => "radio", :name => "story-cta", :selected}/ Get Connected
+                %input.form-control#story-cta-1{:type => "radio", :name => "story-cta", :checked => "checked"}/
+                %span Get Connected
             .radio
               %label{:for => "story-cta-2"}
-                %input.form-control#story-cta-2{:type => "radio", :name => "story-cta", :selected}/ Gather Supplies
+                %input.form-control#story-cta-2{:type => "radio", :name => "story-cta", :checked => "checked"}/
+                %span Gather Supplies
             .radio
               %label{:for => "story-cta-3"}
-                %input.form-control#story-cta-3{:type => "radio", :name => "story-cta", :selected}/ Make a Plan
+                %input.form-control#story-cta-3{:type => "radio", :name => "story-cta", :checked => "checked"}/
+                %span Make a Plan
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
         %button.btn.btn-primary{type: "button"} Save changes
