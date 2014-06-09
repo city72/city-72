@@ -1,78 +1,59 @@
 .main-content.city-info
-  .screen-intro
-    %p.screen-info Fill in your city's details below to create your custom City72 site.
-    .action-area
-      %a.btn.btn-primary{:href => "#"} Save Changes
 
-  -# %form{:role => "form"}
   = simple_form_for @city, url: cms_city_path, html: { method: :put } do |f|
-    .form-group
-      = f.input :name, input_html: { class: 'form-control', id: "city-name"}, label: 'City Name <span class="help">(e.g. New York, Denver ... )</span>'.html_safe
+    .screen-intro
+      %p.screen-info Fill in your city's details below to create your custom City72 site.
+      .action-area
+        %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
 
+    = f.input :name, input_html: {id: "city-name"}, label: 'City Name <span class="help">(e.g. New York, Denver ... )</span>'.html_safe, required: false
+    
     .form-group
-      %label{:for => "city-abr"} City Abbreviation <span class="help">(e.g. NY, Den ... up to 4 letters )</span>
-      .input-group.input-sm
-        = f.input :abbreviation, input_html: { class: 'form-control', id: "city-abr"}, label: false
+      %label.control-label{:for => "city-abr"}
+        City Abbreviation 
+        %span.help (e.g. NY, Den ... up to 4 letters )
+      .input-group.col-sm-2
+        = f.input_field :abbreviation
         %span.input-group-addon 72
 
-    .form-group
-      = f.input :abbreviation, input_html: { class: 'form-control', id: "city-moniker"}, label: 'What are the residents of your city called? <span class="help">(e.g. New Yorkers, Denverites ... )</span>'.html_safe
-      %span.help-block If you leave this field blank your site will refer to people as "[City] residents."
+    = f.input :color, collection: ['Gold', 'Green', 'Blue'], label: 'Accent Color for Website', required: false
 
-    .form-group
-      %label{:for => "city-posesive"}  What is the posesive form of your city name? <span class="help">(e.g. Chicago's, Dallas')</span>
-      = f.input :abbreviation, input_html: { class: 'form-control', id: "city-posesive"}, label: false
+    = f.input :moniker, label: 'What are the residents of your city called? <span class="help">(e.g. New Yorkers, Denverites ... )</span>'.html_safe, hint: 'If you leave this field blank your site will refer to people as "[City] residents."' , required: false
 
-    .form-group
-      %label{:for => "select-color"}  Accent Color for Website
-      %select.form-control#select-color{:name => "select-color"}
-        %option{:value => "1"} Gold
-        %option{:value => "2"} Green
-        %option{:value => "3"} Blue
+    / TODO: Add field to model
+    = f.input :moniker, label: 'What is the possessive form of your city name? <span class="help">(e.g. Chicago\'s, Dallas\')</span>'.html_safe, required: false
 
-    .form-group
-      %label{:for => "select-city-image"} Homepage Image: Your City
-      %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
-      %input.form-control#select-city-image{:type => "file"}/
+    = f.input :image, label: 'Homepage Image: Your City', hint: 'What image evokes the feeling of being a resident in your city—but not a tourist?'
 
-    .form-group
-      %label{:for => "city-image-credit"} Image Credit <span class="help">(e.g. Flickr user name)</span>
-      %input.form-control#city-image-credit{:type => "text"}/
+    = f.input :image_credit, label: 'Image Credit <span class="help">(e.g. Flickr user name)</span>'.html_safe
 
-    .form-group
-      %label{:for => "select-resident-image"} Homepage Image: Residents of Your City
-      %input.form-control#select-resident-image{:type => "file"}/
+    = f.input :resident_image, label: 'Homepage Image: Residents of Your City'
 
-    .form-group
-      %label{:for => "resident-image-credit"} Image Credit <span class="help">(e.g. Flickr user name)</span>
-      %input.form-control#resident-image-credit{:type => "text"}/
-      .form-group
+    = f.input :resident_image_credit, label: 'Image Credit <span class="help">(e.g. Flickr user name)</span>'.html_safe
 
-    .form-group
-      %label{:for => "brought-by"} This website brought to you by... <span class="help">(e.g. the San Francisco Department of Emergency Management)</span>
-      %input.form-control#brought-by{:type => "text"}/
+    / TODO: Add field to model
+    = f.input :moniker, label: 'This website brought to you by... <span class="help">(e.g. the San Francisco Department of Emergency Management)</span>'.html_safe, required: false
 
     %h2 Footer Information
 
-    .form-group
-      %label{:for => "agency-site"} Your Agency's Website
-      %input.form-control#agency-site{:type => "text"}/
+    / TODO: Add field to model
+    = f.input :moniker, label: 'Your Agency\'s Website', required: false
 
-    .form-group
-      %label{:for => "contact-email"} Contact Us Email
-      %input.form-control#contact-email{:type => "text", :placeholder => "name@example.com"}/
-
+    / TODO: Add field to model
+    = f.input :moniker, label: 'Contact Us Email', input_html: {placeholder: 'name@example.com'}, required: false
 
     %h3 City Affiliates
     %p These links appear in the footer of each page of the site (add up to 8 links)
 
     .form-group
-      %label{:for => "affiliate-1"} Name of Affiliate <span class="help">(name and corresponding URL)</span>
+      %label{:for => "affiliate-1"} 
+        Name of Affiliate
+        %span.help (name and corresponding URL)
       %input.form-control#affiliate-1{:type => "text", :placeholder => "name@example.com"}/
       .input-group.input-md.input-multi
         %span.input-group-addon http://
         %input.form-control#affiliate-1-url{:type => "text"}/
 
-    %a.add-btn{:href => "#"} + Add an Affiliate
+    %button.add-btn.btn-link{:href => "#"} + Add an Affiliate
     .form-actions
       %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
