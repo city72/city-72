@@ -74,9 +74,9 @@ Before running the app, the following steps should be performed.
 ### Create the database user for the application
 
 ```sh
-createuser -P -s ideo
+createuser -P -s city72
 ```
-Assign the word *ideo* as password too.
+Assign the word *city72* as password too.
 
 > Linux users should run the above command as postgres user (`sudo su postgres`).
 
