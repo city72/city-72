@@ -1,1 +1,134 @@
-%p Connections
+.main-content.connections
+  .screen-intro
+    %p.screen-info Create tie-ins with social media tools, local networks and community resources
+    .action-area
+      %a.btn.btn-primary{:href => "#"} Save Changes
+  %form{:role => "form"}
+    %h2 Social Networks and services
+    %p Your City72 site will automatically include 3 digital connection networks:
+Facebook, Twitter, Google Drive
+
+    %label{:for => "fb-page"} Your Facebook Page
+      %span.input-group-addon http://
+      %input.form-control#fb-page{ :type => "text"}/
+
+    %label{:for => "fb-page"} What Twitter accounts are useful to follow in your area?
+      %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
+      %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
+      %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
+      %a{:href => "#"} Add a Twitter feed
+      %p.help-block
+        %p Such as:
+        %ul 
+          %li Transportation authorities
+          %li City agencies
+          %li Reliable, trusted feeds focused on emergency updates
+
+    %h2 Additional Networks
+    %p What social networks or services would be useful community resources in your city? City72 is pre-populated with two (Nextdoor and AirBnb) in case you want to include them.
+    
+    .editable-list-container
+      %ul.editable-list
+        %li
+          .list-element
+            .logo.nextdoor
+            %h3 Meet your neighbors on Nextdoor
+            %h4 Now:
+            %p Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan.
+            %h4 In an Emergency:
+            %p Log onto Nextdoor to share local information and resources with people who live near you.
+          .list-actions
+            %a.btn{:href => "#"} Edit
+            %label{:for => "include-network-1"} 
+              %input#include-network-1{:type => "checkbox"}/
+              %span Include this Network
+        %li
+          .list-element
+            .logo.airbnb
+            %h3 Sign up for AirBnb
+            %h4 Now:
+            %p Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan.
+            %h4 In an Emergency:
+            %p Log onto Nextdoor to share local information and resources with people who live near you.
+          .list-actions
+            %a.btn{:href => "#"} Edit
+            %label{:for => "include-network-1"} 
+              %input#include-network-1{:type => "checkbox"}/
+              %span Include this Network
+      %a{:href => "#"} Add a Network 
+
+    %h2 Partners and Resources
+    %p What local resources focus on community preparedness? What partners does your organization collaborate with? (e.g. your local Red Cross chapter)
+    .editable-list-container
+      %ul.editable-list
+        %li
+          .list-element
+            .logo.redcross
+            %h3 American Red Cross
+            %p Provides a variety of trainings including first aid, CPR, and how to prepare for emergencies
+            %a{:href => "#"} www.redcross.org 
+          .list-actions
+            %a.btn{:href => "#"} Edit
+            %label{:for => "include-network-1"} 
+              %input#include-network-1{:type => "checkbox"}/
+              %span Include this Network
+    %a{:href => "#"} Add a Partner or Resource
+
+    %a.btn.btn-primary{:href => "#"} Save Changes
+
+/ MODAL: Edit Network
+.modal.edit-element.edit-network.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Edit Network
+      .modal-body
+        %form{:role => "form"}
+          .form-group
+            %label{:for => "network-headline"} Network Headline <span class="help">(e.g. Sign up for Network)</span>
+            %input.form-control#network-headline{:type => "text"}/
+          .form-group
+            %label{:for => "network-image"} Network Logo
+            %input.form-control#network-image{:type => "file"}/
+          .form-group
+            %label{:for => "network-now"} Now
+            %textarea#network-now{:name => "network-now", :cols => "30", :rows => "10"} 
+            %p.help-block A short description of how to use the network now. (e.g. set up your account and connect with friends.)
+          .form-group
+            %label{:for => "network-emergency"} In an Emergency
+            %textarea#network-emergency{:name => "network-emergency", :cols => "30", :rows => "10"} 
+            %p.help-block A short description of how to use the network in an emergency. (e.g. post your status and check on friends.)
+          .form-group
+            %label{:for => "network-link"} Link to Network Website
+            %span.input-group-addon http://
+            %input#network-link{:type => "text"}/
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
+        %button.btn.btn-primary{type: "button"} Save changes
+
+/ MODAL: Edit Partner
+.modal.edit-element.edit-partner.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Edit Partner/Resource Information
+      .modal-body
+        %form{:role => "form"}
+          .form-group
+            %label{:for => "partner-image"} Logo
+            %input.form-control#partner-image{:type => "file"}/
+          .form-group
+            %label{:for => "partner-name"} Partner Name
+            %input.form-control#partner-name{:type => "text"}/
+          .form-group
+            %label{:for => "partner-description"} Description of services
+            %textarea#partner-description{:name => "partner-description", :cols => "30", :rows => "10"}
+          .form-group
+            %label{:for => "partner-link"} Website Link <span class="help">(e.g. www.example.com)</span>
+            %span.input-group-addon http://
+            %input#network-link{:type => "text"}/
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
+        %button.btn.btn-primary{type: "button"} Save changes

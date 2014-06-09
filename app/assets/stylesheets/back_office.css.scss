@@ -67,6 +67,7 @@ $light-grey: #f2f2f2;
 
 .action-area {
   @include make-sm-column(3);
+  @include make-sm-column-offset(1);
 }
 
 label .help {

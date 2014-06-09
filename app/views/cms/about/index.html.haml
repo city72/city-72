@@ -1,1 +1,18 @@
-%p About
+.main-content.about
+  .screen-intro
+    %p.screen-info Share information about your organization and your City72 site, for the About section. 
+    .action-area
+      %a.btn.btn-primary{:href => "#"} Save Changes
+
+  %form{:role => "form"}
+    .form-group
+      %label{:for => "about-image"} Image
+      %input.form-control#about-image{:type => "file"}/
+      %p.help-block Choose an image of something unique to your city.
+
+    .form-group
+      %label{:for => "select-plan"} Customize your city72 logo 
+      %input{:type => "file"}/
+      %p.help-block Optionally replace the generated City72 logo. See the worksheet for instructions on how to get this SVG file.
+
+  %a.btn.btn-primary{:href => "#"} Save Changes 

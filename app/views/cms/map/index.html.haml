@@ -1,1 +1,18 @@
-%p Map
+.main-content.map
+  .screen-intro
+    %p.screen-info Embed a custom Google Crisis Map for your area.
+    .action-area
+      %a.btn.btn-primary{:href => "#"} Save Changes
+
+  %h2 Instructions to get the embed link:
+  %ol 
+    %li Set up your map (see <a href="#">instructions on city72tookit site</a>).
+    %li Click the "Share" button to see the map links.
+    %li  Copy the "Link" code to paste here.
+
+  %form{:role => "form"}
+    .form-group
+      %label{:for => "about-image"} Crisis Map Link <span class="help">(starts with "http://")</span>
+      %input.form-control#about-image{:type => "text"}/
+
+  %a.btn.btn-primary{:href => "#"} Save Changes
