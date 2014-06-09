@@ -7,23 +7,26 @@
     %h2 Social Networks and services
     %p Your City72 site will automatically include 3 digital connection networks: Facebook, Twitter, Google Drive
 
-    %label{:for => "fb-page"}
-      %span Your Facebook Page
-      .input-group
-        %span.input-group-addon http://
-        %input.form-control#fb-page{ :type => "text"}/
+    .form-group
+      %label{:for => "fb-page"}
+        %span Your Facebook Page
+        .input-group
+          %span.input-group-addon http://
+          %input.form-control#fb-page{ :type => "text"}/
 
-    %label{:for => "fb-page"}What Twitter accounts are useful to follow in your area?
-    %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
-    %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
-    %input.form-control#fb-page{ :type => "text", :placeholder => "@example"}/
-    %a{:href => "#"} Add a Twitter feed
-    %p.help-block
-      %p Such as:
-      %ul 
-        %li Transportation authorities
-        %li City agencies
-        %li Reliable, trusted feeds focused on emergency updates
+    .form-group
+      %label{:for => "tw-accounts"}What Twitter accounts are useful to follow in your area?
+      %input.form-control#tw-accounts{ :type => "text", :placeholder => "@example"}/
+      %input.form-control.input-multi#tw-accounts-1{ :type => "text", :placeholder => "@example"}/
+      %input.form-control.input-multi#tw-accounts-2{ :type => "text", :placeholder => "@example"}/
+      %a.add-btn{:href => "#"} + Add a Twitter feed 
+      %p.help-block
+        %p Such as:
+        %ul 
+          %li Transportation authorities
+          %li City agencies
+          %li Reliable, trusted feeds focused on emergency updates
+      
 
     %h2 Additional Networks
     %p What social networks or services would be useful community resources in your city? City72 is pre-populated with two (Nextdoor and AirBnb) in case you want to include them.
@@ -56,7 +59,7 @@
             %label{:for => "include-network-1"} 
               %input#include-network-1{:type => "checkbox"}/
               %span Include this Network
-      %a{:href => "#"} Add a Network 
+      %a.add-btn{:href => "#"} + Add a Network 
 
     %h2 Partners and Resources
     %p What local resources focus on community preparedness? What partners does your organization collaborate with? (e.g. your local Red Cross chapter)
@@ -73,9 +76,11 @@
             %label{:for => "include-network-1"} 
               %input#include-network-1{:type => "checkbox"}/
               %span Include this Network
-    %a{:href => "#"} Add a Partner or Resource
+    %a.add-btn{:href => "#"} + Add a Partner or Resource
 
-    %a.btn.btn-primary{:href => "#"} Save Changes
+    .form-controls
+      %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
+      
 
 / MODAL: Edit Network
 .modal.edit-element.edit-network.fade

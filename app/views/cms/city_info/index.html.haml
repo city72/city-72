@@ -11,13 +11,17 @@
 
     .form-group
       %label{:for => "city-abr"} City Abbreviation <span class="help">(e.g. NY, Den ... up to 4 letters )</span>
-      .input-group
+      .input-group.input-sm
         = f.input :abbreviation, input_html: { class: 'form-control', id: "city-abr"}, label: false
         %span.input-group-addon 72
 
     .form-group
       = f.input :abbreviation, input_html: { class: 'form-control', id: "city-moniker"}, label: 'What are the residents of your city called? <span class="help">(e.g. New Yorkers, Denverites ... )</span>'.html_safe
       %span.help-block If you leave this field blank your site will refer to people as "[City] residents."
+
+    .form-group
+      %label{:for => "city-posesive"}  What is the posesive form of your city name? <span class="help">(e.g. Chicago's, Dallas')</span>
+      = f.input :abbreviation, input_html: { class: 'form-control', id: "city-posesive"}, label: false
 
     .form-group
       %label{:for => "select-color"}  Accent Color for Website
@@ -27,8 +31,8 @@
         %option{:value => "3"} Blue
 
     .form-group
-      %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
       %label{:for => "select-city-image"} Homepage Image: Your City
+      %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
       %input.form-control#select-city-image{:type => "file"}/
 
     .form-group
@@ -65,10 +69,10 @@
     .form-group
       %label{:for => "affiliate-1"} Name of Affiliate <span class="help">(name and corresponding URL)</span>
       %input.form-control#affiliate-1{:type => "text", :placeholder => "name@example.com"}/
-      .input-group
+      .input-group.input-md.input-multi
         %span.input-group-addon http://
         %input.form-control#affiliate-1-url{:type => "text"}/
 
-    %a.btn{:href => "#"} Add an Affiliate
-
-    %a.btn.btn-primary{:href => "#"} Save Changes
+    %a.add-btn{:href => "#"} + Add an Affiliate
+    .form-actions
+      %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/

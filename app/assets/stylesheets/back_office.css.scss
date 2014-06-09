@@ -4,6 +4,12 @@ body {
   color: #232323;
 }
 
+a {
+  font-size: 14px;
+  color: #009CE9;
+  font-weight: bold;
+  line-height: 17px;
+}
 
 /* GENERAL */
 $accent-gold: #FBAF33;
@@ -58,7 +64,6 @@ $light-grey: #f2f2f2;
   @include make-row();
 }
 
-
 .screen-info {
   font-size: 24px;
   color: #505050;
@@ -70,6 +75,34 @@ $light-grey: #f2f2f2;
   @include make-sm-column-offset(1);
 }
 
+
+.form-group {
+  margin: 3rem 0;
+}
+
 label .help {
   font-weight: normal;
 }
+
+.input-sm { width: 100px; }
+.input-md { width: 360px; }
+.input-lg { width: 700px; }
+
+.input-multi {
+  margin: 1rem 0;
+}
+
+.form-control {
+  @extend .input-md;
+}
+
+.add-btn {
+  display: inline-block;
+  margin: 0 0 2rem;
+}
+
+.form-actions {
+  margin: 3rem 0;
+}
+
+/* Special styles */
