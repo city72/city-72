@@ -4,19 +4,17 @@
     .action-area
       %a.btn.btn-primary{:href => "#"} Save Changes
 
-  %form{:role => "form"}
+  -# %form{:role => "form"}
+  = simple_form_for @city, url: cms_city_info_path(@city), html: { method: :put } do |f|
     .form-group
-      %label{:for => "for"} City Name <span class="help">(e.g. New York, Denver ... )</span>
-      %input.form-control#city-name{:type => "text"}/
+      = f.input :name, input_html: { class: 'form-control', id: "city-name"}, label: 'City Name <span class="help">(e.g. New York, Denver ... )</span>'.html_safe
 
     .form-group
-      %label{:for => "city-abr"} City Abbreviation <span class="help">(e.g. NY, Den ... up to 4 letters )</span>
-      %input.form-control#city-abr{ :type => "text"}/
+      = f.input :abbreviation, input_html: { class: 'form-control', id: "city-abr"}, label: 'City Abbreviation <span class="help">(e.g. NY, Den ... up to 4 letters )</span>'.html_safe
       %span.input-group-addon 72
 
     .form-group
-      %label{:for => "city-moniker"} What are the residents of your city called? <span class="help">(e.g. New Yorkers, Denverites ... )</span>
-      %input.form-control#city-moniker{ :type => "text"}/
+      = f.input :abbreviation, input_html: { class: 'form-control', id: "city-moniker"}, label: 'What are the residents of your city called? <span class="help">(e.g. New Yorkers, Denverites ... )</span>'.html_safe
       %span.help-block If you leave this field blank your site will refer to people as "[City] residents."
 
     .form-group
@@ -33,7 +31,7 @@
 
     .form-group
       %label{:for => "city-image-credit"} Image Credit <span class="help">(e.g. Flickr user name)</span>
-      %input.form-control#city-image-credit{:type => "text"}/ 
+      %input.form-control#city-image-credit{:type => "text"}/
 
     .form-group
       %label{:for => "select-resident-image"} Homepage Image: Residents of Your City
@@ -68,6 +66,6 @@
       %span.input-group-addon http://
       %input.form-control#affiliate-1-url{:type => "text"}/
 
-    %a.btn{:href => "#"} Add an Affiliate 
+    %a.btn{:href => "#"} Add an Affiliate
 
     %a.btn.btn-primary{:href => "#"} Save Changes
