@@ -11,6 +11,17 @@ a {
   line-height: 17px;
 }
 
+h2 {
+  font-size: 21px;
+  line-height: 23px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 23px;
+  margin-bottom: 0;
+}
+
 /* GENERAL */
 $accent-gold: #FBAF33;
 $accent-green: #A2C63A;
@@ -20,6 +31,10 @@ $light-grey: #f2f2f2;
 
 .container {
   width: 768px !important;
+}
+
+.btn {
+  @extend .btn-default
 }
 
 /* HEADER */
@@ -103,6 +118,50 @@ label .help {
 
 .form-actions {
   margin: 3rem 0;
+}
+
+.editable-list {
+  @extend .clearfix;
+  padding: 0;
+
+  li {
+    width: 320px;
+    float: left;
+    border: 1px solid #C1C1C1;
+    padding: 2rem;
+    list-style-type: none;
+    border-radius: 8px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.18);
+    margin-right: 2rem;
+  }
+
+  li:nth-child(2) {
+    margin-right: 0;
+  }
+
+  .btn {
+    display: block;
+    background-image: linear-gradient(-179deg, #F2F2F2 0%, #D4D4D4 100%);
+    border: 1px solid #979797;
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.20), inset 0px 2px 0px 0px #FFFFFF;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2), inset 0px 1px 0px 0px #FFF;
+    text-shadow: 0px 2px 0px rgba(255, 254, 255, 0.5);
+  }
+
+  .include-field {
+    display: block;
+    margin: -1rem -2rem 0;
+    padding: 0 2rem 1rem;
+    border-bottom: 1px solid #C1C1C1;
+    max-width: 320px;
+  }
+
+  .list-actions {
+    margin: 2rem -2rem -1rem;
+    padding: 1rem 1rem 0;
+    border-top: 1px solid #C1C1C1;
+  }
 }
 
 /* Special styles */

@@ -8,11 +8,10 @@
     %p Your City72 site will automatically include 3 digital connection networks: Facebook, Twitter, Google Drive
 
     .form-group
-      %label{:for => "fb-page"}
-        %span Your Facebook Page
-        .input-group
-          %span.input-group-addon http://
-          %input.form-control#fb-page{ :type => "text"}/
+      %label{:for => "fb-page"} Your Facebook Page
+      .input-group.input-md
+        %span.input-group-addon http://
+        %input.form-control#fb-page{ :type => "text"}/
 
     .form-group
       %label{:for => "tw-accounts"}What Twitter accounts are useful to follow in your area?
@@ -34,6 +33,9 @@
     .editable-list-container
       %ul.editable-list
         %li
+          %label.include-field{:for => "include-network-1"} 
+            %input#include-network-1{:type => "checkbox", :checked => "checked"}/
+            %span Include this Network
           .list-element
             .logo.nextdoor
             %h3 Meet your neighbors on Nextdoor
@@ -43,10 +45,10 @@
             %p Log onto Nextdoor to share local information and resources with people who live near you.
           .list-actions
             %a.btn{:href => "#"} Edit
-            %label{:for => "include-network-1"} 
-              %input#include-network-1{:type => "checkbox"}/
-              %span Include this Network
         %li
+          %label.include-field{:for => "include-network-2"} 
+            %input#include-network-2{:type => "checkbox", :checked => "checked"}/
+            %span Include this Network
           .list-element
             .logo.airbnb
             %h3 Sign up for AirBnb
@@ -56,9 +58,6 @@
             %p Log onto Nextdoor to share local information and resources with people who live near you.
           .list-actions
             %a.btn{:href => "#"} Edit
-            %label{:for => "include-network-1"} 
-              %input#include-network-1{:type => "checkbox"}/
-              %span Include this Network
       %a.add-btn{:href => "#"} + Add a Network 
 
     %h2 Partners and Resources
@@ -66,6 +65,9 @@
     .editable-list-container
       %ul.editable-list
         %li
+          %label.include-field{:for => "include-partner-1"} 
+            %input#include-partner-1{:type => "checkbox", :checked => "checked"}/
+            %span Include this Partner
           .list-element
             .logo.redcross
             %h3 American Red Cross
@@ -73,14 +75,11 @@
             %a{:href => "#"} www.redcross.org 
           .list-actions
             %a.btn{:href => "#"} Edit
-            %label{:for => "include-network-1"} 
-              %input#include-network-1{:type => "checkbox"}/
-              %span Include this Network
     %a.add-btn{:href => "#"} + Add a Partner or Resource
 
-    .form-controls
+    .form-actions
       %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
-      
+
 
 / MODAL: Edit Network
 .modal.edit-element.edit-network.fade
