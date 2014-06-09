@@ -14,12 +14,15 @@
       %label{:for => "select-plan"} What type of emergency is your area most at risk for? 
       .radio
         %label{:for => "emergency-type-1"}
-          %input.form-control#emergency-type-1{:type => "radio", :name => "emergency-type", :selected}/ Earthquake
+          %input#emergency-type-1{:type => "radio", :name => "emergency-type", :checked => "checked"}/
+          %span Earthquake
       .radio
         %label{:for => "emergency-type-2"}
-          %input.form-control#emergency-type-2{:type => "radio", :name => "emergency-type"}/ Hurricane
+          %input#emergency-type-2{:type => "radio", :name => "emergency-type"}/
+          %span Hurricane
       .radio
         %label{:for => "emergency-type-3"}
-          %input.form-control#emergency-type-3{:type => "radio", :name => "emergency-type"}/ Flood
+          %input#emergency-type-3{:type => "radio", :name => "emergency-type"}/
+          %span Flood
 
   %a.btn.btn-primary{:href => "#"} Save Changes 

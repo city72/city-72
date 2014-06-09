@@ -30,7 +30,7 @@ $orange-em: #ef561c;
 $light-grey: #f2f2f2;
 
 .container {
-  width: 768px !important;
+  width: 980px !important;
 }
 
 .btn {
@@ -111,6 +111,10 @@ label .help {
   @extend .input-md;
 }
 
+textarea.form-control {
+  width: auto;
+}
+
 .add-btn {
   display: inline-block;
   margin: 0 0 2rem;
@@ -125,7 +129,7 @@ label .help {
   padding: 0;
 
   li {
-    width: 320px;
+    width: 300px;
     float: left;
     border: 1px solid #C1C1C1;
     padding: 2rem;
@@ -133,15 +137,16 @@ label .help {
     border-radius: 8px;
     background: #FFFFFF;
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.18);
-    margin-right: 2rem;
+    margin: 0 1.5rem 1.5rem 0;
   }
 
-  li:nth-child(2) {
+  li:nth-child(3n) {
     margin-right: 0;
   }
 
   .btn {
     display: block;
+    max-width: 320px;
     background-image: linear-gradient(-179deg, #F2F2F2 0%, #D4D4D4 100%);
     border: 1px solid #979797;
     -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.20), inset 0px 2px 0px 0px #FFFFFF;
@@ -161,6 +166,13 @@ label .help {
     margin: 2rem -2rem -1rem;
     padding: 1rem 1rem 0;
     border-top: 1px solid #C1C1C1;
+  }
+
+  &.wide {
+    li {
+      width: 100%;
+      float: none;
+    }
   }
 }
 
