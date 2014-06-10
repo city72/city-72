@@ -37,6 +37,7 @@ group :assets do
 end
 
 gem 'jquery-rails', "2.3.0"
+gem 'simple_enum', '1.6.9'
 
 group :test, :development do
   gem 'pry'

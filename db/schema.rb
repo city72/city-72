@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140610164704) do
+ActiveRecord::Schema.define(:version => 20140610175707) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(:version => 20140610164704) do
     t.string   "name",                  :null => false
     t.string   "abbreviation"
     t.string   "moniker"
-    t.integer  "color"
     t.string   "image"
     t.string   "image_credit"
     t.string   "resident_image"
@@ -55,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20140610164704) do
     t.string   "possessive"
     t.string   "brought_by"
     t.string   "agency_url"
+    t.integer  "color_cd"
   end
 
   create_table "current_modes", :force => true do |t|

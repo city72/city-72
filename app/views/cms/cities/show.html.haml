@@ -20,7 +20,7 @@
           = @city.errors[:abbreviation].join(' ')
 
 
-    = f.input :color, collection: ['Gold', 'Green', 'Blue'], label: 'Accent Color for Website', required: false
+    = f.input :color_cd, collection: City.colors.map {|c| [c[0].capitalize, c[1]]}, label: 'Accent Color for Website', required: false, include_blank: false
 
     = f.input :moniker, label: 'What are the residents of your city called? <span class="help">(e.g. New Yorkers, Denverites ... )</span>'.html_safe, hint: 'If you leave this field blank your site will refer to people as "[City] residents."' , required: false
 
