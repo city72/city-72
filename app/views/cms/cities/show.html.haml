@@ -40,8 +40,7 @@
         %span.input-group-addon http://
         = f.input_field :agency_url
 
-    / TODO: Add field to model
-    = f.input :moniker, label: 'Contact Us Email', input_html: {placeholder: 'name@example.com'}, required: false
+    = f.input :contact_email, label: 'Contact Us Email', input_html: {placeholder: 'name@example.com'}, required: false
 
     %h3 City Affiliates
     %p These links appear in the footer of each page of the site (add up to 8 links)
