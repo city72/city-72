@@ -45,15 +45,16 @@
     %h3 City Affiliates
     %p These links appear in the footer of each page of the site (add up to 8 links)
 
-    .form-group
-      %label{:for => "affiliate-1"} 
+    = f.simple_fields_for :affiliates do |a|
+      %label
         Name of Affiliate
         %span.help (name and corresponding URL)
-      %input.form-control#affiliate-1{:type => "text", :placeholder => "name@example.com"}/
-      .input-group.input-md.input-multi
+      = a.input_field :name
+      .input-group.col-sm-8
         %span.input-group-addon http://
-        %input.form-control#affiliate-1-url{:type => "text"}/
+        = a.input_field :url
 
     %button.add-btn.btn-link{:href => "#"} + Add an Affiliate
+
     .form-actions
       %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
