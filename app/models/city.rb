@@ -1,6 +1,7 @@
 class City < ActiveRecord::Base
   attr_accessible :name, :abbreviation, :moniker, :color, :image_credit,
-    :resident_image_credit, :contact_email, :agency_site
+    :resident_image_credit, :contact_email, :agency_site, :affiliates_attributes,
+    :possessive
 
   mount_uploader :image, CityImageUploader
   mount_uploader :resident_image, ResidentImageUploader
