@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140610164253) do
+ActiveRecord::Schema.define(:version => 20140610164704) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20140610164253) do
     t.datetime "updated_at",            :null => false
     t.string   "possessive"
     t.string   "brought_by"
+    t.string   "agency_url"
   end
 
   create_table "current_modes", :force => true do |t|

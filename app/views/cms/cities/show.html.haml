@@ -34,8 +34,11 @@
 
     %h2 Footer Information
 
-    / TODO: Add field to model
-    = f.input :moniker, label: 'Your Agency\'s Website', required: false
+    .form-group
+      %label.control-label Your Agency's Website
+      .input-group.col-sm-6
+        %span.input-group-addon http://
+        = f.input_field :agency_url
 
     / TODO: Add field to model
     = f.input :moniker, label: 'Contact Us Email', input_html: {placeholder: 'name@example.com'}, required: false
