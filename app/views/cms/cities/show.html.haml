@@ -8,13 +8,17 @@
 
     = f.input :name, input_html: {id: "city-name"}, label: 'City Name <span class="help">(e.g. New York, Denver ... )</span>'.html_safe, required: false
     
-    .form-group
-      %label.control-label{:for => "city-abr"}
-        City Abbreviation 
-        %span.help (e.g. NY, Den ... up to 4 letters )
+    .form-group{class: ('has-error' if @city.errors.has_key? :abbreviation)}
+      %label.control-label
+        City Abbreviation
+        %span.help (e.g. NY, Den ... up to 4 letters)
       .input-group.col-sm-2
         = f.input_field :abbreviation
         %span.input-group-addon 72
+      - if @city.errors.has_key? :abbreviation
+        %span.help-block.has-error
+          = @city.errors[:abbreviation].join(' ')
+
 
     = f.input :color, collection: ['Gold', 'Green', 'Blue'], label: 'Accent Color for Website', required: false
 
@@ -34,11 +38,14 @@
 
     %h2 Footer Information
 
-    .form-group
+    .form-group{:class => ('has-error' if @city.errors.has_key? :agency_url)}
       %label.control-label Your Agency's Website
       .input-group.col-sm-6
         %span.input-group-addon http://
         = f.input_field :agency_url
+      - if @city.errors.has_key? :agency_url
+        %span.help-block.has-error 
+          = @city.errors[:agency_url].join(' ')
 
     = f.input :contact_email, label: 'Contact Us Email', input_html: {placeholder: 'name@example.com'}, required: false
 

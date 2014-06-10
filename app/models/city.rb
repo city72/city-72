@@ -9,6 +9,6 @@ class City < ActiveRecord::Base
   has_many :affiliates
   accepts_nested_attributes_for :affiliates
 
-  validates :name, :abbreviation, :moniker, :color, presence: true
+  validates :name, :abbreviation, :possessive, :brought_by, :agency_url, :contact_email, presence: true
 
 end
