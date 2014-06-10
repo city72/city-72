@@ -6,10 +6,12 @@ class Cms::CitiesController < BackOfficeController
   end
 
   def update
-    @city.update_attributes(params[:city])
+    @city.attributes = params[:city]
+    @city.save
     render :show
   end
 
+  private
   def set_city
     @city = City.first
     raise "Corrupt Database" if @city.nil?
