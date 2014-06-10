@@ -208,6 +208,9 @@ textarea.form-control {
 
 /* SPECIAL STYLES */
 
+
+/* CONNECTIONS */
+
 .twitter-accounts {
   @include make-row();
 
@@ -221,5 +224,14 @@ textarea.form-control {
   
   .help-block-title {
     margin: 47px 0 0;
+  }
+}
+
+
+/* SUPPLIES */
+
+.supplies {
+  .editable-list {
+    margin-bottom: 7rem;
   }
 }
