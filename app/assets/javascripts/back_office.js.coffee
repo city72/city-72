@@ -1,4 +1,5 @@
 //= require jquery
+//= require bootstrap.js
 
 $(document).ready ->
 

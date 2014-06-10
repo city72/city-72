@@ -12,15 +12,16 @@
       .input-group.input-md
         %span.input-group-addon http://
         %input.form-control#fb-page{ :type => "text"}/
-
-    .form-group
-      %label{:for => "tw-accounts"}What Twitter accounts are useful to follow in your area?
-      %input.form-control#tw-accounts{ :type => "text", :placeholder => "@example"}/
-      %input.form-control.input-multi#tw-accounts-1{ :type => "text", :placeholder => "@example"}/
-      %input.form-control.input-multi#tw-accounts-2{ :type => "text", :placeholder => "@example"}/
-      %a.add-btn{:href => "#"} + Add a Twitter feed 
-      %p.help-block
-        %p Such as:
+    
+    .row.twitter-accounts
+      .form-group
+        %label{:for => "tw-accounts"}What Twitter accounts are useful to follow in your area?
+        %input.form-control#tw-accounts{ :type => "text", :placeholder => "@example"}/
+        %input.form-control.input-multi#tw-accounts-1{ :type => "text", :placeholder => "@example"}/
+        %input.form-control.input-multi#tw-accounts-2{ :type => "text", :placeholder => "@example"}/
+        %a.add-btn{:href => "#"} + Add a Twitter feed 
+      .help-block
+        %p.help-block-title Such as:
         %ul 
           %li Transportation authorities
           %li City agencies
@@ -44,7 +45,8 @@
             %h4 In an Emergency:
             %p Log onto Nextdoor to share local information and resources with people who live near you.
           .list-actions
-            %a.btn{:href => "#"} Edit
+            %button.btn{type: "button", data: {toggle:"modal", target:".edit-network"}} Edit
+
         %li
           %label.include-field{:for => "include-network-2"} 
             %input#include-network-2{:type => "checkbox", :checked => "checked"}/
@@ -57,7 +59,7 @@
             %h4 In an Emergency:
             %p Log onto Nextdoor to share local information and resources with people who live near you.
           .list-actions
-            %a.btn{:href => "#"} Edit
+            %button.btn{type: "button", data: {toggle:"modal", target:".edit-network"}} Edit
       %a.add-btn{:href => "#"} + Add a Network 
 
     %h2 Partners and Resources
@@ -74,7 +76,7 @@
             %p Provides a variety of trainings including first aid, CPR, and how to prepare for emergencies
             %a{:href => "#"} www.redcross.org 
           .list-actions
-            %a.btn{:href => "#"} Edit
+            %button.btn{type: "button", data: {toggle:"modal", target:".edit-partner"}} Edit
     %a.add-btn{:href => "#"} + Add a Partner or Resource
 
     .form-actions
@@ -98,19 +100,21 @@
             %input.form-control#network-image{:type => "file"}/
           .form-group
             %label{:for => "network-now"} Now
-            %textarea#network-now{:name => "network-now", :cols => "30", :rows => "10"} 
             %p.help-block A short description of how to use the network now. (e.g. set up your account and connect with friends.)
+            %textarea.form-control#network-now{:name => "network-now", :cols => "90", :rows => "8"} 
           .form-group
             %label{:for => "network-emergency"} In an Emergency
-            %textarea#network-emergency{:name => "network-emergency", :cols => "30", :rows => "10"} 
             %p.help-block A short description of how to use the network in an emergency. (e.g. post your status and check on friends.)
+            %textarea.form-control#network-emergency{:name => "network-emergency", :cols => "90", :rows => "8"} 
           .form-group
             %label{:for => "network-link"} Link to Network Website
-            %span.input-group-addon http://
-            %input#network-link{:type => "text"}/
+            .input-group.input-md
+              %span.input-group-addon http://
+              %input.form-control#network-link{:type => "text"}/
       .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
         %button.btn.btn-primary{type: "button"} Save changes
+        %button.btn{"data-dismiss" => "modal", type: "button"} Cancel
+        
 
 / MODAL: Edit Partner
 .modal.edit-element.edit-partner.fade
@@ -129,11 +133,13 @@
             %input.form-control#partner-name{:type => "text"}/
           .form-group
             %label{:for => "partner-description"} Description of services
-            %textarea#partner-description{:name => "partner-description", :cols => "30", :rows => "10"}
+            %textarea.form-control#partner-description{:name => "partner-description", :cols => "90", :rows => "8"}
           .form-group
             %label{:for => "partner-link"} Website Link <span class="help">(e.g. www.example.com)</span>
-            %span.input-group-addon http://
-            %input#network-link{:type => "text"}/
+            .input-group.input-md
+              %span.input-group-addon http://
+              %input.form-control#network-link{:type => "text"}/
       .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
         %button.btn.btn-primary{type: "button"} Save changes
+        %button.btn{"data-dismiss" => "modal", type: "button"} Cancel
+        
