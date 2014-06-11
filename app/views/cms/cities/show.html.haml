@@ -1,0 +1,80 @@
+.main-content.city-info
+
+  = simple_form_for @city, url: cms_city_path, html: { method: :put } do |f|
+    .screen-intro
+      %p.screen-info Fill in your city's details below to create your custom City72 site.
+      .action-area
+        %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
+
+    = f.input :name, input_html: {id: "city-name"}, label: 'City Name <span class="help">(e.g. New York, Denver ... )</span>'.html_safe, required: false
+    
+    .form-group{class: ('has-error' if @city.errors.has_key? :abbreviation)}
+      %label.control-label
+        City Abbreviation
+        %span.help (e.g. NY, Den ... up to 4 letters)
+      .input-group.col-sm-2
+        = f.input_field :abbreviation
+        %span.input-group-addon 72
+      - if @city.errors.has_key? :abbreviation
+        %span.help-block.has-error
+          = @city.errors[:abbreviation].join(' ')
+
+
+    = f.input :color_cd, collection: City.colors.map {|c| [c[0].capitalize, c[1]]}, label: 'Accent Color for Website', required: false, include_blank: false
+
+    = f.input :moniker, label: 'What are the residents of your city called? <span class="help">(e.g. New Yorkers, Denverites ... )</span>'.html_safe, hint: 'If you leave this field blank your site will refer to people as "[City] residents."' , required: false
+
+    = f.input :possessive, label: 'What is the possessive form of your city name? <span class="help">(e.g. Chicago\'s, Dallas\')</span>'.html_safe, required: false
+
+    = f.input :image, label: 'Homepage Image: Your City', hint: 'What image evokes the feeling of being a resident in your city—but not a tourist?'
+
+    = f.input :image_credit, label: 'Image Credit <span class="help">(e.g. Flickr user name)</span>'.html_safe
+
+    = f.input :resident_image, label: 'Homepage Image: Residents of Your City'
+
+    = f.input :resident_image_credit, label: 'Image Credit <span class="help">(e.g. Flickr user name)</span>'.html_safe
+
+    = f.input :brought_by, label: 'This website brought to you by... <span class="help">(e.g. the San Francisco Department of Emergency Management)</span>'.html_safe, required: false
+
+    %h2 Footer Information
+
+    .form-group{:class => ('has-error' if @city.errors.has_key? :agency_url)}
+      %label.control-label Your Agency's Website
+      .input-group.col-sm-6
+        %span.input-group-addon http://
+        = f.input_field :agency_url
+      - if @city.errors.has_key? :agency_url
+        %span.help-block.has-error 
+          = @city.errors[:agency_url].join(' ')
+
+    = f.input :contact_email, label: 'Contact Us Email', input_html: {placeholder: 'name@example.com'}, required: false
+
+    %h3 City Affiliates
+    %p These links appear in the footer of each page of the site (add up to 8 links)
+
+    = f.simple_fields_for :affiliates do |a|
+      .form-group.affiliate{class: ('has-error' if a.error(:name) || a.error(:url))}
+        %label.control-label
+          Name of Affiliate
+          %span.help (name and corresponding URL)
+        = a.input_field :name, class: 'affiliate-name'
+        = a.error :name
+        .input-group.col-sm-6
+          %span.input-group-addon http://
+          = a.input_field :url, class: 'affiliate-url'
+        = a.error :url
+
+    %script{type: 'text/template', id: 'x-affiliate-form-template'}
+      .form-group.affiliate
+        %label.control-label
+          Name of Affiliate
+          %span.help (name and corresponding URL)
+          %input.string.required.form-control.affiliate-name#affialiate_attributes_0_name{maxlength: 255, name: 'city[affiliates_attributes][0][name]', size: 50, type: 'text'}
+          .input-group.col-sm-6
+            %span.input-group-addon http://
+            %input.string.url.required.form-control.affiliate-url#city_affiliates_attributes_0_url{maxlength: 255, name: 'city[affiliates_attributes][0][url]', size: 50}
+
+    %button.btn.btn-link.add-affiliate + Add an Affiliate
+
+    .form-actions
+      %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
