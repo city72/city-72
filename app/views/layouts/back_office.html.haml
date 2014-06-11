@@ -5,9 +5,10 @@
     = javascript_include_tag "cms/backoffice"
     = csrf_meta_tags
 
-  %body
+  %body{:'ng-app' => 'backofficeApp'}
     .container
       - if admin_user_signed_in?
         = render "layouts/admin_topbar"
 
       = yield
+  }
