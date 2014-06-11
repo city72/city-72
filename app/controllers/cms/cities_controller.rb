@@ -8,7 +8,7 @@ class Cms::CitiesController < BackOfficeController
   def update
     @city.attributes = params[:city]
     @city.save
-    render :show
+    render status: :ok, nothing: true
   end
 
   private
