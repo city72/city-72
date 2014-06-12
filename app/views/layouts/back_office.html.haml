@@ -1,13 +1,14 @@
 !!! 5
 %html
   %head
-    = stylesheet_link_tag "back_office", :media => "all"
+    = stylesheet_link_tag "backoffice", :media => "all"
     = javascript_include_tag "cms/backoffice"
     = csrf_meta_tags
 
-  %body
+  %body{:'ng-app' => 'backofficeApp'}
     .container
       - if admin_user_signed_in?
         = render "layouts/admin_topbar"
 
       = yield
+  }

@@ -1,0 +1,19 @@
+{
+  "name": "ideo-city-72",
+  "version": "0.0.0",
+  "homepage": "https://github.com/zauberlabs/ideo-city-72",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.17",
+    "angular-resource": "~1.2.17",
+    "ladda-bootstrap": "~0.1.0"
+  }
+}
