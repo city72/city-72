@@ -82,7 +82,6 @@ $light-grey: #f2f2f2;
     }
   }
 
-
 }
 
 /* LANDING */
@@ -244,4 +243,27 @@ textarea.form-control {
   .editable-list {
     margin-bottom: 7rem;
   }
+}
+
+/* MAP & UPDATES */
+
+.map-link-container,
+.timelines-container {
+  @include make-sm-column(5);
+}
+
+.map-link-instructions,
+.timelines-instructions {
+  @include make-sm-column(6);
+
+  h2 {
+    font-size: 1em;
+    margin: 5rem 0 0;
+  }
+  
+  ol {
+    @extend .help-block;
+    padding: 0 0 0 1.3em;
+  }
+  
 }
