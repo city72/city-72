@@ -65,14 +65,23 @@ $light-grey: #f2f2f2;
 .navbar {
   background-color: #f2f2f2;
 
+  .nav {
+    width: 100%;
+  }
+
   a {
     color: #2b2a26;
     font-weight: bold;
   }
 
-  .em-menu a {
-    color: $orange-em;
+  .em-menu {
+    @extend .pull-right;
+
+    a {
+      color: $orange-em;
+    }
   }
+
 }
 
 /* LANDING */
@@ -234,4 +243,27 @@ textarea.form-control {
   .editable-list {
     margin-bottom: 7rem;
   }
+}
+
+/* MAP & UPDATES */
+
+.map-link-container,
+.timelines-container {
+  @include make-sm-column(5);
+}
+
+.map-link-instructions,
+.timelines-instructions {
+  @include make-sm-column(6);
+
+  h2 {
+    font-size: 1em;
+    margin: 5rem 0 0;
+  }
+  
+  ol {
+    @extend .help-block;
+    padding: 0 0 0 1.3em;
+  }
+  
 }
