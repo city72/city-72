@@ -5,7 +5,9 @@
     .screen-intro
       %p.screen-info Fill in your city's details below to create your custom City72 site.
       .action-area
-        %button.btn.btn-primary(ng-disabled="cityForm.$invalid") Save Changes
+        %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
+          %span.ladda-label Save Changes
+          %span.ladda-spinner
 
     .form-group(ng-class="{'has-error': cityForm.name.$dirty && cityForm.name.$invalid}")
       %label.control-label{:for => 'name'}
@@ -105,4 +107,5 @@
     %a.add-btn{:href => "#"} + Add an Affiliate
 
     .form-actions
-      %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}(ng-disabled="cityForm.$invalid")
+      %button.btn.btn-primary.ladda-button{:type => "submit"}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
+        %span.ladda-label Save Changes
