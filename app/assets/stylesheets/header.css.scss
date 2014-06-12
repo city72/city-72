@@ -6,12 +6,13 @@
 
 #logo {
 	@include span-columns(3.37061107);
-	margin-top: 1.8rem;
+	margin-top: 1.5rem;
 	text-align: center;
 	padding: .5rem 1rem;
 
 	img {
-		max-width: 190px;
+		max-width: 170px;
+		max-height: 60px;
 	}
 }
 

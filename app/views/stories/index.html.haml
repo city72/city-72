@@ -2,90 +2,132 @@
 = javascript_include_tag "home"
 .main-container.stories
   = render :partial => "partials/header"
+
+  / .intro
+  /   .intro-video
+  /     %iframe.video-opening{src: "http://player.vimeo.com/video/77128862?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933", width: "100%", height: "573", title: "SF72 Presentation Video"}
+  
+  .opening
+    %div
+      %p It doesn’t matter if it’s good times or bad times, we all need to eat. It’s a natural fit for chefs to stand up to help (in an emergency). friends &mdash; both digitally and in person.
+    %span.story-about
+      %h1 Charles
+      %h2 The Embarcadero, San Francisco
+
   .intro
-    .intro-video
-      %iframe.video-opening{src: "http://player.vimeo.com/video/77128862?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933", width: "100%", height: "573", title: "SF72 Presentation Video"}
-      .personal-look 
-        %h2.mobile-title Stories
-        %h2 Know what to do. 
-        %p Watch these videos and learn how to get prepared from a few of your fellow <span class="to-replace-moniker">Citizens</span>. They’ve got lessons and advice to share from their experiences in the local community and in disasters.
+    .personal-look 
+      %h2 A personal look at emergencies and connection.
+      %p Watch stories of people who have lived through disasters—and those who are already fostering connections in <span class="to-replace-city">San Francisco</span>. No matter your situation, chances are, there’s someone like you with wisdom to share.
+
   %ul.story-list
-    - @stories.each do |story|
-      %li
-        %a{href: "#{ story_path(story.id) }"}
-          .quote-dialog
-            #{story.quote}
-            %span.fake-link See story
-          = retina_image_tag story.video_image, "#{story.person}: #{story.event} - #{story.location}"
-          = render partial: "category_icon", locals: {story: story}
-    %li.coming-soon-story
-      %span
-        .quote-dialog Coming Soon
-        %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
-        .story-data
-          %h5 Coming soon!
-          %p More stories of resilience and community.
-    %li.coming-soon-story
-      %span
-        .quote-dialog Coming Soon
-        %img{src: "/assets/static/coming-soon-2.jpg", alt: "A new story coming soon"}
-        .story-data
-          %h5 Coming soon!
-          %p More stories of resilience and community.
-    %li.coming-soon-story
-      %span
-        .quote-dialog Coming Soon
-        %img{src: "/assets/static/coming-soon-3.jpg", alt: "A new story coming soon"}
-        .story-data
-          %h5 Coming soon!
-          %p More stories of resilience and community.
-    %li.coming-soon-story
-      %span
-        .quote-dialog Coming Soon
-        %img{src: "/assets/static/coming-soon-4.jpg", alt: "A new story coming soon"}
-        .story-data
-          %h5 Coming soon!
-          %p More stories of resilience and community.
-    %li.coming-soon-story
-      %span
-        .quote-dialog Coming Soon
-        %img{src: "/assets/static/coming-soon-5.jpg", alt: "A new story coming soon"}
-        .story-data
-          %h5 Coming soon!
-          %p More stories of resilience and community.
-  .basic-guide
-    %h3 After experiencing an earthquake in Japan, Judy took steps to prepare at home in San Francisco. Learn a few easy steps from our Quake Basics guide to help keep your cool when the earth shakes.
-  .basics-slider
-    .slider-header
-      %ul.basics-tabs
-        %li.active
-          %a.trigger-during{href:"#tab-during-earth-quake"} During a quake
-        %li
-          %a.trigger-after{href:"#tab-after-earth-quake"} After a quake
-      %a.quick-list-trigger{href:"quick_guide"} Print Full Guide
-    .slider-body
-      .slider-during
-        %a.prev{href: "#"}
-        %a.next{href: "#"}
-        %ol.slider.quick-guide
-          %li
-            %h2 Drop, cover and hold.
-            %p Duck under a strong table or desk. Cover your head and neck with your arms against an interior wall. Stay away from windows.
-          %li
-            %h2 Stay calm.
-            %p Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.
-          %li
-            %h2 Stay put.
-            %p Shelter in place–whether you’re in a car, in bed, or in a public place. Do not try to run out of the building during strong shaking, hold tight until the shaking stops. If you’re outdoors, steer clear of wires or falling objects.
-      .slider-after
-        %ol.slider.quick-guide
-          %li
-            %h2 Leave a trail.
-            %p If you leave home, leave a sign telling friends and family your location. Digitaly savvy? Send a tweet or Facebook update telling everyone know that you’re ok.
-          %li
-            %h2 Stay tuned.
-            %p Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.
-          %li
-            %h2 Check <span class="to-replace-abr">City</span>72.
-            %p In the event of an emergency, this site will go into emergency mode and bring you live updates and tweets from around the city, information on missing persons, and ways you can help.
+    %li
+      %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
+      .story-data
+        %h4 Lindsay
+        %h5.location SOMA
+        %p.quote We won’t always be able to reach our earthquake kit. We might need help or help others. we are going to need to trust each other deeply in the days following a major emergency. These relationships are the ones that are going to sustain us and save us.
+        %a{:href => "#"} Use your networks 
+    %li
+      %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
+      .story-data
+        %h4 Carol
+        %h5.location The Haight
+        %p.quote At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It’s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.
+        %a{:href => "#"} Gather your supplies
+    %li
+      %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
+      .story-data
+        %h4 Justin
+        %h5.location Ocean Beach
+        %p.quote We set up a list – a calling tree with our friends, and we have a meeting place. We have a general timeline – after an emergency, on the half hour, every half hour. It’s a corner store near our houses.
+        %a{:href => "#"} Use your networks
+    %li
+      %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
+      .story-data
+        %h4 Roberta and Monica
+        %h5.location The Sunset
+        %p.quote At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It’s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.
+        %a{:href => "#"} Gather your Supplies
+
+  
+
+  / %ul.story-list
+  /   - @stories.each do |story|
+  /     %li
+  /       %a{href: "#{ story_path(story.id) }"}
+  /         .quote-dialog
+  /           #{story.quote}
+  /           %span.fake-link See story
+  /         = retina_image_tag story.video_image, "#{story.person}: #{story.event} - #{story.location}"
+  /         = render partial: "category_icon", locals: {story: story}
+  /   %li.coming-soon-story
+  /     %span
+  /       .quote-dialog Coming Soon
+  /       %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
+  /       .story-data
+  /         %h5 Coming soon!
+  /         %p More stories of resilience and community.
+  /   %li.coming-soon-story
+  /     %span
+  /       .quote-dialog Coming Soon
+  /       %img{src: "/assets/static/coming-soon-2.jpg", alt: "A new story coming soon"}
+  /       .story-data
+  /         %h5 Coming soon!
+  /         %p More stories of resilience and community.
+  /   %li.coming-soon-story
+  /     %span
+  /       .quote-dialog Coming Soon
+  /       %img{src: "/assets/static/coming-soon-3.jpg", alt: "A new story coming soon"}
+  /       .story-data
+  /         %h5 Coming soon!
+  /         %p More stories of resilience and community.
+  /   %li.coming-soon-story
+  /     %span
+  /       .quote-dialog Coming Soon
+  /       %img{src: "/assets/static/coming-soon-4.jpg", alt: "A new story coming soon"}
+  /       .story-data
+  /         %h5 Coming soon!
+  /         %p More stories of resilience and community.
+  /   %li.coming-soon-story
+  /     %span
+  /       .quote-dialog Coming Soon
+  /       %img{src: "/assets/static/coming-soon-5.jpg", alt: "A new story coming soon"}
+  /       .story-data
+  /         %h5 Coming soon!
+  /         %p More stories of resilience and community.
+  / .basic-guide
+  /   %h3 After experiencing an earthquake in Japan, Judy took steps to prepare at home in San Francisco. Learn a few easy steps from our Quake Basics guide to help keep your cool when the earth shakes.
+  / .basics-slider
+  /   .slider-header
+  /     %ul.basics-tabs
+  /       %li.active
+  /         %a.trigger-during{href:"#tab-during-earth-quake"} During a quake
+  /       %li
+  /         %a.trigger-after{href:"#tab-after-earth-quake"} After a quake
+  /     %a.quick-list-trigger{href:"quick_guide"} Print Full Guide
+  /   .slider-body
+  /     .slider-during
+  /       %a.prev{href: "#"}
+  /       %a.next{href: "#"}
+  /       %ol.slider.quick-guide
+  /         %li
+  /           %h2 Drop, cover and hold.
+  /           %p Duck under a strong table or desk. Cover your head and neck with your arms against an interior wall. Stay away from windows.
+  /         %li
+  /           %h2 Stay calm.
+  /           %p Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.
+  /         %li
+  /           %h2 Stay put.
+  /           %p Shelter in place–whether you’re in a car, in bed, or in a public place. Do not try to run out of the building during strong shaking, hold tight until the shaking stops. If you’re outdoors, steer clear of wires or falling objects.
+  /     .slider-after
+  /       %ol.slider.quick-guide
+  /         %li
+  /           %h2 Leave a trail.
+  /           %p If you leave home, leave a sign telling friends and family your location. Digitaly savvy? Send a tweet or Facebook update telling everyone know that you’re ok.
+  /         %li
+  /           %h2 Stay tuned.
+  /           %p Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.
+  /         %li
+  /           %h2 Check <span class="to-replace-abr">City</span>72.
+  /           %p In the event of an emergency, this site will go into emergency mode and bring you live updates and tweets from around the city, information on missing persons, and ways you can help.
   = render :partial => "partials/footer"
