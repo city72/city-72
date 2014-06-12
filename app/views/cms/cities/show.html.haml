@@ -46,7 +46,7 @@
       %label{:for => 'color_cd'}
         Accent Color for Website
       %select.form-control#select-color{:name => 'color_cd', :'ng-model' => 'city.color_cd'}
-        %option(ng-repeat="color in availableColors" value="{{color.key}}" ng-selected="city.key == city.color_cd") {{color.value}}
+        %option(ng-repeat="color in availableColors" value="{{color.key}}" ng-selected="color.key == city.color_cd") {{color.value}}
 
     .form-group
       %label{:for => 'select-city-image'}

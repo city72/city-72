@@ -6,7 +6,6 @@ backofficeApp.factory('cmsService', ['$resource', function ($resource) {
 
   return {
     updateCity: function (city) {
-      console.log(city);
       return City.update(city).$promise;
     }
   }
