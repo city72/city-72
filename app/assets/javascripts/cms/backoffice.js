@@ -6,6 +6,7 @@
 //= require ladda-bootstrap/dist/ladda
 //= require ./ui-ladda
 //= require_self
+//= require_tree ./directives
 //= require_tree ./services
 //= require_tree ./controllers
 

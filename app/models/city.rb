@@ -9,7 +9,7 @@ class City < ActiveRecord::Base
   as_enum :color, [:gold, :green, :blue], prefix: true
 
   has_many :affiliates
-  accepts_nested_attributes_for :affiliates
+  accepts_nested_attributes_for :affiliates, allow_destroy: true
 
   validates :name, :abbreviation, :possessive, :brought_by, :agency_url, :contact_email, 
     :color_cd, presence: true
