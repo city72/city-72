@@ -11,9 +11,15 @@ backofficeApp.controller('CityInfoController', ['$scope', 'cmsService', function
 
   $scope.updateCity = function () {
     $scope.updating = true;
-    cmsService.updateCity($scope.city).then(function () {
-      $scope.updating = false;
-    });
+    cmsService.updateCity($scope.city).then(
+      function () {
+        $scope.updating = false;
+      },
+      function () {
+        $scope.fatalError = true;
+        $scope.updating = false;
+      }
+    );
   };
 
   $scope.newAffiliate = function () {
