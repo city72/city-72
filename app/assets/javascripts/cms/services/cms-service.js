@@ -6,6 +6,13 @@ backofficeApp.factory('cmsService', ['$resource', function ($resource) {
 
   return {
     updateCity: function (city) {
+      
+      if (city.affiliates) {
+        city.affiliates_attributes = city.affiliates;
+      } else {
+        city.affiliates_attributes = [];
+      }
+    
       return City.update(city).$promise;
     }
   }

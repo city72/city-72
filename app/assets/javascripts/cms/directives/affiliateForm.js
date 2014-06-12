@@ -8,20 +8,19 @@ backofficeApp.directive('affiliateForm', function () {
     },
     controller: ['$scope', function ($scope) {
       $scope.removeAffiliate = function () {
-        var affiliatePosition = $scope.affiliates.indexOf($scope.affiliate);
-        $scope.affiliates.splice(affiliatePosition, 1);
+        $scope.affiliate._destroy = 1;
       };
     }],
     template: 
-      '<div class="form-group">' +
+      '<div class="form-group" ng-hide="affiliate._destroy">' +
         '<label class="control-label">' +
           'Name of Affiliate' + 
           '<span class="help">(name and corresponding URL)</span>' + 
         '</label>' +
-        '<input type="text" class="form-control" placeholder="name@example.com" value="{{affiliate.name}}" />' +
+        '<input type="text" class="form-control" placeholder="name@example.com" ng-model="affiliate.name" required />' +
         '<div class="input-group">' +
           '<span class="input-group-addon">http://</span>' +
-          '<input class="form-control" type="text" />' +
+          '<input class="form-control" type="text" ng-model="affiliate.url" required />' +
         '</div>' + 
         '<button class="btn btn-danger btn-xs" ng-click="removeAffiliate()"><i class="glyphicon glyphicon-remove"></i> Remove</button>' +
       '</div>'
