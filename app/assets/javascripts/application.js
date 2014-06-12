@@ -18,7 +18,6 @@
 //= require jquery.mobile-menu.js
 //= require jquery.bxslider.min.js
 //= require raphael-min.js
-//= require magic.js
 //= require sf72
 //= require tabs_manager
 //= require popups

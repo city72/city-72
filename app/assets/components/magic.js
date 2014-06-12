@@ -13,6 +13,7 @@ $(function() {
         attributes = { fill: baseFill, 'stroke-width': 0 };
 
 /* = Logo ===================================== */
+
     (function() {
       $("#logo img").hide();
 
