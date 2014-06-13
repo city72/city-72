@@ -1,17 +1,23 @@
-.main-content.connections
-  .screen-intro
-    %p.screen-info Create tie-ins with social media tools, local networks and community resources
-    .action-area
-      %a.btn.btn-primary{:href => "#"} Save Changes
-  %form{:role => "form"}
+.main-content.connections(ng-controller="ConnectionController" ng-init="initializer('#{ConnectionSerializer.new(@connection).to_json}')")
+
+  %form{:role => "form"}(name="connectionForm" novalidate ng-submit="updateConnection()")
+    
+    .screen-intro
+      %p.screen-info Create tie-ins with social media tools, local networks and community resources
+      .action-area
+        %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
+          %span.ladda-label Save Changes
+
     %h2 Social Networks and services
     %p Your City72 site will automatically include 3 digital connection networks: Facebook, Twitter, Google Drive
 
-    .form-group
-      %label{:for => "fb-page"} Your Facebook Page
+    .form-group(ng-class="{'has-error': connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid}")
+      %label.control-label{:for => "fb-page"} Your Facebook Page
       .input-group.input-md
         %span.input-group-addon http://
-        %input.form-control#fb-page{ :type => "text"}/
+        %input.form-control#fb-page{ :type => 'text', :name => 'facebook_page_url'}(ng-model="connection.facebook_page_url" required)
+      %span.help-block(ng-show="connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid")
+        can't be blank
     
     .row.twitter-accounts
       .form-group
@@ -19,7 +25,7 @@
         %input.form-control#tw-accounts{ :type => "text", :placeholder => "@example"}/
         %input.form-control.input-multi#tw-accounts-1{ :type => "text", :placeholder => "@example"}/
         %input.form-control.input-multi#tw-accounts-2{ :type => "text", :placeholder => "@example"}/
-        %a.add-btn{:href => "#"} + Add a Twitter feed 
+        %a.add-btn{:href => "#"} + Add a Twitter feed
       .help-block
         %p.help-block-title Such as:
         %ul 

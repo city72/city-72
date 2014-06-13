@@ -31,7 +31,7 @@ City72::Application.routes.draw do
     root to: "landing#index"
 
     resource :city, only: [:show, :update]
-    resources :connections, only: [:index]
+    resource :connections, only: [:show, :update]
     resources :supplies, only: [:index]
     resources :stories, only: [:index]
     resources :plan, only: [:index]
