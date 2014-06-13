@@ -22,7 +22,7 @@ backofficeApp.directive('affiliateForm', function () {
           '<span class="input-group-addon">http://</span>' +
           '<input class="form-control" type="text" ng-model="affiliate.url" required />' +
         '</div>' + 
-        '<button class="btn btn-danger btn-xs" ng-click="removeAffiliate()"><i class="glyphicon glyphicon-remove"></i> Remove</button>' +
+        '<a class="btn btn-danger btn-xs" ng-click="removeAffiliate()"><i class="glyphicon glyphicon-remove"></i> Remove</a>' +
       '</div>'
   }
 

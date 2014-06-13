@@ -107,7 +107,7 @@
 
     %affiliate-form(ng-repeat="affiliate in city.affiliates" affiliate="affiliate" affiliates="city.affiliates")
 
-    %a.add-btn(ng-click="newAffiliate()") + Add an Affiliate
+    %a.add-btn.btn-link(ng-click="newAffiliate()") + Add an Affiliate
 
     .form-actions
       %button.btn.btn-primary.ladda-button{:type => "submit"}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")

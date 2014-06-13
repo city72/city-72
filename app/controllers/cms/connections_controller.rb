@@ -7,7 +7,7 @@ class Cms::ConnectionsController < BackOfficeController
 
   def update
     @connection.attributes = params[:connection]
-    @connection.save
+    @connection.save!
     render status: :ok, nothing: true
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140613204304) do
+ActiveRecord::Schema.define(:version => 20140613220406) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -144,6 +144,13 @@ ActiveRecord::Schema.define(:version => 20140613204304) do
     t.string   "item1_link"
     t.string   "item2_link"
     t.string   "item3_link"
+  end
+
+  create_table "twitter_accounts", :force => true do |t|
+    t.integer  "connection_id"
+    t.string   "username"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

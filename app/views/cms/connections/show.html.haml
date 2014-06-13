@@ -22,10 +22,8 @@
     .row.twitter-accounts
       .form-group
         %label{:for => "tw-accounts"}What Twitter accounts are useful to follow in your area?
-        %input.form-control#tw-accounts{ :type => "text", :placeholder => "@example"}/
-        %input.form-control.input-multi#tw-accounts-1{ :type => "text", :placeholder => "@example"}/
-        %input.form-control.input-multi#tw-accounts-2{ :type => "text", :placeholder => "@example"}/
-        %a.add-btn{:href => "#"} + Add a Twitter feed
+        %input.form-control#tw-accounts{:placeholder => "@example"}(ng-repeat="twitterAccount in connection.twitter_accounts" ng-model="twitterAccount.username")
+        %a.add-btn.btn-link(ng-click="addTwitterAccount()") + Add a Twitter feed
       .help-block
         %p.help-block-title Such as:
         %ul 
@@ -86,7 +84,8 @@
     %a.add-btn{:href => "#"} + Add a Partner or Resource
 
     .form-actions
-      %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
+      %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
+        %span.ladda-label Save Changes
 
 
 / MODAL: Edit Network

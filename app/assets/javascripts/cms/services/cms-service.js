@@ -21,6 +21,13 @@ backofficeApp.factory('cmsService', ['$resource', function ($resource) {
     },
 
     updateConnection: function (connection) {
+
+      if (connection.twitter_accounts) {
+        connection.twitter_accounts_attributes = connection.twitter_accounts;
+      } else {
+        connection.twitter_accounts_attributes = [];
+      }
+
       return Connection.update(connection).$promise;
     }
   }

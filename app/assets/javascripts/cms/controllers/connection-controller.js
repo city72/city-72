@@ -15,6 +15,13 @@ backofficeApp.controller('ConnectionController', ['$scope', 'cmsService', functi
         $scope.updating = false;
       }
     );
-  }
+  };
+
+  $scope.addTwitterAccount = function () {
+    if (!$scope.connection.twitter_accounts) {
+      $scope.connection.twitter_accounts = [];
+    }
+    $scope.connection.twitter_accounts.push({});
+  };
 
 }]);
