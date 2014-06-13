@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SimpleCaptcha::ControllerHelpers
 
-  before_filter :set_current_mode
+  before_filter :set_configured_vars
 
   def static_content
   	expires_in 1.days, public: true
@@ -20,8 +20,9 @@ class ApplicationController < ActionController::Base
   end
 
   private
-    def set_current_mode
+    def set_configured_vars
       @mode = CurrentMode.get_current_mode
+      @city = City.first
     end
 
 end
