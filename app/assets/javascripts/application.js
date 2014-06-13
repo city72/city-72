@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require underscore-min.js
-//= require modernizr.js
+//= require underscore/underscore
+//= require modernizr/modernizr
 //= require jquery.browser.js
 //= require jquery.mobile-menu.js
 //= require jquery.bxslider.min.js
