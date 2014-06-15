@@ -4,7 +4,7 @@ backofficeApp.factory('cmsService', ['$resource', function ($resource) {
     'update': {method: 'PUT'},
   });
 
-  var Connection = $resource('/cms/connections', null, {
+  var Connection = $resource('/cms/city_connections', null, {
     'update': {method: 'PUT'},
   });
 

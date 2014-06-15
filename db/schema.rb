@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140613220406) do
+ActiveRecord::Schema.define(:version => 20140615204508) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20140613220406) do
     t.integer  "color_cd"
   end
 
-  create_table "connections", :force => true do |t|
+  create_table "city_connections", :force => true do |t|
     t.string   "facebook_page_url"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
@@ -147,10 +147,10 @@ ActiveRecord::Schema.define(:version => 20140613220406) do
   end
 
   create_table "twitter_accounts", :force => true do |t|
-    t.integer  "connection_id"
+    t.integer  "city_connection_id"
     t.string   "username"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
 end

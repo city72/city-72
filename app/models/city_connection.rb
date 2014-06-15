@@ -1,4 +1,4 @@
-class Connection < ActiveRecord::Base
+class CityConnection < ActiveRecord::Base
   attr_accessible :facebook_page_url, :twitter_accounts_attributes
 
   has_many :twitter_accounts

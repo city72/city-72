@@ -1,4 +1,4 @@
-.main-content.connections(ng-controller="ConnectionController" ng-init="initializer('#{ConnectionSerializer.new(@connection).to_json}')")
+.main-content.connections(ng-controller="CityConnectionController" ng-init="initializer('#{CityConnectionSerializer.new(@city_connection).to_json}')")
 
   %form{:role => "form"}(name="connectionForm" novalidate ng-submit="updateConnection()")
     
@@ -22,8 +22,11 @@
     .row.twitter-accounts
       .form-group
         %label{:for => "tw-accounts"}What Twitter accounts are useful to follow in your area?
-        %input.form-control#tw-accounts{:placeholder => "@example"}(ng-repeat="twitterAccount in connection.twitter_accounts" ng-model="twitterAccount.username")
-        %a.add-btn.btn-link(ng-click="addTwitterAccount()") + Add a Twitter feed
+        %div(ng-repeat="twitterAccount in connection.twitter_accounts" ng-hide="twitterAccount._destroy")
+          %input.form-control#tw-accounts{:placeholder => "@example"}(ng-model="twitterAccount.username")
+          %a.btn-xs.btn.btn-danger(ng-click="removeTwitterAccount(twitterAccount)")
+            %i.glyphicon.glyphicon-remove
+        %a.add-btn.btn.btn-link(ng-click="addTwitterAccount()") + Add a Twitter feed
       .help-block
         %p.help-block-title Such as:
         %ul 
