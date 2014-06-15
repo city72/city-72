@@ -6,8 +6,8 @@ class Cms::CityConnectionsController < BackOfficeController
   end
 
   def update
-    @city_connection.attributes = params[:connection]
-    @city_connection.save!
+    @city_connection.attributes = params[:city_connection]
+    @city_connection.save
     render status: :ok, nothing: true
   end
 
