@@ -43,8 +43,10 @@ City72::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += ['*.js',
+  config.assets.precompile += [ '*.js',
                                 #add css not imported in application.css.scss
                                 'joyride-2.1.css', 'active_admin.css', 'admin_no_cms.css', 'jquery.modal.css',
+                                'backoffice.css', 'login.css',
                                 '*.png', '*.jpg', '*.jpeg', '*.gif']
+
 end

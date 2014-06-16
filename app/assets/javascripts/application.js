@@ -10,10 +10,10 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
+//= require jquery/dist/jquery
 //= require jquery_ujs
-//= require underscore-min.js
-//= require modernizr.js
+//= require underscore/underscore
+//= require modernizr/modernizr
 //= require jquery.browser.js
 //= require jquery.mobile-menu.js
 //= require jquery.bxslider.min.js
