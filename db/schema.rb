@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140616014327) do
+ActiveRecord::Schema.define(:version => 20140616175848) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20140616014327) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.boolean  "fixed"
+    t.string   "network_url"
   end
 
   create_table "current_modes", :force => true do |t|
