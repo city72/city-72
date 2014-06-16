@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140616181532) do
+ActiveRecord::Schema.define(:version => 20140616184254) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -67,11 +67,12 @@ ActiveRecord::Schema.define(:version => 20140616181532) do
     t.string   "headline"
     t.string   "now"
     t.string   "in_an_emergency"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.boolean  "fixed"
     t.string   "network_url"
     t.boolean  "included"
+    t.integer  "city_connection_id"
   end
 
   create_table "current_modes", :force => true do |t|
