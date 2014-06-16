@@ -20,5 +20,15 @@
       = link_to "Plan", cms_plan_index_path
     %li
       = link_to "About", cms_about_index_path
+    %li.user
+      %a.dropdown-toggle{data: {toggle:"dropdown"}}
+        %i.glyphicon.glyphicon-user
+        User
+        %b.caret
+      %ul.dropdown-menu{role: "menu"}
+        %li 
+          %a{href: "#"} Change Password
+        %li
+          %a{href: "#"} Log Out
     %li.em-menu
       = link_to "Map & Updates", cms_map_index_path
