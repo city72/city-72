@@ -3,6 +3,8 @@ class Cms::CityConnectionsController < BackOfficeController
   before_filter :set_connection
 
   def show
+    @city_connection_json = CityConnectionSerializer.new(@city_connection).to_json
+    @all_networks_json = ActiveModel::ArraySerializer.new(CityNetwork.all, each_serializer: CityNetworkSerializer).to_json
   end
 
   def update

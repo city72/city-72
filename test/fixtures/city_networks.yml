@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  headline: MyString
+  now: MyString
+  in_an_emergency: MyString
+
+two:
+  headline: MyString
+  now: MyString
+  in_an_emergency: MyString

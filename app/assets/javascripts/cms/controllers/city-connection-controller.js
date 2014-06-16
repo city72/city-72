@@ -1,7 +1,8 @@
 backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', function ($scope, cmsService) {
 
-  $scope.initializer = function (cityConnectionJson) {
+  $scope.initializer = function (cityConnectionJson, allNetworksJson) {
     $scope.connection = JSON.parse(cityConnectionJson).city_connection;
+    $scope.networks = JSON.parse(allNetworksJson)
   };
 
   $scope.updateConnection = function () {

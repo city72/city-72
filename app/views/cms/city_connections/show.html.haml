@@ -1,4 +1,4 @@
-.main-content.connections(ng-controller="CityConnectionController" ng-init="initializer('#{CityConnectionSerializer.new(@city_connection).to_json}')")
+.main-content.connections(ng-controller="CityConnectionController" ng-init="initializer('#{@city_connection_json}', '#{@all_networks_json}')")
 
   %form{:role => "form"}(name="connectionForm" novalidate ng-submit="updateConnection()")
     
@@ -40,33 +40,20 @@
     
     .editable-list-container
       %ul.editable-list
-        %li
+        %li(ng-repeat="network in networks")
           %label.include-field{:for => "include-network-1"} 
             %input#include-network-1{:type => "checkbox", :checked => "checked"}/
             %span Include this Network
           .list-element
             .logo.nextdoor
-            %h3 Meet your neighbors on Nextdoor
+            %h3 {{network.headline}}
             %h4 Now:
-            %p Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan.
+            %p {{network.now}}
             %h4 In an Emergency:
-            %p Log onto Nextdoor to share local information and resources with people who live near you.
+            %p {{network.in_an_emergency}}
           .list-actions
             %button.btn{type: "button", data: {toggle:"modal", target:".edit-network"}} Edit
 
-        %li
-          %label.include-field{:for => "include-network-2"} 
-            %input#include-network-2{:type => "checkbox", :checked => "checked"}/
-            %span Include this Network
-          .list-element
-            .logo.airbnb
-            %h3 Sign up for AirBnb
-            %h4 Now:
-            %p Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan.
-            %h4 In an Emergency:
-            %p Log onto Nextdoor to share local information and resources with people who live near you.
-          .list-actions
-            %button.btn{type: "button", data: {toggle:"modal", target:".edit-network"}} Edit
       %a.add-btn{:href => "#"} + Add a Network 
 
     %h2 Partners and Resources
