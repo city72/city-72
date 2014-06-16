@@ -3,7 +3,8 @@
   %form{:role => 'form', name: 'cityForm'}(novalidate ng-submit="updateCity()")
 
     .screen-intro
-      %p.screen-info Fill in your city's details below to create your custom City72 site.
+      %p.screen-info
+        Fill in your city's details below to create your custom City72 site. 
       .action-area
         %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
           %span.ladda-label Save Changes
@@ -11,18 +12,20 @@
 
     .form-group(ng-class="{'has-error': cityForm.name.$dirty && cityForm.name.$invalid}")
       %label.control-label{:for => 'name'}
-        City Name
+        City Name 
         %span.help (e.g. New York, Denver ... )
+        %span.req *
       %input.form-control#name{:name => 'name', :'ng-model' => 'city.name'}(required)
       %span.help-block(ng-show="cityForm.name.$dirty && cityForm.name.$invalid")
         can't be blank
 
     .form-group(ng-class="{'has-error': cityForm.abbreviation.$dirty && cityForm.abbreviation.$invalid}")
-      %label.control-label{:for => 'abbreviation'}
+      %label.control-label{:for => 'city-abr'}
         City Abbreviation
         %span.help (e.g. NY, Den ... up to 4 letters )
-      .input-group.col-sm-2
-        %input.form-control#city-abr{:name => 'abbreviation', :'ng-model' => 'city.abbreviation'}(required)
+        %span.req *
+      .input-group.input-sm
+        %input.form-control#city-abr{:name => 'city-abr', :'ng-model' => 'city.abbreviation'}(required)
         %span.input-group-addon 72
       %span.help-block(ng-show="cityForm.abbreviation.$dirty && cityForm.abbreviation.$invalid")
         can't be blank
@@ -35,46 +38,50 @@
       %span.help-block If you leave this field blank your site will refer to people as "[City] residents."
 
     .form-group(ng-class="{'has-error': cityForm.possessive.$dirty && cityForm.possessive.$invalid}")
-      %label.control-label{:for => 'possessive'} 
-        What is the posesive form of your city name?
+      %label.control-label{:for => 'city-posesive'} 
+        What is the possessive form of your city name?
         %span.help (e.g. Chicago's, Dallas')
-      %input.form-control#city-posesive{:name => 'possessive', :'ng-model' => 'city.possessive'}(required)
+        %span.req *
+      %input.form-control#city-posesive{:name => 'city-posesive', :'ng-model' => 'city.possessive'}(required)
       %span.help-block(ng-show="cityForm.possessive.$dirty && cityForm.possessive.$invalid")
         can't be blank
 
     .form-group
       %label{:for => 'color_cd'}
         Accent Color for Website
-      %select.form-control#select-color{:name => 'color_cd', :'ng-model' => 'city.color_cd'}
+      %select.form-control#color_cd{:name => 'color_cd', :'ng-model' => 'city.color_cd'}
         %option(ng-repeat="color in availableColors" value="{{color.key}}" ng-selected="color.key == city.color_cd") {{color.value}}
 
-    .form-group
-      %label{:for => 'select-city-image'}
-        Homepage Image: Your City
-      %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
-      %input.form-control#select-city-image{:type => 'file'}
+    .img-group
+      .form-group
+        %label{:for => 'select-city-image'}
+          Homepage Image: Your City
+        %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
+        %input.form-control#select-city-image{:type => 'file'}
 
-    .form-group
-      %label{:for => 'city-image-credit'}
-        Image Credit
-        %span.help (e.g. Flickr user name)
-      %input.form-control#city-image-credit{name: 'image_credit', :'ng-model' => 'city.image_credit'}
+      .form-group
+        %label{:for => 'city-image-credit'}
+          Image Credit
+          %span.help (e.g. Flickr user name)
+        %input.form-control#city-image-credit{name: 'image_credit', :'ng-model' => 'city.image_credit'}
 
-    .form-group
-      %label{:for => 'select-resident-image'} 
-        Homepage Image: Residents of Your City
-      %input.form-control#select-resident-image{:type => 'file'}
+    .img-group
+      .form-group
+        %label{:for => 'select-resident-image'} 
+          Homepage Image: Residents of Your City
+        %input.form-control#select-resident-image{:type => 'file'}
 
-    .form-group
-      %label{:for => 'resident-image-credit'}
-        Image Credit
-        %span.help (e.g. Flickr user name)
-      %input.form-control#resident-image-credit{name: 'resident_image_credit', :'ng-model' => 'city.resident_image_credit'}
+      .form-group
+        %label{:for => 'resident-image-credit'}
+          Image Credit
+          %span.help (e.g. Flickr user name)
+        %input.form-control#resident-image-credit{name: 'resident_image_credit', :'ng-model' => 'city.resident_image_credit'}
 
     .form-group(ng-class="{'has-error': cityForm.brought_by.$invalid && cityForm.brought_by.$dirty}")
       %label.control-label{:for => 'brought_by'}
         This website brought to you by...
         %span.help (e.g. the San Francisco Department of Emergency Management)
+        %span.req *
       %input.form-control#brought-by{name: 'brought_by', :'ng-model' => 'city.brought_by'}(required)
       %span.help-block(ng-show="cityForm.brought_by.$invalid && cityForm.brought_by.$dirty")
         can't be blank
@@ -84,11 +91,15 @@
     .form-group
       %label{:for => 'agency_url'}
         Your Agency's Website
-      %input.form-control#agency-site{name: 'agency_url', :'ng-model' => 'city.agency_url'}(required)
+        %span.req *
+      .input-group.input-md
+        .input-group-addon http://
+        %input.form-control#agency-site{name: 'agency_url', :'ng-model' => 'city.agency_url'}(required)
 
     .form-group
       %label{:for => 'contact_email'}
         Contact Us Email
+        %span.req *
       %input.form-control#contact-email{name: 'contact_email', :'ng-model' => 'city.contact_email', :placeholder => 'name@example.com'}(required)
 
 
