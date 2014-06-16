@@ -42,7 +42,7 @@
       %ul.editable-list
         %li(ng-repeat="network in networks")
           %label.include-field{:for => "include-network-1"} 
-            %input#include-network-1{:type => "checkbox", :checked => "checked"}/
+            %input#include-network-1{:type => "checkbox", :checked => "checked"}
             %span Include this Network
           .list-element
             .logo.nextdoor
@@ -52,9 +52,9 @@
             %h4 In an Emergency:
             %p {{network.in_an_emergency}}
           .list-actions
-            %button.btn{type: "button", data: {toggle:"modal", target:".edit-network"}} Edit
+            %button.btn{type: "button"}(ng-click="editNetwork(network)") Edit
 
-      %a.add-btn{:href => "#"} + Add a Network 
+      %a.add-btn{:href => "#"} + Add a Network
 
     %h2 Partners and Resources
     %p What local resources focus on community preparedness? What partners does your organization collaborate with? (e.g. your local Red Cross chapter)
@@ -78,38 +78,7 @@
         %span.ladda-label Save Changes
 
 
-/ MODAL: Edit Network
-.modal.edit-element.edit-network.fade
-  .modal-dialog.modal-lg
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4.modal-title Edit Network
-      .modal-body
-        %form{:role => "form"}
-          .form-group
-            %label{:for => "network-headline"} Network Headline <span class="help">(e.g. Sign up for Network)</span>
-            %input.form-control#network-headline{:type => "text"}/
-          .form-group
-            %label{:for => "network-image"} Network Logo
-            %input.form-control#network-image{:type => "file"}/
-          .form-group
-            %label{:for => "network-now"} Now
-            %p.help-block A short description of how to use the network now. (e.g. set up your account and connect with friends.)
-            %textarea.form-control#network-now{:name => "network-now", :cols => "90", :rows => "8"} 
-          .form-group
-            %label{:for => "network-emergency"} In an Emergency
-            %p.help-block A short description of how to use the network in an emergency. (e.g. post your status and check on friends.)
-            %textarea.form-control#network-emergency{:name => "network-emergency", :cols => "90", :rows => "8"} 
-          .form-group
-            %label{:for => "network-link"} Link to Network Website
-            .input-group.input-md
-              %span.input-group-addon http://
-              %input.form-control#network-link{:type => "text"}/
-      .modal-footer
-        %button.btn.btn-primary{type: "button"} Save changes
-        %button.btn{"data-dismiss" => "modal", type: "button"} Cancel
-        
+  %edit-network-modal(network="networkInEdition")
 
 / MODAL: Edit Partner
 .modal.edit-element.edit-partner.fade

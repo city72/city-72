@@ -1,0 +1,2 @@
+module Cms::DirectivesHelper
+end

@@ -1,5 +1,7 @@
 backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', function ($scope, cmsService) {
 
+  $scope.networkInEdition = null;
+
   $scope.initializer = function (cityConnectionJson, allNetworksJson) {
     $scope.connection = JSON.parse(cityConnectionJson).city_connection;
     $scope.networks = JSON.parse(allNetworksJson)
@@ -7,7 +9,8 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
 
   $scope.updateConnection = function () {
     $scope.updating = true;
-    cmsService.updateConnection($scope.connection).then(
+    cmsService.updateConnection($scope.connection)
+    .then(
       function () {
         $scope.updating = false;
       },
@@ -27,6 +30,10 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
 
   $scope.removeTwitterAccount = function (twitterAccount) {
     twitterAccount._destroy = 1;
+  };
+
+  $scope.editNetwork = function (network) {
+    $scope.networkInEdition = network;
   };
 
 }]);

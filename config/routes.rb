@@ -30,6 +30,9 @@ City72::Application.routes.draw do
   namespace :cms do
     root to: "landing#index"
 
+    get "directives/network_modal"
+    get "directives/affiliate_form"
+
     resource :city, only: [:show, :update]
     resource :city_connections, only: [:show, :update]
     resources :supplies, only: [:index]
