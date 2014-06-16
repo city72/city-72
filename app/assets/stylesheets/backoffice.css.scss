@@ -76,7 +76,7 @@ $light-grey: #f2f2f2;
   }
 
   .em-menu {
-    @extend .pull-right;
+    @extend .navbar-right;
 
     a {
       color: $orange-em;
@@ -109,24 +109,24 @@ $light-grey: #f2f2f2;
 }
 
 .form-group {
-  margin: 3rem 0;
+  margin: 5rem 0;
 }
 
 label .help {
   font-weight: normal;
 }
 
-.input-sm { width: 100px; }
-.input-md { width: 360px; }
-.input-lg { width: 700px; }
-
 .input-multi {
   margin: 1rem 0;
 }
 
-.form-control {
-  @extend .input-md;
-}
+.input-sm, .input-group.input-sm { width: 100px; }
+.input-md, .input-group.input-md  { width: 360px; }
+.input-lg, .input-group.input-lg  { width: 700px; }
+
+.form-control { @extend .input-md; }
+.input-sm .form-control { @extend .input-sm; }
+.input-lg .form-control { @extend .input-lg; }
 
 textarea.form-control {
   width: auto;
@@ -135,6 +135,7 @@ textarea.form-control {
 .add-btn {
   display: inline-block;
   margin: 0 0 2rem;
+  cursor: pointer;
 }
 
 .form-actions {
@@ -147,6 +148,12 @@ textarea.form-control {
 
 .form-actions .btn {
   @extend .btn-lg;
+}
+
+.req {
+  font-size: 2rem;
+  line-height: 1em;
+  @extend .text-danger;
 }
 
 /* EDITABLE LISTS */
