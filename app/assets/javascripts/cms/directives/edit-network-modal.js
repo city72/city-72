@@ -4,13 +4,20 @@ backofficeApp.directive('editNetworkModal', ['cmsService', function (cmsService)
     restrict: 'E',
     scope: {
       network: '=',
-      networks: '='
+      networks: '=',
+      newNetwork: '='
     },
     controller: ['$scope', function ($scope) {
 
       $scope.save = function () {
-        var networkIndex = _($scope.networks).indexOf($scope.network);
-        $scope.networks[networkIndex] = $scope.networkInEdition;
+        if ($scope.newNetwork) {
+          $scope.networkInEdition.included = true;
+          $scope.networks.push($scope.networkInEdition);
+          $scope.newNetwork = false;
+        } else {
+          var networkIndex = _($scope.networks).indexOf($scope.network);
+          $scope.networks[networkIndex] = $scope.networkInEdition;
+        }
         $scope.network = null;
       };
 

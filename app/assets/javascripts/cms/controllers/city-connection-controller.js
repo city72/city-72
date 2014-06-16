@@ -1,6 +1,7 @@
 backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', function ($scope, cmsService) {
 
   $scope.networkInEdition = null;
+  $scope.addingNewNetwork = false;
 
   $scope.initializer = function (cityConnectionJson) {
     $scope.connection = JSON.parse(cityConnectionJson).city_connection;
@@ -40,6 +41,11 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
 
   $scope.editNetwork = function (network) {
     $scope.networkInEdition = network;
+  };
+
+  $scope.newNetwork = function () {
+    $scope.addingNewNetwork = true;
+    $scope.networkInEdition = {};
   };
 
 }]);

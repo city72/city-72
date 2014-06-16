@@ -54,7 +54,7 @@
           .list-actions
             %button.btn{type: "button"}(ng-click="editNetwork(network)") Edit
 
-      %a.add-btn{:href => "#"} + Add a Network
+      %a.btn.btn-link.add-btn(ng-click="newNetwork()") + Add a Network
 
     %h2 Partners and Resources
     %p What local resources focus on community preparedness? What partners does your organization collaborate with? (e.g. your local Red Cross chapter)
@@ -78,7 +78,7 @@
         %span.ladda-label Save Changes
 
 
-  %edit-network-modal(network="networkInEdition" networks="connection.city_networks")
+  %edit-network-modal(network="networkInEdition" networks="connection.city_networks" new-network="addingNewNetwork")
 
 / MODAL: Edit Partner
 .modal.edit-element.edit-partner.fade
