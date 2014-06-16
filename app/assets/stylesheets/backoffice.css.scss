@@ -156,6 +156,12 @@ textarea.form-control {
   @extend .text-danger;
 }
 
+.img-group {
+  background-color: #f4f4f4;
+  margin: 0 -5rem .5rem;
+  padding: .5rem 5rem;
+}
+
 /* EDITABLE LISTS */
 .editable-list {
   @extend .clearfix;
