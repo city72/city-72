@@ -21,7 +21,7 @@
     
     .row.twitter-accounts
       .form-group
-        %label{:for => "tw-accounts"}What Twitter accounts are useful to follow in your area?
+        %label{:for => "tw-accounts"} What Twitter accounts are useful to follow in your area?
         %div(ng-repeat="twitterAccount in connection.twitter_accounts" ng-hide="twitterAccount._destroy")
           %input.form-control#tw-accounts{:placeholder => "@example"}(ng-model="twitterAccount.username")
           %a.btn-xs.btn.btn-danger(ng-click="removeTwitterAccount(twitterAccount)")

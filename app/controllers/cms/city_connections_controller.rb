@@ -8,8 +8,9 @@ class Cms::CityConnectionsController < BackOfficeController
   end
 
   def update
+    params[:city_connection][:twitter_accounts_attributes] = [] unless params[:city_connection][:twitter_accounts_attributes]
     @city_connection.attributes = params[:city_connection]
-    @city_connection.save
+    @city_connection.save!
     render status: :ok, nothing: true
   end
 
