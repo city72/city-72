@@ -1,4 +1,4 @@
-backofficeApp.directive('editNetworkModal', function () {
+backofficeApp.directive('editNetworkModal', ['cmsService', function (cmsService) {
 
   return {
     restrict: 'E',
@@ -20,7 +20,6 @@ backofficeApp.directive('editNetworkModal', function () {
 
     }],
     link: function ($scope, $element, $attrs) {
-
       $modalEl = $element.children('.edit-network');
 
       $scope.$watch('network', function () {
@@ -31,9 +30,8 @@ backofficeApp.directive('editNetworkModal', function () {
           $modalEl.modal('hide');
         }
       });
-
     },
     templateUrl: '/cms/directives/network_modal'
   };
 
-});
+}]);

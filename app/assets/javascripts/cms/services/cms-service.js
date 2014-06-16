@@ -5,29 +5,18 @@ backofficeApp.factory('cmsService', ['$resource', function ($resource) {
   });
 
   var Connection = $resource('/cms/city_connections', null, {
-    'update': {method: 'PUT'}
+    'update': {method: 'PUT'},
   });
 
   return {
     updateCity: function (city) {
-      
-      if (city.affiliates) {
-        city.affiliates_attributes = city.affiliates;
-      } else {
-        city.affiliates_attributes = [];
-      }
-    
+      city.affiliates_attributes = city.affiliates ? city.affiliates : [];
       return City.update(city).$promise;
     },
 
     updateConnection: function (connection) {
-
-      if (connection.twitter_accounts) {
-        connection.twitter_accounts_attributes = connection.twitter_accounts;
-      } else {
-        connection.twitter_accounts_attributes = [];
-      }
-
+      connection.twitter_accounts_attributes = connection.twitter_accounts ? connection.twitter_accounts : [];
+      connection.city_networks_attributes = connection.city_networks ? connection.city_networks : [];
       return Connection.update(connection).$promise;
     }
   }

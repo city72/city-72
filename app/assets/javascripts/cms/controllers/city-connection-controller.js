@@ -2,13 +2,19 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
 
   $scope.networkInEdition = null;
 
-  $scope.initializer = function (cityConnectionJson, allNetworksJson) {
+  $scope.initializer = function (cityConnectionJson) {
     $scope.connection = JSON.parse(cityConnectionJson).city_connection;
-    $scope.networks = JSON.parse(allNetworksJson)
   };
+
+  $scope.orderedNetworks = function () {
+    return _($scope.connection.city_networks).sortBy(function (network) {
+      return +network.id;
+    });
+  }
 
   $scope.updateConnection = function () {
     $scope.updating = true;
+
     cmsService.updateConnection($scope.connection)
     .then(
       function () {

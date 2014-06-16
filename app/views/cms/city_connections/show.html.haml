@@ -1,4 +1,4 @@
-.main-content.connections(ng-controller="CityConnectionController" ng-init="initializer('#{@city_connection_json}', '#{@all_networks_json}')")
+.main-content.connections(ng-controller="CityConnectionController" ng-init="initializer('#{@city_connection_json}')")
 
   %form{:role => "form"}(name="connectionForm" novalidate ng-submit="updateConnection()")
     
@@ -40,9 +40,9 @@
     
     .editable-list-container
       %ul.editable-list
-        %li(ng-repeat="network in networks")
+        %li(ng-repeat="network in orderedNetworks()")
           %label.include-field{:for => "include-network-1"} 
-            %input#include-network-1{:type => "checkbox", :checked => "checked"}
+            %input#include-network-1{:type => "checkbox", :checked => "checked"}(ng-model="network.included")
             %span Include this Network
           .list-element
             .logo.nextdoor
@@ -78,7 +78,7 @@
         %span.ladda-label Save Changes
 
 
-  %edit-network-modal(network="networkInEdition" networks="networks")
+  %edit-network-modal(network="networkInEdition" networks="connection.city_networks")
 
 / MODAL: Edit Partner
 .modal.edit-element.edit-partner.fade
