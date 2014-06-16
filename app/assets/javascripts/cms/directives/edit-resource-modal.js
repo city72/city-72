@@ -24,14 +24,14 @@ backofficeApp.directive('editResourceModal', [function () {
       };
     }],
     link: function ($scope, $element, $attrs) {
-      $modalEl = $element.children('.edit-partner');
+      $scope.$modalEl = $element.children('#resourceModal');
 
       $scope.$watch('resource', function () {
         if ($scope.resource) {
           $scope.resourceInEdition = _($scope.resource).clone();
-          $modalEl.modal('show');
+          $scope.$modalEl.modal('show');
         } else {
-          $modalEl.modal('hide');
+          $scope.$modalEl.modal('hide');
         }
       });
     },

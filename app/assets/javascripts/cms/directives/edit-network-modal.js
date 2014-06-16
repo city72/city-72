@@ -27,14 +27,14 @@ backofficeApp.directive('editNetworkModal', ['cmsService', function (cmsService)
 
     }],
     link: function ($scope, $element, $attrs) {
-      $modalEl = $element.children('.edit-network');
+      $scope.$modalEl = $element.children('#networkModal');
 
       $scope.$watch('network', function () {
         if ($scope.network) {
           $scope.networkInEdition = _($scope.network).clone();
-          $modalEl.modal('show');
+          $scope.$modalEl.modal('show');
         } else {
-          $modalEl.modal('hide');
+          $scope.$modalEl.modal('hide');
         }
       });
     },
