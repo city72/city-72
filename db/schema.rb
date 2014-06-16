@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140616184254) do
+ActiveRecord::Schema.define(:version => 20140616195312) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -72,6 +72,15 @@ ActiveRecord::Schema.define(:version => 20140616184254) do
     t.boolean  "fixed"
     t.string   "network_url"
     t.boolean  "included"
+    t.integer  "city_connection_id"
+  end
+
+  create_table "city_resources", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "website"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "city_connection_id"
   end
 

@@ -3,4 +3,5 @@ class CityConnectionSerializer < ActiveModel::Serializer
 
   has_many :twitter_accounts
   has_many :city_networks
+  has_many :city_resources
 end
