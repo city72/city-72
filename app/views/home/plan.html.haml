@@ -34,7 +34,7 @@
           %a{href:"/pdf/SF72_plan_vietnamese.pdf", lang:"vi", title:"Tải về Lập kế hoạch bằng tiếng Việt"} Việt
   .stay-tuned
     %h2 Imagine this.
-    %p <i class="to-replace-abr">City</i>72 is always thinking about innovative new tools to help <i class="to-replace-moniker">Citizens</i> plan ahead—including a mobile app that would help you find and communicate with your loved ones in the event of a crisis.</br>A few features are detailed below. Would you use a tool like this? Interested in collaborating with <i class="to-replace-abr">City</i>72 to make this real? Send feedback to <a href="mailto:sf72@sfgov.org">sf72@sfgov.org</a>.
+    %p #{@city.abbreviation}72 is always thinking about innovative new tools to help #{@city.moniker} plan ahead—including a mobile app that would help you find and communicate with your loved ones in the event of a crisis.</br>A few features are detailed below. Would you use a tool like this? Interested in collaborating with #{@city.abbreviation}72 to make this real? Send feedback to <a href="mailto:sf72@sfgov.org">sf72@sfgov.org</a>.
     %ul
       %li
         %p.geo Geo-track your loved ones relative to your location, to quickly establish a meetup spot.
@@ -75,6 +75,6 @@
             %h2 Stay tuned.
             %p Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.
           %li
-            %h2 Check <i class="to-replace-abr">City</i>72.
+            %h2 Check #{@city.abbreviation}72.
             %p In the event of an emergency, this site will go into emergency mode and bring you live updates and tweets from around the city, information on missing persons, and ways you can help.
   = render :partial => "partials/footer"

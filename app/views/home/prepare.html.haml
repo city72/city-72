@@ -16,7 +16,7 @@
           %p A little foresight can go a long way. Make a meetup plan with your inner circle of friends, relatives, or immediate family.
           %a{href: "/pdf/SF72_prepare_plan.pdf"} Download the pdf
       .aside
-        .get-connected There are many ways to prepare and get connected. Print and fill out this guide now. Download and use the <a href="connect"><i class="to-replace-abr">City</i>72 App</a> when it launches.
+        .get-connected There are many ways to prepare and get connected. Print and fill out this guide now. Download and use the <a href="connect">#{@city.abbreviation}72 App</a> when it launches.
   .prepare-sections
     %a.prepare-things{href:"supplies"}
       %h2 Find out what you need. 
@@ -41,12 +41,12 @@
   .prepare-sections
     %a.prepare-people{href:"stories"}
       %h2 Know what to expect.
-      %p Take a peek into the lives of fellow <i class="to-replace-moniker">Citizens</i> who know a thing or two about disasters &ndash; and connection. <br />Watch, learn, and then take action.
+      %p Take a peek into the lives of fellow #{@city.moniker} who know a thing or two about disasters &ndash; and connection. <br />Watch, learn, and then take action.
       %strong Go to stories
   .talk-to-friends
     %h2 Reach out to your communities.
     %p What communities are a part of your life? Your yoga studio, local market, or apartment building might be the place to find support in the event of an emergency. By being more aware of your networks and surroundings, you’ll be ready to reach out, no matter what happens.
     .coming-kit
-      %h4 <strong>Coming Soon!</strong> The <i class="to-replace-abr">City</i>72 Community Action Kit
+      %h4 <strong>Coming Soon!</strong> The #{@city.abbreviation}72 Community Action Kit
       %p.small Throw a preparedness party &ndash; or just start a conversation. We’ll send you everything you need to activate your network &ndash; from stickers and stencils to guides about sharing resources.
   = render :partial => "partials/footer"

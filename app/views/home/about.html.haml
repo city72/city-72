@@ -2,31 +2,31 @@
 .main-container.about
 	= render :partial => "partials/header"
 	.opening.about-intro
-		%h1 <i class="to-replace-abr">City</i>72 is for us,</br>by us.
+		%h1 #{@city.abbreviation}72 is for us,</br>by us.
 		%div
-			%p Our mission is to enable <i class="to-replace-moniker">Citizens</i> to get prepared. <i class="to-replace-abr">City</i>72 was created by the <i class="to-replace-name">Your City</i> Department of Emergency Management, with feedback and ideas from the people of <i class="to-replace-name">Your City</i>. The best way to do this is for us to get connected to each other and share resources. 	
+			%p Our mission is to enable #{@city.moniker} to get prepared. #{@city.abbreviation}72 was created by the #{@city.name} Department of Emergency Management, with feedback and ideas from the people of #{@city.name}. The best way to do this is for us to get connected to each other and share resources. 	
 	.intro-row
 		.main-intro
 			%h2 Our manifesto.
-			%p At <i class="to-replace-abr">City</i>72, we believe in connection, not catastrophe. We know that after a disaster, people come together. <i class="to-replace-abr">City</i>72 is about coming together before a disaster. Read our manifesto, rooted in the local quirks and characteristics that make our city special, to see how we can get connected.
+			%p At #{@city.abbreviation}72, we believe in connection, not catastrophe. We know that after a disaster, people come together. #{@city.abbreviation}72 is about coming together before a disaster. Read our manifesto, rooted in the local quirks and characteristics that make our city special, to see how we can get connected.
 		.aside
 			.connect
 				%strong We believe in connection,<br /> not catastrophe.
-				%a.read-manifesto{href:'our_manifesto'} Read the <i class="to-replace-abr">City</i>72< Manifesto
+				%a.read-manifesto{href:'our_manifesto'} Read the #{@city.abbreviation}72 Manifesto
 	%ul.about-data
 		%li
 			.about-who
 			%h2 Who
-			%p For <i class="to-replace-abr">City</i>, by <i class="to-replace-abr">City</i>. <i class="to-replace-abr">City</i>72 was built by the City of <i class="to-replace-name">Your City/i>, in partnership with the citizens.
-			%p <i class="to-replace-name">Your City</i> is like no other city – and this platform is tailored to the particular quirks, context and people that make up our city by the bay.
+			%p For #{@city.abbreviation}, by #{@city.abbreviation}. #{@city.abbreviation}72 was built by the City of #{@city.name}, in partnership with the citizens.
+			%p #{@city.name} is like no other city – and this platform is tailored to the particular quirks, context and people that make up our city by the bay.
 		%li
 			.about-what
 			%h2 What
-			%p A people-centered vision of emergency preparedness. Nobody likes to think about emergencies, but <i class="to-replace-abr">City</i>72 takes the mystery out of the process of getting prepared. We do this by telling human stories and providing tools that fit into your daily life. 
-			%p <i class="to-replace-abr">City</i>72 is not a new social network. It’s a platform designed to plug into your existing networks – whether social or digital.
+			%p A people-centered vision of emergency preparedness. Nobody likes to think about emergencies, but #{@city.abbreviation}72 takes the mystery out of the process of getting prepared. We do this by telling human stories and providing tools that fit into your daily life. 
+			%p #{@city.abbreviation}72 is not a new social network. It’s a platform designed to plug into your existing networks – whether social or digital.
 		%li
 			.about-why
 			%h2 Why
 			%p A little now will mean a lot later. Small actions have a huge impact; connecting with your network, downloading an app, or watching a video is the first step towards being better prepared for an emergency. 
-			%p Leave it to <i class="to-replace-name">Your City</i> to lead the charge for a different kind of emergency prep. Let’s start the movement.
+			%p Leave it to #{@city.name} to lead the charge for a different kind of emergency prep. Let’s start the movement.
 	= render :partial => "partials/footer"
