@@ -17,7 +17,8 @@ backofficeApp.factory('cmsService', ['$resource', function ($resource) {
     updateConnection: function (connection) {
       connection.twitter_accounts_attributes = connection.twitter_accounts ? connection.twitter_accounts : [];
       connection.city_networks_attributes = connection.city_networks ? connection.city_networks : [];
-      return Connection.update(connection).$promise;
+      connection.city_resources_attributes = connection.city_resources ? connection.city_resources : [];
+      return Connection.update(_(connection).omit('twitter_accounts', 'city_networks', 'city_resources')).$promise;
     }
   }
 

@@ -3,6 +3,9 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
   $scope.networkInEdition = null;
   $scope.addingNewNetwork = false;
 
+  $scope.resourceInEdition = null;
+  $scope.addingNewResource = false;
+
   $scope.initializer = function (cityConnectionJson) {
     $scope.connection = JSON.parse(cityConnectionJson).city_connection;
   };
@@ -11,7 +14,13 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
     return _($scope.connection.city_networks).sortBy(function (network) {
       return +network.id;
     });
-  }
+  };
+
+  $scope.orderedResources = function () {
+    return _($scope.connection.city_resources).sortBy(function (resource) {
+      return +resource.id;
+    });
+  };
 
   $scope.updateConnection = function () {
     $scope.updating = true;
@@ -46,6 +55,15 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
   $scope.newNetwork = function () {
     $scope.addingNewNetwork = true;
     $scope.networkInEdition = {};
+  };
+
+  $scope.editResource = function (resource) {
+    $scope.resourceInEdition = resource;
+  };
+
+  $scope.newResource = function () {
+    $scope.addingNewResource = true;
+    $scope.resourceInEdition = {};
   };
 
 }]);

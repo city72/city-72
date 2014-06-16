@@ -32,6 +32,7 @@ City72::Application.routes.draw do
 
     get "directives/network_modal"
     get "directives/affiliate_form"
+    get "directives/resource_modal"
 
     resource :city, only: [:show, :update]
     resource :city_connections, only: [:show, :update]

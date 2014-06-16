@@ -7,5 +7,8 @@ class Cms::DirectivesController < BackOfficeController
 
   def affiliate_form
   end
+
+  def resource_modal
+  end
   
 end

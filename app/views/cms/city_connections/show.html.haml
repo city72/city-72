@@ -42,7 +42,7 @@
       %ul.editable-list
         %li(ng-repeat="network in orderedNetworks()")
           %label.include-field{:for => "include-network-1"} 
-            %input#include-network-1{:type => "checkbox", :checked => "checked"}(ng-model="network.included")
+            %input#include-network-1{:type => "checkbox"}(ng-model="network.included")
             %span Include this Network
           .list-element
             .logo.nextdoor
@@ -60,18 +60,18 @@
     %p What local resources focus on community preparedness? What partners does your organization collaborate with? (e.g. your local Red Cross chapter)
     .editable-list-container
       %ul.editable-list
-        %li
-          %label.include-field{:for => "include-partner-1"} 
-            %input#include-partner-1{:type => "checkbox", :checked => "checked"}/
+        %li(ng-repeat="resource in orderedResources()")
+          %label.include-field 
+            %input{:type => "checkbox"}(ng-model="resource.included")
             %span Include this Partner
           .list-element
-            .logo.redcross
-            %h3 American Red Cross
-            %p Provides a variety of trainings including first aid, CPR, and how to prepare for emergencies
-            %a{:href => "#"} www.redcross.org 
+            .logo
+            %h3 {{resource.name}}
+            %p {{resource.description}}
+            %a(ng-href="{{'http://' + resource.website}}") {{resource.website}}
           .list-actions
-            %button.btn{type: "button", data: {toggle:"modal", target:".edit-partner"}} Edit
-    %a.add-btn{:href => "#"} + Add a Partner or Resource
+            %button.btn{type: "button"}(ng-click="editResource(resource)") Edit
+    %a.btn.btn-link.add-btn(ng-click="newResource()") + Add a Partner or Resource
 
     .form-actions
       %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
@@ -80,30 +80,5 @@
 
   %edit-network-modal(network="networkInEdition" networks="connection.city_networks" new-network="addingNewNetwork")
 
-/ MODAL: Edit Partner
-.modal.edit-element.edit-partner.fade
-  .modal-dialog.modal-lg
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4.modal-title Edit Partner/Resource Information
-      .modal-body
-        %form{:role => "form"}
-          .form-group
-            %label{:for => "partner-image"} Logo
-            %input.form-control#partner-image{:type => "file"}/
-          .form-group
-            %label{:for => "partner-name"} Partner Name
-            %input.form-control#partner-name{:type => "text"}/
-          .form-group
-            %label{:for => "partner-description"} Description of services
-            %textarea.form-control#partner-description{:name => "partner-description", :cols => "90", :rows => "8"}
-          .form-group
-            %label{:for => "partner-link"} Website Link <span class="help">(e.g. www.example.com)</span>
-            .input-group.input-md
-              %span.input-group-addon http://
-              %input.form-control#network-link{:type => "text"}/
-      .modal-footer
-        %button.btn.btn-primary{type: "button"} Save changes
-        %button.btn{"data-dismiss" => "modal", type: "button"} Cancel
+  %edit-resource-modal(resource="resourceInEdition" resources="connection.city_resources" new-resource="addingNewResource")
         
