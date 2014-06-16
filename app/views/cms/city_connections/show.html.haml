@@ -1,0 +1,84 @@
+.main-content.connections(ng-controller="CityConnectionController" ng-init="initializer('#{@city_connection_json}')")
+
+  %form{:role => "form"}(name="connectionForm" novalidate ng-submit="updateConnection()")
+    
+    .screen-intro
+      %p.screen-info Create tie-ins with social media tools, local networks and community resources
+      .action-area
+        %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
+          %span.ladda-label Save Changes
+
+    %h2 Social Networks and services
+    %p Your City72 site will automatically include 3 digital connection networks: Facebook, Twitter, Google Drive
+
+    .form-group(ng-class="{'has-error': connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid}")
+      %label.control-label{:for => "fb-page"} Your Facebook Page
+      .input-group.input-md
+        %span.input-group-addon http://
+        %input.form-control#fb-page{ :type => 'text', :name => 'facebook_page_url'}(ng-model="connection.facebook_page_url" required)
+      %span.help-block(ng-show="connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid")
+        can't be blank
+    
+    .row.twitter-accounts
+      .form-group
+        %label{:for => "tw-accounts"} What Twitter accounts are useful to follow in your area?
+        %div(ng-repeat="twitterAccount in connection.twitter_accounts" ng-hide="twitterAccount._destroy")
+          %input.form-control#tw-accounts{:placeholder => "@example"}(ng-model="twitterAccount.username")
+          %a.btn-xs.btn.btn-danger(ng-click="removeTwitterAccount(twitterAccount)")
+            %i.glyphicon.glyphicon-remove
+        %a.add-btn.btn.btn-link(ng-click="addTwitterAccount()") + Add a Twitter feed
+      .help-block
+        %p.help-block-title Such as:
+        %ul 
+          %li Transportation authorities
+          %li City agencies
+          %li Reliable, trusted feeds focused on emergency updates
+      
+
+    %h2 Additional Networks
+    %p What social networks or services would be useful community resources in your city? City72 is pre-populated with two (Nextdoor and AirBnb) in case you want to include them.
+    
+    .editable-list-container
+      %ul.editable-list
+        %li(ng-repeat="network in orderedNetworks()")
+          %label.include-field{:for => "include-network-1"} 
+            %input#include-network-1{:type => "checkbox"}(ng-model="network.included")
+            %span Include this Network
+          .list-element
+            .logo.nextdoor
+            %h3 {{network.headline}}
+            %h4 Now:
+            %p {{network.now}}
+            %h4 In an Emergency:
+            %p {{network.in_an_emergency}}
+          .list-actions
+            %button.btn{type: "button"}(ng-click="editNetwork(network)") Edit
+
+      %a.btn.btn-link.add-btn(ng-click="newNetwork()") + Add a Network
+
+    %h2 Partners and Resources
+    %p What local resources focus on community preparedness? What partners does your organization collaborate with? (e.g. your local Red Cross chapter)
+    .editable-list-container
+      %ul.editable-list
+        %li(ng-repeat="resource in orderedResources()")
+          %label.include-field 
+            %input{:type => "checkbox"}(ng-model="resource.included")
+            %span Include this Partner
+          .list-element
+            .logo
+            %h3 {{resource.name}}
+            %p {{resource.description}}
+            %a(ng-href="{{'http://' + resource.website}}") {{resource.website}}
+          .list-actions
+            %button.btn{type: "button"}(ng-click="editResource(resource)") Edit
+    %a.btn.btn-link.add-btn(ng-click="newResource()") + Add a Partner or Resource
+
+    .form-actions
+      %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
+        %span.ladda-label Save Changes
+
+
+  %edit-network-modal(network="networkInEdition" networks="connection.city_networks" new-network="addingNewNetwork")
+
+  %edit-resource-modal(resource="resourceInEdition" resources="connection.city_resources" new-resource="addingNewResource")
+        

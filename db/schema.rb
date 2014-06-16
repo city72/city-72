@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140610175707) do
+ActiveRecord::Schema.define(:version => 20140616211422) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -55,6 +55,34 @@ ActiveRecord::Schema.define(:version => 20140610175707) do
     t.string   "brought_by"
     t.string   "agency_url"
     t.integer  "color_cd"
+  end
+
+  create_table "city_connections", :force => true do |t|
+    t.string   "facebook_page_url"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "city_networks", :force => true do |t|
+    t.string   "headline"
+    t.string   "now"
+    t.string   "in_an_emergency"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.boolean  "fixed"
+    t.string   "network_url"
+    t.boolean  "included"
+    t.integer  "city_connection_id"
+  end
+
+  create_table "city_resources", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "website"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.integer  "city_connection_id"
+    t.boolean  "included"
   end
 
   create_table "current_modes", :force => true do |t|
@@ -138,6 +166,13 @@ ActiveRecord::Schema.define(:version => 20140610175707) do
     t.string   "item1_link"
     t.string   "item2_link"
     t.string   "item3_link"
+  end
+
+  create_table "twitter_accounts", :force => true do |t|
+    t.integer  "city_connection_id"
+    t.string   "username"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
 end

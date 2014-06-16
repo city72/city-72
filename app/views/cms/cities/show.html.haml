@@ -1,4 +1,4 @@
-.main-content.city-info{:'ng-controller' => 'CityInfoController'}(ng-init="initialize('#{CitySerializer.new(@city).to_json}', '#{City.colors.to_json}')")
+.main-content.city-info(ng-controller="CityInfoController" ng-init="initialize('#{CitySerializer.new(@city).to_json}', '#{City.colors.to_json}')")
 
   %form{:role => 'form', name: 'cityForm'}(novalidate ng-submit="updateCity()")
 
@@ -8,7 +8,6 @@
       .action-area
         %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
           %span.ladda-label Save Changes
-          %span.ladda-spinner
 
     .form-group(ng-class="{'has-error': cityForm.name.$dirty && cityForm.name.$invalid}")
       %label.control-label{:for => 'name'}
@@ -108,7 +107,7 @@
 
     %affiliate-form(ng-repeat="affiliate in city.affiliates" affiliate="affiliate" affiliates="city.affiliates")
 
-    %a.add-btn(ng-click="newAffiliate()") + Add an Affiliate
+    %a.add-btn.btn-link(ng-click="newAffiliate()") + Add an Affiliate
 
     .form-actions
       %button.btn.btn-primary.ladda-button{:type => "submit"}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")

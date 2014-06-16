@@ -5,6 +5,7 @@
 //= require ladda-bootstrap/dist/spin
 //= require ladda-bootstrap/dist/ladda
 //= require ./ui-ladda
+//= require bootstrap/dist/js/bootstrap
 //= require_self
 //= require_tree ./directives
 //= require_tree ./services
