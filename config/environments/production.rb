@@ -46,6 +46,7 @@ City72::Application.configure do
   config.assets.precompile += [ '*.js',
                                 #add css not imported in application.css.scss
                                 'joyride-2.1.css', 'active_admin.css', 'admin_no_cms.css', 'jquery.modal.css',
+                                'backoffice.css',
                                 '*.png', '*.jpg', '*.jpeg', '*.gif']
 
 end
