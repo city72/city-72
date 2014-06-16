@@ -187,6 +187,10 @@ textarea.form-control {
     opacity: 0.2;
   }
 
+  .list-element a {
+    color: $accent-gold;
+  }
+
   .btn {
     display: block;
     width: 100%;
@@ -223,6 +227,10 @@ textarea.form-control {
     }
   }
 }
+
+.editable-list.half-width li { width: 467px; }
+.editable-list.half-width li:nth-child(2n) { margin-right: 0; }
+.editable-list.half-width li:nth-child(3n) { margin-right: 1.5rem ; }
 
 /* MODALS */
 .modal-footer {
