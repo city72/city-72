@@ -132,7 +132,7 @@ GEM
     neat (1.3.0)
       bourbon (>= 2.1)
       sass (>= 3.2)
-    newrelic_rpm (3.8.1.221)
+    newrelic_rpm (3.6.8.168)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyamorous (0.5.0)
@@ -217,33 +217,33 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
-  activeadmin
+  active_model_serializers (~> 0.8.1)
+  activeadmin (~> 0.6.3)
   bootstrap-sass (~> 3.1.1.1)
   bourbon (~> 3.1.8)
-  browser
-  carrierwave
-  cloudinary
+  browser (~> 0.6.0)
+  carrierwave (~> 0.10.0)
+  cloudinary (= 1.0.72)
   coffee-rails (~> 3.2.1)
   devise (~> 3.0.0)
-  galetahub-simple_captcha
-  haml-rails
-  heroku-deflater
+  galetahub-simple_captcha (~> 0.1.5)
+  haml-rails (~> 0.4)
+  heroku-deflater (~> 0.5.3)
   jquery-rails (= 2.3.0)
   json (~> 1.7.7)
-  mandrill-api
-  meta_search (>= 1.1.0.pre)
+  mandrill-api (~> 1.0.51)
+  meta_search (~> 1.1.0.pre)
   neat (~> 1.3.0)
-  newrelic_rpm (>= 3.6.8.168)
-  pg
+  newrelic_rpm (~> 3.6.8.168)
+  pg (~> 0.17.1)
   pry
   pry-debugger
-  rack-cors
-  rack-timeout
+  rack-cors (~> 0.2.9)
+  rack-timeout (~> 0.0.4)
   rails (= 3.2.13)
-  rmagick
+  rmagick (~> 2.13.2)
   sass-rails (~> 3.2.3)
   simple_enum (= 1.6.9)
   simple_form (~> 2.1.1)
   uglifier (>= 1.0.3)
-  unicorn-rails
+  unicorn-rails (~> 2.1.1)

@@ -2,24 +2,24 @@ source 'https://rubygems.org'
 ruby "1.9.3"
 
 gem 'rails', '3.2.13'
-gem 'unicorn-rails'
-gem 'rack-timeout'
-gem 'newrelic_rpm', '>= 3.6.8.168'
-gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
-gem 'haml-rails'
-gem 'pg'
-gem "active_model_serializers"
-gem "carrierwave"
-gem "rmagick"
-gem 'cloudinary'
-gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-timeout', '~> 0.0.4'
+gem 'newrelic_rpm', '~> 3.6.8.168'
+gem 'activeadmin', '~> 0.6.3'
+gem "meta_search", '~> 1.1.0.pre'
+gem 'haml-rails', '~> 0.4'
+gem 'pg', '~> 0.17.1'
+gem "active_model_serializers", '~> 0.8.1'
+gem "carrierwave", '~> 0.10.0'
+gem "rmagick", '~> 2.13.2'
+gem 'cloudinary', '1.0.72'
+gem 'rack-cors', '~> 0.2.9', :require => 'rack/cors'
 gem 'json', '~> 1.7.7'
-gem 'mandrill-api'
-gem "galetahub-simple_captcha", :require => "simple_captcha"
-gem "browser"
+gem 'mandrill-api', '~> 1.0.51'
+gem "galetahub-simple_captcha", '~> 0.1.5', :require => "simple_captcha"
+gem "browser", '~> 0.6.0'
 
-gem 'heroku-deflater', :group => :production
+gem 'heroku-deflater', '~> 0.5.3', :group => :production
+gem 'unicorn-rails', '~> 2.1.1', :group => :production
 
 gem 'simple_form', '~> 2.1.1'
 gem 'bootstrap-sass', '~> 3.1.1.1'
