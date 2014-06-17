@@ -2,7 +2,7 @@ City72::Application.routes.draw do
 
   devise_for :admin_users
 
-  resources :stories, only: [:index, :show]
+  resources :stories, only: [:index]
 
   root to: 'home#index'
 
