@@ -1,5 +1,6 @@
 backofficeApp.controller('CitySuppliesController', ['$scope', 'cmsService', function ($scope, cmsService) {
 
+  $scope.updating = false;
   $scope.supplyInEdition = null;
   $scope.suppliesInEdition = null;
 

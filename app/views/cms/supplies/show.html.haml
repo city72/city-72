@@ -2,7 +2,8 @@
   .screen-intro
     %p.screen-info This list provides a list of essential, useful, and personal supplies people can gather before an emergency. Use the pre-populated supplies list below, or swap out an item as needed. 
     .action-area
-      %a.btn.btn-primary{:href => "#"} Save Changes
+      %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
+        %span.ladda-label Save Changes
 
   %h2 Essential Supplies
   %ul.editable-list
@@ -45,6 +46,7 @@
         %button.btn{type: "button"} Edit
 
   .form-actions
-    %button.btn.btn-primary(ng-click="save()") Save Changes 
+    %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
+      %span.ladda-label Save Changes
 
   %edit-supply-modal(supply="supplyInEdition" supplies="suppliesInEdition")
