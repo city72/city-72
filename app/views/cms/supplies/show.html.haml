@@ -45,6 +45,6 @@
         %button.btn{type: "button"} Edit
 
   .form-actions
-    %a.btn.btn-primary{:href => "#"} Save Changes 
+    %button.btn.btn-primary(ng-click="save()") Save Changes 
 
   %edit-supply-modal(supply="supplyInEdition" supplies="suppliesInEdition")

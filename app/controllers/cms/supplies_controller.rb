@@ -12,6 +12,13 @@ class Cms::SuppliesController < BackOfficeController
   end
 
   def update
+    supplies = params[:supplies]
+    supplies.each do |s|
+      supply = Item.find(s[:id])
+      supply.attributes = s.except(:id)
+      supply.save!
+    end
+    render status: :ok, nothing: true
   end
 
   private 

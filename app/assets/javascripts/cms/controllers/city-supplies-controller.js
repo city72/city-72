@@ -15,4 +15,19 @@ backofficeApp.controller('CitySuppliesController', ['$scope', 'cmsService', func
     $scope.suppliesInEdition = supplies;
   };
 
+  $scope.save = function () {
+    $scope.updating = true;
+    $scope.fatalError = false;
+    cmsService.updateSupplies($scope.essentials, $scope.usefuls, $scope.personals)
+    .then(
+      function () {
+        $scope.updating = false;
+      },
+      function () {
+        $scope.fatalError = true;
+        $scope.updating = false;
+      }
+    );
+  };
+
 }]);
