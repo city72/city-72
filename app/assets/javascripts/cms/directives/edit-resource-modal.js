@@ -1,4 +1,5 @@
 backofficeApp.directive('editResourceModal', [function () {
+  
   return {
     restrict: 'E',
     scope: {
@@ -37,4 +38,5 @@ backofficeApp.directive('editResourceModal', [function () {
     },
     templateUrl: '/cms/directives/resource_modal'
   };
+  
 }]);

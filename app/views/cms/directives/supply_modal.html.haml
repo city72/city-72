@@ -1,0 +1,20 @@
+.modal.edit-element.edit-supply.fade#edit-supple
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Edit Supply
+      .modal-body
+        %form{:role => "form"}
+          .form-group
+            %label{:for => "supply-image"} Image of Supply
+            %input.form-control#supply-image{:type => "file"}/
+          .form-group
+            %label{:for => "supply-name"} Supply Name <span class="help">(e.g. Water)</span>
+            %input.form-control#supply-name{:type => "text"}/
+          .form-group 
+            %label{:for => "supply-description"} Supply Details
+            %textarea.form-control#supply-description{:name => "supply-description", :cols => "90", :rows => "8"}
+      .modal-footer
+        %button.btn.btn-primary{type: "button"} Save changes
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
