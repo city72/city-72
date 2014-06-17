@@ -1,9 +1,9 @@
 .header
   .emergency
-    %label Emergency Mode
-    %select
-      %option off
-      %option on
+    %label
+      Emergency Mode:
+      %strong.status OFF
+    %button.btn.btn-em{data: {toggle:"modal", target:".switch-em"}} Switch ON
   %h1.logo City72
 
 %nav.navbar
@@ -32,3 +32,21 @@
           %a{href: "#"} Log Out
     %li.em-menu
       = link_to "Map & Updates", cms_map_index_path
+
+.modal.switch-em.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Switch Emergency Mode
+      .modal-body
+        %form{:role => "form"}
+          .form-group
+            %label{:for => "mode-headline"} Incident title
+            %input.form-control.input-lg#mode-headline{:type => "text"}/
+          .form-group
+            %label{:for => "mode-description"} A short description of the incident
+            %textarea.form-control#mode-description{:name => "mode-description", :cols => "90", :rows => "3"} 
+      .modal-footer
+        %button.btn.btn-primary{type: "button"} Switch to Emergency Mode
+        %button.btn{"data-dismiss" => "modal", type: "button"} Cancel
