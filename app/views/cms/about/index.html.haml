@@ -11,6 +11,10 @@
       %p.help-block Choose an image of something unique to your city.
 
     .form-group
+      %label{:for => "about-brought"} Brought to you by <span class="help">(Your Organization)</span>
+      %textarea.form-control#about-brought{ :name => "about-brought", :cols => "90", :rows => "8"}
+
+    .form-group
       %label{:for => "select-plan"} Customize your city72 logo 
       %input{:type => "file"}/
       %p.help-block Optionally replace the generated City72 logo. See the worksheet for instructions on how to get this SVG file.

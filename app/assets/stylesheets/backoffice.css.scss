@@ -85,6 +85,11 @@ $light-grey: #f2f2f2;
 
 }
 
+.navbar-nav > li.active > a {
+  padding-bottom: 11px;
+  border-bottom: 4px solid $accent-gold;
+}
+
 .user a {
   font-weight: normal;
 }
