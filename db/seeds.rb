@@ -1,12 +1,16 @@
 Story.delete_all
 Kit.delete_all
 Item.delete_all
+City.delete_all
+Plan.delete_all
 
-if City.create(name: "Example City", abbreviation: "ex", possessive: "-", brought_by: "-", agency_url: "-", contact_email: "-", color_cd: 0)
-  puts "City created"
-else
-  puts "The city data is wrong"
-end
+plan = Plan.create! emergency_type_cd: 0
+
+city = City.new
+city.plan = plan
+city.save(validate: false)
+
+city_connection = CityConnection.create!
 
 if AdminUser.create(email: 'admin@sf72.org', password: '123456')
   puts "Admin user created"

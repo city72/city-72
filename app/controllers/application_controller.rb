@@ -19,10 +19,10 @@ class ApplicationController < ActionController::Base
   	end  
   end
 
-  private
-    def set_configured_vars
-      @mode = CurrentMode.get_current_mode
-      @city = City.first
-    end
+  protected
+  def set_configured_vars
+    @mode = CurrentMode.get_current_mode
+    @city = City.first
+  end
 
 end

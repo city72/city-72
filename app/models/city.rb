@@ -11,6 +11,8 @@ class City < ActiveRecord::Base
   has_many :affiliates
   accepts_nested_attributes_for :affiliates, allow_destroy: true
 
+  has_one :plan
+
   validates :name, :abbreviation, :possessive, :brought_by, :agency_url, :contact_email, 
     :color_cd, presence: true
 
