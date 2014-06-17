@@ -1,6 +1,9 @@
 class Cms::SuppliesController < BackOfficeController
 
-  def index
+  def show
+  end
+
+  def update
   end
 
 end
