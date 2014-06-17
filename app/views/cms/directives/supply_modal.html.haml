@@ -1,0 +1,26 @@
+.modal.edit-element.edit-supply.fade#edit-supple
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{type: "button"}(ng-click="cancel()") ×
+        %h4.modal-title Edit Supply
+      .modal-body
+        %form{:role => "form", :name => 'supplyForm'}
+          .form-group
+            %label{:for => "supply-image"} Image of Supply
+            %input.form-control#supply-image{:type => "file"}/
+          .form-group(ng-class="{'has-error': supplyForm.name.$dirty && supplyForm.name.$invalid}")
+            %label.control-label{:for => "supply-name"} 
+              Supply Name 
+              %span.help (e.g. Water)
+            %input.form-control#supply-name{:type => 'text', name: 'name'}(ng-model="supplyInEdition.title" required)
+            %span.help-block(ng-show="supplyForm.name.$dirty && supplyForm.name.$invalid")
+              can't be blank
+          .form-group(ng-class="{'has-error': supplyForm.use_case.$dirty && supplyForm.use_case.$invalid}")
+            %label.control-label{:for => 'use_case'} Supply Details
+            %textarea.form-control#supply-description{:name => 'use_case', :cols => '90', :rows => '8'}(ng-model="supplyInEdition.use_case" required)
+            %span.help-block(ng-show="supplyForm.use_case.$dirty && supplyForm.use_case.$invalid")
+              can't be blank
+      .modal-footer
+        %button.btn.btn-primary{type: "button"}(ng-click="save()" ng-disabled="supplyForm.$invalid") Save changes
+        %button.btn.btn-default{type: "button"}(ng-click="cancel()") Cancel
