@@ -2,13 +2,6 @@ class Cms::DirectivesController < BackOfficeController
 
   layout false
 
-  def network_modal
-  end
-
-  def affiliate_form
-  end
-
-  def resource_modal
-  end
+  empty_methods :network_modal, :affiliate_form, :resource_modal
   
 end
