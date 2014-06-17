@@ -1,4 +1,4 @@
-.main-content.city-info(ng-controller="CityInfoController" ng-init="initialize('#{CitySerializer.new(@city).to_json}', '#{City.colors.to_json}')")
+.main-content.city-info(ng-controller="CityInfoController" ng-init="initialize('#{escape_javascript(CitySerializer.new(@city).to_json)}', '#{escape_javascript(City.colors.to_json)}')")
 
   %form{:role => 'form', name: 'cityForm'}(novalidate ng-submit="updateCity()")
 
