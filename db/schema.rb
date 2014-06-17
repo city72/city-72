@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140617203444) do
+ActiveRecord::Schema.define(:version => 20140617205311) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20140617203444) do
     t.integer  "call_to_action_cd"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.boolean  "selected"
   end
 
   create_table "feeds", :force => true do |t|

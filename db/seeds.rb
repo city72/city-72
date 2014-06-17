@@ -4,6 +4,7 @@ Item.delete_all
 City.delete_all
 Plan.delete_all
 CityConnection.delete_all
+EmergencyStory.delete_all
 
 plan = Plan.create! emergency_type_cd: 0
 
