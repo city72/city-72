@@ -26,10 +26,10 @@
         User
         %b.caret
       %ul.dropdown-menu{role: "menu"}
-        %li 
+        %li
           %a{href: "#"} Change Password
         %li
-          %a{href: "#"} Log Out
+          = link_to "Log Out", destroy_admin_user_session_path, method: :delete
     %li.em-menu
       = link_to "Map & Updates", cms_map_index_path
 
@@ -46,7 +46,7 @@
             %input.form-control.input-lg#mode-headline{:type => "text"}/
           .form-group
             %label{:for => "mode-description"} A short description of the incident
-            %textarea.form-control#mode-description{:name => "mode-description", :cols => "90", :rows => "3"} 
+            %textarea.form-control#mode-description{:name => "mode-description", :cols => "90", :rows => "3"}
       .modal-footer
         %button.btn.btn-primary{type: "button"} Switch to Emergency Mode
         %button.btn{"data-dismiss" => "modal", type: "button"} Cancel
