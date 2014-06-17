@@ -8,17 +8,17 @@
 
 %nav.navbar
   %ul.nav.navbar-nav
-    %li
+    %li{:class => ('active' if current_page?(cms_city_path))}
       = link_to "City Info", cms_city_path
-    %li
+    %li{:class => ('active' if current_page?(cms_city_connections_path))}
       = link_to "Connections", cms_city_connections_path
-    %li
+    %li{:class => ('active' if current_page?(cms_supplies_path))}
       = link_to "Supplies", cms_supplies_path
-    %li
+    %li{:class => ('active' if current_page?(cms_stories_path))}
       = link_to "Stories", cms_stories_path
-    %li
+    %li{:class => ('active' if current_page?(cms_plan_path))}
       = link_to "Plan", cms_plan_path
-    %li
+    %li{:class => ('active' if current_page?(cms_about_index_path))}
       = link_to "About", cms_about_index_path
     %li.user
       %a.dropdown-toggle{data: {toggle:"dropdown"}}
