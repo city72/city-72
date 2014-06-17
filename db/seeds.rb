@@ -3,10 +3,11 @@ Kit.delete_all
 Item.delete_all
 City.delete_all
 Plan.delete_all
+CityConnection.delete_all
 
 plan = Plan.create! emergency_type_cd: 0
 
-city = City.new
+city = City.new name: 'Example city'
 city.plan = plan
 city.save(validate: false)
 
@@ -126,7 +127,8 @@ status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Warm Clothes',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid2_dxovpo.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid2_dxovpo.jpg",
+  order: 0
   )
 if status
   puts "Item created"
@@ -138,7 +140,8 @@ status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Bottled Water',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/water_y78yt0.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/water_y78yt0.jpg",
+  order: 1
   )
 
 if status
@@ -151,7 +154,8 @@ status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'First Aid Kit',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg",
+  order: 2
   )
 
 if status
@@ -164,7 +168,8 @@ status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'First Aid Kit',
   use_case: 'Something witty and human about canned food. More copy here to figure out what the word count can be for this roolover on the image. Your friends came around',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg"
+  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703495/first_aid_gwjrzt.jpg",
+  order: 3
   )
 
 if status
