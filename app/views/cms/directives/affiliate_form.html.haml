@@ -1,2 +1,11 @@
-%h1 Cms::Directives#affiliate_form
-%p Find me in app/views/cms/directives/affiliate_form.html.haml
+.form-group(ng-hide="affiliate._destroy")
+  %label.control-label
+    Name of Affiliate 
+    %span.help (name and corresponding URL)
+  %input.form-control{:placeholder => 'name@example.com'}(ng-model="affiliate.name" required)
+  .input-group
+    %span.input-group-addon http://
+    %input.form-control(ng-model="affiliate.url" required)
+  %a.btn.btn-danger.btn-xs(ng-click="removeAffiliate()")
+    %i.glyphicon.glyphicon-remove
+    Remove
