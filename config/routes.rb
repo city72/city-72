@@ -38,7 +38,7 @@ City72::Application.routes.draw do
     resource :city_connections, only: [:show, :update]
     resources :supplies, only: [:index]
     resources :stories, only: [:index]
-    resources :plan, only: [:index]
+    resource :plan, only: [:show, :update]
     resources :about, only: [:index]
     resources :map, only: [:index]
     resources :updates, only: [:index]
