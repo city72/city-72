@@ -32,5 +32,5 @@
 
   .statement
     %h2 Identity Statement
-    %p San Francisco is pretty&hellip; different. Some might even say it's seven square miles of contradictions. San Francisco is the fog, the farmer's market, the costume box in every closet. It's the $5 cup of coffee next to the $1 taco. It's where optimism meets work ethic. It's the nudists and the startups, the hippies, the idealists, the lifers, the transplants. This city might be the only thing we all have in common.
+    %p= @city.statement
   = render :partial => "partials/footer"

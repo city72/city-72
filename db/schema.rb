@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140617205311) do
+ActiveRecord::Schema.define(:version => 20140617213848) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20140617205311) do
     t.string   "brought_by"
     t.string   "agency_url"
     t.integer  "color_cd"
+    t.text     "statement"
   end
 
   create_table "city_connections", :force => true do |t|
