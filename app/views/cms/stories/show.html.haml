@@ -1,4 +1,4 @@
-.main-content.stories
+.main-content.stories(ng-controller="CityStoriesController" ng-init="initialize('#{escape_javascript(@city_json)}', '#{escape_javascript(@stories)}')")
   .screen-intro
     %p.screen-info Once you've selected, interviewed, and photographed residents for the Stories section, enter the content below.
     .action-area
@@ -9,49 +9,26 @@
     %li
       .list-element
         .img
-        %h3 Jane
-        %p On the morning of
+        %h3 {{selectedStory.name}}
+        %p {{selectedStory.story}}
       .list-actions
         %button.btn{type: "button", data: {toggle:"modal", target:".edit-story"}} Edit Story
 
   %h2 Stories
   %ul.editable-list.half-width
-    %li
+    %li(ng-repeat="story in stories")
       .list-element
         .img
-        %h3 Jane
-        %p On the morning of
-        %a{:href => "#"} Get Connected 
-      .list-actions
-        %button.btn{type: "button", data: {toggle:"modal", target:".edit-story"}} Edit Story
-    %li
-      .list-element
-        .img
-        %h3 Jane
-        %p On the morning of
-        %a{:href => "#"} Get Connected 
-      .list-actions
-        %button.btn{type: "button", data: {toggle:"modal", target:".edit-story"}} Edit Story
-    %li
-      .list-element
-        .img
-        %h3 Jane
-        %p On the morning of
-        %a{:href => "#"} Get Connected 
-      .list-actions
-        %button.btn{type: "button", data: {toggle:"modal", target:".edit-story"}} Edit Story
-    %li
-      .list-element
-        .img
-        %h3 Jane
-        %p On the morning of
-        %a{:href => "#"} Get Connected 
+        %h3 {{story.name}}
+        %p {{story.story}}
+        %span.call-to-action {{callToAction(story)}}
       .list-actions
         %button.btn{type: "button", data: {toggle:"modal", target:".edit-story"}} Edit Story
 
+
   %h2 Your city's Identity Statement
   %p.help-block Express the personality of your city through your Identity Statement – the rallying cry for city and residents alike.
-  %textarea.form-control#identity-statement{:name => "identity-statement", :cols => "90", :rows => "7"}
+  %textarea.form-control#identity-statement{:name => "statement", :cols => "90", :rows => "7"}
   
   .form-actions
     %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
