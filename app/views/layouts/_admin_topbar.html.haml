@@ -42,12 +42,11 @@
       .modal-body
         %form{:role => "form"}
           .form-group
-            %label{:for => "mode-headline"} Describe the Emergency Event in a line
-            %input.form-control#mode-headline{:type => "text"}/
+            %label{:for => "mode-headline"} Incident title
+            %input.form-control.input-lg#mode-headline{:type => "text"}/
           .form-group
-            %label{:for => "mode-description"} Now
-            %p.help-block A short description of the Event
-            %textarea.form-control#mode-description{:name => "mode-description", :cols => "90", :rows => "8"} 
+            %label{:for => "mode-description"} A short description of the incident
+            %textarea.form-control#mode-description{:name => "mode-description", :cols => "90", :rows => "3"} 
       .modal-footer
         %button.btn.btn-primary{type: "button"} Switch to Emergency Mode
         %button.btn{"data-dismiss" => "modal", type: "button"} Cancel
