@@ -121,6 +121,10 @@ $light-grey: #f2f2f2;
   margin: 5rem 0;
 }
 
+.modal .form-group {
+  margin: 2rem 0;
+}
+
 label .help {
   font-weight: normal;
 }
@@ -297,4 +301,14 @@ textarea.form-control {
     padding: 0 0 0 1.3em;
   }
   
+}
+
+/* MOBILE */
+@media all and (max-width: 768px) {
+  .header .emergency {
+    float: none !important;
+    margin: -32px -15px 0;
+    padding: 15px;
+    border-bottom: 1px solid;
+  }
 }
