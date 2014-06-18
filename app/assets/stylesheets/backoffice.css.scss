@@ -200,8 +200,9 @@ textarea.form-control {
     opacity: 0.2;
   }
 
-  .list-element a {
+  .list-element .call-to-action {
     color: $accent-gold;
+    font-weight: bold;
   }
 
   .btn {

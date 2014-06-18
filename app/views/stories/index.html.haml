@@ -5,47 +5,32 @@
   
   .opening
     %div
-      %p It doesn’t matter if it’s good times or bad times, we all need to eat. It’s a natural fit for chefs to stand up to help (in an emergency). friends &mdash; both digitally and in person.
+      %p= @selected_story.story
     %span.story-about
-      %h1 Charles
-      %h2 The Embarcadero, San Francisco
+      %h1= @selected_story.name
+      %h2= @selected_story.location
 
   .intro
     .personal-look 
       %h2 A personal look at emergencies and connection.
-      %p Watch stories of people who have lived through disasters—and those who are already fostering connections in <span class="to-replace-city">San Francisco</span>. No matter your situation, chances are, there’s someone like you with wisdom to share.
+      %p Watch stories of people who have lived through disasters—and those who are already fostering connections in #{@city.name}. No matter your situation, chances are, there’s someone like you with wisdom to share.
 
   %ul.story-list
-    %li
-      %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
-      .story-data
-        %h4 Lindsay
-        %h5.location SOMA
-        %p.quote We won’t always be able to reach our earthquake kit. We might need help or help others. we are going to need to trust each other deeply in the days following a major emergency. These relationships are the ones that are going to sustain us and save us.
-        %a{:href => "#"} Use your networks 
-    %li
-      %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
-      .story-data
-        %h4 Carol
-        %h5.location The Haight
-        %p.quote At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It’s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.
-        %a{:href => "#"} Gather your supplies
-    %li
-      %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
-      .story-data
-        %h4 Justin
-        %h5.location Ocean Beach
-        %p.quote We set up a list – a calling tree with our friends, and we have a meeting place. We have a general timeline – after an emergency, on the half hour, every half hour. It’s a corner store near our houses.
-        %a{:href => "#"} Use your networks
-    %li
-      %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
-      .story-data
-        %h4 Roberta and Monica
-        %h5.location The Sunset
-        %p.quote At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It’s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.
-        %a{:href => "#"} Gather your Supplies
+    - @stories.each do |story|
+      %li
+        %img{src: "/assets/static/coming-soon-1.jpg", alt: "A new story coming soon"}
+        .story-data
+          %h4= story.name
+          %h5.location= story.location
+          %p.quote= story.story
+          - if story.get_connected?
+            = link_to 'Get Connected', connect_path
+          - elsif story.gather_supplies?
+            = link_to 'Gather Supplies', supplies_path
+          - elsif story.make_a_plan?
+            = link_to 'Make a plan', plan_path
 
   .statement
     %h2 Identity Statement
-    %p San Francisco is pretty&hellip; different. Some might even say it's seven square miles of contradictions. San Francisco is the fog, the farmer's market, the costume box in every closet. It's the $5 cup of coffee next to the $1 taco. It's where optimism meets work ethic. It's the nudists and the startups, the hippies, the idealists, the lifers, the transplants. This city might be the only thing we all have in common.
+    %p= @city.statement
   = render :partial => "partials/footer"

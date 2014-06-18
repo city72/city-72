@@ -2,7 +2,7 @@ City72::Application.routes.draw do
 
   devise_for :admin_users
 
-  resources :stories, only: [:index, :show]
+  resources :stories, only: [:index]
 
   root to: 'home#index'
 
@@ -25,11 +25,12 @@ City72::Application.routes.draw do
     get "directives/affiliate_form"
     get "directives/resource_modal"
     get "directives/supply_modal"
+    get "directives/story_modal"
 
     resource :city, only: [:show, :update]
     resource :city_connections, only: [:show, :update]
     resource :supplies, only: [:show, :update]
-    resources :stories, only: [:index]
+    resource :stories, only: [:show, :update]
     resource :plan, only: [:show, :update]
     resources :about, only: [:index]
     resources :map, only: [:index]

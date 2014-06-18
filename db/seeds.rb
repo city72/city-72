@@ -1,9 +1,9 @@
-Story.delete_all
 Kit.delete_all
 Item.delete_all
 City.delete_all
 Plan.delete_all
 CityConnection.delete_all
+EmergencyStory.delete_all
 
 plan = Plan.create! emergency_type_cd: 0
 
@@ -13,84 +13,16 @@ city.save(validate: false)
 
 city_connection = CityConnection.create!
 
+selectedStory = EmergencyStory.create! name: 'Selected story', location: 'Example Location', story: 'Story details...', call_to_action_cd: 0, selected: true
+
+4.times do |i|
+  EmergencyStory.create! name: "Story \##{i}", location: 'Example Location', story: 'Story details...', call_to_action_cd:0
+end
+
 if AdminUser.create(email: 'admin@sf72.org', password: '123456')
   puts "Admin user created"
 else
   puts "Admin user already exist"
-end
-
-story_data = {
-  video_url: 'http://player.vimeo.com/video/5772729',
-  event: 'Hurricane Sandy',
-  category: StoryCategories::HURRICANE_OR_TORNADO,
-  person: 'Kristin',
-  person_type: PersonTypes::COMMUNITY_HUB,
-  location: 'New York City',
-  date: 'Nov 2012',
-  story: 'Kirstin was living with three roommates in her East Villiage apartment when Hurricane Sandy struck. Kirstin\'s apartment quickly became the tech hub of her neighborhood. Hear her story.',
-  story_header: 'Hurricane',
-  quote: 'After Hurricane Sandy we set up a generator and started charging people\'s phones',
-  item1_quote: 'It means you can leave the house at night.',
-  item2_quote: 'We didn\'t use it but it helped us feel safe.',
-  item3_quote: 'Our friends came around because we had wine.',
-  item1_subtitle: 'Emergency Supplies',
-  item2_subtitle: 'Meetup Plan',
-  item3_subtitle: 'Out of State Contact',
-  remote_item1_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
-  remote_item2_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
-  remote_item3_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg',
-  remote_video_image_url: 'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Hurracane_Sandy_cxijg8.jpg',
-  items_images_display_type: StoryItemsDisplayTypes::COLUMN_3_SQUARE,
-  items_title: StoryItemsTitles::HOW_I_AM_PREPARED
-}
-
-if Story.create(story_data)
-  puts "Story created"
-else
-  puts "Story already exist"
-end
-
-stories = [
-  ['Jim', PersonTypes::DISASTER_SURVIVOR, 'New Orleans', 'Jan 2005', 'Hurricane Katrina', StoryCategories::HURRICANE_OR_TORNADO,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/katrina_dwkp12.jpg'],
-  ['Jennifer and Peter', PersonTypes::DISASTER_SURVIVOR, 'San Francisco', 'Jun 1926', 'Great San Francisco Fire and Earthquake', StoryCategories::EARTHQUAKE,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/earthquake_l6bq6t.jpg'],
-  ['Bruce', PersonTypes::COMMUNITY_HUB, 'Los Angeles', 'Jul 1980', 'Heat Wave of 1980', StoryCategories::OTHER_EMERGENCY,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/heat-wave_y97b9d.jpg'],
-  ['Pedro', PersonTypes::DISASTER_SURVIVOR, 'Santiago de Chile', 'Mar 2010', 'Chilean earthquake of 2010', StoryCategories::EARTHQUAKE,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703526/2010-Chile-Earthquake-81_wvcuek.jpg'],
-  ['Ronaldo', PersonTypes::DISASTER_SURVIVOR, 'Rio de Janeiro', 'Oct 2011', 'Brazilian floods of 2011', StoryCategories::TSUNAMI_OR_FLOOD,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/rio-floods_h751xk.jpg'],
-  ['Jane', PersonTypes::DISASTER_SURVIVOR, 'Mississippi River Valley', 'Mar 2011', 'mississippi river floods of 2011', StoryCategories::TSUNAMI_OR_FLOOD,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703527/Mississippi_River_Flooding_t607_hqb2ql.jpg'],
-  ['Paul', PersonTypes::COMMUNITY_HUB, 'American Samoa', 'Jun 2011', 'Samoa earthquake of 2009', StoryCategories::EARTHQUAKE,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/samoa_vileze.jpg',
-        nil, nil, true],
-  ['Brad', PersonTypes::DISASTER_SURVIVOR, 'California', 'Oct 2007', 'California wildfires of 2007', StoryCategories::OTHER_EMERGENCY,
-        'http://res.cloudinary.com/zauber-labs/image/upload/v1374703528/wildfire_gy1hl6.jpg',
-        StoryItemsDisplayTypes::COLUMN_2_BLEED, StoryItemsTitles::WHAT_SHOULD_I_OFFER]
-]
-
-stories.each do |person, person_type, location, date, event, category, remote_video_image_url, items_images_display_type, items_title, only_two_items|
-  story_data[:person] = person
-  story_data[:person_type] = person_type
-  story_data[:location] = location
-  story_data[:date] = date
-  story_data[:event] = event
-  story_data[:category] = category
-  story_data[:remote_video_image_url] = remote_video_image_url
-  story_data[:items_images_display_type] = items_images_display_type || story_data[:items_images_display_type]
-  story_data[:items_title] = items_title || story_data[:items_title]
-  if only_two_items
-    story_data[:remote_item3_image_url] = ''
-  else
-    story_data[:remote_item3_image_url] = 'http://res.cloudinary.com/zauber-labs/image/upload/v1374180520/nxdwy9drpyyedrhxe5za.jpg'
-  end
-  if Story.create(story_data)
-    puts "Story created"
-  else
-    puts "Story already exist"
-  end
 end
 
 status = Kit.create(

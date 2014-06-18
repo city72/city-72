@@ -7,6 +7,7 @@ backofficeApp.directive('editSupplyModal', [function () {
       supplies: '='
     },
     controller: ['$scope', function ($scope) {
+      
       $scope.save = function () {
         var supplyIndex = _($scope.supplies).indexOf($scope.supply);
         $scope.supplies[supplyIndex] = $scope.supplyInEdition;

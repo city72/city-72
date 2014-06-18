@@ -3,16 +3,9 @@ class StoriesController < ApplicationController
   after_filter :static_content
 
   def index
-    @stories = Story.all
-  end
-
-  def show
-    @story = Story.find(params[:id])
-    @related_stories = Story.where("category = ? AND id != ?", @story.category, @story.id).sample(3)
-    related_stories_count = @related_stories.count
-    if related_stories_count < 3
-      @related_stories.concat Story.where("category != ?", @story.category).sample(3 - related_stories_count)
-    end
+    all_stories = EmergencyStory.order(:id).all
+    @selected_story = all_stories.select {|s| s.selected}.first
+    @stories = all_stories.collect.select {|s| !s.selected}
   end
 
 end

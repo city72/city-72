@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140616225202) do
+ActiveRecord::Schema.define(:version => 20140617213848) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20140616225202) do
     t.string   "brought_by"
     t.string   "agency_url"
     t.integer  "color_cd"
+    t.text     "statement"
   end
 
   create_table "city_connections", :force => true do |t|
@@ -89,6 +90,16 @@ ActiveRecord::Schema.define(:version => 20140616225202) do
     t.boolean  "mode"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "emergency_stories", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.text     "story"
+    t.integer  "call_to_action_cd"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.boolean  "selected"
   end
 
   create_table "feeds", :force => true do |t|
@@ -144,36 +155,6 @@ ActiveRecord::Schema.define(:version => 20140616225202) do
   end
 
   add_index "simple_captcha_data", ["key"], :name => "idx_key"
-
-  create_table "stories", :force => true do |t|
-    t.string   "video_url"
-    t.string   "person"
-    t.string   "event"
-    t.text     "story"
-    t.text     "quote"
-    t.string   "item1_image"
-    t.string   "item1_quote"
-    t.string   "item2_image"
-    t.string   "item2_quote"
-    t.string   "item3_image"
-    t.string   "item3_quote"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.string   "story_header"
-    t.string   "date"
-    t.string   "location"
-    t.string   "video_image"
-    t.string   "category"
-    t.string   "item1_subtitle"
-    t.string   "item2_subtitle"
-    t.string   "item3_subtitle"
-    t.string   "items_images_display_type"
-    t.string   "items_title"
-    t.string   "person_type"
-    t.string   "item1_link"
-    t.string   "item2_link"
-    t.string   "item3_link"
-  end
 
   create_table "twitter_accounts", :force => true do |t|
     t.integer  "city_connection_id"
