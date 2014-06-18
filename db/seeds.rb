@@ -8,7 +8,7 @@ EmergencyData.delete_all
 
 plan = Plan.create! emergency_type_cd: 0
 
-city = City.new name: 'Example city'
+city = City.new name: 'city'
 city.plan = plan
 city.save(validate: false)
 
@@ -81,7 +81,7 @@ end
 status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'Fire extinguisher',
-  use_case: 'You didn’t start the fire. But you can help extinguish it. Stash a fire extinguisher with your supplies so that you can stay safe.',
+  use_case: 'You didn\'t start the fire. But you can help extinguish it. Stash a fire extinguisher with your supplies so that you can stay safe.',
   remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156145/qkyeoyitydxzv8maov0v.png",
   order: 3
   )
@@ -107,7 +107,7 @@ end
 status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'Non-perishable food',
-  use_case: 'Next time you’re at the grocery store, add extra shelf-stable foods (that you like to eat!) to your basket. We recommend 3 days of food per person.',
+  use_case: 'Next time you\'re at the grocery store, add extra shelf-stable foods (that you like to eat!) to your basket. We recommend 3 days of food per person.',
   remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156134/iybtqutds2nqagajwqbs.png",
   order: 5
   )
@@ -134,7 +134,7 @@ end
 status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Radio (battery operated or hand crank)',
-  use_case: 'Feeling safe starts with knowing what’s going on—so tune into the radio. Check 740AM for live updates—and your favorite radio station to pass the time.',
+  use_case: 'Feeling safe starts with knowing what\'s going on—so tune into the radio. Check 740AM for live updates—and your favorite radio station to pass the time.',
   remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156136/wavazhmfgvpaikycpcjk.png",
   order: 1
   )
@@ -226,7 +226,7 @@ end
 status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Personal hygiene & sanitation items',
-  use_case: 'Toilet paper, feminine supplies, hand sanitizer, a toothbrush, soap, unscented bleach, and heavy duty garbage bags are a good place to start. ',
+  use_case: 'Toilet paper, feminine supplies, hand sanitizer, a toothbrush, soap, unscented bleach, and heavy duty garbage bags are a good place to start.',
   remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156142/ejgefcwzoj66544tktbl.png",
   order: 2
   )
@@ -239,7 +239,7 @@ end
 status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Personal documents',
-  use_case: 'Upload copies of your driver’s license, passport, leases, titles, and contact list to the cloud. Protect your assets, by going digital. Or make photocopies.',
+  use_case: 'Upload copies of your driver\'s license, passport, leases, titles, and contact list to the cloud. Protect your assets, by going digital. Or make photocopies.',
   remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156136/uxsobm3pq9vjxpqdq0wt.png",
   order: 3
   )
@@ -251,7 +251,7 @@ end
 
 status = Item.create(
   category: Categories::PERSONAL.to_s,
-  title: 'Children’s toys and games',
+  title: 'Children\'s toys and games',
   use_case: 'What unique items would make your family feel better in an emergency? Favorite games? Special toys? Little things can make a big difference.',
   remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156138/xdiggz9qjvjr9hr22dby.png",
   order: 4
@@ -265,7 +265,7 @@ end
 status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Pet items',
-  use_case: 'Don’t forget to store dog food, toys, or extra water for your pets.',
+  use_case: 'Don\'t forget to store dog food, toys, or extra water for your pets.',
   remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156139/dbpkljqy6lljejnodnhh.png",
   order: 5
   )
