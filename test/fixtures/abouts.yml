@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  brought_to_you_by: MyString
+
+two:
+  brought_to_you_by: MyString
