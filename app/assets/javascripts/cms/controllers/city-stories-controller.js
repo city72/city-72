@@ -1,6 +1,8 @@
 backofficeApp.controller('CityStoriesController', ['$scope', 'cmsService', function ($scope, cmsService) {
 
   $scope.storyInEdition = null;
+  $scope.updating = false;
+  $scope.fatalError = false;
 
   $scope.initialize = function (city, stories) {
     $scope.city = JSON.parse(city).city;
@@ -43,6 +45,20 @@ backofficeApp.controller('CityStoriesController', ['$scope', 'cmsService', funct
 
   $scope._notSelectedStories = function (selectedStory) {
     return _($scope.stories).difference([selectedStory]);
+  };
+
+  $scope.save = function () {
+    $scope.updating = true;
+    $scope.fatalError = false;
+    cmsService.updateStories($scope.stories, $scope.city).then(
+      function () {
+        $scope.updating = false;
+      },
+      function () {
+        $scope.updating = false;
+        $scope.fatalError = true;
+      }
+    );
   };
 
 }]);

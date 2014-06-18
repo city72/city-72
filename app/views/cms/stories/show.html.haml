@@ -2,7 +2,8 @@
   .screen-intro
     %p.screen-info Once you've selected, interviewed, and photographed residents for the Stories section, enter the content below.
     .action-area
-      %a.btn.btn-primary{:href => "#"} Save Changes
+      %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
+        %span.ladda-label Save Changes
 
   %h2 Lead Image & Quote
   %ul.editable-list.wide
@@ -30,6 +31,7 @@
   %textarea.form-control#identity-statement{:name => "statement", :cols => "90", :rows => "7"}(ng-model="city.statement")
   
   .form-actions
-    %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
+    %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
+      %span.ladda-label Save Changes
 
   %edit-story-modal(story="storyInEdition" stories="stories")

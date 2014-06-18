@@ -12,6 +12,10 @@ backofficeApp.factory('cmsService', ['$resource', function ($resource) {
     'update': {method: 'PUT'},
   });
 
+  var Stories = $resource('/cms/stories', null, {
+    'update': {method: 'PUT'},
+  });
+
   return {
     updateCity: function (city) {
       city.affiliates_attributes = city.affiliates ? city.affiliates : [];
@@ -29,6 +33,10 @@ backofficeApp.factory('cmsService', ['$resource', function ($resource) {
       var allSupplies = _(essentials).chain().union(usefuls).union(personals).value();
       return Supplies.update({supplies: allSupplies}).$promise;
     },
+
+    updateStories: function (stories, city) {
+      return Stories.update({stories: stories, city: city}).$promise;
+    }
   }
 
 }]);

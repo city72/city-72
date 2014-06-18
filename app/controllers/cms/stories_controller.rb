@@ -6,6 +6,15 @@ class Cms::StoriesController < BackOfficeController
   end
 
   def update
+    stories = params[:stories]
+    stories.each do |s|
+      story = EmergencyStory.find(s[:id])
+      story.attributes = s.except(:id)
+      story.save!
+    end
+    @city.statement = params[:city][:statement]
+    @city.save! validate: false # City can be in an invalid state
+    render status: :ok, nothing: true
   end
 
 end
