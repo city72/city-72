@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140618205813) do
+ActiveRecord::Schema.define(:version => 20140618221339) do
 
   create_table "abouts", :force => true do |t|
     t.string   "brought_to_you_by"
@@ -90,12 +90,6 @@ ActiveRecord::Schema.define(:version => 20140618205813) do
     t.datetime "updated_at",         :null => false
     t.integer  "city_connection_id"
     t.boolean  "included"
-  end
-
-  create_table "current_modes", :force => true do |t|
-    t.boolean  "mode"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "emergency_data", :force => true do |t|
