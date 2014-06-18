@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  map_url: MyString
+  citizen_timeline_id: MyString
+  partner_timeline_id: MyString
+  transportation_timeline_id: MyString
+
+two:
+  map_url: MyString
+  citizen_timeline_id: MyString
+  partner_timeline_id: MyString
+  transportation_timeline_id: MyString

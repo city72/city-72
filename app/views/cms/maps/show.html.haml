@@ -1,0 +1,39 @@
+.main-content.map
+
+  = simple_form_for @emergency_data, url: cms_map_path do |f|
+
+    .screen-intro
+      %p.screen-info Embed a custom Google Crisis Map for your area.
+      .action-area
+        = f.submit 'Save Changes', class: 'btn btn-primary'
+
+    .row
+      = f.input :map_url, as: :text, input_html: {cols: '55', rows: 6}, required: false, label: 'Crisis Map Link <span class="help">(starts with "http://")</span>'.html_safe, wrapper_html: {class: 'map-link-container'}
+
+      .map-link-instructions
+        %h2 Instructions to get the embed link:
+        %ol 
+          %li Set up your map (see <a href="#">instructions on city72tookit site</a>).
+          %li Click the "Share" button to see the map links.
+          %li  Copy the "Link" code to paste here.
+
+    %h2 Twitter Timelines
+    .row
+      .timelines-container
+        = f.input :citizen_timeline_id, label: 'Your Timeline ID <span class="help">(e.g. 98324529384524798)</span>'.html_safe, required: false
+
+        = f.input :partner_timeline_id, label: 'Partner Timeline ID', required: false
+
+        = f.input :transportation_timeline_id, label: 'Transportation Timeline ID', required: false
+
+        = f.input :your_hashtag_timeline_id, label: '#YourCity72 Hashtag-Based Timeline ID', required: false
+      
+      .timelines-instructions
+        %h2 Instructions to get a Twitter timeline ID:
+        %ol 
+          %li Set up your map (see <a href="#">instructions on city72tookit site</a>).
+          %li Click the "Share" button to see the map links.
+          %li  Copy the "Link" code to paste here.
+
+    .form-actions
+      = f.submit 'Save Changes', class: 'btn btn-primary'
