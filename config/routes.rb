@@ -33,7 +33,7 @@ City72::Application.routes.draw do
     resource :stories, only: [:show, :update]
     resource :plan, only: [:show, :update]
     resources :about, only: [:index]
-    resources :map, only: [:index]
+    resource :map, only: [:show, :update]
     resources :updates, only: [:index]
   end
 
