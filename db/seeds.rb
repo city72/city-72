@@ -8,6 +8,7 @@ CityConnection.delete_all
 EmergencyStory.delete_all
 EmergencyData.delete_all
 About.delete_all
+Mode.delete_all
 
 plan = Plan.create! emergency_type_cd: 0
 
@@ -295,31 +296,8 @@ else
   puts "Item already exist"
 end
 
-
-Mode.delete_all
-
-status = Mode.create(em_mode: false, title: "Simulation: 4.3 earthquake strikes the San Andreas Fault.", text: "Thursday at 5:56 am. The epicenter was near Santa Cruz, CA.",
-  recommendation_1_title: "Drop, cover and hold on.", recommendation_1_text: "Drop down and get under a strong table. If you are not near a table, drop against an interior wall and cover your head and neck with your arms. Stay away from windows.",
-  recommendation_2_title: "Stay put.", recommendation_2_text: "Whether you're in a car, bed, or public place, stay put and wait until the shaking stops. If you're outdoors, steer clear of wires or falling objects. The only time not to stay put? If you're near the coast in an earthquake, immediately go to high ground, as tsunamis often follow.",
-  recommendation_3_title: "Stay calm.", recommendation_3_text: "Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.")
+status = Mode.create!(em_mode: false, title: "Emergency Title", text: "Emergency description")
 
 if status
-  puts "Preview mode created"
-else
-  puts "Preview mode already exist"
-end
-
-status = Mode.create(em_mode: true, title: "Simulation: 4.3 earthquake strikes the San Andreas Fault.", text: "Thursday at 5:56 am. The epicenter was near Santa Cruz, CA.",
-  recommendation_1_title: "Drop, cover and hold on.", recommendation_1_text: "Drop down and get under a strong table. If you are not near a table, drop against an interior wall and cover your head and neck with your arms. Stay away from windows.",
-  recommendation_2_title: "Stay put.", recommendation_2_text: "Whether you're in a car, bed, or public place, stay put and wait until the shaking stops. If you're outdoors, steer clear of wires or falling objects. The only time not to stay put? If you're near the coast in an earthquake, immediately go to high ground, as tsunamis often follow.",
-  recommendation_3_title: "Stay calm.", recommendation_3_text: "Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.")
-
-if status
-  puts "Crisis mode created"
-else
-  puts "Crisis mode already exist"
-end
-
-if CurrentMode.count < 1
-  puts "CurrentMode created" if CurrentMode.create mode: false
+  puts "Mode created"
 end
