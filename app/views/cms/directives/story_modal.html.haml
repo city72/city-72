@@ -1,0 +1,51 @@
+.modal.edit-element.edit-story.fade#edit-story
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %button.close{type: "button"}(ng-click="cancel()") ×
+        %h4.modal-title Edit Story
+      .modal-body
+        %form{:role => "form", name: 'storyForm'}
+          .form-group
+            %label{:for => "story-image"} 
+              Image 
+              %span.help (in-context portrait of storyteller)
+            %input.form-control#story-image{:type => "file"}/
+          / .form-group
+          /   %label{:for => "story-video"} 
+          /     Video Embed Code
+          /     %span.help (Optionally, include a video you've uploaded to Vimeo or Youtube)
+          /   %textarea.form-control#story-video{:name => "story-video", :cols => "90", :rows => "7"}
+          .form-group
+            %label.control-label{:for => "story-name"} 
+              Name 
+              %span.help (e.g. Jane)
+            %input.form-control#story-name{:type => "text", name: 'name'}(ng-model="storyInEdition.name" required)
+          .form-group
+            %label.control-label{:for => "story-location"} 
+              Location 
+              %span.help (e.g. Park Slope, Brooklyn)
+            %input.form-control#story-location{:type => "text", name: 'location'}(ng-model="storyInEdition.location" required)
+          .form-group 
+            %label.control-label{:for => "story-description"} Story
+            %textarea.form-control#story-description{:name => 'story', :cols => '90', :rows => '7'}(ng-model="storyInEdition.story" required)
+          .form-group
+            %label 
+              Call to Action
+              %span.help (link at the end of the story)
+            .radio
+              %label{:for => "story-cta-1"}
+                %input#story-cta-1{:type => "radio", :name => "story-cta"}(ng-model="storyInEdition.call_to_action_cd" ng-value="0")
+                %span Get Connected
+            .radio
+              %label{:for => "story-cta-2"}
+                %input#story-cta-2{:type => "radio", :name => "story-cta"}(ng-model="storyInEdition.call_to_action_cd" ng-value="1")
+                %span Gather Supplies
+            .radio
+              %label{:for => "story-cta-3"}
+                %input#story-cta-3{:type => "radio", :name => "story-cta"}(ng-model="storyInEdition.call_to_action_cd" ng-value="2")
+                %span Make a Plan
+      .modal-footer
+        %button.btn.btn-primary{type: "button"}(ng-click="save()") Save changes
+        %button.btn.btn-default{type: "button"}(ng-click="cancel()") Cancel
+        

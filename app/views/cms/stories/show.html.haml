@@ -12,18 +12,18 @@
         %h3 {{selectedStory.name}}
         %p {{selectedStory.story}}
       .list-actions
-        %button.btn{type: "button", data: {toggle:"modal", target:".edit-story"}} Edit Story
+        %button.btn{type: "button"}(ng-click="editStory(selectedStory)") Edit Story
 
   %h2 Stories
   %ul.editable-list.half-width
-    %li(ng-repeat="story in stories")
+    %li(ng-repeat="story in notSelectedStories")
       .list-element
         .img
         %h3 {{story.name}}
         %p {{story.story}}
         %span.call-to-action {{callToAction(story)}}
       .list-actions
-        %button.btn{type: "button", data: {toggle:"modal", target:".edit-story"}} Edit Story
+        %button.btn{type: "button"}(ng-click="editStory(story)") Edit Story
 
   %h2 Your city's Identity Statement
   %p.help-block Express the personality of your city through your Identity Statement – the rallying cry for city and residents alike.
@@ -32,45 +32,4 @@
   .form-actions
     %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
 
-/ MODAL: Story
-.modal.edit-element.edit-story.fade
-  .modal-dialog.modal-lg
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4.modal-title Edit Story
-      .modal-body
-        %form{:role => "form"}
-          .form-group
-            %label{:for => "story-image"} Image <span class="help">(in-context portrait of storyteller)</span>
-            %input.form-control#story-image{:type => "file"}/
-          .form-group
-            %label{:for => "story-video"} Video Embed Code  <span class="help">(Optionally, include a video you've uploaded to Vimeo or Youtube)</span>
-            %textarea.form-control#story-video{:name => "story-video", :cols => "90", :rows => "7"}
-          .form-group
-            %label{:for => "story-name"} Name <span class="help">(e.g. Jane)</span>
-            %input.form-control#story-name{:type => "text"}/
-          .form-group
-            %label{:for => "story-location"} Location <span class="help">(e.g. Park Slope, Brooklyn)</span>
-            %input.form-control#story-location{:type => "text"}/
-          .form-group 
-            %label{:for => "story-description"} Story
-            %textarea.form-control#story-description{:name => "story-description", :cols => "90", :rows => "7"}
-          .form-group
-            %label Call to Action <span class="help">(link at the end of the story)</span>
-            .radio
-              %label{:for => "story-cta-1"}
-                %input#story-cta-1{:type => "radio", :name => "story-cta", :checked => "checked"}/
-                %span Get Connected
-            .radio
-              %label{:for => "story-cta-2"}
-                %input#story-cta-2{:type => "radio", :name => "story-cta", :checked => "checked"}/
-                %span Gather Supplies
-            .radio
-              %label{:for => "story-cta-3"}
-                %input#story-cta-3{:type => "radio", :name => "story-cta", :checked => "checked"}/
-                %span Make a Plan
-      .modal-footer
-        %button.btn.btn-primary{type: "button"} Save changes
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cancel
-        
+  %edit-story-modal(story="storyInEdition" stories="stories")

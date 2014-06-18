@@ -1,5 +1,7 @@
 backofficeApp.controller('CityStoriesController', ['$scope', 'cmsService', function ($scope, cmsService) {
 
+  $scope.storyInEdition = null;
+
   $scope.initialize = function (city, stories) {
     $scope.city = JSON.parse(city).city;
     $scope.stories = JSON.parse(stories);
@@ -8,7 +10,7 @@ backofficeApp.controller('CityStoriesController', ['$scope', 'cmsService', funct
       if (_.isArray($scope.stories)) {
         $scope._bindStories();
       }
-    });
+    }, true);
   };
 
   $scope.callToAction = function (story) {
@@ -22,6 +24,10 @@ backofficeApp.controller('CityStoriesController', ['$scope', 'cmsService', funct
         title = "Make a plan"; break;
     }
     return title;
+  };
+
+  $scope.editStory = function (story) {
+    $scope.storyInEdition = story;
   };
 
   $scope._bindStories = function () {
