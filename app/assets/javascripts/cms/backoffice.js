@@ -1,4 +1,5 @@
 //= require jquery
+//= require jquery_ujs
 //= require underscore-min.js
 //= require angular/angular
 //= require angular-resource/angular-resource

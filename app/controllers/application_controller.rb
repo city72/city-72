@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   	methods.each do |method|
   		define_method method do
   		end
-  	end  
+  	end
   end
 
   protected
@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
     @city = City.first
   end
 
+  private
+    def after_sign_out_path_for(resource_or_scope)
+      cms_root_path
+    end
 end
