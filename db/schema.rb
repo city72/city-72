@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140617213848) do
+ActiveRecord::Schema.define(:version => 20140618172657) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -92,6 +92,15 @@ ActiveRecord::Schema.define(:version => 20140617213848) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "emergency_data", :force => true do |t|
+    t.string   "map_url"
+    t.string   "citizen_timeline_id"
+    t.string   "partner_timeline_id"
+    t.string   "transportation_timeline_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
   create_table "emergency_stories", :force => true do |t|
     t.string   "name"
     t.string   "location"
@@ -100,13 +109,6 @@ ActiveRecord::Schema.define(:version => 20140617213848) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.boolean  "selected"
-  end
-
-  create_table "feeds", :force => true do |t|
-    t.string   "widget_id"
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "items", :force => true do |t|

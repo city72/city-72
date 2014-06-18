@@ -40,7 +40,7 @@
   .wrapper      
   .map-area
     .map-tooltip-placement
-    %iframe.map{src: "http://google.org/crisismap/a/gmail.com/SF72?hl=en&embedded=true", height: "498"}
+    %iframe.map{src: @emergency_data.map_url, height: "498"}
 #mobile-updates
   .tw-tabs-container
     %ul.tw-tabs
@@ -70,15 +70,15 @@
     .updates
       .citizen-reports
         <style type="text/css">#twitter-widget-1{width:70%}</style>
-        <a class="twitter-timeline" data-widget-id="#{@citizen_feed.widget_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+        <a class="twitter-timeline" data-widget-id="#{@emergency_data.citizen_timeline_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       .official-reports
         <style type="text/css">#twitter-widget-2{width:70%}</style>
-        <a class="twitter-timeline" data-widget-id="390535611100053504" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
+        <a class="twitter-timeline" data-widget-id="#{@emergency_data.partner_timeline_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive"></a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       .status
         <style type="text/css">#twitter-widget-3{width:70%}</style>
-        <a class="twitter-timeline" href="https://twitter.com/511SFBay" data-widget-id="370622485349146624" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
+        <a class="twitter-timeline" href="https://twitter.com/511SFBay" data-widget-id="#{@emergency_data.transportation_timeline_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 .main-container
   = render :partial => "partials/footer"

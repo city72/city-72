@@ -11,7 +11,7 @@ class HomeController < ApplicationController
 
   def em_home
     @mode = CurrentMode.get_current_mode
-    @citizen_feed = CitizenFeed.first
+    @emergency_data = EmergencyData.first
   end
 
   def about
