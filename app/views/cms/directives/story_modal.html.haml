@@ -29,7 +29,7 @@
           .form-group 
             %label.control-label{:for => "story-description"} Story
             %textarea.form-control#story-description{:name => 'story', :cols => '90', :rows => '7'}(ng-model="storyInEdition.story" required)
-          .form-group
+          .form-group(ng-hide="storyInEdition.selected")
             %label 
               Call to Action
               %span.help (link at the end of the story)
