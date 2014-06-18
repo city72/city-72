@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140618172657) do
+ActiveRecord::Schema.define(:version => 20140618183459) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(:version => 20140618172657) do
     t.string   "transportation_timeline_id"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "your_hashtag_timeline_id"
   end
 
   create_table "emergency_stories", :force => true do |t|

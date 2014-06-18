@@ -26,9 +26,7 @@
 
         = f.input :transportation_timeline_id, label: 'Transportation Timeline ID', required: false
 
-        .form-group
-          %label{:for => "hashtag-feed"} #YourCity72 Hashtag-Based Timeline ID
-          %input.form-control#haghtag-feed{:type => "text"}/
+        = f.input :your_hashtag_timeline_id, label: '#YourCity72 Hashtag-Based Timeline ID', required: false
       
       .timelines-instructions
         %h2 Instructions to get a Twitter timeline ID:
