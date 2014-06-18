@@ -25,10 +25,9 @@
       .list-actions
         %button.btn{type: "button", data: {toggle:"modal", target:".edit-story"}} Edit Story
 
-
   %h2 Your city's Identity Statement
   %p.help-block Express the personality of your city through your Identity Statement – the rallying cry for city and residents alike.
-  %textarea.form-control#identity-statement{:name => "statement", :cols => "90", :rows => "7"}
+  %textarea.form-control#identity-statement{:name => "statement", :cols => "90", :rows => "7"}(ng-model="city.statement")
   
   .form-actions
     %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
