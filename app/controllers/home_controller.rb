@@ -6,11 +6,10 @@ class HomeController < ApplicationController
   after_filter :static_content, only: [:home, :connect, :about, :supplies, :quick_guide, :our_manifesto]
 
   def index
-    @crisis_mode = CurrentMode.is_crisis_mode
+    @crisis_mode = Mode.is_crisis_mode
   end
 
   def em_home
-    @mode = CurrentMode.get_current_mode
     @emergency_data = EmergencyData.first
   end
 

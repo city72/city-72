@@ -41,6 +41,9 @@ City72::Application.routes.draw do
     resource :plan, only: [:show, :update]
     resource :about, only: [:show, :update]
     resource :map, only: [:show, :update]
+
+    put "modes/turn_on"
+    put "modes/turn_off"
     
   end
 

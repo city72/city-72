@@ -1,13 +1,12 @@
 class Mode < ActiveRecord::Base
-	attr_accessible :title, :text, :em_mode,
-		:recommendation_1_title, :recommendation_1_text, 
-		:recommendation_2_title, :recommendation_2_text,
-		:recommendation_3_title, :recommendation_3_text
+	attr_accessible :title, :text, :em_mode
 
-	validates_uniqueness_of :em_mode
+  def self.is_crisis_mode
+    Mode.first.em_mode
+  end
 
-	def self.last_crisis_mode_info
-		Mode.where(em_mode: true).first
-	end
+  def self.is_preview_mode
+    Mode.first.em_mode
+  end
 
 end

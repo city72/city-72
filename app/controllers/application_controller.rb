@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def set_configured_vars
-    @mode = CurrentMode.get_current_mode
+    @mode = Mode.first
     @city = City.first
   end
 
