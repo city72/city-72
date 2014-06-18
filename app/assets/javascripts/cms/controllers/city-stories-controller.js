@@ -2,10 +2,13 @@ backofficeApp.controller('CityStoriesController', ['$scope', 'cmsService', funct
 
   $scope.initialize = function (city, stories) {
     $scope.city = JSON.parse(city).city;
-    var allStories = JSON.parse(stories);
-    var selectedStory = _(allStories).filter(function (story) {return story.selected});
-    $scope.stories = _(allStories).difference(selectedStory);
-    $scope.selectedStory = _(selectedStory).first();
+    $scope.stories = JSON.parse(stories);
+
+    $scope.$watch('stories', function () {
+      if (_.isArray($scope.stories)) {
+        $scope._bindStories();
+      }
+    });
   };
 
   $scope.callToAction = function (story) {
@@ -19,6 +22,21 @@ backofficeApp.controller('CityStoriesController', ['$scope', 'cmsService', funct
         title = "Make a plan"; break;
     }
     return title;
+  };
+
+  $scope._bindStories = function () {
+    $scope.selectedStory = $scope._selectedStory();
+    $scope.notSelectedStories = $scope._notSelectedStories($scope.selectedStory);
+  };
+
+  $scope._selectedStory = function () {
+    return _($scope.stories).chain().filter(function (story) {
+      return story.selected;
+    }).first().value();
+  }
+
+  $scope._notSelectedStories = function (selectedStory) {
+    return _($scope.stories).difference([selectedStory]);
   };
 
 }]);
