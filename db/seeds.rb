@@ -16,7 +16,7 @@ city.save(validate: false)
 
 city_connection = CityConnection.create!
 selectedStory = EmergencyStory.create! name: 'Selected story', location: 'Example Location', story: 'Story details...', call_to_action_cd: 0, selected: true
-emergency_data = EmergencyData.create! map_url: 'http://google.org/crisismap/a/gmail.com/SF72?hl=en&embedded=true', citizen_timeline_id: '364391164582969346', partner_timeline_id: '390535611100053504', transportation_timeline_id: '370622485349146624'
+emergency_data = EmergencyData.create! map_url: 'http://google.org/crisismap/a/gmail.com/SF72?hl=en&embedded=true', citizen_timeline_id: '364391164582969346', partner_timeline_id: '390535611100053504', transportation_timeline_id: '370622485349146624', your_hashtag_timeline_id: '370622485349146624'
 
 4.times do |i|
   EmergencyStory.create! name: "Story \##{i}", location: 'Example Location', story: 'Story details...', call_to_action_cd:0
