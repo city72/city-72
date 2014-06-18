@@ -12,7 +12,7 @@ Mode.delete_all
 
 plan = Plan.create! emergency_type_cd: 0
 
-city = City.new name: 'city'
+city = City.new name: 'city', color_cd: 0
 city.plan = plan
 city.save(validate: false)
 
