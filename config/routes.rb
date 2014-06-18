@@ -1,6 +1,13 @@
 City72::Application.routes.draw do
 
-  devise_for :admin_users
+  devise_scope :admin_user do
+    get "/admin_users/sign_up", :to => "home#index"
+  end
+
+  devise_for :admin_users, :controllers => {
+    # this way we can avoid user's to register
+    :registrations => "registrations"
+  }
 
   resources :stories, only: [:index, :show]
 
