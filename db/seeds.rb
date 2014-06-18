@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 Kit.delete_all
 Item.delete_all
 City.delete_all
@@ -29,6 +31,22 @@ end
 status = Kit.create(
   title: 'Adventurer Kit',
   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
+  )
+if status.valid?
+  puts "Item created"
+else
+  puts "Item already exist"
+end
+
+# Creating Supplies
+
+# Creating ESSENTIAL supplies
+status = Item.create(
+  category: Categories::ESSENTIAL.to_s,
+  title: 'Water',
+  use_case: 'Everyone enjoys a tall drink of water. Stay hydrated by gathering one gallon per person, per day.',
+  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156140/yj0oxsywjmnwbcvk1bt9.png",
+  order: 0
   )
 if status.valid?
   puts "Item created"
