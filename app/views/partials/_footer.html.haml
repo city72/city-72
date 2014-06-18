@@ -11,34 +11,26 @@
 					%li
 						%a{href:"#"}Build your own City 72
 					%li
-						%a{href:"mailto:#{@city.contact_email}"}Contact Us 
+						%a{href:"mailto:#{@city.contact_email}"}Contact Us
 			%li.resources
 				%h2 Resources and Partners
 				%ul.resources-links
 					%li.resources-first
 						%ul
-							%li
-								%a{href:"http://alertsf.org/", target:"_blank"}AlertSF
-							%li 
-								%a{href:"http://www.sf311.org/", target:"_blank"}311
-							%li
-								%a{href:"http://sfgov.org/sfnert", target:"_blank"}NERT
-							%li
-								%a{href:"http://empowersf.org", target:"_blank"}NEN
+							- Affiliate.offset(0).limit(4).each do |affiliate|
+								%li
+									%a{href: affiliate.url, target:"_blank"}
+										= affiliate.string
 					%li.resources-last
 						%ul
-							%li
-								%a{href:"http://www.redcross.org/ca/san-francisco/", target:"_blank"}Bay Area Red Cross
-							%li 
-								%a{href:"http://www.shakeout.org/", target:"_blank"}Shakeout
-							%li
-								%a{href:"http://sfheroes.com", target:"_blank"}SF Heroes
-							%li
-								%a{href:"http://sfdem.org", target:"_blank"}SF DEM	
+							- Affiliate.offset(4).limit(4).each do |affiliate|
+								%li
+									%a{href: affiliate.url, target:"_blank"}
+										= affiliate.string
 			%li.social
 				%h2 Stay in touch
 				%ul
-					%li	
-						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.sf72.org/">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-					%li	
-						<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.sf72.org%2Fhome&amp;width=20&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:140px; height:21px;" allowTransparency="true"></iframe>
+					%li
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="#{root_url}">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+					%li
+						<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2F#{root_url}%2Fhome&amp;width=20&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:140px; height:21px;" allowTransparency="true"></iframe>

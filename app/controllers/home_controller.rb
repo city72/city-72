@@ -1,7 +1,7 @@
 require 'mandrill'
 
 class HomeController < ApplicationController
-  
+
   after_filter :dynamic_content, only: [:index, :em_home]
   after_filter :static_content, only: [:home, :connect, :about, :supplies, :quick_guide, :our_manifesto]
 
@@ -17,6 +17,11 @@ class HomeController < ApplicationController
     @render_captcha = MailHelper::posible_attack?
   end
 
+  def connect
+    @city = City.first
+    @city_connection = CityConnection.first
+  end
+
   def supplies
     @essentials = Item.where(category: Categories::ESSENTIAL.to_s).order('items.order ASC')
     @useful = Item.where(category: Categories::USEFUL.to_s).order('items.order ASC')
@@ -24,6 +29,6 @@ class HomeController < ApplicationController
     @kits = Kit.all
   end
 
-  empty_methods :home, :connect, :quick_guide, :our_manifesto
+  empty_methods :home, :quick_guide, :our_manifesto
 
 end

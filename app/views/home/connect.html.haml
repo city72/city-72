@@ -22,19 +22,23 @@
         %p <strong>In an emergency:</strong> Post your status to Facebook to let friends and family know you are ok.
       %li.twitter
         %h3 Check updates</br>on Twitter
-        %p <strong>Now:</strong> Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites: <a href="http://twitter.com/@SF_Emergency" target="_blank">@SF_Emergency</a>, <a href="http://twitter.com/511SFBay" target="_blank">511</a> and <a href="https://twitter.com/SF311" target="_blank">311</a>.
-        %p <strong>In an emergency:</strong> Post about yourself and your area. Use <a href="https://twitter.com/search?q=%23SF72" target="_blank"><i class="to-replace-hash">#City72</i></a> to include them in the crowdsourced emergency feed.
+        %p <strong>Now:</strong> Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites: #{tweeter_accounts(@city_connection.twitter_accounts).html_safe}.
+        %p <strong>In an emergency:</strong> Post about yourself and your area. Use <a href="https://twitter.com/search?q=%23#{@city.abbreviation}72" target="_blank"><i class="to-replace-hash">##{@city.abbreviation}72</i></a> to include them in the crowdsourced emergency feed.
       %li.drive
         %h3 Save documents on</br>Google Drive
         %p <strong>Now:</strong> Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies in the cloud through Google Drive.
         %p <strong>In an emergency:</strong> Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud.
-      %li
-        / %img
-        / %h3
-        / %p.now
-        / %p.emergency
-        / %a{:href => "#"}
-      
+      - @city_connection.city_networks.each do |cn|
+        %li
+          %img{src: cn.network_url}
+          %h3
+            = cn.headline
+          %p.now
+            = cn.now
+          %p.emergency
+            = cn.in_an_emergency
+          %a{:href => "#"}
+
   .full-img-article
     %ul
       %li.use
@@ -42,7 +46,7 @@
         %p Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens.
       %li.what
         %h3 How to</br>Connect
-        %ul.your-net  
+        %ul.your-net
           %li.net-first
             %ul
               %li My yoga class
@@ -57,11 +61,13 @@
     %h3 Learn more from our partners.
     %p To get even better prepared as a household, neighborhood, or community, connect with these organizations.
     %ul
-      %li
-        <a class= "partner-logo" id="red-cross" href="http://www.redcross.org/ca/san-francisco" target="_blank">www.redcross.org/ca/san-francisco</a>
-        / %a.partner-logo{:href => "http://www.redcross.org/ca/san-francisco", :target => "_blank"}
-        /   %img{:src => ""}
-        %p <strong>American Red Cross, Bay Area Chapter</strong> provides a variety of trainings including first aid, CPR, and how to prepare for emergencies.
-        <a href="http://www.redcross.org/ca/san-francisco" target="_blank">www.redcross.org/ca/san-francisco</a>
-      
+      - @city_connection.city_resources.each do |cr|
+        %li
+          %a.partner-logo{:href => cr.website, :target => "_blank"}
+            = "image"
+          -# %img{:src => ""}
+          %p <strong>#{cr.name}</strong> #{cr.description}
+          %a{:href => cr.website, :target => "_blank"}
+            = cr.website
+
   = render :partial => "partials/footer"

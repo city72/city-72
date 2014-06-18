@@ -23,12 +23,11 @@
     ga('send', 'pageview');
   </script>
 </head>
-<body class="accent-green">
+<body class="accent-<%= @city.color.to_s %>">
 
-
-<%= yield %>
-<!--[if lt IE 9]>
-  <script src="/rem.min.js"></script>
-<![endif]-->
+  <%= yield %>
+  <!--[if lt IE 9]>
+    <script src="/rem.min.js"></script>
+  <![endif]-->
 </body>
 </html>
