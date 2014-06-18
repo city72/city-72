@@ -2,8 +2,12 @@
   .emergency
     %label
       Emergency Mode:
-      %strong.status OFF
-    %button.btn.btn-em{data: {toggle:"modal", target:".switch-em"}} Switch ON
+      - if Mode.is_crisis_mode
+        %strong.status ON
+        = button_to 'Switch OFF', cms_modes_turn_off_path, class: 'btn btn-em', method: :put
+      - else
+        %strong.status OFF
+        %button.btn.btn-em{data: {toggle:"modal", target:".switch-em"}} Switch ON
   %h1.logo City72
 
 %nav.navbar
@@ -35,18 +39,14 @@
 
 .modal.switch-em.fade
   .modal-dialog.modal-lg
-    .modal-content
+    .modal-content(ng-init="mode = {title: '#{escape_javascript(@mode.title)}', description: '#{escape_javascript(@mode.text)}'}")
       .modal-header
         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
         %h4.modal-title Switch Emergency Mode
-      .modal-body
-        %form{:role => "form"}
-          .form-group
-            %label{:for => "mode-headline"} Incident title
-            %input.form-control.input-lg#mode-headline{:type => "text"}/
-          .form-group
-            %label{:for => "mode-description"} A short description of the incident
-            %textarea.form-control#mode-description{:name => "mode-description", :cols => "90", :rows => "3"}
-      .modal-footer
-        %button.btn.btn-primary{type: "button"} Switch to Emergency Mode
-        %button.btn{"data-dismiss" => "modal", type: "button"} Cancel
+      = simple_form_for @mode, url: cms_modes_turn_on_path, html: {name: 'modeForm'} do |f|
+        .modal-body
+          = f.input :title, label: 'Incident title', required: false, input_html: {required: 'required', :'ng-model' => 'mode.title'}
+          = f.input :text, label: 'A short description of the incident', input_html: {cols: '90', rows: '3', required: 'required', :'ng-model' => 'mode.description'}, required: false
+        .modal-footer
+          = f.submit 'Switch to Emergency Mode', class: 'btn btn-primary', :'ng-disabled' => 'modeForm.$invalid'
+          %button.btn{"data-dismiss" => "modal", type: "button"} Cancel
