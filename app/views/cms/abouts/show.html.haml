@@ -4,20 +4,19 @@
     .action-area
       %a.btn.btn-primary{:href => "#"} Save Changes
 
-  %form{:role => "form"}
+  = simple_form_for @about, url: cms_about_path do |f|
     .form-group
       %label{:for => "about-image"} Image
       %input.form-control#about-image{:type => "file"}/
       %p.help-block Choose an image of something unique to your city.
 
-    .form-group
-      %label{:for => "about-brought"} Brought to you by <span class="help">(Your Organization)</span>
-      %textarea.form-control#about-brought{ :name => "about-brought", :cols => "90", :rows => "8"}
+    = f.input :brought_to_you_by, as: :text, label: 'Brought to you by <span class="help">(Your Organization)</span>'.html_safe, input_html: {cols: '90', rows: '8'}, required: false
 
     .form-group
       %label{:for => "select-plan"} Customize your city72 logo 
       %input{:type => "file"}/
       %p.help-block Optionally replace the generated City72 logo. See the worksheet for instructions on how to get this SVG file.
 
-  .form-actions
-    %input.btn.btn-primary{:type => "submit", :value => "Save Changes"}/
+    .form-actions
+      = f.submit 'Save Changes', class: 'btn btn-primary'
+      
