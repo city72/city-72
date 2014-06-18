@@ -2,10 +2,10 @@
   %label.control-label
     Name of Affiliate 
     %span.help (name and corresponding URL)
-  %input.form-control{:placeholder => 'name@example.com'}(ng-model="affiliate.name" required)
+  %input.form-control{:placeholder => 'name@example.com'}(ng-model="affiliate.name")
   .input-group
     %span.input-group-addon http://
-    %input.form-control(ng-model="affiliate.url" required)
+    %input.form-control(ng-model="affiliate.url")
   %a.btn.btn-danger.btn-xs(ng-click="removeAffiliate()")
     %i.glyphicon.glyphicon-remove
     Remove
