@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140619184327) do
+ActiveRecord::Schema.define(:version => 20140619210259) do
 
   create_table "abouts", :force => true do |t|
     t.string   "brought_to_you_by"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20140619184327) do
     t.string   "network_url"
     t.boolean  "included"
     t.integer  "city_connection_id"
+    t.string   "logo"
   end
 
   create_table "city_resources", :force => true do |t|
@@ -92,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20140619184327) do
     t.datetime "updated_at",         :null => false
     t.integer  "city_connection_id"
     t.boolean  "included"
+    t.string   "logo"
   end
 
   create_table "emergency_data", :force => true do |t|
