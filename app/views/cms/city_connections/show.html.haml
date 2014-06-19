@@ -45,7 +45,8 @@
             %input#include-network-1{:type => "checkbox"}(ng-model="network.included")
             %span Include this Network
           .list-element
-            .logo.nextdoor
+            .logo
+              %img{src: "http://placekitten.com/g/300/200"}
             %h3 {{network.headline}}
             %h4 Now:
             %p {{network.now}}
@@ -66,6 +67,7 @@
             %span Include this Partner
           .list-element
             .logo
+              %img{src: "http://placekitten.com/g/300/200"}
             %h3 {{resource.name}}
             %p {{resource.description}}
             %a(ng-href="{{'http://' + resource.website}}") {{resource.website}}
