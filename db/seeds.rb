@@ -296,6 +296,47 @@ else
   puts "Item already exist"
 end
 
+# Creating Networks
+if city_connection.city_networks << CityNetwork.new(
+  # image: ,
+  headline: 'AirBnB',
+  now: 'Create an AirBnB proﬁle so you are ready to ﬁnd or share a place to stay if anything happens.',
+  in_an_emergency: 'Find a place to stay, or share your place with those in need.',
+  network_url: 'airbnb.com',
+  included: true
+  )
+puts "Network created"
+else
+puts "Error creating Network"
+end
+
+if city_connection.city_networks << CityNetwork.new(
+  # image: ,
+  headline: 'Meet your neighbors on Nextdoor',
+  now: 'Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan.',
+  in_an_emergency: 'Log onto Nextdoor to share local information and resources with people who live near you.',
+  network_url: 'nextdoor.com',
+  included: true
+  )
+puts "Network created"
+else
+puts "Error creating Network"
+end
+
+# Creating Partners
+if city_connection.city_networks << CityResource.new(
+  # image: ,
+  name: 'American Red Cross',
+  description: 'Provides a variety of trainings including first aid, CPR, and how to prepare for emergencies',
+  website: 'www.redcross.org',
+  included: true
+  )
+puts "Partner created"
+else
+puts "Error creating Partner"
+end
+
+# Creating Mode
 status = Mode.create!(em_mode: false, title: "Emergency Title", text: "Emergency description")
 
 if status
