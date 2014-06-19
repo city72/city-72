@@ -1,4 +1,4 @@
-backofficeApp.controller('CityInfoController', ['$scope', 'cmsService', function ($scope, cmsService) {
+backofficeApp.controller('CityInfoController', ['$scope', 'cmsService', '$upload', function ($scope, cmsService) {
 
   $scope.initialize = function (cityJson, availableColors) {
     $scope.city = JSON.parse(cityJson).city;
@@ -11,9 +11,12 @@ backofficeApp.controller('CityInfoController', ['$scope', 'cmsService', function
 
   $scope.updateCity = function () {
     $scope.updating = true;
-    cmsService.updateCity($scope.city).then(
+    
+    cmsService.updateCity($scope.city, $scope.city_image, $scope.resident_image)
+    .then(
       function () {
         $scope.updating = false;
+        location.reload();
       },
       function () {
         $scope.fatalError = true;
@@ -28,5 +31,11 @@ backofficeApp.controller('CityInfoController', ['$scope', 'cmsService', function
     }
     $scope.city.affiliates.push({});
   }
+
+  $scope.cityImageChanged = function (elm) {
+    $scope.$apply(function () {
+      $scope.uploads.city_image = elm.file;
+    });
+  };
 
 }]);
