@@ -1,6 +1,6 @@
 class Plan < ActiveRecord::Base
-  attr_accessible :city_id, :emergency_type_cd, :community_image
+  attr_accessible :city_id, :quick_guide_id, :community_image
 
   mount_uploader :community_image, PlanCommunityImageUploader
-  as_enum :emergency_type, earthquake: 0, hurricane: 1, flood: 2
+  has_one :quick_guide
 end

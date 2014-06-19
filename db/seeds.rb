@@ -10,7 +10,7 @@ EmergencyData.delete_all
 About.delete_all
 Mode.delete_all
 
-plan = Plan.create! emergency_type_cd: 0
+plan = Plan.create!
 
 city = City.new name: 'city', color_cd: 0
 city.plan = plan
@@ -351,8 +351,8 @@ puts "Error creating Network"
 end
 
 # Creating Partners
-
-if city_connection.city_networks << CityResource.new(
+# CALDERA LA CONCHA DE TU HERMANA
+if city_connection.city_resources << CityResource.new(
   # image: ,
   name: 'American Red Cross',
   description: 'Provides a variety of trainings including first aid, CPR, and how to prepare for emergencies',
@@ -373,95 +373,161 @@ end
 
 # Creating Quick Guides
 
-# status = QuickGuide.create(
-#   em_type: 'Quake',
-#   tip_1_title: 'Drop, cover and hold.',
-#   tip_1_description: 'Duck under a strong table or desk. Cover your head and neck with your arms against an interior wall. Stay away from windows.',
-#   tip_2_title: 'Stay calm.',
-#   tip_2_description: 'Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.',
-#   tip_3_title: 'Stay put.',
-#   tip_3_description: 'Shelter in place–whether you\'re in a car, in bed, or in a public place. Do not try to run out of the building during strong shaking, hold tight until the shaking stops. If you\'re outdoors, steer clear of wires or falling objects.',
-#   tip_after_1_title: 'Leave a trail.',
-#   tip_after_1_description: 'If you leave home, leave a sign telling friends and family your location. Digitaly savvy? Send a tweet or Facebook update telling everyone know that you\'re ok.',
-#   tip_after_2_title: 'Stay tuned.',
-#   tip_after_2_description: 'Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.',
-#   tip_after_3_title: 'Check back here.',
-#   tip_after_3_description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
-#   )
-# if status.valid?
-#   puts "Quake Quick Guide created"
-# else
-#   puts "Quake Quick Guide already exist"
-# end
+status = QuickGuide.create(
+  title: 'Quake',
+  tips_attributes: [
+    {
+      moment_type: :before,
+      title: 'Drop, cover and hold.',
+      description: 'Duck under a strong table or desk. Cover your head and neck with your arms against an interior wall. Stay away from windows.'
+    }, {
+      moment_type: :before,
+      title: 'Stay calm.',
+      description: 'Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.'
+    }, {
+      moment_type: :before,
+      title: 'Stay put.',
+      description: 'Shelter in place–whether you\'re in a car, in bed, or in a public place. Do not try to run out of the building during strong shaking, hold tight until the shaking stops. If you\'re outdoors, steer clear of wires or falling objects.'
+    }, {
+      moment_type: :after,
+      title: 'Leave a trail.',
+      description: 'If you leave home, leave a sign telling friends and family your location. Digitaly savvy? Send a tweet or Facebook update telling everyone know that you\'re ok.',
+    }, {
+      moment_type: :after,
+      title: 'Stay tuned.',
+      description: 'Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.',
+    }, {
+      moment_type: :after,
+      title: 'Check back here.',
+      description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
+    }
+  ]
+)
+if status.valid?
+  puts "Quake Quick Guide created"
+else
+  puts "Quake Quick Guide already exist"
+end
 
-# status = QuickGuide.create(
-#   em_type: 'Hurricane',
-#   tip_1_title: 'Listen for Updates',
-#   tip_1_description: 'Listen to a <a href="http://www.nws.noaa.gov/nwr/">NOAA Weather Radio</a> or local news for critical information from the National Weather Service. Be alert to changing weather conditions and follow official instructions.',
-#   tip_2_title: 'Turn off Utilities',
-#   tip_2_description: '<a href="http://www.ready.gov/utility-shut-safety">Turn off utilities</a> and propane tanks if instructed to do so. Otherwise, turn the refrigerator to its coldest setting and keep its doors closed (here\'s how to <a href="http://www.ready.gov/food">keep food safe</a> during and after an emergency).',
-#   tip_3_title: 'Save a Supply of Water.',
-#   tip_3_description: 'Ensure a <a href="http://www.ready.gov/managing-water">supply of water</a> for sanitary purposes such as cleaning and flushing toilets. Fill the bathtub and large containers with water.',
-#   tip_after_1_title: 'Find your family.',
-#   tip_after_1_description: 'If you are separated from your family, use your <a href="#">family communications plan</a>, contact the American Red Cross (ARC) at 1-800-RED-CROSS/1-800-733-2767 or visit the ARC Safe and Well site: <a href="http://www.safeandwell.org/">www.safeandwell.org</a>.',
-#   tip_after_2_title: 'Inspect your home for damage.',
-#   tip_after_2_description: 'Take pictures of damage (both of the building and its contents) for insurance purposes. If safety is a concern, have your residence inspected by a building inspector or structural engineer before entering.',
-#   tip_after_3_title: 'Practice Fire Safety.',
-#   tip_after_3_description: 'Use battery-powered flashlights in the dark. DO NOT use candles, in order to prevent fires.',
-#   tip_after_4_title: 'Check back here.',
-#   tip_after_4_description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
-#   )
-# if status.valid?
-#   puts "Hurricane Quick Guide created"
-# else
-#   puts "Hurricane Quick Guide already exist"
-# end
+status = QuickGuide.create(
+  title: 'Hurricane',
+  tips_attributes: [
+    {
+      moment_type: :before,
+      title: 'Listen for Updates',
+      description: 'Listen to a <a href="http://www.nws.noaa.gov/nwr/">NOAA Weather Radio</a> or local news for critical information from the National Weather Service. Be alert to changing weather conditions and follow official instructions.',
+    }, {
+      moment_type: :before,
+      title: 'Turn off Utilities',
+      description: '<a href="http://www.ready.gov/utility-shut-safety">Turn off utilities</a> and propane tanks if instructed to do so. Otherwise, turn the refrigerator to its coldest setting and keep its doors closed (here\'s how to <a href="http://www.ready.gov/food">keep food safe</a> during and after an emergency).',
+    }, {
+      moment_type: :before,
+      title: 'Save a Supply of Water.',
+      description: 'Ensure a <a href="http://www.ready.gov/managing-water">supply of water</a> for sanitary purposes such as cleaning and flushing toilets. Fill the bathtub and large containers with water.',
+    }, {
+      moment_type: :after,
+      title: 'Find your family.',
+      description: 'If you are separated from your family, use your <a href="#">family communications plan</a>, contact the American Red Cross (ARC) at 1-800-RED-CROSS/1-800-733-2767 or visit the ARC Safe and Well site: <a href="http://www.safeandwell.org/">www.safeandwell.org</a>.',
+    }, {
+      moment_type: :after,
+      title: 'Inspect your home for damage.',
+      description: 'Take pictures of damage (both of the building and its contents) for insurance purposes. If safety is a concern, have your residence inspected by a building inspector or structural engineer before entering.',
+    }, {
+      moment_type: :after,
+      title: 'Practice Fire Safety.',
+      description: 'Use battery-powered flashlights in the dark. DO NOT use candles, in order to prevent fires.',
+    }, {
+      moment_type: :after,
+      title: 'Check back here.',
+      description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
+    }
+  ]
+)
+if status.valid?
+  puts "Hurricane Quick Guide created"
+else
+  puts "Hurricane Quick Guide already exist"
+end
 
-# status = QuickGuide.create(
-#   em_type: 'Flood',
-#   tip_1_title: 'Turn off utilities.',
-#   tip_1_description: '<a href="http://www.ready.gov/utility-shut-safety">Turn off utilities</a> at the main switches or valves if instructed to do so. Disconnect appliances. Do not touch electrical equipment if you are wet or standing in water.',
-#   tip_2_title: 'Do not walk through moving water.',
-#   tip_2_description: 'Six inches of moving water can make you fall. If you must walk in water, walk where it isn’t moving. Check the firmness of the ground in front of you with a stick.',
-#   tip_3_title: 'Steer clear of flooded areas.',
-#   tip_3_description: 'Do not drive into flooded areas. If a few inches of floodwater rise around your car, abandon the car for higher ground. If flood water rises into your car, get on the roof.',
-#   tip_after_1_title: 'Avoid moving water',
-#   tip_after_1_description: 'Water only six inches deep can sweep you off your feet!',
-#   tip_after_2_title: 'Stay on firm ground.',
-#   tip_after_2_description: '',
-#   tip_after_3_title: 'Avoid standing water of any kind.',
-#   tip_after_3_description: 'Standing water may be electrically charged from underground or downed power lines.',
-#   tip_after_4_title: 'Check back here.',
-#   tip_after_4_description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
-#   )
-# if status.valid?
-#   puts "Flood Quick Guide created"
-# else
-#   puts "Flood Quick Guide already exist"
-# end
+status = QuickGuide.create(
+  title: 'Flood',
+  tips_attributes: [
+    {
+      moment_type: :before,
+      title: 'Turn off utilities.',
+      description: '<a href="http://www.ready.gov/utility-shut-safety">Turn off utilities</a> at the main switches or valves if instructed to do so. Disconnect appliances. Do not touch electrical equipment if you are wet or standing in water.',
+    }, {
+      moment_type: :before,
+      title: 'Do not walk through moving water.',
+      description: 'Six inches of moving water can make you fall. If you must walk in water, walk where it isn’t moving. Check the firmness of the ground in front of you with a stick.',
+    }, {
+      moment_type: :before,
+      title: 'Steer clear of flooded areas.',
+      description: 'Do not drive into flooded areas. If a few inches of floodwater rise around your car, abandon the car for higher ground. If flood water rises into your car, get on the roof.',
+    }, {
+      moment_type: :after,
+      title: 'Avoid moving water',
+      description: 'Water only six inches deep can sweep you off your feet!',
+    }, {
+      moment_type: :after,
+      title: 'Stay on firm ground.',
+      description: '',
+    }, {
+      moment_type: :after,
+      title: 'Avoid standing water of any kind.',
+      description: 'Standing water may be electrically charged from underground or downed power lines.',
+    }, {
+      moment_type: :after,
+      title: 'Check back here.',
+      description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
+    }
+  ]
+)
+if status.valid?
+  puts "Flood Quick Guide created"
+else
+  puts "Flood Quick Guide already exist"
+end
 
-# status = QuickGuide.create(
-#   em_type: 'Tornado',
-#   tip_1_title: 'Seek shelter immediately.',
-#   tip_1_description: 'Protect your head; most injuries associated with winds are from flying debris.',
-#   tip_2_title: 'Put on sturdy shoes.',
-#   tip_2_description: '',
-#   tip_3_title: 'Do not open windows',
-#   tip_3_description: '',
-#   tip_after_1_title: 'Protect yourself from debris.',
-#   tip_after_1_description: 'Wear sturdy shoes or boots, long sleeves, and gloves when handling or walking on debris.',
-#   tip_after_2_title: 'Look out for broken glass.',
-#   tip_after_2_description: 'Be aware of exposed nails and broken glass.',
-#   tip_after_3_title: 'Steer clear of power lines.',
-#   tip_after_3_description: 'Do not touch downed power lines or objects in contact with downed lines. Report electrical hazards to the police and the utilities.',
-#   tip_after_4_title: 'Check back here.',
-#   tip_after_4_description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
-#   )
-# if status.valid?
-#   puts "Tornado Quick Guide created"
-# else
-#   puts "Tornado Quick Guide already exist"
-# end
+status = QuickGuide.create(
+  title: 'Tornado',
+  tips_attributes: [
+    {
+      moment_type: :before,
+      title: 'Seek shelter immediately.',
+      description: 'Protect your head; most injuries associated with winds are from flying debris.',
+    }, {
+      moment_type: :before,
+      title: 'Put on sturdy shoes.',
+      description: '',
+    }, {
+      moment_type: :before,
+      title: 'Do not open windows',
+      description: '',
+    }, {
+      moment_type: :after,
+      title: 'Protect yourself from debris.',
+      description: 'Wear sturdy shoes or boots, long sleeves, and gloves when handling or walking on debris.',
+    }, {
+      moment_type: :after,
+      title: 'Look out for broken glass.',
+      description: 'Be aware of exposed nails and broken glass.',
+    }, {
+      moment_type: :after,
+      title: 'Steer clear of power lines.',
+      description: 'Do not touch downed power lines or objects in contact with downed lines. Report electrical hazards to the police and the utilities.',
+    }, {
+      moment_type: :after,
+      title: 'Check back here.',
+      description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
+    }
+  ]
+)
+if status.valid?
+  puts "Tornado Quick Guide created"
+else
+  puts "Tornado Quick Guide already exist"
+end
 
 # Creating Stories
 
