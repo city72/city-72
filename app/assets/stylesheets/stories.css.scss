@@ -154,7 +154,19 @@
 .statement {
   @include row();
   background-color: #eaeaea;
-  padding: 0 30px;
+  padding: 3rem 30px 3.5rem;
+
+  .description {
+    @include span-columns(8.5);
+  }
+
+  .quote {
+    @include span-columns(3);
+    border-left: solid 1px $highlight;
+    padding-left: 1rem;
+
+    p { color: $highlight }
+  }
 
   h2 {
     @include col-title();

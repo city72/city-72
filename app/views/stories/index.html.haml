@@ -31,6 +31,10 @@
             = link_to 'Make a plan', plan_path
 
   .statement
-    %h2 Identity Statement
-    %p= @city.statement
+    .description
+      %h2 Our city.
+      %p= @city.statement
+    .quote
+      %p We believe in connection, not catastrophe. 
+
   = render :partial => "partials/footer"
