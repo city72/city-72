@@ -11,10 +11,10 @@
       %p.help-block Optionally, choose an evocative image of life in your city.
     .form-group
       %label{:for => "select-plan"} What type of emergency is your area most at risk for?
-      - Plan.emergency_types.each do |k,v|
+      - QuickGuide.all.each do |q|
         .radio
-          %label{:for => "emergency-type-#{v}"}
-            = f.radio_button(:emergency_type_cd, v)
-            %span= k.capitalize
+          %label{:for => "emergency-type-#{q.id}"}
+            = f.radio_button(:quick_guide_id, q.id)
+            %span= q.title.capitalize
     .form-actions
       = f.submit "Save Changes", class: 'btn btn-primary'

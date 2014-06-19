@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140619210259) do
+ActiveRecord::Schema.define(:version => 20140619221800) do
 
   create_table "abouts", :force => true do |t|
     t.string   "brought_to_you_by"
@@ -143,10 +143,16 @@ ActiveRecord::Schema.define(:version => 20140619210259) do
 
   create_table "plans", :force => true do |t|
     t.integer  "city_id"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
-    t.integer  "emergency_type_cd"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "community_image"
+    t.integer  "quick_guide_id"
+  end
+
+  create_table "quick_guides", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "simple_captcha_data", :force => true do |t|
@@ -157,6 +163,15 @@ ActiveRecord::Schema.define(:version => 20140619210259) do
   end
 
   add_index "simple_captcha_data", ["key"], :name => "idx_key"
+
+  create_table "tips", :force => true do |t|
+    t.integer  "quick_guide_id"
+    t.integer  "moment_type_cd"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "twitter_accounts", :force => true do |t|
     t.integer  "city_connection_id"
