@@ -1,4 +1,4 @@
-backofficeApp.factory('cmsService', ['$resource', function ($resource) {
+backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource, $upload) {
 
   var City = $resource('/cms/city', null, {
     'update': {method: 'PUT'},
@@ -17,9 +17,29 @@ backofficeApp.factory('cmsService', ['$resource', function ($resource) {
   });
 
   return {
-    updateCity: function (city) {
+    updateCity: function (city, cityImage, residentImage) {
+
+      var uploads = [];
+      var names = [];
+      
+      if (!_.isEmpty(cityImage)) {
+        uploads.push(cityImage);
+        names.push('city_image');
+      }
+      if (!_.isEmpty(residentImage)) {
+        uploads.push(residentImage);
+        names.push('resident_image');
+      }
+
       city.affiliates_attributes = city.affiliates ? city.affiliates : [];
-      return City.update(city).$promise;
+
+      return $upload.upload({
+        method: 'PUT',
+        url: '/cms/city',
+        file: uploads,
+        data: {city: city},
+        fileFormDataName: names
+      });
     },
 
     updateConnection: function (connection) {
