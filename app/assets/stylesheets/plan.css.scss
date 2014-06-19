@@ -10,7 +10,7 @@
 	}
 
 	.em-plan {
-		@include retina-image(/assets/static/plan-header, 750px 417px, jpg);
+		@include retina-image(/assets/placeholder-plan, 750px 417px, jpg);
 
 		h1 {
 			margin-top: 2.5rem;
