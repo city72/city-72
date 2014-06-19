@@ -2,14 +2,14 @@
 
 class StoryMainUploader < BaseImageUploader
 
-  process :resize_and_pad => [600, 380]
+  process :resize_and_fill => [750, 417]
 
   version :common do
-	process :resize_and_pad => [300, 190]
+	process :resize_and_fill => [750, 417]
   end
 
   version :retina do
-  	process :resize_and_pad => [600, 380]
+  	process :resize_and_fill => [1500, 834]
   end
 
 end
