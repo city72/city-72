@@ -16,6 +16,7 @@ backofficeApp.controller('CityInfoController', ['$scope', 'cmsService', '$upload
     .then(
       function () {
         $scope.updating = false;
+        location.reload();
       },
       function () {
         $scope.fatalError = true;
