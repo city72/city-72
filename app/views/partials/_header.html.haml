@@ -18,7 +18,7 @@
         %strong Make<br>a Plan
     %li.em-link
       %a{href:"/em/home"}
-        %strong In an<br>Emergency
+        %strong  #{@city.abbreviation}72 Now Updates
   - unless browser.ie?
     .mobile-menu
       .normal-mode
@@ -39,7 +39,7 @@
             %a{href:"/plan"}
               %strong Make a Plan
           %li.em-link
-            %strong In an Emergency
+            %strong #{@city.abbreviation}72 Now Updates
             .fold
               %p Live updates + crisis tools in an emergency.
               %ul
