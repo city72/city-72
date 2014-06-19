@@ -1,13 +1,13 @@
 .main-content.plan
   .screen-intro
-    %p.screen-info Select an emergency to provide customized preparation instructions. 
+    %p.screen-info Select an emergency to provide customized preparation instructions.
     .action-area
       %a.btn.btn-primary{:href => "#"} Save Changes
 
   = form_for @city.plan, url: cms_plan_path, method: :put do |f|
     .form-group
       %label{:for => "community-image"} Community Image
-      %input.form-control#community-image{:type => "file"}
+      = f.file_field(:community_image, :class => "form-control", :label => "Community Image")
       %p.help-block Optionally, choose an evocative image of life in your city.
     .form-group
       %label{:for => "select-plan"} What type of emergency is your area most at risk for?
