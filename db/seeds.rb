@@ -31,16 +31,6 @@ else
   puts "Admin user already exist"
 end
 
-status = Kit.create(
-  title: 'Adventurer Kit',
-  remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
-  )
-if status.valid?
-  puts "Item created"
-else
-  puts "Item already exist"
-end
-
 # Creating Supplies
 
 # Creating ESSENTIAL supplies
@@ -296,7 +286,44 @@ else
   puts "Item already exist"
 end
 
+# Creating Kits (Items to Share )
+# status = Kit.create(
+#   title: 'Grill',
+#   use_case: '';
+#   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
+#   )
+# if status.valid?
+#   puts "Kit created"
+# else
+#   puts "Kit already exist"
+# end
+
+# status = Kit.create(
+#   title: 'Guitar',
+#   use_case: '';
+#   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
+#   )
+# if status.valid?
+#   puts "Kit created"
+# else
+#   puts "Kit already exist"
+# end
+
+# status = Kit.create(
+#   title: 'Wine',
+#   use_case: '';
+#   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
+#   )
+# if status.valid?
+#   puts "Kit created"
+# else
+#   puts "Kit already exist"
+# end
+
+
+
 # Creating Networks
+
 if city_connection.city_networks << CityNetwork.new(
   # image: ,
   headline: 'AirBnB',
@@ -343,7 +370,7 @@ if status
   puts "Mode created"
 end
 
-# Creating  Quick Guides
+# Creating Quick Guides
 
 # status = QuickGuide.create(
 #   em_type: 'Quake',
@@ -433,4 +460,70 @@ end
 #   puts "Tornado Quick Guide created"
 # else
 #   puts "Tornado Quick Guide already exist"
+# end
+
+# Creating Stories
+
+# if emergency_story << EmergencyStory.new(
+#   image: ,
+#   name: 'Charles',
+#   location: 'The Embarcadero, San Francisco',
+#   story: 'It doesn\'t matter if it\'s good times or bad times, we all need to eat. It\'s a natural fit for chefs to stand up to help (in anemergency). Friends—both digitally and in person.',
+#   selected: true
+#   )
+# puts "Story #1 created"
+# else
+# puts "Error creating Story #1"
+# end
+
+# if emergency_story << EmergencyStory.new(
+#   image: ,
+#   name: 'Lindsay',
+#   location: 'SOMA',
+#   story: 'We won\'t always be able to reach our earthquake kit. We might need help or help others. we are going to need to trust each other deeply in the days following a major emergency. These relationships are the ones that are going to sustain us and save us. ',
+#   selected: false,
+#   call_to_action_cd: 'Use your networks'
+#   )
+# puts "Story #2 created"
+# else
+# puts "Error creating Story #2"
+# end
+
+# if emergency_story << EmergencyStory.new(
+#   image: ,
+#   name: 'Carol',
+#   location: 'The Haight',
+#   story: 'At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It\'s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.',
+#   selected: false,
+#   call_to_action_cd: 'Gather your supplies'
+#   )
+# puts "Story #3 created"
+# else
+# puts "Error creating Story #3"
+# end
+
+# if emergency_story << EmergencyStory.new(
+#   image: ,
+#   name: 'Justin',
+#   location: 'Ocean Beach',
+#   story: 'We set up a list – a calling tree with our friends, and we have a meeting place. We have a general timeline – after an emergency, on the half hour, every half hour. It\'s a corner store near our houses.',
+#   selected: false,
+#   call_to_action_cd: 'Use your networks'
+#   )
+# puts "Story #4 created"
+# else
+# puts "Error creating Story #4"
+# end
+
+# if emergency_story << EmergencyStory.new(
+#   image: ,
+#   name: 'Roberta and Monica',
+#   location: 'The Sunset',
+#   story: 'At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It\'s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.',
+#   selected: false,
+#   call_to_action_cd: 'Gather your supplies'
+#   )
+# puts "Story #5 created"
+# else
+# puts "Error creating Story #5"
 # end
