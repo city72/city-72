@@ -290,7 +290,7 @@ end
 # status = Kit.create(
 #   title: 'Grill',
 #   use_case: '';
-#   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
+#   remote_image_url: ""
 #   )
 # if status.valid?
 #   puts "Kit created"
@@ -301,7 +301,7 @@ end
 # status = Kit.create(
 #   title: 'Guitar',
 #   use_case: '';
-#   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
+#   remote_image_url: ""
 #   )
 # if status.valid?
 #   puts "Kit created"
@@ -312,7 +312,7 @@ end
 # status = Kit.create(
 #   title: 'Wine',
 #   use_case: '';
-#   remote_image_url: "http://res.cloudinary.com/zauber-labs/image/upload/v1374703487/survival_f2b7th.jpg"
+#   remote_image_url: ""
 #   )
 # if status.valid?
 #   puts "Kit created"
@@ -351,6 +351,7 @@ puts "Error creating Network"
 end
 
 # Creating Partners
+
 if city_connection.city_networks << CityResource.new(
   # image: ,
   name: 'American Red Cross',
@@ -384,8 +385,8 @@ end
 #   tip_after_1_description: 'If you leave home, leave a sign telling friends and family your location. Digitaly savvy? Send a tweet or Facebook update telling everyone know that you\'re ok.',
 #   tip_after_2_title: 'Stay tuned.',
 #   tip_after_2_description: 'Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.',
-#   tip_after_4_title: 'Check back here.',
-#   tip_after_4_description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
+#   tip_after_3_title: 'Check back here.',
+#   tip_after_3_description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
 #   )
 # if status.valid?
 #   puts "Quake Quick Guide created"
