@@ -6,6 +6,8 @@ class Cms::AboutsController < BackOfficeController
 
   def update
     @about.attributes = params[:about]
+    @about.image = params[:image]
+    @about.logo = params[:logo]
     @about.save
     render :show
   end
