@@ -12,24 +12,28 @@ Mode.delete_all
 
 plan = Plan.create!
 
-city = City.new name: 'city', color_cd: 0
+city = City.new name: 'city', abbreviation: 'city', moniker: 'city residents', possessive: 'city\'s', color_cd: 0, brought_by: 'Your organization'
 city.plan = plan
 city.save(validate: false)
 
 city_connection = CityConnection.create!
-selectedStory = EmergencyStory.create! name: 'Selected story', location: 'Example Location', story: 'Story details...', call_to_action_cd: 0, selected: true
+selectedStory = EmergencyStory.create! name: 'Charles', location: 'The Embarcadero, San Francisco', story: 'It doesn\'t matter if it\'s good times or bad times, we all need to eat. It\'s a natural fit for chefs to stand up to help (in an emergency). Friends—both digitally and in person.', call_to_action_cd: 0, selected: true
 emergency_data = EmergencyData.create! map_url: 'http://google.org/crisismap/a/gmail.com/SF72?hl=en&embedded=true', citizen_timeline_id: '364391164582969346', partner_timeline_id: '390535611100053504', transportation_timeline_id: '370622485349146624', your_hashtag_timeline_id: '370622485349146624'
 about = About.create! brought_to_you_by: 'Your organization'
 
-4.times do |i|
-  EmergencyStory.create! name: "Story \##{i}", location: 'Example Location', story: 'Story details...', call_to_action_cd:0
-end
 
-if AdminUser.create(email: 'admin@sf72.org', password: '123456')
+EmergencyStory.create! name: 'Lindsay', location: 'SOMA', story: 'We won\'t always be able to reach our earthquake kit. We might need help or help others. we are going to need to trust each other deeply in the days following a major emergency. These relationships are the ones that are going to sustain us and save us. ', call_to_action_cd:0
+EmergencyStory.create! name: 'Carol', location: 'The Haight', story: 'At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It\'s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.', call_to_action_cd:1
+EmergencyStory.create! name: 'Justin', location: 'Ocean Beach', story: 'We set up a list – a calling tree with our friends, and we have a meeting place. We have a general timeline – after an emergency, on the half hour, every half hour. It\'s a corner store near our houses.', call_to_action_cd:0
+EmergencyStory.create! name: 'Roberta and Monica', location: 'The Sunset', story: 'At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It\'s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.', call_to_action_cd:1
+
+
+if AdminUser.create(email: 'admin@city72.org', password: '123456')
   puts "Admin user created"
 else
   puts "Admin user already exist"
 end
+
 
 # Creating Supplies
 
@@ -47,9 +51,6 @@ else
   puts "Item already exist"
 end
 
-# Creating Supplies
-
-# Creating ESSENTIAL supplies
 status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'Water',
@@ -286,16 +287,17 @@ else
   puts "Item already exist"
 end
 
-# Creating Kits (Items to Share )
+#Creating Kits (Items to Share)
+
 # status = Kit.create(
-#   title: 'Grill',
-#   use_case: '';
-#   remote_image_url: ""
+#   image: '',
+#   title: 'Grill'
+#   use_case: ''
 #   )
 # if status.valid?
 #   puts "Kit created"
 # else
-#   puts "Kit already exist"
+#   puts "Error creating Kit"
 # end
 
 # status = Kit.create(
@@ -351,7 +353,7 @@ puts "Error creating Network"
 end
 
 # Creating Partners
-# CALDERA LA CONCHA DE TU HERMANA
+
 if city_connection.city_resources << CityResource.new(
   # image: ,
   name: 'American Red Cross',
@@ -528,69 +530,3 @@ if status.valid?
 else
   puts "Tornado Quick Guide already exist"
 end
-
-# Creating Stories
-
-# if emergency_story << EmergencyStory.new(
-#   image: ,
-#   name: 'Charles',
-#   location: 'The Embarcadero, San Francisco',
-#   story: 'It doesn\'t matter if it\'s good times or bad times, we all need to eat. It\'s a natural fit for chefs to stand up to help (in anemergency). Friends—both digitally and in person.',
-#   selected: true
-#   )
-# puts "Story #1 created"
-# else
-# puts "Error creating Story #1"
-# end
-
-# if emergency_story << EmergencyStory.new(
-#   image: ,
-#   name: 'Lindsay',
-#   location: 'SOMA',
-#   story: 'We won\'t always be able to reach our earthquake kit. We might need help or help others. we are going to need to trust each other deeply in the days following a major emergency. These relationships are the ones that are going to sustain us and save us. ',
-#   selected: false,
-#   call_to_action_cd: 'Use your networks'
-#   )
-# puts "Story #2 created"
-# else
-# puts "Error creating Story #2"
-# end
-
-# if emergency_story << EmergencyStory.new(
-#   image: ,
-#   name: 'Carol',
-#   location: 'The Haight',
-#   story: 'At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It\'s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.',
-#   selected: false,
-#   call_to_action_cd: 'Gather your supplies'
-#   )
-# puts "Story #3 created"
-# else
-# puts "Error creating Story #3"
-# end
-
-# if emergency_story << EmergencyStory.new(
-#   image: ,
-#   name: 'Justin',
-#   location: 'Ocean Beach',
-#   story: 'We set up a list – a calling tree with our friends, and we have a meeting place. We have a general timeline – after an emergency, on the half hour, every half hour. It\'s a corner store near our houses.',
-#   selected: false,
-#   call_to_action_cd: 'Use your networks'
-#   )
-# puts "Story #4 created"
-# else
-# puts "Error creating Story #4"
-# end
-
-# if emergency_story << EmergencyStory.new(
-#   image: ,
-#   name: 'Roberta and Monica',
-#   location: 'The Sunset',
-#   story: 'At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It\'s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.',
-#   selected: false,
-#   call_to_action_cd: 'Gather your supplies'
-#   )
-# puts "Story #5 created"
-# else
-# puts "Error creating Story #5"
-# end
