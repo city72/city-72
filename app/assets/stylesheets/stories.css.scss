@@ -1,7 +1,7 @@
 .stories {
   
   .opening {
-    @include retina-image(/assets/static/story-charles, 750px 417px, jpg);
+    @include retina-image(/assets/placeholder/story-1, 750px 417px, jpg);
     background-size: contain;
 
     div {

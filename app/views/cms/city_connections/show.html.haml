@@ -70,7 +70,7 @@
               %img{src: "http://placekitten.com/g/300/200"}
             %h3 {{resource.name}}
             %p {{resource.description}}
-            %a(ng-href="{{'http://' + resource.website}}") {{resource.website}}
+            %a.call-to-action(ng-href="{{'http://' + resource.website}}") {{resource.website}}
           .list-actions
             %button.btn{type: "button"}(ng-click="editResource(resource)") Edit
     %a.btn.btn-link.add-btn(ng-click="newResource()") + Add a Partner or Resource
