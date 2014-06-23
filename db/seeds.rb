@@ -295,7 +295,7 @@ end
 
 # status = Kit.create(
 #   image: '',
-#   title: 'Grill'
+#   title: 'Grill',
 #   use_case: ''
 #   )
 # if status.valid?
@@ -306,7 +306,7 @@ end
 
 # status = Kit.create(
 #   title: 'Guitar',
-#   use_case: '';
+#   use_case: '',
 #   remote_image_url: ""
 #   )
 # if status.valid?
@@ -317,7 +317,7 @@ end
 
 # status = Kit.create(
 #   title: 'Wine',
-#   use_case: '';
+#   use_case: '',
 #   remote_image_url: ""
 #   )
 # if status.valid?
