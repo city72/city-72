@@ -9,6 +9,7 @@ backofficeApp.directive('editResourceModal', [function () {
     },
     controller: ['$scope', function ($scope) {
       $scope.save = function () {
+        $scope.resourceInEdition.logo = $scope.logo_file;
         if ($scope.newResource) {
           $scope.resourceInEdition.included = true;
           $scope.resources.push($scope.resourceInEdition);

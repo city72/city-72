@@ -1,9 +1,5 @@
 backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource, $upload) {
 
-  var City = $resource('/cms/city', null, {
-    'update': {method: 'PUT'},
-  });
-
   var Connection = $resource('/cms/city_connections', null, {
     'update': {method: 'PUT'},
   });
@@ -46,7 +42,34 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
       connection.twitter_accounts_attributes = connection.twitter_accounts ? connection.twitter_accounts : [];
       connection.city_networks_attributes = connection.city_networks ? connection.city_networks : [];
       connection.city_resources_attributes = connection.city_resources ? connection.city_resources : [];
-      return Connection.update(_(connection).omit('twitter_accounts', 'city_networks', 'city_resources')).$promise;
+
+      connection = _(connection).omit('id', 'twitter_accounts', 'city_networks', 'city_resources');
+      
+      var uploads = [];
+      var names = [];
+      var index = 0;
+
+      var name;
+
+      _(connection.city_networks_attributes)
+      .each(function (network) {
+        if (network.logo) {
+          index = index + 1;
+          uploads.push(network.logo);
+          name = 'network-logo-' + index;
+          names.push(name);
+          network.logo_name = name;
+        }
+      });
+
+      return $upload.upload({
+        method: 'PUT',
+        url: '/cms/city_connections',
+        file: uploads,
+        data: {city_connection: connection},
+        fileFormDataName: names,
+      });
+
     },
 
     updateSupplies: function (essentials, usefuls, personals) {

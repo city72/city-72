@@ -46,7 +46,7 @@
             %span Include this Network
           .list-element
             .logo
-              %img{src: "http://placekitten.com/g/300/200"}
+              %img{:'ng-src' => '{{network.logo_url}}'}
             %h3 {{network.headline}}
             %h4 Now:
             %p {{network.now}}
@@ -83,4 +83,3 @@
   %edit-network-modal(network="networkInEdition" networks="connection.city_networks" new-network="addingNewNetwork")
 
   %edit-resource-modal(resource="resourceInEdition" resources="connection.city_resources" new-resource="addingNewResource")
-        
