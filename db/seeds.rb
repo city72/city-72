@@ -4,6 +4,8 @@ Kit.delete_all
 Item.delete_all
 City.delete_all
 Plan.delete_all
+CityNetwork.delete_all
+CityResource.delete_all
 CityConnection.delete_all
 EmergencyStory.delete_all
 EmergencyData.delete_all
@@ -355,10 +357,6 @@ puts "Error creating Network"
 end
 
 # Creating Partners
-<<<<<<< HEAD
-
-=======
->>>>>>> Deployment env vars.
 if city_connection.city_resources << CityResource.new(
   # image: ,
   name: 'American Red Cross',

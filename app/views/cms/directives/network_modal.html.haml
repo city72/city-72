@@ -15,7 +15,7 @@
               can't be blank
           .form-group
             %label{:for => "network-image"} Network Logo
-            %input.form-control#network-image{:type => "file"}/
+            %input.form-control#network-image{:type => "file"}(file-input="logoFile")
           .form-group(ng-class="{'has-error': editNetworkForm.now.$dirty && editNetworkForm.now.$invalid}")
             %label.control-label{:for => "now"} Now
             %p.help-block A short description of how to use the network now. (e.g. set up your account and connect with friends.)

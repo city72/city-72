@@ -46,7 +46,8 @@
             %span Include this Network
           .list-element
             .logo
-              %img{src: "http://placekitten.com/g/300/200"}
+              %img{:'ng-src' => '{{network.logo_url}}'}
+              %div.image-edited-message(ng-show="network.new_image") The image has been edited
             %h3 {{network.headline}}
             %h4 Now:
             %p {{network.now}}
@@ -67,7 +68,8 @@
             %span Include this Partner
           .list-element
             .logo
-              %img{src: "http://placekitten.com/g/300/200"}
+              %img{:'ng-src' => "{{resource.logo_url}}"}
+              %div.image-edited-message(ng-show="resource.new_image") The image has been edited
             %h3 {{resource.name}}
             %p {{resource.description}}
             %a.call-to-action(ng-href="{{'http://' + resource.website}}") {{resource.website}}
@@ -83,4 +85,3 @@
   %edit-network-modal(network="networkInEdition" networks="connection.city_networks" new-network="addingNewNetwork")
 
   %edit-resource-modal(resource="resourceInEdition" resources="connection.city_resources" new-resource="addingNewResource")
-        

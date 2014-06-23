@@ -8,7 +8,7 @@
         .modal-body
           .form-group
             %label{:for => "partner-image"} Logo
-            %input.form-control#partner-image{:type => "file"}
+            %input.form-control#partner-image{:type => "file"}(file-input="logoFile")
           .form-group(ng-class="{'has-error': resourceForm.name.$dirty && resourceForm.name.$invalid}")
             %label.control-label{:for => "partner-name"} Partner Name
             %input.form-control#partner-name{:name => 'name'}(ng-model="resourceInEdition.name" required)

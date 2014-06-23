@@ -29,6 +29,7 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
     .then(
       function () {
         $scope.updating = false;
+        window.location.reload(); // TODO: Should receive the new info in the put response
       },
       function () {
         $scope.fatalError = true;
