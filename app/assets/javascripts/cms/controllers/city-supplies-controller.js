@@ -23,6 +23,7 @@ backofficeApp.controller('CitySuppliesController', ['$scope', 'cmsService', func
     .then(
       function () {
         $scope.updating = false;
+        window.location.reload();
       },
       function () {
         $scope.fatalError = true;

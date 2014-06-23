@@ -10,6 +10,9 @@ backofficeApp.directive('editSupplyModal', [function () {
       
       $scope.save = function () {
         $scope.supplyInEdition.image = $scope.supplyImage;
+        if ($scope.supplyInEdition.image) {
+          $scope.supplyInEdition.new_image = true;
+        }
         var supplyIndex = _($scope.supplies).indexOf($scope.supply);
         $scope.supplies[supplyIndex] = $scope.supplyInEdition;
         $scope.supply = null;

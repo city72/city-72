@@ -17,7 +17,7 @@ class Cms::SuppliesController < BackOfficeController
       supply = Item.find(s[:id])
       # Copies the attached image to the correspondent item
       s[:image] = params[s[:image_name]] if s[:image_name]
-      supply.attributes = s.except(:id, :image_url, :image_name)
+      supply.attributes = s.except(:id, :image_url, :image_name, :new_image)
       supply.save!
     end
     render status: :ok, nothing: true
