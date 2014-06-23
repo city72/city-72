@@ -47,6 +47,7 @@
           .list-element
             .logo
               %img{:'ng-src' => '{{network.logo_url}}'}
+              %div.image-edited-message(ng-show="network.new_image") The image has been edited
             %h3 {{network.headline}}
             %h4 Now:
             %p {{network.now}}

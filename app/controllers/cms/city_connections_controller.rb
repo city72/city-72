@@ -22,6 +22,7 @@ class Cms::CityConnectionsController < BackOfficeController
       city_network[:logo] = params[city_network[:logo_name]] if city_network[:logo_name]
       city_network.delete(:logo_name)
       city_network.delete(:logo_url)
+      city_network.delete(:new_image)
     end
 
     city_resources.each do |city_resource|

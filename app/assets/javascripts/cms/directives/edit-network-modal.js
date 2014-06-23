@@ -11,6 +11,9 @@ backofficeApp.directive('editNetworkModal', ['cmsService', function (cmsService)
 
       $scope.save = function () {
         $scope.networkInEdition.logo = $scope.logoFile;
+        if ($scope.networkInEdition.logo) {
+          $scope.networkInEdition.new_image = true; // Removes the image from the network box
+        }
         if ($scope.newNetwork) {
           $scope.networkInEdition.included = true;
           $scope.networks.push($scope.networkInEdition);
