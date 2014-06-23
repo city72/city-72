@@ -48,7 +48,6 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
       var uploads = [];
       var names = [];
       var index = 0;
-
       var name;
 
       _(connection.city_networks_attributes)
@@ -79,14 +78,37 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
         url: '/cms/city_connections',
         file: uploads,
         data: {city_connection: connection},
-        fileFormDataName: names,
+        fileFormDataName: names
       });
 
     },
 
     updateSupplies: function (essentials, usefuls, personals) {
       var allSupplies = _(essentials).chain().union(usefuls).union(personals).value();
-      return Supplies.update({supplies: allSupplies}).$promise;
+
+      var uploads = [];
+      var names = [];
+      var index = 0;
+      var name;
+
+      _(allSupplies).each(function (supply) {
+        if (supply.image) {
+          index = index + 1;
+          uploads.push(supply.image);
+          name = 'supply-' + index;
+          names.push(name);
+          supply.image_name = name;
+        }
+      });
+
+      return $upload.upload({
+        method: 'PUT',
+        url: '/cms/supplies',
+        file: uploads,
+        data: {supplies: allSupplies},
+        fileFormDataName: names
+      });
+
     },
 
     updateStories: function (stories, city) {

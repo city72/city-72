@@ -57,19 +57,6 @@ end
 
 status = Item.create(
   category: Categories::ESSENTIAL.to_s,
-  title: 'Water',
-  use_case: 'Everyone enjoys a tall drink of water. Stay hydrated by gathering one gallon per person, per day.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156140/yj0oxsywjmnwbcvk1bt9.png",
-  order: 0
-  )
-if status.valid?
-  puts "Item created"
-else
-  puts "Item already exist"
-end
-
-status = Item.create(
-  category: Categories::ESSENTIAL.to_s,
   title: 'First aid kit',
   use_case: 'You might need to be able to patch up small scrapes until help arrives. Channel your inner Scout and keep a first aid kit on hand.',
   remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156142/nhmbdctuxqgqzimnyg1g.png",
@@ -295,7 +282,7 @@ end
 
 # status = Kit.create(
 #   image: '',
-#   title: 'Grill'
+#   title: 'Grill',
 #   use_case: ''
 #   )
 # if status.valid?
@@ -306,7 +293,7 @@ end
 
 # status = Kit.create(
 #   title: 'Guitar',
-#   use_case: '';
+#   use_case: '',
 #   remote_image_url: ""
 #   )
 # if status.valid?
@@ -317,7 +304,7 @@ end
 
 # status = Kit.create(
 #   title: 'Wine',
-#   use_case: '';
+#   use_case: '',
 #   remote_image_url: ""
 #   )
 # if status.valid?

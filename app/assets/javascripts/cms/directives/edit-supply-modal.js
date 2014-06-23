@@ -9,6 +9,10 @@ backofficeApp.directive('editSupplyModal', [function () {
     controller: ['$scope', function ($scope) {
       
       $scope.save = function () {
+        $scope.supplyInEdition.image = $scope.supplyImage;
+        if ($scope.supplyInEdition.image) {
+          $scope.supplyInEdition.new_image = true;
+        }
         var supplyIndex = _($scope.supplies).indexOf($scope.supply);
         $scope.supplies[supplyIndex] = $scope.supplyInEdition;
         $scope.supply = null;
@@ -24,6 +28,7 @@ backofficeApp.directive('editSupplyModal', [function () {
 
       $scope.$watch('supply', function () {
         if ($scope.supply) {
+          $scope.supplyImage = $scope.supplyImage ? $scope.supplyImage : null;
           $scope.supplyInEdition = _($scope.supply).clone();
           $modalEl.modal('show');
         } else {

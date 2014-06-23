@@ -9,7 +9,8 @@
   %ul.editable-list
     %li(ng-repeat="essential in essentials")
       .list-element
-        %img{src: "http://placekitten.com/g/300/200"}
+        %img{:'ng-src' => '{{essential.image_url}}'}
+        %div.image-edited-message(ng-show="essential.new_image") The image has been edited
         %h3 {{essential.title}}
         %p {{essential.use_case}}
       .list-actions
@@ -19,7 +20,8 @@
   %ul.editable-list
     %li(ng-repeat="useful in usefuls")
       .list-element
-        %img{src: "http://placekitten.com/g/300/200"}
+        %img{:'ng-src' => '{{useful.image_url}}'}
+        %div.image-edited-message(ng-show="useful.new_image") The image has been edited
         %h3 {{useful.title}}
         %p {{useful.use_case}}
       .list-actions
@@ -29,7 +31,8 @@
   %ul.editable-list
     %li(ng-repeat="personal in personals")
       .list-element
-        %img{src: "http://placekitten.com/g/300/200"}
+        %img{:'ng-src' => '{{personal.image_url}}'}
+        %div.image-edited-message(ng-show="personal.new_image") The image has been edited
         %h3 {{personal.title}}
         %p {{personal.use_case}}
       .list-actions
@@ -39,7 +42,8 @@
   %ul.editable-list
     %li(ng-repeat="kit in kits")
       .list-element
-        %img{src: "http://placekitten.com/g/300/200"}
+        %img{:'ng-src' => '{{kit.image_url}}'}
+        %div.image-edited-message(ng-show="kit.new_image") The image has been edited
         %h3 {{kit.title}}
         %p 
       .list-actions
