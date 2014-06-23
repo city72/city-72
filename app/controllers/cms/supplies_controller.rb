@@ -12,10 +12,12 @@ class Cms::SuppliesController < BackOfficeController
   end
 
   def update
-    supplies = params[:supplies]
+    supplies = JSON.parse(params[:supplies], symbolize_names: true)
     supplies.each do |s|
       supply = Item.find(s[:id])
-      supply.attributes = s.except(:id, :image_url)
+      # Copies the attached image to the correspondent item
+      s[:image] = params[s[:image_name]] if s[:image_name]
+      supply.attributes = s.except(:id, :image_url, :image_name)
       supply.save!
     end
     render status: :ok, nothing: true

@@ -8,7 +8,7 @@
         %form{:role => "form", :name => 'supplyForm'}
           .form-group
             %label{:for => "supply-image"} Image of Supply
-            %input.form-control#supply-image{:type => "file"}/
+            %input.form-control#supply-image{:type => "file"}(file-input="supplyImage")
           .form-group(ng-class="{'has-error': supplyForm.name.$dirty && supplyForm.name.$invalid}")
             %label.control-label{:for => "supply-name"} 
               Supply Name 
