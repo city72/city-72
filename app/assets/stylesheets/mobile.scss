@@ -725,42 +725,60 @@ $mobile-padding: 23px;
 
 	/* STORIES */
 
-	.story-about {
-		height: auto;
-		margin: 0;
-		display: block;
-		width: 100%;
-	}
+	.stories {
+		
+		.opening {
+			background-size: 120%;
+			background-position: 90% 150px;
 
-	.stories .intro {
-		height: auto;
-		margin-bottom: 0;
-		width: 100%;
+			.story-about {
+				height: 130px;
+				margin: $mobile-padding 0;
+				display: block;
+				width: 100%;
+				padding: $mobile-padding;
 
-		.personal-look {
-			background-color: $highlight;
-			padding: 0 23px;
-			margin-top: -8px;
+				h1 {
+					text-align: left;
+					height: auto;
+					margin: 0 0 0.6rem;
+				}
 
-			h2 {
-				display: none;
+				h2 {
+					line-height: 1.2;
+				}
 			}
+		}
 
-			p {
-				@include mobile-body-paragraph;
-				color: #FFF;
-				width: auto;
-				margin-top: 1rem;
+		.intro {
+			height: auto;
+			margin-bottom: 0;
+			width: 100%;
+
+			.personal-look {
+				background-color: $highlight;
+				padding: 0 23px;
+				margin-top: -8px;
+
+				h2 {
+					display: none;
+				}
+
+				p {
+					@include mobile-body-paragraph;
+					color: #FFF;
+					width: auto;
+					margin-top: 1rem;
+				}
+
 			}
-
-		} 
+		}
 	}
 
 	.story-list {
 		margin-top: 10px;
 
 		li span,
-		li a,
 		li a img,
 		li span img {
 			height: 203px;
@@ -768,6 +786,17 @@ $mobile-padding: 23px;
 
 		.quote-dialog {
 			display: none;
+		}
+
+	}
+
+	.statement {
+		.description {
+			@include span-columns(4);
+		}
+
+		.quote {
+			@include span-columns(4);
 		}
 	}
 
@@ -1600,41 +1629,42 @@ $mobile-padding: 23px;
 			}
 
 			img {
-				position: absolute;
+				position: static;
 				z-index: 0;
 				width: 100%;
 				height: auto;
 			}
 
 			.story-data {
-				position: absolute;
+				position: static;
 				bottom: 0.7rem;
-				left: 3%;
-				width: 97%;
-				text-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+				padding: 0 $mobile-padding;
+				// left: 3%;
+				// width: 97%;
+				// text-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 
-				h5 {
-					font-size: 2.3rem;
-					color: #FFF;
-					line-height: 1.2;
-				}
+				// h5 {
+				// 	font-size: 2.3rem;
+				// 	color: #FFF;
+				// 	line-height: 1.2;
+				// }
 
-				p {
-					font-size: 1rem;
-					color: #FFF;
-				}
+				// p {
+				// 	font-size: 1rem;
+				// 	color: #FFF;
+				// }
 			}
 
-			.story-data:after {
-				font-family: 'sf72-icons';
-				font-size: 1.5rem;
-				content: 's';
-				position: absolute;
-				right: 1.2rem;
-				bottom: 1.3rem;
-				color: #FFF;
-				z-index: 1;
-			}
+			// .story-data:after {
+			// 	font-family: 'sf72-icons';
+			// 	font-size: 1.5rem;
+			// 	content: 's';
+			// 	position: absolute;
+			// 	right: 1.2rem;
+			// 	bottom: 1.3rem;
+			// 	color: #FFF;
+			// 	z-index: 1;
+			// }
 
 			.story-type { display: none; }
 
