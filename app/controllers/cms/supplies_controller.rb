@@ -15,7 +15,7 @@ class Cms::SuppliesController < BackOfficeController
     supplies = params[:supplies]
     supplies.each do |s|
       supply = Item.find(s[:id])
-      supply.attributes = s.except(:id)
+      supply.attributes = s.except(:id, :image_url)
       supply.save!
     end
     render status: :ok, nothing: true

@@ -9,7 +9,7 @@
   %ul.editable-list
     %li(ng-repeat="essential in essentials")
       .list-element
-        %img{src: "http://placekitten.com/g/300/200"}
+        %img{:'ng-src' => '{{essential.image_url}}'}
         %h3 {{essential.title}}
         %p {{essential.use_case}}
       .list-actions
@@ -19,7 +19,7 @@
   %ul.editable-list
     %li(ng-repeat="useful in usefuls")
       .list-element
-        %img{src: "http://placekitten.com/g/300/200"}
+        %img{:'ng-src' => '{{useful.image_url}}'}
         %h3 {{useful.title}}
         %p {{useful.use_case}}
       .list-actions
@@ -29,7 +29,7 @@
   %ul.editable-list
     %li(ng-repeat="personal in personals")
       .list-element
-        %img{src: "http://placekitten.com/g/300/200"}
+        %img{:'ng-src' => '{{personal.image_url}}'}
         %h3 {{personal.title}}
         %p {{personal.use_case}}
       .list-actions
@@ -39,7 +39,7 @@
   %ul.editable-list
     %li(ng-repeat="kit in kits")
       .list-element
-        %img{src: "http://placekitten.com/g/300/200"}
+        %img{:'ng-src' => '{{kit.image_url}}'}
         %h3 {{kit.title}}
         %p 
       .list-actions
