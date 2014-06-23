@@ -19,6 +19,7 @@ gem "browser", '~> 0.6.0'
 
 gem 'heroku-deflater', '~> 0.5.3', :group => :production
 gem 'unicorn-rails', '~> 2.1.1', :group => :production
+gem 'rails_12factor', '~> 0.0.2', :group => :production
 
 gem 'simple_form', '~> 2.1.1'
 gem 'bootstrap-sass', '~> 3.1.1.1'
@@ -28,7 +29,8 @@ gem 'devise', '~> 3.0.0'
 # in production environments by default.
 gem 'bourbon', '~> 3.1.8'
 gem 'neat', '~> 1.3.0'
-gem 'sass-rails',   '~> 3.2.3'
+gem 'sass', '~> 3.2.13'
+gem 'sass-rails', '~> 3.2.3'
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
