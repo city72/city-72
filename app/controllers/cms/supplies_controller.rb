@@ -7,7 +7,7 @@ class Cms::SuppliesController < BackOfficeController
     @usefuls = serialize_array(usefuls, ItemSerializer)
     personals = Item.where(category: Categories::PERSONAL.to_s).order('items.order ASC')
     @personals = serialize_array(personals, ItemSerializer)
-    kits = Kit.all
+    kits = Kit.order(:id).all
     @kits = serialize_array(kits, KitSerializer)
   end
 
@@ -19,6 +19,13 @@ class Cms::SuppliesController < BackOfficeController
       s[:image] = params[s[:image_name]] if s[:image_name]
       supply.attributes = s.except(:id, :image_url, :image_name, :new_image)
       supply.save!
+    end
+    kits = JSON.parse(params[:kits], symbolize_names: true)
+    kits.each do |k|
+      kit = Kit.find(k[:id])
+      k[:image] = params[k[:image_name]] if k[:image_name]
+      kit.attributes = k.except(:id, :image_url, :image_name, :new_image)
+      kit.save!
     end
     render status: :ok, nothing: true
   end

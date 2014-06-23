@@ -46,7 +46,7 @@ status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'Water',
   use_case: 'Everyone enjoys a tall drink of water. Stay hydrated by gathering one gallon per person, per day.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156140/yj0oxsywjmnwbcvk1bt9.png",
+  image: File.open('app/assets/images/placeholder/supply-1.png'),
   order: 0
   )
 if status.valid?
@@ -59,7 +59,7 @@ status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'First aid kit',
   use_case: 'You might need to be able to patch up small scrapes until help arrives. Channel your inner Scout and keep a first aid kit on hand.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156142/nhmbdctuxqgqzimnyg1g.png",
+  image: File.open('app/assets/images/placeholder/supply-2.png'),
   order: 1
   )
 if status.valid?
@@ -72,7 +72,7 @@ status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'Flashlight and extra batteries',
   use_case: 'While candles are great for ambience, a good flashlight is invaluable for navigating if power is out. Simply put: it buys you freedom.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156144/khftzdejjie8i3jgogwn.png",
+  image: File.open('app/assets/images/placeholder/supply-3.png'),
   order: 2
   )
 if status.valid?
@@ -85,7 +85,7 @@ status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'Fire extinguisher',
   use_case: 'You didn\'t start the fire. But you can help extinguish it. Stash a fire extinguisher with your supplies so that you can stay safe.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156145/qkyeoyitydxzv8maov0v.png",
+  image: File.open('app/assets/images/placeholder/supply-4.png'),
   order: 3
   )
 if status.valid?
@@ -98,7 +98,7 @@ status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'Manual can opener',
   use_case: 'Just like when camping, in an emergency an old fashioned can opener is just the ticket. Impress your friends with your canned culinary choices.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156145/njgmdu21vfanotzuzzzx.png",
+  image: File.open('app/assets/images/placeholder/supply-5.png'),
   order: 4
   )
 if status.valid?
@@ -111,7 +111,7 @@ status = Item.create(
   category: Categories::ESSENTIAL.to_s,
   title: 'Non-perishable food',
   use_case: 'Next time you\'re at the grocery store, add extra shelf-stable foods (that you like to eat!) to your basket. We recommend 3 days of food per person.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156134/iybtqutds2nqagajwqbs.png",
+  image: File.open('app/assets/images/placeholder/supply-6.png'),
   order: 5
   )
 if status.valid?
@@ -125,7 +125,7 @@ status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Warm clothes and sturdy shoes',
   use_case: 'You never know when an emergency might happen — or what you might (or might not) be wearing. Be ready for the elements by setting aside warm clothes and walking shoes.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156135/pvrgzmaasntweh6kbugy.png",
+  image: File.open('app/assets/images/placeholder/supply-7.png'),
   order: 0
   )
 if status.valid?
@@ -138,7 +138,7 @@ status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Radio (battery operated or hand crank)',
   use_case: 'Feeling safe starts with knowing what\'s going on—so tune into the radio. Check 740AM for live updates—and your favorite radio station to pass the time.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156136/wavazhmfgvpaikycpcjk.png",
+  image: File.open('app/assets/images/placeholder/supply-8.png'),
   order: 1
   )
 if status.valid?
@@ -151,7 +151,7 @@ status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Cash',
   use_case: 'In an emergency, credit cards might not work, and cash becomes important. Protect your purchasing power by stashing small bills.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156143/xhfbkepag6ahijdkz4tn.png",
+  image: File.open('app/assets/images/placeholder/supply-9.png'),
   order: 2
   )
 if status.valid?
@@ -164,7 +164,7 @@ status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Sleeping bag or blankets',
   use_case: 'Keeping warm is crucial. Blankets and sleeping bags will help you stay snug, even when the fog rolls in—or if the power goes out.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156133/bgbxp62synwcgoyxuepq.png",
+  image: File.open('app/assets/images/placeholder/supply-10.png'),
   order: 3
   )
 if status.valid?
@@ -177,7 +177,7 @@ status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Cellphone charger (battery operated or car plug-in)',
   use_case: 'A battery operated phone charger, or one that plugs into your car, will help you stay informed, take photos, and communicate in an emergency.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156136/whqpw70hhovoddwlarhq.png",
+  image: File.open('app/assets/images/placeholder/supply-11.png'),
   order: 4
   )
 if status.valid?
@@ -190,7 +190,7 @@ status = Item.create(
   category: Categories::USEFUL.to_s,
   title: 'Tools',
   use_case: 'A basic toolkit with items like a hammer and duct tape will help you turn off the gas, repair broken windows, or board up your home.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156137/tf8ehyafwckk7kmaobb2.png",
+  image: File.open('app/assets/images/placeholder/supply-12.png'),
   order: 5
   )
 if status.valid?
@@ -204,7 +204,7 @@ status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Prescriptions',
   use_case: 'Plan for your personal health. Keep a 3-day dose of any medicine you take on a regular basis, in case the pharmacy is closed.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156140/sadtcnz44thr3wcpsntw.png",
+  image: File.open('app/assets/images/placeholder/supply-13.png'),
   order: 0
   )
 if status.valid?
@@ -217,7 +217,7 @@ status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Sweet (or salty) treats',
   use_case: 'What non-perishable comfort food would lift your spirits? A supply of chocolate, dried fruit, or nuts with your emergency snacks might make you smile, and help you make friends.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156138/ny1scnnxv4h9safuljvw.png",
+  image: File.open('app/assets/images/placeholder/supply-14.png'),
   order: 1
   )
 if status.valid?
@@ -230,7 +230,7 @@ status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Personal hygiene & sanitation items',
   use_case: 'Toilet paper, feminine supplies, hand sanitizer, a toothbrush, soap, unscented bleach, and heavy duty garbage bags are a good place to start.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156142/ejgefcwzoj66544tktbl.png",
+  image: File.open('app/assets/images/placeholder/supply-15.png'),
   order: 2
   )
 if status.valid?
@@ -243,7 +243,7 @@ status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Personal documents',
   use_case: 'Upload copies of your driver\'s license, passport, leases, titles, and contact list to the cloud. Protect your assets, by going digital. Or make photocopies.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156136/uxsobm3pq9vjxpqdq0wt.png",
+  image: File.open('app/assets/images/placeholder/supply-16.png'),
   order: 3
   )
 if status.valid?
@@ -256,7 +256,7 @@ status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Children\'s toys and games',
   use_case: 'What unique items would make your family feel better in an emergency? Favorite games? Special toys? Little things can make a big difference.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156138/xdiggz9qjvjr9hr22dby.png",
+  image: File.open('app/assets/images/placeholder/supply-17.png'),
   order: 4
   )
 if status.valid?
@@ -269,7 +269,7 @@ status = Item.create(
   category: Categories::PERSONAL.to_s,
   title: 'Pet items',
   use_case: 'Don\'t forget to store dog food, toys, or extra water for your pets.',
-  remote_image_url: "http://res.cloudinary.com/hlu4lzcwg/image/upload/v1383156139/dbpkljqy6lljejnodnhh.png",
+  image: File.open('app/assets/images/placeholder/supply-18.png'),
   order: 5
   )
 if status.valid?
@@ -280,38 +280,38 @@ end
 
 #Creating Kits (Items to Share)
 
-# status = Kit.create(
-#   image: '',
-#   title: 'Grill',
-#   use_case: ''
-#   )
-# if status.valid?
-#   puts "Kit created"
-# else
-#   puts "Error creating Kit"
-# end
+status = Kit.create!(
+  title: 'Grill',
+  image: File.open('app/assets/images/placeholder/kit-1.png'),
+  use_case: ''
+  )
+if status.valid?
+  puts "Kit created"
+else
+  puts "Error creating Kit"
+end
 
-# status = Kit.create(
-#   title: 'Guitar',
-#   use_case: '',
-#   remote_image_url: ""
-#   )
-# if status.valid?
-#   puts "Kit created"
-# else
-#   puts "Kit already exist"
-# end
+status = Kit.create(
+  title: 'Wine',
+  image: File.open('app/assets/images/placeholder/kit-2.png'),
+  use_case: ''
+  )
+if status.valid?
+  puts "Kit created"
+else
+  puts "Kit already exist"
+end
 
-# status = Kit.create(
-#   title: 'Wine',
-#   use_case: '',
-#   remote_image_url: ""
-#   )
-# if status.valid?
-#   puts "Kit created"
-# else
-#   puts "Kit already exist"
-# end
+status = Kit.create(
+  title: 'Board games',
+  image: File.open('app/assets/images/placeholder/kit-3.png'),
+  use_case: ''
+  )
+if status.valid?
+  puts "Kit created"
+else
+  puts "Kit already exist"
+end
 
 
 
