@@ -1,3 +1,3 @@
 class KitSerializer < ActiveModel::Serializer
-  attributes :id, :title, :image_url
+  attributes :id, :use_case, :title, :image_url
 end
