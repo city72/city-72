@@ -4,7 +4,7 @@
 	.opening.about-intro
 		%h1 #{@city.abbreviation}72 is for us,</br>by us.
 		%div
-			%p Our mission is to enable #{@city.moniker} to get prepared. #{@city.abbreviation}72 was created by [brought_by], with the belief that the best way to do this is to get connected to each other, share resources, and start re-imagining the way we think about emergencies.	
+			%p Our mission is to enable #{@city.moniker} to get prepared. #{@city.abbreviation}72 was created by #{@city.brought_by}, with the belief that the best way to do this is to get connected to each other, share resources, and start re-imagining the way we think about emergencies.
 	%ul.about-data
 		%li
 			.about-who
@@ -14,11 +14,11 @@
 		%li
 			.about-what
 			%h2 What
-			%p A people-centered vision of emergency preparedness. Nobody likes to think about emergencies, but #{@city.abbreviation}72 takes the mystery out of the process of getting prepared. We do this by telling human stories and providing tools that fit into your daily life. 
+			%p A people-centered vision of emergency preparedness. Nobody likes to think about emergencies, but #{@city.abbreviation}72 takes the mystery out of the process of getting prepared. We do this by telling human stories and providing tools that fit into your daily life.
 			%p #{@city.abbreviation}72 is not a new social network. It’s a platform designed to plug into your existing networks – whether social or digital.
 		%li
 			.about-why
 			%h2 Why
-			%p A little now will mean a lot later; connecting with your network, downloading an app, or watching a video is the first step towards being better prepared for an emergency. 
+			%p A little now will mean a lot later; connecting with your network, downloading an app, or watching a video is the first step towards being better prepared for an emergency.
 			%p #{@city.name}, along with other cities across the country, is leading the charge for a different kind of emergency prep. Let’s start the movement.
 	= render :partial => "partials/footer"

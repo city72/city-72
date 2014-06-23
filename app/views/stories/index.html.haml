@@ -2,7 +2,7 @@
 = javascript_include_tag "home"
 .main-container.stories
   = render :partial => "partials/header"
-  
+
   .opening
     %div
       %p= @selected_story.story
@@ -11,14 +11,14 @@
       %h2= @selected_story.location
 
   .intro
-    .personal-look 
+    .personal-look
       %h2 A personal look at emergencies and connection.
       %p Watch stories of people who have lived through disasters—and those who are already fostering connections in #{@city.name}. No matter your situation, chances are, there’s someone like you with wisdom to share.
 
   %ul.story-list
     - @stories.each do |story|
       %li
-        %img{src: "/assets/placeholder/story-2.jpg", alt: "A new story coming soon"}
+        %img{src: story.image, alt: story.name}
         .story-data
           %h4= story.name
           %h5.location= story.location
@@ -35,6 +35,6 @@
       %h2 Our city.
       %p= @city.statement
     .quote
-      %p We believe in connection, not catastrophe. 
+      %p We believe in connection, not catastrophe.
 
   = render :partial => "partials/footer"

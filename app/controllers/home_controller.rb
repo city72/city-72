@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   after_filter :dynamic_content, only: [:index, :em_home]
   after_filter :static_content, only: [:home, :connect, :about, :supplies, :quick_guide, :our_manifesto]
+  before_filter :agency
 
   def index
     @crisis_mode = Mode.is_crisis_mode
@@ -22,6 +23,14 @@ class HomeController < ApplicationController
     @city_connection = CityConnection.first
   end
 
+  def plan
+    @quick_guide = QuickGuide.first
+  end
+
+  def quick_guide
+    @quick_guide = QuickGuide.first
+  end
+
   def supplies
     @essentials = Item.where(category: Categories::ESSENTIAL.to_s).order('items.order ASC')
     @useful = Item.where(category: Categories::USEFUL.to_s).order('items.order ASC')
@@ -29,6 +38,13 @@ class HomeController < ApplicationController
     @kits = Kit.all
   end
 
-  empty_methods :home, :quick_guide, :our_manifesto
+  empty_methods :home, :our_manifesto
+
+  private
+    def agency
+      @city = City.first
+      @agency_url = @city.agency_url
+      @agency_site = @city.agency_site
+    end
 
 end
