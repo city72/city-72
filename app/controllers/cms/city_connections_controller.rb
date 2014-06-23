@@ -20,6 +20,7 @@ class Cms::CityConnectionsController < BackOfficeController
     city_networks.each do |city_network|
       # Copies the attached file to the correspondent network
       city_network[:logo] = params[city_network[:logo_name]] if city_network[:logo_name]
+      # TODO: It should be done on the client side
       city_network.delete(:logo_name)
       city_network.delete(:logo_url)
       city_network.delete(:new_image)
@@ -28,8 +29,10 @@ class Cms::CityConnectionsController < BackOfficeController
     city_resources.each do |city_resource|
       # Copies the attached file to the correspondent resource
       city_resource[:logo] = params[city_resource[:logo_name]] if city_resource[:logo_name]
+      # TODO: It should be done on the client side
       city_resource.delete(:logo_name)
       city_resource.delete(:logo_url)
+      city_resource.delete(:new_image)
     end
 
     @city_connection.attributes = params[:city_connection]
