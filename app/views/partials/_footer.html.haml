@@ -20,13 +20,13 @@
 							- Affiliate.offset(0).limit(4).each do |affiliate|
 								%li
 									%a{href: affiliate.url, target:"_blank"}
-										= affiliate.string
+										= affiliate.name
 					%li.resources-last
 						%ul
 							- Affiliate.offset(4).limit(4).each do |affiliate|
 								%li
 									%a{href: affiliate.url, target:"_blank"}
-										= affiliate.string
+										= affiliate.name
 			%li.social
 				%h2 Stay in touch
 				%ul
