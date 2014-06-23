@@ -19,7 +19,7 @@ backofficeApp.controller('CitySuppliesController', ['$scope', 'cmsService', func
   $scope.save = function () {
     $scope.updating = true;
     $scope.fatalError = false;
-    cmsService.updateSupplies($scope.essentials, $scope.usefuls, $scope.personals)
+    cmsService.updateSupplies($scope.essentials, $scope.usefuls, $scope.personals, $scope.kits)
     .then(
       function () {
         $scope.updating = false;

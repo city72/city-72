@@ -83,7 +83,7 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
 
     },
 
-    updateSupplies: function (essentials, usefuls, personals) {
+    updateSupplies: function (essentials, usefuls, personals, kits) {
       var allSupplies = _(essentials).chain().union(usefuls).union(personals).value();
 
       var uploads = [];
@@ -101,11 +101,22 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
         }
       });
 
+      index = 0;
+      _(kits).each(function (kit) {
+        if (kit.image) {
+          index = index + 1;
+          uploads.push(kit.image);
+          name = 'kit-' + index;
+          names.push(name);
+          kit.image_name = name;
+        }
+      });
+
       return $upload.upload({
         method: 'PUT',
         url: '/cms/supplies',
         file: uploads,
-        data: {supplies: allSupplies},
+        data: {supplies: allSupplies, kits: kits},
         fileFormDataName: names
       });
 

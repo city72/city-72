@@ -45,9 +45,9 @@
         %img{:'ng-src' => '{{kit.image_url}}'}
         %div.image-edited-message(ng-show="kit.new_image") The image has been edited
         %h3 {{kit.title}}
-        %p 
+        %p {{kit.use_case}}
       .list-actions
-        %button.btn{type: "button"} Edit
+        %button.btn{type: "button"}(ng-click="editSupply(kit, kits)") Edit
 
   .form-actions
     %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
