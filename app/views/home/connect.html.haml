@@ -30,14 +30,16 @@
         %p <strong>In an emergency:</strong> Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud.
       - @city_connection.city_networks.each do |cn|
         %li
-          %img{src: cn.network_url}
+          %img{:src => cn.logo}
           %h3
             = cn.headline
           %p.now
+            <strong>Now:</strong>
             = cn.now
           %p.emergency
+            <strong>In an emergency:</strong>
             = cn.in_an_emergency
-          %a{:href => "#"}
+          %a{:href => cn.network_url, :target => "_blank"} Start now
 
   .full-img-article
     %ul

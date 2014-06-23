@@ -10,10 +10,10 @@
       %h1= @selected_story.name
       %h2= @selected_story.location
 
-  .intro
-    .personal-look 
-      %h2 A personal look at emergencies and connection.
-      %p Watch stories of people who have lived through disasters—and those who are already fostering connections in #{@city.name}. No matter your situation, chances are, there’s someone like you with wisdom to share.
+  / .intro
+  /   .personal-look 
+  /     %h2 A personal look at emergencies and connection.
+  /     %p Watch stories of people who have lived through disasters—and those who are already fostering connections in #{@city.name}. No matter your situation, chances are, there’s someone like you with wisdom to share.
 
   %ul.story-list
     - @stories.each do |story|

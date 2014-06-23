@@ -116,7 +116,8 @@ $mobile-padding: 23px;
 		}
 
 		.social {
-			margin-top: -100px;
+			margin-top: 0;
+			float: none;
 		}
 
 		.social h2 {
@@ -560,9 +561,7 @@ $mobile-padding: 23px;
 
 			&.facebook:before,
 			&.twitter:before,
-			&.airbnb:before,
-			&.drive:before,
-			&.neighbors:before {
+			&.drive:before {
 				font-size: 2rem;
 				width: 57px;
 				height: 52px;
@@ -572,10 +571,15 @@ $mobile-padding: 23px;
 		}
 
 		h3 {
-			padding-left: 72px;
 			font-size: 16px;
 			line-height: 1.2;
 			font-family: $font-bold;
+		}
+
+		.facebook h3,
+		.twitter h3,
+		.drive h3 {
+			padding-left: 72px;
 		}
 
 		p {
@@ -721,16 +725,22 @@ $mobile-padding: 23px;
 
 	/* STORIES */
 
+	.story-about {
+		height: auto;
+		margin: 0;
+		display: block;
+		width: 100%;
+	}
+
 	.stories .intro {
 		height: auto;
 		margin-bottom: 0;
 		width: 100%;
 
 		.personal-look {
-			background-color: #FBB03B;
+			background-color: $highlight;
 			padding: 0 23px;
 			margin-top: -8px;
-
 
 			h2 {
 				display: none;
@@ -2256,22 +2266,35 @@ $mobile-padding: 23px;
 	}
 
 	/* IMAGES */
-	.home .page-intro .big-title {
-		@include retina-image(/assets/mobile/home-header, 320px 273px, jpg);
-		background-size: auto;
-	}
 
 	.connection {
-		@include retina-image(/assets/mobile/threemobile, 320px 181px, jpg);
-	}
-
-	.opening {
-		@include retina-image(/assets/mobile/get-connected-header, 320px 273px, jpg);
+		background-size: 140%;
 	}
 
 	.full-img-article {
 		@include retina-image(/assets/mobile/gardening, 320px 514px, jpg);
 	}
+
+	// .home .page-intro .big-title {
+	// 	@include retina-image(/assets/mobile/home-header, 320px 273px, jpg);
+	// 	background-size: auto;
+	// }
+
+	// .opening {
+	// 	@include retina-image(/assets/mobile/get-connected-header, 320px 273px, jpg);
+	// }
+
+	// .opening.supplies {
+	// 	@include retina-image(/assets/mobile/supplies-header, 320px 273px, jpg);
+	// }
+
+	// .about .opening {
+	// 	@include retina-image(/assets/mobile/about-us-header, 320px 273px, jpg);
+	// }
+
+	// .plan .em-plan {
+	// 	@include retina-image(/assets/mobile/make-plan-header, 320px 273px, jpg);
+	// }
 
 	.learn-more ul li #red-cross {
 		@include retina-image(/assets/mobile/redcross, 176px 45px);
@@ -2301,22 +2324,6 @@ $mobile-padding: 23px;
 		@include retina-image(/assets/mobile/interfaith, 54px 54px);
 		background-size: auto;
 		height: 54px;
-	}
-
-	.opening.supplies {
-		@include retina-image(/assets/mobile/supplies-header, 320px 273px, jpg);
-	}
-
-	.about .opening {
-		@include retina-image(/assets/mobile/about-us-header, 320px 273px, jpg);
-	}
-
-	.plan .em-plan {
-		@include retina-image(/assets/mobile/make-plan-header, 320px 273px, jpg);
-	}
-
-	.stay-tuned {
-		@include retina-image(/assets/mobile/app, 193px 281px);
 	}
 
 }
