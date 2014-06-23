@@ -56,8 +56,8 @@
         %label{:for => 'select-city-image'}
           Homepage Image: Your City
         %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
-        /%input.form-control#select-city-image{:type => 'file'}(file-input="city_image")
-        /= image_tag @city.image.url, class: 'city-image'
+        %input.form-control#select-city-image{:type => 'file'}(file-input="city_image")
+        = image_tag @city.image.url, class: 'city-image'
       .form-group
         %label{:for => 'city-image-credit'}
           Image Credit
@@ -68,8 +68,8 @@
       .form-group
         %label{:for => 'select-resident-image'} 
           Homepage Image: Residents of Your City
-        /%input.form-control#select-resident-image{:type => 'file'}(file-input="resident_image")
-        /= image_tag @city.resident_image.url, class: 'resident_image'
+        %input.form-control#select-resident-image{:type => 'file'}(file-input="resident_image")
+        = image_tag @city.resident_image.url, class: 'resident_image'
 
       .form-group
         %label{:for => 'resident-image-credit'}
