@@ -9,7 +9,7 @@ backofficeApp.directive('editResourceModal', [function () {
     },
     controller: ['$scope', function ($scope) {
       $scope.save = function () {
-        $scope.resourceInEdition.logo = $scope.logo_file;
+        $scope.resourceInEdition.logo = $scope.logoFile;
         if ($scope.newResource) {
           $scope.resourceInEdition.included = true;
           $scope.resources.push($scope.resourceInEdition);
@@ -30,6 +30,7 @@ backofficeApp.directive('editResourceModal', [function () {
 
       $scope.$watch('resource', function () {
         if ($scope.resource) {
+          $scope.logoFile = $scope.resource.logo ? $scope.resource.logo : null;
           $scope.resourceInEdition = _($scope.resource).clone();
           $scope.$modalEl.modal('show');
         } else {

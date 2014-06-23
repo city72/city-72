@@ -62,6 +62,18 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
         }
       });
 
+      index = 0;
+      _(connection.city_resources_attributes)
+      .each(function (resource) {
+        if (resource.logo) {
+          index = index + 1;
+          uploads.push(resource.logo);
+          name = 'resource-logo-' + index;
+          names.push(name);
+          resource.logo_name = name;
+        }
+      });
+
       return $upload.upload({
         method: 'PUT',
         url: '/cms/city_connections',

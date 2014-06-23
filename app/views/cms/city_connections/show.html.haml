@@ -67,7 +67,7 @@
             %span Include this Partner
           .list-element
             .logo
-              %img{src: "http://placekitten.com/g/300/200"}
+              %img{:'ng-src' => "{{resource.logo_url}}"}
             %h3 {{resource.name}}
             %p {{resource.description}}
             %a.call-to-action(ng-href="{{'http://' + resource.website}}") {{resource.website}}
