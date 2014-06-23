@@ -53,6 +53,7 @@ backofficeApp.controller('CityStoriesController', ['$scope', 'cmsService', funct
     cmsService.updateStories($scope.stories, $scope.city).then(
       function () {
         $scope.updating = false;
+        window.location.reload();
       },
       function () {
         $scope.updating = false;
