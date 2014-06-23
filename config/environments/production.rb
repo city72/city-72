@@ -50,7 +50,7 @@ City72::Application.configure do
                                 '*.png', '*.jpg', '*.jpeg', '*.gif']
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'city72-stg.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => ENV['EMAIL_REDIRECT_HOST'] }
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.sendgrid.net",
     :port           => "25",

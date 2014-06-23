@@ -21,14 +21,16 @@ selectedStory = EmergencyStory.create! name: 'Charles', location: 'The Embarcade
 emergency_data = EmergencyData.create! map_url: 'http://google.org/crisismap/a/gmail.com/SF72?hl=en&embedded=true', citizen_timeline_id: '364391164582969346', partner_timeline_id: '390535611100053504', transportation_timeline_id: '370622485349146624', your_hashtag_timeline_id: '370622485349146624'
 about = About.create! brought_to_you_by: 'Your organization'
 
-
 EmergencyStory.create! name: 'Lindsay', location: 'SOMA', story: 'We won\'t always be able to reach our earthquake kit. We might need help or help others. we are going to need to trust each other deeply in the days following a major emergency. These relationships are the ones that are going to sustain us and save us. ', call_to_action_cd:0
 EmergencyStory.create! name: 'Carol', location: 'The Haight', story: 'At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It\'s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.', call_to_action_cd:1
 EmergencyStory.create! name: 'Justin', location: 'Ocean Beach', story: 'We set up a list – a calling tree with our friends, and we have a meeting place. We have a general timeline – after an emergency, on the half hour, every half hour. It\'s a corner store near our houses.', call_to_action_cd:0
 EmergencyStory.create! name: 'Roberta and Monica', location: 'The Sunset', story: 'At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It\'s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.', call_to_action_cd:1
 
 
-if AdminUser.create(email: 'admin@city72.org', password: '123456')
+adminEmail = ENV['ADMIN_USERNAME'] || 'admin@sf72.org'
+adminPassword = ENV['ADMIN_PASSWORD'] || '123456'
+
+if AdminUser.create(email: adminEmail, password: adminPassword)
   puts "Admin user created"
 else
   puts "Admin user already exist"
@@ -353,7 +355,10 @@ puts "Error creating Network"
 end
 
 # Creating Partners
+<<<<<<< HEAD
 
+=======
+>>>>>>> Deployment env vars.
 if city_connection.city_resources << CityResource.new(
   # image: ,
   name: 'American Red Cross',
