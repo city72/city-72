@@ -116,7 +116,8 @@ $mobile-padding: 23px;
 		}
 
 		.social {
-			margin-top: -100px;
+			margin-top: 0;
+			float: none;
 		}
 
 		.social h2 {
@@ -560,9 +561,7 @@ $mobile-padding: 23px;
 
 			&.facebook:before,
 			&.twitter:before,
-			&.airbnb:before,
-			&.drive:before,
-			&.neighbors:before {
+			&.drive:before {
 				font-size: 2rem;
 				width: 57px;
 				height: 52px;
@@ -572,10 +571,15 @@ $mobile-padding: 23px;
 		}
 
 		h3 {
-			padding-left: 72px;
 			font-size: 16px;
 			line-height: 1.2;
 			font-family: $font-bold;
+		}
+
+		.facebook h3,
+		.twitter h3,
+		.drive h3 {
+			padding-left: 72px;
 		}
 
 		p {
@@ -721,36 +725,60 @@ $mobile-padding: 23px;
 
 	/* STORIES */
 
-	.stories .intro {
-		height: auto;
-		margin-bottom: 0;
-		width: 100%;
+	.stories {
+		
+		.opening {
+			background-size: 120%;
+			background-position: 90% 150px;
 
-		.personal-look {
-			background-color: #FBB03B;
-			padding: 0 23px;
-			margin-top: -8px;
+			.story-about {
+				height: 130px;
+				margin: $mobile-padding 0;
+				display: block;
+				width: 100%;
+				padding: $mobile-padding;
 
+				h1 {
+					text-align: left;
+					height: auto;
+					margin: 0 0 0.6rem;
+				}
 
-			h2 {
-				display: none;
+				h2 {
+					line-height: 1.2;
+				}
 			}
+		}
 
-			p {
-				@include mobile-body-paragraph;
-				color: #FFF;
-				width: auto;
-				margin-top: 1rem;
+		.intro {
+			height: auto;
+			margin-bottom: 0;
+			width: 100%;
+
+			.personal-look {
+				background-color: $highlight;
+				padding: 0 23px;
+				margin-top: -8px;
+
+				h2 {
+					display: none;
+				}
+
+				p {
+					@include mobile-body-paragraph;
+					color: #FFF;
+					width: auto;
+					margin-top: 1rem;
+				}
+
 			}
-
-		} 
+		}
 	}
 
 	.story-list {
 		margin-top: 10px;
 
 		li span,
-		li a,
 		li a img,
 		li span img {
 			height: 203px;
@@ -758,6 +786,17 @@ $mobile-padding: 23px;
 
 		.quote-dialog {
 			display: none;
+		}
+
+	}
+
+	.statement {
+		.description {
+			@include span-columns(4);
+		}
+
+		.quote {
+			@include span-columns(4);
 		}
 	}
 
@@ -1590,41 +1629,42 @@ $mobile-padding: 23px;
 			}
 
 			img {
-				position: absolute;
+				position: static;
 				z-index: 0;
 				width: 100%;
 				height: auto;
 			}
 
 			.story-data {
-				position: absolute;
+				position: static;
 				bottom: 0.7rem;
-				left: 3%;
-				width: 97%;
-				text-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+				padding: 0 $mobile-padding;
+				// left: 3%;
+				// width: 97%;
+				// text-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 
-				h5 {
-					font-size: 2.3rem;
-					color: #FFF;
-					line-height: 1.2;
-				}
+				// h5 {
+				// 	font-size: 2.3rem;
+				// 	color: #FFF;
+				// 	line-height: 1.2;
+				// }
 
-				p {
-					font-size: 1rem;
-					color: #FFF;
-				}
+				// p {
+				// 	font-size: 1rem;
+				// 	color: #FFF;
+				// }
 			}
 
-			.story-data:after {
-				font-family: 'sf72-icons';
-				font-size: 1.5rem;
-				content: 's';
-				position: absolute;
-				right: 1.2rem;
-				bottom: 1.3rem;
-				color: #FFF;
-				z-index: 1;
-			}
+			// .story-data:after {
+			// 	font-family: 'sf72-icons';
+			// 	font-size: 1.5rem;
+			// 	content: 's';
+			// 	position: absolute;
+			// 	right: 1.2rem;
+			// 	bottom: 1.3rem;
+			// 	color: #FFF;
+			// 	z-index: 1;
+			// }
 
 			.story-type { display: none; }
 
@@ -2256,22 +2296,35 @@ $mobile-padding: 23px;
 	}
 
 	/* IMAGES */
-	.home .page-intro .big-title {
-		@include retina-image(/assets/mobile/home-header, 320px 273px, jpg);
-		background-size: auto;
-	}
 
 	.connection {
-		@include retina-image(/assets/mobile/threemobile, 320px 181px, jpg);
-	}
-
-	.opening {
-		@include retina-image(/assets/mobile/get-connected-header, 320px 273px, jpg);
+		background-size: 140%;
 	}
 
 	.full-img-article {
 		@include retina-image(/assets/mobile/gardening, 320px 514px, jpg);
 	}
+
+	// .home .page-intro .big-title {
+	// 	@include retina-image(/assets/mobile/home-header, 320px 273px, jpg);
+	// 	background-size: auto;
+	// }
+
+	// .opening {
+	// 	@include retina-image(/assets/mobile/get-connected-header, 320px 273px, jpg);
+	// }
+
+	// .opening.supplies {
+	// 	@include retina-image(/assets/mobile/supplies-header, 320px 273px, jpg);
+	// }
+
+	// .about .opening {
+	// 	@include retina-image(/assets/mobile/about-us-header, 320px 273px, jpg);
+	// }
+
+	// .plan .em-plan {
+	// 	@include retina-image(/assets/mobile/make-plan-header, 320px 273px, jpg);
+	// }
 
 	.learn-more ul li #red-cross {
 		@include retina-image(/assets/mobile/redcross, 176px 45px);
@@ -2301,22 +2354,6 @@ $mobile-padding: 23px;
 		@include retina-image(/assets/mobile/interfaith, 54px 54px);
 		background-size: auto;
 		height: 54px;
-	}
-
-	.opening.supplies {
-		@include retina-image(/assets/mobile/supplies-header, 320px 273px, jpg);
-	}
-
-	.about .opening {
-		@include retina-image(/assets/mobile/about-us-header, 320px 273px, jpg);
-	}
-
-	.plan .em-plan {
-		@include retina-image(/assets/mobile/make-plan-header, 320px 273px, jpg);
-	}
-
-	.stay-tuned {
-		@include retina-image(/assets/mobile/app, 193px 281px);
 	}
 
 }
