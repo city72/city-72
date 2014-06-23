@@ -9,7 +9,7 @@
   %ul.editable-list.wide
     %li
       .list-element
-        .img
+        %img{:'ng-src' => '{{selectedStory.image_url}}'}
         %h3 {{selectedStory.name}}
         %p {{selectedStory.story}}
       .list-actions
@@ -19,7 +19,7 @@
   %ul.editable-list.half-width
     %li(ng-repeat="story in notSelectedStories")
       .list-element
-        .img
+        %img{:'ng-src' => '{{story.image_url}}'}
         %h3 {{story.name}}
         %p {{story.story}}
         %span.call-to-action {{callToAction(story)}}

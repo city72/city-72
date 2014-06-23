@@ -112,7 +112,30 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
     },
 
     updateStories: function (stories, city) {
-      return Stories.update({stories: stories, city: city}).$promise;
+
+      var uploads = [];
+      var names = [];
+      var index = 0;
+      var name;
+
+      _(stories).each(function (story) {
+        if (story.image) {
+          index = index + 1;
+          uploads.push(story.image);
+          name = 'story-' + index;
+          names.push(name);
+          story.image_name = name;
+        }
+      })
+
+      return $upload.upload({
+        method: 'PUT',
+        url: '/cms/stories',
+        file: uploads,
+        data: {stories: stories, city: city},
+        fileFormDataName: names
+      });
+      
     }
   }
 

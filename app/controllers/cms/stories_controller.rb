@@ -6,13 +6,15 @@ class Cms::StoriesController < BackOfficeController
   end
 
   def update
-    stories = params[:stories]
+    stories = JSON.parse(params[:stories], symbolize_names: true)
     stories.each do |s|
       story = EmergencyStory.find(s[:id])
-      story.attributes = s.except(:id)
+      s[:image] = params[s[:image_name]] if s[:image_name]
+      story.attributes = s.except(:id, :image_url, :image_name, :new_image)
       story.save!
     end
-    @city.statement = params[:city][:statement]
+    city = JSON.parse(params[:city], symbolize_names: true)
+    @city.statement = city[:statement]
     @city.save! validate: false # City can be in an invalid state
     render status: :ok, nothing: true
   end
