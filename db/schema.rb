@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140623210244) do
+ActiveRecord::Schema.define(:version => 20140623222656) do
 
   create_table "abouts", :force => true do |t|
     t.string   "brought_to_you_by"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20140623210244) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "use_case"
   end
 
   create_table "modes", :force => true do |t|
