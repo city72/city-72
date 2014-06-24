@@ -57,8 +57,7 @@
           Homepage Image: Your City
         %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
         %input.form-control#select-city-image{:type => 'file'}(file-input="city_image")
-        - if @city.image.url
-          = image_tag @city.image.url, class: 'city-image'
+        %img.city-image{:'ng-src' => '{{city.image_url}}'}
       .form-group
         %label{:for => 'city-image-credit'}
           Image Credit
@@ -70,8 +69,7 @@
         %label{:for => 'select-resident-image'} 
           Homepage Image: Residents of Your City
         %input.form-control#select-resident-image{:type => 'file'}(file-input="resident_image")
-        - if @city.resident_image.url
-          = image_tag @city.resident_image.url, class: 'resident-image'
+        %img.resident-image{:'ng-src' => '{{city.resident_image_url}}'}
 
       .form-group
         %label{:for => 'resident-image-credit'}
@@ -112,6 +110,16 @@
 
     %a.add-btn.btn-link(ng-click="newAffiliate()" ng-show="city.affiliates.length < 8") + Add an Affiliate
 
+    .alert.alert-success.alert-dismissable(ng-show="updatedSuccessfully")
+      %button.close(type="button" ng-click="updatedSuccessfully = false") &times;
+      %strong Saved!
+      All data were successfully updated.
+
+    .alert.alert-danger.alert-dismissable(ng-show="fatalError")
+      %button.close(type="button" ng-click="fatalError = false") &times;
+      %strong Error!
+      There was an error uploading the changes, please try again.
+    
     .form-actions
       %button.btn.btn-primary.ladda-button{:type => "submit"}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
         %span.ladda-label Save Changes
