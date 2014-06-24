@@ -207,11 +207,12 @@ textarea.form-control {
 
   .image-edited-message {
     position: absolute;
-    top: 0;
+    top: 100px;
+    margin-top: -40px;
     left: 0;
     width: 100%;
     text-align: center;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(217, 237, 247, 0.8);
   }
 
   .list-element.inactive {
@@ -259,6 +260,8 @@ textarea.form-control {
     }
   }
 }
+
+.editable-list img { max-width: 100%;}
 
 .editable-list.half-width li { width: 467px; }
 .editable-list.half-width li:nth-child(2n) { margin-right: 0; }
