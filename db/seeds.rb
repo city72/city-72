@@ -1,5 +1,3 @@
-#encoding: utf-8
-
 Kit.delete_all
 Item.delete_all
 City.delete_all
