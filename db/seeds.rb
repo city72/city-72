@@ -13,6 +13,7 @@ EmergencyStory.delete_all
 EmergencyData.delete_all
 About.delete_all
 Mode.delete_all
+QuickGuide.delete_all
 
 plan = Plan.create!
 
