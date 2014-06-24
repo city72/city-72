@@ -173,11 +173,11 @@ heroku config:set EMAIL_REDIRECT_HOST=YOURAPPNAME.herokuapp.com
 
 #### Configure the admin data
 
-(this will only be used in the first deploy)
+Change the following first lines in the db/seeds.rb file
 
 ```sh
-heroku config:set ADMIN_USERNAME=myadminusername
-heroku config:set ADMIN_PASSWORD=myadminpassword
+adminEmail = 'YOUR MAIL'
+adminPassword = 'YOUR PASSWORD'
 ```
 
 #### Deploy
@@ -189,15 +189,6 @@ git push heroku master
 #### Run migrations and Populate the database
 ```sh
 heroku run rake db:setup
-```
-
-#### Remove the admin data
-
-(this data is only used in the first deploy, so, for a security reason the best option is to remove them)
-
-```sh
-heroku config:unset ADMIN_USERNAME
-heroku config:unset ADMIN_PASSWORD
 ```
 
 #### Increment a Dyno (for high availability)
