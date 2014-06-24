@@ -28,7 +28,7 @@
         %h3 Save documents on</br>Google Drive
         %p <strong>Now:</strong> Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies in the cloud through Google Drive.
         %p <strong>In an emergency:</strong> Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud.
-      - @city_connection.city_networks.each do |cn|
+      - @city_connection.city_networks.included.each do |cn|
         %li
           %img{:src => cn.logo}
           %h3
