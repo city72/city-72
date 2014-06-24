@@ -3,7 +3,7 @@
 .main-container.stories
   = render :partial => "partials/header"
 
-  .opening
+  .opening{:style => ("background-image: url(#{@selected_story.image_url})" unless @selected_story.image.blank?)}
     %div
       %p= @selected_story.story
     %span.story-about
@@ -18,7 +18,8 @@
   %ul.story-list
     - @stories.each do |story|
       %li
-        %img{src: story.image, alt: story.name}
+        - unless story.image.blank?
+          = image_tag(story.image_url, alt: story.name)
         .story-data
           %h4= story.name
           %h5.location= story.location
