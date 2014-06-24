@@ -20,6 +20,13 @@
       %p.help-block Optionally replace the generated City72 logo. See the worksheet for instructions on how to get this SVG file.
       %img{src: @about.logo}
 
+
+    - unless flash.empty?
+      .alert.alert-dismissable{:class => (flash.first[0] == :error)? "alert-danger" : "alert-success"}
+        %button.close(data-dismiss="alert" aria-hidden="true") &times;
+        %strong "#{ (flash.first[0] == :error)? "Error!" : "Saved!" }"
+        = flash.first[1]
+
     .form-actions
       = content_tag :button, :type => :submit, :class => 'btn btn-primary js-save ladda-button' do
         %span.ladda-label Save Changes
