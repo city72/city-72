@@ -24,12 +24,15 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
 
   $scope.updateConnection = function () {
     $scope.updating = true;
+    $scope.updatedSuccessfully = false;
+    $scope.fatalError = false;
 
     cmsService.updateConnection($scope.connection)
     .then(
-      function () {
+      function (response) {
         $scope.updating = false;
-        window.location.reload(); // TODO: Should receive the new info in the put response
+        $scope.updatedSuccessfully = true;
+        $scope.connection = response.data.city_connection;
       },
       function () {
         $scope.fatalError = true;
