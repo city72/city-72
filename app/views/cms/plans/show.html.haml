@@ -19,4 +19,6 @@
             = f.radio_button(:quick_guide_id, q.id)
             %span= q.title.capitalize
     .form-actions
-      = f.submit "Save Changes", class: 'btn btn-primary js-save ladda-button'
+      = content_tag :button, :type => :submit, :class => 'btn btn-primary js-save ladda-button' do
+        %span.ladda-label Save Changes
+
