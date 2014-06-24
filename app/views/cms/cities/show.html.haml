@@ -45,11 +45,11 @@
       %span.help-block(ng-show="cityForm.possessive.$dirty && cityForm.possessive.$invalid")
         can't be blank
 
-    .form-group
-      %label{:for => 'color_cd'}
-        Accent Color for Website
-      %select.form-control#color_cd{:name => 'color_cd', :'ng-model' => 'city.color_cd'}
-        %option(ng-repeat="color in availableColors" value="{{color.key}}" ng-selected="color.key == city.color_cd") {{color.value}}
+    / .form-group
+    /   %label{:for => 'color_cd'}
+    /     Accent Color for Website
+    /   %select.form-control#color_cd{:name => 'color_cd', :'ng-model' => 'city.color_cd'}
+    /     %option(ng-repeat="color in availableColors" value="{{color.key}}" ng-selected="color.key == city.color_cd") {{color.value}}
 
     .img-group
       .form-group
