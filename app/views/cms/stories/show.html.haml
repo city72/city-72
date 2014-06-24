@@ -10,7 +10,7 @@
     %li
       .list-element
         %img{:'ng-src' => '{{selectedStory.image_url}}'}
-        %div.image-edited-message(ng-show="selectedStory.new_image") The image has been edited
+        %div.image-edited-message(ng-show="selectedStory.new_image") Image edited. Save changes to update.
         %h3 {{selectedStory.name}}
         %p {{selectedStory.story}}
       .list-actions
@@ -21,7 +21,7 @@
     %li(ng-repeat="story in notSelectedStories")
       .list-element
         %img{:'ng-src' => '{{story.image_url}}'}
-        %div.image-edited-message(ng-show="story.new_image") The image has been edited
+        %div.image-edited-message(ng-show="story.new_image") Image edited. Save changes to update.
         %h3 {{story.name}}
         %p {{story.story}}
         %span.call-to-action {{callToAction(story)}}

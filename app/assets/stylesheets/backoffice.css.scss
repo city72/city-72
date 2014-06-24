@@ -196,6 +196,24 @@ textarea.form-control {
     margin-right: 0;
   }
 
+  .list-element {
+    position: relative;
+
+    .image-edited-message {
+      padding: 70px;
+      height: 180px;
+    }
+  }
+
+  .image-edited-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+  }
+
   .list-element.inactive {
     opacity: 0.2;
   }
