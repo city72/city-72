@@ -24,8 +24,9 @@ class HomeController < ApplicationController
   end
 
   def plan
-    @quick_guide = QuickGuide.first
-    @plan = Plan.first
+    @city = City.first
+    @plan = @city.plan
+    @quick_guide = @plan.quick_guide
   end
 
   def quick_guide

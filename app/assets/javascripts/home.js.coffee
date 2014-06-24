@@ -1,6 +1,6 @@
 states = [
-  { href: '#tab-during-earth-quake', contentSelector: '.slider-during', anchorSelector: '[href="#tab-during-earth-quake"]' }
-  { href: '#tab-after-earth-quake', contentSelector: '.slider-after', anchorSelector: '[href="#tab-after-earth-quake"]' }
+  { href: '#tab-during', contentSelector: '.slider-during', anchorSelector: '[href="#tab-during"]' }
+  { href: '#tab-after', contentSelector: '.slider-after', anchorSelector: '[href="#tab-after"]' }
 ]
 
 $(document).ready ->
@@ -35,7 +35,7 @@ $(document).ready ->
 
   $('.slider-during').find('.bx-next').click (event) ->
     if sliderDuring.currentIndex == sliderDuring.getSlideCount()-1
-      window.location.hash = '#tab-after-earth-quake'
+      window.location.hash = '#tab-after'
       showActive states
     else
       sliderDuring.goToNextSlide()
@@ -43,7 +43,7 @@ $(document).ready ->
   $('.slider-after').find('.bx-prev').click (event) ->
     console.log 'slider-after prev' + sliderAfter.getCurrentSlide()
     if sliderAfter.currentIndex == 0
-      window.location.hash = '#tab-during-earth-quake'
+      window.location.hash = '#tab-during'
       showActive states
     else
       sliderAfter.goToPrevSlide()
