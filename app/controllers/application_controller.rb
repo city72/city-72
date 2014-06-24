@@ -5,11 +5,13 @@ class ApplicationController < ActionController::Base
   before_filter :set_configured_vars
 
   def static_content
-  	expires_in 1.days, public: true
+  	#expires_in 1.days, public: true
+    expires_in 20.seconds, public: true
   end
 
   def dynamic_content
-  	expires_in 1.minutes, public: true
+  	#expires_in 1.minutes, public: true
+    expires_in 20.seconds, public: true
   end
 
   def self.empty_methods *methods
