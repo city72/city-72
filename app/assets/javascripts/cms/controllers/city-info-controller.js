@@ -14,9 +14,9 @@ backofficeApp.controller('CityInfoController', ['$scope', 'cmsService', '$upload
     
     cmsService.updateCity($scope.city, $scope.city_image, $scope.resident_image)
     .then(
-      function () {
+      function (response) {
         $scope.updating = false;
-        location.reload();
+        $scope.city = response.data.city;
       },
       function () {
         $scope.fatalError = true;
