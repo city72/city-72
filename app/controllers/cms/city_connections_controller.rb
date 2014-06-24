@@ -37,7 +37,7 @@ class Cms::CityConnectionsController < BackOfficeController
 
     @city_connection.attributes = params[:city_connection]
     @city_connection.save!
-    render status: :ok, nothing: true
+    render status: :ok, json: @city_connection
   end
 
   private

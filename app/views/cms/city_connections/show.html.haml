@@ -77,6 +77,16 @@
             %button.btn{type: "button"}(ng-click="editResource(resource)") Edit
     %a.btn.btn-link.add-btn(ng-click="newResource()") + Add a Partner or Resource
 
+    .alert.alert-success.alert-dismissable(ng-show="updatedSuccessfully")
+      %button.close(type="button" ng-click="updatedSuccessfully = false") &times;
+      %strong Saved!
+      All data were successfully updated.
+
+    .alert.alert-danger.alert-dismissable(ng-show="fatalError")
+      %button.close(type="button" ng-click="fatalError = false") &times;
+      %strong Error!
+      There was an error uploading the changes, please try again.
+
     .form-actions
       %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
         %span.ladda-label Save Changes
