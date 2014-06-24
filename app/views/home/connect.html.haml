@@ -28,9 +28,10 @@
         %h3 Save documents on</br>Google Drive
         %p <strong>Now:</strong> Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies in the cloud through Google Drive.
         %p <strong>In an emergency:</strong> Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud.
-      - @city_connection.city_networks.each do |cn|
+      - @city_connection.city_networks.included.each do |cn|
         %li
-          %img{:src => cn.logo}
+          - unless cn.logo.blank?
+            = image_tag(cn.logo_url(:common), alt: cn.headline)
           %h3
             = cn.headline
           %p.now
@@ -63,11 +64,11 @@
     %h3 Learn more from our partners.
     %p To get even better prepared as a household, neighborhood, or community, connect with these organizations.
     %ul
-      - @city_connection.city_resources.each do |cr|
+      - @city_connection.city_resources.included.each do |cr|
         %li
-          %a.partner-logo{:href => cr.website, :target => "_blank"}
-            = "image"
-          -# %img{:src => ""}
+          %a.partner-logo{:href => "http://#{cr.website}", :target => "_blank"}
+            - unless cr.logo.blank?
+              = image_tag(cr.logo_url(:common), alt: cr.name)
           %p <strong>#{cr.name}</strong> #{cr.description}
           %a{:href => cr.website, :target => "_blank"}
             = cr.website

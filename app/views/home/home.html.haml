@@ -2,7 +2,7 @@
 .main-container.home
   = render :partial => "partials/header"
   .page-intro
-    .big-title{:style => "background-image: url(#{@city.image.url})"}
+    .big-title{:style => "background-image: url(#{@city.image_url})"}
       %h1 #{@city.abbreviation}72 is #{@city.possessive} hub for emergency preparedness.
   .questions
     %ul
