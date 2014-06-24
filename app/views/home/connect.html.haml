@@ -70,7 +70,7 @@
             - unless cr.logo.blank?
               = image_tag(cr.logo_url(:common), alt: cr.name)
           %p <strong>#{cr.name}</strong> #{cr.description}
-          %a{:href => cr.website, :target => "_blank"}
+          %a{:href => "http://#{cr.website}", :target => "_blank"}
             = cr.website
 
   = render :partial => "partials/footer"
