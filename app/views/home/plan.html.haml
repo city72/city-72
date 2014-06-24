@@ -34,15 +34,15 @@
           - @quick_guide.before_tips.each do |tip|
             %li
               %h2
-                = tip.title
+                = tip.title.html_safe
               %p
-                = tip.description
+                = tip.description.html_safe
       .slider-after
         %ol.slider.quick-guide
           - @quick_guide.after_tips.each do |tip|
             %li
               %h2
-                = tip.title
+                = tip.title.html_safe
               %p
-                = tip.description
+                = tip.description.html_safe
   = render :partial => "partials/footer"
