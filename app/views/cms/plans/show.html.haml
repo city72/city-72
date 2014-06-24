@@ -1,14 +1,16 @@
+= javascript_include_tag "cms/spinner_save_btn"
 .main-content.plan
   .screen-intro
     %p.screen-info Select an emergency to provide customized preparation instructions.
     .action-area
-      %a.btn.btn-primary{:href => "#"} Save Changes
+      %a.btn.btn-primary.ladda-button.js-save{:href => "#"} Save Changes
 
-  = form_for @city.plan, url: cms_plan_path, method: :put do |f|
+  = form_for @city.plan, url: cms_plan_path, method: :put, html: { class: "js-form"} do |f|
     .form-group
       %label{:for => "community-image"} Community Image
       = f.file_field(:community_image, :class => "form-control", :label => "Community Image")
       %p.help-block Optionally, choose an evocative image of life in your city.
+      %img{src: @city.plan.community_image}
     .form-group
       %label{:for => "select-plan"} What type of emergency is your area most at risk for?
       - QuickGuide.all.each do |q|
@@ -17,4 +19,4 @@
             = f.radio_button(:quick_guide_id, q.id)
             %span= q.title.capitalize
     .form-actions
-      = f.submit "Save Changes", class: 'btn btn-primary'
+      = f.submit "Save Changes", class: 'btn btn-primary js-save ladda-button'

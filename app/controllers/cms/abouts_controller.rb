@@ -8,8 +8,11 @@ class Cms::AboutsController < BackOfficeController
     @about.attributes = params[:about]
     @about.image = params[:image]
     @about.logo = params[:logo]
-    @about.save
-    render :show
+    if @about.save
+      redirect_to :action => "show"
+    else
+      render :show
+    end
   end
 
   private
