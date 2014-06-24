@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
   def set_configured_vars
     @mode = Mode.first
     @city = City.first
+    @about = About.first
   end
 
   private

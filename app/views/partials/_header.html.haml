@@ -1,8 +1,9 @@
 .header
   %a.logo{href:"/home"}
     #logo{ height: "100", width: "150"}
-      %img{src: "/assets/city72-logo.png", alt: "#{@city.abbreviation}72 (logo)"}
-      / FIX %img{src: "@city.logo", alt: "#{@city.abbreviation}72 (logo)"}
+
+      //%img{src: "/assets/city72-logo.png", alt: "#{@city.abbreviation}72 (logo)"}
+      %img{src: "#{@about.logo.url || '/assets/city72-logo.png'}", alt: "#{@city.abbreviation}72 (logo)"}
   %a.logo-mobile{href:"/home"}
   %ul.main-nav
     %li
@@ -44,7 +45,7 @@
             .fold
               %p Live updates + crisis tools in an emergency.
               %ul
-                %li.em-li 
+                %li.em-li
                   %a{href:"/em/home#mobile-maps"} Situation Map
                 %li.em-li
                   %a{href:"/em/home#mobile-updates"} Updates
