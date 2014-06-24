@@ -23,7 +23,7 @@ backofficeApp.controller('CityStoriesController', ['$scope', 'cmsService', funct
       case 1:
         title = "Gather Supplies"; break;
       case 2:
-        title = "Make a plan"; break;
+        title = "Make a Plan"; break;
     }
     return title;
   };
