@@ -11,11 +11,13 @@ backofficeApp.controller('CityInfoController', ['$scope', 'cmsService', '$upload
 
   $scope.updateCity = function () {
     $scope.updating = true;
+    $scope.updatedSuccessfully = false;
     
     cmsService.updateCity($scope.city, $scope.city_image, $scope.resident_image)
     .then(
       function (response) {
         $scope.updating = false;
+        $scope.updatedSuccessfully = true;
         $scope.city = response.data.city;
       },
       function () {

@@ -110,6 +110,16 @@
 
     %a.add-btn.btn-link(ng-click="newAffiliate()" ng-show="city.affiliates.length < 8") + Add an Affiliate
 
+    .alert.alert-success.alert-dismissable(ng-show="updatedSuccessfully")
+      %button(type="button" class="close" data-dismiss="alert" aria-hidden="true") &times;
+      %strong Saved!
+      All data were successfully updated.
+
+    .alert.alert-danger.alert-dismissable(ng-show="fatalError")
+      %button(type="button" class="close" data-dismiss="alert" aria-hidden="true") &times;
+      %strong Error!
+      There was an error uploading the changes, please try again.
+    
     .form-actions
       %button.btn.btn-primary.ladda-button{:type => "submit"}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
         %span.ladda-label Save Changes
