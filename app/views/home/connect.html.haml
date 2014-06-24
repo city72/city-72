@@ -63,7 +63,7 @@
     %h3 Learn more from our partners.
     %p To get even better prepared as a household, neighborhood, or community, connect with these organizations.
     %ul
-      - @city_connection.city_resources.each do |cr|
+      - @city_connection.city_resources.included.each do |cr|
         %li
           %a.partner-logo{:href => cr.website, :target => "_blank"}
             = "image"
