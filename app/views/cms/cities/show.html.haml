@@ -71,7 +71,7 @@
           Homepage Image: Residents of Your City
         %input.form-control#select-resident-image{:type => 'file'}(file-input="resident_image")
         - if @city.resident_image.url
-          = image_tag @city.resident_image.url, class: 'resident_image'
+          = image_tag @city.resident_image.url, class: 'resident-image'
 
       .form-group
         %label{:for => 'resident-image-credit'}
