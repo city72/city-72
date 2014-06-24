@@ -6,8 +6,13 @@ class Cms::MapsController < BackOfficeController
 
   def update
     @emergency_data.attributes = params[:emergency_data]
-    @emergency_data.save
-    render :show
+    if @emergency_data.save
+      flash[:notice] = "All data were successfully updated."
+      redirect_to :action => "show"
+    else
+      flash[:error] = "There was an error uploading the changes, please try again."
+      render :show
+    end
   end
 
   private
