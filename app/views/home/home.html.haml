@@ -2,7 +2,7 @@
 .main-container.home
   = render :partial => "partials/header"
   .page-intro
-    .big-title{:style => "background-image: url(#{@city.image_url})"}
+    .big-title{:style => "background-image: url(#{@city.image_url || "/assets/placeholder-home.jpg"})"}
       %h1 #{@city.abbreviation}72 is #{@city.possessive} hub for emergency preparedness.
   .questions
     %ul
@@ -12,7 +12,7 @@
       %li
         %h2 Why 72?
         %span In a serious emergency, city services will be impacted, so a basic rule of thumb is for people to be able to take care of each other for 72 hours before help arrives. That’s just three days—think of it as a long weekend—or nine meals.
-  .connection{:style => "background-image: url(#{@city.resident_image.url})"}
+  .connection{:style => "background-image: url(#{@city.resident_image.url || "assets/placeholder-residents.jpg"})"}
     %div
       %h2 We believe in connection,</br>not catastrophe.
       %span Actual emergencies look more like people coming together than cities falling apart. #{@city.abbreviation}72 is about prompting #{@city.moniker} to get connected before an emergency—so we can be that much better off when something happens.
