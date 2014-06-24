@@ -22,7 +22,7 @@ city.save(validate: false)
 
 
 city_connection = CityConnection.create!
-selectedStory = EmergencyStory.create! name: 'Charles', location: 'The Embarcadero, San Francisco', image: File.open('app/assets/images/placeholder/story-2.png'), story: "It doesn't matter if it's good times or bad times, we all need to eat. It's a natural fit for chefs to stand up to help (in an emergency). Friends—both digitally and in person.", call_to_action_cd: 0, selected: true
+selectedStory = EmergencyStory.create! name: 'Charles', location: 'The Embarcadero, San Francisco', image: File.open('app/assets/images/placeholder/story-1.png'), story: "It doesn't matter if it's good times or bad times, we all need to eat. It's a natural fit for chefs to stand up to help (in an emergency). Friends—both digitally and in person.", call_to_action_cd: 0, selected: true
 emergency_data = EmergencyData.create! map_url: 'http://google.org/crisismap/a/gmail.com/SF72?hl=en&embedded=true', citizen_timeline_id: '364391164582969346', partner_timeline_id: '390535611100053504', transportation_timeline_id: '370622485349146624', your_hashtag_timeline_id: '370622485349146624'
 about = About.create! brought_to_you_by: 'Your organization'
 
