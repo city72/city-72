@@ -51,7 +51,7 @@
 }
 
 .plan-basics {
-	@include retina-image(/assets/static/bridge, 510px 636px, jpg);
+	@include retina-image(/assets/placeholder-plan-basics, 510px 636px, jpg);
 	background-repeat: no-repeat;
 	background-position: right;
 	@include row();

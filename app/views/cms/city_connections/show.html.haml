@@ -47,7 +47,7 @@
           .list-element
             .logo
               %img{:'ng-src' => '{{network.logo_url}}'}
-              %div.image-edited-message(ng-show="network.new_image") The image has been edited
+              %div.image-edited-message(ng-show="network.new_image") Image edited. Save changes to update.
             %h3 {{network.headline}}
             %h4 Now:
             %p {{network.now}}
@@ -69,7 +69,7 @@
           .list-element
             .logo
               %img{:'ng-src' => "{{resource.logo_url}}"}
-              %div.image-edited-message(ng-show="resource.new_image") The image has been edited
+              %div.image-edited-message(ng-show="resource.new_image") Image edited. Save changes to update.
             %h3 {{resource.name}}
             %p {{resource.description}}
             %a.call-to-action(ng-href="{{'http://' + resource.website}}") {{resource.website}}

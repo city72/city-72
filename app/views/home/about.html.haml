@@ -1,6 +1,7 @@
 = provide(:title, 'About Us')
 .main-container.about
 	= render :partial => "partials/header"
+	/ FIX .opening.about-intro{:style => "background-image:#{@about.image}"}
 	.opening.about-intro
 		%h1 #{@city.abbreviation}72 is for us,</br>by us.
 		%div

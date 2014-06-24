@@ -91,7 +91,6 @@ $light-grey: #f2f2f2;
 }
 
 .user a {
-  font-weight: normal;
   cursor: pointer;
 }
 
@@ -197,6 +196,25 @@ textarea.form-control {
     margin-right: 0;
   }
 
+  .list-element {
+    position: relative;
+
+    .image-edited-message {
+      padding: 70px;
+      height: 180px;
+    }
+  }
+
+  .image-edited-message {
+    position: absolute;
+    top: 100px;
+    margin-top: -40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(217, 237, 247, 0.8);
+  }
+
   .list-element.inactive {
     opacity: 0.2;
   }
@@ -242,6 +260,8 @@ textarea.form-control {
     }
   }
 }
+
+.editable-list img { max-width: 100%;}
 
 .editable-list.half-width li { width: 467px; }
 .editable-list.half-width li:nth-child(2n) { margin-right: 0; }
