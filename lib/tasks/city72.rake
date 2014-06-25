@@ -10,6 +10,8 @@ namespace :city72 do
     CityNetwork.delete_all
     CityResource.delete_all
     EmergencyStory.delete_all
+    QuickGuide.delete_all
+    Tip.delete_all
 
     EmergencyStory.create! name: 'Lindsay', location: 'SOMA', image: File.open('app/assets/images/placeholder/story-2.jpg'), story: 'We won\'t always be able to reach our earthquake kit. We might need help or help others. we are going to need to trust each other deeply in the days following a major emergency. These relationships are the ones that are going to sustain us and save us. ', call_to_action_cd:0
     EmergencyStory.create! name: 'Carol', location: 'The Haight', image: File.open('app/assets/images/placeholder/story-3.jpg'), story: 'At Glide, we have a lot of emergency equipment - cots, blankets, food ready to offer. It\'s a community center where people can come together and know that they are going to be met with dignity and respect and a home, in the midst of crisis.', call_to_action_cd:1
@@ -294,7 +296,7 @@ namespace :city72 do
     # Creating Networks
 
     if city_connection.city_networks << CityNetwork.new(
-      # image: ,
+      logo: File.open('app/assets/images/placeholder/network-1.png'),
       headline: 'AirBnB',
       now: 'Create an AirBnB proﬁle so you are ready to ﬁnd or share a place to stay if anything happens.',
       in_an_emergency: 'Find a place to stay, or share your place with those in need.',
@@ -307,7 +309,7 @@ namespace :city72 do
     end
 
     if city_connection.city_networks << CityNetwork.new(
-      # image: ,
+      logo: File.open('app/assets/images/placeholder/network-2.png'),
       headline: 'Meet your neighbors on Nextdoor',
       now: 'Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan.',
       in_an_emergency: 'Log onto Nextdoor to share local information and resources with people who live near you.',
@@ -321,7 +323,7 @@ namespace :city72 do
 
     # Creating Partners
     if city_connection.city_resources << CityResource.new(
-      # image: ,
+      logo: File.open('app/assets/images/placeholder/partner-1.png'),
       name: 'American Red Cross',
       description: 'Provides a variety of trainings including first aid, CPR, and how to prepare for emergencies',
       website: 'www.redcross.org',
@@ -332,8 +334,10 @@ namespace :city72 do
     puts "Error creating Partner"
     end
 
+
+
     # Creating Quick Guides
-    status = QuickGuide.create(
+    quick_guide = QuickGuide.create(
       title: 'Quake',
       tips_attributes: [
         {
@@ -363,11 +367,15 @@ namespace :city72 do
         }
       ]
     )
-    if status.valid?
+    if quick_guide.valid?
       puts "Quake Quick Guide created"
     else
       puts "Quake Quick Guide already exist"
     end
+
+    plan = City.first.plan
+    plan.quick_guide = quick_guide
+    plan.save
 
     status = QuickGuide.create(
       title: 'Hurricane',

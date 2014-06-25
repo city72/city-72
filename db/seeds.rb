@@ -48,7 +48,7 @@ else
         description: 'Example',
       }, {
         moment_type: :before,
-        title: 'Save a Supply of Water.',
+        title: 'Example',
         description: 'Example',
       }, {
         moment_type: :after,
