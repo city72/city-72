@@ -380,6 +380,19 @@ namespace :city72 do
     status = QuickGuide.create(
       title: 'Hurricane',
       tips_attributes: [
+        # {
+        #   moment_type: :before,
+        #   title: 'Know the Plan',
+        #   description: 'Gather and <a href="/supplies">organize supplies</a> (essentials, useful, and personal items to help you weather the storm) and make a family communications plan for what to do in a hurricane.',
+        # }, {
+        #   moment_type: :before,
+        #   title: 'Learn your evacuation route.',
+        #   description: 'Learn evacuation routes and how to find higher ground. Determine where you would go and how you would get there if you needed to evacuate.',
+        # }, {
+        #   moment_type: :before,
+        #   title: 'Secure your home.',
+        #   description: 'Secure your home, close storm shutters, and secure outdoor objects or bring them indoors.',
+        # }, {
         {
           moment_type: :before,
           title: 'Listen for Updates',
@@ -420,6 +433,20 @@ namespace :city72 do
     status = QuickGuide.create(
       title: 'Flood',
       tips_attributes: [
+        # {
+        #   moment_type: :before,
+        #   title: 'Elevate appliances.',
+        #   description: 'Elevate the furnace, water heater, and electric panel in your home if you live in an area that has a high flood risk.',
+        # }, {
+        #   moment_type: :before,
+        #   title: 'Prevent drains from backing up.',
+        #   description: 'Install "check valves" to prevent flood water from backing up into your house’s drains.',
+        # }, {
+        #   moment_type: :before,
+        #   title: 'Set up barriers.',
+        #   description: 'Construct barriers to stop floodwater, and seal basement walls with waterproofing compounds.',
+        # }, {
+        
         {
           moment_type: :before,
           title: 'Turn off utilities.',
@@ -460,6 +487,20 @@ namespace :city72 do
     status = QuickGuide.create(
       title: 'Tornado',
       tips_attributes: [
+        # {
+        #   moment_type: :before,
+        #   title: 'Get prepared.',
+        #   description: 'Gather and <a href="/supplies">organize supplies</a> (essentials, useful, and personal items to help you weather the storm) and make a family communications plan for what to do in a tornado.',
+        # }, {
+        #   moment_type: :before,
+        #   title: 'Keep an eye on changing weather.',
+        #   description: 'Be alert to changing weather conditions. Look for danger signs: Dark, greenish sky, often with large, dark low-lying clouds; Large hail; Loud roar, like a freight train. If you see storms or any danger signs, take shelter immediately!',
+        # }, {
+        #   moment_type: :before,
+        #   title: 'Stay tuned for tornado warnings.',
+        #   description: 'Be aware of tornado warnings (e.g., radio and/or television).',
+        # }, {
+
         {
           moment_type: :before,
           title: 'Seek shelter immediately.',
