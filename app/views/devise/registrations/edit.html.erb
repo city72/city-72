@@ -1,8 +1,7 @@
 <%= stylesheet_link_tag "login", :media => "all" %>
-
 <div class="container">
   <div class="form-signin">
-    <h2 class="form-signin-heading">Edit <%= resource_name.to_s.humanize %></h2>
+    <h2 class="form-signin-heading">Edit Admin User</h2>
 
     <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
       <%= f.error_notification %>
@@ -11,14 +10,32 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
+        <%= f.input :email, :autofocus => true, :required => true, :class => "form-control" %>
+        <%= f.input :current_password, :required => true, :class => "form-control" %>
+      </div>
 
-        <%= f.input :current_password, :autofocus => true, :required => true, :class => "form-control" %>
+      <div class="form-actions">
+        <%= f.button :submit, "Update", :class => "btn btn-lg btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="form-signin">
+    <h2 class="form-signin-heading">Change Password</h2>
+
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <%= f.input :current_password, :required => true, :class => "form-control" %>
         <%= f.input :password, :autocomplete => "off", :required => true, :class => "form-control" %>
         <%= f.input :password_confirmation, :required => true, :class => "form-control" %>
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Update", :class => "btn btn-lg btn-primary" %>
+        <%= f.button :submit, "Change password", :class => "btn btn-lg btn-primary" %>
       </div>
     <% end %>
 

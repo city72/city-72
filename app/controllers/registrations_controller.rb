@@ -5,8 +5,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   private
-    def after_update_path_for(resource)
-      session[:previous_url] || cms_root_path
-    end
+  def after_update_path_for(resource)
+    session[:previous_url] || cms_root_path
+  end
 
 end
