@@ -340,23 +340,33 @@ textarea.form-control {
   }
 }
 
-.connections .list-element img { margin-left: -21px; }
+.connections {
 
-.connections .image-edited-message {
-  font-weight: normal;
-  color: #232323;
-}
+  .list-element img { margin-left: -21px; }
 
-.connections .input-twitter {
+  .list-element h4 {
+    font-size: 14px;
+    margin: 15px 0 5px;
+  }
+
+  .image-edited-message {
+    font-weight: normal;
+    color: #232323;
+  }
+
+  .input-twitter {
   position: relative;
 
-  .btn-danger {
-    position: absolute;
-    right: -21px;
-    top: 0;
-    padding: 6px 10px;
+    .btn-danger {
+      position: absolute;
+      right: -21px;
+      top: 0;
+      padding: 6px 10px;
+    }
   }
-}
+
+} 
+
 
 /* SUPPLIES */
 
