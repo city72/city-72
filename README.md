@@ -1,3 +1,120 @@
+Included here are:
+
+  * [Production Deployment](#production_deployment)
+  * [Development Environment Setup](#development-environment-setup)
+
+# Production Deployment
+
+## Prerequisites
+
+* Git [Installing Git](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+
+### Step By Step Guide
+
+#### Obtain a copy of the application
+
+Using git, clone the github repository to obtain a local copy on your computer.
+
+```sh
+  $ git clone git@github.com:zauberlabs/ideo-city-72.git
+```
+
+This will create a folder with name `ideo-city-72` to be called within this guide your "project folder".
+
+#### Setup Heroku
+
+Follow these steps:
+
+  1. Create a [heroku account](http://www.heroku.com) (if you don't have any)
+  2. Install heroku toolbelt on your computer & login
+      * Step 2 and 3 of the [heroku quickstart guide](https://devcenter.heroku.com/articles/quickstart)
+  3. Add your credit card information to your heroku account.
+
+
+#### Application configuration on heroku
+
+First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to used in your application. set to 2 dynos. This is the recommened setting for your application.
+
+Then, go to you project folder, and then run the following commands:
+
+##### Configure the heroku app for your project
+
+```sh
+  $ git remote add heroku git@heroku.com:YOURAPPNAME.git
+```
+
+(In your heroku account, choose your app's settings, and you will get the Git URL, from the info section)
+
+##### Add the add-on for the database
+
+```sh
+  $ heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
+```
+
+This addon has a monthly cost of 50$ usd. It's used to have a database in your application
+
+##### Add pg-backups add-on (db backups)
+
+```sh
+  $ heroku addons:add pgbackups:auto-week -a YOURAPPNAME
+```
+
+This add on is free. It's used to have backups of your database.
+
+##### Add sengrid add-on
+
+```sh
+  $ heroku addons:add sendgrid -a YOURAPPNAME
+```
+
+This add on is free. It's used to send emails from your application.
+
+##### Add newRelic add-on
+
+```sh
+heroku addons:add newrelic:stark -a YOURAPPNAME
+```
+
+This add on is free. It's used to monitor your application performance
+
+##### Add cloudinary add-on
+
+```sh
+heroku addons:add cloudinary -a YOURAPPNAME
+```
+
+This add on is free. It's used to store and host images in your application
+
+##### Configure the recover password host redirection (example: YOURAPPNAME.herokuapp.com)
+
+```sh
+heroku config:set EMAIL_REDIRECT_HOST=YOURAPPNAME.herokuapp.com
+```
+
+This variable, configures the domain to be used within the emails sent from your application. You should configure it to use the domain you have. 
+
+##### Configure the admin data
+
+Change the following first lines in the db/seeds.rb file
+
+```sh
+adminEmail = 'YOUR MAIL'
+adminPassword = 'YOUR PASSWORD'
+```
+
+This is done to setup the email and credentials used to enter the administration CMS of your application.
+
+##### Deploy
+
+```sh
+git push heroku master
+```
+
+##### Run migrations and Populate the database
+```sh
+heroku run rake db:setup
+```
+
 # Development Environment Setup
 
 ## Prerequisites
@@ -105,92 +222,3 @@ With all the prerequisites and the development environment ready. Just run the a
 bundle exec rails s
 ```
 
-# Production Deployment
-
-## Prerequisites
-
-* Git [Installing Git](http://git-scm.com/book/en/Getting-Started-Installing-Git)
-
-### Step By Step Guide
-
-#### Heroku Account
-
-create your [heroku account](http://www.heroku.com)
-
-#### Create an App with the city name you want.
-
-#### Install the Heroku Toolbelt, and login to Heroku
-
-Step 2 and 3 of the [heroku quickstart guide](https://devcenter.heroku.com/articles/quickstart)
-
-#### Get in the project folder
-
-#### Add a new remote branch to the project with the credentials of your heroku app.
-
-```sh
-git remote add heroku git@heroku.com:YOURAPPNAME.git
-```
-
-(In your heroku account, choose your app's settings, and you will get the Git URL, from the info section)
-
-#### Now, you will have to add your credit card information to your heroku account.
-
-#### Add the add-on for the database ($50)
-
-```sh
-heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
-```
-
-#### Add pg-backups add-on (db backups, free)
-
-```sh
-heroku addons:add pgbackups:auto-week -a YOURAPPNAME
-```
-
-#### Add sengrid add-on (mails, free)
-
-```sh
-heroku addons:add sendgrid -a YOURAPPNAME
-```
-
-#### Add newRelic add-on (Monitor, troubleshoot, free)
-
-```sh
-heroku addons:add newrelic:stark -a YOURAPPNAME
-```
-
-#### Add cloudinary add-on (image storage and manipulation, free)
-
-```sh
-heroku addons:add cloudinary -a YOURAPPNAME
-```
-
-#### Configure the recover password host redirection (example: YOURAPPNAME.herokuapp.com)
-
-```sh
-heroku config:set EMAIL_REDIRECT_HOST=YOURAPPNAME.herokuapp.com
-```
-
-#### Configure the admin data
-
-Change the following first lines in the db/seeds.rb file
-
-```sh
-adminEmail = 'YOUR MAIL'
-adminPassword = 'YOUR PASSWORD'
-```
-
-#### Deploy
-
-```sh
-git push heroku master
-```
-
-#### Run migrations and Populate the database
-```sh
-heroku run rake db:setup
-```
-
-#### Increment a Dyno (for high availability)
-
-#### Configure Cloud Front
