@@ -57,7 +57,7 @@
           Homepage Image: Your City
         %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
         %input.form-control#select-city-image{:type => 'file'}(file-input="city_image")
-        %img.city-image{:'ng-src' => '{{city.image_url}}'}
+        %img.city-image{:'ng-src' => '{{city.image_url ? city.image_url : "/assets/placeholder-home.jpg"}}'}
       .form-group
         %label{:for => 'city-image-credit'}
           Image Credit
