@@ -47,7 +47,7 @@ Go to you project folder, and run the following command:
 
 #### Install addons
 
-**PostgresSQL:** This addon has a monthly cost of 50$ usd. It's used to have a database in your application
+**postgresql:** This addon has a monthly cost of 50$ usd. It's used to have a database in your application
 
 ```sh
   $ heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
@@ -71,10 +71,10 @@ Go to you project folder, and run the following command:
   $ heroku addons:add newrelic:stark -a YOURAPPNAME
 ```
 
-**cloudinary:** This add on is free. It's used to store and host images in your application
+**cloudinary:** This addon has a monthly cost of 50$ usd. It's used to store and host images in your application
 
 ```sh
- $ heroku addons:add cloudinary -a YOURAPPNAME
+ $ heroku addons:add cloudinary:bronze -a YOURAPPNAME
 ```
 
 #### Configure the recover password host redirection (example: YOURAPPNAME.herokuapp.com)
