@@ -35,9 +35,9 @@ Follow these steps:
 
 First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to used in your application. set to 2 dynos. This is the recommened setting for your application.
 
-Then, go to you project folder, and then run the following commands:
+#### Configure the heroku app for your project
 
-##### Configure the heroku app for your project
+Go to you project folder, and run the following command:
 
 ```sh
   $ git remote add heroku git@heroku.com:YOURAPPNAME.git
@@ -45,75 +45,70 @@ Then, go to you project folder, and then run the following commands:
 
 (In your heroku account, choose your app's settings, and you will get the Git URL, from the info section)
 
-##### Add the add-on for the database
+#### Install addons
+
+**PostgresSQL:** This addon has a monthly cost of 50$ usd. It's used to have a database in your application
 
 ```sh
   $ heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
 ```
 
-This addon has a monthly cost of 50$ usd. It's used to have a database in your application
-
-##### Add pg-backups add-on (db backups)
+**pg-backups:** This add on is free. It's used to have backups of your database.
 
 ```sh
   $ heroku addons:add pgbackups:auto-week -a YOURAPPNAME
 ```
 
-This add on is free. It's used to have backups of your database.
-
-##### Add sengrid add-on
+**sengrid:** This add on is free. It's used to send emails from your application.
 
 ```sh
   $ heroku addons:add sendgrid -a YOURAPPNAME
 ```
 
-This add on is free. It's used to send emails from your application.
-
-##### Add newRelic add-on
+**newrelic:** This add on is free. It's used to monitor your application performance
 
 ```sh
-heroku addons:add newrelic:stark -a YOURAPPNAME
+  $ heroku addons:add newrelic:stark -a YOURAPPNAME
 ```
 
-This add on is free. It's used to monitor your application performance
-
-##### Add cloudinary add-on
+**cloudinary:** This add on is free. It's used to store and host images in your application
 
 ```sh
-heroku addons:add cloudinary -a YOURAPPNAME
+ $ heroku addons:add cloudinary -a YOURAPPNAME
 ```
 
-This add on is free. It's used to store and host images in your application
-
-##### Configure the recover password host redirection (example: YOURAPPNAME.herokuapp.com)
+#### Configure the recover password host redirection (example: YOURAPPNAME.herokuapp.com)
 
 ```sh
-heroku config:set EMAIL_REDIRECT_HOST=YOURAPPNAME.herokuapp.com
+ $ heroku config:set EMAIL_REDIRECT_HOST=YOURAPPNAME.herokuapp.com
 ```
 
 This variable, configures the domain to be used within the emails sent from your application. You should configure it to use the domain you have. 
 
-##### Configure the admin data
+#### Configure the admin data
 
 Change the following first lines in the db/seeds.rb file
 
-```sh
-adminEmail = 'YOUR MAIL'
-adminPassword = 'YOUR PASSWORD'
-```
+    adminEmail = 'YOUR MAIL'
+    adminPassword = 'YOUR PASSWORD'
 
 This is done to setup the email and credentials used to enter the administration CMS of your application.
 
-##### Deploy
+#### Deploy
 
+Finally you are now able to do a deploy of the application.
+
+Do:
 ```sh
-git push heroku master
+ $ git push heroku master
+ $ heroku run bundle exec rake db:setup            # this creates database schema & prepopulates basic data
+ $ heroku run bundle exec rake city72:populate     # this populates data to the database
 ```
 
-##### Run migrations and Populate the database
-```sh
-heroku run rake db:setup
-```
+Now you should be able to enter you application.
+
+  * Go to `http://YOURAPPNAME.herokuapp.com/` to navigate the application
+  * Go to `http://YOURAPPNAME.herokuapp.com/cms` to configure the application
 
 # Development Environment Setup
 
@@ -125,19 +120,17 @@ To setup the application you will need:
 * Ruby 1.9.3-p448
 * Bundler gem
 * Bower
-* Imagick
+
 
 ### PostgreSQL installation
 
 #### Linux
-```sh
-sudo apt-get -y install postgresql
-```
+
+    $ sudo apt-get -y install postgresql
 
 #### Mac OS X
 
-[Install PostgreSQL 9 on OSX](http://russbrooks.com/2010/11/25/install-postgresql-9-on-os-x)
-
+    $ brew install postgresql
 
 ### Ruby Installation
 
@@ -149,13 +142,13 @@ To install ruby, it is necessary to have *rbenv* installed. This can be installe
 
 When rbenv is already installed, go to the project's root folder, and run the following command
 ```sh
-rbenv install
+ $ rbenv install
 ```
 
 ### Bundler gem
 In order the manage the project dependencies, it is necessary to have installed *bundler*.
 ```sh
-gem install bundler
+ $ gem install bundler
 ```
 
 ### Bower
@@ -164,20 +157,6 @@ To manage the client-side js dependencies, it is necessary to have installed *bo
 Having *node.js* installed, run the following command to install *bower*:
 ```sh
 npm install -g bower
-```
-
-### Imagick
-
-Linux:
-
-```sh
-sudo apt-get install libdjvulibre-dev libjpeg-dev libtiff-dev libwmf-dev libmagickcore-dev libmagickwand-dev libmagick++-dev
-```
-
-On OS X:
-
-```sh
-brew install imagemagick
 ```
 
 ## Development environment
