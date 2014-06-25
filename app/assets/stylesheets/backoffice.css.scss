@@ -52,7 +52,11 @@ $light-grey: #f2f2f2;
     color: $orange-em;
     padding: 15px 0 0;
 
-    label { padding-right: 15px;}
+    label { padding-right: 15px; }
+
+    .btn-em { margin-left: 15px; }
+
+    form { display: inline-block; }
   }
 }
 
@@ -175,7 +179,7 @@ textarea.form-control {
 .req {
   font-size: 2rem;
   line-height: 1em;
-  @extend .text-danger;
+  color: #c83737;
 }
 
 .img-group {
