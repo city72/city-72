@@ -22,9 +22,9 @@
     .row.twitter-accounts
       .form-group
         %label{:for => "tw-accounts"} What Twitter accounts are useful to follow in your area?
-        %div(ng-repeat="twitterAccount in connection.twitter_accounts" ng-hide="twitterAccount._destroy")
-          %input.form-control#tw-accounts{:placeholder => "@example"}(ng-model="twitterAccount.username")
-          %a.btn-xs.btn.btn-danger(ng-click="removeTwitterAccount(twitterAccount)")
+        %div.input-twitter(ng-repeat="twitterAccount in connection.twitter_accounts" ng-hide="twitterAccount._destroy")
+          %input.form-control.input-multi#tw-accounts{:placeholder => "@example"}(ng-model="twitterAccount.username")
+          %a.btn-sm.btn.btn-danger(ng-click="removeTwitterAccount(twitterAccount)")
             %i.glyphicon.glyphicon-remove
         %a.add-btn.btn.btn-link(ng-click="addTwitterAccount()") + Add a Twitter feed
       .help-block
@@ -45,7 +45,7 @@
             %input#include-network-1{:type => "checkbox"}(ng-model="network.included")
             %span Include this Network
           .list-element
-            .logo
+            .logo.img-container
               %img{:'ng-src' => '{{network.logo_url}}'}
               %div.image-edited-message(ng-show="network.new_image") Image edited. Save changes to update.
             %h3 {{network.headline}}
@@ -67,7 +67,7 @@
             %input{:type => "checkbox"}(ng-model="resource.included")
             %span Include this Partner
           .list-element
-            .logo
+            .logo.img-container
               %img{:'ng-src' => "{{resource.logo_url}}"}
               %div.image-edited-message(ng-show="resource.new_image") Image edited. Save changes to update.
             %h3 {{resource.name}}

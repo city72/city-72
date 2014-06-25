@@ -1,11 +1,10 @@
-.form-group(ng-hide="affiliate._destroy")
+.form-group.affiliate(ng-hide="affiliate._destroy")
   %label.control-label
     Name of Affiliate 
     %span.help (name and corresponding URL)
   %input.form-control{:placeholder => 'Name'}(ng-model="affiliate.name")
-  .input-group
+  %a.btn.btn-danger(ng-click="removeAffiliate()")
+    Remove
+  .input-group.input-md.input-multi
     %span.input-group-addon http://
     %input.form-control(ng-model="affiliate.url")
-  %a.btn.btn-danger.btn-xs(ng-click="removeAffiliate()")
-    %i.glyphicon.glyphicon-remove
-    Remove

@@ -8,9 +8,9 @@
   = form_for @city.plan, url: cms_plan_path, method: :put, html: { class: "js-form"} do |f|
     .form-group
       %label{:for => "community-image"} Community Image
-      = f.file_field(:community_image, :class => "form-control", :label => "Community Image")
       %p.help-block Optionally, choose an evocative image of life in your city.
-      %img{src: @city.plan.community_image}
+      %img.preview{src: @city.plan.community_image}
+      = f.file_field(:community_image, :class => "form-control", :label => "Community Image")
     .form-group
       %label{:for => "select-plan"} What type of emergency is your area most at risk for?
       - QuickGuide.all.each do |q|
