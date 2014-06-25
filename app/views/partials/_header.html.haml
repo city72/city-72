@@ -1,9 +1,10 @@
 .header
   %a.logo{href:"/home"}
     #logo{ height: "100", width: "150"}
-
-      //%img{src: "/assets/city72-logo.png", alt: "#{@city.abbreviation}72 (logo)"}
-      %img{src: "#{@about.logo.url || '/assets/city72-logo.png'}", alt: "#{@city.abbreviation}72 (logo)"}
+      - if @about.logo.url
+        %img{src: "#{@about.logo.url}", alt: "#{@city.abbreviation}72 (logo)"}
+      - else
+        %span.text-logo #{@city.abbreviation} <strong>72</strong>
   %a.logo-mobile{href:"/home"}
   %ul.main-nav
     %li

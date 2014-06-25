@@ -25,6 +25,19 @@
 	display: none;
 }
 
+.text-logo {
+	display: block;
+	font-family: "misobold";
+	text-transform: uppercase;
+	font-size: 4.2rem;
+	margin: -1.3rem 0;
+
+	strong {
+		font-weight: none;
+		color: $highlight-dark;
+	}
+}
+
 .main-nav > li {
 	@include span-columns(2);
 	@include omega;
