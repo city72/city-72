@@ -101,6 +101,15 @@ $light-grey: #f2f2f2;
 
 /* GENERAL FORM STYLES */
 
+.alert {
+  position: fixed;
+  top: 20px;
+  z-index: 999;
+  width: 470px;
+  left: 50%;
+  margin-left: -235px;
+}
+
 .screen-intro {
   @include make-row();
 }
