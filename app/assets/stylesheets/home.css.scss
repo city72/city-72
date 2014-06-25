@@ -13,7 +13,7 @@
 }
 
 .home .page-intro .big-title {
-	
+
 	h1 {
 		font-size: 3.5rem;
 		margin-top: 3rem;
@@ -28,7 +28,7 @@
 	background-position: 730px 100px;
 	@include row();
 	padding: 0 30px;
-	
+
 	ul {
 		@include row();
 
@@ -55,7 +55,7 @@
 	@include row();
 	@include retina-image(/assets/placeholder-residents, 683px 420px, jpg);
 	background-position: top right;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 	position: relative;
 
 	div {
@@ -91,7 +91,7 @@
 		font-family: $font-bold;
 		line-height: 2.65rem;
 	}
-	
+
 	h2 {
 		margin: 0.8rem 0 1rem;
 		line-height: 1.356 !important;
@@ -103,13 +103,13 @@
 			li {
 			@include row();
 			@include span-columns(3.93);
-		
+
 			a {
 				@include row();
 				margin-right: 0.28125rem;
 				width: 337px;
 				height: 345px;
-				margin-bottom: 100px; 
+				margin-bottom: 100px;
 				background-repeat: no-repeat;
 				color: #FFF;
 				padding: 60px 40px 30px 30px;
@@ -149,7 +149,7 @@
 			}
 			.learn-supplies {
 				@include retina-image(/assets/static/home2_3, 337px 345px);
-				@include icon(#FFF,3.5rem,$first-aid,$highlight,-50px,45px);	
+				@include icon(#FFF,3.5rem,$first-aid,$highlight,-50px,45px);
 			}
 			.learn-plan {
 				@include retina-image(/assets/static/home3_3, 337px 345px);
@@ -166,7 +166,7 @@
 
 
 .home .intro-app {
-	
+
 	span {
 		color: $highlight;
 	}
@@ -331,6 +331,11 @@
 			bottom: 0;
 			left: 2rem;
 		}
+	}
+
+	li.active .trigger-before,
+	li .trigger-before:hover {
+		color: $highlight;
 	}
 
 	li.active .trigger-during,
