@@ -83,14 +83,14 @@ Go to you project folder, and run the following command:
  $ heroku config:set EMAIL_REDIRECT_HOST=YOURAPPNAME.herokuapp.com
 ```
 
-This variable, configures the domain to be used within the emails sent from your application. You should configure it to use the domain you have. 
+This variable, configures the domain to be used within the emails sent from your application. You should configure it to use the domain you have.
 
 #### Configure the admin data
 
-Change the following first lines in the db/seeds.rb file
+Uncomment the following lines in the file `db/seeds.rb`, and fill them with the desired email & password for the admin account
 
-    adminEmail = 'YOUR MAIL'
-    adminPassword = 'YOUR PASSWORD'
+    # admin_email = 'YOUR MAIL'
+    # admin_password = 'YOUR PASSWORD'
 
 This is done to setup the email and credentials used to enter the administration CMS of your application.
 
@@ -100,6 +100,7 @@ Finally you are now able to do a deploy of the application.
 
 Do:
 ```sh
+ $ git ci -am 'Admin credentials'
  $ git push heroku master
  $ heroku run bundle exec rake db:setup            # this creates database schema & prepopulates basic data
  $ heroku run bundle exec rake city72:populate     # this populates data to the database
@@ -200,4 +201,3 @@ With all the prerequisites and the development environment ready. Just run the a
 ```sh
 bundle exec rails s
 ```
-
