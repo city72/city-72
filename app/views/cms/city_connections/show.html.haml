@@ -41,8 +41,8 @@
     .editable-list-container
       %ul.editable-list
         %li(ng-repeat="network in orderedNetworks()")
-          %label.include-field{:for => "include-network-1"} 
-            %input#include-network-1{:type => "checkbox"}(ng-model="network.included")
+          %label.include-field(for="include-network-{{$index}}") 
+            %input{:type => "checkbox"}(ng-model="network.included" id="include-network-{{$index}}")
             %span Include this Network
           .list-element
             .logo.img-container
