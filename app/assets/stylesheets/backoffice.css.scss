@@ -52,7 +52,11 @@ $light-grey: #f2f2f2;
     color: $orange-em;
     padding: 15px 0 0;
 
-    label { padding-right: 15px;}
+    label { padding-right: 15px; }
+
+    .btn-em { margin-left: 15px; }
+
+    form { display: inline-block; }
   }
 }
 
