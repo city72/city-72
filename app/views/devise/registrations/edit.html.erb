@@ -5,13 +5,19 @@
 
     <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
       <%= f.error_notification %>
-
+      <%= f.hidden_field :form_name, value: 'edit_admin_user' %>
       <div class="form-inputs">
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
         <%= f.input :email, :autofocus => true, :required => true %>
-        <%= f.input :current_password, :required => true %>
+        <div class="form-group <%= 'has-error' if (@form_name == 'edit_admin_user' && resource.errors.has_key?(:current_password)) %>">
+          <%= f.label :current_password, :required => true %>
+          <%= f.input_field :current_password %>
+          <% if (@form_name == 'edit_admin_user') %>
+            <%= f.error :current_password %>
+          <% end %>
+        </div>
       </div>
 
       <div class="form-actions">
@@ -25,12 +31,18 @@
 
     <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
       <%= f.error_notification %>
-
+      <%= f.hidden_field :form_name, value: 'edit_password' %>
       <div class="form-inputs">
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
-        <%= f.input :current_password, :required => true %>
+        <div class="form-group <%= 'has-error' if (@form_name == 'edit_password' && resource.errors.has_key?(:current_password)) %>">
+          <%= f.label :current_password, :required => true %>
+          <%= f.input_field :current_password %>
+          <% if (@form_name == 'edit_password') %>
+            <%= f.error :current_password %>
+          <% end %>
+        </div>
         <%= f.input :password, :autocomplete => "off", :required => true %>
         <%= f.input :password_confirmation, :required => true %>
       </div>
