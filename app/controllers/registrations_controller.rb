@@ -4,7 +4,13 @@ class RegistrationsController < Devise::RegistrationsController
     render nothing: true, status: 503
   end
 
+  def edit
+    @section = params[:section]
+    super
+  end
+
   def update
+    @section = params[:section]
     @form_name = params[:admin_user][:form_name]
     params[:admin_user] = params[:admin_user].except(:form_name)
     super
