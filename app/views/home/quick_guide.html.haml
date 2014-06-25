@@ -7,17 +7,17 @@
 			- @quick_guide.before_tips.each do |tip|
 				%li
 					%h2
-						= tip.title
+						= tip.title.html_safe
 					%p
-						= tip.description
+						= tip.description.html_safe
 		%h2.event-after After a #{@quick_guide.title}.
 		%ol.quick-guide.second
 			- @quick_guide.after_tips.each do |tip|
 				%li
 					%h2
-						= tip.title
+						= tip.title.html_safe
 					%p
-						= tip.description
+						= tip.description.html_safe
 		.quick-guide-share
 			%ul.share-options
 				%li
