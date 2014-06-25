@@ -2,8 +2,8 @@
 
 admin_email = admin_password = nil
 
-# admin_email = 'admin@example.com'
-# admin_password = '123456'
+admin_email = 'admin@example.com'
+admin_password = '123456'
 
 if (!(admin_email && admin_password))
   puts 'Admin email and password must be provided'
@@ -77,7 +77,7 @@ else
     puts "Example Quick Guide already exist"
   end
 
-  if AdminUser.create(email: adminEmail, password: adminPassword)
+  if AdminUser.create(email: admin_email, password: admin_password)
     puts "Admin user created"
   else
     puts "Admin user already exist"
