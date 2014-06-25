@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-adminEmail = 'admin@sf72.org'
+adminEmail = 'admin@city72.org'
 adminPassword = '123456'
 
 City.delete_all
