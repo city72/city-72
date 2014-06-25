@@ -347,6 +347,17 @@ textarea.form-control {
   color: #232323;
 }
 
+.connections .input-twitter {
+  position: relative;
+
+  .btn-danger {
+    position: absolute;
+    right: -21px;
+    top: 0;
+    padding: 6px 10px;
+  }
+}
+
 /* SUPPLIES */
 
 .supplies {
