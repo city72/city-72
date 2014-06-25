@@ -4,6 +4,7 @@
 
       //%img{src: "/assets/city72-logo.png", alt: "#{@city.abbreviation}72 (logo)"}
       %img{src: "#{@about.logo.url || '/assets/city72-logo.png'}", alt: "#{@city.abbreviation}72 (logo)"}
+      %span.text-logo #{@city.abbreviation} <strong>72</strong>
   %a.logo-mobile{href:"/home"}
   %ul.main-nav
     %li
