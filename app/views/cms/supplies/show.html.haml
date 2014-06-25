@@ -9,8 +9,9 @@
   %ul.editable-list
     %li(ng-repeat="essential in essentials")
       .list-element
-        %img{:'ng-src' => '{{essential.image_url}}'}
-        %div.image-edited-message(ng-show="essential.new_image") Image edited. Save changes to update.
+        .img-container
+          %img{:'ng-src' => '{{essential.image_url}}'}
+          .image-edited-message(ng-show="essential.new_image") Image edited. Save changes to update.
         %h3 {{essential.title}}
         %p {{essential.use_case}}
       .list-actions
@@ -20,8 +21,9 @@
   %ul.editable-list
     %li(ng-repeat="useful in usefuls")
       .list-element
-        %img{:'ng-src' => '{{useful.image_url}}'}
-        %div.image-edited-message(ng-show="useful.new_image") Image edited. Save changes to update.
+        .img-container
+          %img{:'ng-src' => '{{useful.image_url}}'}
+          .image-edited-message(ng-show="useful.new_image") Image edited. Save changes to update.
         %h3 {{useful.title}}
         %p {{useful.use_case}}
       .list-actions
@@ -31,8 +33,9 @@
   %ul.editable-list
     %li(ng-repeat="personal in personals")
       .list-element
-        %img{:'ng-src' => '{{personal.image_url}}'}
-        %div.image-edited-message(ng-show="personal.new_image") Image edited. Save changes to update.
+        .img-container
+          %img{:'ng-src' => '{{personal.image_url}}'}
+          .image-edited-message(ng-show="personal.new_image") Image edited. Save changes to update.
         %h3 {{personal.title}}
         %p {{personal.use_case}}
       .list-actions
@@ -42,8 +45,9 @@
   %ul.editable-list
     %li(ng-repeat="kit in kits")
       .list-element
-        %img{:'ng-src' => '{{kit.image_url}}'}
-        %div.image-edited-message(ng-show="kit.new_image") Image edited. Save changes to update.
+        .img-container
+          %img{:'ng-src' => '{{kit.image_url}}'}
+          .image-edited-message(ng-show="kit.new_image") Image edited. Save changes to update.
         %h3 {{kit.title}}
         %p {{kit.use_case}}
       .list-actions

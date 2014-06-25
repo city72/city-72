@@ -184,6 +184,10 @@ textarea.form-control {
   padding: .5rem 5rem;
 }
 
+.preview {
+  margin: 0 0 20px;
+}
+
 /* EDITABLE LISTS */
 .editable-list {
   @extend .clearfix;
@@ -207,11 +211,20 @@ textarea.form-control {
 
   .list-element {
     position: relative;
+  }
+
+  .img-container {
+    position: relative;
 
     .image-edited-message {
-      padding: 70px;
-      height: 180px;
-    }
+      top: 0;
+      margin-top: 0;
+      height: 101%;
+      width: 100%;
+      position: absolute;
+      background-color: #fcf8e3;
+      padding: 70px 40px;
+    } 
   }
 
   .image-edited-message {
@@ -295,6 +308,16 @@ textarea.form-control {
 
 }
 
+.form-group.affiliate {
+  position: relative;
+
+  .btn-danger {
+    position: absolute;
+    left: 370px;
+    top: 25px;
+  }
+}
+
 .input-sm.input-abr {
   padding-left: 0;
 }
@@ -319,6 +342,10 @@ textarea.form-control {
 
 .connections .list-element img { margin-left: -21px; }
 
+.connections .image-edited-message {
+  font-weight: normal;
+  color: #232323;
+}
 
 /* SUPPLIES */
 
@@ -327,14 +354,21 @@ textarea.form-control {
     margin-bottom: 7rem;
   }
 
+  .list-element .img-container {
+    margin: -20px 0 0 -20px;
+  }
+
   .list-element {
-    min-height: 350px;
+    min-height: 360px;
   }
 
   img {
     max-width: 299px;
-    margin: -20px 0 0 -20px;
     max-height: 200px;
+  }
+
+  .editable-list .img-container .image-edited-message {
+    width: 299px;
   }
 }
 
