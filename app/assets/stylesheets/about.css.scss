@@ -64,7 +64,7 @@
 .about-data {
 	@include outer-container;
 	margin-top: 120px;
-	margin-bottom: 7.25rem;
+	margin-bottom: 5rem;
 	padding: 0 30px;
 
 	li {
@@ -103,189 +103,13 @@
 
 }
 
-.contact-block {
-	background-color: #fbb03b;
-	@include outer-container;
 
-	.contact-heading {
-		@include span-columns(4);
-		padding: 0 1.8rem;
-		
-		h3 {
-			color: $dark-grey;
-			line-height: 1.2;
+/* Credits */
+.image-credits {
+	padding: $gutter;
+	margin-bottom: 7rem;
 
-			strong {
-				font-weight: normal;
-				display: block;
-				margin-bottom: 1rem;
-			}
-
-			span {
-				color: #FFF;
-			}
-		}
+	h2 {
+		@include col-title;
 	}
-
-	.successful-response-container{
-		@include span-columns(8);
-		@include omega;
-		display: none;
-		position: relative;
-		margin-top: 2.1rem;
-		height: 371px;
-		padding-top: 3rem;
-		color: #FFF;
-		font-size: 1.5rem;
-		font-family: $font-bold;
-
-
-		p {
-			margin: 0;
-			line-height: 1.16;
-		}
-		
-		&:before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			font-family: "sf72-icons";
-			font-size: 2rem;
-			content: "y";
-			-webkit-font-smoothing: antialiased;
-		}
-	}
-
-	.error-response-container{
-		display: none;
-	}
-
-	.sending-notification{
-		display: none;
-		text-transform: uppercase;
-		color: #FFF;
-		font-size: 0.8rem;
-	}
-
-	.contact-form {
-		@include span-columns(8);
-		@include omega;
-		margin-top: 1.8rem;
-		margin-bottom: 1.8rem;
-
-		.name,
-		.from-email,
-		.message {
-			width: 46%;
-			padding: 1rem;
-			margin: 0 3% 3% 0;
-			background: url(/assets/static/diagonal.png);
-			background-size: 49px 50px;
-			border: none;
-			background-color: rgba(0, 0, 0, 0);
-			font-size: 1.3rem;
-			font-family: $font-regular;
-			color: #FFF;
-			-webkit-border-radius: 0;
-
-			@include placeholder {
-			    color: #FFF;
-			}
-		}
-
-		.message {
-			width: 95.5%;
-			height: 216px;
-		}
-
-		.send {
-			line-height: 1;
-			background-color: #FFF;
-			border: 0;
-			padding: 0.8rem 1.8rem;
-			font-family: $font-medium;
-			font-size: 1.6em;
-			color: $highlight;
-			margin-right: 0.8rem;
-			cursor: pointer;
-			-webkit-appearance: none;
-			-webkit-border-radius: 0;
-		}
-
-		.send:hover {
-			background-color: $dark-grey;
-			color: #FFF;
-		}
-	}
-}
-
-/* MANIFESTO */
-.manifesto .page-intro .big-title {
-	background: url(/assets/static/manifesto.jpg) no-repeat left top;
-	background-size: 100%;
-	border-top: 1px solid $light-grey;
-}
-
-.intro-row {
-	@include row();
-}
-
-.manifesto .main-intro {
-	@include row();
-	@include span-columns(8);
-	padding: 60px 30px;
-
-	p {
-		@include span-columns(12);
-	}
-}
-
-.aside {
-	@include span-columns(3.3);
-	@include shift(.7);
-	margin-top: 3.5rem;
-	
-	div {
-		border-left: 2px solid $highlight;
-		padding-left: 1rem;
-		line-height: 1.45;
-		font-family: $font-bold;
-		color: $body-light;
-		margin-bottom: 1rem;
-	}
-
-	.highlighted {
-		color: $highlight;
-	}
-
-	.download-manifesto {
-		margin-top: 90px;
-	}
-
-	.download-manifesto a{
-		display: block;
-		padding-top: 2rem;
-		background-size: 50px;
-		color: $highlight;
-		position: relative;
-	}
-
-	.download-manifesto a:hover {
-		color: $dark-grey;
-	}
-	
-	.download-manifesto a:after {
-		position: absolute;
-		top: 0;
-		left: 0;
-		font-family: "sf72-icons";
-		content:'9';
-		font-size: 1.5rem;
-		-webkit-font-smoothing: antialiased;
-	}
-}
-
-.manifesto p strong {
-	font-weight: normal;
-	color: $dark-grey;
 }
