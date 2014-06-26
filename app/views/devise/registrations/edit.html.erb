@@ -41,7 +41,7 @@
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
           <div class="form-group <%= 'has-error' if (@form_name == 'edit_password' && resource.errors.has_key?(:current_password)) %>">
-            # <%= f.label :current_password, :required => true %>
+            <%= f.label :current_password, :required => true %>
             <%= f.input_field :current_password %>
             <% if (@form_name == 'edit_password') %>
               <%= f.error :current_password %>

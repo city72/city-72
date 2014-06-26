@@ -11,14 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140623222656) do
+ActiveRecord::Schema.define(:version => 20140626185218) do
 
   create_table "abouts", :force => true do |t|
     t.string   "brought_to_you_by"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "image"
     t.string   "logo"
+    t.string   "photographer_1"
+    t.string   "photographer_1_url"
+    t.string   "photographer_2"
+    t.string   "photographer_2_url"
+    t.string   "photographer_3"
+    t.string   "photographer_3_url"
+    t.string   "photographer_4"
+    t.string   "photographer_4_url"
+    t.string   "photographer_5"
+    t.string   "photographer_5_url"
   end
 
   create_table "admin_users", :force => true do |t|
@@ -48,17 +58,15 @@ ActiveRecord::Schema.define(:version => 20140623222656) do
   end
 
   create_table "cities", :force => true do |t|
-    t.string   "name",                  :null => false
+    t.string   "name",           :null => false
     t.string   "abbreviation"
     t.string   "moniker"
     t.string   "image"
-    t.string   "image_credit"
     t.string   "resident_image"
-    t.string   "resident_image_credit"
     t.string   "contact_email"
     t.string   "agency_site"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "possessive"
     t.string   "brought_by"
     t.string   "agency_url"
