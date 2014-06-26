@@ -1,0 +1,38 @@
+= javascript_include_tag "cms/spinner_save_btn"
+.main-content
+  %h3 Edit Quick Guide
+  = simple_form_for @quick_guide, url: cms_quick_guides_path, html: {class: "js-form"} do |f|
+
+    = f.input :title, as: :string, label: 'Quick Guide Title', required: true
+
+    .form-group
+      %span Before Tips
+      - @quick_guide.before_tips.each do |bt|
+        = simple_fields_for bt do |btf|
+          = btf.input :title, as: :string, label: 'Tip Title', required: true
+          = btf.input :description, as: :text, label: 'Tip Description', required: true
+
+    .form-group
+      %span During Tips
+      - @quick_guide.during_tips.each do |dt|
+        = simple_fields_for dt do |dtf|
+          = dtf.input :title, as: :string, label: 'Tip Title', required: true
+          = dtf.input :description, as: :text, label: 'Tip Description', required: true
+
+    .form-group
+      %span After Tips
+      - @quick_guide.after_tips.each do |at|
+        = simple_fields_for at do |atf|
+          = atf.input :title, as: :string, label: 'Tip Title', required: true
+          = atf.input :description, as: :text, label: 'Tip Description', required: true
+
+
+    - unless flash.empty?
+      .alert.alert-dismissable{:class => (flash.first[0] == :error)? "alert-danger" : "alert-success"}
+        %button.close(data-dismiss="alert" aria-hidden="true") &times;
+        %strong "#{ (flash.first[0] == :error)? "Error!" : "Saved!" }"
+        = flash.first[1]
+
+    .form-actions
+      = content_tag :button, :type => :submit, :class => 'btn btn-primary js-save ladda-button' do
+        %span.ladda-label Save Changes

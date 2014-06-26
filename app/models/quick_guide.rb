@@ -1,5 +1,5 @@
 class QuickGuide < ActiveRecord::Base
-  attr_accessible :title, :tips_attributes
+  attr_accessible :title, :tips_attributes, :custom
 
   has_many :tips
   accepts_nested_attributes_for :tips, allow_destroy: true

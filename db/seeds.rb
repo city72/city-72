@@ -37,35 +37,44 @@ else
 
   quick_guide = QuickGuide.create!(
     title: 'Example',
+    custom: true,
     tips_attributes: [
       {
         moment_type: :before,
-        title: 'Example',
-        description: 'Example',
+        title: 'Example Before',
+        description: 'Example Before',
       }, {
         moment_type: :before,
-        title: 'Example',
-        description: 'Example',
+        title: 'Example Before',
+        description: 'Example Before',
       }, {
         moment_type: :before,
-        title: 'Example',
-        description: 'Example',
+        title: 'Example Before',
+        description: 'Example Before',
+      }, {
+        moment_type: :during,
+        title: 'Example During',
+        description: 'Example During',
+      }, {
+        moment_type: :during,
+        title: 'Example During',
+        description: 'Example During',
+      }, {
+        moment_type: :during,
+        title: 'Example During',
+        description: 'Example During',
       }, {
         moment_type: :after,
-        title: 'Example',
-        description: 'Example',
+        title: 'Example After',
+        description: 'Example After',
       }, {
         moment_type: :after,
-        title: 'Example',
-        description: 'Example',
+        title: 'Example After',
+        description: 'Example After',
       }, {
         moment_type: :after,
-        title: 'Example',
-        description: 'Example',
-      }, {
-        moment_type: :after,
-        title: 'Example',
-        description: 'Example',
+        title: 'Example After',
+        description: 'Example After',
       }
     ]
   )
