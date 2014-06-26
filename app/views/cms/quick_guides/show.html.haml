@@ -1,5 +1,5 @@
 = javascript_include_tag "cms/spinner_save_btn"
-.main-content
+.main-content.custom-quick-guide
   .screen-intro
     %p.screen-info Write the steps for each section of your emergency plan: before, during, after.
     .action-area
@@ -16,14 +16,12 @@
         - if !tip_groups[tf.object.moment_type_cd]
           - tip_groups[tf.object.moment_type_cd] = true
           - step = 1
-          %span
-            %strong
-              =tf.object.moment_type.capitalize
-          %br
-        %span Step #{step}
+          %h2
+            =tf.object.moment_type.capitalize
+        %h3 Step #{step}
         - step = step + 1
         = tf.input :title, as: :string, required: true, label: false
-        = tf.input :description, as: :text, required: true, label: false
+        = tf.input :description, as: :text, required: true, label: false, cols: "20";
 
     - unless flash.empty?
       .alert.alert-dismissable{:class => (flash.first[0] == :error)? "alert-danger" : "alert-success"}
