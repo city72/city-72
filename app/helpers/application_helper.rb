@@ -8,4 +8,9 @@ module ApplicationHelper
       "#{base_title} - #{page_title}"
     end
   end
+
+  def city_residents
+    @city.moniker.blank? ? "#{@city.name} residents" : @city.moniker
+  end
+  
 end
