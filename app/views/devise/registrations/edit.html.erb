@@ -2,7 +2,7 @@
 <div class="container">
   <% if (@section == 'email') %>
     <div class="form-signin">
-      <h2 class="form-signin-heading">Edit Admin User</h2>
+      <h2 class="form-signin-heading">Change Email</h2>
 
       <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name, section: 'email'), :html => { :method => :put }) do |f| %>
         <%= f.error_notification %>
@@ -13,7 +13,7 @@
           <% end %>
           <%= f.input :email, :autofocus => true, :required => true %>
           <div class="form-group <%= 'has-error' if (@form_name == 'edit_admin_user' && resource.errors.has_key?(:current_password)) %>">
-            <%= f.label :current_password, :required => true %>
+            <%= f.label :current_password, :required => true %> 
             <%= f.input_field :current_password %>
             <% if (@form_name == 'edit_admin_user') %>
               <%= f.error :current_password %>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Update", :class => "btn-lg btn-primary" %>
+          <%= f.button :submit, "Change email", :class => "btn-lg btn-primary" %>
           <%= link_to "Cancel", :back, class: 'btn btn-default btn-lg' %>
         </div>
       <% end %>
@@ -41,7 +41,7 @@
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
           <div class="form-group <%= 'has-error' if (@form_name == 'edit_password' && resource.errors.has_key?(:current_password)) %>">
-            <%= f.label :current_password, :required => true %>
+            # <%= f.label :current_password, :required => true %>
             <%= f.input_field :current_password %>
             <% if (@form_name == 'edit_password') %>
               <%= f.error :current_password %>
