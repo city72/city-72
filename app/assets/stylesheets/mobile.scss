@@ -1188,6 +1188,14 @@ $mobile-padding: 23px;
 		}
 	}
 
+	.js-has-before .basics-tabs li {
+		width: 34.3%;
+	}
+
+	.js-has-before .event-name {
+		display: none;
+	}
+
 	.bx-wrapper {
 		margin: 0 auto;
 		padding: 0 0 60px;
@@ -1258,24 +1266,6 @@ $mobile-padding: 23px;
 			@include intro-paragraph-mobile;
 		}
 	}
-
-/*
-	.footer {
-		padding: 0 1em;
-	}
-
-	.by-line {
-		font-size: 0.75rem;
-		@include span-columns(2.5);
-		margin-left: 30px;
-	}
-
-	.by-line:before {
-		font-size: 1.4rem;
-		left: -2.1rem;
-		top: -0.1rem;
-	}
-*/
 
 
 	/* CONNECT */
