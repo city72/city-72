@@ -19,10 +19,15 @@
 		color: $highlight-dark;
 	}
 
+	.event-before {
+		color: $highlight;
+	}
+
 	.event-after{
 		margin-top: 2.2rem;
 		color: $highlight;
 	}
+
 }
 
 .quick-guide-page .quick-guide {
@@ -51,7 +56,10 @@
 	}
 }
 
-.quick-guide.second li:before{ background-color: $highlight }
+.quick-guide.second li:before,
+.quick-guide.list-before li:before {
+	background-color: $highlight
+}
 
 .quick-guide-share {
 	margin: 3.6rem 0 1.9rem;
