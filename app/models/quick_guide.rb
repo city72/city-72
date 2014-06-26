@@ -8,6 +8,10 @@ class QuickGuide < ActiveRecord::Base
     tips.before
   end
 
+  def during_tips
+    tips.during
+  end
+
   def after_tips
     tips.after
   end

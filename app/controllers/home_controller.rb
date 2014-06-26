@@ -27,10 +27,15 @@ class HomeController < ApplicationController
     @city = City.first
     @plan = @city.plan
     @quick_guide = @plan.quick_guide
+    @before_tips = @quick_guide.before_tips
+    @during_tips = @quick_guide.during_tips
+    @after_tips = @quick_guide.after_tips
   end
 
   def quick_guide
-    @quick_guide = QuickGuide.first
+    @city = City.first
+    @plan = @city.plan
+    @quick_guide = @plan.quick_guide
   end
 
   def supplies

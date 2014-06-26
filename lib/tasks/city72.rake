@@ -341,15 +341,15 @@ namespace :city72 do
       title: 'Quake',
       tips_attributes: [
         {
-          moment_type: :before,
+          moment_type: :during,
           title: 'Drop, cover and hold.',
           description: 'Duck under a strong table or desk. Cover your head and neck with your arms against an interior wall. Stay away from windows.'
         }, {
-          moment_type: :before,
+          moment_type: :during,
           title: 'Stay calm.',
           description: 'Keep calm and carry on. Keeping your wits about you will ensure that you make safe choices for yourself and those around you.'
         }, {
-          moment_type: :before,
+          moment_type: :during,
           title: 'Stay put.',
           description: 'Shelter in place–whether you\'re in a car, in bed, or in a public place. Do not try to run out of the building during strong shaking, hold tight until the shaking stops. If you\'re outdoors, steer clear of wires or falling objects.'
         }, {
@@ -382,14 +382,26 @@ namespace :city72 do
       tips_attributes: [
         {
           moment_type: :before,
+          title: 'Know the Plan',
+          description: 'Gather and <a href="/supplies">organize supplies</a> (essentials, useful, and personal items to help you weather the storm) and make a family communications plan for what to do in a hurricane.',
+        }, {
+          moment_type: :before,
+          title: 'Learn your evacuation route.',
+          description: 'Learn evacuation routes and how to find higher ground. Determine where you would go and how you would get there if you needed to evacuate.',
+        }, {
+          moment_type: :before,
+          title: 'Secure your home.',
+          description: 'Secure your home, close storm shutters, and secure outdoor objects or bring them indoors.',
+        }, {
+          moment_type: :during,
           title: 'Listen for Updates',
           description: 'Listen to a <a href="http://www.nws.noaa.gov/nwr/">NOAA Weather Radio</a> or local news for critical information from the National Weather Service. Be alert to changing weather conditions and follow official instructions.',
         }, {
-          moment_type: :before,
+          moment_type: :during,
           title: 'Turn off Utilities',
           description: '<a href="http://www.ready.gov/utility-shut-safety">Turn off utilities</a> and propane tanks if instructed to do so. Otherwise, turn the refrigerator to its coldest setting and keep its doors closed (here\'s how to <a href="http://www.ready.gov/food">keep food safe</a> during and after an emergency).',
         }, {
-          moment_type: :before,
+          moment_type: :during,
           title: 'Save a Supply of Water.',
           description: 'Ensure a <a href="http://www.ready.gov/managing-water">supply of water</a> for sanitary purposes such as cleaning and flushing toilets. Fill the bathtub and large containers with water.',
         }, {
@@ -422,14 +434,26 @@ namespace :city72 do
       tips_attributes: [
         {
           moment_type: :before,
+          title: 'Elevate appliances.',
+          description: 'Elevate the furnace, water heater, and electric panel in your home if you live in an area that has a high flood risk.',
+        }, {
+          moment_type: :before,
+          title: 'Prevent drains from backing up.',
+          description: 'Install "check valves" to prevent flood water from backing up into your house’s drains.',
+        }, {
+          moment_type: :before,
+          title: 'Set up barriers.',
+          description: 'Construct barriers to stop floodwater, and seal basement walls with waterproofing compounds.',
+        }, {
+          moment_type: :during,
           title: 'Turn off utilities.',
           description: '<a href="http://www.ready.gov/utility-shut-safety">Turn off utilities</a> at the main switches or valves if instructed to do so. Disconnect appliances. Do not touch electrical equipment if you are wet or standing in water.',
         }, {
-          moment_type: :before,
+          moment_type: :during,
           title: 'Do not walk through moving water.',
           description: 'Six inches of moving water can make you fall. If you must walk in water, walk where it isn’t moving. Check the firmness of the ground in front of you with a stick.',
         }, {
-          moment_type: :before,
+          moment_type: :during,
           title: 'Steer clear of flooded areas.',
           description: 'Do not drive into flooded areas. If a few inches of floodwater rise around your car, abandon the car for higher ground. If flood water rises into your car, get on the roof.',
         }, {
@@ -462,14 +486,26 @@ namespace :city72 do
       tips_attributes: [
         {
           moment_type: :before,
+          title: 'Get prepared.',
+          description: 'Gather and <a href="/supplies">organize supplies</a> (essentials, useful, and personal items to help you weather the storm) and make a family communications plan for what to do in a tornado.',
+        }, {
+          moment_type: :before,
+          title: 'Keep an eye on changing weather.',
+          description: 'Be alert to changing weather conditions. Look for danger signs: Dark, greenish sky, often with large, dark low-lying clouds; Large hail; Loud roar, like a freight train. If you see storms or any danger signs, take shelter immediately!',
+        }, {
+          moment_type: :before,
+          title: 'Stay tuned for tornado warnings.',
+          description: 'Be aware of tornado warnings (e.g., radio and/or television).',
+        }, {
+          moment_type: :during,
           title: 'Seek shelter immediately.',
           description: 'Protect your head; most injuries associated with winds are from flying debris.',
         }, {
-          moment_type: :before,
+          moment_type: :during,
           title: 'Put on sturdy shoes.',
           description: '',
         }, {
-          moment_type: :before,
+          moment_type: :during,
           title: 'Do not open windows',
           description: '',
         }, {

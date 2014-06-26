@@ -1,23 +1,34 @@
-= provide(:title, 'Quick Guide')
+= provide(:title, "#{@quick_guide.title} Quick Guide")
 .main-container.quick-guide-page
 	= render :partial => "partials/header"
 	.basics
-		%h2 During a #{@quick_guide.title}.
-		%ol.quick-guide
-			- @quick_guide.before_tips.each do |tip|
-				%li
-					%h2
-						= tip.title.html_safe
-					%p
-						= tip.description.html_safe
-		%h2.event-after After a #{@quick_guide.title}.
-		%ol.quick-guide.second
-			- @quick_guide.after_tips.each do |tip|
-				%li
-					%h2
-						= tip.title.html_safe
-					%p
-						= tip.description.html_safe
+		- unless @quick_guide.before_tips.empty?
+			%h2 Before a #{@quick_guide.title}.
+			%ol.quick-guide
+				- @quick_guide.before_tips.each do |tip|
+					%li
+						%h2
+							= tip.title.html_safe
+						%p
+							= tip.description.html_safe
+		- unless @quick_guide.during_tips.empty?
+			%h2 During a #{@quick_guide.title}.
+			%ol.quick-guide
+				- @quick_guide.during_tips.each do |tip|
+					%li
+						%h2
+							= tip.title.html_safe
+						%p
+							= tip.description.html_safe
+		- unless @quick_guide.after_tips.empty?
+			%h2.event-after After a #{@quick_guide.title}.
+			%ol.quick-guide.second
+				- @quick_guide.after_tips.each do |tip|
+					%li
+						%h2
+							= tip.title.html_safe
+						%p
+							= tip.description.html_safe
 		.quick-guide-share
 			%ul.share-options
 				%li

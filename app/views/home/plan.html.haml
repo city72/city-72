@@ -16,22 +16,32 @@
         %li.select <strong>Select a few of your nearest and dearest.</strong> Who’s the group you’ll want to get in touch with if something happens?
         %li.pick <strong>Pick an out of state contact.</strong> Who can serve as a hub for information, if you can’t reach others in your local area?
         %li.agree <strong>Agree on a place to meet. </strong> How about a park? A landmark? Don’t choose a house—in case it’s inaccessible.
-  .basics-slider
+  .basics-slider{:class => (@before_tips.empty?)? "": "js-has-before"}
     %h2 Learn tips.
     %p Read and print our #{@quick_guide.title} Guide to learn a few easy steps to keep your cool when the earth shakes.
     .slider-header
       %ul.basics-tabs
-        %li.active
-          %a.trigger-during{href:"#tab-during"} During a #{@quick_guide.title}
+        - unless @before_tips.empty?
+          %li.active
+            %a.trigger-before{href:"#tab-before"} Before<span class="event-name"> a #{@quick_guide.title}</span>
+        %li{:class => (@before_tips.empty?)? "active": ""}
+          %a.trigger-during{href:"#tab-during"} During<span class="event-name"> a #{@quick_guide.title}</span>
         %li
-          %a.trigger-after{href:"#tab-after"} After a #{@quick_guide.title}
+          %a.trigger-after{href:"#tab-after"} After<span class="event-name"> a #{@quick_guide.title}</span>
       %a.quick-list-trigger{href:"quick_guide"} Print Full Guide
     .slider-body
+      - unless @before_tips.empty?
+        .slider-before
+          %ol.slider.quick-guide
+            - @before_tips.each do |tip|
+              %li
+                %h2
+                  = tip.title.html_safe
+                %p
+                  = tip.description.html_safe
       .slider-during
-        %a.prev{href: "#"}
-        %a.next{href: "#"}
         %ol.slider.quick-guide
-          - @quick_guide.before_tips.each do |tip|
+          - @during_tips.each do |tip|
             %li
               %h2
                 = tip.title.html_safe
@@ -39,7 +49,7 @@
                 = tip.description.html_safe
       .slider-after
         %ol.slider.quick-guide
-          - @quick_guide.after_tips.each do |tip|
+          - @after_tips.each do |tip|
             %li
               %h2
                 = tip.title.html_safe
