@@ -36,54 +36,54 @@ else
   EmergencyStory.create! name: 'Selected story', location: 'Example location', story: "Example story.", call_to_action_cd: 0, selected: true
 
   quick_guide = QuickGuide.create!(
-    title: 'Example',
+    title: 'Disaster name',
     custom: true,
     tips_attributes: [
       {
         moment_type: :before,
-        title: 'Example Before',
-        description: 'Example Before',
+        title: 'Main call to action',
+        description: 'Additional details',
       }, {
         moment_type: :before,
-        title: 'Example Before',
-        description: 'Example Before',
+        title: 'Main call to action',
+        description: 'Additional details',
       }, {
         moment_type: :before,
-        title: 'Example Before',
-        description: 'Example Before',
+        title: 'Main call to action',
+        description: 'Additional details',
       }, {
         moment_type: :during,
-        title: 'Example During',
-        description: 'Example During',
+        title: 'Main call to action',
+        description: 'Additional details',
       }, {
         moment_type: :during,
-        title: 'Example During',
-        description: 'Example During',
+        title: 'Main call to action',
+        description: 'Additional details',
       }, {
         moment_type: :during,
-        title: 'Example During',
-        description: 'Example During',
+        title: 'Main call to action',
+        description: 'Additional details',
       }, {
         moment_type: :after,
-        title: 'Example After',
-        description: 'Example After',
+        title: 'Main call to action',
+        description: 'Additional details',
       }, {
         moment_type: :after,
-        title: 'Example After',
-        description: 'Example After',
+        title: 'Main call to action',
+        description: 'Additional details',
       }, {
         moment_type: :after,
-        title: 'Example After',
-        description: 'Example After',
+        title: 'Main call to action',
+        description: 'Additional details',
       }
     ]
   )
   plan.quick_guide = quick_guide
   plan.save!
   if status.valid?
-    puts "Example Quick Guide created"
+    puts "Example/Other Quick Guide created"
   else
-    puts "Example Quick Guide already exist"
+    puts "Example/Other Quick Guide already exist"
   end
 
   if AdminUser.create(email: admin_email, password: admin_password)
