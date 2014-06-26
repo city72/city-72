@@ -51,31 +51,18 @@
     /   %select.form-control#color_cd{:name => 'color_cd', :'ng-model' => 'city.color_cd'}
     /     %option(ng-repeat="color in availableColors" value="{{color.key}}" ng-selected="color.key == city.color_cd") {{color.value}}
 
-    .img-group
-      .form-group
-        %label{:for => 'select-city-image'}
-          Homepage Image: Your City
-        %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
-        %input.form-control#select-city-image{:type => 'file'}(file-input="city_image")
-        %img.city-image{:'ng-src' => '{{city.image_url ? city.image_url : "/assets/placeholder-home.jpg"}}'}
-      .form-group
-        %label{:for => 'city-image-credit'}
-          Image Credit
-          %span.help (e.g. Flickr user name)
-        %input.form-control#city-image-credit{name: 'image_credit', :'ng-model' => 'city.image_credit'}
+    .form-group
+      %label{:for => 'select-city-image'}
+        Homepage Image: Your City
+      %span.help-block What image evokes the feeling of being a resident in your city—but not a tourist?
+      %input.form-control#select-city-image{:type => 'file'}(file-input="city_image")
+      %img.city-image{:'ng-src' => '{{city.image_url}}'}
 
-    .img-group
-      .form-group
-        %label{:for => 'select-resident-image'} 
-          Homepage Image: Residents of Your City
-        %input.form-control#select-resident-image{:type => 'file'}(file-input="resident_image")
-        %img.resident-image{:'ng-src' => '{{city.resident_image_url ? city.resident_image_url : "/assets/placeholder-residents.jpg"}}'}
-
-      .form-group
-        %label{:for => 'resident-image-credit'}
-          Image Credit
-          %span.help (e.g. Flickr user name)
-        %input.form-control#resident-image-credit{name: 'resident_image_credit', :'ng-model' => 'city.resident_image_credit'}
+    .form-group
+      %label{:for => 'select-resident-image'} 
+        Homepage Image: Residents of Your City
+      %input.form-control#select-resident-image{:type => 'file'}(file-input="resident_image")
+      %img.resident-image{:'ng-src' => '{{city.resident_image_url}}'}
 
     .form-group(ng-class="{'has-error': cityForm.brought_by.$invalid && cityForm.brought_by.$dirty}")
       %label.control-label{:for => 'brought_by'}

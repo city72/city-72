@@ -24,6 +24,31 @@
       = f.file_field(:logo, :class => "form-control")
 
 
+    %h2 Image Credits
+    %p.help-block Optionally add image attributions here if needed.
+    %ol.image-credits
+      %li
+        .form-group
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+      %li
+        .form-group
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+      %li
+        .form-group
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+      %li
+        .form-group
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+      %li
+        .form-group
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
+          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+
+
     - unless flash.empty?
       .alert.alert-dismissable{:class => (flash.first[0] == :error)? "alert-danger" : "alert-success"}
         %button.close(data-dismiss="alert" aria-hidden="true") &times;

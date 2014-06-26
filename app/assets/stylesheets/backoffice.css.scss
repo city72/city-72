@@ -422,6 +422,20 @@ textarea.form-control {
   
 }
 
+/* ABOUT */
+
+.image-credits {
+  @extend .form-inline;
+  padding: 0 1.5em;
+
+  .form-group { margin: 1rem 0;}
+
+  .form-group .form-control {
+    @extend .input-md;
+    margin-right: 1rem;
+  }
+}
+
 /* MOBILE */
 @media all and (max-width: 768px) {
   .header .emergency {
