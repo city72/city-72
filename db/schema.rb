@@ -11,14 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140626184111) do
+ActiveRecord::Schema.define(:version => 20140626185218) do
 
   create_table "abouts", :force => true do |t|
     t.string   "brought_to_you_by"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "image"
     t.string   "logo"
+    t.string   "photographer_1"
+    t.string   "photographer_1_url"
+    t.string   "photographer_2"
+    t.string   "photographer_2_url"
+    t.string   "photographer_3"
+    t.string   "photographer_3_url"
+    t.string   "photographer_4"
+    t.string   "photographer_4_url"
+    t.string   "photographer_5"
+    t.string   "photographer_5_url"
   end
 
   create_table "admin_users", :force => true do |t|
