@@ -9,8 +9,11 @@
     .form-group
       %label{:for => "community-image"} Community Image
       %p.help-block Optionally, choose an evocative image of life in your city.
-      %img.preview{src: @city.plan.community_image}
       = f.file_field(:community_image, :class => "form-control", :label => "Community Image")
+      - if !@city.plan.community_image.blank?
+        %img.preview{src: @city.plan.community_image}
+      - else
+        %img.preview{src: '/assets/placeholder-plan.jpg'}
     .form-group
       %label{:for => "select-plan"} What type of emergency is your area most at risk for?
       - QuickGuide.all.each do |q|
