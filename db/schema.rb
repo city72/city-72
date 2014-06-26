@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140623222656) do
+ActiveRecord::Schema.define(:version => 20140626183011) do
 
   create_table "abouts", :force => true do |t|
     t.string   "brought_to_you_by"
@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20140623222656) do
     t.string   "abbreviation"
     t.string   "moniker"
     t.string   "image"
-    t.string   "image_credit"
     t.string   "resident_image"
     t.string   "resident_image_credit"
     t.string   "contact_email"
