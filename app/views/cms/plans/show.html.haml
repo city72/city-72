@@ -16,7 +16,7 @@
         %img.preview{src: '/assets/placeholder-plan.jpg'}
     .form-group
       %label{:for => "select-plan"} What type of emergency is your area most at risk for?
-      - QuickGuide.all.each do |q|
+      - QuickGuide.order("id DESC").each do |q|
         .radio
           %label{:for => "plan_quick_guide_id_#{q.id}"}
             = f.radio_button(:quick_guide_id, q.id)
