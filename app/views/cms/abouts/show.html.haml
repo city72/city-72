@@ -10,7 +10,10 @@
       %label{:for => "image"} Image
       = f.file_field(:image, :class => "form-control")
       %p.help-block Choose an image of something unique to your city.
-      %img{src: @about.image}
+      - if !@about.image.blank?
+        %img{src: @about.image.url}
+      - else
+        %img{src: '/assets/placeholder-about.jpg'}
 
     = f.input :brought_to_you_by, as: :text, label: 'Brought to you by <span class="help">(Your Organization)</span>'.html_safe, input_html: {cols: '53', rows: '1'}, required: false
 
