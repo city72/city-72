@@ -29,24 +29,24 @@
     %ol.image-credits
       %li
         .form-group
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+          = f.input_field :photographer_1, placeholder: 'Name of Photographer'
+          = f.input_field :photographer_1_url, placeholder: 'Link to Photo or Website'
       %li
         .form-group
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+          = f.input_field :photographer_2, placeholder: 'Name of Photographer'
+          = f.input_field :photographer_2_url, placeholder: 'Link to Photo or Website'
       %li
         .form-group
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+          = f.input_field :photographer_3, placeholder: 'Name of Photographer'
+          = f.input_field :photographer_3_url, placeholder: 'Link to Photo or Website'
       %li
         .form-group
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+          = f.input_field :photographer_4, placeholder: 'Name of Photographer'
+          = f.input_field :photographer_4_url, placeholder: 'Link to Photo or Website'
       %li
         .form-group
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Name of Photographer'}
-          %input.form-control{:'ng-model' => 'city.image_credit', :placeholder => 'Link to Photo or Website'}
+          = f.input_field :photographer_5, placeholder: 'Name of Photographer'
+          = f.input_field :photographer_5_url, placeholder: 'Link to Photo or Website'
 
 
     - unless flash.empty?
