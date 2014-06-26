@@ -31,7 +31,7 @@
       - @city_connection.city_networks.included.each do |cn|
         %li
           - unless cn.logo.blank?
-            = image_tag(cn.logo_url(:common), alt: cn.headline)
+            = image_tag(cn.logo.common.url, alt: cn.headline)
           %h3
             = cn.headline
           %p.now
@@ -68,7 +68,7 @@
         %li
           %a.partner-logo{:href => "http://#{cr.website}", :target => "_blank"}
             - unless cr.logo.blank?
-              = image_tag(cr.logo_url(:common), alt: cr.name)
+              = image_tag(cr.logo.common.url, alt: cr.name)
           %p <strong>#{cr.name}</strong> #{cr.description}
           %a{:href => "http://#{cr.website}", :target => "_blank"}
             = cr.website
