@@ -9,18 +9,24 @@
     .form-group
       %label{:for => "community-image"} Community Image
       %p.help-block Optionally, choose an evocative image of life in your city.
-      = f.file_field(:community_image, :class => "form-control", :label => "Community Image")
       - if !@city.plan.community_image.blank?
         %img.preview{src: @city.plan.community_image}
       - else
         %img.preview{src: '/assets/placeholder-plan.jpg'}
+      = f.file_field(:community_image, :class => "form-control", :label => "Community Image")
     .form-group
       %label{:for => "select-plan"} What type of emergency is your area most at risk for?
-      - QuickGuide.all.each do |q|
+      - QuickGuide.order("id DESC").each do |q|
         .radio
           %label{:for => "plan_quick_guide_id_#{q.id}"}
             = f.radio_button(:quick_guide_id, q.id)
-            %span= q.title.capitalize
+            %span
+              - unless q.custom
+                = q.title.capitalize
+              - else
+                = "Other (#{q.title.capitalize})"
+            - if q.custom
+              =link_to "Configure Plan", cms_quick_guides_path
 
 
     - unless flash.empty?

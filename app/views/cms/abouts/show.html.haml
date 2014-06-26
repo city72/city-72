@@ -8,12 +8,13 @@
   = simple_form_for @about, url: cms_about_path, html: {class: "js-form"} do |f|
     .form-group
       %label{:for => "image"} Image
-      = f.file_field(:image, :class => "form-control")
       %p.help-block Choose an image of something unique to your city.
       - if !@about.image.blank?
-        %img{src: @about.image.url}
+        %img.preview{src: @about.image.url}
       - else
         %img{src: '/assets/placeholder-about.jpg'}
+      = f.file_field(:image, :class => "form-control")
+      
 
     = f.input :brought_to_you_by, as: :text, label: 'Brought to you by <span class="help">(Your Organization)</span>'.html_safe, input_html: {cols: '53', rows: '1'}, required: false
 

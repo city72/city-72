@@ -230,7 +230,7 @@ textarea.form-control {
       position: absolute;
       background-color: #fcf8e3;
       padding: 70px 40px;
-    } 
+    }
   }
 
   .image-edited-message {
@@ -340,7 +340,7 @@ textarea.form-control {
   .help-block {
     @include make-sm-column(6);
   }
-  
+
   .help-block-title {
     margin: 47px 0 0;
   }
@@ -371,7 +371,7 @@ textarea.form-control {
     }
   }
 
-} 
+}
 
 
 /* SUPPLIES */
@@ -414,12 +414,12 @@ textarea.form-control {
     font-size: 1em;
     margin: 5rem 0 0;
   }
-  
+
   ol {
     @extend .help-block;
     padding: 0 0 0 1.3em;
   }
-  
+
 }
 
 /* ABOUT */
@@ -434,6 +434,29 @@ textarea.form-control {
     @extend .input-md;
     margin-right: 1rem;
   }
+}
+
+/* CUSTOM QUICK GUIDE */
+.custom-quick-guide {
+
+  h2 {
+    margin: 6rem 0 0;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin: 3rem 0 0;
+  }
+
+  .form-group {
+    margin: 1em 0;
+  }
+
+  textarea {
+    width: 360px;
+    height: 70px;
+  }
+
 }
 
 /* MOBILE */

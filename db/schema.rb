@@ -161,8 +161,9 @@ ActiveRecord::Schema.define(:version => 20140626185218) do
 
   create_table "quick_guides", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "custom",     :default => false
   end
 
   create_table "simple_captcha_data", :force => true do |t|

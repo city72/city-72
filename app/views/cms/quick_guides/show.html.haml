@@ -1,0 +1,34 @@
+= javascript_include_tag "cms/spinner_save_btn"
+.main-content.custom-quick-guide
+  .screen-intro
+    %p.screen-info Write the steps for each section of your emergency plan: before, during, after.
+    .action-area
+      %a.btn.btn-primary.ladda-button.js-save{:href => "#"} Save Changes
+
+  = simple_form_for @quick_guide, url: cms_quick_guides_path, html: {class: "js-form"} do |f|
+
+    = f.input :title, as: :string, label: 'Quick Guide Title', required: true
+
+    .form-group
+      - tip_groups = [false, false, false]
+      - step = 0
+      = f.simple_fields_for :tips do |tf|
+        - if !tip_groups[tf.object.moment_type_cd]
+          - tip_groups[tf.object.moment_type_cd] = true
+          - step = 1
+          %h2
+            =tf.object.moment_type.capitalize
+        %h3 Step #{step}
+        - step = step + 1
+        = tf.input :title, as: :string, required: true, label: false
+        = tf.input :description, as: :text, required: true, label: false, cols: "20";
+
+    - unless flash.empty?
+      .alert.alert-dismissable{:class => (flash.first[0] == :error)? "alert-danger" : "alert-success"}
+        %button.close(data-dismiss="alert" aria-hidden="true") &times;
+        %strong "#{ (flash.first[0] == :error)? "Error!" : "Saved!" }"
+        = flash.first[1]
+
+    .form-actions
+      = content_tag :button, :type => :submit, :class => 'btn btn-primary js-save ladda-button' do
+        %span.ladda-label Save Changes
