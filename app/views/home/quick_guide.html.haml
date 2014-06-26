@@ -3,8 +3,8 @@
 	= render :partial => "partials/header"
 	.basics
 		- unless @quick_guide.before_tips.empty?
-			%h2 Before a #{@quick_guide.title}.
-			%ol.quick-guide
+			%h2.event-before Before a #{@quick_guide.title}.
+			%ol.quick-guide.list-before
 				- @quick_guide.before_tips.each do |tip|
 					%li
 						%h2
