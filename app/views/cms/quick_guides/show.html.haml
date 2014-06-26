@@ -14,7 +14,7 @@
       = f.simple_fields_for :tips do |tf|
         - if !tip_groups[tf.object.moment_type_cd]
           - tip_groups[tf.object.moment_type_cd] = true
-          %span
+          %h2
             ="#{tf.object.moment_type.capitalize} Tips"
         = tf.input :title, as: :string, label: 'Tip Title', required: true
         = tf.input :description, as: :text, label: 'Tip Description', required: true
