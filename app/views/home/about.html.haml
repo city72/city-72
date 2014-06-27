@@ -30,15 +30,18 @@
 				= link_to @about.photographer_1, @about.photographer_1_url, target: '_blank'
 			- if !@about.photographer_2.blank?
 				,
+				= 'and' if @about.photographer_3.blank?
 				= link_to @about.photographer_2, @about.photographer_2_url, target: '_blank'
 			- if !@about.photographer_3.blank?
 				,
+				= 'and' if @about.photographer_4.blank?
 				= link_to @about.photographer_3, @about.photographer_3_url, target: '_blank'
 			- if !@about.photographer_4.blank?
 				,
+				= 'and' if @about.photographer_5.blank?
 				= link_to @about.photographer_4, @about.photographer_4_url, target: '_blank'
 			- if !@about.photographer_5.blank?
-				,
+				, and
 				= link_to @about.photographer_5, @about.photographer_5_url, target: '_blank'
 			= "."
 	= render :partial => "partials/footer"
