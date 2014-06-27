@@ -3,7 +3,7 @@ Included here are:
   * [Production Deployment](#production_deployment)
   * [Development Environment Setup](#development-environment-setup)
 
-# Production Deployment
+# Production Deployment 
 
 ## Prerequisites
 
@@ -28,14 +28,16 @@ Follow these steps:
   1. Create a [heroku account](http://www.heroku.com) (if you don't already have one)
   2. Install the Heroku Toolbelt on your computer & login
       * Step 2 and 3 of the [heroku quickstart guide](https://devcenter.heroku.com/articles/quickstart)
-  3. Add your credit card information to your heroku account.
+  3. Add your credit card information to your heroku account. If you are just testing the site you can choose free options below. NOTE: The free version of the site on Heroku is not recommended for the public launch of your City72 site that may experience a high volume of traffic during an emergency. 
 
 
-#### Application configuration on heroku
+#### Configure an application on Heroku with 2 dynos
 
-First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to used in your application. Two (2) dynos is the recommended setting for your application.
+First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to be used in your application select 2. Two dynos is the recommended setting for your application in order to keep the app reliable and responsive to traffic. 
 
-#### Configure the heroku app for your project
+For testing purposes, you can choose an application with no extra dynos. NOTE: Sites with no extra dynos "go to sleep" and can be slow to wake up. So, this free level of service is not appropriate for the public launch of your site. For the full launch of your site, create an application with at least two dynos.
+
+#### Configure the Heroku App for your project
 
 Go to you project folder, and run the following command:
 
@@ -45,37 +47,76 @@ Go to you project folder, and run the following command:
 
 (In your heroku account, choose your app's settings, and you will get the Git URL, from the info section)
 
-#### Install addons
+#### Install add-ons - Production (adds $100/month)
 
-**postgresql:** This addon has a monthly cost of 50$ usd. It's used to have a database in your application
+**postgresql:** This add-on has cost of $50 per month. It's is the database in your application.
 
 ```sh
   $ heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
 ```
 
-**pg-backups:** This add on is free. It's used to have backups of your database.
+
+**pg-backups:** This add-on is free. It creates backups of your database.
 
 ```sh
   $ heroku addons:add pgbackups:auto-week -a YOURAPPNAME
 ```
 
-**sengrid:** This add on is free. It's used to send emails from your application.
+**sengrid:** This add-on is free. It's used to send emails from your application.
 
 ```sh
   $ heroku addons:add sendgrid -a YOURAPPNAME
 ```
 
-**newrelic:** This add on is free. It's used to monitor your application performance
+**newrelic:** This add-on is free. It monitors your application performance
 
 ```sh
   $ heroku addons:add newrelic:stark -a YOURAPPNAME
 ```
 
-**cloudinary:** This addon has a monthly cost of 50$ usd. It's used to store and host images in your application
+**cloudinary:** This add-on has a cost of $50 per month. It is used to store and host images in your application.
 
 ```sh
  $ heroku addons:add cloudinary:bronze -a YOURAPPNAME
 ```
+
+
+#### Install add-ons - Testing Site (free)
+
+**postgresql:** This version of the add on is free. It's is used in order to have a database in your application. This version is not robust enough for normal amounts of web traffic. Only use the free version for testing purposes.
+
+
+```sh
+  $ heroku addons:add heroku-postgresql -a YOURAPPNAME
+```
+
+
+**pg-backups:** This add-on is free. It creates backups of your database.
+
+```sh
+  $ heroku addons:add pgbackups:auto-week -a YOURAPPNAME
+```
+
+**sengrid:** This add-on is free. It's used to send emails from your application.
+
+```sh
+  $ heroku addons:add sendgrid -a YOURAPPNAME
+```
+
+**newrelic:** This add-on is free. It monitors your application performance
+
+```sh
+  $ heroku addons:add newrelic:stark -a YOURAPPNAME
+```
+
+**cloudinary:** This version of the add-on is free. It is used to store and host images in your application. Only use the free version of this add-on for testing purposes
+
+
+```sh
+ $ heroku addons:add cloudinary -a YOURAPPNAME
+```
+
+
 
 #### Configure the recover password host redirection (example: YOURAPPNAME.herokuapp.com)
 
@@ -110,6 +151,9 @@ Now you should be able to enter you application.
 
   * Go to `http://YOURAPPNAME.herokuapp.com/` to navigate the application
   * Go to `http://YOURAPPNAME.herokuapp.com/cms` to configure the application
+  
+  
+  
 
 # Development Environment Setup
 
