@@ -16,10 +16,10 @@ Included here are:
 Using git, clone the github repository to obtain a local copy on your computer.
 
 ```sh
-  $ git clone git@github.com:zauberlabs/ideo-city-72.git
+  $ git clone git@github.com:city72/city-72.git
 ```
 
-This will create a folder with name `ideo-city-72` to be called within this guide your "project folder".
+This will create a folder with name `city-72` to be called within this guide your "project folder".
 
 #### Setup Heroku
 
