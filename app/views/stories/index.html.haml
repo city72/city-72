@@ -3,12 +3,16 @@
 .main-container.stories
   = render :partial => "partials/header"
 
+  .intro-mobile
+    %p Watch stories of people who have lived through disasters—and those who are already fostering connections in #{@city.name}. No matter your situation, chances are, there’s someone like you with wisdom to share.
+
+
   .opening{:style => ("background-image: url(#{@selected_story.image_url})" unless @selected_story.image.blank?)}
-    %div
-      %p= @selected_story.story
     %span.story-about
       %h1= @selected_story.name
       %h2= @selected_story.location
+    %div
+      %p= @selected_story.story
 
   .intro
     .personal-look
