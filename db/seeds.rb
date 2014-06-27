@@ -36,7 +36,7 @@ else
   EmergencyStory.create! name: 'Selected story', location: 'Example location', story: "Example story.", call_to_action_cd: 0, selected: true
 
   quick_guide = QuickGuide.create!(
-    title: 'Disaster name',
+    title: 'Emergency Name',
     custom: true,
     tips_attributes: [
       {

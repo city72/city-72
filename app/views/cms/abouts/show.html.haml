@@ -1,14 +1,14 @@
 = javascript_include_tag "cms/spinner_save_btn"
 .main-content.about
   .screen-intro
-    %p.screen-info Share information about your organization and your City72 site, in the About section.
+    %p.screen-info Share information about your organization and your City72 site.
     .action-area
       %a.btn.btn-primary.ladda-button.js-save{:href => "#"} Save Changes
 
   = simple_form_for @about, url: cms_about_path, html: {class: "js-form"} do |f|
     .form-group
       %label{:for => "image"} Image
-      %p.help-block Choose an image of something unique to your city.
+      %p.help-block Choose a image of a place or moment unique to your city.
       - if !@about.image.blank?
         %img.preview{src: @about.image.url}
       - else

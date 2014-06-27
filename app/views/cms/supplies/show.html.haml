@@ -1,6 +1,6 @@
 .main-content.supplies(ng-controller="CitySuppliesController" ng-init="initialize('#{escape_javascript(@essentials)}', '#{escape_javascript(@usefuls)}', '#{escape_javascript(@personals)}', '#{escape_javascript(@kits)}')" )
   .screen-intro
-    %p.screen-info This list provides a list of essential, useful, and personal supplies people can gather before an emergency. Use the pre-populated supplies list below, or swap out an item as needed. 
+    %p.screen-info This visual list provides sets of essential, useful, and personal supplies people can gather before an emergency. 
     .action-area
       %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
         %span.ladda-label Save Changes

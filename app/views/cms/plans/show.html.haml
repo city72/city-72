@@ -1,14 +1,14 @@
 = javascript_include_tag "cms/spinner_save_btn"
 .main-content.plan
   .screen-intro
-    %p.screen-info Select an emergency to provide customized preparation instructions.
+    %p.screen-info Select a pre-populated Quick Guide—featuring Before, During, and After tips—so residents know how to get prepared for the types of emergencies that might be relevant for your city. Or, write your own.
     .action-area
       %a.btn.btn-primary.ladda-button.js-save{:href => "#"} Save Changes
 
   = form_for @city.plan, url: cms_plan_path, method: :put, html: { class: "js-form"} do |f|
     .form-group
       %label{:for => "community-image"} Community Image
-      %p.help-block Optionally, choose an evocative image of life in your city.
+      %p.help-block Choose an evocative image of people gathering in your city.
       - if !@city.plan.community_image.blank?
         %img.preview{src: @city.plan.community_image}
       - else

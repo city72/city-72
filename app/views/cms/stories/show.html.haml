@@ -1,6 +1,6 @@
 .main-content.stories(ng-controller="CityStoriesController" ng-init="initialize('#{escape_javascript(@city_json)}', '#{escape_javascript(@stories)}')")
   .screen-intro
-    %p.screen-info Once you've selected, interviewed, and photographed residents for the Stories section, enter the content below.
+    %p.screen-info Once you've interviewed and photographed residents for the Stories section, enter the images and quotes below. Add your city’s Identity Statement here too.
     .action-area
       %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
         %span.ladda-label Save Changes
