@@ -49,6 +49,8 @@ Go to you project folder, and run the following command:
 
 #### Install add-ons - Production (adds $100/month)
 
+If you would prefer to test the site for free use the add-on instructions in the next section. NOTE: If you know you will launch this site to the public use these paid add-ons.
+
 **postgresql:** This add-on has cost of $50 per month. It's is the database in your application.
 
 ```sh
@@ -82,6 +84,8 @@ Go to you project folder, and run the following command:
 
 
 #### Install add-ons - Testing Site (free)
+
+If you are using the paid add-ons above, skip this section.
 
 **postgresql:** This version of the add on is free. It's is used in order to have a database in your application. This version is not robust enough for normal amounts of web traffic. Only use the free version for testing purposes.
 
