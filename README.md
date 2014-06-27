@@ -19,7 +19,7 @@ Using git, clone the github repository to obtain a local copy on your computer.
   $ git clone git@github.com:city72/city-72.git
 ```
 
-This will create a folder with name `city-72` to be called within this guide your "project folder".
+This will create a folder named `city-72`. In this guide, we refer to this folder as your "project folder".
 
 #### Setup Heroku
 
