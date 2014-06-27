@@ -1,4 +1,8 @@
 .stories {
+
+  .intro-mobile {
+    display: none;
+  }
   
   .opening {
     @include retina-image(/assets/placeholder/story-1, 750px 417px, jpg);
@@ -11,6 +15,7 @@
 
     .story-about {
       @include span-columns(8.62938893);
+      float: right;
       margin: 310px 0 0 2.357%;
 
       h1 {

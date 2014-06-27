@@ -726,10 +726,31 @@ $mobile-padding: 23px;
 	/* STORIES */
 
 	.stories {
+
+		.intro-mobile {
+			display: block;
+			height: auto;
+			margin: 44px 0 0;
+			width: 100%;
+			background-color: $highlight;
+			padding: 5px 23px;
+
+			h2 {
+				display: none;
+			}
+
+			p {
+				@include mobile-body-paragraph;
+				color: #FFF;
+				width: auto;
+				margin-top: 1rem;
+			}
+		}
 		
 		.opening {
 			background-size: 120%;
-			background-position: 90% 150px;
+			background-position: 90% 0px;
+			margin-top: 10px;
 
 			.story-about {
 				height: 130px;
@@ -751,28 +772,9 @@ $mobile-padding: 23px;
 		}
 
 		.intro {
-			height: auto;
-			margin-bottom: 0;
-			width: 100%;
-
-			.personal-look {
-				background-color: $highlight;
-				padding: 0 23px;
-				margin-top: -8px;
-
-				h2 {
-					display: none;
-				}
-
-				p {
-					@include mobile-body-paragraph;
-					color: #FFF;
-					width: auto;
-					margin-top: 1rem;
-				}
-
-			}
+			display: none;
 		}
+		
 	}
 
 	.story-list {
