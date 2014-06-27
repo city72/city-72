@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   after_filter :dynamic_content, only: [:index, :em_home]
   after_filter :static_content, only: [:home, :connect, :about, :supplies, :quick_guide, :our_manifesto]
-  before_filter :agency
+  before_filter :city_info
 
   def index
     @crisis_mode = Mode.is_crisis_mode
@@ -19,12 +19,10 @@ class HomeController < ApplicationController
   end
 
   def connect
-    @city = City.first
     @city_connection = CityConnection.first
   end
 
   def plan
-    @city = City.first
     @plan = @city.plan
     @quick_guide = @plan.quick_guide
     @before_tips = @quick_guide.before_tips
@@ -33,7 +31,6 @@ class HomeController < ApplicationController
   end
 
   def quick_guide
-    @city = City.first
     @plan = @city.plan
     @quick_guide = @plan.quick_guide
   end
@@ -48,10 +45,8 @@ class HomeController < ApplicationController
   empty_methods :home, :our_manifesto
 
   private
-    def agency
+    def city_info
       @city = City.first
-      @agency_url = @city.agency_url
-      @agency_site = @city.agency_site
     end
 
 end
