@@ -19,21 +19,21 @@ Using git, clone the github repository to obtain a local copy on your computer.
   $ git clone git@github.com:zauberlabs/ideo-city-72.git
 ```
 
-This will create a folder with name `ideo-city-72` to be called within this guide your "project folder".
+This will create a folder with name `ideo-city-72` this guide will refer to that folder as your "project folder".
 
 #### Setup Heroku
 
 Follow these steps:
 
-  1. Create a [heroku account](http://www.heroku.com) (if you don't have any)
-  2. Install heroku toolbelt on your computer & login
+  1. Create a [heroku account](http://www.heroku.com) (if you don't already have one)
+  2. Install the Heroku Toolbelt on your computer & login
       * Step 2 and 3 of the [heroku quickstart guide](https://devcenter.heroku.com/articles/quickstart)
   3. Add your credit card information to your heroku account.
 
 
 #### Application configuration on heroku
 
-First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to used in your application. set to 2 dynos. This is the recommened setting for your application.
+First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to used in your application. Two (2) dynos is the recommended setting for your application.
 
 #### Configure the heroku app for your project
 
