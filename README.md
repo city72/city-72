@@ -148,20 +148,29 @@ Now you should be able to enter you application.
   * Go to `http://YOURAPPNAME.herokuapp.com/` to navigate the application
   * Go to `http://YOURAPPNAME.herokuapp.com/cms` to configure the application
   
-#### Update your username and password via the Content Editor
+#### FINAL STEP: Update your username and password via the Content Editor
 
-Uncomment the following lines in the file `db/seeds.rb`, and fill them with the desired email & password for the admin account
+The application was installed with a default username and password (these are set in the db/seeds.rb file). To login to your new site's content editor go to your app and login
 
-    # admin_email = 'YOUR MAIL'
-    # admin_password = 'YOUR PASSWORD'
+`http://YOURAPPNAME.herokuapp.com/cms`
 
-This is done to setup the email and credentials used to enter the administration CMS of your application.
+The default username and password are:
 
-  
-  
+admin@example.com
+
+password
+
+Once you login change the email to your email address then change the password.
+
+
+
+
+---
   
 
 # Development Environment Setup
+
+In most cases you will not need to setup a development environment for this application. The only reason to go through the following steps would be if you wanted to customize your site beyond what is set with the Content Editor such as some of the hard-coded text of the site.
 
 ## Prerequisites
 
