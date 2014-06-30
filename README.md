@@ -130,14 +130,6 @@ If you are using the paid add-ons above, skip this section.
 
 This variable, configures the domain to be used within the emails sent from your application. You should configure it to use the domain you have.
 
-#### Configure the admin data
-
-Uncomment the following lines in the file `db/seeds.rb`, and fill them with the desired email & password for the admin account
-
-    # admin_email = 'YOUR MAIL'
-    # admin_password = 'YOUR PASSWORD'
-
-This is done to setup the email and credentials used to enter the administration CMS of your application.
 
 #### Deploy
 
@@ -155,6 +147,16 @@ Now you should be able to enter you application.
 
   * Go to `http://YOURAPPNAME.herokuapp.com/` to navigate the application
   * Go to `http://YOURAPPNAME.herokuapp.com/cms` to configure the application
+  
+#### Update your username and password via the Content Editor
+
+Uncomment the following lines in the file `db/seeds.rb`, and fill them with the desired email & password for the admin account
+
+    # admin_email = 'YOUR MAIL'
+    # admin_password = 'YOUR PASSWORD'
+
+This is done to setup the email and credentials used to enter the administration CMS of your application.
+
   
   
   

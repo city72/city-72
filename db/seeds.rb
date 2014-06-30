@@ -3,7 +3,7 @@
 admin_email = admin_password = nil
 
 admin_email = 'admin@example.com'
-admin_password = '123456'
+admin_password = 'password'
 
 if (!(admin_email && admin_password))
   puts 'Admin email and password must be provided'
