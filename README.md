@@ -13,13 +13,17 @@ Included in this guide:
 
 #### Obtain a copy of the application
 
-Using git, clone the github repository to obtain a local copy on your computer.
+First, you will need your own GitHub account and then you will need to **fork the repository**. To fork the code, click the 'fork' button on this page.
+
+Go to your forked github repository and git clone to your own computer.  
+
+The command you type into your shell application will look like
 
 ```sh
-  $ git clone git@github.com:city72/city-72.git
+$ git clone https://github.com/YOUR-GITHUB-NAME/city-72.git
 ```
 
-This will create a folder named `city-72`. This guide will refer to the folder as your "project folder".
+This will create a directory named `city-72`. This guide will refer to the directory as your "project folder".
 
 #### Setup Heroku
 
