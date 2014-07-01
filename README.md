@@ -1,13 +1,13 @@
 Included in this guide:
 
-  * [Production Deployment](#production_deployment) Instructions
-  * [Development Environment Setup](#development-environment-setup) Instructions
+  * [Production Deployment](#production_deployment)
+  * [Development Environment Setup](#development-environment-setup)
 
 # Production Deployment 
 
 ## Prerequisites
 
-* **Git** (For more information read [Getting Started with Git](http://git-scm.com/book/en/Getting-Started-Installing-Git).)
+* **Git**—for more information, read [Getting Started with Git](http://git-scm.com/book/en/Getting-Started-Installing-Git).
 
 ### Step By Step Guide
 
@@ -33,7 +33,7 @@ Follow these steps:
 
 #### Configure an application on Heroku with 2 dynos
 
-First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to be used in your application select 2. Two dynos is the recommended setting for your application in order to keep the app reliable and responsive to traffic. 
+First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to be used in your application select `2`. Two dynos is the recommended setting for your application in order to keep the app reliable and responsive to traffic. 
 
 For testing purposes, you can choose an application with no extra dynos. NOTE: Sites with no extra dynos "go to sleep" and can be slow to wake up. So, this free level of service is not appropriate for the public launch of your site. For the full launch of your site, create an application with at least two dynos.
 
@@ -51,15 +51,15 @@ Go to you project folder, and run the following command:
 
 If you would prefer to test the site for free use the add-on instructions in the next section. NOTE: If you know you will launch this site to the public use these paid add-ons.
 
-**postgresql, two options:**
+**postgresql, 2 options:**
 
-* **postgresql (more robust option):** This add-on has cost of $50 per month. It's is the database in your application.
+a. **postgresql (more robust option)** This add-on has cost of $50 per month. It's is the database in your application.
  
    ```sh
      $ heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
    ```
 
-* **postgresql (free/hobby option):** if you would like to test the app for free you can install the "hobby" version of postgres instead. Not recommended for production loads. 
+* **postgresql (free/hobby option)** if you would like to test the app for free you can install the "hobby" version. Not recommended for production loads. 
  
    ```sh
      $ heroku addons:add heroku-postgresql -a YOURAPPNAME
@@ -84,9 +84,9 @@ If you would prefer to test the site for free use the add-on instructions in the
   $ heroku addons:add newrelic:stark -a YOURAPPNAME
 ```
 
-**cloudinary, two options:** 
+**cloudinary, 2 options:** 
 
-* **cloudinary (more robust option)** This add-on has a cost of $50 per month. It is used to store and host images in your application.
+a. **cloudinary (more robust option)** This add-on has a cost of $50 per month. It is used to store and host images in your application.
 
    ```sh
     $ heroku addons:add cloudinary:bronze -a YOURAPPNAME
@@ -110,7 +110,7 @@ This variable, configures the domain to be used within the emails sent from your
 
 #### Deploy
 
-Finally you are now able to do a deploy of the application.
+Finally, you are able to deploy the application.
 
 Do:
 ```sh
