@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>City72 by city72</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>City72</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/city72/city-72">View the Project on GitHub <small>city72/city-72</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/city72/city-72/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/city72/city-72/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/city72/city-72">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Included here are:</p>
+
+<ul>
+<li><a href="#production_deployment">Production Deployment</a></li>
+<li><a href="#development-environment-setup">Development Environment Setup</a></li>
+</ul><h1>
+<a name="production-deployment" class="anchor" href="#production-deployment"><span class="octicon octicon-link"></span></a>Production Deployment</h1>
+
+<h2>
+<a name="prerequisites" class="anchor" href="#prerequisites"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<ul>
+<li>Git <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Installing Git</a>
+</li>
+</ul><h3>
+<a name="step-by-step-guide" class="anchor" href="#step-by-step-guide"><span class="octicon octicon-link"></span></a>Step By Step Guide</h3>
+
+<h4>
+<a name="obtain-a-copy-of-the-application" class="anchor" href="#obtain-a-copy-of-the-application"><span class="octicon octicon-link"></span></a>Obtain a copy of the application</h4>
+
+<p>Using git, clone the github repository to obtain a local copy on your computer.</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>git clone git@github.com:city72/city-72.git
+</pre></div>
+
+<p>This will create a folder named <code>city-72</code>. In this guide, we refer to this folder as your "project folder".</p>
+
+<h4>
+<a name="setup-heroku" class="anchor" href="#setup-heroku"><span class="octicon octicon-link"></span></a>Setup Heroku</h4>
+
+<p>Follow these steps:</p>
+
+<ol>
+<li>Create a <a href="http://www.heroku.com">heroku account</a> (if you don't already have one)</li>
+<li>Install the Heroku Toolbelt on your computer &amp; login
+
+<ul>
+<li>Step 2 and 3 of the <a href="https://devcenter.heroku.com/articles/quickstart">heroku quickstart guide</a>
+</li>
+</ul>
+</li>
+<li>Add your credit card information to your heroku account. If you are just testing the site you can choose free options below. NOTE: The free version of the site on Heroku is not recommended for the public launch of your City72 site that may experience a high volume of traffic during an emergency. </li>
+</ol><h4>
+<a name="configure-an-application-on-heroku-with-2-dynos" class="anchor" href="#configure-an-application-on-heroku-with-2-dynos"><span class="octicon octicon-link"></span></a>Configure an application on Heroku with 2 dynos</h4>
+
+<p>First, go to your heroku account and create an application to be used for the project. When asked for the number of <code>web dynos</code> to be used in your application select 2. Two dynos is the recommended setting for your application in order to keep the app reliable and responsive to traffic. </p>
+
+<p>For testing purposes, you can choose an application with no extra dynos. NOTE: Sites with no extra dynos "go to sleep" and can be slow to wake up. So, this free level of service is not appropriate for the public launch of your site. For the full launch of your site, create an application with at least two dynos.</p>
+
+<h4>
+<a name="configure-the-heroku-app-for-your-project" class="anchor" href="#configure-the-heroku-app-for-your-project"><span class="octicon octicon-link"></span></a>Configure the Heroku App for your project</h4>
+
+<p>Go to you project folder, and run the following command:</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>git remote add heroku git@heroku.com:YOURAPPNAME.git
+</pre></div>
+
+<p>(In your heroku account, choose your app's settings, and you will get the Git URL, from the info section)</p>
+
+<h4>
+<a name="install-add-ons---production-adds-100month" class="anchor" href="#install-add-ons---production-adds-100month"><span class="octicon octicon-link"></span></a>Install add-ons - Production (adds $100/month)</h4>
+
+<p>If you would prefer to test the site for free use the add-on instructions in the next section. NOTE: If you know you will launch this site to the public use these paid add-ons.</p>
+
+<p><strong>postgresql:</strong> This add-on has cost of $50 per month. It's is the database in your application.</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
+</pre></div>
+
+<p><strong>pg-backups:</strong> This add-on is free. It creates backups of your database.</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add pgbackups:auto-week -a YOURAPPNAME
+</pre></div>
+
+<p><strong>sengrid:</strong> This add-on is free. It's used to send emails from your application.</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add sendgrid -a YOURAPPNAME
+</pre></div>
+
+<p><strong>newrelic:</strong> This add-on is free. It monitors your application performance</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add newrelic:stark -a YOURAPPNAME
+</pre></div>
+
+<p><strong>cloudinary:</strong> This add-on has a cost of $50 per month. It is used to store and host images in your application.</p>
+
+<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>heroku addons:add cloudinary:bronze -a YOURAPPNAME
+</pre></div>
+
+<h4>
+<a name="install-add-ons---testing-site-free" class="anchor" href="#install-add-ons---testing-site-free"><span class="octicon octicon-link"></span></a>Install add-ons - Testing Site (free)</h4>
+
+<p>If you are using the paid add-ons above, skip this section.</p>
+
+<p><strong>postgresql:</strong> This version of the add on is free. It's is used in order to have a database in your application. This version is not robust enough for normal amounts of web traffic. Only use the free version for testing purposes.</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add heroku-postgresql -a YOURAPPNAME
+</pre></div>
+
+<p><strong>pg-backups:</strong> This add-on is free. It creates backups of your database.</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add pgbackups:auto-week -a YOURAPPNAME
+</pre></div>
+
+<p><strong>sengrid:</strong> This add-on is free. It's used to send emails from your application.</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add sendgrid -a YOURAPPNAME
+</pre></div>
+
+<p><strong>newrelic:</strong> This add-on is free. It monitors your application performance</p>
+
+<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add newrelic:stark -a YOURAPPNAME
+</pre></div>
+
+<p><strong>cloudinary:</strong> This version of the add-on is free. It is used to store and host images in your application. Only use the free version of this add-on for testing purposes</p>
+
+<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>heroku addons:add cloudinary -a YOURAPPNAME
+</pre></div>
+
+<h4>
+<a name="configure-the-recover-password-host-redirection-example-yourappnameherokuappcom" class="anchor" href="#configure-the-recover-password-host-redirection-example-yourappnameherokuappcom"><span class="octicon octicon-link"></span></a>Configure the recover password host redirection (example: YOURAPPNAME.herokuapp.com)</h4>
+
+<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>heroku config:set <span class="nv">EMAIL_REDIRECT_HOST</span><span class="o">=</span>YOURAPPNAME.herokuapp.com
+</pre></div>
+
+<p>This variable, configures the domain to be used within the emails sent from your application. You should configure it to use the domain you have.</p>
+
+<h4>
+<a name="deploy" class="anchor" href="#deploy"><span class="octicon octicon-link"></span></a>Deploy</h4>
+
+<p>Finally you are now able to do a deploy of the application.</p>
+
+<p>Do:</p>
+
+<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>git ci -am <span class="s1">'Admin credentials'</span>
+ <span class="nv">$ </span>git push heroku master
+ <span class="nv">$ </span>heroku run bundle <span class="nb">exec </span>rake db:setup            <span class="c"># this creates database schema &amp; prepopulates basic data</span>
+ <span class="nv">$ </span>heroku run bundle <span class="nb">exec </span>rake city72:populate     <span class="c"># this populates data to the database</span>
+</pre></div>
+
+<p>Now you should be able to enter you application.</p>
+
+<ul>
+<li>Go to <code>http://YOURAPPNAME.herokuapp.com/</code> to navigate the application</li>
+<li>Go to <code>http://YOURAPPNAME.herokuapp.com/cms</code> to configure the application</li>
+</ul><h4>
+<a name="final-step-update-your-username-and-password-via-the-content-editor" class="anchor" href="#final-step-update-your-username-and-password-via-the-content-editor"><span class="octicon octicon-link"></span></a>FINAL STEP: Update your username and password via the Content Editor</h4>
+
+<p>The application was installed with a default username and password (these are set in the db/seeds.rb file). To login to your new site's content editor go to your app and login</p>
+
+<p><code>http://YOURAPPNAME.herokuapp.com/cms</code></p>
+
+<p>The default username and password are:</p>
+
+<p><a href="mailto:admin@example.com">admin@example.com</a></p>
+
+<p>password</p>
+
+<p>Once you login change the email to your email address then change the password.</p>
+
+<hr><h1>
+<a name="development-environment-setup" class="anchor" href="#development-environment-setup"><span class="octicon octicon-link"></span></a>Development Environment Setup</h1>
+
+<p>In most cases you will not need to setup a development environment for this application. The only reason to go through the following steps would be if you wanted to customize your site beyond what is set with the Content Editor such as some of the hard-coded text of the site.</p>
+
+<h2>
+<a name="prerequisites-1" class="anchor" href="#prerequisites-1"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<p>To setup the application you will need:</p>
+
+<ul>
+<li>PostgreSQL database</li>
+<li>Ruby 1.9.3-p448</li>
+<li>Bundler gem</li>
+<li>Bower</li>
+</ul><h3>
+<a name="postgresql-installation" class="anchor" href="#postgresql-installation"><span class="octicon octicon-link"></span></a>PostgreSQL installation</h3>
+
+<h4>
+<a name="linux" class="anchor" href="#linux"><span class="octicon octicon-link"></span></a>Linux</h4>
+
+<pre><code>$ sudo apt-get -y install postgresql
+</code></pre>
+
+<h4>
+<a name="mac-os-x" class="anchor" href="#mac-os-x"><span class="octicon octicon-link"></span></a>Mac OS X</h4>
+
+<pre><code>$ brew install postgresql
+</code></pre>
+
+<h3>
+<a name="ruby-installation" class="anchor" href="#ruby-installation"><span class="octicon octicon-link"></span></a>Ruby Installation</h3>
+
+<h4>
+<a name="rbenv" class="anchor" href="#rbenv"><span class="octicon octicon-link"></span></a>Rbenv</h4>
+
+<p>To install ruby, it is necessary to have <em>rbenv</em> installed. This can be installed following the steps described in <a href="https://github.com/sstephenson/rbenv">rbenv's Github Repository</a>, in the <a href="https://github.com/sstephenson/rbenv#installation">Installation Section</a>.</p>
+
+<h4>
+<a name="ruby-193-p448" class="anchor" href="#ruby-193-p448"><span class="octicon octicon-link"></span></a>Ruby 1.9.3-p448</h4>
+
+<p>When rbenv is already installed, go to the project's root folder, and run the following command</p>
+
+<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>rbenv install
+</pre></div>
+
+<h3>
+<a name="bundler-gem" class="anchor" href="#bundler-gem"><span class="octicon octicon-link"></span></a>Bundler gem</h3>
+
+<p>In order the manage the project dependencies, it is necessary to have installed <em>bundler</em>.</p>
+
+<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>gem install bundler
+</pre></div>
+
+<h3>
+<a name="bower" class="anchor" href="#bower"><span class="octicon octicon-link"></span></a>Bower</h3>
+
+<p>To manage the client-side js dependencies, it is necessary to have installed <em>bower</em>. <em>Bower</em> depends on <em>node.js</em>, so if it is not installed yet, install it with <em>nvm</em>, following these instructions: <a href="https://github.com/creationix/nvm#installation">NVM - Installation guide</a>.</p>
+
+<p>Having <em>node.js</em> installed, run the following command to install <em>bower</em>:</p>
+
+<div class="highlight highlight-sh"><pre>npm install -g bower
+</pre></div>
+
+<h2>
+<a name="development-environment" class="anchor" href="#development-environment"><span class="octicon octicon-link"></span></a>Development environment</h2>
+
+<p>Before running the app, the following steps should be performed.</p>
+
+<ul>
+<li>Create the database user for the application</li>
+<li>Install the application dependencies</li>
+<li>Create the database</li>
+<li>Download the client-side dependecies</li>
+</ul><h3>
+<a name="create-the-database-user-for-the-application" class="anchor" href="#create-the-database-user-for-the-application"><span class="octicon octicon-link"></span></a>Create the database user for the application</h3>
+
+<div class="highlight highlight-sh"><pre>createuser -P -s city72
+</pre></div>
+
+<p>Assign the word <em>city72</em> as password too.</p>
+
+<blockquote>
+<p>Linux users should run the above command as postgres user (<code>sudo su postgres</code>).</p>
+</blockquote>
+
+<h3>
+<a name="install-the-application-dependencies" class="anchor" href="#install-the-application-dependencies"><span class="octicon octicon-link"></span></a>Install the application dependencies</h3>
+
+<div class="highlight highlight-sh"><pre>bundle install
+</pre></div>
+
+<h3>
+<a name="create-the-database" class="anchor" href="#create-the-database"><span class="octicon octicon-link"></span></a>Create the database</h3>
+
+<div class="highlight highlight-sh"><pre>bundle <span class="nb">exec </span>rake db:setup
+</pre></div>
+
+<h3>
+<a name="download-the-client-side-dependencies" class="anchor" href="#download-the-client-side-dependencies"><span class="octicon octicon-link"></span></a>Download the client-side dependencies</h3>
+
+<div class="highlight highlight-sh"><pre>bower install
+</pre></div>
+
+<h2>
+<a name="run-the-application-locally" class="anchor" href="#run-the-application-locally"><span class="octicon octicon-link"></span></a>Run the application locally</h2>
+
+<p>With all the prerequisites and the development environment ready. Just run the app, with the following command:</p>
+
+<div class="highlight highlight-sh"><pre>bundle <span class="nb">exec </span>rails s
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/city72">city72</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
