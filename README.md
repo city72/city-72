@@ -32,14 +32,14 @@ Follow these steps:
   1. Create a [heroku account](http://www.heroku.com) (if you don't already have one)
   2. Install the Heroku Toolbelt on your computer & login
       * Step 2 and 3 of the [heroku quickstart guide](https://devcenter.heroku.com/articles/quickstart)
-  3. Add your credit card information to your heroku account. If you are just testing the site you can choose free options below. NOTE: The free version of the site on Heroku is not recommended for the public launch of your City72 site that may experience a high volume of traffic during an emergency. 
-
+  3. Add your credit card information to your heroku account. This is required in order to verify your account so that you can use add-ons. 
+  4. You may need to add a public key to your heroku account. For instructions, read about [adding keys](https://devcenter.heroku.com/articles/keys) on Heroku.
 
 #### Configure an application on Heroku with 2 dynos
 
 First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to be used in your application select `2`. Two dynos is the recommended setting for your application in order to keep the app reliable and responsive to traffic. 
 
-For testing purposes, you can choose an application with no extra dynos. NOTE: Sites with no extra dynos "go to sleep" and can be slow to wake up. So, this free level of service is not appropriate for the public launch of your site. For the full launch of your site, create an application with at least two dynos.
+For testing purposes, you can choose an application with no extra dynos. NOTE: Sites with no extra dynos "go to sleep" and can be slow to wake up. So, this free level of service is not appropriate for the public launch of your site. 
 
 #### Configure the Heroku App for your project
 
@@ -51,9 +51,9 @@ Go to you project folder, and run the following command:
 
 (In your heroku account, choose your app's settings, and you will get the Git URL, from the info section)
 
-#### Install add-ons - Production (adds $100/month)
+#### Install add-ons (Two Options: $100/month or FREE)
 
-If you would prefer to test the site for free use the add-on instructions in the next section. NOTE: If you know you will launch this site to the public use these paid add-ons.
+To install a production
 
 **postgresql, 2 options:**
 
@@ -63,7 +63,7 @@ a. **postgresql (more robust option)** This add-on has cost of $50 per month. It
      $ heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
    ```
 
-* **postgresql (free/hobby option)** if you would like to test the app for free you can install the "hobby" version. Not recommended for production loads. 
+* **postgresql (FREE/hobby option)** if you would like to test the app for free you can install the "hobby" version. Not recommended for production loads. 
  
    ```sh
      $ heroku addons:add heroku-postgresql -a YOURAPPNAME
@@ -95,7 +95,7 @@ a. **cloudinary (more robust option)** This add-on has a cost of $50 per month. 
    ```sh
     $ heroku addons:add cloudinary:bronze -a YOURAPPNAME
    ```
-* **cloudinary (free option)** This version of the add-on is free. Only use the free version of this add-on for testing purposes.
+* **cloudinary (FREE option)** This version of the add-on is free. Only use the free version of this add-on for testing purposes.
  
    ```sh
     $ heroku addons:add cloudinary -a YOURAPPNAME
@@ -130,7 +130,7 @@ Go to `http://YOURAPPNAME.herokuapp.com/` to see your new City72 site.
   
 #### FINAL STEP: Update your username and password via the Content Editor
 
-Your site was installed with a default username and password (these are set in the db/seeds.rb file). To login to your new site's content editor go to your app and login
+Your site was installed with a default username and password (these are set in the db/seeds.rb file). Go to your app and login
 
 `http://YOURAPPNAME.herokuapp.com/cms`
 
@@ -140,7 +140,7 @@ admin@example.com
 
 password
 
-Once you login change the email to your email address and then change the password.
+Once you login, click on Admin. Change the email to your email address and then change the password.
 
 
 
@@ -243,3 +243,12 @@ With all the prerequisites and the development environment ready. Just run the a
 ```sh
 bundle exec rails s
 ```
+
+## Open your application on Port 3000
+
+Go to your browser and open 
+
+```sh
+localhost:3000
+```
+
