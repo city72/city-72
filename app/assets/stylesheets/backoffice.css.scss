@@ -60,9 +60,13 @@ $light-grey: #f2f2f2;
   }
 }
 
-.logo {
+.logo { padding-top: 1rem; }
+
+.logo a {
   color: $accent-gold;
   font-weight: bold;
+  text-decoration: none;
+  font-size: 3.5rem;
 }
 
 /* NAV */
