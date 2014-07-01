@@ -28,11 +28,13 @@
         </ul>
       </header>
       <section>
-        <p>Included here are:</p>
+        <p>Included in this guide:</p>
 
 <ul>
-<li><a href="#production_deployment">Production Deployment</a></li>
-<li><a href="#development-environment-setup">Development Environment Setup</a></li>
+<li>
+<a href="#production_deployment">Production Deployment</a> Instructions</li>
+<li>
+<a href="#development-environment-setup">Development Environment Setup</a> Instructions</li>
 </ul><h1>
 <a name="production-deployment" class="anchor" href="#production-deployment"><span class="octicon octicon-link"></span></a>Production Deployment</h1>
 
@@ -40,8 +42,8 @@
 <a name="prerequisites" class="anchor" href="#prerequisites"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
 
 <ul>
-<li>Git <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Installing Git</a>
-</li>
+<li>
+<strong>Git</strong> (For more information read <a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">Getting Started with Git</a>.)</li>
 </ul><h3>
 <a name="step-by-step-guide" class="anchor" href="#step-by-step-guide"><span class="octicon octicon-link"></span></a>Step By Step Guide</h3>
 
@@ -53,7 +55,7 @@
 <div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>git clone git@github.com:city72/city-72.git
 </pre></div>
 
-<p>This will create a folder named <code>city-72</code>. In this guide, we refer to this folder as your "project folder".</p>
+<p>This will create a folder named <code>city-72</code>. This guide will refer to the folder as your "project folder".</p>
 
 <h4>
 <a name="setup-heroku" class="anchor" href="#setup-heroku"><span class="octicon octicon-link"></span></a>Setup Heroku</h4>
@@ -92,12 +94,22 @@
 
 <p>If you would prefer to test the site for free use the add-on instructions in the next section. NOTE: If you know you will launch this site to the public use these paid add-ons.</p>
 
-<p><strong>postgresql:</strong> This add-on has cost of $50 per month. It's is the database in your application.</p>
+<p><strong>postgresql, two options:</strong></p>
 
-<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
+<ul>
+<li>
+<p><strong>postgresql (more robust option):</strong> This add-on has cost of $50 per month. It's is the database in your application.</p>
+
+<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
 </pre></div>
+</li>
+<li>
+<p><strong>postgresql (free/hobby option):</strong> if you would like to test the app for free you can install the "hobby" version of postgres instead. Not recommended for production loads. </p>
 
-<p><strong>pg-backups:</strong> This add-on is free. It creates backups of your database.</p>
+<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>heroku addons:add heroku-postgresql -a YOURAPPNAME
+</pre></div>
+</li>
+</ul><p><strong>pg-backups:</strong> This add-on is free. It creates backups of your database.</p>
 
 <div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add pgbackups:auto-week -a YOURAPPNAME
 </pre></div>
@@ -112,42 +124,22 @@
 <div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add newrelic:stark -a YOURAPPNAME
 </pre></div>
 
-<p><strong>cloudinary:</strong> This add-on has a cost of $50 per month. It is used to store and host images in your application.</p>
+<p><strong>cloudinary, two options:</strong> </p>
 
-<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>heroku addons:add cloudinary:bronze -a YOURAPPNAME
+<ul>
+<li>
+<p><strong>cloudinary (more robust option)</strong> This add-on has a cost of $50 per month. It is used to store and host images in your application.</p>
+
+<div class="highlight highlight-sh"><pre><span class="nv">$ </span>heroku addons:add cloudinary:bronze -a YOURAPPNAME
 </pre></div>
+</li>
+<li>
+<p><strong>cloudinary (free option)</strong> This version of the add-on is free. Only use the free version of this add-on for testing purposes.</p>
 
-<h4>
-<a name="install-add-ons---testing-site-free" class="anchor" href="#install-add-ons---testing-site-free"><span class="octicon octicon-link"></span></a>Install add-ons - Testing Site (free)</h4>
-
-<p>If you are using the paid add-ons above, skip this section.</p>
-
-<p><strong>postgresql:</strong> This version of the add on is free. It's is used in order to have a database in your application. This version is not robust enough for normal amounts of web traffic. Only use the free version for testing purposes.</p>
-
-<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add heroku-postgresql -a YOURAPPNAME
+<div class="highlight highlight-sh"><pre><span class="nv">$ </span>heroku addons:add cloudinary -a YOURAPPNAME
 </pre></div>
-
-<p><strong>pg-backups:</strong> This add-on is free. It creates backups of your database.</p>
-
-<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add pgbackups:auto-week -a YOURAPPNAME
-</pre></div>
-
-<p><strong>sengrid:</strong> This add-on is free. It's used to send emails from your application.</p>
-
-<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add sendgrid -a YOURAPPNAME
-</pre></div>
-
-<p><strong>newrelic:</strong> This add-on is free. It monitors your application performance</p>
-
-<div class="highlight highlight-sh"><pre>  <span class="nv">$ </span>heroku addons:add newrelic:stark -a YOURAPPNAME
-</pre></div>
-
-<p><strong>cloudinary:</strong> This version of the add-on is free. It is used to store and host images in your application. Only use the free version of this add-on for testing purposes</p>
-
-<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>heroku addons:add cloudinary -a YOURAPPNAME
-</pre></div>
-
-<h4>
+</li>
+</ul><h4>
 <a name="configure-the-recover-password-host-redirection-example-yourappnameherokuappcom" class="anchor" href="#configure-the-recover-password-host-redirection-example-yourappnameherokuappcom"><span class="octicon octicon-link"></span></a>Configure the recover password host redirection (example: YOURAPPNAME.herokuapp.com)</h4>
 
 <div class="highlight highlight-sh"><pre> <span class="nv">$ </span>heroku config:set <span class="nv">EMAIL_REDIRECT_HOST</span><span class="o">=</span>YOURAPPNAME.herokuapp.com
@@ -162,21 +154,19 @@
 
 <p>Do:</p>
 
-<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>git ci -am <span class="s1">'Admin credentials'</span>
- <span class="nv">$ </span>git push heroku master
+<div class="highlight highlight-sh"><pre> <span class="nv">$ </span>git push heroku master
  <span class="nv">$ </span>heroku run bundle <span class="nb">exec </span>rake db:setup            <span class="c"># this creates database schema &amp; prepopulates basic data</span>
  <span class="nv">$ </span>heroku run bundle <span class="nb">exec </span>rake city72:populate     <span class="c"># this populates data to the database</span>
 </pre></div>
 
 <p>Now you should be able to enter you application.</p>
 
-<ul>
-<li>Go to <code>http://YOURAPPNAME.herokuapp.com/</code> to navigate the application</li>
-<li>Go to <code>http://YOURAPPNAME.herokuapp.com/cms</code> to configure the application</li>
-</ul><h4>
+<p>Go to <code>http://YOURAPPNAME.herokuapp.com/</code> to see your new City72 site.</p>
+
+<h4>
 <a name="final-step-update-your-username-and-password-via-the-content-editor" class="anchor" href="#final-step-update-your-username-and-password-via-the-content-editor"><span class="octicon octicon-link"></span></a>FINAL STEP: Update your username and password via the Content Editor</h4>
 
-<p>The application was installed with a default username and password (these are set in the db/seeds.rb file). To login to your new site's content editor go to your app and login</p>
+<p>Your site was installed with a default username and password (these are set in the db/seeds.rb file). To login to your new site's content editor go to your app and login</p>
 
 <p><code>http://YOURAPPNAME.herokuapp.com/cms</code></p>
 
@@ -186,12 +176,12 @@
 
 <p>password</p>
 
-<p>Once you login change the email to your email address then change the password.</p>
+<p>Once you login change the email to your email address and then change the password.</p>
 
 <hr><h1>
 <a name="development-environment-setup" class="anchor" href="#development-environment-setup"><span class="octicon octicon-link"></span></a>Development Environment Setup</h1>
 
-<p>In most cases you will not need to setup a development environment for this application. The only reason to go through the following steps would be if you wanted to customize your site beyond what is set with the Content Editor such as some of the hard-coded text of the site.</p>
+<p>In most cases you will not need to setup a development environment for this application. The only reason to go through the following steps would be if you wanted to customize your site beyond what you can set with the Content Editor.</p>
 
 <h2>
 <a name="prerequisites-1" class="anchor" href="#prerequisites-1"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
@@ -270,9 +260,7 @@
 
 <p>Assign the word <em>city72</em> as password too.</p>
 
-<blockquote>
 <p>Linux users should run the above command as postgres user (<code>sudo su postgres</code>).</p>
-</blockquote>
 
 <h3>
 <a name="install-the-application-dependencies" class="anchor" href="#install-the-application-dependencies"><span class="octicon octicon-link"></span></a>Install the application dependencies</h3>
