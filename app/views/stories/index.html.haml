@@ -1,5 +1,7 @@
 = provide(:title, 'View Stories')
 = javascript_include_tag "home"
+= javascript_include_tag "jquery.modal"
+= javascript_include_tag "video_modal"
 .main-container.stories
   = render :partial => "partials/header"
 
@@ -7,7 +9,7 @@
     %p Watch stories of people who have lived through disasters—and those who are already fostering connections in #{@city.name}. No matter your situation, chances are, there’s someone like you with wisdom to share.
 
 
-  .opening{:style => ("background-image: url(#{@selected_story.image_url})" unless @selected_story.image.blank?)}
+  .opening{:style => ("background-image: url(#{@selected_story.image_url})" unless @selected_story.image.blank?), :class => (( @selected_story.video.blank?)? "": "js-has-video"), :video => @selected_story.video}
     %span.story-about
       %h1= @selected_story.name
       %h2= @selected_story.location
@@ -23,7 +25,7 @@
     - @stories.each do |story|
       %li
         - unless story.image.blank?
-          = image_tag(story.image_url, alt: story.name)
+          = image_tag(story.image_url, alt: story.name, class: ((story.video.blank?)? "": "js-has-video"), :video => story.video)
         .story-data
           %h4= story.name
           %h5.location= story.location
@@ -43,3 +45,6 @@
       %p We believe in connection, not catastrophe.
 
   = render :partial => "partials/footer"
+
+  .modal-container
+    .modal-video
