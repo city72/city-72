@@ -12,7 +12,7 @@
     %p Create connections with social media tools, local networks and community resources.
 
     .form-group(ng-class="{'has-error': connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid}")
-      %label.control-label{:for => "fb-page"} Your Facebook Page
+      %label.control-label{:for => "fb-page"} Your Organization's Facebook Page
       .input-group.input-md
         %span.input-group-addon http://
         %input.form-control#fb-page{ :type => 'text', :name => 'facebook_page_url'}(ng-model="connection.facebook_page_url" required)
