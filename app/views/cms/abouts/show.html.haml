@@ -20,7 +20,7 @@
 
     .form-group
       %label{:for => "logo"} Customize your city72 logo
-      %p.help-block Optionally replace the generated City72 logo. See the worksheet for instructions on how to get this SVG file.
+      %p.help-block Optionally replace the generated City72 logo.
       %img.preview{src: @about.logo}
       = f.file_field(:logo, :class => "form-control")
 
