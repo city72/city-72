@@ -792,6 +792,32 @@ $mobile-padding: 23px;
 
 	}
 
+	/* VIDEO POPUP */
+
+	.modal-container{
+		width: 310px !important;
+		height: 230px !important;
+		padding: 15px 5px !important;
+	}
+
+	.modal-video iframe {
+		width: 320px;
+		height: 200px;
+	}
+
+	.js-has-video:before {
+		top: 10%;
+		left: 40%;
+	}
+
+	.opening.js-has-video:before {
+		top: 10%;
+		left: 40%;
+	}
+
+
+
+
 	.statement {
 		.description {
 			@include span-columns(4);
