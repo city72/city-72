@@ -1,3 +1,4 @@
+= stylesheet_link_tag    "jquery.modal", :media => "all"
 = javascript_include_tag "cms/spinner_save_btn"
 = javascript_include_tag "jquery.modal"
 = javascript_include_tag "cms/custom_quick_guide_modal"
@@ -33,7 +34,6 @@
       .modal-container{:class => "hidden"}
         %p.screen-info Write the steps for each section of your emergency plan: before, during, after.
         = simple_form_for @quick_guide do |q|
-
           = q.input :title, as: :string, label: 'Quick Guide Title', required: true
 
           .form-group
