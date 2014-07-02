@@ -10,4 +10,16 @@ class CityConnection < ActiveRecord::Base
   has_many :city_resources
   accepts_nested_attributes_for :city_resources, allow_destroy: true
 
+  validate :selected_city_networks
+
+  def selected_city_networks
+    included_count = 0
+    city_networks.each do |cn|
+      included_count = included_count + 1 if cn.included
+    end
+
+    if included_count > 4
+      errors.add(:city_networks_count, "There's more than 4 selected city networks.")
+    end
+  end
 end

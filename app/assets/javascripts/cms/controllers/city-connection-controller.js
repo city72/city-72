@@ -26,6 +26,7 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
     $scope.updating = true;
     $scope.updatedSuccessfully = false;
     $scope.fatalError = false;
+    $scope.errorText = "";
 
     cmsService.updateConnection($scope.connection)
     .then(
@@ -34,7 +35,11 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
         $scope.updatedSuccessfully = true;
         $scope.connection = response.data.city_connection;
       },
-      function () {
+      function (response) {
+        var error = response.data;
+        if(error.city_networks_count[0]) {
+          $scope.errorText = error.city_networks_count[0];
+        }
         $scope.fatalError = true;
         $scope.updating = false;
       }
