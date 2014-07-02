@@ -1,4 +1,5 @@
 = provide(:title, 'View Stories')
+= stylesheet_link_tag    "jquery.modal", :media => "all"
 = javascript_include_tag "home"
 = javascript_include_tag "jquery.modal"
 = javascript_include_tag "video_modal"
@@ -46,5 +47,5 @@
 
   = render :partial => "partials/footer"
 
-  .modal-container
+  .modal-container{ style: "width: 480px; height: 350px;"}
     .modal-video
