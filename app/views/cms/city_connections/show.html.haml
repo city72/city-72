@@ -8,8 +8,7 @@
         %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
           %span.ladda-label Save Changes
 
-    %h2 Social Networks and services
-    %p Create connections with social media tools, local networks and community resources.
+    %h2 Social Networks
 
     .form-group(ng-class="{'has-error': connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid}")
       %label.control-label{:for => "fb-page"} Your Organization's Facebook Page
@@ -36,7 +35,7 @@
       
 
     %h2 Additional Networks
-    %p What social networks or services would be useful community resources in your city? City72 is pre-populated with two (Nextdoor and AirBnb) in case you want to include them.
+    %p What social networks or services would be useful community resources in your city? Facebook, Twitter, and Google Drive come with City72. In addition, include or edit the networks below. 
     
     .editable-list-container
       %ul.editable-list
