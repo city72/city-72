@@ -100,12 +100,12 @@
     .alert.alert-success.alert-dismissable(ng-show="updatedSuccessfully")
       %button.close(type="button" ng-click="updatedSuccessfully = false") &times;
       %strong Saved!
-      All data were successfully updated.
+      Your changes were saved.
 
     .alert.alert-danger.alert-dismissable(ng-show="fatalError")
       %button.close(type="button" ng-click="fatalError = false") &times;
       %strong Error!
-      There was an error uploading the changes, please try again.
+      Sorry. Your changes could not be saved. Please try again.
     
     .form-actions
       %button.btn.btn-primary.ladda-button{:type => "submit"}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
