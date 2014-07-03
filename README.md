@@ -48,59 +48,44 @@ Go to the city-72 directory that was created when you cloned from Github, and ru
 
 (In your heroku account, choose your app's settings, and you will get the Git URL, from the info section)
 
-#### Install add-ons (Two Options: $100/month or FREE)
+#### Install add-ons
 
-To install a production
+Your Heroku app will need the following add-ons. They are all free add-ons. You may wish to upgrade the database or cloudinary to a paid level if you anticipate large volumes of traffic to your site. 
 
-**postgresql, 2 options:**
-
-a. **postgresql (more robust option)** This add-on has cost of $50 per month. It's is the database in your application.
+**PostgreSQL** is the database for your application.
  
-   ```sh
-     $ heroku addons:add heroku-postgresql:standard-yanari -a YOURAPPNAME
-   ```
+ ```sh
+   $ heroku addons:add heroku-postgresql -a YOURAPPNAME
+```
 
-* **postgresql (FREE/hobby option)** if you would like to test the app for free you can install the "hobby" version. Not recommended for production loads. 
- 
-   ```sh
-     $ heroku addons:add heroku-postgresql -a YOURAPPNAME
-   ```
-
-
-**pg-backups:** This add-on is free. It creates backups of your database.
+**PG Backups** creates backups of your database.
 
 ```sh
   $ heroku addons:add pgbackups:auto-week -a YOURAPPNAME
 ```
 
-**sengrid:** This add-on is free. It's used to send emails from your application.
+**SendGrid** sends emails from your application (e.g. the forgot password email).
 
 ```sh
   $ heroku addons:add sendgrid -a YOURAPPNAME
 ```
 
-**newrelic:** This add-on is free. It monitors your application performance
+**NewRelic** monitors your application performance
 
 ```sh
   $ heroku addons:add newrelic:stark -a YOURAPPNAME
 ```
 
-**cloudinary, 2 options:** 
+**Cloudinary** resizes, crops and then stores the images in your application.
 
-a. **cloudinary (more robust option)** This add-on has a cost of $50 per month. It is used to store and host images in your application.
-
-   ```sh
-    $ heroku addons:add cloudinary:bronze -a YOURAPPNAME
-   ```
-* **cloudinary (FREE option)** This version of the add-on is free. Only use the free version of this add-on for testing purposes.
  
-   ```sh
-    $ heroku addons:add cloudinary -a YOURAPPNAME
-   ```
+```sh
+  $ heroku addons:add cloudinary -a YOURAPPNAME
+```
 
 
 
-#### Configure the recover password host redirection (example: YOURAPPNAME.herokuapp.com)
+#### Configure the recover password host redirection:
 
 ```sh
  $ heroku config:set EMAIL_REDIRECT_HOST=YOURAPPNAME.herokuapp.com
@@ -133,11 +118,11 @@ Your site was installed with a default username and password (these are set in t
 
 The default username and password are:
 
-admin@example.com
+`admin@example.com`
 
-password
+`password`
 
-Once you login, click on Admin. Change the email to your email address and then change the password.
+Once you login, use the Admin menu in the navigation to change the email to your email address. Then you will need to change the password to a strong password that only you know.
 
 
 
