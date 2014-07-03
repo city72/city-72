@@ -12,8 +12,11 @@ class Cms::CitiesController < BackOfficeController
     if params[:resident_image]
       @city.resident_image = params[:resident_image]
     end
-    @city.save
-    render status: :ok, json: @city
+    if @city.save
+      render status: :ok, json: @city
+    else
+      render status: 400, json: @city.errors
+    end
   end
 
 end

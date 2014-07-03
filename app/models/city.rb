@@ -1,5 +1,5 @@
 class City < ActiveRecord::Base
-  attr_accessible :name, :abbreviation, :moniker, :resident_image_credit, 
+  attr_accessible :name, :abbreviation, :moniker, :resident_image_credit,
     :contact_email, :agency_site, :affiliates_attributes,
     :possessive, :brought_by, :agency_url, :color_cd, :statement
 
@@ -13,7 +13,9 @@ class City < ActiveRecord::Base
 
   has_one :plan
 
-  validates :name, :abbreviation, :possessive, :brought_by, :agency_url, :contact_email, 
+  validates :name, :abbreviation, :possessive, :brought_by, :agency_url, :contact_email,
     :color_cd, presence: true
+
+  validates :abbreviation, length: { :maximum => 6 }
 
 end
