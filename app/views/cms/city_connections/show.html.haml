@@ -57,7 +57,7 @@
           .list-actions
             %button.btn{type: "button"}(ng-click="editNetwork(network)") Edit
 
-      %a.btn.btn-link.add-btn(ng-click="newNetwork()") + Add a Network
+      %a.btn.btn-link.add-btn(ng-click="newNetwork()" ng-if="networksCountNotReached()") + Add a Network
 
     %h2 Partners and Resources
     %p What local resources focus on community preparedness? What partners does your organization collaborate with? Add up to five links.
@@ -76,7 +76,7 @@
             %a.call-to-action(ng-href="{{'http://' + resource.website}}") {{resource.website}}
           .list-actions
             %button.btn{type: "button"}(ng-click="editResource(resource)") Edit
-    %a.btn.btn-link.add-btn(ng-click="newResource()") + Add a Partner or Resource
+    %a.btn.btn-link.add-btn(ng-click="newResource()" ng-if="resourcesCountNotReached()") + Add a Partner or Resource
 
     .alert.alert-success.alert-dismissable(ng-show="updatedSuccessfully")
       %button.close(type="button" ng-click="updatedSuccessfully = false") &times;

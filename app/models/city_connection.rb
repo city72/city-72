@@ -10,16 +10,33 @@ class CityConnection < ActiveRecord::Base
   has_many :city_resources
   accepts_nested_attributes_for :city_resources, allow_destroy: true
 
-  validate :selected_city_networks
+  validate :city_networks_count
+  validate :city_resources_count
 
-  def selected_city_networks
-    included_count = 0
-    city_networks.each do |cn|
-      included_count = included_count + 1 if cn.included
+  private
+
+    def city_networks_count
+      validation_count(city_networks, 3, 3, :city_networks_count, "city networks")
     end
 
-    if included_count > 4
-      errors.add(:city_networks_count, "There's more than 4 selected city networks.")
+    def city_resources_count
+      validation_count(city_resources, 6, 6, :city_resources_count, "city resources")
     end
-  end
+
+    def validation_count(list, max_count, max_selected, error_name, resources)
+      included_count = 0
+      count = 0
+      list.each do |item|
+        count = count + 1
+        included_count = included_count + 1 if item.included
+      end
+
+      if count > max_count
+        errors.add(error_name, "You can't create more than #{max_count} #{resources}.")
+      else
+        if included_count > max_selected
+          errors.add(error_name, "There's more than #{max_selected} selected #{resources}.")
+        end
+      end
+    end
 end

@@ -16,10 +16,18 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
     });
   };
 
+  $scope.networksCountNotReached =  function() {
+    return $scope.connection.city_networks.length < 3
+  };
+
   $scope.orderedResources = function () {
     return _($scope.connection.city_resources).sortBy(function (resource) {
       return +resource.id;
     });
+  };
+
+  $scope.resourcesCountNotReached =  function() {
+    return $scope.connection.city_resources.length < 6
   };
 
   $scope.updateConnection = function () {
@@ -37,8 +45,11 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
       },
       function (response) {
         var error = response.data;
-        if(error.city_networks_count[0]) {
-          $scope.errorText = error.city_networks_count[0];
+        if(error.city_networks_count && error.city_networks_count[0]) {
+          $scope.errorText = error.city_networks_count[0] + " ";
+        }
+        if(error.city_resources_count && error.city_resources_count[0]) {
+          $scope.errorText = $scope.errorText + error.city_resources_count[0];
         }
         $scope.fatalError = true;
         $scope.updating = false;
