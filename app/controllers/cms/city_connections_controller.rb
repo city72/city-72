@@ -10,10 +10,10 @@ class Cms::CityConnectionsController < BackOfficeController
     params[:city_connection] = JSON.parse(params[:city_connection], symbolize_names: true)
 
     params[:city_connection][:twitter_accounts_attributes] = [] unless params[:city_connection][:twitter_accounts_attributes]
-    
+
     params[:city_connection][:city_networks_attributes] = [] unless params[:city_connection][:city_networks_attributes]
     params[:city_connection][:city_resources_attributes] = [] unless params[:city_connection][:city_resources_attributes]
-    
+
     city_networks = params[:city_connection][:city_networks_attributes]
     city_resources = params[:city_connection][:city_resources_attributes]
 
@@ -36,8 +36,11 @@ class Cms::CityConnectionsController < BackOfficeController
     end
 
     @city_connection.attributes = params[:city_connection]
-    @city_connection.save!
-    render status: :ok, json: @city_connection
+    if @city_connection.save
+      render status: :ok, json: @city_connection
+    else
+      render status: 422, json: @city_connection.errors
+    end
   end
 
   private

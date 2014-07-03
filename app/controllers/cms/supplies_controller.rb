@@ -30,7 +30,7 @@ class Cms::SuppliesController < BackOfficeController
     render status: :ok, nothing: true
   end
 
-  private 
+  private
   def serialize_array(collection, each_serializer)
     ActiveModel::ArraySerializer.new(collection, each_serializer: each_serializer).to_json
   end
