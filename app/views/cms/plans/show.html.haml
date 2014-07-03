@@ -1,4 +1,5 @@
 = javascript_include_tag "cms/spinner_save_btn"
+= javascript_include_tag "cms/custom_quick_guide_modal"
 .main-content.plan
   .screen-intro
     %p.screen-info Select a pre-populated Quick Guide—featuring Before, During, and After tips—so residents know how to get prepared for the types of emergencies that might be relevant for your city. Or, write your own.
@@ -24,9 +25,39 @@
               - unless q.custom
                 = q.title.capitalize
               - else
-                = "Other (#{q.title.capitalize})"
+                = "Other (<span class='js-custom-quick-guide-name'>#{q.title.capitalize}</span>)".html_safe
             - if q.custom
-              =link_to "Configure Plan", cms_quick_guides_path
+              =link_to "Configure Plan", "#", :class => "js-custom-quick-guide"
+
+      .modal.fade.modal-container
+        .modal-dialog.modal-lg
+          .modal-content.custom-quick-guide
+            .modal-header
+              %button.close{"data-dismiss" => "modal", type: "button"}
+                %span{"aria-hidden" => "true"} ×
+                %span.sr-only Close
+              %h4.modal-title Write the steps for each section of your emergency plan: before, during, after.
+            .modal-body
+              = simple_form_for @quick_guide do |q|
+                = q.input :title, as: :string, label: 'Quick Guide Title', required: true
+
+                .form-group
+                  - tip_groups = [false, false, false]
+                  - step = 0
+                  = q.simple_fields_for :tips do |tf|
+                    - if !tip_groups[tf.object.moment_type_cd]
+                      - tip_groups[tf.object.moment_type_cd] = true
+                      - step = 1
+                      %h2
+                        =tf.object.moment_type.capitalize
+                    %h3 Step #{step}
+                    - step = step + 1
+                    = tf.input :title, as: :string, required: true, label: false
+                    = tf.input :description, as: :text, required: true, label: false, cols: "20";
+
+            .modal-footer
+              %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+              -# %button.btn.btn-primary{type: "button"} Ok
 
 
     - unless flash.empty?
@@ -34,38 +65,6 @@
         %button.close(data-dismiss="alert" aria-hidden="true") &times;
         %strong "#{ (flash.first[0] == :error)? "Error!" : "Saved!" }"
         = flash.first[1]
-
-    .modal.fade
-      .modal-dialog
-        .modal-content
-          .modal-header
-            %button.close{"data-dismiss" => "modal", type: "button"}
-              %span{"aria-hidden" => "true"} ×
-              %span.sr-only Close
-            %h4.modal-title Modal title
-          .modal-body
-            %p.screen-info Write the steps for each section of your emergency plan: before, during, after.
-
-            / = simple_form_for @quick_guide, url: cms_quick_guides_path, html: {class: "js-form"} do |f|
-
-            /   = f.input :title, as: :string, label: 'Quick Guide Title', required: true
-
-            /   .form-group
-            /     - tip_groups = [false, false, false]
-            /     - step = 0
-            /     = f.simple_fields_for :tips do |tf|
-            /       - if !tip_groups[tf.object.moment_type_cd]
-            /         - tip_groups[tf.object.moment_type_cd] = true
-            /         - step = 1
-            /         %h2
-            /           =tf.object.moment_type.capitalize
-            /       %h3 Step #{step}
-            /       - step = step + 1
-            /       = tf.input :title, as: :string, required: true, label: false
-            /       = tf.input :description, as: :text, required: true, label: false, cols: "20";
-          .modal-footer
-            %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-            %button.btn.btn-primary{type: "button"} Ok
 
     .form-actions
       = content_tag :button, :type => :submit, :class => 'btn btn-primary js-save ladda-button' do
