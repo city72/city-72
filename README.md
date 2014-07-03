@@ -13,17 +13,14 @@ Included in this guide:
 
 #### Obtain a copy of the application
 
-First, you will need your own GitHub account and then you will need to **fork the repository**. To fork the code, click the 'fork' button on this page.
-
-Go to your forked github repository and git clone to your own computer.  
-
-The command you type into your shell application will look like
+Clone the code to your computer.
+The command you type into your shell application (Terminal on the Mac) will be:
 
 ```sh
-$ git clone https://github.com/YOUR-GITHUB-NAME/city-72.git
+$ git clone https://github.com/city72/city-72.git
 ```
 
-This will create a directory named `city-72`. This guide will refer to the directory as your "project folder".
+This will create a directory named `city-72`.
 
 #### Setup Heroku
 
@@ -43,7 +40,7 @@ For testing purposes, you can choose an application with no extra dynos. NOTE: S
 
 #### Configure the Heroku App for your project
 
-Go to you project folder, and run the following command:
+Go to the city-72 directory that was created when you cloned from Github, and run the following command:
 
 ```sh
   $ git remote add heroku git@heroku.com:YOURAPPNAME.git
