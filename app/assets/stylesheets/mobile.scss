@@ -805,12 +805,13 @@ $mobile-padding: 23px;
 		height: 200px;
 	}
 
-	.js-has-video:before {
+	.video-container:before {
 		top: 10%;
 		left: 40%;
+		pointer-events: none;
 	}
 
-	.opening.js-has-video:before {
+	.opening.video-container:before {
 		top: 3%;
 		left: 83%;
 		font-size: 1.5rem;
