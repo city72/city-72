@@ -2,10 +2,10 @@
 
 class AboutLogoUploader < BaseImageUploader
 
-  process :resize_and_fit => [300, 200]
+  process :resize_to_fit => [300, 200]
 
   version :common do
-    process :resize_and_fit => [300, 200]
+    process :resize_to_fit => [300, 200]
   end
 
 end
