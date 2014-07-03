@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140626185218) do
+ActiveRecord::Schema.define(:version => 20140701191715) do
 
   create_table "abouts", :force => true do |t|
     t.string   "brought_to_you_by"
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20140626185218) do
     t.datetime "updated_at",        :null => false
     t.boolean  "selected"
     t.string   "image"
+    t.text     "video"
   end
 
   create_table "items", :force => true do |t|
