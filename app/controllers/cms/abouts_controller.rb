@@ -9,10 +9,10 @@ class Cms::AboutsController < BackOfficeController
     @about.image = params[:image]
     @about.logo = params[:logo]
     if @about.save
-      flash[:notice] = "All data were successfully updated."
+      flash[:notice] = "Your changes were saved."
       redirect_to :action => "show"
     else
-      flash[:error] = "There was an error uploading the changes, please try again."
+      flash[:error] = "Sorry. Your changes could not be saved. Please Try Again"
       render :show
     end
   end
