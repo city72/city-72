@@ -16,6 +16,6 @@ class City < ActiveRecord::Base
   validates :name, :abbreviation, :possessive, :brought_by, :agency_url, :contact_email,
     :color_cd, presence: true
 
-  validates :abbreviation, length: { :maximum => 6 }
+  validates :abbreviation, length: { :maximum => 4 }
 
 end
