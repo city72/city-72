@@ -16,25 +16,24 @@
       .map-link-instructions
         %h2 Instructions to get the embed link:
         %ol
-          %li Set up your map (see <a href="https://city72.squarespace.com/">tookit.sf72.org</a>).
+          %li Set up your map (see <a href="https://tookit.sf72.org/" target="_blank">tookit.sf72.org</a>).
           %li Click the "Share" button to see the map links.
           %li  Copy the "Link" code to paste here.
 
-    %h2 Twitter Timelines
+    %h2 Twitter Updates
     .row
       .timelines-container
-        = f.input :citizen_timeline_id, label: 'Your Timeline ID <span class="help">(e.g. 98324529384524798)</span>'.html_safe, required: false
+        = f.input :citizen_timeline_id, label: 'Your Timeline ID <span class="help">(e.g. 364391164582969346)</span>'.html_safe, required: false
 
-        = f.input :partner_timeline_id, label: 'Partner Timeline ID', required: false
+        = f.input :partner_timeline_id, label: 'Partner List ID', required: false
 
-        = f.input :transportation_timeline_id, label: 'Transportation Timeline ID', required: false
+        = f.input :transportation_timeline_id, label: 'Transportation List ID', required: false
 
-        = f.input :your_hashtag_timeline_id, label: '#YourCity72 Hashtag-Based Timeline ID', required: false
 
       .timelines-instructions
         %h2 Instructions to get a Twitter timeline ID:
         %ol
-          %li Set up Twitter lists that correspond to each updates section (see <a href="https://city72.squarespace.com/">tookit.sf72.org</a>).
+          %li Set up Twitter lists that correspond to each updates section (see <a href="https://tookit.sf72.org/" target="_blank">tookit.sf72.org</a>).
           %li Through Twitter's create widget interface can see the URL for your Twitter list.
           %li Copy the long number at the end of the URL to paste here.
 

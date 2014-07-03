@@ -12,6 +12,7 @@
 
     .form-group(ng-class="{'has-error': connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid}")
       %label.control-label{:for => "fb-page"} Your Organization's Facebook Page
+      %span.req *
       .input-group.input-md
         %span.input-group-addon http://
         %input.form-control#fb-page{ :type => 'text', :name => 'facebook_page_url'}(ng-model="connection.facebook_page_url" required)
@@ -31,6 +32,7 @@
         %ul 
           %li Transportation authorities
           %li City agencies
+          %li News outlets
           %li Reliable, trusted feeds focused on emergency updates
       
 
@@ -58,7 +60,7 @@
       %a.btn.btn-link.add-btn(ng-click="newNetwork()") + Add a Network
 
     %h2 Partners and Resources
-    %p What local resources focus on community preparedness? What partners does your organization collaborate with? Add up to five links. (e.g. your local Red Cross chapter)
+    %p What local resources focus on community preparedness? What partners does your organization collaborate with? Add up to five links.
     .editable-list-container
       %ul.editable-list
         %li(ng-repeat="resource in orderedResources()")
