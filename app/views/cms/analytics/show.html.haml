@@ -1,12 +1,11 @@
 = javascript_include_tag "cms/spinner_save_btn"
 .main-content.about
   .screen-intro
-    %p.screen-info Add Google Analytics to your Site.
+    %p.screen-info Add an Analytic Script to your Site.
 
   = simple_form_for @analytic, url: cms_analytic_path, html: {class: "js-form"} do |f|
     .form-group
-      -# %label{:for => "analytic-tag"} Tag Script
-      %p.help-block Paste your Google tag script, to track your Site.
+      %p.help-block Paste your tag script, to track your Site. (For example a Google Analytic's script)
       = f.input :tag, as: :text, label: "Tag Script", cols: "20"
 
 
