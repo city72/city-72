@@ -92,6 +92,9 @@
       %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
         %span.ladda-label Save Changes
 
+    .frontend-link
+      %a{:href => "/connect"} View this page &raquo;
+
 
   %edit-network-modal(network="networkInEdition" networks="connection.city_networks" new-network="addingNewNetwork")
 
