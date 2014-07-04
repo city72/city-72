@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140704181843) do
+ActiveRecord::Schema.define(:version => 20140704213457) do
 
   create_table "abouts", :force => true do |t|
     t.string   "brought_to_you_by"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20140704181843) do
     t.integer  "city_connection_id"
     t.string   "logo"
     t.boolean  "uploading_logo"
+    t.integer  "index"
   end
 
   create_table "city_resources", :force => true do |t|
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20140704181843) do
     t.integer  "city_connection_id"
     t.boolean  "included"
     t.string   "logo"
+    t.integer  "index"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -147,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20140704181843) do
     t.boolean  "selected"
     t.string   "image"
     t.text     "video"
+    t.integer  "index"
   end
 
   create_table "items", :force => true do |t|
@@ -157,6 +160,7 @@ ActiveRecord::Schema.define(:version => 20140704181843) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "order"
+    t.integer  "index"
   end
 
   create_table "kits", :force => true do |t|

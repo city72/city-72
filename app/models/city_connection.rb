@@ -4,14 +4,21 @@ class CityConnection < ActiveRecord::Base
   has_many :twitter_accounts
   accepts_nested_attributes_for :twitter_accounts, allow_destroy: true
 
-  has_many :city_networks
+  has_many :city_networks,  :order => 'index ASC'
   accepts_nested_attributes_for :city_networks, allow_destroy: true
 
-  has_many :city_resources
+  has_many :city_resources,  :order => 'index ASC'
   accepts_nested_attributes_for :city_resources, allow_destroy: true
 
   validate :city_networks_count
   validate :city_resources_count
+
+  def as_json(options = nil)
+    json = super(options)
+    json[:city_networks] = city_networks.as_json
+    json[:city_resources] = city_resources.as_json
+    json
+  end
 
   private
 
