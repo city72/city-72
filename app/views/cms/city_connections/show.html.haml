@@ -1,7 +1,7 @@
 .main-content.connections(ng-controller="CityConnectionController" ng-init="initializer('#{escape_javascript(@city_connection_json)}')")
 
   %form{:role => "form"}(name="connectionForm" novalidate ng-submit="updateConnection()")
-    
+
     .screen-intro
       %p.screen-info Create connections with social media tools, local networks and community resources.
       .action-area
@@ -18,7 +18,7 @@
         %input.form-control#fb-page{ :type => 'text', :name => 'facebook_page_url'}(ng-model="connection.facebook_page_url" required)
       %span.help-block(ng-show="connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid")
         can't be blank
-    
+
     .row.twitter-accounts
       .form-group
         %label{:for => "tw-accounts"} What Twitter accounts are useful to follow in your area?
@@ -29,20 +29,20 @@
         %a.add-btn.btn.btn-link(ng-click="addTwitterAccount()") + Add a Twitter feed
       .help-block
         %p.help-block-title Such as:
-        %ul 
+        %ul
           %li Transportation authorities
           %li City agencies
           %li News outlets
           %li Reliable, trusted feeds focused on emergency updates
-      
+
 
     %h2 Additional Networks
-    %p What social networks or services would be useful community resources in your city? Facebook, Twitter, and Google Drive come with City72. In addition, include or edit the networks below. 
-    
+    %p What social networks or services would be useful community resources in your city? Facebook, Twitter, and Google Drive come with City72. In addition, include or edit the networks below.
+
     .editable-list-container
       %ul.editable-list
         %li(ng-repeat="network in orderedNetworks()")
-          %label.include-field(for="include-network-{{$index}}") 
+          %label.include-field(for="include-network-{{$index}}")
             %input{:type => "checkbox"}(ng-model="network.included" id="include-network-{{$index}}")
             %span Include this Network
           .list-element
@@ -57,14 +57,14 @@
           .list-actions
             %button.btn{type: "button"}(ng-click="editNetwork(network)") Edit
 
-      %a.btn.btn-link.add-btn(ng-click="newNetwork()") + Add a Network
+      %a.btn.btn-link.add-btn(ng-click="newNetwork()" ng-if="networksCountNotReached()") + Add a Network
 
     %h2 Partners and Resources
     %p What local resources focus on community preparedness? What partners does your organization collaborate with? Add up to five links.
     .editable-list-container
       %ul.editable-list
         %li(ng-repeat="resource in orderedResources()")
-          %label.include-field(for="include-resource-{{$index}}") 
+          %label.include-field(for="include-resource-{{$index}}")
             %input{:type => "checkbox"}(ng-model="resource.included" id="include-resource-{{$index}}")
             %span Include this Partner
           .list-element
@@ -76,7 +76,7 @@
             %a.call-to-action(ng-href="{{'http://' + resource.website}}") {{resource.website}}
           .list-actions
             %button.btn{type: "button"}(ng-click="editResource(resource)") Edit
-    %a.btn.btn-link.add-btn(ng-click="newResource()") + Add a Partner or Resource
+    %a.btn.btn-link.add-btn(ng-click="newResource()" ng-if="resourcesCountNotReached()") + Add a Partner or Resource
 
     .alert.alert-success.alert-dismissable(ng-show="updatedSuccessfully")
       %button.close(type="button" ng-click="updatedSuccessfully = false") &times;
@@ -86,7 +86,7 @@
     .alert.alert-danger.alert-dismissable(ng-show="fatalError")
       %button.close(type="button" ng-click="fatalError = false") &times;
       %strong Error!
-      Sorry. Your changes could not be saved. Please try again.
+      Sorry. Your changes could not be saved. {{errorText}}
 
     .form-actions
       %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
