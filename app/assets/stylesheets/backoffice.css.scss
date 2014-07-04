@@ -1,5 +1,6 @@
 @import "ladda-bootstrap/dist/ladda-themeless";
 @import "bootstrap";
+@import "font_miso";
 
 body {
   color: #232323;
@@ -45,7 +46,7 @@ $light-grey: #f2f2f2;
 /* HEADER */
 
 .header {
-  margin: 3rem 0;
+  margin: 3rem 0 6rem;
 
   .emergency {
     @extend .pull-right;
@@ -62,11 +63,31 @@ $light-grey: #f2f2f2;
 
 .logo { padding-top: 1rem; }
 
-.logo a {
-  color: $accent-gold;
-  font-weight: bold;
+#logo {
+  margin-top: 1.5rem;
+  text-align: center;
+  padding: .5rem 1rem;
+
+  img {
+    max-width: 170px;
+    max-height: 60px;
+    float: left;
+  }
+}
+
+#logo:hover {
   text-decoration: none;
-  font-size: 3.5rem;
+}
+
+.text-logo {
+  display: block;
+  font-family: "misobold";
+  text-transform: uppercase;
+  font-size: 4.5rem;
+  margin: 2.5rem 0;
+  color: #f15a24;
+  letter-spacing: 4px;
+  float: left;
 }
 
 /* NAV */

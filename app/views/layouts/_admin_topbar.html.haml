@@ -8,8 +8,11 @@
       - else
         %strong.status OFF
         %button.btn.btn-em{data: {toggle:"modal", target:".switch-em"}} Switch ON
-  %h1.logo
-    = link_to "City72", cms_root_path
+  %a#logo{href:"/cms"}
+    - if @about.logo.url
+      %img{src: "#{@about.logo.url}", alt: "#{@city.abbreviation}72 (logo)"}
+    - else
+      %span.text-logo #{@city.abbreviation}72
 
 %nav.navbar
   %ul.nav.navbar-nav
