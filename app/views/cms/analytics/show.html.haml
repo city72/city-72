@@ -1,0 +1,27 @@
+= javascript_include_tag "cms/spinner_save_btn"
+.main-content.about
+  .screen-intro
+    %p.screen-info Add Google Analytics to your Site.
+
+  = simple_form_for @analytic, url: cms_analytic_path, html: {class: "js-form"} do |f|
+    .form-group
+      -# %label{:for => "analytic-tag"} Tag Script
+      %p.help-block Paste your Google tag script, to track your Site.
+      = f.input :tag, as: :text, label: "Tag Script", cols: "20"
+
+
+    - unless flash.empty?
+      .alert.alert-dismissable{:class => (flash.first[0] == :error)? "alert-danger" : "alert-success"}
+        %button.close(data-dismiss="alert" aria-hidden="true") &times;
+        %strong "#{ (flash.first[0] == :error)? "Error!" : "Saved!" }"
+        = flash.first[1]
+
+    .form-actions
+      = content_tag :button, :type => :submit, :class => 'btn btn-primary js-save ladda-button' do
+        %span.ladda-label Save Changes
+
+    .frontend-link
+      %a{:href => "/about"} View this page &raquo;
+
+
+

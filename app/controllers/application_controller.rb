@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
     @mode = Mode.first
     @city = City.first
     @about = About.first
+    @analytic = Analytic.first
   end
 
   private

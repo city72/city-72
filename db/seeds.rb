@@ -32,6 +32,7 @@ else
   city_connection = CityConnection.create!
   emergency_data = EmergencyData.create! map_url: 'http://google.org/crisismap/a/gmail.com/SF72?hl=en&embedded=true', citizen_timeline_id: '364391164582969346', partner_timeline_id: '390535611100053504', transportation_timeline_id: '370622485349146624', your_hashtag_timeline_id: '370622485349146624'
   about = About.create! brought_to_you_by: 'Your organization'
+  analytic = Analytic.create!
 
   EmergencyStory.create! name: 'Selected story', location: 'Example location', story: "Example story.", call_to_action_cd: 0, selected: true
 
