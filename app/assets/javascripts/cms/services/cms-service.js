@@ -1,4 +1,4 @@
-backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource, $upload) {
+backofficeApp.factory('cmsService', ['$resource', '$upload', '$q', function ($resource, $upload, $q) {
 
   var Connection = $resource('/cms/city_connections', null, {
     'update': {method: 'PUT'},
@@ -17,7 +17,7 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
 
       var uploads = [];
       var names = [];
-      
+
       if (!_.isEmpty(cityImage)) {
         uploads.push(cityImage);
         names.push('city_image');
@@ -38,48 +38,77 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
       });
     },
 
-    updateConnection: function (connection) {
+    updateConnection: function (connection, callback, errorCallback) {
       connection.twitter_accounts_attributes = connection.twitter_accounts ? connection.twitter_accounts : [];
       connection.city_networks_attributes = connection.city_networks ? connection.city_networks : [];
       connection.city_resources_attributes = connection.city_resources ? connection.city_resources : [];
-
       connection = _(connection).omit('id', 'twitter_accounts', 'city_networks', 'city_resources');
-      
-      var uploads = [];
-      var names = [];
-      var index = 0;
-      var name;
 
-      _(connection.city_networks_attributes)
-      .each(function (network) {
-        if (network.logo) {
-          index = index + 1;
-          uploads.push(network.logo);
-          name = 'network-logo-' + index;
-          names.push(name);
-          network.logo_name = name;
-        }
+      var uploadsNetwork = [];
+      var uploadsResource = [];
+
+      _(connection.city_networks_attributes).map(function (network, index) {
+        network.index = index;
+
+        uploadsNetwork.push(network.logo);
+        delete network.logo;
+        delete network.new_image;
+        delete network.logo_url;
       });
 
-      index = 0;
-      _(connection.city_resources_attributes)
-      .each(function (resource) {
-        if (resource.logo) {
-          index = index + 1;
-          uploads.push(resource.logo);
-          name = 'resource-logo-' + index;
-          names.push(name);
-          resource.logo_name = name;
-        }
+      _(connection.city_resources_attributes).each(function (resource, index) {
+        resource.index = index;
+        uploadsResource.push(resource.logo);
+        delete resource.logo;
+        delete resource.new_image;
+        delete resource.logo_url;
       });
 
       return $upload.upload({
         method: 'PUT',
         url: '/cms/city_connections',
-        file: uploads,
-        data: {city_connection: connection},
-        fileFormDataName: names
-      });
+        data: {city_connection: connection}
+      }).then(function(data) {
+        data = data.data;
+
+        var promises = [];
+
+        _(data.city_connection.city_networks).each(function(cnet, i) {
+          var logo = uploadsNetwork[i];
+
+          if(logo != null) {
+            promises.push($upload.upload({
+              method: 'PUT',
+              url: '/cms/city_network/' + cnet.id,
+              file: logo,
+              fileFormDataName: "logo"
+            }));
+          }
+        });
+
+        _(data.city_connection.city_resources).each(function(crec, i) {
+          var logo = uploadsResource[i];
+
+          if(logo != null) {
+            promises.push($upload.upload({
+              method: 'PUT',
+              url: '/cms/city_resource/' + crec.id,
+              file: logo,
+              fileFormDataName: "logo"
+            }));
+          }
+        });
+
+        return $q.all(promises).then(
+          function(responses) {
+            return $upload.upload({
+              method: 'GET',
+              url: '/cms/city_connections.json',
+            }).then(callback, errorCallback);
+          },
+          errorCallback
+          );
+      }, errorCallback);
 
     },
 
@@ -146,7 +175,7 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', function ($resource
         data: {stories: stories, city: city},
         fileFormDataName: names
       });
-      
+
     }
   }
 
