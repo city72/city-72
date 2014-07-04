@@ -28,6 +28,8 @@
                 = "Other (<span class='js-custom-quick-guide-name'>#{q.title.capitalize}</span>)".html_safe
             - if q.custom
               =link_to "Configure Plan", "#", :class => "js-custom-quick-guide"
+              %span.help-block.js-update-message.hidden
+                Save Changes to Update
 
       .modal.fade.modal-container
         .modal-dialog.modal-lg
