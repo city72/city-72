@@ -1,5 +1,5 @@
 backofficeApp.directive('editResourceModal', [function () {
-  
+
   return {
     restrict: 'E',
     scope: {
@@ -12,9 +12,11 @@ backofficeApp.directive('editResourceModal', [function () {
         $scope.resourceInEdition.logo = $scope.logoFile;
         if ($scope.resourceInEdition.logo) {
           $scope.resourceInEdition.new_image = true;
+        } else {
+          $scope.resourceInEdition.new_image = false;
         }
         if ($scope.newResource) {
-          $scope.resourceInEdition.included = true;
+          $scope.resourceInEdition.included = false;
           $scope.resources.push($scope.resourceInEdition);
           $scope.newResource = false;
         } else {
@@ -25,6 +27,8 @@ backofficeApp.directive('editResourceModal', [function () {
       };
 
       $scope.cancel = function () {
+        var resourceIndex = _($scope.resources).indexOf($scope.resource);
+        $scope.resources[resourceIndex].new_image = false;
         $scope.resource = null;
       };
     }],
@@ -33,7 +37,8 @@ backofficeApp.directive('editResourceModal', [function () {
 
       $scope.$watch('resource', function () {
         if ($scope.resource) {
-          $scope.logoFile = $scope.resource.logo ? $scope.resource.logo : null;
+          $element.find("#partner-image").val("");
+          $scope.logoFile = null;
           $scope.resourceInEdition = _($scope.resource).clone();
           $scope.$modalEl.modal('show');
         } else {
@@ -43,5 +48,5 @@ backofficeApp.directive('editResourceModal', [function () {
     },
     templateUrl: '/cms/directives/resource_modal'
   };
-  
+
 }]);

@@ -13,9 +13,11 @@ backofficeApp.directive('editNetworkModal', ['cmsService', function (cmsService)
         $scope.networkInEdition.logo = $scope.logoFile;
         if ($scope.networkInEdition.logo) {
           $scope.networkInEdition.new_image = true; // Removes the image from the network box
+        } else {
+          $scope.networkInEdition.new_image = false;
         }
         if ($scope.newNetwork) {
-          $scope.networkInEdition.included = true;
+          $scope.networkInEdition.included = false;
           $scope.networks.push($scope.networkInEdition);
           $scope.newNetwork = false;
         } else {
@@ -26,8 +28,11 @@ backofficeApp.directive('editNetworkModal', ['cmsService', function (cmsService)
       };
 
       $scope.cancel = function () {
+        var networkIndex = _($scope.networks).indexOf($scope.network);
+        $scope.networks[networkIndex].new_image = false;
         $scope.network = null;
       };
+
 
     }],
     link: function ($scope, $element, $attrs) {
@@ -35,7 +40,8 @@ backofficeApp.directive('editNetworkModal', ['cmsService', function (cmsService)
 
       $scope.$watch('network', function () {
         if ($scope.network) {
-          $scope.logoFile = $scope.network.logo ? $scope.network.logo : null;
+          $element.find("#network-image").val("");
+          $scope.logoFile = null;
           $scope.networkInEdition = _($scope.network).clone();
           $modalEl.modal('show');
         } else {

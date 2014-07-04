@@ -1,5 +1,5 @@
 backofficeApp.directive('editStoryModal', function () {
-  
+
   return {
     restrict: 'E',
     scope: {
@@ -12,6 +12,8 @@ backofficeApp.directive('editStoryModal', function () {
         $scope.storyInEdition.image = $scope.storyImage;
         if ($scope.storyInEdition.image) {
           $scope.storyInEdition.new_image = true;
+        } else {
+          $scope.storyInEdition.new_image = false;
         }
         var storyIndex = _($scope.stories).indexOf($scope.story);
         $scope.stories[storyIndex] = $scope.storyInEdition;
@@ -19,6 +21,8 @@ backofficeApp.directive('editStoryModal', function () {
       };
 
       $scope.cancel = function () {
+        var storyIndex = _($scope.stories).indexOf($scope.story);
+        $scope.stories[storyIndex].new_image = false;
         $scope.story = null;
       };
 
@@ -28,7 +32,8 @@ backofficeApp.directive('editStoryModal', function () {
 
       $scope.$watch('story', function () {
         if ($scope.story) {
-          $scope.storyImage = $scope.storyImage ? $scope.storyImage : null;
+          $element.find("#story-image").val("");
+          $scope.storyImage = null;
           $scope.storyInEdition = _($scope.story).clone();
           $modalEl.modal('show');
         } else {
