@@ -1,3 +1,4 @@
+= javascript_include_tag "cms/city_connections"
 .main-content.connections(ng-controller="CityConnectionController" ng-init="initializer('#{escape_javascript(@city_connection_json)}')")
 
   %form{:role => "form"}(name="connectionForm" novalidate ng-submit="updateConnection()")
