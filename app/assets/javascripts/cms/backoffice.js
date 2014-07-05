@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore-min.js
+//= require jquery.matchHeight-min.js
 //= require angular/angular
 //= require angular-resource/angular-resource
 //= require ladda-bootstrap/dist/spin
