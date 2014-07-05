@@ -218,7 +218,8 @@
 
 		li {
 			@include row();
-			@include span-columns(4);	
+			@include span-columns(4);
+			@include omega(3n);
 			background-position: top left;
 			background-repeat: no-repeat; 
 			position: relative;

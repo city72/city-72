@@ -44,7 +44,7 @@ City72::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += [ 'active_admin.js', 'admin-no-cms.js', 'admin_panel.js', 'em.js', 'home.js', 'jquery.modal.js', 'prepare.js', 'supplies.js', 'tabs_manager.js', 'video_modal.js',
-                                'mailchimp.js', 'jquery.joyride-2.1.js', 'froogaloop.min.js', 'cms/backoffice.js', "cms/spinner_save_btn.js",
+                                'mailchimp.js', 'jquery.joyride-2.1.js', 'froogaloop.min.js', 'cms/backoffice.js', "cms/spinner_save_btn.js", 'jquery.matchHeight-min.js',
                                 "cms/custom_quick_guide_modal.js",
                                 #add css not imported in application.css.scss
                                 'joyride-2.1.css', 'active_admin.css', 'admin_no_cms.css', 'jquery.modal.css',
