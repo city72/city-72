@@ -154,30 +154,31 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', '$q', function ($re
     },
 
     updateStories: function (stories, city) {
+      var promises = [];
+      _(stories).map(function (story, index) {
+        story.index = index;
 
-      var uploads = [];
-      var names = [];
-      var index = 0;
-      var name;
+        var uploadInfo = {
+          method: 'PUT',
+          url: '/cms/stories/'+story.id,
+          data: {story: story}
+        };
 
-      _(stories).each(function (story) {
-        if (story.image) {
-          index = index + 1;
-          uploads.push(story.image);
-          name = 'story-' + index;
-          names.push(name);
-          story.image_name = name;
+        if(story.image) {
+          uploadInfo.file = story.image
+          uploadInfo.fileFormDataName = "image";
         }
-      })
 
-      return $upload.upload({
-        method: 'PUT',
-        url: '/cms/stories',
-        file: uploads,
-        data: {stories: stories, city: city},
-        fileFormDataName: names
+        promises.push($upload.upload(uploadInfo));
       });
 
+      promises.push($upload.upload({
+        method: 'PUT',
+        url: '/cms/stories/city/'+city.id,
+        data: {city: city}
+      }));
+
+      return $q.all(promises);
     }
   }
 

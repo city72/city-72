@@ -2,19 +2,27 @@ class Cms::StoriesController < BackOfficeController
 
   def show
     @city_json = CitySerializer.new(@city).to_json
-    @stories = ActiveModel::ArraySerializer.new(EmergencyStory.all, each_serializer: EmergencyStorySerializer).to_json
+    @stories = ActiveModel::ArraySerializer.new(EmergencyStory.order("index,id ASC"), each_serializer: EmergencyStorySerializer).to_json
   end
 
   def update
-    stories = JSON.parse(params[:stories], symbolize_names: true)
-    stories.each do |s|
-      story = EmergencyStory.find(s[:id])
-      s[:image] = params[s[:image_name]] if s[:image_name]
-      story.attributes = s.except(:id, :image_url, :image_name, :new_image)
-      story.save!
+    jstory = JSON.parse(params[:story], symbolize_names: true)
+    jstory = jstory.except(:image_url, :image_name, :new_image)
+    @story = EmergencyStory.find(params[:id])
+    if params[:image]
+      jstory[:image] = params[:image]
     end
-    city = JSON.parse(params[:city], symbolize_names: true)
-    @city.statement = city[:statement]
+    @story.update_attributes(jstory)
+    if @story.save
+      render status: :ok, nothing: true
+    else
+      render status: 422, json: @story.errors
+    end
+  end
+
+  def update_statement
+    jcity = JSON.parse(params[:city], symbolize_names: true)
+    @city.statement = jcity[:statement]
     @city.save! validate: false # City can be in an invalid state
     render status: :ok, nothing: true
   end
