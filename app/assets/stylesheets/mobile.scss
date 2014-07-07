@@ -300,18 +300,24 @@ $mobile-padding: 23px;
 		}
 
 		.big-title {
-			padding-top: 80px;
+			height: 225px;
 			margin-bottom: 0;
-			padding-bottom: 23%;
+			display: table;
+			padding: 0;
 		}
 
 	}
 
 	.home .page-intro .big-title h1 {
-		font-size: 2.03rem;
+		font-size: 1.8rem;
 		line-height: 1.1;
 		font-family: $font-bold;
 		font-weight: normal;
+		padding: 0 23px;
+		display: table-cell;
+		width: 100%;
+		height: 100%;
+		vertical-align: middle;
 
 		&:before {
 			display: none;
