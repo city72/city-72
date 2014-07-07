@@ -16,9 +16,14 @@
               can't be blank
           .form-group(ng-class="{'has-error': resourceForm.description.$dirty && resourceForm.description.$invalid}")
             %label.control-label{:for => "partner-description"} Description of services
-            %textarea.form-control#partner-description{:name => "description", :cols => "90", :rows => "8"}(ng-model="resourceInEdition.description" required)
-            %span.help-block(ng-show="resourceForm.description.$dirty && resourceForm.description.$invalid")
-              can't be blank
+            %textarea.form-control#partner-description{:name => "description", :cols => "90", :rows => "8"}(ng-model="resourceInEdition.description" ng-maxlength="180" required)
+            %span.help-block(ng-show="resourceForm.description.$error.required && resourceForm.description.$dirty")
+              Can't be blank
+            %span.help-block(ng-show="resourceForm.description.$error.maxlength")
+              Must be 180 characters (~25 words) or fewer.
+
+            
+              
           .form-group(ng-class="{'has-error': resourceForm.website.$dirty && resourceForm.website.$invalid}")
             %label.control-label{:for => "partner-link"} 
               Website Link 
