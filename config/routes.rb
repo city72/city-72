@@ -34,7 +34,13 @@ City72::Application.routes.draw do
     get "directives/supply_modal"
     get "directives/story_modal"
 
-    resource :city, only: [:show, :update]
+    resource :city, only: [:show] do
+      collection do
+        put "residents/:id" => "cities#update_resident_image"
+      end
+    end
+    put "city/:id" => "cities#update"
+
     resource :city_connections, only: [:show, :update]
 
     resources :city_network, only: [:update]

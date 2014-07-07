@@ -14,28 +14,38 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', '$q', function ($re
 
   return {
     updateCity: function (city, cityImage, residentImage) {
-
-      var uploads = [];
-      var names = [];
-
-      if (!_.isEmpty(cityImage)) {
-        uploads.push(cityImage);
-        names.push('city_image');
-      }
-      if (!_.isEmpty(residentImage)) {
-        uploads.push(residentImage);
-        names.push('resident_image');
-      }
-
       city.affiliates_attributes = city.affiliates ? city.affiliates : [];
 
-      return $upload.upload({
+      var promises = [];
+      var uploadInfo = {
         method: 'PUT',
-        url: '/cms/city',
-        file: uploads,
-        data: {city: city},
-        fileFormDataName: names
-      });
+        url: '/cms/city/'+city.id,
+        data: {city: city}
+      }
+
+      // This is for make two request only when 2 images are uploaded
+      if (!_.isEmpty(cityImage)) {
+        uploadInfo.file = cityImage;
+        uploadInfo.fileFormDataName = "city_image";
+        promises.push($upload.upload(uploadInfo));
+        if (!_.isEmpty(residentImage)) {
+          promises.push($upload.upload({
+            method: 'PUT',
+            url: '/cms/city/residents/'+city.id,
+            file: residentImage,
+            data: {city: city},
+            fileFormDataName: "resident_image"
+          }));
+        }
+      } else {
+        if (!_.isEmpty(residentImage)) {
+          uploadInfo.file = residentImage;
+          uploadInfo.fileFormDataName = "resident_image";
+          promises.push($upload.upload(uploadInfo));
+        }
+      }
+
+      return $q.all(promises);
     },
 
     updateConnection: function (connection, callback, errorCallback) {

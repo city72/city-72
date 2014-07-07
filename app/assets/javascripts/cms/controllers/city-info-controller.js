@@ -19,7 +19,7 @@ backofficeApp.controller('CityInfoController', ['$scope', 'cmsService', '$upload
       function (response) {
         $scope.updating = false;
         $scope.updatedSuccessfully = true;
-        $scope.city = response.data.city;
+        $scope.city = response[response.length - 1].data.city;
       },
       function () {
         $scope.fatalError = true;
