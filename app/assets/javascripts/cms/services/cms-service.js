@@ -41,8 +41,8 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', '$q', function ($re
         if (!_.isEmpty(residentImage)) {
           uploadInfo.file = residentImage;
           uploadInfo.fileFormDataName = "resident_image";
-          promises.push($upload.upload(uploadInfo));
         }
+        promises.push($upload.upload(uploadInfo));
       }
 
       return $q.all(promises);
