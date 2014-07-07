@@ -12,22 +12,33 @@ class Cms::SuppliesController < BackOfficeController
   end
 
   def update
-    supplies = JSON.parse(params[:supplies], symbolize_names: true)
-    supplies.each do |s|
-      supply = Item.find(s[:id])
-      # Copies the attached image to the correspondent item
-      s[:image] = params[s[:image_name]] if s[:image_name]
-      supply.attributes = s.except(:id, :image_url, :image_name, :new_image)
-      supply.save!
+    jsupply = JSON.parse(params[:item], symbolize_names: true)
+    jsupply = jsupply.except(:image_url, :image_name, :new_image)
+    @supply = Item.find(params[:id])
+    if params[:image]
+      jsupply[:image] = params[:image]
     end
-    kits = JSON.parse(params[:kits], symbolize_names: true)
-    kits.each do |k|
-      kit = Kit.find(k[:id])
-      k[:image] = params[k[:image_name]] if k[:image_name]
-      kit.attributes = k.except(:id, :image_url, :image_name, :new_image)
-      kit.save!
+    @supply.update_attributes(jsupply)
+    if @supply.save
+      render status: :ok, nothing: true
+    else
+      render status: 422, json: @supply.errors
     end
-    render status: :ok, nothing: true
+  end
+
+  def update_kit
+    jkit = JSON.parse(params[:kit], symbolize_names: true)
+    jkit = jkit.except(:image_url, :image_name, :new_image)
+    @kit = Kit.find(params[:id])
+    if params[:image]
+      jkit[:image] = params[:image]
+    end
+    @kit.update_attributes(jkit)
+    if @kit.save
+      render status: :ok, nothing: true
+    else
+      render status: 422, json: @kit.errors
+    end
   end
 
   private

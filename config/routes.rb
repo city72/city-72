@@ -40,7 +40,13 @@ City72::Application.routes.draw do
     resources :city_network, only: [:update]
     resources :city_resource, only: [:update]
 
-    resource :supplies, only: [:show, :update]
+    resource :supplies, only: [:show] do
+      collection do
+        put "kit/:id" => "supplies#update_kit"
+      end
+    end
+    put "supplies/:id" => "supplies#update"
+
     resource :stories, only: [:show, :update]
     resource :plan, only: [:show, :update]
     resource :about, only: [:show, :update]

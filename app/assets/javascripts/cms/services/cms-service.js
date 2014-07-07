@@ -107,48 +107,50 @@ backofficeApp.factory('cmsService', ['$resource', '$upload', '$q', function ($re
             }).then(callback, errorCallback);
           },
           errorCallback
-          );
+        );
       }, errorCallback);
 
     },
 
     updateSupplies: function (essentials, usefuls, personals, kits) {
       var allSupplies = _(essentials).chain().union(usefuls).union(personals).value();
+      var promises = [];
 
-      var uploads = [];
-      var names = [];
-      var index = 0;
-      var name;
+      _(allSupplies).map(function (supply, index) {
+        supply.index = index;
 
-      _(allSupplies).each(function (supply) {
-        if (supply.image) {
-          index = index + 1;
-          uploads.push(supply.image);
-          name = 'supply-' + index;
-          names.push(name);
-          supply.image_name = name;
+        var uploadInfo = {
+          method: 'PUT',
+          url: '/cms/supplies/'+supply.id,
+          data: {item: supply}
+        };
+
+        if(supply.image) {
+          uploadInfo.file = supply.image
+          uploadInfo.fileFormDataName = "image";
         }
+
+        promises.push($upload.upload(uploadInfo));
       });
 
-      index = 0;
-      _(kits).each(function (kit) {
-        if (kit.image) {
-          index = index + 1;
-          uploads.push(kit.image);
-          name = 'kit-' + index;
-          names.push(name);
-          kit.image_name = name;
+      _(kits).map(function (kit, index) {
+        kit.index = index;
+
+        var uploadInfo = {
+          method: 'PUT',
+          url: '/cms/supplies/kit/'+kit.id,
+          data: {kit: kit}
+        };
+
+        if(kit.image) {
+          uploadInfo.file = kit.image
+          uploadInfo.fileFormDataName = "image";
         }
+
+        promises.push($upload.upload(uploadInfo));
       });
 
-      return $upload.upload({
-        method: 'PUT',
-        url: '/cms/supplies',
-        file: uploads,
-        data: {supplies: allSupplies, kits: kits},
-        fileFormDataName: names
-      });
-
+      return $q.all(promises);
     },
 
     updateStories: function (stories, city) {
