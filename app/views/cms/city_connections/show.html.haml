@@ -92,6 +92,8 @@
     .form-actions
       %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
         %span.ladda-label Save Changes
+      %span.double-check.text-danger(ng-show="connectionForm.$invalid")
+        Please double-check that all required fields are filled.
 
     .frontend-link
       %a{:href => "/connect"} View this page &raquo;
