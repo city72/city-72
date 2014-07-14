@@ -34,9 +34,9 @@ Follow these steps:
 
 #### Configure an application on Heroku with 2 dynos
 
-First, go to your heroku account and create an application to be used for the project. When asked for the number of `web dynos` to be used in your application select `2`. Two dynos is the recommended setting for your application in order to keep the app reliable and responsive to traffic. 
+First, go to your Heroku account and create an application to be used for the project. When asked for the number of `web dynos` to be used in your application select `2`. There is a small monthly fee associated with having an extra dyno.
 
-For testing purposes, you can choose an application with no extra dynos. NOTE: Sites with no extra dynos "go to sleep" and can be slow to wake up. So, this free level of service is not appropriate for the public launch of your site. 
+For testing purposes, you can choose an application with no extra dynos (this will be free). Please note that **sites with no extra dynos "go to sleep"** and can be slow to wake up. So, when you are ready to let the public use your site, make sure that your Heroku appliation has at least `2 dynos`. 
 
 #### Configure the Heroku App for your project
 
