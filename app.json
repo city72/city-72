@@ -1,0 +1,25 @@
+{
+  "name": "City72",
+  "description": "Open-source emergency preparedness platform that promotes community resilience and connection",
+  "website": "http://toolkit.sf72.org/",
+  "repository": "https://github.com/city72/city-72",
+  "logo": "http://static.squarespace.com/static/537b8ba7e4b041e0d683a2b3/t/53b1eb09e4b006144b90fda7/1406241209574/?format=1500w",
+  "keywords": ["ruby"],
+  "success_url": "/cms",
+  "addons": [
+    "heroku-postgresql",
+    "pgbackups",
+    "sendgrid",
+    "newrelic",
+    "cloudinary"
+  ],
+  "env": {
+  	"EMAIL_REDIRECT_HOST": {
+  	  "description": "Domain used in the emails sent from your app",
+  	  "value": "YOURAPPNAME.herokuapp.com"
+  	}
+  },
+  "scripts": {
+    "postdeploy": "bundle exec rake db:setup && bundle exec rake city72:populate"
+  }
+}
