@@ -3,11 +3,7 @@ Included in this guide:
   * [Production Deployment](#production_deployment)
   * [Development Environment Setup](#development-environment-setup)
 
-# Production Deployment 
-
-## Step By Step Guide
-
-### Deploy on Heroku
+# Deploy on Heroku
 
 You can deploy the app on Heroku by clicking the button below:
 
@@ -15,7 +11,7 @@ You can deploy the app on Heroku by clicking the button below:
 
 If you don't have a Heroku account, you will be prompted to create one.
 
-#### Add-ons
+## Add-ons
 
 The following free add-ons are automatically installed as part of set-up. Even though the add-ons are free, you have to verify your account by adding a credit card.
 
@@ -25,17 +21,17 @@ The following free add-ons are automatically installed as part of set-up. Even t
 * **NewRelic** monitors your application performance
 * **Cloudinary** resizes, crops and then stores the images in your application.
 
-#### Configure the recover password host redirection:
+## Configure the recover password host redirection:
 
 During setup, you will be prompted to enter a `EMAIL_REDIRECT_HOST`, used within the emails sent from your application. The value should be `YOURAPPNAME.herokuapp.com`
 
-#### Scale to 2 dynos
+## Scale to 2 dynos
 
 First, go to your Heroku account and create an application to be used for the project. When asked for the number of `web dynos` to be used in your application select `2`. There is a small monthly fee associated with having an extra dyno.
 
 For testing purposes, you can choose an application with no extra dynos (this will be free). Please note that **sites with no extra dynos "go to sleep"** and can be slow to wake up. So, when you are ready to let the public use your site, make sure that your Heroku appliation has at least `2 dynos`. 
   
-#### FINAL STEP: Update your username and password via the Content Editor
+## FINAL STEP: Update your username and password via the Content Editor
 
 Your site was installed with a default username and password (these are set in the db/seeds.rb file). Go to your app and login
 
