@@ -5,110 +5,35 @@ Included in this guide:
 
 # Production Deployment 
 
-## Prerequisites
+## Step By Step Guide
 
-* **Git**—for more information, read [Getting Started with Git](http://git-scm.com/book/en/Getting-Started-Installing-Git).
+### Deploy on Heroku
 
-### Step By Step Guide
+You can deploy the app on Heroku by clicking the button below:
 
-#### Obtain a copy of the application
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-Clone the code to your computer.
-The command you type into your shell application (Terminal on the Mac) will be:
+If you don't have a Heroku account, you will be prompted to create one.
 
-```sh
-$ git clone https://github.com/city72/city-72.git
-```
+#### Add-ons
 
-This will create a directory named `city-72`.
+The following free add-ons are automatically installed as part of set-up. Even though the add-ons are free, you have to verify your account by adding a credit card.
 
-#### Setup Heroku
+* **PostgreSQL** is the database for your application.
+* **PG Backups** creates backups of your database.
+* **SendGrid** sends emails from your application (e.g. the forgot password email).
+* **NewRelic** monitors your application performance
+* **Cloudinary** resizes, crops and then stores the images in your application.
 
-Follow these steps:
+#### Configure the recover password host redirection:
 
-  1. Create a [heroku account](http://www.heroku.com) (if you don't already have one)
-  2. Install the Heroku Toolbelt on your computer & login
-      * Step 2 and 3 of the [heroku quickstart guide](https://devcenter.heroku.com/articles/quickstart)
-  3. Add your credit card information to your heroku account. This is required in order to verify your account so that you can use add-ons. 
-  4. You may need to add a public key to your heroku account. For instructions, read about [adding keys](https://devcenter.heroku.com/articles/keys) on Heroku.
+During setup, you will be prompted to enter a `EMAIL_REDIRECT_HOST`, used within the emails sent from your application. The value should be `YOURAPPNAME.herokuapp.com`
 
-#### Configure an application on Heroku with 2 dynos
+#### Scale to 2 dynos
 
 First, go to your Heroku account and create an application to be used for the project. When asked for the number of `web dynos` to be used in your application select `2`. There is a small monthly fee associated with having an extra dyno.
 
 For testing purposes, you can choose an application with no extra dynos (this will be free). Please note that **sites with no extra dynos "go to sleep"** and can be slow to wake up. So, when you are ready to let the public use your site, make sure that your Heroku appliation has at least `2 dynos`. 
-
-#### Configure the Heroku App for your project
-
-Go to the city-72 directory that was created when you cloned from Github, and run the following command:
-
-```sh
-  $ git remote add heroku git@heroku.com:YOURAPPNAME.git
-```
-
-(In your heroku account, choose your app's settings, and you will get the Git URL, from the info section)
-
-#### Install add-ons
-
-Your Heroku app will need the following add-ons. They are all free add-ons. You may wish to upgrade the database or cloudinary to a paid level if you anticipate large volumes of traffic to your site. 
-
-**PostgreSQL** is the database for your application.
- 
- ```sh
-   $ heroku addons:add heroku-postgresql -a YOURAPPNAME
-```
-
-**PG Backups** creates backups of your database.
-
-```sh
-  $ heroku addons:add pgbackups:auto-week -a YOURAPPNAME
-```
-
-**SendGrid** sends emails from your application (e.g. the forgot password email).
-
-```sh
-  $ heroku addons:add sendgrid -a YOURAPPNAME
-```
-
-**NewRelic** monitors your application performance
-
-```sh
-  $ heroku addons:add newrelic:stark -a YOURAPPNAME
-```
-
-**Cloudinary** resizes, crops and then stores the images in your application.
-
- 
-```sh
-  $ heroku addons:add cloudinary -a YOURAPPNAME
-```
-
-
-
-#### Configure the recover password host redirection:
-
-```sh
- $ heroku config:set EMAIL_REDIRECT_HOST=YOURAPPNAME.herokuapp.com
-```
-
-This variable, configures the domain to be used within the emails sent from your application. You should configure it to use the domain you have.
-
-
-#### Deploy
-
-Finally, you are able to deploy the application.
-
-Do:
-```sh
- $ git push heroku master
- $ heroku run bundle exec rake db:setup            # this creates database schema & prepopulates basic data
- $ heroku run bundle exec rake city72:populate     # this populates data to the database
-```
-
-Now you should be able to enter you application.
-
-Go to `http://YOURAPPNAME.herokuapp.com/` to see your new City72 site.
-
   
 #### FINAL STEP: Update your username and password via the Content Editor
 
@@ -123,8 +48,6 @@ The default username and password are:
 `password`
 
 Once you login, use the Admin menu in the navigation to change the email to your email address. Then you will need to change the password to a strong password that only you know.
-
-
 
 
 ---
@@ -187,10 +110,22 @@ npm install -g bower
 ## Development environment
 
 Before running the app, the following steps should be performed.
+* Obtain a copy of the application
 * Create the database user for the application
 * Install the application dependencies
 * Create the database
 * Download the client-side dependecies
+
+### Obtain a copy of the application
+
+Clone the code to your computer.
+The command you type into your shell application (Terminal on the Mac) will be:
+
+```sh
+$ git clone https://github.com/city72/city-72.git
+```
+
+This will create a directory named `city-72`.
 
 ### Create the database user for the application
 
