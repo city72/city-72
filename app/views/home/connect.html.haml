@@ -26,8 +26,8 @@
         %p <strong>Now:</strong> Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites: #{tweeter_accounts(@city_connection.twitter_accounts).html_safe}.
         %p <strong>In an emergency:</strong> Post about yourself and your area. Use <a href="https://twitter.com/search?q=%23#{@city.abbreviation}72" target="_blank">##{@city.abbreviation}72</a> to include them in the crowdsourced emergency feed.
       %li.drive
-        %h3 Save documents on</br>Google Drive
-        %p <strong>Now:</strong> Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies in the cloud through Google Drive.
+        %h3 Save documents to</br>a cloud service
+        %p <strong>Now:</strong> Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies in the cloud through Google Drive or Dropbox.
         %p <strong>In an emergency:</strong> Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud.
       - @city_connection.city_networks.included.each do |cn|
         %li
