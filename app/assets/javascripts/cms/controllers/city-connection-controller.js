@@ -71,13 +71,12 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
 
   $scope.editResource = function (resource) {
     $scope.resourceInEdition = resource;
-    console.log("resource edited",resource)
+    console.log('Scope',$scope)
   };
 
   $scope.newResource = function () {
     $scope.addingNewResource = true;
     $scope.resourceInEdition = {};
-    console.log('this', this)
   };
 
 }]);
