@@ -70,7 +70,8 @@
           %a.partner-logo{:href => "http://#{cr.website}", :target => "_blank"}
             - unless cr.logo.blank?
               = image_tag(cr.logo.common.url, alt: cr.name)
-          %p <strong>#{cr.name}</strong> #{cr.description}
+          %p <strong>#{cr.name}</strong> 
+          %p #{cr.description}
           %a{:href => "http://#{cr.website}", :target => "_blank"}
             = cr.website
 
