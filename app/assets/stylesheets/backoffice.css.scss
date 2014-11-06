@@ -382,7 +382,8 @@ textarea.form-control {
 
 .connections {
 
-  .list-element img { margin-left: -21px; }
+  // Note, modified to align image with txt in admin panel, matches user view
+  // .list-element img { margin-left: -21px; }
 
   .list-element h4 {
     font-size: 14px;

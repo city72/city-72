@@ -71,6 +71,7 @@ backofficeApp.controller('CityConnectionController', ['$scope', 'cmsService', fu
 
   $scope.editResource = function (resource) {
     $scope.resourceInEdition = resource;
+    console.log('Scope',$scope)
   };
 
   $scope.newResource = function () {
