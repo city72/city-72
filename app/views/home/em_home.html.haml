@@ -52,15 +52,12 @@
       %li.active#citizen-updates-tab
         %a{href:"#tab-citizen-updates"}
           %h3 Official Updates
-          %span From Twitter
       %li#official-reports-tab 
         %a{href:"#tab-official-reports"}
           %h3 Partner Updates
-          %span From Twitter
       %li#transportation-updates-tab
         %a{href:"#tab-service-status"}
           %h3 Transportation Updates
-          %span From 511.org
     %ul.tw-tabs-mobile
       %li.active
         %a{href:"#tab-citizen-updates"}
@@ -83,7 +80,7 @@
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       .status
         <style type="text/css">#twitter-widget-3{width:70%}</style>
-        <a class="twitter-timeline" href="https://twitter.com/511SFBay" data-widget-id="#{@emergency_data.transportation_timeline_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
+        <a class="twitter-timeline" data-widget-id="#{@emergency_data.transportation_timeline_id}" width="70%" height="660" data-chrome="noheader nofooter noborders" data-aria-polite="assertive" >Tweets by @511SFBay</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 .main-container
   = render :partial => "partials/footer"
