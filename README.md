@@ -16,7 +16,6 @@ If you don't have a Heroku account, you will be prompted to create one.
 The following free add-ons are automatically installed as part of set-up. Even though the add-ons are free, you have to verify your account by adding a credit card.
 
 * **PostgreSQL** is the database for your application.
-* **PG Backups** creates backups of your database.
 * **SendGrid** sends emails from your application (e.g. the forgot password email).
 * **NewRelic** monitors your application performance
 * **Cloudinary** resizes, crops and then stores the images in your application.
