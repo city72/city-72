@@ -1,0 +1,3 @@
+es:
+  hello: "Hola mundo"
+  hero_image_text: "%{city_abbrev}72 es hub de emergency preparedness de %{city_name}."

@@ -3,7 +3,8 @@
   = render :partial => "partials/header"
   .page-intro
     .big-title{:style => "background-image: url(#{@city.image_url || "/assets/placeholder-home.jpg"})"}
-      %h1 #{@city.abbreviation}72 is #{@city.possessive} hub for emergency preparedness.
+      %h1
+        = t(:hero_image_text, city_abbrev: @city.abbreviation, city_possessive: @city.possessive, city_name: @city.name)
   .questions
     %ul
       %li

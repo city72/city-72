@@ -3,3 +3,4 @@
 
 en:
   hello: "Hello world"
+  hero_image_text: "%{city_abbrev}72 is %{city_possessive} hub for emergency preparedness."
