@@ -8,28 +8,51 @@
   .questions
     %ul
       %li
-        %h2 What is #{@city.abbreviation}72?
-        %span #{@city.abbreviation}72 is your hub for emergency preparedness. You’ll find information about what to do in an emergency, simple steps to get connected, and useful guides to help you get prepared. Share #{@city.abbreviation}72 with a friend—and help your loved ones and your city get prepared.
+        %h2 
+          = t(:what_is, city_abbrev: @city.abbreviation)
+        %span 
+          = t(:what_text, city_abbrev: @city.abbreviation)
       %li
-        %h2 Why 72?
-        %span In a serious emergency, city services will be impacted, so a basic rule of thumb is for people to be able to take care of each other for 72 hours before help arrives. That’s just three days—think of it as a long weekend—or nine meals.
+        %h2 
+          = t(:why_72, city_abbrev: @city.abbreviation)
+        %span 
+          = t(:why_text)
   .connection{:style => "background-image: url(#{@city.resident_image.url || "assets/placeholder-residents.jpg"})"}
     %div
-      %h2 We believe in connection,</br>not catastrophe.
-      %span Actual emergencies look more like people coming together than cities falling apart. #{@city.abbreviation}72 is about prompting #{city_residents} to get connected before an emergency—so we can be that much better off when something happens.
+      %h2 
+        = t(:moto_part1)
+        </br>
+        = t(:moto_part2)
+      %span 
+        = t(:moto_explained, city_abbrev: @city.abbreviation)
   .learn
-    %h1 Good news. You’re more prepared than you think.</br>Learn more...
+    %h1 
+      = t(:good_news)
+      </br>
+      = t(:learn_more)
     %ul
       %li
         %a.learn-connect{href:"/connect"}
-          %h2 Get</br>Connected
-          %p Make the most of your existing networks of friends, family, neighbors, and colleagues—so you can get help, and help others.
+          %h2 
+            = t(:gc_part1)
+            </br>
+            = t(:gc_part2)
+          %p 
+            = t(:gc_explained)
       %li
         %a.learn-supplies{href:"/supplies"}
-          %h2 Gather</br>Supplies
-          %p Find out what’s essential, useful, and nice to have in an emergency. You probably already have many of the supplies you need.
+          %h2 
+            = t(:sup_part1)
+            </br>
+            = t(:sup_part2)
+          %p 
+            = t(:sup_explained)
       %li
         %a.learn-plan{href:"/plan"}
-          %h2 Make</br>a Plan
-          %p Make a basic plan with your loved ones—so you know what to do in an emergency.
+          %h2 
+            = t(:mp_part1)
+            </br>
+            = t(:mp_part2)
+          %p 
+            = t(:mp_explained)
   = render :partial => "partials/footer"
