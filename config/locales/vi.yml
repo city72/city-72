@@ -1,6 +1,6 @@
-es:
-  hello: "Hola mundo"
-  hero_image_text: "%{city_abbrev}72 es hub de emergency preparedness de %{city_name}."
+vi:
+  hello: "Chào Thế Giới"
+  hero_image_text: "%{city_abbrev}72 là trung tâm của %{city_name} cho chuẩn bị khẩn cấp."
   what_is: "¿Qué es %{city_abbrev}72?"
   what_text: "%{city_abbrev}72 is your hub for emergency preparedness. You’ll find information about what to do in an emergency, simple steps to get connected, and useful guides to help you get prepared. Share %{city_abbrev}72 with a friend—and help your loved ones and your community get prepared."
   why_72: "Why 72?"

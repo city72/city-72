@@ -24,7 +24,12 @@ class ApplicationController < ActionController::Base
   end
  
   def set_locale
-    I18n.locale = 'en' #params[:locale] || I18n.default_locale
+    #I18n.locale = 'en' #params[:locale] || I18n.default_locale
+    #I18n.locale = 'es'
+    #I18n.locale = 'vi'
+    #I18n.locale = 'zh'
+    I18n.locale = 'tl'
+
   end
 
   protected
