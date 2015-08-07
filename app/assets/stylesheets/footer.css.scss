@@ -22,12 +22,12 @@
 
 	.by-line:before {
 		font-family: 'sf72-icons';
-		font-size: 2.7rem;
+		font-size: 4rem;
 		content: 'y';
 		color: $mid-grey;
 		position: absolute;
 		left: -6.5rem;
-		bottom: 0.1rem;
+		bottom: -.9rem;
 		-webkit-font-smoothing: antialiased;
 	}
 }
