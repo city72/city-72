@@ -4,27 +4,25 @@
   .page-intro
     .big-title{:style => "background-image: url(#{@city.image_url || "/assets/placeholder-home.jpg"})"}
       %h1
-        = t(:hero_image_text, city_abbrev: @city.abbreviation, city_possessive: @city.possessive, city_name: @city.name)
+        = t(:hero_image_text)
   .questions
     %ul
       %li
         %h2 
-          = t(:what_is, city_abbrev: @city.abbreviation)
+          = t(:what_is)
         %span 
-          = t(:what_text, city_abbrev: @city.abbreviation)
+          = t(:what_text)
       %li
         %h2 
-          = t(:why_72, city_abbrev: @city.abbreviation)
+          = t(:why_72)
         %span 
           = t(:why_text)
   .connection{:style => "background-image: url(#{@city.resident_image.url || "assets/placeholder-residents.jpg"})"}
     %div
       %h2 
-        = t(:moto_part1)
-        </br>
-        = t(:moto_part2)
+        = t(:motto)
       %span 
-        = t(:moto_explained, city_abbrev: @city.abbreviation)
+        = t(:motto_explained)
   .learn
     %h1 
       = t(:good_news)
@@ -34,25 +32,19 @@
       %li
         %a.learn-connect{href:"/connect"}
           %h2 
-            = t(:gc_part1)
-            </br>
-            = t(:gc_part2)
+            = t(:gc)
           %p 
             = t(:gc_explained)
       %li
         %a.learn-supplies{href:"/supplies"}
           %h2 
-            = t(:sup_part1)
-            </br>
-            = t(:sup_part2)
+            = t(:sup)
           %p 
             = t(:sup_explained)
       %li
         %a.learn-plan{href:"/plan"}
           %h2 
-            = t(:mp_part1)
-            </br>
-            = t(:mp_part2)
+            = t(:mp)
           %p 
             = t(:mp_explained)
   = render :partial => "partials/footer"

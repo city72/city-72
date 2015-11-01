@@ -4,23 +4,42 @@
 .main-container.connect
   = render :partial => "partials/header"
   .opening
-    %h1 Preparedness is all about people.
+    %h1 
+      = t(:allabout)
     %div
-      %p When disaster strikes, we come together to help each other. Getting prepared is about knowing your neighbors, saying hi to the regulars at the local market, and staying in touch with family and friends—both digitally and in person.
+      %p 
+        = t(:connectmain)
   .existing-networks
     .use
-      %h2 Connect through your<br /> digital networks.
-      %p.intro-networks In the event of an emergency, we all turn to our existing tools and networks—many of which are digital. Think about your connections and the online communities you’re already a part of, so you can share updates and information when something happens.
+      %h2 
+        = t(:networks)
+      %p.intro-networks 
+        = t(:inevent)
     .know
-      %h3 Learn about #{@city.abbreviation}72.
-      %p Find out the story behind the creation of #{@city.abbreviation}72.
-      %a{href:"about"} About Us
+      %h3 
+        = t(:learnabout)
+      %p 
+        = t(:learnaboutdetails)
+      %a{href:"about"} 
+        = t(:aboutus)
   .networks-list
     %ul
       %li.facebook
-        %h3 Use your</br>Facebook account
-        %p <strong>Now:</strong> Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together. Like <a href="http://#{@city_connection.facebook_page_url}" target="_blank">#{@city.abbreviation}72</a> on Facebook.
-        %p <strong>In an emergency:</strong> Post your status to Facebook to let friends and family know you are ok.
+        %h3 
+          = t(:useface)
+
+        %p 
+        
+          =t(:now) 
+
+          <br/>
+          =t(:whyface)
+             
+        %p
+        =t(:in_an_emergency_heading) 
+        <br/>
+        =t(:face_emergency)
+  
       %li.twitter
         %h3 Check updates</br>on Twitter
         %p <strong>Now:</strong> Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites: #{tweeter_accounts(@city_connection.twitter_accounts).html_safe}.

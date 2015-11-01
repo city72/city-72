@@ -1,24 +1,63 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
+# this is the ENGLISH version
+
 en:
   hello: "Hello world"
-  hero_image_text: "%{city_abbrev}72 is %{city_possessive} hub for emergency preparedness."
-  what_is: "What is %{city_abbrev}72?"
-  what_text: "%{city_abbrev}72 is your hub for emergency preparedness. You’ll find information about what to do in an emergency, simple steps to get connected, and useful guides to help you get prepared. Share %{city_abbrev}72 with a friend—and help your loved ones and your community get prepared."
+
+  # Home Page Strings
+  hero_image_text: "OAK72 is Oakland's hub for emergency preparedness."
+  what_is: "What is OAK72?"
+  what_text: "OAK72 is your hub for emergency preparedness. You’ll find information about what to do in an emergency, simple steps to get connected, and useful guides to help you get prepared. Share OAK72 with a friend—and help your loved ones and your community get prepared."
   why_72: "Why 72?"
   why_text: "In a serious emergency, services will be impacted, so a basic rule of thumb is for people to be able to take care of each other for 72 hours before help arrives. That’s just three days—think of it as a long weekend—or nine meals."
-  moto_part1: "We believe in connection,"
-  moto_part2: "not catastrophe."
-  moto_explained: "Actual emergencies look more like people coming together than cities falling apart. %{city_abbrev}72 is about prompting members of the community to get connected before an emergency—so we can be that much better off when something happens."
+  motto: "We believe in connection, not catastrophe."
+  motto_explained: "Actual emergencies look more like people coming together than cities falling apart. OAK72 is about prompting members of the community to get connected before an emergency—so we can be that much better off when something happens."
   good_news: "Good news. You’re more prepared than you think."
   learn_more: "Learn more..."
-  gc_part1: "Get"
-  gc_part2: "Connected"
+  gc: "Get Connected"
   gc_explained: "Make the most of your existing networks of friends, family, neighbors, and colleagues—so you can get help, and help others."
-  sup_part1: "Gather"
-  sup_part2: "Supplies"
+  sup: "Gather Supplies"
   sup_explained: "Find out what’s essential, useful, and nice to have in an emergency. You probably already have many of the supplies you need."
-  mp_part1: "Make"
-  mp_part2: "a Plan"
+  mp: "Make a Plan"
   mp_explained: "Make a basic plan with your loved ones—so you know what to do in an emergency."
+
+  #Get Connected Page Strings
+  allabout: "Preparedness is all about people."
+  connectmain: "When disaster strikes, we come together to help each other. Getting prepared is about knowing your neighbors, saying hi to the regulars at the local market, and staying in touch with family and friends—both digitally and in person."
+  networks: "Connect through your digital networks."
+  inevent: "In the event of an emergency, we all turn to our existing tools and networks—many of which are digital. Think about your connections and the online communities you’re already a part of, so you can share updates and information when something happens."
+  learnabout: "Learn about OAK72."
+  learnaboutdetails: "Find out the story behind the creation of OAK72."
+  aboutus: "About Us"
+  useface: "Use your Facebook account"
+  now: "Now:"
+
+  whyface: "Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together. Like %{name72} on Facebook."
+  name72: "OAK72"
+  #Translation Note: In the 'whyface' string above, the variable 'name72' will be replaced with a link to the specific City72 page on facebook. For example, in English this would come out as 'Like OAK72 on Facebook.'
+
+  in_an_emergency_heading: "In an emergency"
+  face_emergency: "Post your status to Facebook to let friends and family know you are ok."
+  use_twitter: "Check updates on Twitter"
+  use_twitter_now: "Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites:"
+  use_twitter_emergency: "Post about yourself and your area. Use %{city72_tweet_tag} to include them in the crowdsourced emergency feed."
+  use_cloud: "Save documents to a cloud service"
+  use_cloud_now: "Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies in the cloud through Google Drive or Dropbox."
+  use_cloud_emergency: "Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud."
+
+  use_local_networks: "Connect through your local networks."
+  use_local_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
+  how_to_connect: "How to Connect"
+  my_yoga: "My yoga class"
+  my_workplace: "My workplace"
+  my_bookclub: "My book club"
+  my_bar: "My neighborhood bar"
+  my_school: "My school"
+  my_congregation: "My congregation"
+
+  learn_from_partners: "Learn more from our partners."
+  connect_with_organizations: "To get even better prepared as a household, neighborhood, or community, connect with these organizations."
+
+
