@@ -41,13 +41,27 @@
         =t(:face_emergency)
   
       %li.twitter
-        %h3 Check updates</br>on Twitter
-        %p <strong>Now:</strong> Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites: #{tweeter_accounts(@city_connection.twitter_accounts).html_safe}.
-        %p <strong>In an emergency:</strong> Post about yourself and your area. Use <a href="https://twitter.com/search?q=%23#{@city.abbreviation}72" target="_blank">##{@city.abbreviation}72</a> to include them in the crowdsourced emergency feed.
+        %h3 
+          =t(:use_twitter)
+        %p
+          =t(:now) 
+          
+          <br/>
+          =(:use_twitter_now)
+        %p
+        =t(:in_an_emergency_heading)
+        =t(:use_twitter_emergency)
+        
       %li.drive
-        %h3 Save documents to</br>a cloud service
-        %p <strong>Now:</strong> Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies in the cloud through Google Drive or Dropbox.
-        %p <strong>In an emergency:</strong> Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud.
+        %h3
+        =(:use_cloud)
+        %p
+        =(:now)
+        =(:use_cloud_now)
+        %p
+        =t(:in_an_emergency_heading)
+        =t(:use_cloud_emergency) 
+        
       - @city_connection.city_networks.included.each do |cn|
         %li
           - unless cn.logo.blank?
@@ -65,24 +79,35 @@
   .full-img-article
     %ul
       %li.use
-        %h3 Connect through</br>your local networks.
-        %p Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens.
+        %h3 
+        =(:use_local_networks)
+        %p 
+        =(:use_local_networks_why)
       %li.what
-        %h3 How to</br>Connect
+        %h3 
+        =(:how_to_connect)
         %ul.your-net
           %li.net-first
             %ul
-              %li My yoga class
-              %li My workplace
-              %li My book club
+              %li
+              =(:my_yoga)
+              %li
+              =(:my_workplace)
+              %li
+              =(:my_bookclub)
           %li.net-second
             %ul
-              %li My neighborhood bar
-              %li My school
-              %li My congregation
+              %li
+              =(:my_bar)
+              %li
+              =(:my_school)
+              %li
+              =(:my_congregation)
   .learn-more
-    %h3 Learn more from our partners.
-    %p To get even better prepared as a household, neighborhood, or community, connect with these organizations.
+    %h3 
+    =(:learn_from_partners)
+    %p 
+    =(:connect_with_organizations)
     %ul
       - @city_connection.city_resources.included.each do |cr|
         %li
