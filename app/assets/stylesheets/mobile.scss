@@ -23,7 +23,7 @@ $mobile-padding: 23px;
 
 @mixin right-arrow($color, $top, $right, $size: 2rem) {
 	&:before {
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		content: "\73";
 		position: absolute;
 		top: $top;
@@ -143,7 +143,7 @@ $mobile-padding: 23px;
 	}
 
 	.logo-mobile:after {
-		font-family: "sf72-icons";
+		font-family: "city72icons";
 		font-size: 1.4rem;
 		color: $mobile-gray-title;
 		content: "y";
@@ -261,7 +261,7 @@ $mobile-padding: 23px;
 		left: .4rem;
 		top: -.2rem;
 		position: absolute;
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		content: "5";
 		text-indent: 0;
 	}
@@ -1117,7 +1117,7 @@ $mobile-padding: 23px;
 
 		.mobile-link:after {
 			position: absolute;
-			font-family: 'sf72-icons';
+			font-family: 'city72icons';
 			content: 's';
 			top: 0.4rem;
 			right: 6%;
@@ -1684,7 +1684,7 @@ $mobile-padding: 23px;
 			}
 
 			// .story-data:after {
-			// 	font-family: 'sf72-icons';
+			// 	font-family: 'city72icons';
 			// 	font-size: 1.5rem;
 			// 	content: 's';
 			// 	position: absolute;

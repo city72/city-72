@@ -39,7 +39,7 @@
 		position: absolute;
 		right: 0;
 		top: 0.3em;
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		content: 's';
 		font-size: 0.7em;
 	}
@@ -48,7 +48,7 @@
 		position: absolute;
 		left: 0;
 		top: -0.3em;
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		content: 'q';
 		font-size: 1.3em;
 		-webkit-font-smoothing: antialiased;
@@ -109,7 +109,7 @@
 		position: absolute;
 		top: 1.6em;
 		right: 1.2rem;
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		speak: none;
 		content: 's';
 		font-size: 0.5em;
@@ -131,7 +131,7 @@ a.checklist {
 }
 
 a.checklist:before {
-	font-family: 'sf72-icons';
+	font-family: 'city72icons';
 	speak: none;
 	content: 'q';
 	position: absolute;
@@ -226,7 +226,7 @@ a.checklist:before {
 	}
 	
 	h3:before {
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		font-size: 2.7rem;
 		content: 'n';
 		color: $highlight-dark;
@@ -375,7 +375,7 @@ a.checklist:before {
 
 
 .list-download > a:before {
-	font-family: 'sf72-icons';
+	font-family: 'city72icons';
 	content: "q";
 	font-size: 2.3rem;
 	position: absolute;
