@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby "1.9.3"
 
 gem 'rails', '3.2.13'
+gem 'quiet_assets'
+
 gem 'rack-timeout', '~> 0.0.4'
 gem 'newrelic_rpm', '~> 3.6.8.168'
 gem 'activeadmin', '~> 0.6.3'

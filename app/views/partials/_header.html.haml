@@ -1,3 +1,7 @@
+.i18n-change-bar
+  .change-icon#change-icon
+    %img{src: 'assets/translate_transp.gif', class: 'img-responsive'}
+  .language-menu#language-menu
 .header
   %a.logo{href:"/home"}
     #logo{ height: "100", width: "150"}
@@ -9,7 +13,8 @@
   %ul.main-nav
     %li
       %a{href:"/connect"}
-        %strong Get<br>Connected
+        %strong
+          = show_in_two_rows t(:gc) 
     %li
       %a{href:"/supplies"}
         %strong Gather<br>Supplies
@@ -31,7 +36,8 @@
               %strong Home
           %li
             %a{href:"/connect"}
-              %strong Get Connected
+              %strong
+                = t(:gc)
           %li
             %a{href:"/supplies"}
               %strong Gather Supplies

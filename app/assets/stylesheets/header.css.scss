@@ -4,6 +4,33 @@
 	position: relative;
 }
 
+$header-height: 40px;
+.i18n-change-bar {
+  border-bottom: solid 1px $light-grey;
+  min-height: $header-height;
+  position: relative;
+  .change-icon {
+    cursor: pointer;
+    float: right;
+    max-height: $header-height;
+    img {
+      max-height: $header-height;
+    }
+  }
+
+  .language-menu {
+    display: none;
+    position: absolute;
+    opacity: 0.8;
+    background-color: grey;
+    height: 50px;
+    width: 10%;
+    z-index: 2;
+    top: 110%;
+    left: 90%;
+  }
+}
+
 #logo {
 	@include span-columns(3.37061107);
 	margin-top: 1.5rem;
@@ -170,3 +197,4 @@
 #build-menu-button {
 	display: none;
 }
+/* END HEADER */
