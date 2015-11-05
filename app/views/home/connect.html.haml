@@ -54,13 +54,57 @@
         
       %li.drive
         %h3
-        =(:use_cloud)
+          =(:use_cloud)
         %p
-        =(:now)
-        =(:use_cloud_now)
+          =(:now)
+          =(:use_cloud_now)
         %p
-        =t(:in_an_emergency_heading)
-        =t(:use_cloud_emergency) 
+          =t(:in_an_emergency_heading)
+          <br/>
+          =t(:use_cloud_emergency) 
+
+
+      %li.neighbors
+        %h3 
+          = t(:usedoor)
+        %p       
+          =t(:now) 
+          <br/>
+          =t(:whydoor)
+        %p
+          =t(:in_an_emergency_heading) 
+          <br/>
+          =t(:door_emergency)
+
+
+        %li.airbnb
+          %h3 
+            = t(:useair)
+          %p        
+            =t(:now) 
+            <br/>
+            =t(:whyair)          
+          %p
+            =t(:in_an_emergency_heading) 
+            <br/>
+            =t(:air_emergency)
+
+
+        %li.nixle
+          %h3 
+            = t(:usenixle)
+          %p        
+            =t(:now) 
+            <br/>
+            =t(:whynixle)          
+          %p
+            =t(:in_an_emergency_heading) 
+            <br/>
+            =t(:nixle_emergency)
+
+
+
+
         
       - @city_connection.city_networks.included.each do |cn|
         %li
