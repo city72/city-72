@@ -1,5 +1,5 @@
 City72::Application.routes.draw do
-  scope "(:locale)", locale: /en|es/ do
+  scope "(:locale)", locale: /vi|tl|zh|en|es/ do
     devise_scope :admin_user do
       get "/admin_users/sign_up", :to => "home#index"
     end
