@@ -211,6 +211,7 @@ $mobile-padding: 23px;
 					font-size: 1.3125rem;
 					font-weight: normal;
 					font-family: $font-bold;
+					line-height: 1.2em;
 				}
 
 				li.em-link {
@@ -219,7 +220,7 @@ $mobile-padding: 23px;
 
 					p {
 						font-family: $font-medium;
-						font-size: 0.75rem;
+						font-size: 1.3125rem;
 						line-height: 1.2;
 					}
 
@@ -267,7 +268,7 @@ $mobile-padding: 23px;
 	}
 
 	#build-menu-page {
-		max-width: 320px;
+		
 	}
 
 	/* MOBILE GRID */
@@ -293,7 +294,8 @@ $mobile-padding: 23px;
 	}
 
 	.home .page-intro {
-		margin-top: 41px;
+		// margin-top: 41px;
+		margin-bottom: 20px;
 
 		&:before {
 			display: none;
@@ -454,7 +456,7 @@ $mobile-padding: 23px;
 
 	/* GENERAL ELEMENTS */
 	.opening {
-		margin-top: 44px;
+		// margin-top: 44px;
 
 		h1 {
 			@include span-columns(4);

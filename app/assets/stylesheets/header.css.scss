@@ -67,6 +67,7 @@ $header-height: 40px;
 	@include omega;
 	position: relative;
 	border-left: 2px solid lighten( $light-grey, 5% );
+
 }
 
 .main-nav {
@@ -86,6 +87,7 @@ $header-height: 40px;
 		font-size: 0.9rem;
 		font-weight: normal;
 		line-height: 1.15rem;
+		max-width: 80px;
 	}
 
 	span {
@@ -154,7 +156,8 @@ $header-height: 40px;
 	}
 
 	li.em-li {
-		background-color: #F4F4F4 !important
+		background-color: #F4F4F4
+
 	}
 
 	.submenu {
