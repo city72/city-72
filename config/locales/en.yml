@@ -6,6 +6,16 @@
 en:
   hello: "Hello world"
 
+  #Navigation: Header
+  get_connected: "Get Connected"
+  gather_supplies: "Gather Supplies"
+  view_stories: "View Stories"
+  make_a_plan: "Make a Plan"
+  map_and_updates: "Oak72 Map & Updates"
+  live_updates: "Live updates + crisis tools in an emergency."
+  situation_map: "Situation Map"
+  updates: "Updates"
+
   # Home Page Strings
   hero_image_text: "OAK72 is Oakland's hub for emergency preparedness."
   what_is: "What is OAK72?"
@@ -16,7 +26,6 @@ en:
   motto_explained: "Actual emergencies look more like people coming together than cities falling apart. OAK72 is about prompting members of the community to get connected before an emergency—so we can be that much better off when something happens."
   good_news: "Good news. You’re more prepared than you think."
   learn_more: "Learn more..."
-  gc: "Get Connected"
   gc_explained: "Make the most of your existing networks of friends, family, neighbors, and colleagues—so you can get help, and help others."
   sup: "Gather Supplies"
   sup_explained: "Find out what’s essential, useful, and nice to have in an emergency. You probably already have many of the supplies you need."

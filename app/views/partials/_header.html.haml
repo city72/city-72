@@ -14,19 +14,23 @@
     %li
       %a{href:"/connect"}
         %strong
-          = show_in_two_rows t(:gc) 
+          = show_in_two_rows t(:get_connected) 
     %li
       %a{href:"/supplies"}
-        %strong Gather<br>Supplies
+        %strong
+          = show_in_two_rows t(:gather_supplies)
     %li
       %a{href:"/stories"}
-        %strong View<br>Stories
+        %strong
+          = show_in_two_rows t(:view_stories)
     %li
       %a{href:"/plan"}
-        %strong Make<br>a Plan
+        %strong
+          = t(:make_a_plan)
     %li.em-link
       %a{href:"/em/home"}
-        %strong  #{@city.abbreviation}72 Map & Updates
+        %strong
+          = t(:map_and_updates)
   - unless browser.ie?
     .mobile-menu
       .normal-mode
@@ -37,22 +41,24 @@
           %li
             %a{href:"/connect"}
               %strong
-                = t(:gc)
+                = t(:get_connected)
           %li
             %a{href:"/supplies"}
-              %strong Gather Supplies
+              %strong
+                = t(:gather_supplies)
           %li
             %a{href:"/stories"}
-              %strong View Stories
+              %strong
+                = t(:view_stories)
           %li
             %a{href:"/plan"}
-              %strong Make a Plan
-          %li.em-link
-            %strong #{@city.abbreviation}72 Now Updates
-            .fold
-              %p Live updates + crisis tools in an emergency.
-              %ul
-                %li.em-li
-                  %a{href:"/em/home#mobile-maps"} Situation Map
-                %li.em-li
-                  %a{href:"/em/home#mobile-updates"} Updates
+              %strong
+                = t(:make_a_plan)
+          %li.em-li
+            %a{href:"/em/home#mobile-maps"} 
+              %strong
+                = t(:situation_map)
+          %li.em-li
+            %a{href:"/em/home#mobile-updates"} 
+              %strong
+                = t(:updates)
