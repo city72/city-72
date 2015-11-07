@@ -27,82 +27,91 @@
       %li.facebook
         %h3 
           = t(:useface)
-
-        %p 
-        
-          =t(:now) 
-
-          <br/>
-          =t(:whyface)
-             
         %p
-        =t(:in_an_emergency_heading) 
-        <br/>
-        =t(:face_emergency)
+          %strong
+            =t(:now) 
+            <br/>
+          =t(:whyface)   
+        %p
+          %strong
+            =t(:in_an_emergency_heading) 
+            <br/>
+          =t(:face_emergency)
   
       %li.twitter
         %h3 
           =t(:use_twitter)
         %p
-          =t(:now) 
-          
-          <br/>
-          =(:use_twitter_now)
+          %strong
+            =t(:now) 
+            <br/>
+          =t(:use_twitter_now)
         %p
-        =t(:in_an_emergency_heading)
-        =t(:use_twitter_emergency)
+          %strong
+            =t(:in_an_emergency_heading)
+          =t(:use_twitter_emergency)
         
       %li.drive
         %h3
-          =(:use_cloud)
+          =t(:use_cloud)
         %p
-          =(:now)
-          =(:use_cloud_now)
+          %strong
+            =t(:now)
+          =t(:use_cloud_now)
         %p
-          =t(:in_an_emergency_heading)
-          <br/>
+          %strong
+            =t(:in_an_emergency_heading)
+            <br/>
           =t(:use_cloud_emergency) 
 
+      %li.airbnb
+        %h3 
+          = t(:useair)
+        %p 
+          %strong       
+            =t(:now) 
+            <br/>
+          =t(:whyair)          
+        %p
+          %strong
+            =t(:in_an_emergency_heading) 
+            <br/>
+          =t(:air_emergency)
+        %a{:href => "https://airbnb.com", :target => "_blank"}
+          =t(:start_now)
 
       %li.neighbors
         %h3 
-          = t(:usedoor)
-        %p       
-          =t(:now) 
-          <br/>
-          =t(:whydoor)
+          = t(:door)
         %p
-          =t(:in_an_emergency_heading) 
-          <br/>
+          %strong      
+            =t(:now) 
+            <br/>
+          =t(:door_now)
+        %p
+          %strong
+            =t(:in_an_emergency_heading) 
+            <br/>
           =t(:door_emergency)
+        %a{:href => "https://nextdoor.com", :target => "_blank"}
+          =t(:start_now)
 
-
-        %li.airbnb
-          %h3 
-            = t(:useair)
-          %p        
+      %li.nixle
+        %h3 
+          = t(:usenixle)
+        %p.now 
+          %strong 
             =t(:now) 
             <br/>
-            =t(:whyair)          
-          %p
+          =t(:whynixle)          
+        %p
+          %strong
             =t(:in_an_emergency_heading) 
             <br/>
-            =t(:air_emergency)
-
-
-        %li.nixle
-          %h3 
-            = t(:usenixle)
-          %p        
-            =t(:now) 
-            <br/>
-            =t(:whynixle)          
-          %p
-            =t(:in_an_emergency_heading) 
-            <br/>
-            =t(:nixle_emergency)
-
-
+          =t(:nixle_emergency)
+        %a{:href => "https://nixle.com/city/ca/oakland/", :target => "_blank"}
+          =t(:start_now)
+          
 
 
         
