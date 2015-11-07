@@ -42,7 +42,7 @@ en:
   aboutus: "About Us"
   useface: "Use your Facebook account"
   now: "Now:"
-
+  #get_connected (translated above in the Navigation section)
   whyface: "Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together. Like %{name72} on Facebook."
   name72: "OAK72"
   #Translation Note: In the 'whyface' string above, the variable 'name72' will be replaced with a link to the specific City72 page on facebook. For example, in English this would come out as 'Like OAK72 on Facebook.'
