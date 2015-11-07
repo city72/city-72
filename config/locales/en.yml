@@ -46,15 +46,15 @@ en:
   useface: "Use your Facebook account"
   now: "Now:"
   #get_connected string already defined
-  whyface: "Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together. Like OAK72 on Facebook."
+  whyface: "Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together."
   in_an_emergency_heading: "In an emergency"
   face_emergency: "Post your status to Facebook to let friends and family know you are ok."
   use_twitter: "Check updates on Twitter"
   use_twitter_now: "Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites"
-  use_twitter_emergency: 'Post about yourself and your area. Use %{city72_tweet_tag} to include them in the crowdsourced emergency feed.'
+  use_twitter_emergency: 'Post about yourself and your area. Use #OAK72 to connect related tweets.'
   city72_tweet_tag: "OAK72"
   use_cloud: "Save documents to a cloud service"
-  use_cloud_now: "Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies in the cloud through Google Drive or Dropbox."
+  use_cloud_now: "Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies on Google Drive or Dropbox."
   use_cloud_emergency: "Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud."
   use_local_networks: "Connect through your local networks."
   use_local_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
@@ -62,7 +62,7 @@ en:
   door_now: "Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan."
   door_emergency: "Log onto Nextdoor to share local information and resources with people who live near you."
   start_now: "Start now"
-  useair: "Sign up for AirBnB"
+  useair: "Sign up for an AirBnB account"
   whyair: "Create an AirBnB proﬁle so you are ready to ﬁnd or share a place to stay if anything happens."
   air_emergency: "Find a place to stay, or share your place with those in need."
   #start_now string already defined
@@ -70,7 +70,8 @@ en:
   whynixle: "Sign up for text message updates about what's going on in your neighborhood and throughout Oakland."
   nixle_emergency: "Check your phone for automated updates and text messages."
   #start_now string already defined
-
+  neighborhood_networks: "Connect through your local networks."
+  neighborhood_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
   how_to_connect: "How to Connect"
   my_yoga: "My yoga class"
   my_workplace: "My workplace"
