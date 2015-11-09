@@ -4,7 +4,7 @@
 # this is the ENGLISH version
 
 en:
-  hello: "Hello world"
+  hello: "Hello"
 
   #city72 site name
   name72: "OAK72"
@@ -21,7 +21,9 @@ en:
   situation_map: "Situation Map"
   updates: "Updates"
 
-
+  #===========================#
+  #Home Landing Page Strings
+  #===========================#
   hero_image_text: "OAK72 is Oakland's hub for emergency preparedness."
   what_is: "What is OAK72?"
   what_text: "OAK72 is your hub for emergency preparedness. You’ll find information about what to do in an emergency, simple steps to get connected, and useful guides to help you get prepared. Share OAK72 with a friend—and help your loved ones and your community get prepared."
@@ -114,37 +116,73 @@ en:
   #===========================#
   #Supply Items
   #===========================#
-  #Essentials
-  water: "Water"
-  water_why: "Everyone enjoys a tall drink of water. Stay hydrated by gathering one gallon per person, per day."
-  first_aid: "First aid kit"
-  first_aid_why: "You might need to be able to patch up small scrapes until help arrives. Channel your inner Scout and keep a first aid kit on hand."
-  flash_light: "Flash light and extra batteries"
-  flash_light_why: "While candles are great for ambience, a good flashlight is invaluable for navigating if power is out. Simply put: it buys you freedom."
-  fire_extinguisher: "Fire extinguisher"
-  fire_extinguisher_why: "You didn't start the fire. But you can help extinguish it. Stash a fire extinguisher with your supplies so that you can stay safe."
-  manual_can_opener: "Manual can opener"
-  manual_can_opener_why: "Just like when camping, in an emergency an old fashioned can opener is just the ticket. Impress your friends with your canned culinary choices."
-  non_perishable_food: "Non-perishable food"
-  non_perishable_food_why: "Next time you're at the grocery store, add extra shelf-stable foods (that you like to eat!) to your basket. We recommend 3 days of food per person."
-  #Useful
-  # : ""
-  # : ""
-  # : ""
-  # : ""
-  # : ""
-  # : ""
-  # : ""
-  # : ""
-  # : ""
-  # #
-  # : ""
-  # : ""
-  # : ""
+  fyi_supply: "None of these views exist yet"
+  # #Essentials
+  # water: "Water"
+  # water_why: "Everyone enjoys a tall drink of water. Stay hydrated by gathering one gallon per person, per day."
+  # first_aid: "First aid kit"
+  # first_aid_why: "You might need to be able to patch up small scrapes until help arrives. Channel your inner Scout and keep a first aid kit on hand."
+  # flash_light: "Flash light and extra batteries"
+  # flash_light_why: "While candles are great for ambience, a good flashlight is invaluable for navigating if power is out. Simply put: it buys you freedom."
+  # fire_extinguisher: "Fire extinguisher"
+  # fire_extinguisher_why: "You didn't start the fire. But you can help extinguish it. Stash a fire extinguisher with your supplies so that you can stay safe."
+  # manual_can_opener: "Manual can opener"
+  # manual_can_opener_why: "Just like when camping, in an emergency an old fashioned can opener is just the ticket. Impress your friends with your canned culinary choices."
+  # non_perishable_food: "Non-perishable food"
+  # non_perishable_food_why: "Next time you're at the grocery store, add extra shelf-stable foods (that you like to eat!) to your basket. We recommend 3 days of food per person."
+
+  # #Useful
+  # warm_clothes: "Warm clothes and sturdy shoes"
+  # warm_clothes_why: "You never know when an emergency might happen — or what you might (or might not) be wearing. Be ready for the elements by setting aside warm clothes and walking shoes."
+  # radio_battery: "Radio (battery operated or hand crank)"
+  # radio_battery_why: "Feeling safe starts with knowing what's going on—so tune into the radio. Check 740AM for live updates—and your favorite radio station to pass the time."
+  # cash_on_hand: "Cash"
+  # cash_on_hand_why: "In an emergency, credit cards might not work, and cash becomes important. Protect your purchasing power by stashing small bills."
+  # sleeping_bag: "Sleeping bag or blankets"
+  # sleeping_bag_why: "Keeping warm is crucial. Blankets and sleeping bags will help you stay snug, even when the fog rolls in—or if the power goes out."
+  # cellphone_charger: "Cellphone charger (battery operated or car plug-in)"
+  # cellphone_charger_why: "A battery operated phone charger, or one that plugs into your car, will help you stay informed, take photos, and communicate in an emergency."
+  # tools: "Tools"
+  # tools_why: "A basic toolkit with items like a hammer and duct tape will help you turn off the gas, repair broken windows, or board up your home."
+
+  # #Personal
+  # prescriptions: "Prescriptions"
+  # prescriptions_why: "Plan for your personal health. Keep a 3-day dose of any medicine you take on a regular basis, in case the pharmacy is closed."
+  # sweet_and_salty: "Sweet (or salty) treats"
+  # sweet_and_salty_why: "What non-perishable comfort food would lift your spirits? A supply of chocolate, dried fruit, or nuts with your emergency snacks might make you smile, and help you make friends."
+  # personal_hygiene: "Personal hygiene & sanitation items"
+  # personal_hygiene_why: "Toilet paper, feminine supplies, hand sanitizer, a toothbrush, soap, unscented bleach, and heavy duty garbage bags are a good place to start."
+  # personal_documents: "Personal documents"
+  # personal_documents_why: "Upload copies of your driver's license, passport, leases, titles, and contact list to the cloud. Protect your assets, by going digital. Or make photocopies."
+  # childrens_toys: "Children's toys and games"
+  # childrens_toys_why: "What unique items would make your family feel better in an emergency? Favorite games? Special toys? Little things can make a big difference."
+  # pet_items: "Pet items"
+  # pet_items_why: "Don't forget to store dog food, toys, or extra water for your pets."
+  # #Supplies to Share
+  # grill: "Grill"
+  # drinks: "Drinks"
+  # board_games: "Board games"
+
   #===========================#
   #View Stories Page
   #===========================#
-
+  # : "Hear real-world stories."
+  # : "Get inspired by members of our community."
+  # : "Hearing stories from people that have lived through an emergency is a powerful way to learn. You are probably more prepared than you think."
+  # : "A personal look at emergencies and connection."
+  # : "Watch stories of people who have lived through disasters—and those who are already fostering connections in Oakland. No matter your situation, chances are, there’s someone like you with wisdom to share."
+  # : "Our city."
+  # : "Oakland is a place where people come together to enjoy life, especially when that means helping eachother."
+  # : "We believe in connection, not catastrophe."
+  #STORY TITLES AND CAPTIONS
+  # : ""
+  # : ""
+  # : ""
+  # : ""
+  # : ""
+  # : ""
+  # : ""
+  # : ""
 
   #===========================#
   #Make a Plan Page
@@ -170,13 +208,29 @@ en:
   guide_title: "Quake Guide"
   print_full_guide: "Print Full Guide"
   before_event: ""
-  #translation note: before_event was intentionally left empty (it is left in for hurricanes, tornados, etc)
+  #translation note: The before_event string above was intentionally left empty (it is left in for hurricanes, tornados, etc)
   during_event: "During a Quake"
   after_event: "After a Quake"
 
   #===========================#
   #About Us Page
   #===========================#
+  for_us_by_us : "OAK72 is for us, by us."
+  # : "Our mission is to enable Oaklanders to get prepared. OAK72 was created by OpenOakland & the City of Oakland, with the belief that the best way to do this is to get connected to each other, share resources, and start re-imagining the way we think about emergencies."
+  # : "Who"
+  # : "For Oakland, by Oakland."
+  # : "Oakland is like no other place – and this platform is tailored to the particular quirks, context and people that make up our city."
+  # : "What"
+  # : "A people-centered vision of emergency preparedness. Nobody likes to think about emergencies, but OAK72 takes the mystery out of the process of getting prepared. We do this by telling human stories and providing tools that fit into your daily life."
+  # : "OAK72 is not a new social network. It’s a platform designed to plug into your existing networks – whether social or digital."
+  # : "Why"
+  # : "A little now will mean a lot later; connecting with your network, downloading an app, or watching a video is the first step towards being better prepared for an emergency."
+  # : "Oakland, along with other cities across the country, is leading the charge for a different kind of emergency prep. Let’s start the movement."
+  # : "Image Credits"
+  # : "Some images generously provided through the Creative Commons licensing format by:"
+  # : ""
+  # : ""
+  # : ""
 
   #===========================#
   #Map & Updates Page(s)

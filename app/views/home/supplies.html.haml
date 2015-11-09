@@ -37,33 +37,33 @@
       %p.tab-tip 
         =t (:useful_why)
       %ul.things-list.useful
-        - @useful.each do |item|
-          %li
-            .use-case-dialog
-              #{item.use_case}
-            = retina_image_tag item.image, item.title
-            %h4 #{item.title}
-            %p.overlay-text #{item.use_case}
+        -# - @useful.each do |item|
+        -#   %li
+        -#     .use-case-dialog
+        -#       #{item.use_case}
+        -#     = retina_image_tag item.image, item.title
+        -#     %h4 #{item.title}
+        -#     %p.overlay-text #{item.use_case}
     %li.tab-personal-content
       %p.tab-tip 
         =t (:personal_why)
       
       %ul.things-list.personal
-        - @personal.each do |item|
-          %li
-            .use-case-dialog
-              #{item.use_case}
-            = retina_image_tag item.image, item.title
-            %h4 #{item.title}
-            %p.overlay-text #{item.use_case}
+        -# - @personal.each do |item|
+        -#   %li
+        -#     .use-case-dialog
+        -#       #{item.use_case}
+        -#     = retina_image_tag item.image, item.title
+        -#     %h4 #{item.title}
+        -#     %p.overlay-text #{item.use_case}
   .kits
     %h2 
       =t (:sharing_is)
     %p 
       =t (:sharing_why)
     %ul.kits-list
-      - @kits.each do |kit|
-        %li
-          = retina_image_tag kit.image, kit.title
-          %span #{kit.title}
+      -# - @kits.each do |kit|
+      -#   %li
+      -#     = retina_image_tag kit.image, kit.title
+      -#     %span #{kit.title}
   = render :partial => "partials/footer"
