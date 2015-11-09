@@ -17,11 +17,14 @@
           %p #{@mode.text}
       - else
         .alert-info
-          %h3 In an emergency, this page will be your real-time information hub.
-          %p You’ll find official updates, crowdsourced reports, and a crisis map to navigate city resources. Tour this Emergency Mode to better understand how to use it in the event of an emergency.
+          %h3
+            =t (:in_an_emergency)
+          %p
+            =t (:you_will_find)
       .map-actions
-        %a.map-tips-trigger{href:"#"} Map Guide
-        %a.expand-map-trigger{href:"#"} Expand Map
+        -# %a.map-tips-trigger{href:"#"} Map Guide
+        %a.expand-map-trigger{href:"#"}
+          =t (:expand_map)
       / .em-quick-guide-trigger
       /   %a.show-quick-guide{src:"#"} What should I do?
       /   %a.hide-quick-guide{src: "#"} Hide what to do
@@ -51,23 +54,29 @@
     %ul.tw-tabs
       %li.active#citizen-updates-tab
         %a{href:"#tab-citizen-updates"}
-          %h3 Official Updates
+          %h3
+            =t (:official_updates)
       %li#official-reports-tab 
         %a{href:"#tab-official-reports"}
-          %h3 Partner Updates
+          %h3
+            =t (:partner_updates)
       %li#transportation-updates-tab
         %a{href:"#tab-service-status"}
-          %h3 Transportation Updates
+          %h3
+            =t (:transportation_updates)
     %ul.tw-tabs-mobile
       %li.active
         %a{href:"#tab-citizen-updates"}
-          %h3 Official
+          %h3
+            =t (:official)
       %li 
         %a{href:"#tab-official-reports"}
-          %h3 Partner
+          %h3
+            =t (:partner)
       %li 
         %a{href:"#tab-service-status"}
-          %h3 Transportation
+          %h3
+            =t (:transportation)
   .main-container.updates-wrapper
     .updates
       .citizen-reports

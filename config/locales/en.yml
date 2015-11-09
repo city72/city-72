@@ -235,5 +235,16 @@ en:
   #===========================#
   #Map & Updates Page(s)
   #===========================#
+  in_an_emergency: "In an emergency, this page will be your real-time information hub."
+  you_will_find: "You’ll find official updates, crowdsourced reports, and a crisis map to navigate city resources. Tour this Emergency Mode to better understand how to use it in the event of an emergency."
+  expand_map: "Expand Map"
+  official_updates: "Official Updates"
+  partner_updates: "Partner Updates"
+  transportation_updates: "Transportation Updates"
+  official : "Official"
+  partner : "Partner"
+  transportation : "Transportation"
+
+
 
 
