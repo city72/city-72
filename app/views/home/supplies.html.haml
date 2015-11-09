@@ -11,24 +11,31 @@
   .action-bar
     %ul.tabs
       %li.essentials-trigger.active
-        %a{href:"#tab-essentials-content"} Essentials
+        %a{href:"#tab-essentials-content"}
+          =t (:essentials)
       %li
-        %a{href:"#tab-useful-content"} Useful
+        %a{href:"#tab-useful-content"}
+          =t (:useful)
       %li
-        %a{href:"#tab-personal-content"} Personal
+        %a{href:"#tab-personal-content"}
+          =t (:personal)
   %ul.tabs-content 
     %li.tab-essentials-content
-      %p.tab-tip In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort.
+      %p.tab-tip
+        =t (:essentials_why)
       %ul.things-list.essential
-        - @essentials.each do |item|
-          %li
-            .use-case-dialog
-              #{item.use_case}
-            = retina_image_tag item.image, item.title
-            %h4 #{item.title}
-            %p.overlay-text #{item.use_case}
+        -# - @essentials.each do |item|
+        %li
+          .use-case-dialog
+            -# #{item.use_case}
+          -# = retina_image_tag item.image, item.title
+          %h4 
+            =t (:water)
+          %p.overlay-text 
+            =t (:water_why)
     %li.tab-useful-content
-      %p.tab-tip These items represent things that many people want in an emergency—but don’t always think of. Stash them away, and you’ll get through the first 72 hours more easily.
+      %p.tab-tip 
+        =t (:useful_why)
       %ul.things-list.useful
         - @useful.each do |item|
           %li
@@ -38,7 +45,9 @@
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
     %li.tab-personal-content
-      %p.tab-tip In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort.
+      %p.tab-tip 
+        =t (:personal_why)
+      
       %ul.things-list.personal
         - @personal.each do |item|
           %li
@@ -48,8 +57,10 @@
             %h4 #{item.title}
             %p.overlay-text #{item.use_case}
   .kits
-    %h2 Sharing is caring.
-    %p Emergencies are opportunities to come together and support those around you. What items would you’d like to share? Uncorking a bottle of wine, singing songs, or sharing  a meal are even more meaningful in the days after an emergency than before.
+    %h2 
+      =t (:sharing_is)
+    %p 
+      =t (:sharing_why)
     %ul.kits-list
       - @kits.each do |kit|
         %li
