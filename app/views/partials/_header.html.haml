@@ -6,7 +6,7 @@
   %a.logo{href:"/home"}
     #logo{ height: "100", width: "150"}
       - if @about.logo.url
-        %img{src: "#{@about.logo.url}", alt: "#{@city.abbreviation}72 (logo)"}
+        %img{src: "assets/city72logo.svg", alt: "#{@city.abbreviation}72 (logo)"}
       - else
         %span.text-logo #{@city.abbreviation}72
   %a.logo-mobile{href:"/home"}
