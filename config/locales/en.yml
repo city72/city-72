@@ -71,10 +71,6 @@ en:
   door_now: "Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan."
   door_emergency: "Log onto Nextdoor to share local information and resources with people who live near you."
   start_now: "Start now"
-  #AirBnB
-  useair: "Sign up for an AirBnB account"
-  whyair: "Create an AirBnB proﬁle so you are ready to ﬁnd or share a place to stay if anything happens."
-  air_emergency: "Find a place to stay, or share your place with those in need."
   #Nixle
   usenixle: "Sign up for Nixle to get txt message updates"
   whynixle: "Sign up for text message updates about what's going on in your neighborhood and throughout Oakland."
@@ -235,7 +231,7 @@ en:
   #===========================#
   #Map & Updates Page(s)
   #===========================#
-  em_home_title: "In an Emergency"
+  em_home_title: "OAK72 - In an Emergency"
   in_an_emergency: "In an emergency, this page will be your real-time information hub."
   you_will_find: "You’ll find official updates, partner updates, traffic information, and a crisis map to navigate city resources. Tour this Emergency Mode to better understand how to use it in the event of an emergency."
   map_guide: "Map Guide"
@@ -264,26 +260,4 @@ en:
   five_of_five: "5 of 5"
   finish: "Finish"
   next: "Next"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
