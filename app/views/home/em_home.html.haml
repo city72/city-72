@@ -22,7 +22,8 @@
           %p
             =t (:you_will_find)
       .map-actions
-        -# %a.map-tips-trigger{href:"#"} Map Guide
+        %a.map-tips-trigger{href:"#"}
+          =t (:map_guide)
         %a.expand-map-trigger{href:"#"}
           =t (:expand_map)
       / .em-quick-guide-trigger
@@ -107,9 +108,12 @@
 %ol#joyride-steps{"style" => "display:none"}
   %li{"data-class" => "alert-info"}
     .icon.icon-info
-    %h4.header What happened?
-    %p.description Announces the crisis and its severity.
-    %p.index 1 of 5
+    %h4.header
+      =t (:what_happened)
+    %p.description
+      =t (:announces_the_crisis)
+    %p.index
+      =t (:one_of_five)
   / %li{"data-class" => "em-quick-guide-trigger"}
   /   .icon.icon-info
   /   %h4.header What should I do?
@@ -119,22 +123,34 @@
       "data-options"  => "tipLocation:right",
       }
     .icon.icon-map-on
-    %h4.header Street Status
-    %p.description A geo-tagged crisis map that shows nearby shelters and resources, as well as hazardous or road-blocked areas &ndash; so you can find safety in your surroundings
-    %p.index 2 of 5
+    %h4.header
+      =t (:street_status)
+    %p.description 
+      =t (:a_geo_tageed)
+    %p.index 
+      =t (:two_of_five)
   %li{"data-id" => "citizen-updates-tab"}
     .icon.icon-twitter-big-on
-    %h4.header  Crowdsourced Updates
-    %p.description A live stream of crowdsourced updates from Twitter &ndash; so you can get an on-the-ground picture of what’s going on.
-    %p.index 3 of 5
+    %h4.header  
+      =t (:official_updates_tour)
+    %p.description 
+      =t (:official_updates_what)
+    %p.index 
+      =t (:three_of_five)
   %li{"data-id" => "official-reports-tab"}
     .icon.icon-alert
-    %h4.header Official Updates
-    %p.description Up-to-date content from official city sources &ndash; so you can know exactly what is happening, when it happens.
-    %p.index 4 of 5
+    %h4.header 
+      =t (:partner_updates_tour)
+    %p.description 
+      =t (:partner_updates_what)
+    %p.index 
+      =t (:four_of_five)
   %li{"data-id" => "transportation-updates-tab",
       "data-button" => "Finish"}
     .icon.icon-transport
-    %h4.header Transportation alerts
-    %p.description Public transportation status updates &ndash; so you can navigate the city quickly, easily, and safely.
-    %p.index 5 of 5
+    %h4.header
+      =t (:transportation_alerts)
+    %p.description
+      =t (:transportation_alerts_what)
+    %p.index
+      =t (:five_of_five)
