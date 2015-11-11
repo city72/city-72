@@ -27,12 +27,10 @@
 
 
       %ul.things-list.essential
-        -# - @essentials.each do |item|
+
         %li
           .use-case-dialog
-            -# #{item.use_case}
             = t(:water_why)
-          -# = retina_image_tag item.image, item.title
           = image_tag('placeholder/supply-1.png')
           %h4 
             = t(:water)
@@ -41,36 +39,48 @@
 
         %li
           .use-case-dialog
-            -# #{item.use_case}
-            = t(:water_why)
-          -# = retina_image_tag item.image, item.title
-          = image_tag('placeholder/supply-1.png')
+            = t(:first_aid_why)
+          = image_tag('placeholder/supply-2.png')
           %h4 
-            = t(:water)
+            = t(:first_aid)
           %p.overlay-text 
-            = t(:water_why)
+            = t(:first_aid_why)
 
         %li
           .use-case-dialog
-            -# #{item.use_case}
-            = t(:water_why)
-          -# = retina_image_tag item.image, item.title
-          = image_tag('placeholder/supply-1.png')
+            = t(:flash_light_why)
+          = image_tag('placeholder/supply-3.png')
           %h4 
-            = t(:water)
+            = t(:flash_light)
           %p.overlay-text 
-            = t(:water_why)
+            = t(:flash_light_why)
 
         %li
           .use-case-dialog
-            -# #{item.use_case}
-            = t(:water_why)
-          -# = retina_image_tag item.image, item.title
-          = image_tag('placeholder/supply-1.png')
+            = t(:fire_extinguisher_why)
+          = image_tag('placeholder/supply-4.png')
           %h4 
-            = t(:water)
+            = t(:fire_extinguisher)
           %p.overlay-text 
-            = t(:water_why)
+            = t(:fire_extinguisher_why)
+
+        %li
+          .use-case-dialog
+            = t(:manual_can_opener_why)
+          = image_tag('placeholder/supply-5.png')
+          %h4 
+            = t(:manual_can_opener)
+          %p.overlay-text 
+            = t(:manual_can_opener_why)
+
+        %li
+          .use-case-dialog
+            = t(:non_perishable_food_why)
+          = image_tag('placeholder/supply-6.png')
+          %h4 
+            = t(:non_perishable_food)
+          %p.overlay-text 
+            = t(:non_perishable_food_why)
 
 
 
@@ -80,13 +90,63 @@
       %p.tab-tip 
         = t(:useful_why)
       %ul.things-list.useful
-        -# - @useful.each do |item|
-        -#   %li
-        -#     .use-case-dialog
-        -#       #{item.use_case}
-        -#     = retina_image_tag item.image, item.title
-        -#     %h4 #{item.title}
-        -#     %p.overlay-text #{item.use_case}
+
+        %li
+          .use-case-dialog
+            = t(:warm_clothes_why)
+          = image_tag('placeholder/supply-7.png')
+          %h4 
+            = t(:warm_clothes)
+          %p.overlay-text 
+            = t(:warm_clothes_why)
+
+        %li
+          .use-case-dialog
+            = t(:radio_battery_why)
+          = image_tag('placeholder/supply-8.png')
+          %h4 
+            = t(:radio_battery)
+          %p.overlay-text 
+            = t(:radio_battery_why)
+
+        %li
+          .use-case-dialog
+            = t(:cash_on_hand_why)
+          = image_tag('placeholder/supply-9.png')
+          %h4 
+            = t(:cash_on_hand)
+          %p.overlay-text 
+            = t(:cash_on_hand_why)
+
+        %li
+          .use-case-dialog
+            = t(:sleeping_bag_why)
+          = image_tag('placeholder/supply-10.png')
+          %h4 
+            = t(:sleeping_bag)
+          %p.overlay-text 
+            = t(:sleeping_bag_why)
+
+        %li
+          .use-case-dialog
+            = t(:cellphone_charger_why)
+          = image_tag('placeholder/supply-11.png')
+          %h4 
+            = t(:cellphone_charger)
+          %p.overlay-text 
+            = t(:cellphone_charger_why)
+
+        %li
+          .use-case-dialog
+            = t(:tools_why)
+          = image_tag('placeholder/supply-12.png')
+          %h4 
+            = t(:tools)
+          %p.overlay-text 
+            = t(:tools_why)
+
+        
+
     %li.tab-personal-content
       %p.tab-tip 
         = t(:personal_why)
