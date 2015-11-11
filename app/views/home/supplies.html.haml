@@ -152,21 +152,90 @@
         = t(:personal_why)
       
       %ul.things-list.personal
-        -# - @personal.each do |item|
-        -#   %li
-        -#     .use-case-dialog
-        -#       #{item.use_case}
-        -#     = retina_image_tag item.image, item.title
-        -#     %h4 #{item.title}
-        -#     %p.overlay-text #{item.use_case}
+
+        %li
+          .use-case-dialog
+            = t(:prescriptions_why)
+          = image_tag('placeholder/supply-13.png')
+          %h4 
+            = t(:prescriptions)
+          %p.overlay-text 
+            = t(:prescriptions_why)
+
+        %li
+          .use-case-dialog
+            = t(:sweet_and_salty_why)
+          = image_tag('placeholder/supply-14.png')
+          %h4 
+            = t(:sweet_and_salty)
+          %p.overlay-text 
+            = t(:sweet_and_salty_why)
+
+        %li
+          .use-case-dialog
+            = t(:personal_hygiene_why)
+          = image_tag('placeholder/supply-15.png')
+          %h4 
+            = t(:personal_hygiene)
+          %p.overlay-text 
+            = t(:personal_hygiene_why)
+
+        %li
+          .use-case-dialog
+            = t(:personal_documents_why)
+          = image_tag('placeholder/supply-16.png')
+          %h4 
+            = t(:personal_documents)
+          %p.overlay-text 
+            = t(:sleeping_bagpersonal_documents_why_why)
+
+        %li
+          .use-case-dialog
+            = t(:childrens_toys_why)
+          = image_tag('placeholder/supply-17.png')
+          %h4 
+            = t(:childrens_toys)
+          %p.overlay-text 
+            = t(:childrens_toys_why)
+
+        %li
+          .use-case-dialog
+            = t(:pet_items_why)
+          = image_tag('placeholder/supply-18.png')
+          %h4 
+            = t(:pet_items)
+          %p.overlay-text 
+            = t(:pet_items_why)
+
+
+
   .kits
     %h2 
       = t(:sharing_is)
     %p 
       = t(:sharing_why)
+
     %ul.kits-list
-      -# - @kits.each do |kit|
-      -#   %li
-      -#     = retina_image_tag kit.image, kit.title
-      -#     %span #{kit.title}
+
+      %li
+        = image_tag('placeholder/kit-1.png')
+        %span 
+          = t(:grill)
+
+      %li
+        = image_tag('placeholder/kit-2.png')
+        %span 
+          = t(:drinks)
+
+      %li
+        = image_tag('placeholder/kit-3.png')
+        %span 
+          = t(:board_games)
+
+
   = render :partial => "partials/footer"
+
+
+
+
+

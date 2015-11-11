@@ -143,22 +143,23 @@ en:
   tools_why: "A basic toolkit with items like a hammer and duct tape will help you turn off the gas, repair broken windows, or board up your home."
 
   # #Personal
-  # prescriptions: "Prescriptions"
-  # prescriptions_why: "Plan for your personal health. Keep a 3-day dose of any medicine you take on a regular basis, in case the pharmacy is closed."
-  # sweet_and_salty: "Sweet (or salty) treats"
-  # sweet_and_salty_why: "What non-perishable comfort food would lift your spirits? A supply of chocolate, dried fruit, or nuts with your emergency snacks might make you smile, and help you make friends."
-  # personal_hygiene: "Personal hygiene & sanitation items"
-  # personal_hygiene_why: "Toilet paper, feminine supplies, hand sanitizer, a toothbrush, soap, unscented bleach, and heavy duty garbage bags are a good place to start."
-  # personal_documents: "Personal documents"
-  # personal_documents_why: "Upload copies of your driver's license, passport, leases, titles, and contact list to the cloud. Protect your assets, by going digital. Or make photocopies."
-  # childrens_toys: "Children's toys and games"
-  # childrens_toys_why: "What unique items would make your family feel better in an emergency? Favorite games? Special toys? Little things can make a big difference."
-  # pet_items: "Pet items"
-  # pet_items_why: "Don't forget to store dog food, toys, or extra water for your pets."
-  # #Supplies to Share
-  # grill: "Grill"
-  # drinks: "Drinks"
-  # board_games: "Board games"
+  prescriptions: "Prescriptions"
+  prescriptions_why: "Plan for your personal health. Keep a 3-day dose of any medicine you take on a regular basis, in case the pharmacy is closed."
+  sweet_and_salty: "Sweet (or salty) treats"
+  sweet_and_salty_why: "What non-perishable comfort food would lift your spirits? A supply of chocolate, dried fruit, or nuts with your emergency snacks might make you smile, and help you make friends."
+  personal_hygiene: "Personal hygiene & sanitation items"
+  personal_hygiene_why: "Toilet paper, feminine supplies, hand sanitizer, a toothbrush, soap, unscented bleach, and heavy duty garbage bags are a good place to start."
+  personal_documents: "Personal documents"
+  personal_documents_why: "Upload copies of your driver's license, passport, leases, titles, and contact list to the cloud. Protect your assets, by going digital. Or make photocopies."
+  childrens_toys: "Children's toys and games"
+  childrens_toys_why: "What unique items would make your family feel better in an emergency? Favorite games? Special toys? Little things can make a big difference."
+  pet_items: "Pet items"
+  pet_items_why: "Don't forget to store dog food, toys, or extra water for your pets."
+
+  #Supplies to Share
+  grill: "Grill"
+  drinks: "Drinks"
+  board_games: "Board games"
 
   #===========================#
   #View Stories Page
