@@ -18,14 +18,14 @@
       - else
         .alert-info
           %h3
-            =t (:in_an_emergency)
+            = t(:in_an_emergency)
           %p
-            =t (:you_will_find)
+            = t(:you_will_find)
       .map-actions
         %a.map-tips-trigger{href:"#"}
-          =t (:map_guide)
+          = t(:map_guide)
         %a.expand-map-trigger{href:"#"}
-          =t (:expand_map)
+          = t(:expand_map)
       / .em-quick-guide-trigger
       /   %a.show-quick-guide{src:"#"} What should I do?
       /   %a.hide-quick-guide{src: "#"} Hide what to do
@@ -56,28 +56,28 @@
       %li.active#citizen-updates-tab
         %a{href:"#tab-citizen-updates"}
           %h3
-            =t (:official_updates)
+            = t(:official_updates)
       %li#official-reports-tab 
         %a{href:"#tab-official-reports"}
           %h3
-            =t (:partner_updates)
+            = t(:partner_updates)
       %li#transportation-updates-tab
         %a{href:"#tab-service-status"}
           %h3
-            =t (:transportation_updates)
+            = t(:transportation_updates)
     %ul.tw-tabs-mobile
       %li.active
         %a{href:"#tab-citizen-updates"}
           %h3
-            =t (:official)
+            = t(:official)
       %li 
         %a{href:"#tab-official-reports"}
           %h3
-            =t (:partner)
+            = t(:partner)
       %li 
         %a{href:"#tab-service-status"}
           %h3
-            =t (:transportation)
+            = t(:transportation)
   .main-container.updates-wrapper
     .updates
       .citizen-reports
@@ -109,11 +109,11 @@
   %li{"data-class" => "alert-info"}
     .icon.icon-info
     %h4.header
-      =t (:what_happened)
+      = t(:what_happened)
     %p.description
-      =t (:announces_the_crisis)
+      = t(:announces_the_crisis)
     %p.index
-      =t (:one_of_five)
+      = t(:one_of_five)
   / %li{"data-class" => "em-quick-guide-trigger"}
   /   .icon.icon-info
   /   %h4.header What should I do?
@@ -124,33 +124,33 @@
       }
     .icon.icon-map-on
     %h4.header
-      =t (:street_status)
+      = t(:street_status)
     %p.description 
-      =t (:a_geo_tageed)
+      = t(:a_geo_tageed)
     %p.index 
-      =t (:two_of_five)
+      = t(:two_of_five)
   %li{"data-id" => "citizen-updates-tab"}
     .icon.icon-twitter-big-on
     %h4.header  
-      =t (:official_updates_tour)
+      = t(:official_updates_tour)
     %p.description 
-      =t (:official_updates_what)
+      = t(:official_updates_what)
     %p.index 
-      =t (:three_of_five)
+      = t(:three_of_five)
   %li{"data-id" => "official-reports-tab"}
     .icon.icon-alert
     %h4.header 
-      =t (:partner_updates_tour)
+      = t(:partner_updates_tour)
     %p.description 
-      =t (:partner_updates_what)
+      = t(:partner_updates_what)
     %p.index 
-      =t (:four_of_five)
+      = t(:four_of_five)
   %li{"data-id" => "transportation-updates-tab",
       "data-button" => "Finish"}
     .icon.icon-transport
     %h4.header
-      =t (:transportation_alerts)
+      = t(:transportation_alerts)
     %p.description
-      =t (:transportation_alerts_what)
+      = t(:transportation_alerts_what)
     %p.index
-      =t (:five_of_five)
+      = t(:five_of_five)

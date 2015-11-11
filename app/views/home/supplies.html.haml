@@ -4,38 +4,81 @@
   = render :partial => "partials/header"
   .opening.supplies
     %h1
-      =t (:youre_more_prepared)
+      = t(:youre_more_prepared)
     %div
       %p 
-        =t (:youre_more_prepared_explained)
+        = t(:youre_more_prepared_explained)
   .action-bar
     %ul.tabs
       %li.essentials-trigger.active
         %a{href:"#tab-essentials-content"}
-          =t (:essentials)
+          = t(:essentials)
       %li
         %a{href:"#tab-useful-content"}
-          =t (:useful)
+          = t(:useful)
       %li
         %a{href:"#tab-personal-content"}
-          =t (:personal)
+          = t(:personal)
   %ul.tabs-content 
     %li.tab-essentials-content
       %p.tab-tip
-        =t (:essentials_why)
+        = t(:essentials_why)
+
+
+
       %ul.things-list.essential
         -# - @essentials.each do |item|
         %li
           .use-case-dialog
             -# #{item.use_case}
+            = t(:water_why)
           -# = retina_image_tag item.image, item.title
+          = image_tag('placeholder/supply-1.png')
           %h4 
-            =t (:water)
+            = t(:water)
           %p.overlay-text 
-            =t (:water_why)
+            = t(:water_why)
+
+        %li
+          .use-case-dialog
+            -# #{item.use_case}
+            = t(:water_why)
+          -# = retina_image_tag item.image, item.title
+          = image_tag('placeholder/supply-1.png')
+          %h4 
+            = t(:water)
+          %p.overlay-text 
+            = t(:water_why)
+
+        %li
+          .use-case-dialog
+            -# #{item.use_case}
+            = t(:water_why)
+          -# = retina_image_tag item.image, item.title
+          = image_tag('placeholder/supply-1.png')
+          %h4 
+            = t(:water)
+          %p.overlay-text 
+            = t(:water_why)
+
+        %li
+          .use-case-dialog
+            -# #{item.use_case}
+            = t(:water_why)
+          -# = retina_image_tag item.image, item.title
+          = image_tag('placeholder/supply-1.png')
+          %h4 
+            = t(:water)
+          %p.overlay-text 
+            = t(:water_why)
+
+
+
+
+
     %li.tab-useful-content
       %p.tab-tip 
-        =t (:useful_why)
+        = t(:useful_why)
       %ul.things-list.useful
         -# - @useful.each do |item|
         -#   %li
@@ -46,7 +89,7 @@
         -#     %p.overlay-text #{item.use_case}
     %li.tab-personal-content
       %p.tab-tip 
-        =t (:personal_why)
+        = t(:personal_why)
       
       %ul.things-list.personal
         -# - @personal.each do |item|
@@ -58,9 +101,9 @@
         -#     %p.overlay-text #{item.use_case}
   .kits
     %h2 
-      =t (:sharing_is)
+      = t(:sharing_is)
     %p 
-      =t (:sharing_why)
+      = t(:sharing_why)
     %ul.kits-list
       -# - @kits.each do |kit|
       -#   %li

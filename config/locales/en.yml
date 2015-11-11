@@ -113,9 +113,10 @@ en:
   #Supply Items
   #===========================#
   fyi_supply: "None of these views exist yet"
+
   # #Essentials
-  # water: "Water"
-  # water_why: "Everyone enjoys a tall drink of water. Stay hydrated by gathering one gallon per person, per day."
+  water: "Water"
+  water_why: "Everyone enjoys a tall drink of water. Stay hydrated by gathering one gallon per person, per day."
   # first_aid: "First aid kit"
   # first_aid_why: "You might need to be able to patch up small scrapes until help arrives. Channel your inner Scout and keep a first aid kit on hand."
   # flash_light: "Flash light and extra batteries"
@@ -165,11 +166,9 @@ en:
   # : "Hear real-world stories."
   # : "Get inspired by members of our community."
   # : "Hearing stories from people that have lived through an emergency is a powerful way to learn. You are probably more prepared than you think."
-  # : "A personal look at emergencies and connection."
-  # : "Watch stories of people who have lived through disasters—and those who are already fostering connections in Oakland. No matter your situation, chances are, there’s someone like you with wisdom to share."
-  # : "Our city."
-  # : "Oakland is a place where people come together to enjoy life, especially when that means helping eachother."
-  # : "We believe in connection, not catastrophe."
+  a_personal_look: "A personal look at emergencies and connection."
+  watch_personal_stories: "Watch stories of people who have lived through disasters—and those who are already fostering connections in Oakland. No matter your situation, chances are, there’s someone like you with wisdom to share."
+
   #STORY TITLES AND CAPTIONS
   # : ""
   # : ""
@@ -178,7 +177,16 @@ en:
   # : ""
   # : ""
   # : ""
-  # : ""
+  #DO NOT TRANSLATE PLACEHOLDERS
+  placeholder_story_quote : "Lorem ipsum dolor sit amet."
+  placeholder_story_location: "Location"
+  placeholder_story_name: "Tess Ting"
+
+  #CITY STATEMENT
+  our_city: "Our city."
+  city_statement: "Oakland is a place where people come together to enjoy life, especially when that means helping eachother."
+  we_believe: "We believe in connection, not catastrophe."
+
 
   #===========================#
   #Make a Plan Page
@@ -242,6 +250,7 @@ en:
   official: "Official"
   partner: "Partner"
   transportation: "Transportation"
+
   #Map Guide Joyride-Steps
   what_happened : "What happened?"
   announces_the_crisis: "Announces the crisis and its severity."
