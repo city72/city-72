@@ -1,0 +1,272 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+# this is the ENGLISH version
+
+en:
+  hello: "Hello"
+
+  #city72 site name
+  name72: "OAK72"
+
+  #===========================#
+  #Navigation: Header
+  #===========================#
+  get_connected: "Get Connected"
+  gather_supplies: "Gather Supplies"
+  view_stories: "View Stories"
+  make_a_plan: "Make a Plan"
+  map_and_updates: "Map & Updates"
+  live_updates: "Live updates + crisis tools in an emergency."
+  situation_map: "Situation Map"
+  updates: "Updates"
+
+  #===========================#
+  #Home Landing Page Strings
+  #===========================#
+  hero_image_text: "OAK72 is Oakland's hub for emergency preparedness."
+  what_is: "What is OAK72?"
+  what_text: "OAK72 is your hub for emergency preparedness. You’ll find information about what to do in an emergency, simple steps to get connected, and useful guides to help you get prepared. Share OAK72 with a friend—and help your loved ones and your community get prepared."
+  why_72: "Why 72?"
+  why_text: "In a serious emergency, services will be impacted, so a basic rule of thumb is for people to be able to take care of each other for 72 hours before help arrives. That’s just three days—think of it as a long weekend—or nine meals."
+  motto: "We believe in connection, not catastrophe."
+  motto_explained: "Actual emergencies look more like people coming together than cities falling apart. OAK72 is about prompting members of the community to get connected before an emergency—so we can be that much better off when something happens."
+  good_news: "Good news. You’re more prepared than you think."
+  learn_more: "Learn more..."
+  gc_explained: "Make the most of your existing networks of friends, family, neighbors, and colleagues—so you can get help, and help others."
+  sup: "Gather Supplies"
+  sup_explained: "Find out what’s essential, useful, and nice to have in an emergency. You probably already have many of the supplies you need."
+  mp: "Make a Plan"
+  mp_explained: "Make a basic plan with your loved ones—so you know what to do in an emergency."
+
+
+  #===========================#
+  #Get Connected Page Strings
+  #===========================#
+
+  allabout: "Preparedness is all about people."
+  connectmain: "When disaster strikes, we come together to help each other. Getting prepared is about knowing your neighbors, saying hi to the regulars at the local market, and staying in touch with family and friends—both digitally and in person."
+  networks: "Connect through your digital networks."
+  inevent: "In the event of an emergency, we all turn to our existing tools and networks—many of which are digital. Think about your connections and the online communities you’re already a part of, so you can share updates and information when something happens."
+  learnabout: "Learn about OAK72."
+  learnaboutdetails: "Find out the story behind the creation of OAK72."
+  aboutus: "About Us"
+  useface: "Use your Facebook account"
+  now: "Now:"
+  #translation note: get_connected string already defined
+  whyface: "Create a Facebook group with your inner circle so you can easily send messages, share supplies, and make a plan together."
+  in_an_emergency_heading: "In an emergency"
+  face_emergency: "Post your status to Facebook to let friends and family know you are ok."
+  use_twitter: "Check updates on Twitter"
+  use_twitter_now: "Add emergency accounts to your Twitter feed, to stay informed. Some of our favorites"
+  use_twitter_emergency: 'Post about yourself and your area. Use #OAK72 to connect related tweets.'
+  city72_tweet_tag: "OAK72"
+  use_cloud: "Save documents to a cloud service"
+  use_cloud_now: "Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies on Google Drive or Dropbox."
+  use_cloud_emergency: "Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud."
+  use_local_networks: "Connect through your local networks."
+  use_local_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
+  #Nextdoor
+  door: "Meet your neighbors on Nextdoor"
+  door_now: "Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan."
+  door_emergency: "Log onto Nextdoor to share local information and resources with people who live near you."
+  start_now: "Start now"
+  #Nixle
+  usenixle: "Sign up for Nixle to get txt message updates"
+  whynixle: "Sign up for text message updates about what's going on in your neighborhood and throughout Oakland."
+  nixle_emergency: "Check your phone for automated updates and text messages."
+  #Neighborhood Networks Section
+  neighborhood_networks: "Connect through your local networks."
+  neighborhood_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
+  how_to_connect: "How to Connect"
+  my_yoga: "My yoga class"
+  my_workplace: "My workplace"
+  my_bookclub: "My book club"
+  my_bar: "My neighborhood bar"
+  my_school: "My school"
+  my_congregation: "My congregation"
+  #Partners Section
+  learn_from_partners: "Learn more from our partners."
+  connect_with_organizations: "To get even better prepared as a household, neighborhood, or community, connect with these organizations."
+  partner1: "American Red Cross"
+  partner1_description: "provides a variety of trainings including first aid, CPR, and how to prepare for emergencies"
+  partner2: "CORE"
+  partner2_description: "offers classes that will teach you how to prepare, organize, and create an emergency response team."
+  partner3: "Alameda County CERT"
+  partner3_description: "teaches residents how to care for themselves, their families, and their neighbors in an emergency."
+
+  #===========================#
+  #Gather Supplies Page
+  #===========================#
+  youre_more_prepared: "You’re more prepared than you think."
+  youre_more_prepared_explained: "Whether you’re just starting out or a preparedness pro, gathering your emergency supplies is easy. A good rule of thumb is to have supplies for about 3 days, or 72 hours. You’ll be surprised at how much you already have."
+  essentials: "Essentials"
+  useful: "Useful"
+  personal: "Personal"
+  essentials_why: "In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort."
+  useful_why: "These items represent things that many people want in an emergency—but don’t always think of. Stash them away, and you’ll get through the first 72 hours more easily."
+  personal_why: "In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort."
+  sharing_is: "Sharing is caring."
+  sharing_why: "Emergencies are opportunities to come together and support those around you. What items would you’d like to share? Uncorking a bottle of wine, singing songs, or sharing  a meal are even more meaningful in the days after an emergency than before."
+
+  #===========================#
+  #Supply Items
+  #===========================#
+  fyi_supply: "None of these views exist yet"
+
+  # #Essentials
+  water: "Water"
+  water_why: "Everyone enjoys a tall drink of water. Stay hydrated by gathering one gallon per person, per day."
+  first_aid: "First aid kit"
+  first_aid_why: "You might need to be able to patch up small scrapes until help arrives. Channel your inner Scout and keep a first aid kit on hand."
+  flash_light: "Flash light and extra batteries"
+  flash_light_why: "While candles are great for ambience, a good flashlight is invaluable for navigating if power is out. Simply put: it buys you freedom."
+  fire_extinguisher: "Fire extinguisher"
+  fire_extinguisher_why: "You didn't start the fire. But you can help extinguish it. Stash a fire extinguisher with your supplies so that you can stay safe."
+  manual_can_opener: "Manual can opener"
+  manual_can_opener_why: "Just like when camping, in an emergency an old fashioned can opener is just the ticket. Impress your friends with your canned culinary choices."
+  non_perishable_food: "Non-perishable food"
+  non_perishable_food_why: "Next time you're at the grocery store, add extra shelf-stable foods (that you like to eat!) to your basket. We recommend 3 days of food per person."
+
+  # #Useful
+  warm_clothes: "Warm clothes and sturdy shoes"
+  warm_clothes_why: "You never know when an emergency might happen — or what you might (or might not) be wearing. Be ready for the elements by setting aside warm clothes and walking shoes."
+  radio_battery: "Radio (battery operated or hand crank)"
+  radio_battery_why: "Feeling safe starts with knowing what's going on—so tune into the radio. Check 740AM for live updates—and your favorite radio station to pass the time."
+  cash_on_hand: "Cash"
+  cash_on_hand_why: "In an emergency, credit cards might not work, and cash becomes important. Protect your purchasing power by stashing small bills."
+  sleeping_bag: "Sleeping bag or blankets"
+  sleeping_bag_why: "Keeping warm is crucial. Blankets and sleeping bags will help you stay snug, even when the fog rolls in—or if the power goes out."
+  cellphone_charger: "Cellphone charger (battery operated or car plug-in)"
+  cellphone_charger_why: "A battery operated phone charger, or one that plugs into your car, will help you stay informed, take photos, and communicate in an emergency."
+  tools: "Tools"
+  tools_why: "A basic toolkit with items like a hammer and duct tape will help you turn off the gas, repair broken windows, or board up your home."
+
+  # #Personal
+  prescriptions: "Prescriptions"
+  prescriptions_why: "Plan for your personal health. Keep a 3-day dose of any medicine you take on a regular basis, in case the pharmacy is closed."
+  sweet_and_salty: "Sweet (or salty) treats"
+  sweet_and_salty_why: "What non-perishable comfort food would lift your spirits? A supply of chocolate, dried fruit, or nuts with your emergency snacks might make you smile, and help you make friends."
+  personal_hygiene: "Personal hygiene & sanitation items"
+  personal_hygiene_why: "Toilet paper, feminine supplies, hand sanitizer, a toothbrush, soap, unscented bleach, and heavy duty garbage bags are a good place to start."
+  personal_documents: "Personal documents"
+  personal_documents_why: "Upload copies of your driver's license, passport, leases, titles, and contact list to the cloud. Protect your assets, by going digital. Or make photocopies."
+  childrens_toys: "Children's toys and games"
+  childrens_toys_why: "What unique items would make your family feel better in an emergency? Favorite games? Special toys? Little things can make a big difference."
+  pet_items: "Pet items"
+  pet_items_why: "Don't forget to store dog food, toys, or extra water for your pets."
+
+  #Supplies to Share
+  grill: "Grill"
+  drinks: "Drinks"
+  board_games: "Board games"
+
+  #===========================#
+  #View Stories Page
+  #===========================#
+  # : "Hear real-world stories."
+  # : "Get inspired by members of our community."
+  # : "Hearing stories from people that have lived through an emergency is a powerful way to learn. You are probably more prepared than you think."
+  a_personal_look: "A personal look at emergencies and connection."
+  watch_personal_stories: "Watch stories of people who have lived through disasters—and those who are already fostering connections in Oakland. No matter your situation, chances are, there’s someone like you with wisdom to share."
+
+  #STORY TITLES AND CAPTIONS
+  # : ""
+  # : ""
+  # : ""
+  # : ""
+  # : ""
+  # : ""
+  # : ""
+  #DO NOT TRANSLATE PLACEHOLDERS
+  placeholder_story_quote : "Lorem ipsum dolor sit amet."
+  placeholder_story_location: "Location"
+  placeholder_story_name: "Tess Ting"
+
+  #CITY STATEMENT
+  our_city: "Our city."
+  city_statement: "Oakland is a place where people come together to enjoy life, especially when that means helping eachother."
+  we_believe: "We believe in connection, not catastrophe."
+
+
+  #===========================#
+  #Make a Plan Page
+  #===========================#
+  make_a_plan_with_your_people: "Make a plan with your people."
+  emergency_planning: "Emergency planning can feel overwhelming. We’ve broken it down into simple steps and provided tools that will make it feel do-able. The same connections that are important in everyday life—with friends, family, neighbors, and communities—are even more crucial in a crisis."
+  set_up: "Set up your meet up."
+  first_set_up: "First, make an emergency plan with your inner circle of friends, relatives, or immediate family. That way, you will each know what to do in an emergency."
+  what_basics: "What basics does your plan need to include?"
+  select_a_few: "Select a few of your nearest and dearest."
+  whos_the_group: "Who’s the group you’ll want to get in touch with if something happens?"
+  pick_out: "Pick an out of state contact."
+  who_can_serve: "Who can serve as a hub for information, if you can’t reach others in your local area?"
+  agree_on_a_place: "Agree on a place to meet."
+  how_about_a: "How about a park? A landmark? Don’t choose a house—in case it’s inaccessible."
+  learn_tips: "Learn tips."
+  read_and_print: "Read and print our Quake Guide to learn a few easy steps to stay safe."
+  #note: the above string needs to integrate a link to the Quake Guide
+
+  #===========================#
+  #Make a Plan : Emergency
+  #===========================#
+  guide_title: "Quake Guide"
+  print_full_guide: "Print Full Guide"
+  before_event: ""
+  #translation note: The before_event string above was intentionally left empty (it is left in for hurricanes, tornados, etc)
+  during_event: "During a Quake"
+  after_event: "After a Quake"
+
+  #===========================#
+  #About Us Page
+  #===========================#
+  for_us_by_us: "OAK72 is for us, by us."
+  # : "Our mission is to enable Oaklanders to get prepared. OAK72 was created by OpenOakland & the City of Oakland, with the belief that the best way to do this is to get connected to each other, share resources, and start re-imagining the way we think about emergencies."
+  # : "Who"
+  # : "For Oakland, by Oakland."
+  # : "Oakland is like no other place – and this platform is tailored to the particular quirks, context and people that make up our city."
+  # : "What"
+  # : "A people-centered vision of emergency preparedness. Nobody likes to think about emergencies, but OAK72 takes the mystery out of the process of getting prepared. We do this by telling human stories and providing tools that fit into your daily life."
+  # : "OAK72 is not a new social network. It’s a platform designed to plug into your existing networks – whether social or digital."
+  # : "Why"
+  # : "A little now will mean a lot later; connecting with your network, downloading an app, or watching a video is the first step towards being better prepared for an emergency."
+  # : "Oakland, along with other cities across the country, is leading the charge for a different kind of emergency prep. Let’s start the movement."
+  # : "Image Credits"
+  # : "Some images generously provided through the Creative Commons licensing format by:"
+  # : ""
+  # : ""
+  # : ""
+
+  #===========================#
+  #Map & Updates Page(s)
+  #===========================#
+  em_home_title: "OAK72 - In an Emergency"
+  in_an_emergency: "In an emergency, this page will be your real-time information hub."
+  you_will_find: "You’ll find official updates, partner updates, traffic information, and a crisis map to navigate city resources. Tour this Emergency Mode to better understand how to use it in the event of an emergency."
+  map_guide: "Map Guide"
+  expand_map: "Expand Map"
+  official_updates: "Official Updates"
+  partner_updates: "Partner Updates"
+  transportation_updates: "Transportation Updates"
+  official: "Official"
+  partner: "Partner"
+  transportation: "Transportation"
+  #Map Guide Joyride-Tour-Steps
+  what_happened : "What happened?"
+  announces_the_crisis: "Announces the crisis and its severity."
+  one_of_five: "1 of 5"
+  street_status: "Street Status"
+  a_geo_tageed: "A geo-tagged crisis map that shows nearby shelters and resources, as well as hazardous or road-blocked areas -- so you can find safety in your surroundings"
+  two_of_five: "2 of 5"
+  official_updates_tour: "Official Updates"
+  official_updates_what: "Up-to-date content from official city sources -- so you can know exactly what is happening, when it happens."
+  three_of_five: "3 of 5"
+  partner_updates_tour: "Partner Updates"
+  partner_updates_what: "A live stream of crowdsourced updates from Twitter -- so you can get an on-the-ground picture of what’s going on."
+  four_of_five: "4 of 5"
+  transportation_alerts: "Transportation alerts"
+  transportation_alerts_what: "Public transportation status updates -- so you can navigate the city quickly, easily, and safely."
+  five_of_five: "5 of 5"
+  finish: "Finish"
+  next: "Next"
+
