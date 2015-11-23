@@ -1,27 +1,40 @@
+-# .i18n-change-bar
+-#   %ul
+-#     %li
+-#       %a{href:"/es/home/"}
+-#         tiếng Việt  |  汉语  |  English  |  Filipino  |  Español
+  -# .change-icon#change-icon
+  -#   %img{src: '/assets/translate_transp.gif', class: 'img-responsive'}
+  -# .language-menu#language-menu
 .header
   %a.logo{href:"/home"}
     #logo{ height: "100", width: "150"}
       - if @about.logo.url
-        %img{src: "#{@about.logo.url}", alt: "#{@city.abbreviation}72 (logo)"}
+        %img{src: "/assets/city72logo.svg", alt: "#{@city.abbreviation}72 (logo)"}
       - else
         %span.text-logo #{@city.abbreviation}72
   %a.logo-mobile{href:"/home"}
   %ul.main-nav
     %li
       %a{href:"/connect"}
-        %strong Get<br>Connected
+        %strong
+          = t(:get_connected) 
     %li
       %a{href:"/supplies"}
-        %strong Gather<br>Supplies
+        %strong
+          = t(:gather_supplies)
     %li
       %a{href:"/stories"}
-        %strong View<br>Stories
+        %strong
+          = t(:view_stories)
     %li
       %a{href:"/plan"}
-        %strong Make<br>a Plan
+        %strong
+          = t(:make_a_plan)
     %li.em-link
       %a{href:"/em/home"}
-        %strong  #{@city.abbreviation}72 Map & Updates
+        %strong
+          = t(:map_and_updates)
   - unless browser.ie?
     .mobile-menu
       .normal-mode
@@ -31,22 +44,25 @@
               %strong Home
           %li
             %a{href:"/connect"}
-              %strong Get Connected
+              %strong
+                = t(:get_connected)
           %li
             %a{href:"/supplies"}
-              %strong Gather Supplies
+              %strong
+                = t(:gather_supplies)
           %li
             %a{href:"/stories"}
-              %strong View Stories
+              %strong
+                = t(:view_stories)
           %li
             %a{href:"/plan"}
-              %strong Make a Plan
-          %li.em-link
-            %strong #{@city.abbreviation}72 Now Updates
-            .fold
-              %p Live updates + crisis tools in an emergency.
-              %ul
-                %li.em-li
-                  %a{href:"/em/home#mobile-maps"} Situation Map
-                %li.em-li
-                  %a{href:"/em/home#mobile-updates"} Updates
+              %strong
+                = t(:make_a_plan)
+          %li.em-li
+            %a{href:"/em/home#mobile-maps"} 
+              %strong
+                = t(:situation_map)
+          %li.em-li
+            %a{href:"/em/home#mobile-updates"} 
+              %strong
+                = t(:updates)

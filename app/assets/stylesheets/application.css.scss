@@ -23,7 +23,7 @@ $mid-grey: #b4b4b4;
 $text-grey: #7f7f7f;
 $light-grey: #e6e6e6;
 $subtle-grey: #eaeaea;
-$highlight: #FBAF33;
+$highlight: #FBB82a;
 $highlight-dark: #F15A24;
 
 
@@ -42,12 +42,13 @@ $twitter-icn: 'G';
 $facebook-icn: 'H';
 $drive-icn: ',';
 $neighbors-icn: '.';
+$nixle-icn: ';';
 $video-play: 'I';
 
 /* Home icons mixins */
 @mixin icon($color,$icon-font-size,$icon,$bg,$pos-top,$pos-left){
 	&:before{
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		font-size: $icon-font-size;
 		color: $color;
 		content: $icon;
@@ -366,7 +367,7 @@ body {
 
 .tooltip:before,
 .tooltip:after {
-	font-family: "sf72-icons";
+	font-family: "city72icons";
 	content:'y';
 	color: #FFF;
 	position: absolute;

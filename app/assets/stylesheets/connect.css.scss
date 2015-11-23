@@ -93,6 +93,7 @@
 		color: $dark-grey;
 		font-family: $font-bold;
 		line-height: 1.65rem;
+		max-width: 89%;
 	}
 
 	p {
@@ -124,6 +125,9 @@
 	}
 	li.drive {
 		@include icon(#FFF,3.2rem,$drive-icn,$highlight,0,0);
+	}
+	li.nixle {
+		@include icon(#FFF,3.2rem,$nixle-icn,$highlight,0,0);
 	}
 }
 
