@@ -4,7 +4,7 @@
 # this is the ENGLISH version
 
 en:
-  hello: "Hello Hello"
+  hello: "Hello"
 
   #city72 site name
   name72: "OAK72"
@@ -152,7 +152,7 @@ en:
 
   #Supplies to Share
   grill: "Grill"
-  drinks: "Drinks"
+  drinks: "Drinks (test)"
   board_games: "Board games"
 
   #===========================#
