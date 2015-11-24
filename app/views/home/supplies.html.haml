@@ -3,54 +3,239 @@
 .main-container.things
   = render :partial => "partials/header"
   .opening.supplies
-    %h1 You’re more prepared than you think.
+    %h1
+      = t(:youre_more_prepared)
     %div
-      %p Whether you’re just starting out or a preparedness pro, gathering your emergency supplies is easy. A good rule of thumb is to have supplies for about 3 days, or 72 hours. You’ll be surprised at how much you already have.
+      %p 
+        = t(:youre_more_prepared_explained)
   .action-bar
     %ul.tabs
       %li.essentials-trigger.active
-        %a{href:"#tab-essentials-content"} Essentials
+        %a{href:"#tab-essentials-content"}
+          = t(:essentials)
       %li
-        %a{href:"#tab-useful-content"} Useful
+        %a{href:"#tab-useful-content"}
+          = t(:useful)
       %li
-        %a{href:"#tab-personal-content"} Personal
+        %a{href:"#tab-personal-content"}
+          = t(:personal)
   %ul.tabs-content 
     %li.tab-essentials-content
-      %p.tab-tip In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort.
+      %p.tab-tip
+        = t(:essentials_why)
+
+
+
       %ul.things-list.essential
-        - @essentials.each do |item|
-          %li
-            .use-case-dialog
-              #{item.use_case}
-            = retina_image_tag item.image, item.title
-            %h4 #{item.title}
-            %p.overlay-text #{item.use_case}
-    %li.tab-useful-content
-      %p.tab-tip These items represent things that many people want in an emergency—but don’t always think of. Stash them away, and you’ll get through the first 72 hours more easily.
-      %ul.things-list.useful
-        - @useful.each do |item|
-          %li
-            .use-case-dialog
-              #{item.use_case}
-            = retina_image_tag item.image, item.title
-            %h4 #{item.title}
-            %p.overlay-text #{item.use_case}
-    %li.tab-personal-content
-      %p.tab-tip In addition to the standard supplies, certain things will help you—and only you—manage during an emergency. Set aside a few items that will give you and your family extra comfort.
-      %ul.things-list.personal
-        - @personal.each do |item|
-          %li
-            .use-case-dialog
-              #{item.use_case}
-            = retina_image_tag item.image, item.title
-            %h4 #{item.title}
-            %p.overlay-text #{item.use_case}
-  .kits
-    %h2 Sharing is caring.
-    %p Emergencies are opportunities to come together and support those around you. What items would you’d like to share? Uncorking a bottle of wine, singing songs, or sharing  a meal are even more meaningful in the days after an emergency than before.
-    %ul.kits-list
-      - @kits.each do |kit|
+
         %li
-          = retina_image_tag kit.image, kit.title
-          %span #{kit.title}
+          .use-case-dialog
+            = t(:water_why)
+          = image_tag('placeholder/supply-1.png')
+          %h4 
+            = t(:water)
+          %p.overlay-text 
+            = t(:water_why)
+
+        %li
+          .use-case-dialog
+            = t(:first_aid_why)
+          = image_tag('placeholder/supply-2.png')
+          %h4 
+            = t(:first_aid)
+          %p.overlay-text 
+            = t(:first_aid_why)
+
+        %li
+          .use-case-dialog
+            = t(:flash_light_why)
+          = image_tag('placeholder/supply-3.png')
+          %h4 
+            = t(:flash_light)
+          %p.overlay-text 
+            = t(:flash_light_why)
+
+        %li
+          .use-case-dialog
+            = t(:fire_extinguisher_why)
+          = image_tag('placeholder/supply-4.png')
+          %h4 
+            = t(:fire_extinguisher)
+          %p.overlay-text 
+            = t(:fire_extinguisher_why)
+
+        %li
+          .use-case-dialog
+            = t(:manual_can_opener_why)
+          = image_tag('placeholder/supply-5.png')
+          %h4 
+            = t(:manual_can_opener)
+          %p.overlay-text 
+            = t(:manual_can_opener_why)
+
+        %li
+          .use-case-dialog
+            = t(:non_perishable_food_why)
+          = image_tag('placeholder/supply-6.png')
+          %h4 
+            = t(:non_perishable_food)
+          %p.overlay-text 
+            = t(:non_perishable_food_why)
+
+
+
+
+
+    %li.tab-useful-content
+      %p.tab-tip 
+        = t(:useful_why)
+      %ul.things-list.useful
+
+        %li
+          .use-case-dialog
+            = t(:warm_clothes_why)
+          = image_tag('placeholder/supply-7.png')
+          %h4 
+            = t(:warm_clothes)
+          %p.overlay-text 
+            = t(:warm_clothes_why)
+
+        %li
+          .use-case-dialog
+            = t(:radio_battery_why)
+          = image_tag('placeholder/supply-8.png')
+          %h4 
+            = t(:radio_battery)
+          %p.overlay-text 
+            = t(:radio_battery_why)
+
+        %li
+          .use-case-dialog
+            = t(:cash_on_hand_why)
+          = image_tag('placeholder/supply-9.png')
+          %h4 
+            = t(:cash_on_hand)
+          %p.overlay-text 
+            = t(:cash_on_hand_why)
+
+        %li
+          .use-case-dialog
+            = t(:sleeping_bag_why)
+          = image_tag('placeholder/supply-10.png')
+          %h4 
+            = t(:sleeping_bag)
+          %p.overlay-text 
+            = t(:sleeping_bag_why)
+
+        %li
+          .use-case-dialog
+            = t(:cellphone_charger_why)
+          = image_tag('placeholder/supply-11.png')
+          %h4 
+            = t(:cellphone_charger)
+          %p.overlay-text 
+            = t(:cellphone_charger_why)
+
+        %li
+          .use-case-dialog
+            = t(:tools_why)
+          = image_tag('placeholder/supply-12.png')
+          %h4 
+            = t(:tools)
+          %p.overlay-text 
+            = t(:tools_why)
+
+        
+
+    %li.tab-personal-content
+      %p.tab-tip 
+        = t(:personal_why)
+      
+      %ul.things-list.personal
+
+        %li
+          .use-case-dialog
+            = t(:prescriptions_why)
+          = image_tag('placeholder/supply-13.png')
+          %h4 
+            = t(:prescriptions)
+          %p.overlay-text 
+            = t(:prescriptions_why)
+
+        %li
+          .use-case-dialog
+            = t(:sweet_and_salty_why)
+          = image_tag('placeholder/supply-14.png')
+          %h4 
+            = t(:sweet_and_salty)
+          %p.overlay-text 
+            = t(:sweet_and_salty_why)
+
+        %li
+          .use-case-dialog
+            = t(:personal_hygiene_why)
+          = image_tag('placeholder/supply-15.png')
+          %h4 
+            = t(:personal_hygiene)
+          %p.overlay-text 
+            = t(:personal_hygiene_why)
+
+        %li
+          .use-case-dialog
+            = t(:personal_documents_why)
+          = image_tag('placeholder/supply-16.png')
+          %h4 
+            = t(:personal_documents)
+          %p.overlay-text 
+            = t(:sleeping_bagpersonal_documents_why_why)
+
+        %li
+          .use-case-dialog
+            = t(:childrens_toys_why)
+          = image_tag('placeholder/supply-17.png')
+          %h4 
+            = t(:childrens_toys)
+          %p.overlay-text 
+            = t(:childrens_toys_why)
+
+        %li
+          .use-case-dialog
+            = t(:pet_items_why)
+          = image_tag('placeholder/supply-18.png')
+          %h4 
+            = t(:pet_items)
+          %p.overlay-text 
+            = t(:pet_items_why)
+
+
+
+  .kits
+    %h2 
+      = t(:sharing_is)
+    %p 
+      = t(:sharing_why)
+
+    %ul.kits-list
+
+      %li
+        = image_tag('placeholder/kit-1.png')
+        %span 
+          = t(:grill)
+
+      %li
+        = image_tag('placeholder/kit-2.png')
+        %span 
+          = t(:drinks)
+
+      %li
+        = image_tag('placeholder/kit-3.png')
+        %span 
+          = t(:board_games)
+
+
   = render :partial => "partials/footer"
+
+
+
+
+

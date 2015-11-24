@@ -1,0 +1,13 @@
+			%li.social
+				%h2 Languages
+				%ul
+					%li
+					%a{href:"/vi/home/"}tiếng Việt
+					%li
+					%a{href:"/zh/home/"}汉语
+					%li
+					%a{href:"/en/home/"}English
+					%li
+					%a{href:"/fi/home/"}Filipino
+					%li
+					%a{href:"/es/home/"}Español

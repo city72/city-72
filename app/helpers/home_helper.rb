@@ -1,4 +1,8 @@
 module HomeHelper
+  def show_in_two_rows(str)
+    raw(str.strip.split(/\s+/).join("<br/>"))
+  end
+  
   def tweeter_accounts(tw_accounts)
     if tw_accounts.empty?
       " - "

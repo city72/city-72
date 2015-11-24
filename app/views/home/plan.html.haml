@@ -3,22 +3,38 @@
 .main-container.plan
   = render :partial => "partials/header"
   .opening.em-plan{:style => "background-image: url(#{@plan.community_image.url || "assets/placeholder-plan.jpg"})"}
-    %h1 Make a plan with your people.
+    %h1 
+      = t(:make_a_plan_with_your_people)
     %div
-      %p Emergency planning can feel overwhelming. We’ve broken it down into simple steps and provided tools that will make it feel do-able. The same connections that are important in everyday life—with friends, family, neighbors, and communities—are even more crucial in a crisis.
+      %p 
+        = t(:emergency_planning)
   .meet-up
-    %h2 Set up your meet up.
-    %p First, make an emergency plan with your inner circle of friends, relatives, or immediate family. That way, you will each know what to do in an emergency.
+    %h2
+      = t(:set_up)
+    %p 
+      = t(:first_set_up)
   .plan-basics
-    %h2 What basics does your plan need to include?
+    %h2
+      = t(:what_basics)
     .plan-list
       %ul
-        %li.select <strong>Select a few of your nearest and dearest.</strong> Who’s the group you’ll want to get in touch with if something happens?
-        %li.pick <strong>Pick an out of state contact.</strong> Who can serve as a hub for information, if you can’t reach others in your local area?
-        %li.agree <strong>Agree on a place to meet. </strong> How about a park? A landmark? Don’t choose a house—in case it’s inaccessible.
+        %li.select
+          %strong
+            = t(:select_a_few)
+          = t (:whos_the_group)
+        %li.pick
+          %strong
+            = t(:pick_out)
+          = t(:who_can_serve)
+        %li.agree
+          %strong
+            = t(:agree_on_a_place)
+          = t(:how_about_a)
   .basics-slider{:class => (@before_tips.empty?)? "": "js-has-before"}
-    %h2 Learn tips.
-    %p Read and print our #{@quick_guide.title} Guide to learn a few easy steps to stay safe.
+    %h2
+      = t(:learn_tips)
+    %p 
+      = t(:read_and_print)
     .slider-header
       %ul.basics-tabs
         - unless @before_tips.empty?
