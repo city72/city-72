@@ -17,22 +17,17 @@
 
 		a {
 			color: $mid-grey;
-		} 
+		}
 	}
 
 	.by-line:before {
-<<<<<<< HEAD
-		font-family: 'sf72-icons';
-		font-size: 4rem;
-=======
 		font-family: 'city72icons';
 		font-size: 2.7rem;
->>>>>>> origin/translation
 		content: 'y';
 		color: $mid-grey;
 		position: absolute;
 		left: -6.5rem;
-		bottom: -.9rem;
+		bottom: 0.1rem;
 		-webkit-font-smoothing: antialiased;
 	}
 }
