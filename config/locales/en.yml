@@ -4,7 +4,7 @@
 # this is the ENGLISH version
 
 en:
-  hello: "Hello"
+  hello: "Hi"
 
   #city72 site name
   name72: "OAK72"
@@ -66,11 +66,6 @@ en:
   use_cloud_emergency: "Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud."
   use_local_networks: "Connect through your local networks."
   use_local_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
-  #Nextdoor
-  door: "Meet your neighbors on Nextdoor"
-  door_now: "Sign up for Nextdoor to meet your neighbors and create a community disaster preparedness plan."
-  door_emergency: "Log onto Nextdoor to share local information and resources with people who live near you."
-  start_now: "Start now"
   #Nixle
   usenixle: "Sign up for Nixle to get txt message updates"
   whynixle: "Sign up for text message updates about what's going on in your neighborhood and throughout Oakland."
