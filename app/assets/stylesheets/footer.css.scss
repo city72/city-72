@@ -1,0 +1,92 @@
+/* FOOTER */
+
+
+.footer-top {
+	@include row();
+	background-color: lighten( $light-grey, 5% );
+	padding: 20px 30px;
+	
+	.by-line {
+		@include span-columns(5);
+		font-family: $font-regular;
+		@include shift(2);
+		position: relative;
+		margin-top: 1.83rem;
+		line-height: 1.45;
+		font-size: 0.9rem;
+
+		a {
+			color: $mid-grey;
+		}
+	}
+
+	.by-line:before {
+		font-family: 'city72icons';
+		font-size: 2.7rem;
+		content: 'y';
+		color: $mid-grey;
+		position: absolute;
+		left: -6.5rem;
+		bottom: 0.1rem;
+		-webkit-font-smoothing: antialiased;
+	}
+}
+
+.footer-bottom {
+	background-color: $light-grey;
+	font-size: 0.83rem;
+	padding: 30px 30px 50px;
+
+	ul {
+
+		li {
+
+			h2 {
+				font-size: 0.9rem;
+			}
+		}
+	}
+
+	.footer-links {
+		@include row();
+		margin: 0;
+	}
+	a {
+		color: $mid-grey;
+	}
+
+	a:hover {
+		color: $dark-grey;
+	}
+
+}
+
+.more {
+	@include row();
+	@include span-columns(3);
+	@include shift(2);
+}
+
+.resources {
+	@include row();
+	@include span-columns(4);
+}
+
+.resources-links {
+	@include row();
+
+	.resources-first,
+	.resources-last {
+		@include span-columns(5);
+	}
+}
+
+.social {
+	@include row();
+	@include span-columns(3);
+}
+
+
+
+
+
