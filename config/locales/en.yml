@@ -61,7 +61,7 @@ en:
   use_twitter_emergency: 'Post about yourself and your area. Use #OAK72 to connect related tweets.'
   city72_tweet_tag: "OAK72"
   use_cloud: "Save documents to a cloud service"
-  use_cloud_now: "Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies on Google Drive or Dropbox."
+  use_cloud_now: "Scan personal documents like your driver’s license, passport, and birth certificate. Save digital copies on Dropbox, Box, or another cloud service."
   use_cloud_emergency: "Access your documents remotely in case you can't get home. Know that there is a safe copy in the cloud."
   use_local_networks: "Connect through your local networks."
   use_local_networks_why: "Your neighborhood networks are important in an emergency too—consider the connections you already have—to your yoga studio, craft collective, spiritual groups, or friends in the neighborhood—so you can band together if something happens."
