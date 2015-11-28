@@ -20,6 +20,7 @@ $dark-grey: #4D4D4D;
 $body-color: #9b9b9b;
 $body-light: #a2a2a2;
 $mid-grey: #b4b4b4;
+$med-grey: #666;
 $text-grey: #7f7f7f;
 $light-grey: #e6e6e6;
 $subtle-grey: #eaeaea;
@@ -200,7 +201,7 @@ body {
 			color: #FFF;
 		}
 
-		span { 
+		span {
 			display: block;
 			margin: 0.6rem 0 0;
 			font-size: 0.8rem;
@@ -225,13 +226,13 @@ body {
 		margin: 0.1rem 0 1rem 0;
 		width: 44rem;
 	}
-} 
+}
 
 .quick-guide {
 	margin: 0;
 	padding: 0;
 	counter-reset: list-counter;
-	
+
 	h2 {
 		margin: -0.3rem 0 0;
 		font-size: 2rem;
@@ -268,9 +269,9 @@ body {
 .opening {
 	@include row(block,RTL);
 	background-position: top right;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 	position: relative;
-	
+
 	h1 {
 		@include span-columns(8.62938893);
 		font-family: $font-bold;
