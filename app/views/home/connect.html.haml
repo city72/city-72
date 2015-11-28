@@ -4,53 +4,53 @@
 .main-container.connect
   = render :partial => "partials/header"
   .opening
-    %h1 
+    %h1
       = t(:allabout)
     %div
-      %p 
+      %p
         = t(:connectmain)
   .existing-networks
     .use
-      %h2 
+      %h2
         = t(:networks)
-      %p.intro-networks 
+      %p.intro-networks
         = t(:inevent)
     .know
-      %h3 
+      %h3
         = t(:learnabout)
-      %p 
+      %p
         = t(:learnaboutdetails)
-      %a{href:"about"} 
+      %a{href:"about"}
         = t(:aboutus)
   .networks-list
     %ul
       %li.facebook
-        %h3 
+        %h3
           = t(:useface)
         %p
           %strong
-            =t(:now) 
+            =t(:now)
             <br/>
-          =t(:whyface)   
+          =t(:whyface)
         %p
           %strong
-            =t(:in_an_emergency_heading) 
+            =t(:in_an_emergency_heading)
             <br/>
           =t(:face_emergency)
-  
+
       %li.twitter
-        %h3 
+        %h3
           =t(:use_twitter)
         %p
           %strong
-            =t(:now) 
+            =t(:now)
             <br/>
           =t(:use_twitter_now)
         %p
           %strong
             =t(:in_an_emergency_heading)
           =t(:use_twitter_emergency)
-        
+
       %li.drive
         %h3
           =t(:use_cloud)
@@ -62,35 +62,20 @@
           %strong
             =t(:in_an_emergency_heading)
             <br/>
-          =t(:use_cloud_emergency) 
+          =t(:use_cloud_emergency)
 
-      %li.neighbors
-        %h3 
-          = t(:door)
-        %p
-          %strong      
-            =t(:now) 
-            <br/>
-          =t(:door_now)
-        %p
-          %strong
-            =t(:in_an_emergency_heading) 
-            <br/>
-          =t(:door_emergency)
-        %a{:href => "https://nextdoor.com", :target => "_blank"}
-          =t(:start_now)
 
       %li.nixle
-        %h3 
+        %h3
           = t(:usenixle)
-        %p.now 
-          %strong 
-            =t(:now) 
+        %p.now
+          %strong
+            =t(:now)
             <br/>
-          =t(:whynixle)          
+          =t(:whynixle)
         %p
           %strong
-            =t(:in_an_emergency_heading) 
+            =t(:in_an_emergency_heading)
             <br/>
           =t(:nixle_emergency)
         %a{:href => "https://nixle.com/city/ca/oakland/", :target => "_blank"}
@@ -100,12 +85,12 @@
   .full-img-article
     %ul
       %li.use
-        %h3 
+        %h3
           =t(:neighborhood_networks)
-        %p 
+        %p
           =t(:neighborhood_networks_why)
       %li.what
-        %h3 
+        %h3
           =t(:how_to_connect)
         %ul.your-net
           %li.net-first
@@ -125,15 +110,15 @@
               %li
                 =t(:my_congregation)
   .learn-more
-    %h3 
+    %h3
       =t(:learn_from_partners)
-    %p 
+    %p
       =t(:connect_with_organizations)
 
     %ul
       %li
         %p
-          %strong      
+          %strong
             =t(:partner1)
           =t(:partner1_description)
       %li
