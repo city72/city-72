@@ -19,11 +19,11 @@
         .alert-info
           %h3
             = t(:in_an_emergency)
-          %p
-            = t(:you_will_find)
+          -# %p
+          -#   = t(:you_will_find)
       .map-actions
-        %a.map-tips-trigger{href:"#"}
-          = t(:map_guide)
+        -# %a.map-tips-trigger{href:"#"}
+        -#   = t(:map_guide)
         %a.expand-map-trigger{href:"#"}
           = t(:expand_map)
       / .em-quick-guide-trigger
@@ -46,7 +46,7 @@
       /       %h2 #{@mode.recommendation_3_title}
       /       %p #{@mode.recommendation_3_text}
 .map-container#mobile-maps
-  .wrapper      
+  .wrapper
   .map-area
     .map-tooltip-placement
     %iframe.map{src: @emergency_data.map_url, height: "498"}
@@ -57,7 +57,7 @@
         %a{href:"#tab-citizen-updates"}
           %h3
             = t(:official_updates)
-      %li#official-reports-tab 
+      %li#official-reports-tab
         %a{href:"#tab-official-reports"}
           %h3
             = t(:partner_updates)
@@ -70,11 +70,11 @@
         %a{href:"#tab-citizen-updates"}
           %h3
             = t(:official)
-      %li 
+      %li
         %a{href:"#tab-official-reports"}
           %h3
             = t(:partner)
-      %li 
+      %li
         %a{href:"#tab-service-status"}
           %h3
             = t(:transportation)
@@ -102,7 +102,7 @@
 /       %h3 The city’s hub for emergency response.
 /     .tour-intro-step2
 /       %p A real emergency might not look like a monster attacking our City by the Bay, but it might leave many of us wondering what to do.
-/       %p In an emergency, this site will go into Crisis Mode, and you will be able to access a stream of official updates, crowdsourced reports, and a crisis map to navigate city resources. 
+/       %p In an emergency, this site will go into Crisis Mode, and you will be able to access a stream of official updates, crowdsourced reports, and a crisis map to navigate city resources.
 /       %p <strong>Tour SF72 Crisis Mode</strong> to better understand how to use this resource, in the event of an emergency. The non-monster kind.
 /       %a.btn{href:"#"} Take a tour
 %ol#joyride-steps{"style" => "display:none"}
@@ -117,7 +117,7 @@
   / %li{"data-class" => "em-quick-guide-trigger"}
   /   .icon.icon-info
   /   %h4.header What should I do?
-  /   %p.description Three simple action steps—so you know what to do. These tips will change depending on the type of disaster and timeline. Check back often. 
+  /   %p.description Three simple action steps—so you know what to do. These tips will change depending on the type of disaster and timeline. Check back often.
   /   %p.index 2 of 6
   %li{"data-class" => "map-tooltip-placement",
       "data-options"  => "tipLocation:right",
@@ -125,25 +125,25 @@
     .icon.icon-map-on
     %h4.header
       = t(:street_status)
-    %p.description 
+    %p.description
       = t(:a_geo_tageed)
-    %p.index 
+    %p.index
       = t(:two_of_five)
   %li{"data-id" => "citizen-updates-tab"}
     .icon.icon-twitter-big-on
-    %h4.header  
+    %h4.header
       = t(:official_updates_tour)
-    %p.description 
+    %p.description
       = t(:official_updates_what)
-    %p.index 
+    %p.index
       = t(:three_of_five)
   %li{"data-id" => "official-reports-tab"}
     .icon.icon-alert
-    %h4.header 
+    %h4.header
       = t(:partner_updates_tour)
-    %p.description 
+    %p.description
       = t(:partner_updates_what)
-    %p.index 
+    %p.index
       = t(:four_of_five)
   %li{"data-id" => "transportation-updates-tab",
       "data-button" => "Finish"}
