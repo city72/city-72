@@ -94,8 +94,9 @@
 	}
 
 	h2 {
-		margin: 0.8rem 0 1rem;
+		margin: 12rem 0 1rem;
 		line-height: 1.356 !important;
+		text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 	}
 
 	ul {
@@ -232,6 +233,7 @@
 
 .site-sections a:hover{
 	color: $dark-grey;
+	text-shadow: 0 0 20px rgba(0, 0, 0, 0.0);
 }
 
 .my-people,
