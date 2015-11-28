@@ -9,16 +9,17 @@
 .header
   %a.logo{href:"/home"}
     #logo{ height: "100", width: "150"}
-      - if @about.logo.url
-        %img{src: "/assets/city72logo.svg", alt: "#{@city.abbreviation}72 (logo)"}
-      - else
-        %span.text-logo #{@city.abbreviation}72
+      %img{src: "/assets/city72logo.svg", alt: "#{@city.abbreviation}72 (logo)"}
+      -# - if @about.logo.url
+      -#   %img{src: "/assets/city72logo.svg", alt: "#{@city.abbreviation}72 (logo)"}
+      -# - else
+      -#   %span.text-logo #{@city.abbreviation}72
   %a.logo-mobile{href:"/home"}
   %ul.main-nav
     %li
       %a{href:"/connect"}
         %strong
-          = t(:get_connected) 
+          = t(:get_connected)
     %li
       %a{href:"/supplies"}
         %strong
@@ -59,10 +60,10 @@
               %strong
                 = t(:make_a_plan)
           %li.em-li
-            %a{href:"/em/home#mobile-maps"} 
+            %a{href:"/em/home#mobile-maps"}
               %strong
                 = t(:situation_map)
           %li.em-li
-            %a{href:"/em/home#mobile-updates"} 
+            %a{href:"/em/home#mobile-updates"}
               %strong
                 = t(:updates)
