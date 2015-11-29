@@ -2,7 +2,8 @@
 .main-container.about
 	= render :partial => "partials/header"
 	.opening.about-intro{:style => ("background-image: url(#{@about.image.url})" unless @about.image.blank?)}
-		%h1 #{@city.abbreviation}72 is for us,</br>by us.
+		%h1
+			= t(:for_us_by_us)
 		%div
 			%p
 				= t(:our_mission)
@@ -37,6 +38,7 @@
 			%h2
 				= t(:image_credits)
 			%p
+				Stephen Taxiera
 
 				-# Some images generously provided through the Creative Commons licensing format by:
 				-# - if !@about.photographer_1.blank?

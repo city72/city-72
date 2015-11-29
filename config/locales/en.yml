@@ -158,7 +158,7 @@ en:
   #===========================#
   #View Stories Page
   #===========================#
-  # : "Hear real-world stories."
+  stories_title : "Resilience comes from community."
   # : "Get inspired by members of our community."
   # : "Hearing stories from people that have lived through an emergency is a powerful way to learn. You are probably more prepared than you think."
   a_personal_look: "A personal look at emergencies and connection."

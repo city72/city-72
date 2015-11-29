@@ -6,15 +6,15 @@
 .main-container.stories
   = render :partial => "partials/header"
 
-  .intro-mobile
-    %p
-      = t(:watch_personal_stories)
+  -# .intro-mobile
+  -#   %p
+  -#     = t(:watch_personal_stories)
 
 
   .opening{:style => ("background-image: url(#{@selected_story.image_url})" unless @selected_story.image.blank?), :class => (( @selected_story.video.blank?)? "": "js-has-video video-container"), :video => @selected_story.video}
     %span.story-about
-      %h1= @selected_story.name
-      %h2= @selected_story.location
+      %h1
+        = t(:stories_title)
     %div
       %p= @selected_story.story
 
