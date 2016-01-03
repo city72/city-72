@@ -16,13 +16,13 @@
       = f.file_field(:image, :class => "form-control")
       
 
-    = f.input :brought_to_you_by, as: :text, label: 'Brought to you by <span class="help">(Your Organization)</span>'.html_safe, input_html: {cols: '53', rows: '1'}, required: false
+    -# = f.input :brought_to_you_by, as: :text, label: 'Brought to you by <span class="help">(Your Organization)</span>'.html_safe, input_html: {cols: '53', rows: '1'}, required: false
 
-    .form-group
-      %label{:for => "logo"} Customize your city72 logo
-      %p.help-block Optionally replace the generated City72 logo.
-      %img.preview{src: @about.logo}
-      = f.file_field(:logo, :class => "form-control")
+    -# .form-group
+    -#   %label{:for => "logo"} Customize your city72 logo
+    -#   %p.help-block Optionally replace the generated City72 logo.
+    -#   %img.preview{src: @about.logo}
+    -#   = f.file_field(:logo, :class => "form-control")
 
 
     %h2 Image Credits

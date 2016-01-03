@@ -5,13 +5,13 @@
 	@include retina-image(/assets/static/header, 750px 417px, jpg);
 
 	h1 {
-		margin-top: 2.2rem;	
+		margin-top: 2.2rem;
 	}
 
 	div {
 
 		p {
-			margin-top: 4.2rem;	
+			margin-top: 4.2rem;
 		}
 	}
 }
@@ -37,7 +37,7 @@
 
 		}
 	}
-	
+
 	.know {
 		@include span-columns(3);
 		border-left: solid 1px $highlight;
@@ -75,8 +75,8 @@
 	color: $text-grey;
 
 	li {
-		@include span-columns(4);
-		@include omega(3n);
+		@include span-columns(6);
+		@include omega(2n);
 		padding: 6.5rem 3.3rem 0 0;
 		position: relative;
 		margin-bottom: 3rem;
@@ -93,6 +93,7 @@
 		color: $dark-grey;
 		font-family: $font-bold;
 		line-height: 1.65rem;
+		max-width: 89%;
 	}
 
 	p {
@@ -101,7 +102,7 @@
 		strong {
 			display: block;
 			color: $dark-grey;
-			margin: 2rem 0rem 0rem;
+			margin: 1rem 0rem 0rem;
 			font-family: $font-bold;
 		}
 	}
@@ -113,17 +114,20 @@
 	li.facebook {
 		@include icon(#FFF,3.2rem,$facebook-icn,$highlight,0,0);
 	}
-	li.airbnb {
-		@include icon(#FFF,3.2rem,$airbnb-icn,$highlight,0,0);
-	}
+	// li.airbnb {
+	// 	@include icon(#FFF,3.2rem,$airbnb-icn,$highlight,0,0);
+	// }
 	li.twitter {
 		@include icon(#FFF,3.2rem,$twitter-icn,$highlight,0,0);
 	}
-	li.neighbors {
-		@include icon(#FFF,3.2rem,$neighbors-icn,$highlight,0,0);
-	}
+	// li.neighbors {
+	// 	@include icon(#FFF,3.2rem,$neighbors-icn,$highlight,0,0);
+	// }
 	li.drive {
 		@include icon(#FFF,3.2rem,$drive-icn,$highlight,0,0);
+	}
+	li.nixle {
+		@include icon(#FFF,3.2rem,$nixle-icn,$highlight,0,0);
 	}
 }
 
@@ -184,7 +188,7 @@
 						}
 					}
 				}
-				
+
 				.net-first {
 					@include span-columns(5.5);
 				}
@@ -221,7 +225,7 @@
 			@include span-columns(4);
 			@include omega(3n);
 			background-position: top left;
-			background-repeat: no-repeat; 
+			background-repeat: no-repeat;
 			position: relative;
 			padding-top: 20px;
 
@@ -230,10 +234,10 @@
 				font-family: $font-bold;
 				color: #474745;
 			}
-			
+
 			a {
 				background-repeat: no-repeat;
-    		width: 100%;				
+    		width: 100%;
 			}
 
 			p {
@@ -246,7 +250,7 @@
 
 			#red-cross {
 				@include retina-image(/assets/static/redcross, 258px 61px);
-				background-position-y: 10px; 
+				background-position-y: 10px;
 			}
 
 			#nen {

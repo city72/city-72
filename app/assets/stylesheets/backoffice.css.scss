@@ -28,6 +28,8 @@ ul {
   padding: 0 0 0 1.3em;
 }
 
+
+
 /* GENERAL */
 $accent-gold: #FBAF33;
 $accent-green: #A2C63A;
@@ -130,6 +132,10 @@ $light-grey: #f2f2f2;
 
 /* GENERAL FORM STYLES */
 
+.exp {
+  max-width: 550px;
+}
+
 .alert {
   position: fixed;
   top: 20px;
@@ -180,7 +186,7 @@ label .help {
 .input-lg .form-control { @extend .input-lg; }
 
 textarea.form-control {
-  width: auto;
+
 }
 
 .add-btn {

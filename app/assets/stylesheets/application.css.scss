@@ -20,10 +20,11 @@ $dark-grey: #4D4D4D;
 $body-color: #9b9b9b;
 $body-light: #a2a2a2;
 $mid-grey: #b4b4b4;
+$med-grey: #666;
 $text-grey: #7f7f7f;
 $light-grey: #e6e6e6;
 $subtle-grey: #eaeaea;
-$highlight: #FBAF33;
+$highlight: #FBB82a;
 $highlight-dark: #F15A24;
 
 
@@ -42,12 +43,13 @@ $twitter-icn: 'G';
 $facebook-icn: 'H';
 $drive-icn: ',';
 $neighbors-icn: '.';
+$nixle-icn: ';';
 $video-play: 'I';
 
 /* Home icons mixins */
 @mixin icon($color,$icon-font-size,$icon,$bg,$pos-top,$pos-left){
 	&:before{
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		font-size: $icon-font-size;
 		color: $color;
 		content: $icon;
@@ -199,7 +201,7 @@ body {
 			color: #FFF;
 		}
 
-		span { 
+		span {
 			display: block;
 			margin: 0.6rem 0 0;
 			font-size: 0.8rem;
@@ -224,13 +226,13 @@ body {
 		margin: 0.1rem 0 1rem 0;
 		width: 44rem;
 	}
-} 
+}
 
 .quick-guide {
 	margin: 0;
 	padding: 0;
 	counter-reset: list-counter;
-	
+
 	h2 {
 		margin: -0.3rem 0 0;
 		font-size: 2rem;
@@ -267,9 +269,9 @@ body {
 .opening {
 	@include row(block,RTL);
 	background-position: top right;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 	position: relative;
-	
+
 	h1 {
 		@include span-columns(8.62938893);
 		font-family: $font-bold;
@@ -366,7 +368,7 @@ body {
 
 .tooltip:before,
 .tooltip:after {
-	font-family: "sf72-icons";
+	font-family: "city72icons";
 	content:'y';
 	color: #FFF;
 	position: absolute;

@@ -19,12 +19,12 @@
 
 .alert-wide {
 	color: #FFF;
-	background: $highlight-dark;
+	background: $med-grey;
 	width: 100%;
 	z-index: 0;
 	margin: -0.1rem 0 0;
 	padding-top: 1.3rem;
-	min-height: 118px;
+	min-height: 70px;
 
 	.wrapper {
 		padding: 0 0 0.2rem 1.8rem;
@@ -40,7 +40,7 @@
 	p {
 		font-size: 0.875rem;
 		line-height: 1.3rem;
-		margin-top: 0.1rem; 
+		margin-top: 0.1rem;
 	}
 
 	a {
@@ -82,7 +82,7 @@
 			position: absolute;
 			right: 0.4rem;
 			top: 0.37rem;
-			font-family: "sf72-icons";
+			font-family: "city72icons";
 			content: "1";
 			font-size: 0.8rem;
 		}
@@ -186,7 +186,7 @@
 	.map-tips-trigger:before {
 		bottom: -5px;
 		right: 8px;
-		font-family: "sf72-icons";
+		font-family: "city72icons";
 		content: "?";
 		font-size: 1.65rem;
 		position: relative;
@@ -196,7 +196,7 @@
 	.expand-map-trigger:before {
 		bottom: -5px;
 		right: 8px;
-		font-family: "sf72-icons";
+		font-family: "city72icons";
 		content: "X";
 		font-size: 1.65rem;
 		position: relative;
@@ -271,7 +271,7 @@
 	li {
 		@include row();
 		@include span-columns(3.3);
-	
+
 		&:first-child,
 		&:last-child {
 			@include span-columns(3.6);
@@ -374,7 +374,7 @@
 	}
 
 	.tweet-body {
-		@include span-columns(9.6);	
+		@include span-columns(9.6);
 
 		h4 {
 			margin: 0rem 0 0.8rem;
@@ -382,7 +382,7 @@
 			font-family: $font-medium;
 			font-size: 1.1rem;
 			font-weight: normal;
-			
+
 			color: #3FA8F4;
 
 			span {
@@ -494,7 +494,7 @@
 }
 
 .tour-intro {
-	
+
 	h2 {
 		color: $dark-grey;
 		margin: 0;
@@ -546,7 +546,7 @@
 		right: 0;
 		top: 0.4em;
 		font-size: 0.7em;
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		content: 's';
 	}
 
@@ -573,7 +573,7 @@
 		top: 0;
 		right: 0;
 		text-indent: 0;
-		font-family: 'sf72-icons';
+		font-family: 'city72icons';
 		content: 'x';
 		font-size: 0.8rem;
 	}
@@ -605,10 +605,10 @@
 .joyride-tip-guide[data-index="3"] {
 	margin-left: 40px;
 }
-	
+
 span.joyride-nub.top {
-	left: 60px !important; 
-} 
+	left: 60px !important;
+}
 
 
 .modal {

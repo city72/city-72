@@ -6,45 +6,63 @@
 .main-container.stories
   = render :partial => "partials/header"
 
-  .intro-mobile
-    %p Watch stories of people who have lived through disasters—and those who are already fostering connections in #{@city.name}. No matter your situation, chances are, there’s someone like you with wisdom to share.
+  -# .intro-mobile
+  -#   %p
+  -#     = t(:watch_personal_stories)
 
 
   .opening{:style => ("background-image: url(#{@selected_story.image_url})" unless @selected_story.image.blank?), :class => (( @selected_story.video.blank?)? "": "js-has-video video-container"), :video => @selected_story.video}
     %span.story-about
-      %h1= @selected_story.name
-      %h2= @selected_story.location
+      %h1
+        = t(:stories_title)
     %div
       %p= @selected_story.story
 
   .intro
     .personal-look
-      %h2 A personal look at emergencies and connection.
-      %p Watch stories of people who have lived through disasters—and those who are already fostering connections in #{@city.name}. No matter your situation, chances are, there’s someone like you with wisdom to share.
+      %h2
+        = t(:a_personal_look)
+      %p
+        = t(:watch_personal_stories)
 
-  %ul.story-list
-    - @stories.each do |story|
-      %li
-        - unless story.image.blank?
-          .img-container{ class: ((story.video.blank?)? "": "video-container") }
-            = image_tag(story.image_url, alt: story.name, class: ((story.video.blank?)? "": "js-has-video"), :video => story.video)
-        .story-data
-          %h4= story.name
-          %h5.location= story.location
-          %p.quote= story.story
-          - if story.get_connected?
-            = link_to 'Get Connected', connect_path
-          - elsif story.gather_supplies?
-            = link_to 'Gather Supplies', supplies_path
-          - elsif story.make_a_plan?
-            = link_to 'Make a plan', plan_path
+  -# %ul.story-list
+  -#   - @stories.each do |story|
+  -#     %li
+  -#       - unless story.image.blank?
+  -#         .img-container{ class: ((story.video.blank?)? "": "video-container") }
+  -#           = image_tag(story.image_url, alt: story.name, class: ((story.video.blank?)? "": "js-has-video"), :video => story.video)
+  -#       .story-data
+  -#         %h4= story.name
+  -#         %h5.location= story.location
+  -#         %p.quote= story.story
+  -#         - if story.get_connected?
+  -#           = link_to 'Get Connected', connect_path
+  -#         - elsif story.gather_supplies?
+  -#           = link_to 'Gather Supplies', supplies_path
+  -#         - elsif story.make_a_plan?
+  -#           = link_to 'Make a plan', plan_path
+
+  -# HELP!!!
+
+    -# %ul.story-list
+    -#   %li
+    -#     .story-data
+    -#       %h4
+    -#         = t(:placeholder_story_name)
+    -#       %h5.location
+    -#         = t(:placeholder_story_location)
+    -#       %p.quote
+    -#         = t(:placeholder_story_quote)
 
   .statement
     .description
-      %h2 Our city.
-      %p= @city.statement
+      %h2
+        = t(:our_city)
+      %p
+        = t(:city_statement)
     .quote
-      %p We believe in connection, not catastrophe.
+      %p
+        = t(:we_believe)
 
   = render :partial => "partials/footer"
 

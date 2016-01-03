@@ -1,4 +1,4 @@
-= provide(:title, 'In an Emergency')
+= provide(:title, 'Map and Updates')
 = stylesheet_link_tag "joyride-2.1"
 = javascript_include_tag "jquery.joyride-2.1"
 = javascript_include_tag "froogaloop.min"
@@ -17,11 +17,15 @@
           %p #{@mode.text}
       - else
         .alert-info
-          %h3 In an emergency, this page will be your real-time information hub.
-          %p You’ll find official updates, crowdsourced reports, and a crisis map to navigate city resources. Tour this Emergency Mode to better understand how to use it in the event of an emergency.
+          %h3
+            = t(:in_an_emergency)
+          -# %p
+          -#   = t(:you_will_find)
       .map-actions
-        %a.map-tips-trigger{href:"#"} Map Guide
-        %a.expand-map-trigger{href:"#"} Expand Map
+        -# %a.map-tips-trigger{href:"#"}
+        -#   = t(:map_guide)
+        %a.expand-map-trigger{href:"#"}
+          = t(:expand_map)
       / .em-quick-guide-trigger
       /   %a.show-quick-guide{src:"#"} What should I do?
       /   %a.hide-quick-guide{src: "#"} Hide what to do
@@ -42,7 +46,7 @@
       /       %h2 #{@mode.recommendation_3_title}
       /       %p #{@mode.recommendation_3_text}
 .map-container#mobile-maps
-  .wrapper      
+  .wrapper
   .map-area
     .map-tooltip-placement
     %iframe.map{src: @emergency_data.map_url, height: "498"}
@@ -51,23 +55,29 @@
     %ul.tw-tabs
       %li.active#citizen-updates-tab
         %a{href:"#tab-citizen-updates"}
-          %h3 Official Updates
-      %li#official-reports-tab 
+          %h3
+            = t(:official_updates)
+      %li#official-reports-tab
         %a{href:"#tab-official-reports"}
-          %h3 Partner Updates
+          %h3
+            = t(:partner_updates)
       %li#transportation-updates-tab
         %a{href:"#tab-service-status"}
-          %h3 Transportation Updates
+          %h3
+            = t(:transportation_updates)
     %ul.tw-tabs-mobile
       %li.active
         %a{href:"#tab-citizen-updates"}
-          %h3 Official
-      %li 
+          %h3
+            = t(:official)
+      %li
         %a{href:"#tab-official-reports"}
-          %h3 Partner
-      %li 
+          %h3
+            = t(:partner)
+      %li
         %a{href:"#tab-service-status"}
-          %h3 Transportation
+          %h3
+            = t(:transportation)
   .main-container.updates-wrapper
     .updates
       .citizen-reports
@@ -92,40 +102,51 @@
 /       %h3 The city’s hub for emergency response.
 /     .tour-intro-step2
 /       %p A real emergency might not look like a monster attacking our City by the Bay, but it might leave many of us wondering what to do.
-/       %p In an emergency, this site will go into Crisis Mode, and you will be able to access a stream of official updates, crowdsourced reports, and a crisis map to navigate city resources. 
+/       %p In an emergency, this site will go into Crisis Mode, and you will be able to access a stream of official updates, crowdsourced reports, and a crisis map to navigate city resources.
 /       %p <strong>Tour SF72 Crisis Mode</strong> to better understand how to use this resource, in the event of an emergency. The non-monster kind.
 /       %a.btn{href:"#"} Take a tour
 %ol#joyride-steps{"style" => "display:none"}
   %li{"data-class" => "alert-info"}
     .icon.icon-info
-    %h4.header What happened?
-    %p.description Announces the crisis and its severity.
-    %p.index 1 of 5
-  / %li{"data-class" => "em-quick-guide-trigger"}
-  /   .icon.icon-info
-  /   %h4.header What should I do?
-  /   %p.description Three simple action steps—so you know what to do. These tips will change depending on the type of disaster and timeline. Check back often. 
-  /   %p.index 2 of 6
+    %h4.header
+      = t(:what_happened)
+    %p.description
+      = t(:announces_the_crisis)
+    %p.index
+      = t(:one_of_five)
+
   %li{"data-class" => "map-tooltip-placement",
       "data-options"  => "tipLocation:right",
       }
     .icon.icon-map-on
-    %h4.header Street Status
-    %p.description A geo-tagged crisis map that shows nearby shelters and resources, as well as hazardous or road-blocked areas &ndash; so you can find safety in your surroundings
-    %p.index 2 of 5
+    %h4.header
+      = t(:street_status)
+    %p.description
+      = t(:a_geo_tageed)
+    %p.index
+      = t(:two_of_five)
   %li{"data-id" => "citizen-updates-tab"}
     .icon.icon-twitter-big-on
-    %h4.header  Crowdsourced Updates
-    %p.description A live stream of crowdsourced updates from Twitter &ndash; so you can get an on-the-ground picture of what’s going on.
-    %p.index 3 of 5
+    %h4.header
+      = t(:official_updates_tour)
+    %p.description
+      = t(:official_updates_what)
+    %p.index
+      = t(:three_of_five)
   %li{"data-id" => "official-reports-tab"}
     .icon.icon-alert
-    %h4.header Official Updates
-    %p.description Up-to-date content from official city sources &ndash; so you can know exactly what is happening, when it happens.
-    %p.index 4 of 5
+    %h4.header
+      = t(:partner_updates_tour)
+    %p.description
+      = t(:partner_updates_what)
+    %p.index
+      = t(:four_of_five)
   %li{"data-id" => "transportation-updates-tab",
       "data-button" => "Finish"}
     .icon.icon-transport
-    %h4.header Transportation alerts
-    %p.description Public transportation status updates &ndash; so you can navigate the city quickly, easily, and safely.
-    %p.index 5 of 5
+    %h4.header
+      = t(:transportation_alerts)
+    %p.description
+      = t(:transportation_alerts_what)
+    %p.index
+      = t(:five_of_five)
