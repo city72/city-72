@@ -6,96 +6,94 @@
     .screen-intro
       %p.screen-info Create connections with social media tools, local networks and community resources.
       .action-area
-        -# %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
-        -#   %span.ladda-label Save Changes
+        %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
+          %span.ladda-label Save Changes
 
-    %h2 Social Networks and Partner Organizations
-    %p.exp All of the information on the Get Connected page is hard coded (not coming from the database) so that it can be translated to different languages more easily. 
-    %p.exp To edit the content of the Get Connected page you will need to edit the view (connect.html.haml) and the corresponding English language strings (en.yml) then you will need to get those translated to the languages you are supporting. 
+    %h2 Social Networks
 
-    -# .form-group(ng-class="{'has-error': connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid}")
-    -#   %label.control-label{:for => "fb-page"} Your Organization's Facebook Page
-    -#   %span.req *
-    -#   .input-group.input-md
-    -#     %span.input-group-addon http://
-    -#     %input.form-control#fb-page{ :type => 'text', :name => 'facebook_page_url'}(ng-model="connection.facebook_page_url" required)
-    -#   %span.help-block(ng-show="connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid")
-    -#     can't be blank
+    .form-group(ng-class="{'has-error': connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid}")
+      %label.control-label{:for => "fb-page"} Your Organization's Facebook Page
+      %span.req *
+      .input-group.input-md
+        %span.input-group-addon http://
+        %input.form-control#fb-page{ :type => 'text', :name => 'facebook_page_url'}(ng-model="connection.facebook_page_url" required)
+      %span.help-block(ng-show="connectionForm.facebook_page_url.$dirty && connectionForm.facebook_page_url.$invalid")
+        can't be blank
 
-    -# .row.twitter-accounts
-    -#   .form-group
-    -#     %label{:for => "tw-accounts"} What Twitter accounts are useful to follow in your area?
-    -#     %div.input-twitter(ng-repeat="twitterAccount in connection.twitter_accounts" ng-hide="twitterAccount._destroy")
-    -#       %input.form-control.input-multi#tw-accounts{:placeholder => "@example"}(ng-model="twitterAccount.username")
-    -#       %a.btn-sm.btn.btn-danger(ng-click="removeTwitterAccount(twitterAccount)")
-    -#         %i.glyphicon.glyphicon-remove
-    -#     %a.add-btn.btn.btn-link(ng-click="addTwitterAccount()") + Add a Twitter feed
-    -#   .help-block
-    -#     %p.help-block-title Such as:
-    -#     %ul
-    -#       %li Transportation authorities
-    -#       %li City agencies
-    -#       %li News outlets
-    -#       %li Reliable, trusted feeds focused on emergency updates
+    .row.twitter-accounts
+      .form-group
+        %label{:for => "tw-accounts"} What Twitter accounts are useful to follow in your area?
+        %div.input-twitter(ng-repeat="twitterAccount in connection.twitter_accounts" ng-hide="twitterAccount._destroy")
+          %input.form-control.input-multi#tw-accounts{:placeholder => "@example"}(ng-model="twitterAccount.username")
+          %a.btn-sm.btn.btn-danger(ng-click="removeTwitterAccount(twitterAccount)")
+            %i.glyphicon.glyphicon-remove
+        %a.add-btn.btn.btn-link(ng-click="addTwitterAccount()") + Add a Twitter feed
+      .help-block
+        %p.help-block-title Such as:
+        %ul
+          %li Transportation authorities
+          %li City agencies
+          %li News outlets
+          %li Reliable, trusted feeds focused on emergency updates
 
 
-    -# %h2 Additional Networks
-    -# %p What social networks or services would be useful community resources in your city? Facebook, Twitter, and Google Drive come with City72. In addition, include or edit the networks below.
+    %h2 Additional Networks
+    %p What social networks or services would be useful community resources in your city? Facebook, Twitter, and Google Drive come with City72. In addition, include or edit the networks below.
 
-    -# .editable-list-container
-    -#   %ul.editable-list
-    -#     %li(ng-repeat="network in orderedNetworks()")
-    -#       %label.include-field(for="include-network-{{$index}}")
-    -#         %input{:type => "checkbox"}(ng-model="network.included" id="include-network-{{$index}}")
-    -#         %span Include this Network
-    -#       .list-element
-    -#         .logo.img-container
-    -#           %img{:'ng-src' => '{{network.logo_url}}'}
-    -#           %div.image-edited-message(ng-show="network.new_image") Image edited. Save changes to update.
-    -#         %h3 {{network.headline}}
-    -#         %h4 Now:
-    -#         %p {{network.now}}
-    -#         %h4 In an Emergency:
-    -#         %p {{network.in_an_emergency}}
-    -#       .list-actions
-    -#         %button.btn{type: "button"}(ng-click="editNetwork(network)") Edit
+    .editable-list-container
+      %ul.editable-list
+        %li(ng-repeat="network in orderedNetworks()")
+          %label.include-field(for="include-network-{{$index}}")
+            %input{:type => "checkbox"}(ng-model="network.included" id="include-network-{{$index}}")
+            %span Include this Network
+          .list-element
+            .logo.img-container
+              %img{:'ng-src' => '{{network.logo_url}}'}
+              %div.image-edited-message(ng-show="network.new_image") Image edited. Save changes to update.
+            %h3 {{network.headline}}
+            %h4 Now:
+            %p {{network.now}}
+            %h4 In an Emergency:
+            %p {{network.in_an_emergency}}
+          .list-actions
+            %button.btn{type: "button"}(ng-click="editNetwork(network)") Edit
 
-    -#   %a.btn.btn-link.add-btn(ng-click="newNetwork()" ng-if="networksCountNotReached()") + Add a Network
+      %a.btn.btn-link.add-btn(ng-click="newNetwork()" ng-if="networksCountNotReached()") + Add a Network
 
-    -# %h2 Partners and Resources
-    -# %p What local resources focus on community preparedness? What partners does your organization collaborate with? Add up to five links.
-    -# .editable-list-container
-    -#   %ul.editable-list
-    -#     %li(ng-repeat="resource in orderedResources()")
-    -#       %label.include-field(for="include-resource-{{$index}}")
-    -#         %input{:type => "checkbox"}(ng-model="resource.included" id="include-resource-{{$index}}")
-    -#         %span Include this Partner
-    -#       .list-element
-    -#         .logo.img-container
-    -#           %img{:'ng-src' => "{{resource.logo_url}}"}
-    -#           %div.image-edited-message(ng-show="resource.new_image") Image edited. Save changes to update.
-    -#         %h3 {{resource.name}}
-    -#         %p {{resource.description}}
-    -#         %a.call-to-action(ng-href="{{'http://' + resource.website}}") {{resource.website}}
-    -#       .list-actions
-    -#         %button.btn{type: "button"}(ng-click="editResource(resource)") Edit
-    -# %a.btn.btn-link.add-btn(ng-click="newResource()" ng-if="resourcesCountNotReached()") + Add a Partner or Resource
+    %h2 Partners and Resources
+    %p What local resources focus on community preparedness? What partners does your organization collaborate with? Add up to five links.
+    .editable-list-container
+      %ul.editable-list
+        %li(ng-repeat="resource in orderedResources()")
+          %label.include-field(for="include-resource-{{$index}}")
+            %input{:type => "checkbox"}(ng-model="resource.included" id="include-resource-{{$index}}")
+            %span Include this Partner
+          .list-element
+            .logo.img-container
+              %img{:'ng-src' => "{{resource.logo_url}}"}
+              %div.image-edited-message(ng-show="resource.new_image") Image edited. Save changes to update.
+            %h3 {{resource.name}}
+            %p {{resource.description}}
+            %a.call-to-action(ng-href="{{'http://' + resource.website}}") {{resource.website}}
+          .list-actions
+            %button.btn{type: "button"}(ng-click="editResource(resource)") Edit
+    %a.btn.btn-link.add-btn(ng-click="newResource()" ng-if="resourcesCountNotReached()") + Add a Partner or Resource
 
-    -# .alert.alert-success.alert-dismissable(ng-show="updatedSuccessfully")
-    -#   %button.close(type="button" ng-click="updatedSuccessfully = false") &times;
-    -#   %strong Saved!
-    -#   Your changes were saved.
+    .alert.alert-success.alert-dismissable(ng-show="updatedSuccessfully")
+      %button.close(type="button" ng-click="updatedSuccessfully = false") &times;
+      %strong Saved!
+      Your changes were saved.
 
-    -# .alert.alert-danger.alert-dismissable(ng-show="fatalError")
-    -#   %button.close(type="button" ng-click="fatalError = false") &times;
-    -#   %strong Error!
-    -#   Sorry. Your changes could not be saved. {{errorText}}
+    .alert.alert-danger.alert-dismissable(ng-show="fatalError")
+      %button.close(type="button" ng-click="fatalError = false") &times;
+      %strong Error!
+      Sorry. Your changes could not be saved. {{errorText}}
 
-    -# .form-actions
-    -#   %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
-    -#     %span.ladda-label Save Changes
-    -#   %span.double-check.text-danger(ng-show="connectionForm.$invalid")
-    -#     Please double-check that all required fields, including your organization's facebook link, are filled.
+    .form-actions
+      %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="connectionForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
+        %span.ladda-label Save Changes
+      %span.double-check.text-danger(ng-show="connectionForm.$invalid")
+        Please double-check that all required fields, including your organization's facebook link, are filled.
 
     .frontend-link
       %a{:href => "/connect"} View this page &raquo;

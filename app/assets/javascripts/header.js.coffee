@@ -1,24 +1,14 @@
 class Header 
 
-    initialized = false
+    initilized = false
 
     # Initializes the header
     init: ->
-        $('#change-icon').click (evt) ->
-          b = $(this).css('background-color')
-          if b == '' || b == 'white' || b == 'rgba(0, 0, 0, 0)'
-            new_b = 'lightyellow'
-            $('#language-menu').show()
-          else
-            new_b = ''
-            $('#language-menu').hide()
-          $(this).css('background-color', new_b)
-            
-        if !initialized
+        if !initilized
             _initializeMobileMenu()
             _initializeMobileActiveBtn()
             _initializeActiveButton()
-            initialized = true
+            initilized = true
 
     # Initializes jquery.mobile-menu.js
     _initializeMobileMenu = ->

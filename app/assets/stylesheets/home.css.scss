@@ -7,7 +7,7 @@
 }
 
 .home .page-intro .big-title {
-	@include retina-image(/assets/static/home-main, 1020px 538px, jpg);
+	@include retina-image(/assets/placeholder-home, 1020px 538px, jpg);
 	background-position: left top;
 	text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
 }
@@ -17,7 +17,7 @@
 	h1 {
 		font-size: 3.5rem;
 		margin-top: 3rem;
-		text-shadow: 0px 0px 11px rgba(0,0,0,0.63);
+		text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
 		padding: 0 5rem;
 	}
 
@@ -41,7 +41,7 @@
 				color: $highlight;
 				line-height: 1rem;
 				margin-top: 3.75rem;
-				text-shadow: 0 0 0px rgba(0, 0, 0, 0.15);
+				text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
 			}
 
 			span {
@@ -54,7 +54,7 @@
 
 .connection {
 	@include row();
-	@include retina-image(/assets/static/home-secondary, 683px 420px, jpg);
+	@include retina-image(/assets/placeholder-residents, 683px 420px, jpg);
 	background-position: top right;
 	background-repeat: no-repeat;
 	position: relative;
@@ -94,9 +94,8 @@
 	}
 
 	h2 {
-		margin: 12rem 0 1rem;
+		margin: 0.8rem 0 1rem;
 		line-height: 1.356 !important;
-		text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 	}
 
 	ul {
@@ -150,7 +149,7 @@
 				@include icon(#FFF,3.5rem,$hands,$highlight,-50px,45px);
 			}
 			.learn-supplies {
-				@include retina-image(/assets/static/homeb-2, 337px 345px, jpg);
+				@include retina-image(/assets/static/home2_3, 337px 345px);
 				@include icon(#FFF,3.5rem,$first-aid,$highlight,-50px,45px);
 			}
 			.learn-plan {
@@ -233,7 +232,6 @@
 
 .site-sections a:hover{
 	color: $dark-grey;
-	text-shadow: 0 0 20px rgba(0, 0, 0, 0.0);
 }
 
 .my-people,
@@ -407,7 +405,7 @@
 	position: absolute;
 	top: 0.5rem;
 	left: 0.8rem;
-	font-family: 'city72icons';
+	font-family: 'sf72-icons';
 	content: 'u';
 	font-size: 1.7rem;
 	-webkit-font-smoothing: antialiased;

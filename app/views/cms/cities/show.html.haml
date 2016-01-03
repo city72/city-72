@@ -9,41 +9,41 @@
         %button.btn.btn-primary.ladda-button{:type => 'submit'}(ng-disabled="cityForm.$invalid || updating" data-style="expand-left" ui-ladda="updating")
           %span.ladda-label Save Changes
 
-    -# .form-group(ng-class="{'has-error': cityForm.name.$dirty && cityForm.name.$invalid}")
-    -#   %label.control-label{:for => 'name'}
-    -#     City Name
-    -#     %span.req *
-    -#     %span.help (e.g. New York, Denver ... )
-    -#   %input.form-control#name{:name => 'name', :'ng-model' => 'city.name'}(required)
-    -#   %span.help-block(ng-show="cityForm.name.$dirty && cityForm.name.$invalid")
-    -#     can't be blank
+    .form-group(ng-class="{'has-error': cityForm.name.$dirty && cityForm.name.$invalid}")
+      %label.control-label{:for => 'name'}
+        City Name
+        %span.req *
+        %span.help (e.g. New York, Denver ... )
+      %input.form-control#name{:name => 'name', :'ng-model' => 'city.name'}(required)
+      %span.help-block(ng-show="cityForm.name.$dirty && cityForm.name.$invalid")
+        can't be blank
 
-    -# .form-group(ng-class="{'has-error': cityForm.abbreviation.$dirty && cityForm.abbreviation.$invalid}")
-    -#   %label.control-label{:for => 'city-abr'}
-    -#     City Abbreviation
-    -#     %span.req *
-    -#     %span.help (e.g. NY, Den ... up to 4 letters )
-    -#   .input-group.input-sm.input-abr
-    -#     %input.form-control#city-abr{:name => 'city-abr', :'ng-model' => 'city.abbreviation'}(required ng-maxlength="4")
-    -#     %span.input-group-addon 72
-    -#   %span.help-block(ng-show="cityForm.abbreviation.$dirty && cityForm.abbreviation.$invalid")
-    -#     can't be blank
+    .form-group(ng-class="{'has-error': cityForm.abbreviation.$dirty && cityForm.abbreviation.$invalid}")
+      %label.control-label{:for => 'city-abr'}
+        City Abbreviation
+        %span.req *
+        %span.help (e.g. NY, Den ... up to 4 letters )
+      .input-group.input-sm.input-abr
+        %input.form-control#city-abr{:name => 'city-abr', :'ng-model' => 'city.abbreviation'}(required ng-maxlength="4")
+        %span.input-group-addon 72
+      %span.help-block(ng-show="cityForm.abbreviation.$dirty && cityForm.abbreviation.$invalid")
+        can't be blank
 
-    -# .form-group
-    -#   %label.control-label{:for => 'moniker'}
-    -#     What are the residents of your city called?
-    -#     %span.help (e.g. New Yorkers, Denverites ... )
-    -#   %input.form-control#moniker{:name => 'moniker', :'ng-model' => 'city.moniker'}
-    -#   %span.help-block If you leave this field blank your site will refer to people as "[City] residents."
+    .form-group
+      %label.control-label{:for => 'moniker'}
+        What are the residents of your city called?
+        %span.help (e.g. New Yorkers, Denverites ... )
+      %input.form-control#moniker{:name => 'moniker', :'ng-model' => 'city.moniker'}
+      %span.help-block If you leave this field blank your site will refer to people as "[City] residents."
 
-    -# .form-group(ng-class="{'has-error': cityForm.possessive.$dirty && cityForm.possessive.$invalid}")
-    -#   %label.control-label{:for => 'city-possessive'}
-    -#     What is the possessive form of your city name?
-    -#     %span.req *
-    -#     %span.help (e.g. Chicago's, Dallas')
-    -#   %input.form-control#city-possessive{:name => 'city-possessive', :'ng-model' => 'city.possessive'}(required)
-    -#   %span.help-block(ng-show="cityForm.possessive.$dirty && cityForm.possessive.$invalid")
-    -#     can't be blank
+    .form-group(ng-class="{'has-error': cityForm.possessive.$dirty && cityForm.possessive.$invalid}")
+      %label.control-label{:for => 'city-possessive'}
+        What is the possessive form of your city name?
+        %span.req *
+        %span.help (e.g. Chicago's, Dallas')
+      %input.form-control#city-possessive{:name => 'city-possessive', :'ng-model' => 'city.possessive'}(required)
+      %span.help-block(ng-show="cityForm.possessive.$dirty && cityForm.possessive.$invalid")
+        can't be blank
 
     / .form-group
     /   %label{:for => 'color_cd'}
@@ -64,14 +64,14 @@
       %input.form-control#select-resident-image{:type => 'file'}(file-input="resident_image")
       %img.resident-image{:'ng-src' => '{{city.resident_image_url}}'}
 
-    -# .form-group(ng-class="{'has-error': cityForm.brought_by.$invalid && cityForm.brought_by.$dirty}")
-    -#   %label.control-label{:for => 'brought_by'}
-    -#     This website brought to you by...
-    -#     %span.req *
-    -#     %span.help (e.g. the San Francisco Department of Emergency Management)
-    -#   %input.form-control#brought-by{name: 'brought_by', :'ng-model' => 'city.brought_by'}(required)
-    -#   %span.help-block(ng-show="cityForm.brought_by.$invalid && cityForm.brought_by.$dirty")
-    -#     can't be blank
+    .form-group(ng-class="{'has-error': cityForm.brought_by.$invalid && cityForm.brought_by.$dirty}")
+      %label.control-label{:for => 'brought_by'}
+        This website brought to you by...
+        %span.req *
+        %span.help (e.g. the San Francisco Department of Emergency Management)
+      %input.form-control#brought-by{name: 'brought_by', :'ng-model' => 'city.brought_by'}(required)
+      %span.help-block(ng-show="cityForm.brought_by.$invalid && cityForm.brought_by.$dirty")
+        can't be blank
 
     %h2 Footer Information
 
