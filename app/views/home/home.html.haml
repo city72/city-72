@@ -2,49 +2,49 @@
 .main-container.home
   = render :partial => "partials/header"
   .page-intro
-    .big-title{:style => "background-image: url(#{@city.image_url || "/assets/placeholder-home.jpg"})"}
+    .big-title{:style => "background-image: url(#{@city.image_url || "/assets/static/home-main.jpg"})"}
       %h1
         = t(:hero_image_text)
   .questions
     %ul
       %li
-        %h2 
+        %h2
           = t(:what_is)
-        %span 
+        %span
           = t(:what_text)
       %li
-        %h2 
+        %h2
           = t(:why_72)
-        %span 
+        %span
           = t(:why_text)
-  .connection{:style => "background-image: url(#{@city.resident_image.url || "assets/placeholder-residents.jpg"})"}
+  .connection{:style => "background-image: url(#{@city.resident_image.url || "assets/static/home-secondary.jpg"})"}
     %div
-      %h2 
+      %h2
         = t(:motto)
-      %span 
+      %span
         = t(:motto_explained)
   .learn
-    %h1 
+    %h1
       = t(:good_news)
       </br>
       = t(:learn_more)
     %ul
       %li
         %a.learn-connect{href:"/connect"}
-          %h2 
+          %h2
             = t(:get_connected)
-          %p 
+          %p
             = t(:gc_explained)
       %li
         %a.learn-supplies{href:"/supplies"}
-          %h2 
+          %h2
             = t(:sup)
-          %p 
+          %p
             = t(:sup_explained)
       %li
         %a.learn-plan{href:"/plan"}
-          %h2 
+          %h2
             = t(:mp)
-          %p 
+          %p
             = t(:mp_explained)
   = render :partial => "partials/footer"

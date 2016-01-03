@@ -7,7 +7,7 @@
 }
 
 .home .page-intro .big-title {
-	@include retina-image(/assets/placeholder-home, 1020px 538px, jpg);
+	@include retina-image(/assets/static/home-main, 1020px 538px, jpg);
 	background-position: left top;
 	text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
 }
@@ -17,7 +17,7 @@
 	h1 {
 		font-size: 3.5rem;
 		margin-top: 3rem;
-		text-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+		text-shadow: 0px 0px 11px rgba(0,0,0,0.63);
 		padding: 0 5rem;
 	}
 
@@ -54,7 +54,7 @@
 
 .connection {
 	@include row();
-	@include retina-image(/assets/placeholder-residents, 683px 420px, jpg);
+	@include retina-image(/assets/static/home-secondary, 683px 420px, jpg);
 	background-position: top right;
 	background-repeat: no-repeat;
 	position: relative;
