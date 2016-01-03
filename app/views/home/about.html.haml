@@ -2,61 +2,47 @@
 .main-container.about
 	= render :partial => "partials/header"
 	.opening.about-intro{:style => ("background-image: url(#{@about.image.url})" unless @about.image.blank?)}
-		%h1
-			= t(:for_us_by_us)
+		%h1 #{@city.abbreviation}72 is for us,</br>by us.
 		%div
-			%p
-				= t(:our_mission)
+			%p Our mission is to enable #{city_residents} to get prepared. #{@city.abbreviation}72 was created by #{@city.brought_by}, with the belief that the best way to do this is to get connected to each other, share resources, and start re-imagining the way we think about emergencies.
 	%ul.about-data
 		%li
 			.about-who
-			%h2
-				= t(:who)
-			%p
-				= t(:who_p1)
-			%p
-				= t(:who_p2)
+			%h2 Who
+			%p For #{@city.name}, by #{@city.name}.
+			%p #{@city.name} is like no other place – and this platform is tailored to the particular quirks, context and people that make up our city.
 		%li
 			.about-what
-			%h2
-				= t(:what)
-			%p
-				= t(:what_p1)
-			%p
-				= t(:what_p2)
+			%h2 What
+			%p A people-centered vision of emergency preparedness. Nobody likes to think about emergencies, but #{@city.abbreviation}72 takes the mystery out of the process of getting prepared. We do this by telling human stories and providing tools that fit into your daily life.
+			%p #{@city.abbreviation}72 is not a new social network. It’s a platform designed to plug into your existing networks – whether social or digital.
 		%li
 			.about-why
-			%h2
-				= t(:why)
-			%p
-				= t(:why_p1)
-			%p
-				= t(:why_p2)
+			%h2 Why
+			%p A little now will mean a lot later; connecting with your network, downloading an app, or watching a video is the first step towards being better prepared for an emergency.
+			%p #{@city.name}, along with other cities across the country, is leading the charge for a different kind of emergency prep. Let’s start the movement.
 
 	- if !@about.photographer_1.blank?
 		.image-credits
-			%h2
-				= t(:image_credits)
+			%h2 Image Credits
 			%p
-				Stephen Taxiera
-
-				-# Some images generously provided through the Creative Commons licensing format by:
-				-# - if !@about.photographer_1.blank?
-				-# 	= link_to @about.photographer_1, @about.photographer_1_url, target: '_blank'
-				-# - if !@about.photographer_2.blank?
-				-# 	,
-				-# 	= 'and' if @about.photographer_3.blank?
-				-# 	= link_to @about.photographer_2, @about.photographer_2_url, target: '_blank'
-				-# - if !@about.photographer_3.blank?
-				-# 	,
-				-# 	= 'and' if @about.photographer_4.blank?
-				-# 	= link_to @about.photographer_3, @about.photographer_3_url, target: '_blank'
-				-# - if !@about.photographer_4.blank?
-				-# 	,
-				-# 	= 'and' if @about.photographer_5.blank?
-				-# 	= link_to @about.photographer_4, @about.photographer_4_url, target: '_blank'
-				-# - if !@about.photographer_5.blank?
-				-# 	, and
-				-# 	= link_to @about.photographer_5, @about.photographer_5_url, target: '_blank'
-				-# = "."
+				Some images generously provided through the Creative Commons licensing format by:
+				- if !@about.photographer_1.blank?
+					= link_to @about.photographer_1, @about.photographer_1_url, target: '_blank'
+				- if !@about.photographer_2.blank?
+					,
+					= 'and' if @about.photographer_3.blank?
+					= link_to @about.photographer_2, @about.photographer_2_url, target: '_blank'
+				- if !@about.photographer_3.blank?
+					,
+					= 'and' if @about.photographer_4.blank?
+					= link_to @about.photographer_3, @about.photographer_3_url, target: '_blank'
+				- if !@about.photographer_4.blank?
+					,
+					= 'and' if @about.photographer_5.blank?
+					= link_to @about.photographer_4, @about.photographer_4_url, target: '_blank'
+				- if !@about.photographer_5.blank?
+					, and
+					= link_to @about.photographer_5, @about.photographer_5_url, target: '_blank'
+				= "."
 	= render :partial => "partials/footer"

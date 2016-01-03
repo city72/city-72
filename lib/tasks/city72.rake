@@ -357,11 +357,11 @@ namespace :city72 do
         }, {
           moment_type: :after,
           title: 'Stay tuned.',
-          description: 'Listen to the radio for important information and instructions.',
+          description: 'Listen to the radio for important information and instructions. Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.',
         }, {
           moment_type: :after,
-          title: 'Stay safe.',
-          description: 'Remember that aftershocks, which generally follow large quakes, can be large enough to cause damage in their own right.',
+          title: 'Check back here.',
+          description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
         }
       ]
     )
@@ -416,8 +416,8 @@ namespace :city72 do
           description: 'Use battery-powered flashlights in the dark. DO NOT use candles, in order to prevent fires.',
         }, {
           moment_type: :after,
-          title: 'Test',
-          description: 'testing',
+          title: 'Check back here.',
+          description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
         }
       ]
     )
@@ -468,8 +468,8 @@ namespace :city72 do
           description: 'Standing water may be electrically charged from underground or downed power lines.',
         }, {
           moment_type: :after,
-          title: 'Test',
-          description: 'testing',
+          title: 'Check back here.',
+          description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
         }
       ]
     )
@@ -520,8 +520,8 @@ namespace :city72 do
           description: 'Do not touch downed power lines or objects in contact with downed lines. Report electrical hazards to the police and the utilities.',
         }, {
           moment_type: :after,
-          title: 'Test',
-          description: 'testing',
+          title: 'Check back here.',
+          description: 'In an emergency, this site will go into Crisis Mode and will provide a live stream of official updates as well as crowdsourced reports.',
         }
       ]
     )

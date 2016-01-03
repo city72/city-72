@@ -1,65 +1,61 @@
 .main-content.supplies(ng-controller="CitySuppliesController" ng-init="initialize('#{escape_javascript(@essentials)}', '#{escape_javascript(@usefuls)}', '#{escape_javascript(@personals)}', '#{escape_javascript(@kits)}')" )
   .screen-intro
     %p.screen-info This visual list provides easy-to-remember sets of essential, useful, and personal emergency supplies. It is not recommended to change these items. 
-    -# .action-area
-    -#   %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
-    -#     %span.ladda-label Save Changes
+    .action-area
+      %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
+        %span.ladda-label Save Changes
 
   %h2 Essential Supplies
-  %p All of the supplies are hard coded onto the view and therefore compatible with localization.
-  %p The images can be found in static/images
-  %p All of the strings come from the locale file en.yml
-  -# %ul.editable-list
-  -#   %li(ng-repeat="essential in essentials")
-  -#     .list-element
-  -#       .img-container
-  -#         %img{:'ng-src' => '{{essential.image_url}}'}
-  -#         .image-edited-message(ng-show="essential.new_image") Image edited. Save changes to update.
-  -#       %h3 {{essential.title}}
-  -#       %p {{essential.use_case}}
-  -#     .list-actions
-  -#       %button.btn{type: "button"}(ng-click="editSupply(essential, essentials)") Edit
+  %ul.editable-list
+    %li(ng-repeat="essential in essentials")
+      .list-element
+        .img-container
+          %img{:'ng-src' => '{{essential.image_url}}'}
+          .image-edited-message(ng-show="essential.new_image") Image edited. Save changes to update.
+        %h3 {{essential.title}}
+        %p {{essential.use_case}}
+      .list-actions
+        %button.btn{type: "button"}(ng-click="editSupply(essential, essentials)") Edit
 
   %h2 Useful Supplies
-  -# %ul.editable-list
-  -#   %li(ng-repeat="useful in usefuls")
-  -#     .list-element
-  -#       .img-container
-  -#         %img{:'ng-src' => '{{useful.image_url}}'}
-  -#         .image-edited-message(ng-show="useful.new_image") Image edited. Save changes to update.
-  -#       %h3 {{useful.title}}
-  -#       %p {{useful.use_case}}
-  -#     .list-actions
-  -#       %button.btn{type: "button"}(ng-click="editSupply(useful, usefuls)") Edit
+  %ul.editable-list
+    %li(ng-repeat="useful in usefuls")
+      .list-element
+        .img-container
+          %img{:'ng-src' => '{{useful.image_url}}'}
+          .image-edited-message(ng-show="useful.new_image") Image edited. Save changes to update.
+        %h3 {{useful.title}}
+        %p {{useful.use_case}}
+      .list-actions
+        %button.btn{type: "button"}(ng-click="editSupply(useful, usefuls)") Edit
 
   %h2 Personal Supplies
-  -# %ul.editable-list
-  -#   %li(ng-repeat="personal in personals")
-  -#     .list-element
-  -#       .img-container
-  -#         %img{:'ng-src' => '{{personal.image_url}}'}
-  -#         .image-edited-message(ng-show="personal.new_image") Image edited. Save changes to update.
-  -#       %h3 {{personal.title}}
-  -#       %p {{personal.use_case}}
-  -#     .list-actions
-  -#       %button.btn{type: "button"}(ng-click="editSupply(personal, personals)") Edit
+  %ul.editable-list
+    %li(ng-repeat="personal in personals")
+      .list-element
+        .img-container
+          %img{:'ng-src' => '{{personal.image_url}}'}
+          .image-edited-message(ng-show="personal.new_image") Image edited. Save changes to update.
+        %h3 {{personal.title}}
+        %p {{personal.use_case}}
+      .list-actions
+        %button.btn{type: "button"}(ng-click="editSupply(personal, personals)") Edit
 
   %h2 Supplies to share
-  -# %ul.editable-list
-  -#   %li(ng-repeat="kit in kits")
-  -#     .list-element
-  -#       .img-container
-  -#         %img{:'ng-src' => '{{kit.image_url}}'}
-  -#         .image-edited-message(ng-show="kit.new_image") Image edited. Save changes to update.
-  -#       %h3 {{kit.title}}
-  -#       %p {{kit.use_case}}
-  -#     .list-actions
-  -#       %button.btn{type: "button"}(ng-click="editSupply(kit, kits)") Edit
+  %ul.editable-list
+    %li(ng-repeat="kit in kits")
+      .list-element
+        .img-container
+          %img{:'ng-src' => '{{kit.image_url}}'}
+          .image-edited-message(ng-show="kit.new_image") Image edited. Save changes to update.
+        %h3 {{kit.title}}
+        %p {{kit.use_case}}
+      .list-actions
+        %button.btn{type: "button"}(ng-click="editSupply(kit, kits)") Edit
 
-
-  -# .form-actions
-  -#   %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
-  -#     %span.ladda-label Save Changes
+  .form-actions
+    %button.btn.btn-primary.ladda-button(ng-disabled="updating" data-style="expand-left" ui-ladda="updating" ng-click="save()")
+      %span.ladda-label Save Changes
 
   .frontend-link
     %a{:href => "/supplies"} View this page &raquo;

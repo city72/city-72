@@ -27,24 +27,10 @@
 								%li
 									%a{href: "http://#{affiliate.url}", target:"_blank"}
 										= affiliate.name
-
 			%li.social
-				%h2 Spread the word
+				%h2 Stay in touch
 				%ul
-					<a href="https://twitter.com/share" class="twitter-share-button" data-url="#{root_url}">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-
-			-# %li.social
-			-# 	%h2 Languages
-			-# 	%ul
-			-# 		%li
-			-# 		%a{href:"/vi/home/"}tiếng Việt
-			-# 		%li
-			-# 		%a{href:"/zh/home/"}汉语
-			-# 		%li
-			-# 		%a{href:"/en/home/"}English
-			-# 		%li
-			-# 		%a{href:"/fi/home/"}Filipino
-			-# 		%li
-			-# 		%a{href:"/es/home/"}Español
-
+					%li
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="#{root_url}">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+					%li
+						<iframe src="//www.facebook.com/plugins/like.php?href=#{root_url}%2Fhome&amp;width=20&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:140px; height:21px;" allowTransparency="true"></iframe>

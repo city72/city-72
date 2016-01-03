@@ -1,41 +1,27 @@
--# .i18n-change-bar
--#   %ul
--#     %li
--#       %a{href:"/es/home/"}
--#         tiếng Việt  |  汉语  |  English  |  Filipino  |  Español
-  -# .change-icon#change-icon
-  -#   %img{src: '/assets/translate_transp.gif', class: 'img-responsive'}
-  -# .language-menu#language-menu
 .header
   %a.logo{href:"/home"}
     #logo{ height: "100", width: "150"}
-      %img{src: "/assets/city72logo.svg", alt: "#{@city.abbreviation}72 (logo)"}
-      -# - if @about.logo.url
-      -#   %img{src: "/assets/city72logo.svg", alt: "#{@city.abbreviation}72 (logo)"}
-      -# - else
-      -#   %span.text-logo #{@city.abbreviation}72
+      - if @about.logo.url
+        %img{src: "#{@about.logo.url}", alt: "#{@city.abbreviation}72 (logo)"}
+      - else
+        %span.text-logo #{@city.abbreviation}72
   %a.logo-mobile{href:"/home"}
   %ul.main-nav
     %li
       %a{href:"/connect"}
-        %strong
-          = t(:get_connected)
+        %strong Get<br>Connected
     %li
       %a{href:"/supplies"}
-        %strong
-          = t(:gather_supplies)
+        %strong Gather<br>Supplies
     %li
       %a{href:"/stories"}
-        %strong
-          = t(:view_stories)
+        %strong View<br>Stories
     %li
       %a{href:"/plan"}
-        %strong
-          = t(:make_a_plan)
-    %li
+        %strong Make<br>a Plan
+    %li.em-link
       %a{href:"/em/home"}
-        %strong
-          = t(:map_and_updates)
+        %strong  #{@city.abbreviation}72 Map & Updates
   - unless browser.ie?
     .mobile-menu
       .normal-mode
@@ -45,25 +31,22 @@
               %strong Home
           %li
             %a{href:"/connect"}
-              %strong
-                = t(:get_connected)
+              %strong Get Connected
           %li
             %a{href:"/supplies"}
-              %strong
-                = t(:gather_supplies)
+              %strong Gather Supplies
           %li
             %a{href:"/stories"}
-              %strong
-                = t(:view_stories)
+              %strong View Stories
           %li
             %a{href:"/plan"}
-              %strong
-                = t(:make_a_plan)
-          %li.em-li
-            %a{href:"/em/home#mobile-maps"}
-              %strong
-                = t(:situation_map)
-          %li.em-li
-            %a{href:"/em/home#mobile-updates"}
-              %strong
-                = t(:updates)
+              %strong Make a Plan
+          %li.em-link
+            %strong #{@city.abbreviation}72 Now Updates
+            .fold
+              %p Live updates + crisis tools in an emergency.
+              %ul
+                %li.em-li
+                  %a{href:"/em/home#mobile-maps"} Situation Map
+                %li.em-li
+                  %a{href:"/em/home#mobile-updates"} Updates
