@@ -14,9 +14,9 @@ class HomeController < ApplicationController
     @emergency_data = EmergencyData.first
   end
 
-  def about
-    @render_captcha = MailHelper::posible_attack?
-  end
+  # def about
+  #   @render_captcha = MailHelper::posible_attack?
+  # end
 
   def connect
     @city_connection = CityConnection.first
